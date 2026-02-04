@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  cls-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cls-pipeline
+
+    # Volume mounts
+    volumes:
+      - ./data:/app/data:ro           # Input data (read-only)
+      - ./output:/app/output:rw       # Output results
+      - ./cache:/app/cache:rw         # Embedding cache
+      - ./models:/app/models:rw       # HuggingFace model cache
+
+    # Environment variables
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      - DEVICE=${DEVICE:-auto}
+      - PYTHONUNBUFFERED=1
+
+    # Resource limits (optimized for 16GB RAM)
+    deploy:
+      resources:
+        limits:
+          memory: 14G
+        reservations:
+          memory: 8G
+
+    # Prevent container from exiting immediately
+    tty: true
+    stdin_open: true
+
+    # Network configuration
+    network_mode: bridge
+
+    # Working directory
+    working_dir: /app
+
+  # Development service with source mounted
+  cls-pipeline-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cls-pipeline-dev
+
+    volumes:
+      - ./data:/app/data:ro
+      - ./output:/app/output:rw
+      - ./cache:/app/cache:rw
+      - ./models:/app/models:rw
+      - ./src:/app/src:ro             # Mount source for development
+      - ./config.yaml:/app/config.yaml:ro
+
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      - DEVICE=${DEVICE:-auto}
+      - PYTHONUNBUFFERED=1
+
+    deploy:
+      resources:
+        limits:
+          memory: 14G
+        reservations:
+          memory: 8G
+
+    tty: true
+    stdin_open: true
+    working_dir: /app
+
+    command: python -m src.cli run
+
+    profiles:
+      - dev
+
+# Named volumes (optional, for persistent caching across rebuilds)
+volumes:
+  models_cache:
+    driver: local
+  embeddings_cache:
+    driver: local

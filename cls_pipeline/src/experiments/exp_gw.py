@@ -1,0 +1,161 @@
+"""
+exp_gw.py — Experiment 2: Gromov-Wasserstein Distance + Permutation Test.
+
+Measures structural distortion between WEIRD and Sinic embedding spaces
+via Optimal Transport, with significance assessed by permutation test.
+
+References
+----------
+Alvarez-Melis & Jaakkola (2018), EMNLP.
+"""
+
+import logging
+from dataclasses import dataclass
+from typing import Any
+
+import numpy as np
+import ot
+from sklearn.metrics.pairwise import cosine_similarity
+
+from .statistical import PermutationResult
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class GWResult:
+    """Result of Gromov-Wasserstein computation."""
+    distance: float
+    transport_plan: np.ndarray
+    p_value: float
+    n_permutations: int
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "distance": self.distance,
+            "p_value": self.p_value,
+            "n_permutations": self.n_permutations,
+            "transport_plan_shape": list(self.transport_plan.shape),
+            "transport_plan_summary": {
+                "min": float(self.transport_plan.min()),
+                "max": float(self.transport_plan.max()),
+                "mean": float(self.transport_plan.mean()),
+            },
+            "interpretation": (
+                "high_anisomorphism" if self.distance > 0.1
+                else "relative_isomorphism"
+            ),
+        }
+
+
+def _cosine_distance_matrix(vectors: np.ndarray) -> np.ndarray:
+    """Compute intra-space cosine distance matrix (1 - similarity)."""
+    return 1.0 - cosine_similarity(vectors)
+
+
+def _compute_gw(
+    C1: np.ndarray,
+    C2: np.ndarray,
+    entropic_reg: float = 5e-3,
+    use_sinkhorn: bool = True,
+) -> tuple[float, np.ndarray]:
+    """
+    Compute GW distance from pre-computed cost matrices.
+
+    Returns (distance, transport_plan).
+    """
+    n = C1.shape[0]
+    m = C2.shape[0]
+    p = np.ones(n) / n
+    q = np.ones(m) / m
+
+    C1 = np.ascontiguousarray(C1, dtype=np.float64)
+    C2 = np.ascontiguousarray(C2, dtype=np.float64)
+
+    if use_sinkhorn and entropic_reg > 0:
+        transport_plan, gw_log = ot.gromov.entropic_gromov_wasserstein(
+            C1, C2, p, q,
+            loss_fun="square_loss",
+            epsilon=entropic_reg,
+            log=True,
+        )
+        gw_dist = gw_log["gw_dist"]
+    else:
+        transport_plan, gw_log = ot.gromov.gromov_wasserstein(
+            C1, C2, p, q,
+            loss_fun="square_loss",
+            log=True,
+        )
+        gw_dist = gw_log["gw_dist"]
+
+    return float(gw_dist), transport_plan
+
+
+def gromov_wasserstein_distance(
+    vectors_weird: np.ndarray,
+    vectors_sinic: np.ndarray,
+    entropic_reg: float = 5e-3,
+    use_sinkhorn: bool = True,
+    n_permutations: int = 5000,
+    seed: int = 42,
+) -> GWResult:
+    """
+    Compute Gromov-Wasserstein distance with permutation test.
+
+    Parameters
+    ----------
+    vectors_weird : np.ndarray
+        WEIRD embeddings (n x d1).
+    vectors_sinic : np.ndarray
+        Sinic embeddings (m x d2).
+    entropic_reg : float
+        Entropic regularization for Sinkhorn.
+    use_sinkhorn : bool
+        If True, use entropic-regularized GW.
+    n_permutations : int
+        Number of permutations for p-value.
+    seed : int
+        Random seed.
+
+    Returns
+    -------
+    GWResult
+        GW distance, transport plan, and p-value.
+    """
+    # Intra-space cost matrices
+    C1 = _cosine_distance_matrix(vectors_weird)
+    C2 = _cosine_distance_matrix(vectors_sinic)
+
+    # Observed GW distance
+    gw_dist, transport_plan = _compute_gw(C1, C2, entropic_reg, use_sinkhorn)
+    logger.info("GW distance (observed): %.6f", gw_dist)
+
+    # Permutation test: permute rows of one embedding matrix
+    rng = np.random.RandomState(seed)
+    null_dist = np.empty(n_permutations)
+
+    for i in range(n_permutations):
+        perm = rng.permutation(vectors_sinic.shape[0])
+        C2_perm = C2[np.ix_(perm, perm)]
+        null_dist[i], _ = _compute_gw(C1, C2_perm, entropic_reg, use_sinkhorn)
+
+        if (i + 1) % 500 == 0:
+            logger.info("GW permutation %d/%d", i + 1, n_permutations)
+
+    # p-value: proportion of permuted distances <= observed
+    # (lower GW = more similar, so we test if observed is significantly LOW)
+    # But for divergence: higher GW = more different
+    # We test if observed is significantly different from null
+    p_value = (np.sum(null_dist <= gw_dist) + 1) / (n_permutations + 1)
+
+    logger.info(
+        "GW permutation test: distance=%.6f, p=%.4f (%d permutations)",
+        gw_dist, p_value, n_permutations,
+    )
+
+    return GWResult(
+        distance=gw_dist,
+        transport_plan=transport_plan,
+        p_value=p_value,
+        n_permutations=n_permutations,
+    )
