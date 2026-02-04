@@ -4,6 +4,18 @@ statistical.py — Shared statistical utilities for CLS experiments.
 Provides permutation tests, bootstrap confidence intervals, and the
 Mantel test used across multiple experiment modules.
 """
+# ─── Perché test di permutazione e non test parametrici? ───────────────
+# Gli embedding linguistici producono distribuzioni fortemente non normali
+# e con dipendenze strutturali tra le osservazioni (ogni coppia di vettori
+# è correlata a tutte le altre). I test parametrici (t-test, F-test)
+# presuppongono normalità e indipendenza: qui entrambe le assunzioni
+# cadono. I test di permutazione generano una distribuzione nulla
+# *empirica* permutando i dati stessi, senza ipotesi distribuzionali.
+# Rif.: Good (2005) "Permutation, Parametric, and Bootstrap Tests of
+#        Hypotheses", 3rd ed., Springer.
+# Rif.: Efron (1979) "Bootstrap Methods: Another Look at the Jackknife",
+#        Annals of Statistics, 7(1), 1-26.
+# ───────────────────────────────────────────────────────────────────────
 
 import logging
 from dataclasses import dataclass
@@ -66,13 +78,29 @@ def permutation_test(
     PermutationResult
         Observed statistic, p-value, and null distribution.
     """
+    logger.info(
+        "Test di permutazione: statistica osservata=%.4f, alternative='%s', n_perm=%d",
+        observed_stat, alternative, n_permutations,
+    )
     rng = np.random.RandomState(seed)
     null_dist = np.empty(n_permutations)
 
+    log_interval = max(n_permutations // 5, 1)
     for i in range(n_permutations):
         perm_data = rng.permutation(data) if data.ndim == 1 else data[rng.permutation(len(data))]
         null_dist[i] = stat_fn(perm_data)
+        if (i + 1) % log_interval == 0:
+            logger.info("  Permutazione %d/%d (%.0f%%)", i + 1, n_permutations, 100 * (i + 1) / n_permutations)
 
+    # Le tre alternative definiscono la direzione del test:
+    # - "greater": la statistica osservata è insolitamente alta?
+    # - "less": è insolitamente bassa?
+    # - "two-sided": è estrema in entrambe le direzioni?
+    #
+    # Correzione "+1" al numeratore e denominatore (Phipson & Smyth, 2010,
+    # "Permutation P-values Should Never Be Zero", Stat. Appl. Genet. Mol. Biol.):
+    # evita p-value esattamente zero e corregge il bias dovuto al conteggio
+    # discreto, garantendo che p >= 1/(n_perm+1).
     if alternative == "greater":
         p_value = (np.sum(null_dist >= observed_stat) + 1) / (n_permutations + 1)
     elif alternative == "less":
@@ -81,8 +109,10 @@ def permutation_test(
         p_value = (np.sum(np.abs(null_dist) >= np.abs(observed_stat)) + 1) / (n_permutations + 1)
 
     logger.info(
-        "Permutation test: observed=%.4f, p=%.4f (%d permutations)",
-        observed_stat, p_value, n_permutations,
+        "Test di permutazione completato: osservato=%.4f, p=%.4f, "
+        "distribuzione nulla: media=%.4f, std=%.4f, [min=%.4f, max=%.4f]",
+        observed_stat, p_value,
+        null_dist.mean(), null_dist.std(), null_dist.min(), null_dist.max(),
     )
 
     return PermutationResult(
@@ -121,6 +151,12 @@ def bootstrap_ci(
     BootstrapCIResult
         Point estimate and confidence interval.
     """
+    # Bootstrap di Efron (1979): metodo nonparametrico per stimare
+    # l'intervallo di confidenza di una statistica senza assunzioni
+    # sulla distribuzione sottostante. Si ricampiona *con rimpiazzo*
+    # dal campione originale, calcolando la statistica su ogni
+    # ricampionamento. I percentili della distribuzione bootstrap
+    # forniscono i limiti dell'intervallo (metodo dei percentili).
     rng = np.random.RandomState(seed)
     estimate = stat_fn(data)
 
@@ -183,15 +219,23 @@ def mantel_test(
     n = rdm_a.shape[0]
     assert rdm_a.shape == rdm_b.shape == (n, n), "RDMs must be square and same size"
 
-    # Extract upper triangle (excluding diagonal)
+    # Si estraggono solo gli elementi del triangolo superiore: la matrice
+    # è simmetrica e la diagonale è sempre zero, quindi non porta informazione.
     triu_idx = np.triu_indices(n, k=1)
     vec_a = rdm_a[triu_idx]
     vec_b = rdm_b[triu_idx]
 
-    # Observed Spearman correlation
+    # Correlazione di Spearman (rango): scelta al posto di Pearson perché
+    # non assume linearità — ci interessa che l'*ordine* delle distanze
+    # sia preservato tra i due spazi, non la proporzionalità esatta.
+    # Rif.: Mantel (1967) "The detection of disease clustering and a
+    #        generalized regression approach", Cancer Research, 27(2).
     r_observed, _ = spearmanr(vec_a, vec_b)
 
-    # Permutation test: permute rows/columns of rdm_b
+    # Test di permutazione: si permutano *simultaneamente* righe e colonne
+    # della seconda matrice (rdm_b[perm, perm]) per preservare la simmetria
+    # della RDM. Una permutazione solo delle righe spezzerebbe la struttura
+    # simmetrica e genererebbe matrici invalide come distribuzione nulla.
     rng = np.random.RandomState(seed)
     null_dist = np.empty(n_permutations)
 
@@ -202,7 +246,7 @@ def mantel_test(
         r_perm, _ = spearmanr(vec_a, vec_b_perm)
         null_dist[i] = r_perm
 
-    # p-value: proportion of permuted r >= observed r
+    # p-value: proporzione di r permutati >= r osservato (+ correzione Phipson)
     p_value = (np.sum(null_dist >= r_observed) + 1) / (n_permutations + 1)
 
     logger.info(

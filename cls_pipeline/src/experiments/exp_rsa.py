@@ -9,6 +9,16 @@ References
 ----------
 Kriegeskorte et al. (2008), Frontiers in Systems Neuroscience.
 """
+# ─── RSA come confronto "di secondo ordine" ──────────────────────────
+# L'RSA non confronta direttamente i vettori embedding (che vivono in
+# spazi di dimensione e orientamento diversi), ma le *geometrie interne*
+# dei due spazi. Si costruisce una matrice di dissimilarità (RDM) per
+# ciascun modello, poi si misura quanto le due RDM sono correlate.
+# È un confronto strutturale: se due concetti sono "vicini" in uno
+# spazio, lo sono anche nell'altro?
+# Rif.: Kriegeskorte, Mur & Bandettini (2008) "Representational
+#        Similarity Analysis", Frontiers in Systems Neuroscience, 2, 4.
+# ─────────────────────────────────────────────────────────────────────
 
 import logging
 from dataclasses import dataclass
@@ -44,6 +54,9 @@ class RSAResult:
             "n_permutations": self.n_permutations,
             "n_pairs": self.n_pairs,
             "n_terms": len(self.labels),
+            "labels": self.labels,
+            "rdm_weird": self.rdm_weird.tolist(),
+            "rdm_sinic": self.rdm_sinic.tolist(),
             "interpretation": (
                 "significant_dissimilarity" if self.p_value < 0.05
                 else "no_significant_difference"
@@ -65,6 +78,10 @@ def compute_rdm(vectors: np.ndarray) -> np.ndarray:
     np.ndarray
         Symmetric N x N cosine distance matrix.
     """
+    # Distanza del coseno: d(a,b) = 1 - cos(a,b). È invariante alla norma
+    # dei vettori, quindi misura solo la direzione nello spazio semantico.
+    # Questo è essenziale per gli embedding, dove la norma può variare
+    # per motivi non semantici (frequenza del token, batch di addestramento).
     n = vectors.shape[0]
     rdm = np.zeros((n, n))
     for i in range(n):
@@ -109,13 +126,16 @@ def run_rsa(
 
     logger.info("Computing RDMs for %d terms...", n)
 
+    # Pipeline in 3 passi:
+    # 1. Calcola le RDM (matrici di dissimilarità) per ciascun spazio
+    # 2. Correla le RDM con Spearman (confronto di rango tra geometrie)
+    # 3. Valuta significatività con test di Mantel (permutazione righe/colonne)
     rdm_w = compute_rdm(emb_weird)
     rdm_s = compute_rdm(emb_sinic)
 
     n_pairs = n * (n - 1) // 2
     logger.info("RDMs computed: %d x %d, %d unique pairs", n, n, n_pairs)
 
-    # Mantel test
     mantel_result = mantel_test(rdm_w, rdm_s, n_permutations=n_permutations, seed=seed)
 
     logger.info(
@@ -171,26 +191,40 @@ def plot_rdm_heatmaps(
     sns.set_style("whitegrid")
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=figsize)
 
-    # Use short labels for readability
+    # Etichette troncate a 15 caratteri per leggibilità nelle heatmap
     short_labels = [l[:15] for l in result.labels]
+
+    # Colormap "viridis": scelta per accessibilità (leggibile anche in
+    # scala di grigi e da soggetti con daltonismo).
+    # Scaling indipendente per RDM: le due matrici possono avere range
+    # molto diversi (es. WEIRD ~0.07-0.26, Sinic ~0.0-0.75).
+    # Il confronto quantitativo è affidato al Spearman r, non al colore.
+    n = result.rdm_weird.shape[0]
+    triu_idx = np.triu_indices(n, k=1)
+    triu_w = result.rdm_weird[triu_idx]
+    triu_s = result.rdm_sinic[triu_idx]
 
     sns.heatmap(
         result.rdm_weird, ax=ax1,
         xticklabels=short_labels, yticklabels=short_labels,
-        cmap="viridis", vmin=0, vmax=1,
+        cmap="viridis", vmin=triu_w.min(), vmax=triu_w.max(),
         square=True, cbar_kws={"shrink": 0.8},
     )
-    ax1.set_title(f"{weird_label} RDM")
+    ax1.set_title(f"{weird_label} RDM (range {triu_w.min():.2f}–{triu_w.max():.2f})")
     ax1.tick_params(axis="both", labelsize=6)
+    plt.setp(ax1.get_xticklabels(), rotation=45, ha="right")
+    plt.setp(ax1.get_yticklabels(), rotation=0)
 
     sns.heatmap(
         result.rdm_sinic, ax=ax2,
         xticklabels=short_labels, yticklabels=short_labels,
-        cmap="viridis", vmin=0, vmax=1,
+        cmap="viridis", vmin=triu_s.min(), vmax=triu_s.max(),
         square=True, cbar_kws={"shrink": 0.8},
     )
-    ax2.set_title(f"{sinic_label} RDM")
+    ax2.set_title(f"{sinic_label} RDM (range {triu_s.min():.2f}–{triu_s.max():.2f})")
     ax2.tick_params(axis="both", labelsize=6)
+    plt.setp(ax2.get_xticklabels(), rotation=45, ha="right")
+    plt.setp(ax2.get_yticklabels(), rotation=0)
 
     fig.suptitle(
         f"Representational Dissimilarity Matrices\n"
@@ -198,10 +232,10 @@ def plot_rdm_heatmaps(
         f"(Mantel test, {result.n_permutations:,} permutations)",
         fontsize=13, fontweight="bold",
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.93])
+    fig.tight_layout(rect=[0, 0.05, 1, 0.93])
 
     path = out / "rsa_rdm_heatmaps.png"
-    fig.savefig(path, dpi=dpi)
+    fig.savefig(path, dpi=dpi, bbox_inches="tight")
     plt.close(fig)
 
     logger.info("RSA heatmaps saved: %s", path)

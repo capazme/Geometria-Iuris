@@ -112,18 +112,20 @@ class EmbeddingClient:
         """
         # If model already loaded, return it
         if model_name in self._models:
+            logger.info("Modello già in memoria: %s", model_name)
             return self._models[model_name]
 
         # Unload current model to free memory (sequential loading strategy)
         if self._current_model and self._current_model != model_name:
-            logger.info("Unloading model: %s", self._current_model)
+            logger.info("Scaricamento modello precedente dalla memoria: %s", self._current_model)
             del self._models[self._current_model]
             self._models.pop(self._current_model, None)
             clear_device_cache()
             self._current_model = None
+            logger.info("Memoria liberata, cache device svuotata")
 
         # Load new model
-        logger.info("Loading model: %s", model_name)
+        logger.info("Caricamento modello: %s (device=%s) ...", model_name, self.device)
 
         # Set cache directory
         model = SentenceTransformer(
@@ -136,10 +138,10 @@ class EmbeddingClient:
         self._models[model_name] = model
         self._current_model = model_name
 
+        dim = model.get_sentence_embedding_dimension()
         logger.info(
-            "Model loaded: %s (dimension=%d)",
-            model_name,
-            model.get_sentence_embedding_dimension(),
+            "Modello caricato: %s (dimensione=%d, device=%s)",
+            model_name, dim, self.device,
         )
         return model
 
@@ -169,13 +171,19 @@ class EmbeddingClient:
         model_name, expected_dim, prefix = self._get_model_config(model_type)
 
         # Check cache first (cache key uses original texts, not prefixed)
+        logger.info(
+            "Richiesta embedding %s: %d testi (modello: %s)",
+            model_type, len(texts), model_name,
+        )
         cached = self.cache.get(texts, model_name)
         if cached is not None:
             logger.info(
-                "Cache hit for %s (%d texts)",
-                model_type, len(texts)
+                "Cache HIT per %s — %d testi, shape=%s (caricamento istantaneo)",
+                model_type, len(texts), cached.shape,
             )
             return cached
+
+        logger.info("Cache MISS per %s — generazione embedding necessaria", model_type)
 
         # Load model and generate embeddings
         model = self._load_model(model_name)
@@ -184,14 +192,15 @@ class EmbeddingClient:
         if prefix:
             encode_texts = [f"{prefix}{t}" for t in texts]
             logger.info(
-                "Applying prefix '%s' for %s", prefix, model_type
+                "Prefisso '%s' applicato a %d testi per %s",
+                prefix, len(texts), model_type,
             )
         else:
             encode_texts = texts
 
         logger.info(
-            "Generating embeddings for %d texts with %s",
-            len(texts), model_type
+            "Encoding %d testi con %s (batch_size=%d) ...",
+            len(texts), model_name, self.batch_size,
         )
 
         # Encode with batching
@@ -209,21 +218,22 @@ class EmbeddingClient:
         # Normalize if requested
         if normalize:
             embeddings = _l2_normalize(embeddings)
+            logger.info("Vettori normalizzati L2 (norma unitaria)")
 
         # Verify dimension
         actual_dim = embeddings.shape[1]
         if actual_dim != expected_dim:
             logger.warning(
-                "Dimension mismatch: expected %d, got %d for %s",
-                expected_dim, actual_dim, model_name
+                "ATTENZIONE dimensione: attesa %d, ottenuta %d per %s",
+                expected_dim, actual_dim, model_name,
             )
 
         # Cache results
         self.cache.set(texts, model_name, embeddings)
 
         logger.info(
-            "Generated and cached embeddings: shape=%s",
-            embeddings.shape
+            "Embedding generati e salvati in cache: shape=%s, dtype=%s",
+            embeddings.shape, embeddings.dtype,
         )
         return embeddings
 

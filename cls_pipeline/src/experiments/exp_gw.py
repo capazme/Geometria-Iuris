@@ -8,6 +8,17 @@ References
 ----------
 Alvarez-Melis & Jaakkola (2018), EMNLP.
 """
+# ─── Gromov-Wasserstein: confronto strutturale senza allineamento ────
+# A differenza dell'RSA (che correla distanze), GW cerca il trasporto
+# ottimale tra due spazi metrici *senza richiedere che vivano nello
+# stesso spazio*. Misura quanto la struttura delle distanze interne
+# deve essere "distorta" per allineare i due spazi. Una distanza GW
+# bassa indica isomorfismo strutturale; alta indica anisomorfismo.
+# Rif.: Alvarez-Melis & Jaakkola (2018) "Gromov-Wasserstein Alignment
+#        of Word Embedding Spaces", EMNLP.
+# Rif.: Peyré & Cuturi (2019) "Computational Optimal Transport",
+#        Foundations and Trends in Machine Learning, 11(5-6).
+# ─────────────────────────────────────────────────────────────────────
 
 import logging
 from dataclasses import dataclass
@@ -35,6 +46,7 @@ class GWResult:
             "distance": self.distance,
             "p_value": self.p_value,
             "n_permutations": self.n_permutations,
+            "transport_plan": self.transport_plan.tolist(),
             "transport_plan_shape": list(self.transport_plan.shape),
             "transport_plan_summary": {
                 "min": float(self.transport_plan.min()),
@@ -64,6 +76,8 @@ def _compute_gw(
 
     Returns (distance, transport_plan).
     """
+    # Distribuzioni uniformi: ogni termine ha lo stesso peso.
+    # Non c'è ragione a priori per pesare diversamente i concetti giuridici.
     n = C1.shape[0]
     m = C2.shape[0]
     p = np.ones(n) / n
@@ -72,6 +86,12 @@ def _compute_gw(
     C1 = np.ascontiguousarray(C1, dtype=np.float64)
     C2 = np.ascontiguousarray(C2, dtype=np.float64)
 
+    # Regolarizzazione entropica (Cuturi, 2013 "Sinkhorn Distances"):
+    # rende il problema differenziabile e risolvibile in tempo O(n² log n)
+    # anziché O(n³ log n). epsilon > 0 "sfoca" il piano di trasporto;
+    # valori piccoli (5e-3) mantengono alta la qualità dell'approssimazione.
+    # Loss quadratica ("square_loss"): penalizza distorsioni proporzionalmente
+    # al quadrato della differenza, amplificando le discrepanze strutturali.
     if use_sinkhorn and entropic_reg > 0:
         transport_plan, gw_log = ot.gromov.entropic_gromov_wasserstein(
             C1, C2, p, q,
@@ -122,15 +142,18 @@ def gromov_wasserstein_distance(
     GWResult
         GW distance, transport plan, and p-value.
     """
-    # Intra-space cost matrices
+    # Matrici di costo intra-spazio (distanza del coseno interna a ciascun modello)
     C1 = _cosine_distance_matrix(vectors_weird)
     C2 = _cosine_distance_matrix(vectors_sinic)
 
-    # Observed GW distance
+    # Distanza GW osservata
     gw_dist, transport_plan = _compute_gw(C1, C2, entropic_reg, use_sinkhorn)
     logger.info("GW distance (observed): %.6f", gw_dist)
 
-    # Permutation test: permute rows of one embedding matrix
+    # Test di permutazione per GW: si permutano righe/colonne della matrice
+    # di costo sinica (equivalente a rimescolare le associazioni concetto-embedding).
+    # La distribuzione nulla rappresenta distanze GW sotto l'ipotesi che
+    # non ci sia corrispondenza strutturale tra i due spazi.
     rng = np.random.RandomState(seed)
     null_dist = np.empty(n_permutations)
 
@@ -142,10 +165,9 @@ def gromov_wasserstein_distance(
         if (i + 1) % 500 == 0:
             logger.info("GW permutation %d/%d", i + 1, n_permutations)
 
-    # p-value: proportion of permuted distances <= observed
-    # (lower GW = more similar, so we test if observed is significantly LOW)
-    # But for divergence: higher GW = more different
-    # We test if observed is significantly different from null
+    # p-value: proporzione di distanze permutate <= osservata.
+    # Se la distanza osservata è significativamente *bassa* rispetto al nullo,
+    # i due spazi sono più simili di quanto atteso per caso.
     p_value = (np.sum(null_dist <= gw_dist) + 1) / (n_permutations + 1)
 
     logger.info(

@@ -412,16 +412,21 @@ def run_pipeline(config: Config, generate_html: bool = True) -> Path:
 
 
 def generate_visualization(config: Config) -> Path:
-    """Generate HTML visualization from results.json."""
+    """Generate interactive HTML visualization from results.json."""
+    from .visualization.generate_html import generate_html
+
     output_dir = config.get_absolute_path("output")
+    results_path = output_dir / config.output.results_file
     html_path = output_dir / config.output.visualization_file
 
-    template_path = Path(__file__).parent.parent / "output" / "visualization.html"
+    if not results_path.exists():
+        logger.warning("Results file not found: %s — skipping visualization", results_path)
+        return html_path
 
-    if template_path.exists():
-        import shutil
-        shutil.copy(template_path, html_path)
+    with open(results_path, "r", encoding="utf-8") as f:
+        results = json.load(f)
 
+    generate_html(results, html_path)
     logger.info("Visualization generated: %s", html_path)
     return html_path
 

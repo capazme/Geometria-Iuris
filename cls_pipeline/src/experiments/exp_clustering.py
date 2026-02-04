@@ -5,6 +5,22 @@ Generates independent dendrograms for WEIRD and Sinic spaces, compares
 taxonomy agreement using FM index across multiple k values with
 permutation tests for significance.
 """
+# ─── Clustering gerarchico come test di tassonomia ───────────────────
+# Domanda: i due modelli linguistici raggruppano i concetti giuridici
+# nella stessa tassonomia? Si costruiscono dendrogrammi indipendenti
+# per WEIRD e Sinic, si tagliano a vari k (numero di cluster), e si
+# confrontano le partizioni risultanti con l'indice di Fowlkes-Mallows.
+#
+# FM = sqrt(PPV × TPR): media geometrica di precision e recall sulle
+# coppie di elementi assegnati allo stesso cluster. FM=1 = partizioni
+# identiche; FM basso = tassonomie divergenti.
+#
+# Si usa multi-k (3, 5, 7, 10) per verificare la robustezza del
+# risultato: un singolo k potrebbe essere un artefatto della scelta
+# arbitraria della granularità.
+# Rif.: Fowlkes & Mallows (1983) "A Method for Comparing Two
+#        Hierarchical Clusterings", JASA, 78(383), 553-569.
+# ─────────────────────────────────────────────────────────────────────
 
 import logging
 from dataclasses import dataclass
@@ -61,6 +77,9 @@ class ClusteringExperimentResult:
     def to_dict(self) -> dict[str, Any]:
         return {
             "n_terms": len(self.labels),
+            "labels": self.labels,
+            "linkage_weird": self.clustering_weird.linkage_matrix.tolist(),
+            "linkage_sinic": self.clustering_sinic.linkage_matrix.tolist(),
             "fm_results": [r.to_dict() for r in self.fm_results],
         }
 
@@ -87,6 +106,10 @@ def hierarchical_clustering(
     ClusteringResult
         Linkage matrix and labels.
     """
+    # Metodo Ward: minimizza la varianza intra-cluster ad ogni passo di
+    # fusione. È il metodo più adatto quando si vogliono cluster compatti
+    # e di dimensione simile — proprietà desiderabile per tassonomie
+    # giuridiche dove i domini hanno dimensioni comparabili.
     Z = linkage(vectors, method=method)
     logger.info("Hierarchical clustering (%s): %d terms", method, len(labels))
     return ClusteringResult(linkage_matrix=Z, labels=labels)
@@ -94,6 +117,9 @@ def hierarchical_clustering(
 
 def _compute_fm(Z_weird, Z_sinic, k):
     """Compute FM index for a given k."""
+    # FM = sqrt(PPV × TPR) dove PPV e TPR sono calcolati sulle coppie:
+    # - PPV: delle coppie co-assegnate in WEIRD, quante lo sono anche in Sinic?
+    # - TPR: delle coppie co-assegnate in Sinic, quante lo sono anche in WEIRD?
     c_w = fcluster(Z_weird, k, criterion="maxclust")
     c_s = fcluster(Z_sinic, k, criterion="maxclust")
     return fowlkes_mallows_score(c_w, c_s)
@@ -149,12 +175,13 @@ def run_clustering_experiment(
     for k in k_values:
         fm_observed = _compute_fm(clust_w.linkage_matrix, clust_s.linkage_matrix, k)
 
-        # Permutation test: permute cluster assignments of one space
+        # Test di permutazione: si permutano le etichette cluster dello
+        # spazio sinico. Sotto l'ipotesi nulla, le assegnazioni cluster
+        # dei due spazi sono indipendenti (nessun accordo tassonomico).
         null_dist = np.empty(n_permutations)
         c_w = fcluster(clust_w.linkage_matrix, k, criterion="maxclust")
 
         for i in range(n_permutations):
-            # Permute the sinic clustering labels
             c_s_perm = rng.permutation(
                 fcluster(clust_s.linkage_matrix, k, criterion="maxclust")
             )
@@ -222,7 +249,7 @@ def plot_dendrograms(
     dendrogram(
         result.clustering_weird.linkage_matrix,
         labels=result.clustering_weird.labels,
-        leaf_rotation=90,
+        leaf_rotation=45,
         leaf_font_size=7,
         ax=ax1,
         color_threshold=0,
@@ -233,7 +260,7 @@ def plot_dendrograms(
     dendrogram(
         result.clustering_sinic.linkage_matrix,
         labels=result.clustering_sinic.labels,
-        leaf_rotation=90,
+        leaf_rotation=45,
         leaf_font_size=7,
         ax=ax2,
         color_threshold=0,
@@ -249,10 +276,10 @@ def plot_dendrograms(
         f"Hierarchical Clustering Comparison\n{fm_str}",
         fontsize=12, fontweight="bold",
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.92])
+    fig.tight_layout(rect=[0, 0.05, 1, 0.92])
 
     path = out / "clustering_dendrograms.png"
-    fig.savefig(path, dpi=dpi)
+    fig.savefig(path, dpi=dpi, bbox_inches="tight")
     plt.close(fig)
 
     logger.info("Dendrograms saved: %s", path)

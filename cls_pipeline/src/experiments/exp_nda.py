@@ -10,6 +10,27 @@ References
 ----------
 arXiv:2411.08687 (2024) for NNGS; Mikolov et al. (2013) for vector arithmetic.
 """
+# ─── NDA: dal vicinato semantico alle ipotesi giurisprudenziali ──────
+#
+# Part A — "Test dei falsi amici" (Neighborhood comparison):
+#   Per ogni concetto giuridico, si trovano i k vicini più prossimi
+#   nello spazio WEIRD e nello spazio Sinic. Se i vicinati coincidono
+#   (alta Jaccard), il concetto ha la stessa "compagnia semantica" nelle
+#   due tradizioni. Se divergono (bassa Jaccard), è un "falso amico":
+#   la stessa parola evoca associazioni diverse.
+#
+# Part B — "Esperimenti mentali computazionali" (Normative decompositions):
+#   Si applica l'aritmetica vettoriale di Mikolov (A - B → ?) per testare
+#   ipotesi giurisprudenziali specifiche. Es.: "Legge - Stato = ?"
+#   Nel mondo WEIRD ci si aspetta "Giustizia/Diritto naturale" (la legge
+#   può trascendere lo Stato); nel mondo Sinic ci si aspetta "Vuoto/
+#   Disordine" (la legge è strumento dello Stato, non ha senso senza).
+#
+# Rif.: Haemmerli et al. (2024) "Nearest Neighbor Gaussian Processes
+#        for Semantic Spaces", arXiv:2411.08687.
+# Rif.: Mikolov et al. (2013) "Linguistic Regularities in Continuous
+#        Space Word Representations", NAACL-HLT.
+# ─────────────────────────────────────────────────────────────────────
 
 import logging
 from dataclasses import dataclass
@@ -68,7 +89,13 @@ class NDAPartAResult:
                 for r in sorted_results[:10]
             ],
             "per_term": [
-                {"term": r.label, "jaccard": r.jaccard}
+                {
+                    "term": r.label,
+                    "jaccard": r.jaccard,
+                    "weird_neighbors": r.weird_neighbors,
+                    "sinic_neighbors": r.sinic_neighbors,
+                    "shared_neighbors": r.shared_neighbors,
+                }
                 for r in sorted_results
             ],
         }
@@ -154,7 +181,9 @@ def run_nda_part_a(
         neigh_w = [all_labels[j] for j in idx_w[0] if all_labels[j] != core_labels[i]][:k]
         neigh_s = [all_labels[j] for j in idx_s[0] if all_labels[j] != core_labels[i]][:k]
 
-        # Jaccard on concept labels
+        # Jaccard sulle etichette dei concetti vicini: misura la
+        # sovrapposizione tra vicinati. J = |W ∩ S| / |W ∪ S|.
+        # J=1: vicinati identici; J=0: nessun vicino in comune.
         set_w = set(neigh_w)
         set_s = set(neigh_s)
         intersection = set_w & set_s
@@ -172,7 +201,11 @@ def run_nda_part_a(
 
     mean_jaccard = np.mean([r.jaccard for r in term_results])
 
-    # Permutation test: permute concept-embedding assignments in one space
+    # Test di permutazione: si permutano le associazioni concetto↔embedding
+    # nello spazio sinico. Sotto H0, non c'è corrispondenza tra concetti
+    # nei due spazi, quindi la Jaccard media dovrebbe essere bassa.
+    # Se la Jaccard osservata è *significativamente più alta* del nullo,
+    # i vicinati sono più concordi di quanto atteso per caso.
     rng = np.random.RandomState(seed)
     null_dist = np.empty(n_permutations)
 
@@ -273,6 +306,12 @@ def _vector_subtract_knn(
     k: int = 10,
 ) -> list[tuple[str, float]]:
     """Compute residual = a - b, normalize, find k-NN."""
+    # Aritmetica vettoriale di Mikolov et al. (2013): il residuo A - B
+    # codifica "ciò che resta di A quando si rimuove la componente B".
+    # La normalizzazione L2 rende il residuo confrontabile con gli
+    # embedding del corpus (che sono anch'essi normalizzati).
+    # I k vicini del residuo indicano quali concetti catturano
+    # la differenza semantica tra A e B.
     residual = vec_a - vec_b
     norm = np.linalg.norm(residual)
     if norm > 0:
@@ -324,17 +363,21 @@ def run_nda_part_b(
     for decomp in normative_decompositions:
         logger.info("Decomposition: %s - %s", decomp["id"], decomp["jurisprudential_question"])
 
-        # Embed operands
+        # Ogni operando è embeddato nella lingua *nativa* del modello:
+        # inglese per WEIRD, cinese per Sinic. Questo evita che la
+        # decomposizione sia influenzata dalla qualità della traduzione.
         emb_a_w = embed_fn_weird([decomp["en_a"]])[0]
         emb_b_w = embed_fn_weird([decomp["en_b"]])[0]
         emb_a_s = embed_fn_sinic([decomp["zh_a"]])[0]
         emb_b_s = embed_fn_sinic([decomp["zh_b"]])[0]
 
-        # k-NN of residual in each space
+        # k-NN del residuo in ciascuno spazio: i vicini rivelano
+        # quale "contenuto semantico" il modello attribuisce alla differenza.
         weird_nn = _vector_subtract_knn(emb_a_w, emb_b_w, corpus_weird, corpus_labels, k)
         sinic_nn = _vector_subtract_knn(emb_a_s, emb_b_s, corpus_sinic, corpus_labels, k)
 
-        # Jaccard between neighbor sets
+        # Jaccard cross-spazio: quanto i due modelli concordano sul
+        # significato della decomposizione giurisprudenziale?
         set_w = {label for label, _ in weird_nn}
         set_s = {label for label, _ in sinic_nn}
         union = set_w | set_s

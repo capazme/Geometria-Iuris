@@ -8,6 +8,7 @@ Usage:
     .venv/bin/python run_single_experiment.py 3             # Axiological Axes
     .venv/bin/python run_single_experiment.py 4             # Clustering
     .venv/bin/python run_single_experiment.py 5             # NDA
+    .venv/bin/python run_single_experiment.py html          # Generate HTML visualization
 """
 
 import json
@@ -327,12 +328,45 @@ def run_exp5(config, data, client, emb):
     return nda_result
 
 
+def run_html(config, data, client, emb):
+    """Generate HTML visualization from existing results.json."""
+    from src.visualization.generate_html import generate_html
+
+    print("\n" + "=" * 60)
+    print("  GENERATING HTML VISUALIZATION")
+    print("=" * 60)
+
+    output_dir = config.get_absolute_path("output")
+    results_path = output_dir / config.output.results_file
+    html_path = output_dir / config.output.visualization_file
+
+    if not results_path.exists():
+        print(f"  ERROR: Results file not found: {results_path}")
+        print("  Run the full pipeline first: python -m src.cli run")
+        return None
+
+    with open(results_path, "r", encoding="utf-8") as f:
+        results = json.load(f)
+
+    generate_html(results, html_path)
+    print(f"\n  HTML visualization saved to: {html_path}")
+    return html_path
+
+
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python run_single_experiment.py <embeddings|1|2|3|4|5>")
+        print("Usage: python run_single_experiment.py <embeddings|1|2|3|4|5|html>")
         return 1
 
     cmd = sys.argv[1]
+
+    # HTML generation doesn't need embeddings
+    if cmd == "html":
+        config = load_config()
+        logging.basicConfig(level=logging.INFO, format="%(message)s")
+        run_html(config, None, None, None)
+        return 0
+
     config, data, client = setup()
     emb = load_embeddings(data, client)
 

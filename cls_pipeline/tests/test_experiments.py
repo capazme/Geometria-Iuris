@@ -181,6 +181,11 @@ class TestExpRSA:
         assert "p_value" in d
         assert "n_pairs" in d
         assert "interpretation" in d
+        assert "labels" in d
+        assert "rdm_weird" in d
+        assert "rdm_sinic" in d
+        assert len(d["rdm_weird"]) == 15
+        assert len(d["rdm_sinic"]) == 15
 
     def test_rsa_identical_spaces(self):
         """Identical spaces should have r close to 1."""
@@ -245,6 +250,7 @@ class TestExpGW:
         assert "distance" in d
         assert "p_value" in d
         assert "interpretation" in d
+        assert "transport_plan" in d
         assert d["interpretation"] in ("high_anisomorphism", "relative_isomorphism")
 
 
@@ -405,6 +411,9 @@ class TestExpClustering:
 
         assert "n_terms" in d
         assert "fm_results" in d
+        assert "labels" in d
+        assert "linkage_weird" in d
+        assert "linkage_sinic" in d
         assert len(d["fm_results"]) == 1
 
     def test_clustering_k_filter(self, synthetic_embeddings):
@@ -521,6 +530,11 @@ class TestExpNDA:
         assert "p_value" in d
         assert "false_friends" in d
         assert "per_term" in d
+        # Verify per_term includes full neighbor lists
+        for item in d["per_term"]:
+            assert "weird_neighbors" in item
+            assert "sinic_neighbors" in item
+            assert "shared_neighbors" in item
 
     def test_nda_part_b_to_dict(self, large_corpus):
         from src.experiments.exp_nda import run_nda_part_b

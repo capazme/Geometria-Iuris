@@ -9,6 +9,22 @@ References
 ----------
 Kozlowski, Taddy & Evans (2019), American Sociological Review.
 """
+# ─── Geometria culturale di Kozlowski ────────────────────────────────
+# L'intuizione: una dimensione culturale (es. individuo↔collettivo) è
+# codificata nello spazio embedding come *direzione*. Per recuperarla,
+# si usano coppie multiple di antonimi (non una sola coppia) e se ne
+# media la differenza vettoriale. Questo riduce il rumore idiosincratico
+# di ciascuna coppia e isola la componente semantica condivisa.
+#
+# Ciascun modello costruisce il *proprio* asse dal *proprio* vocabolario:
+# l'asse WEIRD usa coppie inglesi, l'asse Sinic usa coppie cinesi.
+# Questo evita il bias da traduzione: non imponiamo che "freedom" e "自由"
+# definiscano la stessa direzione.
+#
+# Rif.: Kozlowski, Taddy & Evans (2019) "The Geometry of Culture:
+#        Analyzing the Meanings of Class through Word Embeddings",
+#        American Sociological Review, 84(5), 905-949.
+# ─────────────────────────────────────────────────────────────────────
 
 import logging
 from dataclasses import dataclass
@@ -93,6 +109,11 @@ def build_kozlowski_axis(pair_embeddings: list[tuple[np.ndarray, np.ndarray]]) -
     np.ndarray
         L2-normalized axis vector.
     """
+    # Media delle differenze: ciascuna coppia (positivo, negativo) contribuisce
+    # con un vettore direzione. Mediando su k coppie, si cancella il rumore
+    # specifico di ogni singola coppia. La normalizzazione L2 rende l'asse
+    # un vettore unitario, così la proiezione successiva (cosine similarity)
+    # è interpretabile direttamente come score in [-1, 1].
     diffs = [a - b for a, b in pair_embeddings]
     axis = np.mean(diffs, axis=0)
     norm = np.linalg.norm(axis)
@@ -123,6 +144,9 @@ def project_on_axis(
     dict[str, float]
         Label -> score mapping, scores in [-1, 1].
     """
+    # Cosine similarity come proiezione direzionale: cos(v, asse) misura
+    # quanto il vettore del termine è allineato con la dimensione culturale.
+    # Score positivo = polo "positivo" dell'asse, negativo = polo "negativo".
     scores = {}
     for label, vec in zip(labels, vectors):
         sim = 1.0 - cosine_dist(vec, axis)
@@ -175,7 +199,8 @@ def run_axes_experiment(
         en_pairs = axis_def["en_pairs"]
         zh_pairs = axis_def["zh_pairs"]
 
-        # Embed antonym pairs for WEIRD model
+        # Ciascun modello costruisce il proprio asse indipendentemente:
+        # WEIRD usa coppie inglesi, Sinic usa coppie cinesi.
         en_pos_texts = [p[0] for p in en_pairs]
         en_neg_texts = [p[1] for p in en_pairs]
         en_pos_emb = embed_fn_weird(en_pos_texts)
@@ -202,7 +227,8 @@ def run_axes_experiment(
         s_vals = np.array([sinic_scores[l] for l in labels])
         rho, p_val = spearmanr(w_vals, s_vals)
 
-        # Bootstrap CI for the Spearman correlation
+        # Bootstrap CI per la correlazione di Spearman: ricampionando i
+        # termini con rimpiazzo, si stima la variabilità della correlazione.
         paired_scores = np.column_stack([w_vals, s_vals])
 
         def spearman_stat(data):
