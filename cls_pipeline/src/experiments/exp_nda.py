@@ -33,6 +33,7 @@ arXiv:2411.08687 (2024) for NNGS; Mikolov et al. (2013) for vector arithmetic.
 # ─────────────────────────────────────────────────────────────────────
 
 import logging
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -40,6 +41,7 @@ from typing import Any
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from joblib import Parallel, delayed
 from sklearn.neighbors import NearestNeighbors
 
 from .statistical import PermutationResult
@@ -206,11 +208,21 @@ def run_nda_part_a(
     # nei due spazi, quindi la Jaccard media dovrebbe essere bassa.
     # Se la Jaccard osservata è *significativamente più alta* del nullo,
     # i vicinati sono più concordi di quanto atteso per caso.
-    rng = np.random.RandomState(seed)
-    null_dist = np.empty(n_permutations)
+    #
+    # Parallelizzazione con joblib: ogni permutazione è indipendente,
+    # quindi possiamo distribuire su tutti i core disponibili.
 
-    for p in range(n_permutations):
-        perm = rng.permutation(len(all_labels))
+    # Pre-calcola i vicinati WEIRD (sono fissi, non cambiano con le permutazioni)
+    weird_neighbors_idx = []
+    for i in range(n_core):
+        _, idx_w = nn_weird.kneighbors(emb_weird_core[i].reshape(1, -1))
+        neigh_w = [all_labels[j] for j in idx_w[0] if all_labels[j] != core_labels[i]][:k]
+        weird_neighbors_idx.append(set(neigh_w))
+
+    def _single_permutation(perm_seed: int) -> float:
+        """Esegue una singola permutazione e ritorna la Jaccard media."""
+        rng_local = np.random.RandomState(perm_seed)
+        perm = rng_local.permutation(len(all_labels))
         emb_sinic_perm = emb_sinic_all[perm]
 
         nn_perm = NearestNeighbors(n_neighbors=k + 1, metric="cosine")
@@ -218,21 +230,29 @@ def run_nda_part_a(
 
         jaccards_perm = []
         for i in range(n_core):
-            _, idx_w = nn_weird.kneighbors(emb_weird_core[i].reshape(1, -1))
             _, idx_s = nn_perm.kneighbors(emb_sinic_core[i].reshape(1, -1))
-
-            neigh_w = [all_labels[j] for j in idx_w[0] if all_labels[j] != core_labels[i]][:k]
             neigh_s = [all_labels[j] for j in idx_s[0] if all_labels[j] != core_labels[i]][:k]
 
-            set_w = set(neigh_w)
+            set_w = weird_neighbors_idx[i]
             set_s = set(neigh_s)
             union = set_w | set_s
             jaccards_perm.append(len(set_w & set_s) / len(union) if union else 0.0)
 
-        null_dist[p] = np.mean(jaccards_perm)
+        return np.mean(jaccards_perm)
 
-        if (p + 1) % 500 == 0:
-            logger.info("NDA Part A permutation %d/%d", p + 1, n_permutations)
+    # Genera seed deterministici per ogni permutazione
+    rng = np.random.RandomState(seed)
+    perm_seeds = rng.randint(0, 2**31, size=n_permutations)
+
+    # Parallelizza su tutti i core disponibili
+    n_jobs = os.cpu_count() or 4
+    logger.info("NDA Part A: running %d permutations on %d cores...", n_permutations, n_jobs)
+
+    null_dist = np.array(
+        Parallel(n_jobs=n_jobs, verbose=10)(
+            delayed(_single_permutation)(s) for s in perm_seeds
+        )
+    )
 
     p_value = (np.sum(null_dist >= mean_jaccard) + 1) / (n_permutations + 1)
 

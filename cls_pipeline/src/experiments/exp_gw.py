@@ -21,11 +21,13 @@ Alvarez-Melis & Jaakkola (2018), EMNLP.
 # ─────────────────────────────────────────────────────────────────────
 
 import logging
+import os
 from dataclasses import dataclass
 from typing import Any
 
 import numpy as np
 import ot
+from joblib import Parallel, delayed
 from sklearn.metrics.pairwise import cosine_similarity
 
 from .statistical import PermutationResult
@@ -53,10 +55,7 @@ class GWResult:
                 "max": float(self.transport_plan.max()),
                 "mean": float(self.transport_plan.mean()),
             },
-            "interpretation": (
-                "high_anisomorphism" if self.distance > 0.1
-                else "relative_isomorphism"
-            ),
+            "significant": bool(self.p_value < 0.05),
         }
 
 
@@ -154,16 +153,30 @@ def gromov_wasserstein_distance(
     # di costo sinica (equivalente a rimescolare le associazioni concetto-embedding).
     # La distribuzione nulla rappresenta distanze GW sotto l'ipotesi che
     # non ci sia corrispondenza strutturale tra i due spazi.
-    rng = np.random.RandomState(seed)
-    null_dist = np.empty(n_permutations)
+    #
+    # Parallelizzazione con joblib: ogni permutazione è indipendente e GW
+    # è computazionalmente pesante, quindi il parallelismo dà un grande speedup.
 
-    for i in range(n_permutations):
-        perm = rng.permutation(vectors_sinic.shape[0])
+    def _single_permutation(perm_seed: int) -> float:
+        """Esegue una singola permutazione GW."""
+        rng_local = np.random.RandomState(perm_seed)
+        perm = rng_local.permutation(vectors_sinic.shape[0])
         C2_perm = C2[np.ix_(perm, perm)]
-        null_dist[i], _ = _compute_gw(C1, C2_perm, entropic_reg, use_sinkhorn)
+        dist, _ = _compute_gw(C1, C2_perm, entropic_reg, use_sinkhorn)
+        return dist
 
-        if (i + 1) % 500 == 0:
-            logger.info("GW permutation %d/%d", i + 1, n_permutations)
+    # Genera seed deterministici per ogni permutazione
+    rng = np.random.RandomState(seed)
+    perm_seeds = rng.randint(0, 2**31, size=n_permutations)
+
+    n_jobs = os.cpu_count() or 4
+    logger.info("GW: running %d permutations on %d cores...", n_permutations, n_jobs)
+
+    null_dist = np.array(
+        Parallel(n_jobs=n_jobs, verbose=10)(
+            delayed(_single_permutation)(s) for s in perm_seeds
+        )
+    )
 
     # p-value: proporzione di distanze permutate <= osservata.
     # Se la distanza osservata è significativamente *bassa* rispetto al nullo,

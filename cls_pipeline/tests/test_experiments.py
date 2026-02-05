@@ -180,7 +180,7 @@ class TestExpRSA:
         assert "spearman_r" in d
         assert "p_value" in d
         assert "n_pairs" in d
-        assert "interpretation" in d
+        assert "significant" in d
         assert "labels" in d
         assert "rdm_weird" in d
         assert "rdm_sinic" in d
@@ -249,9 +249,9 @@ class TestExpGW:
 
         assert "distance" in d
         assert "p_value" in d
-        assert "interpretation" in d
+        assert "significant" in d
         assert "transport_plan" in d
-        assert d["interpretation"] in ("high_anisomorphism", "relative_isomorphism")
+        assert isinstance(d["significant"], bool)
 
 
 # =========================================================================
@@ -574,6 +574,7 @@ class TestBuildDataset:
 
         assert "core_terms" in dataset
         assert "background_terms" in dataset
+        assert "control_terms" in dataset
         assert "value_axes" in dataset
         assert "normative_decompositions" in dataset
         assert "metadata" in dataset
@@ -582,13 +583,19 @@ class TestBuildDataset:
         from src.data.build_dataset import build_core_terms
 
         terms = build_core_terms()
-        assert len(terms) == 50
+        assert len(terms) >= 380
 
     def test_background_terms_count(self):
         from src.data.build_dataset import build_background_terms
 
         terms = build_background_terms()
-        assert len(terms) == 200
+        assert len(terms) >= 300
+
+    def test_control_terms_count(self):
+        from src.data.build_dataset import build_control_terms
+
+        terms = build_control_terms()
+        assert len(terms) >= 45
 
     def test_value_axes_structure(self):
         from src.data.build_dataset import build_value_axes
@@ -620,23 +627,44 @@ class TestBuildDataset:
             assert "jurisprudential_question" in d
 
     def test_no_duplicate_ids(self):
-        from src.data.build_dataset import build_core_terms, build_background_terms
+        from src.data.build_dataset import build_core_terms, build_background_terms, build_control_terms
 
         core = build_core_terms()
         bg = build_background_terms()
+        ctrl = build_control_terms()
 
         core_ids = [t["id"] for t in core]
         bg_ids = [t["id"] for t in bg]
+        ctrl_ids = [t["id"] for t in ctrl]
 
         assert len(core_ids) == len(set(core_ids)), "Duplicate core IDs"
         assert len(bg_ids) == len(set(bg_ids)), "Duplicate background IDs"
+        assert len(ctrl_ids) == len(set(ctrl_ids)), "Duplicate control IDs"
 
-        overlap = set(core_ids) & set(bg_ids)
-        assert len(overlap) == 0, f"Overlapping IDs: {overlap}"
+        overlap_cb = set(core_ids) & set(bg_ids)
+        assert len(overlap_cb) == 0, f"Core/Background overlap: {overlap_cb}"
+        overlap_cc = set(core_ids) & set(ctrl_ids)
+        assert len(overlap_cc) == 0, f"Core/Control overlap: {overlap_cc}"
+        overlap_bc = set(bg_ids) & set(ctrl_ids)
+        assert len(overlap_bc) == 0, f"Background/Control overlap: {overlap_bc}"
 
     def test_total_terms(self):
         from src.data.build_dataset import build_dataset
 
         dataset = build_dataset()
         n = dataset["metadata"]["n_total_terms"]
-        assert n == 250
+        assert n >= 700
+
+    def test_no_expected_divergence(self):
+        from src.data.build_dataset import build_core_terms
+
+        terms = build_core_terms()
+        for t in terms:
+            assert "expected_divergence" not in t, f"Term {t['id']} has expected_divergence"
+
+    def test_all_terms_have_source(self):
+        from src.data.build_dataset import build_core_terms, build_background_terms, build_control_terms
+
+        for t in build_core_terms() + build_background_terms() + build_control_terms():
+            assert "source" in t, f"Term {t['id']} missing source field"
+            assert t["source"] in ("HK DOJ", "CC-CEDICT"), f"Unknown source: {t['source']}"

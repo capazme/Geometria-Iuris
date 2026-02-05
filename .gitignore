@@ -33,3 +33,10 @@ models/
 *.pdf
 *.docx
 *.doc
+*.png
+.DS_Store
+runs/
+_*
+.*
+bmad*
+.agent/*

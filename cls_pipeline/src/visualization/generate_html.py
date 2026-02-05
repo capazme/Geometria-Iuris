@@ -733,7 +733,8 @@ def generate_html(results: dict, output_path: Path) -> Path:
 
 def _build_overview(rsa, gw, axes, clust, nda_a, nda_b, metadata):
     """Build the overview dashboard tab."""
-    n_terms = metadata.get("n_terms", "?")
+    # n_terms: preferisce il dato dagli esperimenti (sempre presente) al metadata
+    n_terms = rsa.get("n_terms") or nda_a.get("n_core_terms") or metadata.get("n_terms", "?")
 
     rsa_r = rsa.get("spearman_r", 0)
     rsa_p = rsa.get("p_value", 1)
@@ -764,75 +765,82 @@ def _build_overview(rsa, gw, axes, clust, nda_a, nda_b, metadata):
             f'</div>'
         )
 
+    # Parametri tecnici
+    rsa_n_perm = rsa.get("n_permutations", "?")
+    gw_n_perm = gw.get("n_permutations", "?")
+    nda_k = nda_a.get("k", "?")
+    nda_n_perm = nda_a.get("n_permutations", "?")
+    nda_n_core = nda_a.get("n_core_terms", "?")
+
     return f"""
     <div class="card">
     <h3>Dashboard — Risultati Principali</h3>
     <div class="guide">
-        <span class="guide-title">Come leggere questa pagina</span>
-        Ogni riquadro qui sotto riassume un esperimento. I numeri indicano il grado
-        di somiglianza (o divergenza) tra il modo in cui un modello linguistico
-        <strong>occidentale</strong> (WEIRD) e uno <strong>sinico</strong> organizzano
-        i medesimi {n_terms} concetti giuridici. Sotto ciascun numero compare il
-        <em>p-value</em>: se p &lt; 0.05, la differenza osservata non è spiegabile
-        con il solo caso (è statisticamente significativa).
+        <span class="guide-title">Parametri dell'analisi</span>
+        <strong>N</strong> = {n_terms} concetti giuridici
+        (di cui {nda_n_core} core, il resto background per il calcolo dei vicinati).
+        Seed: 42. Tutti i test di significatività usano permutazioni (non parametrici).
+        Sotto ogni metrica è riportato il <em>p-value</em>: se p &lt; 0.05, il valore
+        osservato è statisticamente distinguibile da quello atteso sotto l'ipotesi nulla
+        del rispettivo test.
     </div>
     <div class="metrics">
         <div class="metric-box">
             <div class="value">{rsa_r:.4f}</div>
             <div class="label">RSA Spearman r</div>
-            <div class="sub">{_sig_label(rsa_p)}</div>
+            <div class="sub">{_sig_label(rsa_p)} | B={rsa_n_perm:,}</div>
         </div>
         <div class="metric-box">
             <div class="value">{gw_d:.4f}</div>
             <div class="label">Distanza GW</div>
-            <div class="sub">{_sig_label(gw_p)}</div>
+            <div class="sub">{_sig_label(gw_p)} | B={gw_n_perm:,}</div>
         </div>
         <div class="metric-box">
             <div class="value">{nda_j:.4f}</div>
-            <div class="label">Jaccard Media (NDA)</div>
-            <div class="sub">{_sig_label(nda_p)}</div>
+            <div class="label">Jaccard Media (k={nda_k})</div>
+            <div class="sub">{_sig_label(nda_p)} | B={nda_n_perm:,}</div>
         </div>
         {axes_summary}
         {fm_summary}
     </div>
     <div class="guide">
-        <span class="guide-title">Chiave di lettura rapida</span>
+        <span class="guide-title">Definizione delle metriche</span>
         <ul>
-            <li><strong>RSA (Spearman r)</strong> — Va da -1 a +1. Valori vicini a +1 significano
-                che i due modelli percepiscono le <em>stesse</em> coppie di concetti come
-                vicine o lontane: le geometrie interne si somigliano. Valori bassi indicano
-                che le strutture semantiche divergono.</li>
-            <li><strong>Distanza GW</strong> — Quanto "lavoro" serve per deformare una struttura
-                nell'altra. Valori prossimi a 0 = strutture quasi identiche. Valori alti =
-                le relazioni tra concetti sono organizzate in modo diverso.</li>
-            <li><strong>Jaccard Media (NDA)</strong> — Va da 0 a 1. Misura quanti "vicini
-                semantici" ha in comune ciascun concetto nei due modelli. 1 = stessi vicini,
-                0 = vicini completamente diversi.</li>
-            <li><strong>Assi valoriali</strong> — Correlazione nell'ordine di rango quando
-                i concetti sono proiettati su dimensioni culturali (es. individuale↔collettivo).</li>
-            <li><strong>FM (Fowlkes-Mallows)</strong> — Quanto i raggruppamenti tassonomici
-                coincidono tra i due modelli. FM = 1 = stesse categorie; FM = 0 = categorie
-                completamente diverse. k indica il numero di gruppi.</li>
+            <li><strong>RSA (Spearman r)</strong> — Correlazione di rango tra i triangoli
+                superiori delle RDM (matrici di dissimilarità coseno) dei due spazi.
+                Range: [&minus;1, +1]. Test: Mantel (permutazione righe/colonne della RDM).</li>
+            <li><strong>Distanza GW</strong> — Distanza di Gromov-Wasserstein entropica
+                tra le matrici di costo intrazionali. Misura la distorsione minima
+                nel trasporto ottimale tra le due strutture metriche.
+                Range: [0, +&infin;). Test: permutazione delle associazioni concetto-embedding.</li>
+            <li><strong>Jaccard Media (NDA)</strong> — Media dell'indice di Jaccard calcolato
+                sui k-NN di ciascun termine core nei due spazi.
+                Range: [0, 1]. Test: permutazione delle assegnazioni concetto-embedding.</li>
+            <li><strong>Assi valoriali (Spearman &rho;)</strong> — Correlazione di rango
+                tra gli score di proiezione coseno dei termini su assi costruiti
+                indipendentemente nei due spazi (metodo Kozlowski). CI 95% via bootstrap.</li>
+            <li><strong>FM (Fowlkes-Mallows)</strong> — Media geometrica di PPV e TPR
+                sulle coppie co-assegnate a cluster ottenuti da dendrogrammi indipendenti.
+                Range: [0, 1]. k = numero di cluster. Test: permutazione delle etichette cluster.</li>
         </ul>
     </div>
     </div>
 
     <div class="card">
-    <h3>Sintesi Narrativa</h3>
-    <p>L'analisi confronta le strutture semantiche di {n_terms} concetti giuridici
-       attraverso 5 esperimenti complementari, ciascuno con una prospettiva diversa
-       sulla divergenza WEIRD/Sinic:</p>
+    <h3>Struttura dell'analisi</h3>
+    <p>L'analisi applica 5 esperimenti indipendenti a {n_terms} concetti giuridici,
+       ciascuno con una metrica e un'ipotesi nulla distinta:</p>
     <ul style="padding-left:20px;margin-top:8px;">
-        <li><strong>RSA</strong> (r={rsa_r:.3f}): correlazione tra le geometrie interne dei due spazi —
-            verifica se le "distanze concettuali" sono preservate tra le due tradizioni.</li>
-        <li><strong>GW</strong> (d={gw_d:.4f}): distanza strutturale via trasporto ottimale —
-            quantifica lo sforzo necessario per trasformare una struttura nell'altra.</li>
-        <li><strong>Assi valoriali</strong>: proiezione su dimensioni culturali (metodo Kozlowski) —
-            ciascun concetto riceve un punteggio lungo assi come individuale↔collettivo.</li>
-        <li><strong>Clustering</strong>: confronto tassonomico — i due modelli raggruppano i concetti
-            nelle stesse famiglie?</li>
-        <li><strong>NDA</strong> (J={nda_j:.3f}): analisi dei vicinati semantici e
-            decomposizioni normative — quali concetti gravitano intorno a ciascun termine?</li>
+        <li><strong>Esp. 1 — RSA</strong>: confronta le matrici di dissimilarità (RDM)
+            dei due spazi tramite correlazione di rango (Spearman) e test di Mantel.</li>
+        <li><strong>Esp. 2 — Gromov-Wasserstein</strong>: misura la distanza strutturale
+            tra gli spazi via trasporto ottimale entropico.</li>
+        <li><strong>Esp. 3 — Assi Valoriali</strong>: proietta i termini su assi semantici
+            (Kozlowski) costruiti indipendentemente in ciascun modello.</li>
+        <li><strong>Esp. 4 — Clustering</strong>: genera dendrogrammi indipendenti (Ward)
+            e confronta le partizioni a diversi k con l'indice FM.</li>
+        <li><strong>Esp. 5 — NDA</strong>: (A) confronta i vicinati k-NN dei termini core;
+            (B) applica aritmetica vettoriale a decomposizioni normative.</li>
     </ul>
     </div>
     """
@@ -848,32 +856,24 @@ def _build_rsa_tab(rsa, plots):
 
     rsa_r = rsa.get('spearman_r', 0)
     rsa_p = rsa.get('p_value', 1)
-
-    # Interpretazione dinamica
-    if abs(rsa_r) > 0.7:
-        rsa_interp = "Le due tradizioni organizzano le relazioni tra concetti giuridici in modo molto simile: le coppie di concetti percepite come vicine in una tradizione lo sono anche nell'altra."
-    elif abs(rsa_r) > 0.4:
-        rsa_interp = "Le geometrie concettuali mostrano una somiglianza moderata: alcune relazioni sono condivise, ma altre divergono significativamente tra le due tradizioni."
-    elif abs(rsa_r) > 0.2:
-        rsa_interp = "La somiglianza strutturale è debole: i due sistemi organizzano le relazioni tra concetti giuridici in modo sostanzialmente diverso."
-    else:
-        rsa_interp = "Le strutture concettuali sono quasi indipendenti: non c'è evidenza che le due tradizioni percepiscano le stesse relazioni tra concetti."
+    rsa_n_perm = rsa.get('n_permutations', '?')
 
     return f"""
     <div class="card">
     <h3>Esperimento 1: Representational Similarity Analysis (RSA)</h3>
     <div class="guide">
-        <span class="guide-title">Cosa misura questo esperimento</span>
-        Immaginiamo di prendere tutti i {rsa.get('n_terms', '?')} concetti giuridici e di misurare
-        quanto ciascuna coppia è "distante" secondo un modello linguistico. Ad esempio:
-        <em>"diritto"</em> e <em>"dovere"</em> sono vicini? <em>"libertà"</em> e <em>"tortura"</em>
-        sono lontani? Questa operazione produce una <strong>matrice di dissimilarità</strong> (RDM):
-        una tabella in cui ogni cella indica la distanza semantica tra due concetti.
+        <span class="guide-title">Metodo</span>
+        Per ciascun modello si costruisce una <strong>matrice di dissimilarità</strong> (RDM):
+        una matrice {rsa.get('n_terms', '?')}&times;{rsa.get('n_terms', '?')} simmetrica in cui ogni
+        cella (<var>i</var>,<var>j</var>) contiene la distanza coseno tra gli embedding dei
+        concetti <var>i</var> e <var>j</var>. Si ottengono così due RDM: una per lo spazio WEIRD,
+        una per lo spazio Sinic. Si estraggono i triangoli superiori (escludendo la diagonale,
+        sempre zero) e si calcola la correlazione di Spearman (rango) tra i due vettori risultanti.
         <br><br>
-        L'RSA confronta le due matrici — quella del modello WEIRD e quella del modello Sinic —
-        e chiede: <em>l'ordine delle distanze è lo stesso?</em> Se "diritto" e "dovere" sono
-        vicini per entrambi i modelli, e "libertà" e "tortura" sono lontani per entrambi,
-        allora le strutture si somigliano.
+        La significatività è valutata con il <strong>test di Mantel</strong>: si permutano
+        simultaneamente righe e colonne di una delle due RDM (preservandone la simmetria) e si
+        ricalcola la correlazione. Il p-value corrisponde alla proporzione di correlazioni
+        permutate &ge; a quella osservata, con correzione +1 di Phipson &amp; Smyth.
         <span class="formula">
             <var>d</var>(<var>a</var>, <var>b</var>) = 1 &minus;
             <span class="fn">cos</span>(<var>a</var>, <var>b</var>) = 1 &minus;
@@ -894,18 +894,28 @@ def _build_rsa_tab(rsa, plots):
         </div>
         <div class="metric-box">
             <div class="value">{_sig_label(rsa_p)}</div>
-            <div class="label">Test di Mantel</div>
+            <div class="label">Test di Mantel (B={rsa_n_perm:,})</div>
         </div>
         <div class="metric-box">
             <div class="value">{rsa.get('n_pairs', 0):,}</div>
-            <div class="label">Coppie confrontate</div>
+            <div class="label">Coppie (triangolo superiore)</div>
+        </div>
+        <div class="metric-box">
+            <div class="value">{rsa.get('n_terms', '?')}</div>
+            <div class="label">N termini</div>
         </div>
     </div>
     <div class="guide">
-        <span class="guide-title">Interpretazione</span>
-        {rsa_interp}
-        Il <em>p-value</em> del test di Mantel ({_sig_label(rsa_p)}) indica se questa
-        correlazione è statisticamente significativa o potrebbe essere dovuta al caso.
+        <span class="guide-title">Cosa rappresentano i numeri</span>
+        <strong>Spearman r</strong> misura la concordanza nell'<em>ordine di rango</em> delle
+        distanze coseno: r = +1 se le due RDM producono lo stesso ordinamento di tutte le
+        coppie; r = 0 se gli ordinamenti sono indipendenti; r = &minus;1 se sono invertiti.
+        Il <strong>p-value</strong> del test di Mantel indica la probabilità di osservare un
+        r &ge; {rsa_r:.4f} sotto l'ipotesi nulla di indipendenza tra le due RDM
+        ({rsa_n_perm:,} permutazioni).
+        Le {rsa.get('n_pairs', 0):,} coppie non sono indipendenti (derivano da {rsa.get('n_terms', '?')}
+        punti): il test di Mantel tiene conto di questa dipendenza strutturale permutando
+        a livello di punti, non di coppie.
     </div>
     </div>
 
@@ -914,23 +924,16 @@ def _build_rsa_tab(rsa, plots):
     <div class="guide">
         <span class="guide-title">Come leggere questa figura</span>
         Ogni heatmap è una matrice quadrata: righe e colonne rappresentano gli stessi concetti.
-        Il <strong>colore</strong> di ogni cella indica la distanza semantica tra i due concetti
-        corrispondenti: <em>colori scuri</em> (viola/nero) = concetti molto distanti;
-        <em>colori chiari</em> (giallo/verde) = concetti vicini.
-        La diagonale è sempre chiara (ogni concetto è identico a sé stesso).
-        <br><br>
-        Se le due heatmap mostrano <strong>pattern simili</strong> (stesse zone chiare e scure),
-        significa che i due modelli organizzano i concetti allo stesso modo.
-        Differenze nei pattern rivelano dove le due tradizioni divergono.
+        Il <strong>colore</strong> di ogni cella indica la distanza coseno tra i due concetti
+        corrispondenti: <em>colori chiari</em> (giallo/verde) = distanza bassa;
+        <em>colori scuri</em> (viola/nero) = distanza alta.
+        La diagonale è sempre al minimo (distanza di un concetto con sé stesso = 0).
         <br><br>
         <strong>Nota sulle scale</strong>: le due heatmap usano scale di colore
         <em>indipendenti</em> (il range numerico è indicato nel titolo di ciascuna).
-        Questo è necessario perché i due modelli producono distanze in range molto diversi:
-        il modello WEIRD tende a produrre distanze coseno più basse (i concetti giuridici
-        sono più "compressi" nello spazio), mentre il modello Sinic li distribuisce su un
-        range più ampio. Lo scaling indipendente permette di leggere la struttura interna
-        di entrambe le matrici; il confronto quantitativo tra le due è affidato
-        al coefficiente Spearman r riportato sopra.
+        I due modelli producono distanze coseno in range diversi; lo scaling indipendente
+        permette di visualizzare la struttura <em>interna</em> di ciascuna matrice.
+        Il confronto quantitativo tra le due è affidato al coefficiente Spearman r (ordinale).
     </div>
     {heatmap_img}
     </div>
@@ -940,13 +943,10 @@ def _build_rsa_tab(rsa, plots):
     <div class="guide">
         <span class="guide-title">Come leggere questa figura</span>
         Ogni punto rappresenta una <strong>coppia di concetti</strong>. L'asse orizzontale
-        mostra la distanza tra quei due concetti nel modello WEIRD; l'asse verticale la distanza
-        nel modello Sinic. Se i punti si distribuiscono lungo la
-        <em>linea diagonale tratteggiata</em>, le distanze coincidono nei due modelli.
-        <br><br>
-        Punti lontani dalla diagonale indicano coppie di concetti per cui i due modelli
-        sono in disaccordo: ad esempio, due concetti percepiti come vicini dal modello
-        occidentale ma lontani da quello sinico, o viceversa.
+        mostra la distanza coseno nel modello WEIRD; l'asse verticale la distanza nel modello
+        Sinic. La <em>linea diagonale tratteggiata</em> indica la retta d'identità. Punti
+        allineati lungo la diagonale corrispondono a coppie con distanze simili nei due spazi;
+        punti lontani dalla diagonale corrispondono a coppie su cui i due modelli divergono.
     </div>
     {scatter_img}
     </div>
@@ -958,38 +958,42 @@ def _build_gw_tab(gw, plots):
     if "gw_transport" in plots:
         transport_img = f'<img class="plot-img" src="data:image/png;base64,{plots["gw_transport"]}" alt="GW Transport">'
 
-    interp = gw.get("interpretation", "")
-    interp_it = ("Alta anisomorfia strutturale" if interp == "high_anisomorphism"
-                 else "Isomorfismo relativo")
-
     gw_d = gw.get('distance', 0)
     gw_p = gw.get('p_value', 1)
+    gw_n_perm = gw.get('n_permutations', '?')
+    gw_eps = gw.get('entropic_reg', 0.005)
 
     return f"""
     <div class="card">
     <h3>Esperimento 2: Distanza di Gromov-Wasserstein</h3>
     <div class="guide">
-        <span class="guide-title">Cosa misura questo esperimento</span>
-        Immaginiamo le relazioni tra i concetti giuridici come una rete di distanze
-        — una sorta di "mappa topografica" dello spazio semantico. Ogni modello
-        linguistico produce la propria mappa. La distanza di Gromov-Wasserstein
-        risponde alla domanda: <em>quanto bisogna "deformare" una mappa per farla
-        coincidere con l'altra?</em>
+        <span class="guide-title">Metodo</span>
+        Si calcolano le matrici di costo intra-spazio (distanza coseno) per ciascun modello:
+        <var>C</var><sub>1</sub> (WEIRD) e <var>C</var><sub>2</sub> (Sinic). La distanza GW
+        cerca il piano di trasporto <var>T</var> che minimizza la distorsione quadratica
+        nell'accoppiamento tra le due strutture metriche. A differenza dell'RSA (che confronta
+        solo l'ordine di rango), GW opera sulle <strong>distanze metriche</strong>: misura quanto
+        le strutture interne devono essere deformate per essere allineate.
         <br><br>
-        A differenza dell'RSA (che confronta solo l'ordine delle distanze),
-        il metodo GW cerca l'<strong>allineamento ottimale</strong> tra le due
-        strutture, come cercare di sovrapporre due mappe di paesi diversi
-        ruotandole, scalandole e deformandole il meno possibile.
-        Una distanza GW bassa indica che le strutture sono quasi isomorfe;
-        alta indica che sono organizzate in modo fondamentalmente diverso.
+        Si utilizza la versione entropica (Sinkhorn, &epsilon; = {gw_eps}), che rende il
+        problema trattabile in O(<var>n</var>&sup2; log <var>n</var>) e produce un piano di
+        trasporto leggermente "sfocato" rispetto all'ottimo esatto.
+        <br><br>
+        <strong>Test di permutazione</strong>: si permutano le associazioni concetto-embedding nello
+        spazio Sinic (righe/colonne di <var>C</var><sub>2</sub>) e si ricalcola GW. Il p-value
+        corrisponde a p = P(d<sub>null</sub> &le; d<sub>oss</sub>): un p basso (&lt; 0.05)
+        indica che la distanza osservata è significativamente <em>inferiore</em> al caso
+        (i due spazi sono più isomorfi di quanto atteso). Un p alto indica che la distanza
+        osservata rientra nella distribuzione nulla.
         <span class="formula">
             <var>GW</var>(<var>C</var><sub>1</sub>, <var>C</var><sub>2</sub>) =
             min<sub><var>T</var></sub> &sum;<sub><var>i,j,k,l</var></sub>
-            <var>L</var>(<var>C</var><sub>1</sub><sup><var>ik</var></sup>,
-            <var>C</var><sub>2</sub><sup><var>jl</var></sup>)
+            (<var>C</var><sub>1</sub><sup><var>ik</var></sup> &minus;
+            <var>C</var><sub>2</sub><sup><var>jl</var></sup>)&sup2;
             <var>T<sub>ij</sub></var> <var>T<sub>kl</sub></var>
             &emsp; con &emsp;
-            <var>L</var>(<var>x</var>, <var>y</var>) = (<var>x</var> &minus; <var>y</var>)&sup2;
+            <var>T</var> &isin; &Pi;(<var>p</var>, <var>q</var>), &ensp;
+            <var>p</var> = <var>q</var> = uniforme
         </span>
         <div class="refs">
             <strong>Riferimenti:</strong>
@@ -1005,16 +1009,21 @@ def _build_gw_tab(gw, plots):
         </div>
         <div class="metric-box">
             <div class="value">{_sig_label(gw_p)}</div>
-            <div class="label">Test di permutazione</div>
-        </div>
-        <div class="metric-box">
-            <div class="value">{interp_it}</div>
-            <div class="label">Interpretazione</div>
+            <div class="label">Test di permutazione (B={gw_n_perm:,})</div>
         </div>
     </div>
     <div class="guide">
-        <span class="guide-title">Interpretazione</span>
-        {"La distanza osservata è relativamente bassa, suggerendo che le strutture concettuali dei due modelli sono più simili di quanto ci si aspetterebbe per caso. Le due tradizioni giuridiche, pur diverse, organizzano le relazioni tra concetti con una geometria parzialmente condivisa." if gw_d < 0.1 else "La distanza osservata è elevata, indicando che le strutture concettuali dei due modelli richiedono una deformazione sostanziale per essere allineate. Questo suggerisce che le due tradizioni giuridiche organizzano le relazioni tra concetti in modo strutturalmente diverso."}
+        <span class="guide-title">Cosa rappresentano i numeri</span>
+        La <strong>distanza GW</strong> ({gw_d:.6f}) quantifica la distorsione quadratica
+        totale nel piano di trasporto ottimale tra le due strutture metriche.
+        Il <strong>p-value</strong> ({_sig_label(gw_p)}) indica se questa distanza è
+        significativamente inferiore a quella ottenuta sotto l'ipotesi nulla
+        (associazione casuale concetto-embedding, {gw_n_perm:,} permutazioni).
+        <br><br>
+        <strong>Nota</strong>: RSA (Spearman) e GW misurano proprietà diverse — l'RSA confronta
+        l'ordine di rango delle distanze (proprietà ordinale), il GW confronta le distanze
+        metriche stesse (proprietà cardinale). Un risultato significativo per l'una e non per
+        l'altra non è necessariamente una contraddizione.
     </div>
     </div>
 
@@ -1022,18 +1031,13 @@ def _build_gw_tab(gw, plots):
     <h3>Piano di Trasporto</h3>
     <div class="guide">
         <span class="guide-title">Come leggere questa figura</span>
-        Questa heatmap mostra il <strong>piano di trasporto</strong>: il modo ottimale
-        di "associare" i concetti di un modello a quelli dell'altro. Ogni riga
-        rappresenta un concetto nello spazio WEIRD; ogni colonna lo stesso concetto
-        nello spazio Sinic. Le celle con colori <em>più intensi</em> (rosso scuro)
-        indicano accoppiamenti forti: il concetto nella riga WEIRD viene "trasportato"
-        prevalentemente verso il concetto nella colonna Sinic.
-        <br><br>
-        Se la heatmap mostra una <strong>diagonale dominante</strong> (colori intensi
-        lungo la diagonale), significa che ciascun concetto viene abbinato
-        principalmente a sé stesso nell'altro modello: buona corrispondenza.
-        Colori diffusi fuori dalla diagonale indicano che l'allineamento non è
-        uno-a-uno: i concetti si "mischiano" tra le due tradizioni.
+        La heatmap mostra il <strong>piano di trasporto ottimale</strong> <var>T</var>:
+        la matrice <var>N</var>&times;<var>N</var> dove ogni cella <var>T<sub>ij</sub></var>
+        indica la quantità di massa trasportata dal concetto <var>i</var> (WEIRD, righe)
+        al concetto <var>j</var> (Sinic, colonne). Colori <em>intensi</em> (rosso scuro) =
+        accoppiamento forte tra quei due concetti. Un piano con diagonale dominante indica
+        accoppiamento uno-a-uno; massa diffusa fuori dalla diagonale indica che
+        l'accoppiamento ottimale non è una corrispondenza biunivoca.
     </div>
     {transport_img}
     </div>
@@ -1108,22 +1112,21 @@ def _build_axes_tab(axes):
     <div class="card">
     <h3>Esperimento 3: Proiezione su Assi Valoriali (Kozlowski)</h3>
     <div class="guide">
-        <span class="guide-title">Cosa misura questo esperimento</span>
-        Alcune dimensioni culturali — come <em>individuale vs. collettivo</em> o
-        <em>formale vs. informale</em> — sono implicite nel modo in cui usiamo le parole.
-        Questo esperimento le rende esplicite: per ogni dimensione, si costruisce un
-        <strong>asse</strong> nello spazio semantico usando coppie di antonimi
-        (es. "individuo/collettivo", "indipendenza/conformità"), poi si misura
-        dove ogni concetto giuridico si colloca lungo quell'asse.
+        <span class="guide-title">Metodo</span>
+        Per ogni dimensione culturale (es. individuale↔collettivo) si definiscono <var>k</var>
+        coppie di antonimi nella lingua del modello. L'<strong>asse</strong> è la media
+        normalizzata delle differenze vettoriali tra le coppie. Ogni concetto giuridico
+        viene poi proiettato sull'asse calcolando la <em>similarità coseno</em> con esso
+        (score di proiezione).
         <br><br>
-        Ogni modello costruisce il <strong>proprio asse</strong> nella propria lingua:
-        il modello WEIRD usa coppie inglesi, il modello Sinic usa coppie cinesi.
-        Questo evita il bias da traduzione — non stiamo imponendo che "freedom" e
-        "自由" definiscano la stessa direzione.
+        Ciascun modello costruisce il <strong>proprio asse</strong> nella propria lingua
+        (coppie inglesi per WEIRD, cinesi per Sinic): gli assi non sono allineati tra gli spazi,
+        ma la correlazione Spearman sui ranghi dei concetti è calcolabile perché gli stessi
+        termini sono proiettati in entrambi.
         <br><br>
-        La <strong>correlazione Spearman</strong> (ρ) misura se l'<em>ordine di rango</em>
-        dei concetti lungo l'asse è lo stesso nei due modelli: ad esempio, se "contratto"
-        è più "individualistico" di "legge" in entrambi i modelli.
+        <strong>Spearman &rho;</strong> misura la concordanza nell'ordine di rango dei concetti
+        lungo ciascun asse. L'intervallo di confidenza al 95% è calcolato con bootstrap
+        (ricampionamento delle coppie di antonimi che definiscono l'asse).
         <span class="formula">
             <var>asse</var> = <span class="fn">norm</span>( 1/<var>k</var> &sum;<sub><var>i</var>=1..<var>k</var></sub>
             [<var>e</var>(<var>a<sub>i</sub></var>) &minus; <var>e</var>(<var>b<sub>i</sub></var>)] )
@@ -1141,19 +1144,14 @@ def _build_axes_tab(axes):
     <div class="guide">
         <span class="guide-title">Come leggere i grafici scatter</span>
         In ogni grafico, ciascun <strong>punto</strong> rappresenta un concetto giuridico.
-        L'asse orizzontale mostra il punteggio nel modello WEIRD, quello verticale nel
-        modello Sinic. <em>Passando il mouse sopra un punto</em> si visualizza il nome
-        del concetto e i relativi punteggi.
-        <br><br>
-        Se i punti sono allineati lungo la <strong>diagonale tratteggiata</strong>, i due
-        modelli concordano nell'ordine. Punti lontani dalla diagonale rappresentano
-        concetti su cui le due tradizioni divergono: ad esempio, un concetto percepito
-        come "individualistico" dalla tradizione occidentale ma "collettivistico" da
-        quella sinica.
+        L'asse orizzontale mostra lo score di proiezione nel modello WEIRD, quello verticale
+        nel modello Sinic. <em>Passando il mouse sopra un punto</em> si visualizza il nome
+        del concetto e i relativi punteggi. La <strong>diagonale tratteggiata</strong> rappresenta
+        la retta d'identità (score WEIRD = score Sinic).
         <br><br>
         La <strong>tabella dettagliata</strong> sotto ogni grafico mostra i punteggi
-        esatti e la colonna <strong>Δ</strong> (delta): la differenza tra i due modelli.
-        Valori Δ grandi (evidenziati in rosso) indicano i concetti più divergenti.
+        esatti e la colonna <strong>&Delta;</strong> (delta): score WEIRD &minus; score Sinic.
+        Valori &Delta; con |&Delta;| &gt; 0.1 sono evidenziati in rosso.
         Le colonne sono ordinabili cliccando sull'intestazione.
     </div>
     </div>
@@ -1172,39 +1170,37 @@ def _build_clustering_tab(clust, plots):
 
     fm_rows = ""
     for fm in clust.get("fm_results", []):
-        interp = "Simili" if fm.get("fm_index", 0) >= 0.5 else "Divergenti"
         fm_rows += (
             f'<tr><td>{fm.get("k", "?")}</td>'
             f'<td data-sort="{fm.get("fm_index", 0):.6f}">{fm.get("fm_index", 0):.4f}</td>'
             f'<td data-sort="{fm.get("p_value", 1):.6f}">{_sig_label(fm.get("p_value", 1))}</td>'
-            f'<td>{interp}</td></tr>'
+            f'<td>{fm.get("n_permutations", "?"):,}</td></tr>'
         )
 
     return f"""
     <div class="card">
     <h3>Esperimento 4: Clustering Gerarchico + Fowlkes-Mallows</h3>
     <div class="guide">
-        <span class="guide-title">Cosa misura questo esperimento</span>
-        Se chiedessimo a un giurista di tradizione occidentale e a uno di tradizione
-        sinica di raggruppare gli stessi concetti in famiglie, otterremmo le stesse
-        categorie? Questo esperimento risponde a questa domanda computazionalmente.
+        <span class="guide-title">Metodo</span>
+        Per ciascun modello si costruisce un dendrogramma (clustering agglomerativo gerarchico,
+        metodo Ward, distanza euclidea sugli embedding). Il dendrogramma viene poi tagliato a
+        diversi valori di <var>k</var> (numero di cluster) e le partizioni risultanti vengono
+        confrontate con l'<strong>indice Fowlkes-Mallows (FM)</strong>.
         <br><br>
-        Per ciascun modello, i concetti vengono raggruppati automaticamente in base alla
-        loro vicinanza semantica (clustering gerarchico). Poi si confrontano i raggruppamenti
-        con l'<strong>indice Fowlkes-Mallows (FM)</strong>: un valore che misura quanto
-        le categorie coincidono. FM = 1 significa raggruppamenti identici; FM = 0 significa
-        raggruppamenti completamente diversi; FM = 0.5 indica una sovrapposizione parziale.
-        <br><br>
-        Il confronto è ripetuto per diversi numeri di gruppi (<strong>k</strong>): con pochi
-        gruppi (k basso) si catturano le macro-categorie, con molti gruppi (k alto) le
-        distinzioni più fini.
+        FM e' la media geometrica di PPV e TPR calcolate sulle coppie di concetti co-assegnati
+        allo stesso cluster. La significatività è valutata permutando le etichette cluster dello
+        spazio Sinic (sotto l'ipotesi nulla di indipendenza tra le due partizioni) e ricalcolando
+        FM. Si usa multi-k per osservare il comportamento dell'indice a diverse granularità.
         <span class="formula">
             <var>FM</var> = &radic;(<var>PPV</var> &times; <var>TPR</var>)
             &emsp; dove &emsp;
-            <var>PPV</var> = <var>TP</var> / (<var>TP</var> + <var>FP</var>)
-            &emsp; e &emsp;
+            <var>PPV</var> = <var>TP</var> / (<var>TP</var> + <var>FP</var>),&ensp;
             <var>TPR</var> = <var>TP</var> / (<var>TP</var> + <var>FN</var>)
         </span>
+        <p style="font-size:0.88em;margin-top:6px;">
+            TP = coppie co-assegnate in entrambi gli spazi; FP = co-assegnate solo in WEIRD;
+            FN = co-assegnate solo in Sinic. Range: [0, 1].
+        </p>
         <div class="refs">
             <strong>Riferimenti:</strong>
             <a class="ref-link" href="https://doi.org/10.1080/01621459.1983.10478008" target="_blank">Fowlkes &amp; Mallows (1983) "A Method for Comparing Two Hierarchical Clusterings", <em>JASA</em>, 78(383)</a> &mdash;
@@ -1215,15 +1211,16 @@ def _build_clustering_tab(clust, plots):
     <div class="guide">
         <span class="guide-title">Come leggere la tabella</span>
         <ul>
-            <li><strong>k</strong> — numero di gruppi in cui sono divisi i concetti</li>
-            <li><strong>FM Index</strong> — grado di concordanza (0 = nulla, 1 = perfetta).
-                Valori superiori a 0.5 indicano concordanza; inferiori indicano divergenza.</li>
-            <li><strong>p-value</strong> — significatività statistica. Se significativo (p &lt; 0.05),
-                la concordanza (o divergenza) osservata non è dovuta al caso.</li>
+            <li><strong>k</strong> — numero di cluster in cui viene tagliato il dendrogramma</li>
+            <li><strong>FM Index</strong> — range [0, 1]. FM = 1: partizioni identiche;
+                FM = 0: nessuna coppia co-assegnata in comune</li>
+            <li><strong>p-value</strong> — test di permutazione. H<sub>0</sub>: le due
+                partizioni sono indipendenti</li>
+            <li><strong>B</strong> — numero di permutazioni del test</li>
         </ul>
     </div>
     <table class="sortable">
-    <thead><tr><th>k</th><th>FM Index</th><th>p-value</th><th>Interpretazione</th></tr></thead>
+    <thead><tr><th>k</th><th>FM Index</th><th>p-value</th><th>B (permutazioni)</th></tr></thead>
     <tbody>{fm_rows}</tbody>
     </table>
     </div>
@@ -1232,14 +1229,11 @@ def _build_clustering_tab(clust, plots):
     <h3>Dendrogrammi</h3>
     <div class="guide">
         <span class="guide-title">Come leggere i dendrogrammi</span>
-        Un dendrogramma è un <strong>albero di parentela</strong> tra concetti. In basso ci sono
-        i singoli termini; man mano che si sale, i termini vengono raggruppati in famiglie
-        sempre più ampie. L'altezza a cui due rami si uniscono indica quanto sono
-        <em>distanti</em> semanticamente: rami che si uniscono in basso rappresentano
-        concetti molto vicini; rami che si uniscono in alto rappresentano concetti lontani.
-        <br><br>
-        Confrontando il dendrogramma WEIRD con quello Sinic, si può osservare direttamente
-        quali concetti sono raggruppati insieme in una tradizione ma separati nell'altra.
+        Un dendrogramma rappresenta la struttura gerarchica del clustering. In basso ci sono
+        i singoli termini; man mano che si sale, i termini vengono fusi in cluster
+        più ampi. L'altezza a cui due rami si uniscono corrisponde alla distanza di fusione
+        (Ward): rami che si uniscono in basso = concetti fusi a bassa distanza;
+        rami che si uniscono in alto = fusi a distanza elevata.
     </div>
     {dendro_img}
     </div>
@@ -1248,10 +1242,9 @@ def _build_clustering_tab(clust, plots):
     <h3>FM Index per diversi valori di k</h3>
     <div class="guide">
         <span class="guide-title">Come leggere questo grafico</span>
-        Ogni barra rappresenta l'indice FM per un diverso livello di granularità (k).
-        La <em>linea tratteggiata</em> orizzontale a 0.5 segna la soglia: barre
-        sopra questa linea indicano che i raggruppamenti concordano più di quanto
-        atteso per caso. L'asterisco (*) indica significatività statistica.
+        Ogni barra rappresenta l'indice FM per un diverso valore di <var>k</var>.
+        La <em>linea tratteggiata</em> orizzontale a 0.5 è un riferimento visivo.
+        L'asterisco (*) indica significatività statistica (p &lt; 0.05).
     </div>
     {fm_img}
     </div>
@@ -1285,30 +1278,33 @@ def _build_nda_a_tab(nda_a):
     k_val = nda_a.get('k', 10)
     mean_j = nda_a.get('mean_jaccard', 0)
 
+    nda_n_perm = nda_a.get('n_permutations', '?')
+
     return f"""
     <div class="card">
     <h3>Esperimento 5A: Confronto dei Vicinati Semantici</h3>
     <div class="guide">
-        <span class="guide-title">Cosa misura questo esperimento</span>
-        Per ogni concetto giuridico, il modello linguistico individua i <strong>{k_val}
-        concetti più simili</strong> — il suo "vicinato semantico". Ad esempio, nel
-        modello occidentale i vicini di "contratto" potrebbero essere "accordo", "patto",
-        "obbligazione"; in quello sinico potrebbero essere "accordo", "responsabilità",
-        "relazione" — concetti in parte diversi.
+        <span class="guide-title">Metodo</span>
+        Per ogni termine core si calcolano i <strong>{k_val} vicini più prossimi</strong>
+        (k-NN, distanza coseno) nell'intero pool di termini
+        (core + background + control), sia nello spazio WEIRD che Sinic. Si calcola poi l'indice di Jaccard
+        tra i due insiemi di vicini: la proporzione di vicini condivisi rispetto al totale.
         <br><br>
-        L'<strong>indice di Jaccard</strong> misura la sovrapposizione tra i due vicinati:
-        quanti vicini sono in comune? Jaccard = 1 significa che i {k_val} vicini sono
-        identici; Jaccard = 0 che non ce n'è nemmeno uno in comune.
-        Concetti con Jaccard basso sono potenziali <strong>"falsi amici giuridici"</strong>:
-        parole che sembrano riferirsi allo stesso concetto ma che, nei rispettivi contesti
-        culturali, si associano a idee diverse.
+        La <strong>Jaccard media</strong> è la media aritmetica degli indici Jaccard su tutti
+        i termini core. Il test di permutazione rimescola le associazioni concetto-embedding
+        e ricalcola la Jaccard media per costruire la distribuzione nulla.
         <span class="formula">
             <var>J</var>(<var>A</var>, <var>B</var>) =
             |<var>A</var> &cap; <var>B</var>| / |<var>A</var> &cup; <var>B</var>|
             &emsp; dove &emsp;
-            <var>A</var> = <span class="fn">kNN</span><sub>WEIRD</sub>(<var>t</var>),&ensp;
-            <var>B</var> = <span class="fn">kNN</span><sub>Sinic</sub>(<var>t</var>)
+            <var>A</var> = <span class="fn">kNN</span><sub>WEIRD</sub>(<var>t</var>, k={k_val}),&ensp;
+            <var>B</var> = <span class="fn">kNN</span><sub>Sinic</sub>(<var>t</var>, k={k_val})
         </span>
+        <p style="font-size:0.88em;margin-top:6px;">
+            Embedding normalizzati L2. Il pool include termini background e control per evitare
+            che i vicinati siano forzatamente sovrapposti per effetto di un vocabolario
+            troppo piccolo.
+        </p>
         <div class="refs">
             <strong>Riferimenti:</strong>
             <a class="ref-link" href="https://arxiv.org/abs/2411.08687" target="_blank">Haemmerli et al. (2024) "Neighborhood Divergence Analysis", <em>arXiv:2411.08687</em></a>
@@ -1317,20 +1313,16 @@ def _build_nda_a_tab(nda_a):
     <div class="metrics">
         <div class="metric-box">
             <div class="value">{mean_j:.4f}</div>
-            <div class="label">Jaccard Media</div>
+            <div class="label">Jaccard Media (k={k_val})</div>
         </div>
         <div class="metric-box">
             <div class="value">{_sig_label(nda_a.get('p_value', 1))}</div>
-            <div class="label">Test di permutazione</div>
+            <div class="label">Test di permutazione (B={nda_n_perm:,})</div>
         </div>
         <div class="metric-box">
             <div class="value">{nda_a.get('n_core_terms', '?')}</div>
-            <div class="label">Termini core analizzati</div>
+            <div class="label">Termini core</div>
         </div>
-    </div>
-    <div class="guide">
-        <span class="guide-title">Interpretazione complessiva</span>
-        {"La Jaccard media è bassa (sotto 0.3): la maggior parte dei concetti ha vicinati semantici molto diversi nei due modelli. Questo suggerisce che i due sistemi giuridici associano idee diverse agli stessi termini — un risultato rilevante per la traduzione giuridica e il diritto comparato." if mean_j < 0.3 else "La Jaccard media è moderata: alcuni concetti condividono vicinati semantici tra le due tradizioni, mentre altri divergono significativamente. I concetti con Jaccard basso meritano attenzione come potenziali fonti di malintesi cross-culturali." if mean_j < 0.6 else "La Jaccard media è alta: la maggior parte dei concetti ha vicinati simili nei due modelli, suggerendo un nucleo semantico condiviso tra le due tradizioni giuridiche."}
     </div>
     </div>
 
@@ -1339,18 +1331,18 @@ def _build_nda_a_tab(nda_a):
     <div class="guide">
         <span class="guide-title">Come leggere la tabella</span>
         <ul>
-            <li><strong>Termine</strong> — il concetto giuridico analizzato.</li>
-            <li><strong>Jaccard</strong> — sovrapposizione dei vicinati (0-1). La barra
-                colorata offre un'indicazione visiva: <span style="color:#e74c3c;">rosso</span>
-                = bassa, <span style="color:#e67e22;">arancione</span> = moderata,
-                <span style="color:#f1c40f;">giallo</span> = discreta,
-                <span style="color:#2ecc71;">verde</span> = alta.</li>
-            <li><strong>Vicini WEIRD</strong> — i concetti più simili secondo il modello occidentale.</li>
-            <li><strong>Vicini Sinic</strong> — i concetti più simili secondo il modello sinico.</li>
-            <li><strong>Condivisi</strong> — i concetti che compaiono in entrambi i vicinati.</li>
+            <li><strong>Termine</strong> — il concetto giuridico analizzato (solo core).</li>
+            <li><strong>Jaccard</strong> — |A&cap;B| / |A&cup;B| dove A e B sono i {k_val}-NN
+                nei due spazi. Range: [0, 1]. La barra colorata codifica il valore
+                (<span style="color:#e74c3c;">rosso</span> &lt; 0.2,
+                <span style="color:#e67e22;">arancione</span> &lt; 0.4,
+                <span style="color:#f1c40f;">giallo</span> &lt; 0.6,
+                <span style="color:#2ecc71;">verde</span> &ge; 0.6).</li>
+            <li><strong>Vicini WEIRD / Sinic</strong> — i primi 5 dei {k_val} vicini
+                in ciascun spazio (lista completa nei dati JSON).</li>
+            <li><strong>Condivisi</strong> — vicini presenti in entrambi gli insiemi.</li>
         </ul>
-        Le colonne sono ordinabili cliccando sull'intestazione. Ordinate per
-        Jaccard crescente per trovare i concetti più divergenti (potenziali "falsi amici").
+        Colonne ordinabili cliccando sull'intestazione.
     </div>
     <table class="sortable">
     <thead><tr><th>Termine</th><th>Jaccard</th><th>Vicini WEIRD</th><th>Vicini Sinic</th><th>Condivisi</th></tr></thead>
@@ -1407,22 +1399,14 @@ def _build_nda_b_tab(nda_b):
     <div class="card">
     <h3>Esperimento 5B: Decomposizioni Normative</h3>
     <div class="guide">
-        <span class="guide-title">Cosa misura questo esperimento</span>
-        Questo esperimento pone <strong>domande giurisprudenziali</strong> direttamente
-        al modello linguistico, usando un'operazione chiamata <em>aritmetica vettoriale</em>.
-        L'intuizione è semplice: se sottraiamo il concetto B dal concetto A, il
-        "residuo" cattura ciò che A ha in più rispetto a B — la sua <em>differenza specifica</em>.
+        <span class="guide-title">Metodo</span>
+        Per ogni decomposizione si calcola il <strong>residuo vettoriale</strong>
+        <var>r</var> = <var>e</var>(A) &minus; <var>e</var>(B), normalizzato L2.
+        L'operazione si esegue nella lingua nativa di ciascun modello (inglese per WEIRD,
+        cinese per Sinic). Si cercano poi i <var>k</var> vicini più prossimi al residuo
+        nel pool completo di termini e si calcola la Jaccard tra i due insiemi di vicini.
         <br><br>
-        <strong>Esempio</strong>: "giustizia − legge = ?" chiede al modello: <em>cosa resta
-        della giustizia quando togliamo la componente legale?</em> I concetti più vicini al
-        residuo rivelano cosa il modello associa a quella differenza — ad esempio,
-        "equità", "morale", "coscienza". Se il modello WEIRD e quello Sinic producono
-        residui diversi, significa che le due tradizioni concepiscono quella relazione
-        concettuale in modo diverso.
-        <br><br>
-        La <strong>Jaccard</strong> tra i vicini dei residui misura la concordanza: valori
-        bassi indicano interpretazioni divergenti della stessa relazione giurisprudenziale.
-        Jaccard media: <strong>{mean_j:.3f}</strong>
+        La Jaccard media su tutte le decomposizioni e' <strong>{mean_j:.3f}</strong>.
         <span class="formula">
             <var>r</var> = <span class="fn">norm</span>(<var>e</var>(<var>A</var>) &minus; <var>e</var>(<var>B</var>))
             &emsp;&emsp;
@@ -1438,21 +1422,15 @@ def _build_nda_b_tab(nda_b):
 
     <div class="card">
     <div class="guide">
-        <span class="guide-title">Come leggere le schede qui sotto</span>
-        Ogni scheda rappresenta una <strong>decomposizione</strong>: una domanda
-        giurisprudenziale codificata come operazione vettoriale.
+        <span class="guide-title">Come leggere le schede</span>
+        Ogni scheda corrisponde a una decomposizione (A &minus; B).
         <ul>
-            <li>L'<strong>intestazione</strong> mostra la formula (A − B) in entrambe le lingue.</li>
-            <li>La <strong>domanda giurisprudenziale</strong> spiega cosa si sta indagando.</li>
-            <li>La <strong>Jaccard</strong> indica quanto i due modelli concordano sulla risposta.</li>
-            <li>Le due colonne (<span style="color:var(--weird);">WEIRD</span> e
-                <span style="color:var(--sinic);">Sinic</span>) mostrano i 10 concetti più vicini
-                al residuo in ciascun modello. Il numero a destra è la distanza: valori
-                bassi = concetti molto associati al residuo.</li>
+            <li><strong>Intestazione</strong>: formula in inglese e cinese.</li>
+            <li><strong>Domanda giurisprudenziale</strong>: la relazione concettuale indagata.</li>
+            <li><strong>Jaccard</strong>: sovrapposizione dei k-NN del residuo tra i due spazi.</li>
+            <li><strong>Colonne WEIRD / Sinic</strong>: i 10 vicini più prossimi al residuo
+                in ciascun modello. Il numero a destra è la distanza coseno dal residuo.</li>
         </ul>
-        Se le due colonne contengono concetti simili, i modelli "rispondono" allo
-        stesso modo. Se contengono concetti diversi, le due tradizioni interpretano
-        quella relazione giuridica in modo distinto.
     </div>
     </div>
     {"".join(cards)}
@@ -1462,84 +1440,47 @@ def _build_nda_b_tab(nda_b):
 def _build_methodology_tab():
     return """
     <div class="card methodology">
-    <h3>Nota Metodologica — Guida per il Giurista</h3>
-    <p>Questo report presenta i risultati di un'analisi computazionale che confronta
-       le strutture semantiche di concetti giuridici in due tradizioni culturali:
-       <strong>WEIRD</strong> (Western, Educated, Industrialized, Rich, Democratic) e
-       <strong>Sinic</strong> (tradizione giuridica cinese).</p>
+    <h3>Nota Metodologica</h3>
 
-    <h4>1. Cosa sono gli "embedding"?</h4>
-    <p>Un modello linguistico addestrato su grandi quantità di testo — documenti
-       giuridici, articoli, enciclopedie, legislazione — impara a rappresentare
-       ogni parola o espressione come un <strong>punto in uno spazio matematico</strong>
-       ad alta dimensione (centinaia di coordinate). Le parole con significati
-       simili finiscono in punti vicini; quelle con significati diversi finiscono lontane.</p>
-    <p>L'analogia più intuitiva è una <strong>mappa</strong>: così come su una mappa
-       geografica le città vicine sono disegnate vicine, nella "mappa semantica"
-       del modello i concetti affini (es. "contratto" e "accordo") si trovano
-       in posizioni adiacenti, mentre concetti distanti (es. "contratto" e "tortura")
-       sono separati da grandi distanze.</p>
-    <p>Due modelli addestrati su corpora diversi — uno prevalentemente inglese/occidentale,
-       l'altro prevalentemente cinese — producono <strong>mappe diverse</strong>. Questa
-       analisi confronta sistematicamente le due mappe per capire dove convergono
-       e dove divergono.</p>
+    <h4>1. Embedding linguistici</h4>
+    <p>Ogni concetto è rappresentato come un vettore in R<sup>1024</sup> prodotto da un
+       modello sentence-transformer addestrato su grandi corpora testuali.
+       I due modelli operano in lingue diverse (inglese per WEIRD, cinese per Sinic)
+       e producono spazi vettoriali <strong>non allineati</strong>: non è possibile
+       confrontare direttamente i vettori tra i due spazi. Tutti gli esperimenti
+       confrontano proprietà <em>strutturali interne</em> (distanze, ranghi, vicinati)
+       che sono definite indipendentemente in ciascuno spazio.</p>
+    <p>Gli embedding catturano <strong>co-occorrenze statistiche</strong> nei corpora
+       di addestramento: la prossimità vettoriale riflette la frequenza con cui i
+       concetti appaiono in contesti linguistici simili, non necessariamente la
+       loro relazione dottrinale formale.</p>
 
-    <h4>2. Come si leggono i risultati?</h4>
-    <ul>
-        <li><strong>RSA (Esperimento 1)</strong> — Costruisce una "tabella delle distanze"
-            tra tutti i concetti in ciascun modello, poi verifica se le due tabelle
-            sono correlate. <em>Analogia</em>: come chiedere a un giurista italiano e
-            a uno cinese di ordinare tutte le coppie di concetti da "più simili"
-            a "più diversi", e verificare se le graduatorie coincidono.</li>
-        <li><strong>Gromov-Wasserstein (Esperimento 2)</strong> — Cerca l'allineamento
-            ottimale tra le due strutture, misurando la "distorsione" minima necessaria.
-            <em>Analogia</em>: come tentare di sovrapporre due mappe di costellazioni
-            — si possono ruotare e scalare, ma se le stelle sono disposte diversamente,
-            servirà una deformazione significativa.</li>
-        <li><strong>Assi valoriali (Esperimento 3)</strong> — Proietta i concetti su
-            dimensioni culturali esplicite (es. individuale↔collettivo), costruite
-            indipendentemente per ogni lingua. <em>Analogia</em>: come posizionare
-            i concetti su un termometro che misura quanto sono "individualistici"
-            o "collettivistici", e confrontare le posizioni nei due modelli.</li>
-        <li><strong>Clustering (Esperimento 4)</strong> — Raggruppa automaticamente i
-            concetti in famiglie e verifica se le famiglie coincidono. <em>Analogia</em>:
-            come verificare se un sistema di classificazione giuridico occidentale
-            (diritti reali, diritti personali, ecc.) corrisponde alle categorie
-            implicite nel sistema sinico.</li>
-        <li><strong>NDA — Parte A (Esperimento 5A)</strong> — Per ogni concetto, confronta
-            i "vicini più prossimi" nei due modelli. <em>Analogia</em>: chiedere a
-            un giurista occidentale e a uno cinese: "a cosa associ il concetto di
-            proprietà?" e confrontare le risposte.</li>
-        <li><strong>NDA — Parte B (Esperimento 5B)</strong> — Usa l'aritmetica vettoriale
-            per porre domande giurisprudenziali al modello (es. "giustizia − legge = ?").
-            <em>Analogia</em>: chiedere ai due giuristi: "cosa resta della giustizia
-            se togliamo la componente legale?" e confrontare le risposte.</li>
-    </ul>
-
-    <h4>3. Significatività statistica: il ruolo del p-value</h4>
-    <p>Ogni risultato è accompagnato da un <strong>p-value</strong>, che risponde alla domanda:
-       <em>questo risultato potrebbe essere dovuto al caso?</em></p>
-    <p>Il metodo utilizzato è il <strong>test di permutazione</strong>: si rimescolano i dati
-       migliaia di volte in modo casuale, e si verifica quante volte il risultato casuale
-       è altrettanto estremo di quello osservato. Se succede raramente (meno del 5% delle
-       volte), il risultato è considerato significativo. La formula usata include la
-       correzione di Phipson &amp; Smyth che garantisce che il p-value non sia mai
-       esattamente zero:</p>
+    <h4>2. Test di significatività: permutazione</h4>
+    <p>Tutti i p-value sono calcolati con <strong>test di permutazione</strong>
+       (non parametrici). La scelta è motivata da: (a) le distribuzioni degli embedding
+       non sono normali; (b) le osservazioni non sono indipendenti (le distanze
+       tra N punti sono strutturalmente correlate).</p>
+    <p>Il p-value indica la probabilità di osservare un valore della statistica almeno
+       altrettanto estremo sotto l'ipotesi nulla specifica di ciascun test
+       (dettagliata nel rispettivo tab). La formula include la correzione +1 di
+       Phipson &amp; Smyth:</p>
     <span class="formula" style="text-align:center;">
         <var>p</var> = (&sum;<sub><var>i</var>=1..<var>B</var></sub>
         <strong>1</strong>[<var>t</var>*<sub><var>i</var></sub> &ge; <var>t</var><sub>obs</sub>] + 1)
         / (<var>B</var> + 1)
     </span>
     <ul>
-        <li><strong>*</strong> p < 0.05 — significativo (meno del 5% di probabilità che sia
-            dovuto al caso)</li>
-        <li><strong>**</strong> p < 0.01 — molto significativo (meno dell'1%)</li>
-        <li><strong>***</strong> p < 0.001 — altamente significativo (meno dello 0.1%)</li>
-        <li><strong>n.s.</strong> — non significativo (il risultato potrebbe essere casuale)</li>
+        <li><strong>*</strong> p &lt; 0.05</li>
+        <li><strong>**</strong> p &lt; 0.01</li>
+        <li><strong>***</strong> p &lt; 0.001</li>
+        <li><strong>n.s.</strong> — non significativo</li>
     </ul>
-    <p>La scelta del test non parametrico (permutazione) anziché parametrico (t-test)
-       è motivata dal fatto che gli embedding linguistici non seguono distribuzioni
-       normali e presentano dipendenze strutturali tra le osservazioni.</p>
+    <p><strong>Nota sulle comparazioni multiple</strong>: i 5 esperimenti testano ipotesi
+       distinte (correlazione di rango, isomorfismo metrico, proiezione assiologica,
+       concordanza tassonomica, sovrapposizione dei vicinati). Non si applica una
+       correzione di Bonferroni globale poiché le ipotesi non sono multiple istanze
+       dello stesso test. Entro l'Esperimento 4 (multi-k FM), il numero di k testati
+       è riportato esplicitamente.</p>
     <p style="font-size:0.9em;color:#555;margin-top:6px;">
        <strong>Rif.:</strong>
        <a class="ref-link" href="https://doi.org/10.2202/1544-6115.1585" target="_blank">Phipson &amp; Smyth (2010) "Permutation P-values Should Never Be Zero", <em>Stat. Appl. Genet. Mol. Biol.</em></a> &mdash;
@@ -1547,64 +1488,49 @@ def _build_methodology_tab():
        Good (2005) <em>Permutation, Parametric, and Bootstrap Tests of Hypotheses</em>, 3rd ed., Springer
     </p>
 
-    <h4>4. Glossario dei termini tecnici</h4>
+    <h4>3. Glossario</h4>
     <ul>
-        <li><strong>Cosine distance</strong> — Misura della dissimilarità tra due vettori
-            basata sull'angolo tra di essi. Va da 0 (identici) a 1 (opposti). Insensibile
-            alla "lunghezza" del vettore, misura solo la direzione semantica.
-            <br><span class="formula" style="margin:4px 0;font-size:0.95em;">
-            <var>d</var>(<var>a</var>, <var>b</var>) = 1 &minus;
-            (<var>a</var> &middot; <var>b</var>) / (‖<var>a</var>‖ &middot; ‖<var>b</var>‖)
-            &emsp; &isin; [0, 1]
-            </span></li>
-        <li><strong>Spearman &rho; (rho)</strong> — Coefficiente di correlazione basato sui ranghi,
-            non sui valori assoluti. Misura se due classifiche sono concordi: &rho; = +1
-            significa ordine identico, &rho; = 0 nessuna relazione, &rho; = &minus;1 ordine inverso.
-            <br><span class="formula" style="margin:4px 0;font-size:0.95em;">
-            <var>&rho;</var> = 1 &minus; 6&sum;<var>d<sub>i</sub></var>&sup2;
-            / <var>n</var>(<var>n</var>&sup2; &minus; 1)
-            &emsp; dove <var>d<sub>i</sub></var> = differenza tra i ranghi
-            </span></li>
-        <li><strong>Jaccard</strong> — Indice di sovrapposizione tra due insiemi: il rapporto
-            tra gli elementi in comune e gli elementi totali. Va da 0 (nessun elemento
-            in comune) a 1 (insiemi identici).
-            <br><span class="formula" style="margin:4px 0;font-size:0.95em;">
-            <var>J</var>(<var>A</var>, <var>B</var>) =
-            |<var>A</var> &cap; <var>B</var>| / |<var>A</var> &cup; <var>B</var>|
-            &emsp; &isin; [0, 1]
-            </span></li>
-        <li><strong>Fowlkes-Mallows (FM)</strong> — Misura la concordanza tra due raggruppamenti.
-            È la media geometrica tra precisione (PPV) e sensibilità (TPR).
-            <br><span class="formula" style="margin:4px 0;font-size:0.95em;">
-            <var>FM</var> = &radic;(<var>PPV</var> &times; <var>TPR</var>)
-            &emsp; &isin; [0, 1]
-            </span></li>
-        <li><strong>Bootstrap</strong> — Tecnica statistica che stima l'incertezza di un risultato
-            ricampionando ripetutamente i dati <em>con rimpiazzo</em>, senza assumere una distribuzione
-            teorica.
-            (<a class="ref-link" href="https://doi.org/10.1214/aos/1176344552" target="_blank">Efron, 1979</a>)</li>
-        <li><strong>k-NN</strong> — "k vicini più prossimi" (k-Nearest Neighbors): i k concetti
-            più simili a un dato concetto nello spazio embedding, misurati per distanza coseno.</li>
-        <li><strong>RDM</strong> — Matrice di Dissimilarità Rappresentazionale: tabella quadrata
-            <var>N</var>&times;<var>N</var> simmetrica, in cui la cella (<var>i</var>,<var>j</var>)
-            contiene la distanza coseno tra il concetto <var>i</var> e il concetto <var>j</var>.
-            (<a class="ref-link" href="https://doi.org/10.3389/neuro.06.004.2008" target="_blank">Kriegeskorte et al., 2008</a>)</li>
-        <li><strong>Gromov-Wasserstein</strong> — Distanza tra spazi metrici basata sul trasporto
-            ottimale. Minimizza la distorsione nell'accoppiamento tra le strutture interne.
-            (<a class="ref-link" href="https://doi.org/10.1561/2200000073" target="_blank">Peyr&eacute; &amp; Cuturi, 2019</a>)</li>
+        <li><strong>Cosine distance</strong> — d(<var>a</var>, <var>b</var>) =
+            1 &minus; cos(<var>a</var>, <var>b</var>). Range: [0, 1].
+            Invariante alla norma dei vettori.
+            </li>
+        <li><strong>Spearman &rho;</strong> — Correlazione di rango. Range: [&minus;1, +1].
+            &rho; = +1: ordine identico; &rho; = 0: indipendenza; &rho; = &minus;1: ordine inverso.
+            </li>
+        <li><strong>Jaccard</strong> — J(A, B) = |A&cap;B| / |A&cup;B|. Range: [0, 1].
+            </li>
+        <li><strong>Fowlkes-Mallows</strong> — FM = &radic;(PPV &times; TPR). Range: [0, 1].
+            (<a class="ref-link" href="https://doi.org/10.1080/01621459.1983.10478008" target="_blank">Fowlkes &amp; Mallows, 1983</a>)
+            </li>
+        <li><strong>Gromov-Wasserstein</strong> — Distanza tra spazi metrici via trasporto
+            ottimale. Range: [0, +&infin;).
+            (<a class="ref-link" href="https://doi.org/10.1561/2200000073" target="_blank">Peyr&eacute; &amp; Cuturi, 2019</a>)
+            </li>
+        <li><strong>Bootstrap</strong> — Ricampionamento con rimpiazzo per stimare intervalli
+            di confidenza senza assunzioni distributive.
+            (<a class="ref-link" href="https://doi.org/10.1214/aos/1176344552" target="_blank">Efron, 1979</a>)
+            </li>
+        <li><strong>RDM</strong> — Matrice di Dissimilarità Rappresentazionale: matrice
+            N&times;N simmetrica di distanze coseno.
+            (<a class="ref-link" href="https://doi.org/10.3389/neuro.06.004.2008" target="_blank">Kriegeskorte et al., 2008</a>)
+            </li>
+        <li><strong>k-NN</strong> — k-Nearest Neighbors: i k vettori più prossimi per
+            distanza coseno nel pool di tutti i termini (core + background + control).
+            </li>
     </ul>
 
-    <h4>5. Limitazioni</h4>
-    <p>I modelli di embedding catturano <strong>pattern statistici</strong> nei testi di
-       addestramento, non necessariamente la dottrina giuridica ufficiale.
-       I risultati riflettono la <em>semantica distribuita</em> — il modo in cui i
-       concetti vengono usati nel linguaggio corrente — e non cosa significano
-       formalmente in senso giurisprudenziale. Le conclusioni vanno quindi intese
-       come indicazioni sulla <em>percezione culturale</em> dei concetti giuridici,
-       non come giudizi sulla loro definizione normativa.</p>
-    <p>Inoltre, la selezione dei termini e delle coppie di antonimi influenza i risultati.
-       Questo strumento è progettato per generare ipotesi e orientare l'indagine
-       comparatistica, non per sostituire l'analisi dottrinale.</p>
+    <h4>4. Limiti del metodo</h4>
+    <ul>
+        <li>Gli embedding riflettono pattern statistici nei corpora di addestramento,
+            non la dottrina giuridica formale.</li>
+        <li>La selezione dei termini core e delle coppie di antonimi è una scelta
+            del ricercatore che influenza i risultati.</li>
+        <li>I due modelli hanno architetture e corpora di addestramento diversi:
+            le differenze osservate possono derivare da fattori tecnici
+            (dimensione del corpus, distribuzione dei domini) oltre che culturali.</li>
+        <li>Non è disponibile un ground truth annotato da esperti di diritto
+            comparato per validazione esterna.</li>
+    </ul>
     </div>
     """
 

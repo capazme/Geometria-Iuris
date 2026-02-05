@@ -23,6 +23,7 @@ permutation tests for significance.
 # ─────────────────────────────────────────────────────────────────────
 
 import logging
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -30,6 +31,7 @@ from typing import Any
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from joblib import Parallel, delayed
 from scipy.cluster.hierarchy import linkage, dendrogram, fcluster
 from sklearn.metrics import fowlkes_mallows_score
 
@@ -59,10 +61,7 @@ class FMResult:
             "fm_index": self.fm_index,
             "p_value": self.p_value,
             "n_permutations": self.n_permutations,
-            "interpretation": (
-                "divergent_taxonomies" if self.fm_index < 0.5
-                else "similar_taxonomies"
-            ),
+            "significant": self.p_value < 0.05,
         }
 
 
@@ -172,20 +171,32 @@ def run_clustering_experiment(
     fm_results = []
     rng = np.random.RandomState(seed)
 
+    n_jobs = os.cpu_count() or 4
+
     for k in k_values:
         fm_observed = _compute_fm(clust_w.linkage_matrix, clust_s.linkage_matrix, k)
 
         # Test di permutazione: si permutano le etichette cluster dello
         # spazio sinico. Sotto l'ipotesi nulla, le assegnazioni cluster
         # dei due spazi sono indipendenti (nessun accordo tassonomico).
-        null_dist = np.empty(n_permutations)
+        #
+        # Parallelizzazione con joblib per ogni k.
         c_w = fcluster(clust_w.linkage_matrix, k, criterion="maxclust")
+        c_s = fcluster(clust_s.linkage_matrix, k, criterion="maxclust")
 
-        for i in range(n_permutations):
-            c_s_perm = rng.permutation(
-                fcluster(clust_s.linkage_matrix, k, criterion="maxclust")
+        def _single_permutation(perm_seed: int) -> float:
+            """Esegue una singola permutazione FM."""
+            rng_local = np.random.RandomState(perm_seed)
+            c_s_perm = rng_local.permutation(c_s)
+            return fowlkes_mallows_score(c_w, c_s_perm)
+
+        perm_seeds = rng.randint(0, 2**31, size=n_permutations)
+
+        null_dist = np.array(
+            Parallel(n_jobs=n_jobs, verbose=0)(
+                delayed(_single_permutation)(s) for s in perm_seeds
             )
-            null_dist[i] = fowlkes_mallows_score(c_w, c_s_perm)
+        )
 
         p_value = (np.sum(null_dist >= fm_observed) + 1) / (n_permutations + 1)
 

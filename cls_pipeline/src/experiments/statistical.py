@@ -18,9 +18,11 @@ Mantel test used across multiple experiment modules.
 # ───────────────────────────────────────────────────────────────────────
 
 import logging
+import os
 from dataclasses import dataclass
 
 import numpy as np
+from joblib import Parallel, delayed
 from scipy.stats import spearmanr
 
 logger = logging.getLogger(__name__)
@@ -236,15 +238,29 @@ def mantel_test(
     # della seconda matrice (rdm_b[perm, perm]) per preservare la simmetria
     # della RDM. Una permutazione solo delle righe spezzerebbe la struttura
     # simmetrica e genererebbe matrici invalide come distribuzione nulla.
-    rng = np.random.RandomState(seed)
-    null_dist = np.empty(n_permutations)
+    #
+    # Parallelizzazione con joblib: ogni permutazione è indipendente.
 
-    for i in range(n_permutations):
-        perm = rng.permutation(n)
+    def _single_permutation(perm_seed: int) -> float:
+        """Esegue una singola permutazione Mantel."""
+        rng_local = np.random.RandomState(perm_seed)
+        perm = rng_local.permutation(n)
         rdm_b_perm = rdm_b[np.ix_(perm, perm)]
         vec_b_perm = rdm_b_perm[triu_idx]
         r_perm, _ = spearmanr(vec_a, vec_b_perm)
-        null_dist[i] = r_perm
+        return r_perm
+
+    rng = np.random.RandomState(seed)
+    perm_seeds = rng.randint(0, 2**31, size=n_permutations)
+
+    n_jobs = os.cpu_count() or 4
+    logger.info("Mantel test: running %d permutations on %d cores...", n_permutations, n_jobs)
+
+    null_dist = np.array(
+        Parallel(n_jobs=n_jobs, verbose=5)(
+            delayed(_single_permutation)(s) for s in perm_seeds
+        )
+    )
 
     # p-value: proporzione di r permutati >= r osservato (+ correzione Phipson)
     p_value = (np.sum(null_dist >= r_observed) + 1) / (n_permutations + 1)
