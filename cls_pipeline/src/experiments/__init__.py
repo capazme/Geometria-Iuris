@@ -1,10 +1,9 @@
-"""Experiment modules for CLS Pipeline v2.0."""
+"""Experiment modules for CLS Pipeline v3.2."""
 
 from .exp_rsa import (
     RSAResult,
     run_rsa,
     compute_rdm,
-    plot_rdm_heatmaps,
 )
 from .exp_gw import (
     GWResult,
@@ -39,11 +38,12 @@ from .statistical import (
     BootstrapCIResult,
     permutation_test,
     bootstrap_ci,
+    block_bootstrap_rdm_ci,
     mantel_test,
 )
 
-# Keep old module names importable for backward compatibility during transition
-from .module_c_umap import (
+# UMAP visualization utility
+from .umap_viz import (
     UMAPResult,
     umap_reduce,
     plot_umap,
@@ -54,7 +54,6 @@ __all__ = [
     "RSAResult",
     "run_rsa",
     "compute_rdm",
-    "plot_rdm_heatmaps",
     # Experiment 2: GW
     "GWResult",
     "gromov_wasserstein_distance",
@@ -84,6 +83,7 @@ __all__ = [
     "BootstrapCIResult",
     "permutation_test",
     "bootstrap_ci",
+    "block_bootstrap_rdm_ci",
     "mantel_test",
     # UMAP (visualization utility, not an experiment)
     "UMAPResult",

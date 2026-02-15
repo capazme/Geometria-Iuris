@@ -129,6 +129,38 @@ class TestStatistical:
         assert -1 <= result.observed <= 1
         assert 0 <= result.p_value <= 1
 
+    def test_block_bootstrap_rdm_ci_basic(self):
+        """Block bootstrap should produce valid CI for RDM correlation."""
+        from src.experiments.statistical import block_bootstrap_rdm_ci
+
+        np.random.seed(42)
+        n, d = 15, 64
+        emb_a = np.random.randn(n, d)
+        emb_b = np.random.randn(n, d)
+        emb_a = emb_a / np.linalg.norm(emb_a, axis=1, keepdims=True)
+        emb_b = emb_b / np.linalg.norm(emb_b, axis=1, keepdims=True)
+
+        result = block_bootstrap_rdm_ci(emb_a, emb_b, n_bootstrap=200)
+
+        assert result.ci_lower < result.ci_upper
+        assert result.n_bootstrap == 200
+        assert result.alpha == 0.05
+        assert -1 <= result.estimate <= 1
+
+    def test_block_bootstrap_identical_spaces(self):
+        """Identical embeddings should give tight CI around 1.0."""
+        from src.experiments.statistical import block_bootstrap_rdm_ci
+
+        np.random.seed(42)
+        n, d = 15, 64
+        emb = np.random.randn(n, d)
+        emb = emb / np.linalg.norm(emb, axis=1, keepdims=True)
+
+        result = block_bootstrap_rdm_ci(emb, emb, n_bootstrap=200)
+
+        assert result.estimate > 0.99
+        assert result.ci_lower > 0.9
+
 
 # =========================================================================
 # Experiment 1: RSA
@@ -161,7 +193,7 @@ class TestExpRSA:
         from src.experiments.exp_rsa import run_rsa
 
         weird, sinic, labels = synthetic_embeddings
-        result = run_rsa(weird, sinic, labels, n_permutations=100)
+        result = run_rsa(weird, sinic, labels, n_permutations=100, n_bootstrap=50)
 
         assert -1 <= result.spearman_r <= 1
         assert 0 <= result.p_value <= 1
@@ -169,23 +201,57 @@ class TestExpRSA:
         assert result.rdm_weird.shape == (15, 15)
         assert result.rdm_sinic.shape == (15, 15)
         assert len(result.labels) == 15
+        # Nuovi campi v3.1
+        assert isinstance(result.r_squared, float)
+        assert result.r_squared >= 0
+        assert result.bootstrap_ci is not None
+        assert result.bootstrap_ci.ci_lower <= result.bootstrap_ci.ci_upper
+        assert result.null_distribution is not None
+        assert len(result.null_distribution) == 100
 
     def test_rsa_to_dict(self, synthetic_embeddings):
         from src.experiments.exp_rsa import run_rsa
 
         weird, sinic, labels = synthetic_embeddings
-        result = run_rsa(weird, sinic, labels, n_permutations=100)
+        result = run_rsa(weird, sinic, labels, n_permutations=100, n_bootstrap=50)
         d = result.to_dict()
 
         assert "spearman_r" in d
+        assert "r_squared" in d
         assert "p_value" in d
         assert "n_pairs" in d
         assert "significant" in d
         assert "labels" in d
         assert "rdm_weird" in d
         assert "rdm_sinic" in d
+        assert "bootstrap_ci" in d
+        assert "null_distribution" in d
         assert len(d["rdm_weird"]) == 15
         assert len(d["rdm_sinic"]) == 15
+        assert d["bootstrap_ci"]["ci_lower"] <= d["bootstrap_ci"]["ci_upper"]
+        assert len(d["null_distribution"]) == 100
+
+    def test_rsa_r_squared(self, synthetic_embeddings):
+        """r² should equal r * r."""
+        from src.experiments.exp_rsa import run_rsa
+
+        weird, sinic, labels = synthetic_embeddings
+        result = run_rsa(weird, sinic, labels, n_permutations=100, n_bootstrap=50)
+        assert np.isclose(result.r_squared, result.spearman_r ** 2)
+
+    def test_rsa_bootstrap_ci(self, synthetic_embeddings):
+        """Bootstrap CI should contain the observed value (usually)."""
+        from src.experiments.exp_rsa import run_rsa
+
+        weird, sinic, labels = synthetic_embeddings
+        result = run_rsa(weird, sinic, labels, n_permutations=100, n_bootstrap=200)
+
+        ci = result.bootstrap_ci
+        assert ci is not None
+        assert ci.n_bootstrap == 200
+        assert ci.alpha == 0.05
+        # La CI è ragionevole (non degenere)
+        assert ci.ci_upper - ci.ci_lower > 0
 
     def test_rsa_identical_spaces(self):
         """Identical spaces should have r close to 1."""
@@ -196,8 +262,9 @@ class TestExpRSA:
         vectors = vectors / np.linalg.norm(vectors, axis=1, keepdims=True)
         labels = [f"t{i}" for i in range(10)]
 
-        result = run_rsa(vectors, vectors, labels, n_permutations=100)
+        result = run_rsa(vectors, vectors, labels, n_permutations=100, n_bootstrap=50)
         assert result.spearman_r > 0.99
+        assert result.r_squared > 0.98
 
 
 # =========================================================================
@@ -219,6 +286,8 @@ class TestExpGW:
         assert result.distance >= 0
         assert result.transport_plan.shape == (15, 15)
         assert 0 <= result.p_value <= 1
+        assert result.null_distribution is not None
+        assert len(result.null_distribution) == 50
 
     def test_gw_transport_plan_valid(self, synthetic_embeddings):
         from src.experiments.exp_gw import gromov_wasserstein_distance
@@ -251,7 +320,9 @@ class TestExpGW:
         assert "p_value" in d
         assert "significant" in d
         assert "transport_plan" in d
+        assert "null_distribution" in d
         assert isinstance(d["significant"], bool)
+        assert len(d["null_distribution"]) == 10
 
 
 # =========================================================================

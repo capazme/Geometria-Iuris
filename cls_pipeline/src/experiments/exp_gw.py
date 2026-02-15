@@ -42,9 +42,10 @@ class GWResult:
     transport_plan: np.ndarray
     p_value: float
     n_permutations: int
+    null_distribution: np.ndarray | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        d = {
             "distance": self.distance,
             "p_value": self.p_value,
             "n_permutations": self.n_permutations,
@@ -57,6 +58,9 @@ class GWResult:
             },
             "significant": bool(self.p_value < 0.05),
         }
+        if self.null_distribution is not None:
+            d["null_distribution"] = self.null_distribution.tolist()
+        return d
 
 
 def _cosine_distance_matrix(vectors: np.ndarray) -> np.ndarray:
@@ -193,4 +197,5 @@ def gromov_wasserstein_distance(
         transport_plan=transport_plan,
         p_value=p_value,
         n_permutations=n_permutations,
+        null_distribution=null_dist,
     )

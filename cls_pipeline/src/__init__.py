@@ -1,3 +1,3 @@
-"""CLS Pipeline v2.0 - Cross-Lingual Semantics Analysis."""
+"""CLS Pipeline v3.2 - Cross-Lingual Semantics Analysis."""
 
-__version__ = "2.0.0"
+__version__ = "3.2.0"

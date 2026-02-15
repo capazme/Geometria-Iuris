@@ -346,3 +346,94 @@ def plot_rdm_correlation(
     fig.tight_layout()
 
     return save_figure(fig, output_dir, "rsa_correlation", formats, dpi)
+
+
+def plot_null_distribution(
+    null_dist: np.ndarray,
+    observed: float,
+    p_value: float,
+    output_dir: Path,
+    dpi: int = 300,
+    formats: list[str] = None,
+) -> list[Path]:
+    """
+    Genera istogramma della distribuzione nulla del Mantel test.
+
+    Mostra la distribuzione delle correlazioni Spearman sotto H₀
+    (nessuna corrispondenza tra le RDM), con il valore osservato
+    evidenziato come linea verticale.
+
+    Parameters
+    ----------
+    null_dist : np.ndarray
+        Distribuzione nulla (array 1D di r permutati).
+    observed : float
+        Valore osservato di Spearman r.
+    p_value : float
+        P-value del test di Mantel.
+    output_dir : Path
+        Directory di output.
+    dpi : int
+        Risoluzione.
+    formats : list[str]
+        Formati di output.
+
+    Returns
+    -------
+    list[Path]
+        Percorsi dei file salvati.
+    """
+    if formats is None:
+        formats = ["png"]
+
+    setup_style()
+
+    fig, ax = plt.subplots(figsize=FIGURE_SIZES.double_column)
+
+    # Istogramma distribuzione nulla
+    ax.hist(
+        null_dist,
+        bins=60,
+        density=True,
+        color=COLORS["grid"],
+        edgecolor="white",
+        linewidth=0.5,
+        alpha=0.8,
+        label="Null distribution",
+    )
+
+    # Linea verticale per il valore osservato
+    ax.axvline(
+        observed,
+        color=COLORS["weird"],
+        linewidth=2.5,
+        linestyle="--",
+        label=f"Observed r = {observed:.4f}",
+    )
+
+    # Annotazione p-value
+    ax.annotate(
+        f"p = {p_value:.4f}" if p_value >= 0.001 else "p < 0.001",
+        xy=(observed, ax.get_ylim()[1] * 0.9),
+        xytext=(observed + (ax.get_xlim()[1] - ax.get_xlim()[0]) * 0.05,
+                ax.get_ylim()[1] * 0.9),
+        fontsize=FONT_SIZES["annotation"] + 1,
+        fontweight="bold",
+        color=COLORS["weird"],
+        arrowprops=dict(arrowstyle="->", color=COLORS["weird"], lw=1.2),
+    )
+
+    ax.set_xlabel("Spearman r (permuted)", fontsize=FONT_SIZES["axis"])
+    ax.set_ylabel("Density", fontsize=FONT_SIZES["axis"])
+    ax.legend(loc="upper left", fontsize=FONT_SIZES["legend"])
+
+    ax.set_title(
+        f"Mantel Test Null Distribution ({len(null_dist):,} permutations)\n"
+        f"Observed r = {observed:.4f}, {significance_label(p_value)}",
+        fontsize=FONT_SIZES["subtitle"],
+        fontweight="bold",
+    )
+
+    fig.tight_layout()
+
+    return save_figure(fig, output_dir, "rsa_null_distribution", formats, dpi)

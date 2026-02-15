@@ -13,7 +13,7 @@ import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
 
-from ..core.config_loader import Config
+from ..core.config_loader import Config, ModelConfig
 from ..core.device import DeviceManager, clear_device_cache
 from .cache import EmbeddingCache
 
@@ -234,6 +234,82 @@ class EmbeddingClient:
         logger.info(
             "Embedding generati e salvati in cache: shape=%s, dtype=%s",
             embeddings.shape, embeddings.dtype,
+        )
+        return embeddings
+
+    def get_embeddings_for_model(
+        self,
+        texts: list[str],
+        model_config: ModelConfig,
+        normalize: bool = True,
+    ) -> np.ndarray:
+        """
+        Get embeddings using an arbitrary ModelConfig.
+
+        Parameters
+        ----------
+        texts : list[str]
+            Texts to embed.
+        model_config : ModelConfig
+            Model configuration with name, dimension, prefix.
+        normalize : bool
+            Whether to L2-normalize the output vectors.
+
+        Returns
+        -------
+        np.ndarray
+            Embedding matrix of shape (n_texts, dimension).
+        """
+        model_name = model_config.name
+        prefix = model_config.prefix
+        expected_dim = model_config.dimension
+
+        logger.info(
+            "Richiesta embedding per modello %s: %d testi",
+            model_config.label, len(texts),
+        )
+        cached = self.cache.get(texts, model_name)
+        if cached is not None:
+            logger.info(
+                "Cache HIT per %s — %d testi, shape=%s",
+                model_config.label, len(texts), cached.shape,
+            )
+            return cached
+
+        logger.info("Cache MISS per %s — generazione embedding necessaria", model_config.label)
+
+        model = self._load_model(model_name)
+
+        if prefix:
+            encode_texts = [f"{prefix}{t}" for t in texts]
+        else:
+            encode_texts = texts
+
+        embeddings = model.encode(
+            encode_texts,
+            batch_size=self.batch_size,
+            show_progress_bar=len(texts) > 10,
+            convert_to_numpy=True,
+            normalize_embeddings=False,
+        )
+
+        embeddings = embeddings.astype(np.float64)
+
+        if normalize:
+            embeddings = _l2_normalize(embeddings)
+
+        actual_dim = embeddings.shape[1]
+        if actual_dim != expected_dim:
+            logger.warning(
+                "ATTENZIONE dimensione: attesa %d, ottenuta %d per %s",
+                expected_dim, actual_dim, model_name,
+            )
+
+        self.cache.set(texts, model_name, embeddings)
+
+        logger.info(
+            "Embedding generati e salvati in cache: shape=%s (%s)",
+            embeddings.shape, model_config.label,
         )
         return embeddings
 

@@ -67,6 +67,9 @@ def build_html_report(
     nda_a = nda.get("part_a_neighborhoods", {})
     nda_b = nda.get("part_b_decompositions", {})
 
+    # Estrai dati multi-modello (solo RSA per ora)
+    multi_rsa = experiments.get("multi_model_1_rsa", {})
+
     # Importa funzioni Plotly (con fallback)
     try:
         from .plotly_charts import (
@@ -78,6 +81,8 @@ def build_html_report(
             create_nda_scatter,
             create_nda_network,
             create_umap_scatter,
+            create_multi_model_heatmap,
+            create_multi_model_forest,
         )
         plotly_available = True
     except ImportError:
@@ -155,6 +160,27 @@ def build_html_report(
             except Exception as e:
                 logger.warning("Errore generazione grafici UMAP: %s", e)
 
+        # Multi-model RSA
+        if multi_rsa.get("pair_results"):
+            try:
+                weird_labels = sorted(set(
+                    pr.get("model_weird", "") for pr in multi_rsa["pair_results"]
+                ))
+                sinic_labels = sorted(set(
+                    pr.get("model_sinic", "") for pr in multi_rsa["pair_results"]
+                ))
+                plotly_charts["multi_heatmap"] = create_multi_model_heatmap(
+                    multi_rsa["pair_results"],
+                    weird_labels,
+                    sinic_labels,
+                )
+                plotly_charts["multi_forest"] = create_multi_model_forest(
+                    multi_rsa["pair_results"],
+                    multi_rsa.get("aggregate", {}),
+                )
+            except Exception as e:
+                logger.warning("Errore generazione grafici multi-modello: %s", e)
+
     # ─── Costruisci sezioni HTML ────────────────────────────────────
     overview_html = _build_overview_section(rsa, gw, axes, clust, nda_a, nda_b, metadata)
     rsa_html = _build_rsa_section(rsa, plotly_charts)
@@ -164,6 +190,7 @@ def build_html_report(
     nda_a_html = _build_nda_a_section(nda_a, plotly_charts)
     nda_b_html = _build_nda_b_section(nda_b)
     umap_html = _build_umap_section(umap_data, plotly_charts)
+    multi_model_html = _build_multi_model_section(multi_rsa, plotly_charts)
     methodology_html = _build_methodology_section()
 
     # ─── Assembla HTML finale ───────────────────────────────────────
@@ -176,8 +203,13 @@ def build_html_report(
         ("nda_a", "5A. Vicinati", nda_a_html),
         ("nda_b", "5B. Decomposizioni", nda_b_html),
         ("umap", "UMAP", umap_html),
-        ("methodology", "Metodologia", methodology_html),
     ]
+
+    # Tab multi-modello solo se ci sono dati
+    if multi_rsa.get("pair_results"):
+        tabs.append(("multi_model", "Multi-Model", multi_model_html))
+
+    tabs.append(("methodology", "Metodologia", methodology_html))
 
     tab_buttons = "\n".join(
         f'<button class="tab-btn{" active" if i == 0 else ""}" '
@@ -506,6 +538,83 @@ def _build_umap_section(umap_data, charts) -> str:
             Hover sui punti per vedere i dettagli.
         </div>
         {chart_html}
+    </div>
+    """
+
+
+def _build_multi_model_section(multi_rsa: dict, charts: dict) -> str:
+    """Costruisce sezione multi-modello (solo RSA per ora)."""
+    heatmap_html = charts.get("multi_heatmap", "")
+    forest_html = charts.get("multi_forest", "")
+
+    # Tabella risultati per coppia (RSA)
+    rsa_rows = ""
+    for pr in multi_rsa.get("pair_results", []):
+        w = pr.get("model_weird", "?")
+        s = pr.get("model_sinic", "?")
+        r = pr.get("spearman_r", 0)
+        p = pr.get("p_value", 1)
+        ci = pr.get("bootstrap_ci", {})
+        ci_str = f"[{ci.get('ci_lower', 0):.4f}, {ci.get('ci_upper', 0):.4f}]" if ci else "—"
+        r_sq = pr.get("r_squared", r ** 2)
+        rsa_rows += f"""
+        <tr>
+            <td>{w}</td>
+            <td>{s}</td>
+            <td><b>{r:.4f}</b></td>
+            <td>{r_sq:.4f}</td>
+            <td>{ci_str}</td>
+            <td>{significance_label(p)}</td>
+        </tr>
+        """
+
+    rsa_agg = multi_rsa.get("aggregate", {})
+    n_pairs = multi_rsa.get("n_pairs", len(multi_rsa.get("pair_results", [])))
+
+    return f"""
+    <div class="card">
+        <h3>Analisi Multi-Modello: Robustezza Cross-Model</h3>
+        <div class="guide">
+            <strong>Obiettivo:</strong> Dimostrare che le differenze culturali osservate non
+            dipendono dalla scelta del singolo modello, ma riflettono genuine divergenze tra
+            tradizioni linguistiche WEIRD e Sinic. Ogni coppia (modello EN × modello ZH) viene
+            analizzata indipendentemente.
+        </div>
+        <div class="metrics">
+            <div class="metric-box">
+                <div class="value">{n_pairs}</div>
+                <div class="label">Coppie di Modelli</div>
+            </div>
+            <div class="metric-box">
+                <div class="value">{rsa_agg.get('mean', 0):.4f}</div>
+                <div class="label">RSA ρ Media</div>
+            </div>
+            <div class="metric-box">
+                <div class="value">± {rsa_agg.get('std', 0):.4f}</div>
+                <div class="label">SD</div>
+            </div>
+            <div class="metric-box">
+                <div class="value">[{rsa_agg.get('min', 0):.4f}, {rsa_agg.get('max', 0):.4f}]</div>
+                <div class="label">Range</div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h3>RSA: Tabella Risultati per Coppia</h3>
+        <table class="sortable">
+            <thead>
+                <tr><th>WEIRD</th><th>Sinic</th><th>Spearman ρ</th><th>r²</th><th>CI 95%</th><th>p-value</th></tr>
+            </thead>
+            <tbody>{rsa_rows}</tbody>
+        </table>
+    </div>
+    <div class="card">
+        <h3>Heatmap di Consistenza (hover per dettagli)</h3>
+        {heatmap_html}
+    </div>
+    <div class="card">
+        <h3>Forest Plot (meta-analisi)</h3>
+        {forest_html}
     </div>
     """
 

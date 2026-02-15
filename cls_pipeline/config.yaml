@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════
-# CLS Pipeline v2.0 — Configurazione
+# CLS Pipeline v3.2 — Configurazione
 # ═══════════════════════════════════════════════════════════════════════
 # Cross-Lingual Semantics Analysis Pipeline
 #
@@ -13,7 +13,7 @@
 # ═══════════════════════════════════════════════════════════════════════
 
 pipeline:
-  version: "3.0.0"
+  version: "3.2.0"
   name: "CLS Pipeline"
 
 
@@ -80,6 +80,66 @@ models:
     language: "zh"
     # BGE-zh non richiede prefisso per gli embedding.
     prefix: ""
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# GRUPPI DI MODELLI (analisi multi-modello)
+# ═══════════════════════════════════════════════════════════════════════
+# Usati con --multi-model per eseguire gli esperimenti su tutte le
+# coppie weird × sinic (prodotto cartesiano: 3×3 = 9 coppie).
+# Dimostra che gli effetti osservati non dipendono dal singolo modello
+# ma dalla tradizione culturale.
+#
+# Criteri di selezione:
+# - Solo modelli MONOLINGUI (no multilingui: contaminano lo spazio)
+# - Diversita' di paradigma: contrastivo, RetroMAE, CoSENT, Siamese
+# - Diversita' di architettura: BERT-large, MacBERT, custom BERT+RoPE
+# - Diversita' di organizzazione: Microsoft, BAAI, Nomic, DMetaSoul
+# ═══════════════════════════════════════════════════════════════════════
+model_groups:
+  weird:
+    # E5-large-v2 (Microsoft): contrastivo debolmente supervisionato
+    - name: "intfloat/e5-large-v2"
+      dimension: 1024
+      label: "E5-large-v2"
+      language: "en"
+      prefix: "query: "
+
+    # BGE-EN-v1.5 (BAAI): RetroMAE pre-training + contrastivo
+    - name: "BAAI/bge-large-en-v1.5"
+      dimension: 1024
+      label: "BGE-EN-v1.5"
+      language: "en"
+      prefix: ""
+
+    # Nomic-v1.5 (Nomic AI): multi-stage contrastivo + Matryoshka
+    - name: "nomic-ai/nomic-embed-text-v1.5"
+      dimension: 768
+      label: "Nomic-v1.5"
+      language: "en"
+      prefix: "search_document: "
+
+  sinic:
+    # BGE-ZH-v1.5 (BAAI): RetroMAE + contrastivo su corpus Wudao
+    - name: "BAAI/bge-large-zh-v1.5"
+      dimension: 1024
+      label: "BGE-ZH-v1.5"
+      language: "zh"
+      prefix: ""
+
+    # Text2vec (shibing624): CoSENT rank loss su MacBERT
+    - name: "shibing624/text2vec-base-chinese"
+      dimension: 768
+      label: "Text2vec-ZH"
+      language: "zh"
+      prefix: ""
+
+    # SBERT-ZH-v2 (DMetaSoul): Siamese BERT su SimCLUE
+    - name: "DMetaSoul/sbert-chinese-general-v2"
+      dimension: 768
+      label: "SBERT-ZH-v2"
+      language: "zh"
+      prefix: ""
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -158,6 +218,13 @@ experiments:
     # Con ~400 core (79800 coppie), 10000 perm forniscono una
     # buona risoluzione del p-value. Ridurre a 1000 per test veloci.
     n_permutations: 10000
+
+    # --- n_bootstrap ---
+    # Numero di ricampionamenti block bootstrap per l'intervallo di
+    # confidenza. Ricampiona *termini interi* (non coppie di distanze)
+    # per rispettare la dipendenza tra entries della RDM.
+    # Rif.: Nili et al. (2014) PLoS Comp. Bio.
+    n_bootstrap: 1000
 
   # -------------------------------------------------------------------
   # Esperimento 2: Distanza di Gromov-Wasserstein

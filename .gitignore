@@ -1,42 +1,30 @@
+# Python
 .venv/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-*.pyw
-*.pyz
-*.pywz
-*.pyzz
-*.pywzz
-*.pyzzz
-*.pywzzz
-*.env
-*.env.example
-*.log
-*.log.*
-*.log.*.*
-*.log.*.*.*
-*.log.*.*.*.*
-*.log.*.*.*.*.*
-*.log.*.*.*.*.*.*
-*.log.*.*.*.*.*.*.*
-*.log.*.*.*.*.*.*.*.*
-*.log.*.*.*.*.*.*.*.*.*
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# Runtime artifacts (directory-based, not extension-based)
 cache/
-data/
 output/
 models/
-*.html
-*.json
-*.csv
-*.txt
-*.pdf
-*.docx
-*.doc
-*.png
-.DS_Store
 runs/
-_*
-.*
-bmad*
-.agent/*
+
+# Sensitive
+.env
+
+# Data (large, not tracked; regenerabile con build_dataset)
+data/raw/
+data/processed/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+
+# BMAD framework (personal workflow)
+_bmad/

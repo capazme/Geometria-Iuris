@@ -1,5 +1,5 @@
 """
-module_c_umap.py — UMAP Visualization (Manifold Learning).
+umap_viz.py — UMAP Visualization (Manifold Learning).
 
 Reduces high-dimensional embeddings to 2D for visualization using UMAP,
 allowing visual comparison of latent space structures.

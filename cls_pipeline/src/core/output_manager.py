@@ -132,6 +132,23 @@ class OutputManager:
         }
         logger.info("UMAP result recorded: %d points", len(weird_coords) + len(sinic_coords))
 
+    def set_multi_model_result(self, experiment_name: str, multi_result) -> None:
+        """Set multi-model experiment result.
+
+        Parameters
+        ----------
+        experiment_name : str
+            Experiment identifier (e.g., "1_rsa", "2_gromov_wasserstein").
+        multi_result : MultiModelResult
+            Multi-model aggregated result.
+        """
+        key = f"multi_model_{experiment_name}"
+        self.experiments[key] = multi_result.to_dict()
+        logger.info(
+            "Multi-model result recorded for %s: %d pairs",
+            experiment_name, len(multi_result.pair_results),
+        )
+
     def to_dict(self) -> dict[str, Any]:
         """Convert results to dictionary."""
         return {

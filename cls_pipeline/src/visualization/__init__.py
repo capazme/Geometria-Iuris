@@ -7,7 +7,6 @@ Sub-packages:
 
 Moduli standalone:
 - config.py: Configurazione stile uniforme
-- generate_html.py: Report HTML legacy (v2.x compatibility)
 """
 
 from .config import (

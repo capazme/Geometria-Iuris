@@ -1,14 +1,17 @@
 """
-cli.py — Command-line interface for CLS Pipeline v2.0.
+cli.py — Command-line interface for CLS Pipeline v3.2.
 
-Entry point with subcommands: run, info, clear-cache.
+Singolo entry point: run, info, plots, html, archive, clear-cache.
 Orchestrates the 5-experiment pipeline and generates structured output.
 """
 
 import argparse
 import json
 import logging
+import re
+import shutil
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -21,7 +24,6 @@ from .embeddings.client import EmbeddingClient
 from .experiments import (
     # Experiment 1: RSA
     run_rsa,
-    plot_rdm_heatmaps,
     # Experiment 2: GW
     gromov_wasserstein_distance,
     # Experiment 3: Axes
@@ -73,9 +75,13 @@ def load_dataset(config: Config) -> dict:
     return data
 
 
-def run_pipeline(config: Config, generate_html: bool = True) -> Path:
+def run_pipeline(
+    config: Config,
+    generate_html: bool = True,
+    selected_experiments: list[str] | None = None,
+) -> Path:
     """
-    Execute the full CLS pipeline (5 experiments + UMAP visualization).
+    Execute the CLS pipeline (5 experiments + UMAP visualization).
 
     Parameters
     ----------
@@ -83,17 +89,27 @@ def run_pipeline(config: Config, generate_html: bool = True) -> Path:
         Pipeline configuration.
     generate_html : bool
         Whether to generate HTML visualization.
+    selected_experiments : list[str] | None
+        If provided, run only these experiments (e.g. ["rsa", "gw"]).
+        If None, run all experiments.
 
     Returns
     -------
     Path
         Path to results.json file.
     """
+    # Mappa nomi abbreviati → set per lookup veloce
+    all_exp_names = {"rsa", "gw", "axes", "clustering", "nda", "umap"}
+    run_exp = set(selected_experiments) if selected_experiments else all_exp_names
+
     separator = "=" * 70
 
     logger.info(separator)
     logger.info("  CLS Pipeline v%s - Cross-Lingual Semantics Analysis", config.version)
     logger.info(separator)
+
+    if selected_experiments:
+        logger.info("  Selected experiments: %s", ", ".join(selected_experiments))
 
     # Load dataset
     data = load_dataset(config)
@@ -109,7 +125,6 @@ def run_pipeline(config: Config, generate_html: bool = True) -> Path:
     zh_core = [t["zh"] for t in core_terms]
     en_all = [t["en"] for t in all_terms]
     zh_all = [t["zh"] for t in all_terms]
-    domains_core = [t.get("domain", "unknown") for t in core_terms]
 
     # Compute hashes for reproducibility
     data_path = config.get_absolute_path("processed") / "legal_terms.json"
@@ -150,190 +165,207 @@ def run_pipeline(config: Config, generate_html: bool = True) -> Path:
 
     logger.info("Core embeddings - WEIRD: %s, Sinic: %s", emb_weird_core.shape, emb_sinic_core.shape)
 
-    # Full corpus embeddings (core + background)
+    # Full corpus embeddings (needed by NDA; load always for consistency)
     emb_weird_all = embed_weird(en_all)
     emb_sinic_all = embed_sinic(zh_all)
 
     logger.info("Full corpus - WEIRD: %s, Sinic: %s", emb_weird_all.shape, emb_sinic_all.shape)
 
+    # Risultati parziali per il summary
+    rsa_result = gw_result = axes_result = clustering_result = None
+    nda_part_a = nda_part_b = nda_result = None
+
     # ==================================================================
     # Experiment 1: RSA + Mantel Test
     # ==================================================================
-    logger.info(separator)
-    logger.info("  EXPERIMENT 1: RSA + Mantel Test")
-    logger.info(separator)
+    if "rsa" in run_exp:
+        logger.info(separator)
+        logger.info("  EXPERIMENT 1: RSA + Mantel Test")
+        logger.info(separator)
 
-    rsa_config = config.experiments.rsa
-    rsa_result = run_rsa(
-        emb_weird_core, emb_sinic_core,
-        labels=en_core,
-        n_permutations=rsa_config.n_permutations,
-        seed=config.random_seed,
-    )
+        rsa_config = config.experiments.rsa
+        rsa_result = run_rsa(
+            emb_weird_core, emb_sinic_core,
+            labels=en_core,
+            n_permutations=rsa_config.n_permutations,
+            n_bootstrap=rsa_config.n_bootstrap,
+            seed=config.random_seed,
+        )
 
-    print(f"\n{'─' * 50}")
-    print(f"  RSA: Spearman r = {rsa_result.spearman_r:.4f}")
-    print(f"  Mantel p-value  = {rsa_result.p_value:.4f}")
-    print(f"  N pairs         = {rsa_result.n_pairs}")
-    print(f"{'─' * 50}\n")
+        ci_str = ""
+        if rsa_result.bootstrap_ci:
+            ci_str = f"  95% CI          = [{rsa_result.bootstrap_ci.ci_lower:.4f}, {rsa_result.bootstrap_ci.ci_upper:.4f}]\n"
+        print(f"\n{'─' * 50}")
+        print(f"  RSA: Spearman r = {rsa_result.spearman_r:.4f}")
+        print(f"  r² (effect)     = {rsa_result.r_squared:.4f}")
+        print(f"  Mantel p-value  = {rsa_result.p_value:.4f}")
+        if ci_str:
+            print(ci_str.rstrip())
+        print(f"  N pairs         = {rsa_result.n_pairs}")
+        print(f"{'─' * 50}\n")
 
-    output_manager.set_rsa_result(rsa_result)
+        output_manager.set_rsa_result(rsa_result)
 
     # ==================================================================
     # Experiment 2: Gromov-Wasserstein Distance
     # ==================================================================
-    logger.info(separator)
-    logger.info("  EXPERIMENT 2: Gromov-Wasserstein Distance")
-    logger.info(separator)
+    if "gw" in run_exp:
+        logger.info(separator)
+        logger.info("  EXPERIMENT 2: Gromov-Wasserstein Distance")
+        logger.info(separator)
 
-    gw_config = config.experiments.gromov_wasserstein
-    gw_result = gromov_wasserstein_distance(
-        emb_weird_core, emb_sinic_core,
-        entropic_reg=gw_config.entropic_reg,
-        use_sinkhorn=gw_config.use_sinkhorn,
-        n_permutations=gw_config.n_permutations,
-        seed=config.random_seed,
-    )
+        gw_config = config.experiments.gromov_wasserstein
+        gw_result = gromov_wasserstein_distance(
+            emb_weird_core, emb_sinic_core,
+            entropic_reg=gw_config.entropic_reg,
+            use_sinkhorn=gw_config.use_sinkhorn,
+            n_permutations=gw_config.n_permutations,
+            seed=config.random_seed,
+        )
 
-    print(f"\n{'─' * 50}")
-    print(f"  GW Distance:    {gw_result.distance:.6f}")
-    print(f"  p-value:        {gw_result.p_value:.4f}")
-    print(f"  Interpretation: {'High anisomorphism' if gw_result.distance > 0.1 else 'Relative isomorphism'}")
-    print(f"{'─' * 50}\n")
+        print(f"\n{'─' * 50}")
+        print(f"  GW Distance:    {gw_result.distance:.6f}")
+        print(f"  p-value:        {gw_result.p_value:.4f}")
+        print(f"  Interpretation: {'High anisomorphism' if gw_result.distance > 0.1 else 'Relative isomorphism'}")
+        print(f"{'─' * 50}\n")
 
-    output_manager.set_gw_result(gw_result)
+        output_manager.set_gw_result(gw_result)
 
     # ==================================================================
     # Experiment 3: Axiological Axis Projection
     # ==================================================================
-    logger.info(separator)
-    logger.info("  EXPERIMENT 3: Axiological Axis Projection (Kozlowski)")
-    logger.info(separator)
+    if "axes" in run_exp:
+        logger.info(separator)
+        logger.info("  EXPERIMENT 3: Axiological Axis Projection (Kozlowski)")
+        logger.info(separator)
 
-    axes_config = config.experiments.axes
-    axes_result = run_axes_experiment(
-        emb_weird_core, emb_sinic_core,
-        labels=en_core,
-        value_axes=value_axes,
-        embed_fn_weird=embed_weird,
-        embed_fn_sinic=embed_sinic,
-        n_bootstrap=axes_config.n_bootstrap,
-        seed=config.random_seed,
-    )
+        axes_config = config.experiments.axes
+        axes_result = run_axes_experiment(
+            emb_weird_core, emb_sinic_core,
+            labels=en_core,
+            value_axes=value_axes,
+            embed_fn_weird=embed_weird,
+            embed_fn_sinic=embed_sinic,
+            n_bootstrap=axes_config.n_bootstrap,
+            seed=config.random_seed,
+        )
 
-    print(f"\n{'─' * 50}")
-    print("  Axiological Axes Results:")
-    for ax in axes_result.axes:
-        ci_str = ""
-        if ax.bootstrap_ci:
-            ci_str = f" CI=[{ax.bootstrap_ci.ci_lower:.3f}, {ax.bootstrap_ci.ci_upper:.3f}]"
-        print(f"  {ax.axis_name}: rho={ax.spearman_r:.4f}, p={ax.spearman_p:.4f}{ci_str}")
-    print(f"{'─' * 50}\n")
+        print(f"\n{'─' * 50}")
+        print("  Axiological Axes Results:")
+        for ax in axes_result.axes:
+            ci_str = ""
+            if ax.bootstrap_ci:
+                ci_str = f" CI=[{ax.bootstrap_ci.ci_lower:.3f}, {ax.bootstrap_ci.ci_upper:.3f}]"
+            print(f"  {ax.axis_name}: rho={ax.spearman_r:.4f}, p={ax.spearman_p:.4f}{ci_str}")
+        print(f"{'─' * 50}\n")
 
-    output_manager.set_axes_result(axes_result)
+        output_manager.set_axes_result(axes_result)
 
     # ==================================================================
     # Experiment 4: Hierarchical Clustering
     # ==================================================================
-    logger.info(separator)
-    logger.info("  EXPERIMENT 4: Hierarchical Clustering + Fowlkes-Mallows")
-    logger.info(separator)
+    if "clustering" in run_exp:
+        logger.info(separator)
+        logger.info("  EXPERIMENT 4: Hierarchical Clustering + Fowlkes-Mallows")
+        logger.info(separator)
 
-    clust_config = config.experiments.clustering
-    clustering_result = run_clustering_experiment(
-        emb_weird_core, emb_sinic_core,
-        labels=en_core,
-        method=clust_config.method,
-        k_values=clust_config.k_values,
-        n_permutations=clust_config.n_permutations,
-        seed=config.random_seed,
-    )
+        clust_config = config.experiments.clustering
+        clustering_result = run_clustering_experiment(
+            emb_weird_core, emb_sinic_core,
+            labels=en_core,
+            method=clust_config.method,
+            k_values=clust_config.k_values,
+            n_permutations=clust_config.n_permutations,
+            seed=config.random_seed,
+        )
 
-    print(f"\n{'─' * 50}")
-    print("  Fowlkes-Mallows Index (multi-k):")
-    for fm in clustering_result.fm_results:
-        interp = "Similar" if fm.fm_index >= 0.5 else "Divergent"
-        print(f"  k={fm.k:2d}: FM={fm.fm_index:.4f}, p={fm.p_value:.4f} ({interp})")
-    print(f"{'─' * 50}\n")
+        print(f"\n{'─' * 50}")
+        print("  Fowlkes-Mallows Index (multi-k):")
+        for fm in clustering_result.fm_results:
+            interp = "Similar" if fm.fm_index >= 0.5 else "Divergent"
+            print(f"  k={fm.k:2d}: FM={fm.fm_index:.4f}, p={fm.p_value:.4f} ({interp})")
+        print(f"{'─' * 50}\n")
 
-    output_manager.set_clustering_result(clustering_result)
+        output_manager.set_clustering_result(clustering_result)
 
     # ==================================================================
     # Experiment 5: Neighborhood Divergence Analysis
     # ==================================================================
-    logger.info(separator)
-    logger.info("  EXPERIMENT 5: Neighborhood Divergence Analysis (NDA)")
-    logger.info(separator)
+    if "nda" in run_exp:
+        logger.info(separator)
+        logger.info("  EXPERIMENT 5: Neighborhood Divergence Analysis (NDA)")
+        logger.info(separator)
 
-    nda_config = config.experiments.nda
+        nda_config = config.experiments.nda
 
-    # Part A: Neighborhood comparison
-    logger.info("  Part A: k-NN Neighborhood Comparison")
-    nda_part_a = run_nda_part_a(
-        emb_weird_core, emb_sinic_core,
-        core_labels=en_core,
-        emb_weird_all=emb_weird_all,
-        emb_sinic_all=emb_sinic_all,
-        all_labels=en_all,
-        k=nda_config.k,
-        n_permutations=nda_config.n_permutations,
-        seed=config.random_seed,
-    )
+        # Part A: Neighborhood comparison
+        logger.info("  Part A: k-NN Neighborhood Comparison")
+        nda_part_a = run_nda_part_a(
+            emb_weird_core, emb_sinic_core,
+            core_labels=en_core,
+            emb_weird_all=emb_weird_all,
+            emb_sinic_all=emb_sinic_all,
+            all_labels=en_all,
+            k=nda_config.k,
+            n_permutations=nda_config.n_permutations,
+            seed=config.random_seed,
+        )
 
-    print(f"\n{'─' * 50}")
-    print(f"  NDA Part A: Mean Jaccard = {nda_part_a.mean_jaccard:.4f}")
-    print(f"  p-value = {nda_part_a.p_value:.4f}")
-    print(f"\n  Top 5 'False Friends' (lowest Jaccard):")
-    sorted_terms = sorted(nda_part_a.term_results, key=lambda r: r.jaccard)
-    for r in sorted_terms[:5]:
-        print(f"    {r.label:<25} Jaccard={r.jaccard:.3f}")
-    print(f"{'─' * 50}\n")
+        print(f"\n{'─' * 50}")
+        print(f"  NDA Part A: Mean Jaccard = {nda_part_a.mean_jaccard:.4f}")
+        print(f"  p-value = {nda_part_a.p_value:.4f}")
+        print(f"\n  Top 5 'False Friends' (lowest Jaccard):")
+        sorted_terms = sorted(nda_part_a.term_results, key=lambda r: r.jaccard)
+        for r in sorted_terms[:5]:
+            print(f"    {r.label:<25} Jaccard={r.jaccard:.3f}")
+        print(f"{'─' * 50}\n")
 
-    # Part B: Normative decompositions
-    logger.info("  Part B: Normative Decompositions")
-    nda_part_b = run_nda_part_b(
-        decompositions,
-        embed_fn_weird=embed_weird,
-        embed_fn_sinic=embed_sinic,
-        corpus_weird=emb_weird_all,
-        corpus_sinic=emb_sinic_all,
-        corpus_labels=en_all,
-        k=nda_config.k,
-    )
+        # Part B: Normative decompositions
+        logger.info("  Part B: Normative Decompositions")
+        nda_part_b = run_nda_part_b(
+            decompositions,
+            embed_fn_weird=embed_weird,
+            embed_fn_sinic=embed_sinic,
+            corpus_weird=emb_weird_all,
+            corpus_sinic=emb_sinic_all,
+            corpus_labels=en_all,
+            k=nda_config.k,
+        )
 
-    print(f"\n{'─' * 50}")
-    print("  NDA Part B: Normative Decompositions:")
-    for d in nda_part_b.decompositions:
-        print(f"  {d.en_formula:<25} Jaccard={d.jaccard:.3f}")
-        print(f"    WEIRD neighbors: {', '.join(l for l, _ in d.weird_neighbors[:5])}")
-        print(f"    Sinic neighbors: {', '.join(l for l, _ in d.sinic_neighbors[:5])}")
-    print(f"{'─' * 50}\n")
+        print(f"\n{'─' * 50}")
+        print("  NDA Part B: Normative Decompositions:")
+        for d in nda_part_b.decompositions:
+            print(f"  {d.en_formula:<25} Jaccard={d.jaccard:.3f}")
+            print(f"    WEIRD neighbors: {', '.join(l for l, _ in d.weird_neighbors[:5])}")
+            print(f"    Sinic neighbors: {', '.join(l for l, _ in d.sinic_neighbors[:5])}")
+        print(f"{'─' * 50}\n")
 
-    nda_result = NDAExperimentResult(part_a=nda_part_a, part_b=nda_part_b)
-    output_manager.set_nda_result(nda_result)
+        nda_result = NDAExperimentResult(part_a=nda_part_a, part_b=nda_part_b)
+        output_manager.set_nda_result(nda_result)
 
     # ==================================================================
     # Supplementary: UMAP Visualization
     # ==================================================================
-    logger.info(separator)
-    logger.info("  SUPPLEMENTARY: UMAP Visualization")
-    logger.info(separator)
+    if "umap" in run_exp:
+        logger.info(separator)
+        logger.info("  SUPPLEMENTARY: UMAP Visualization")
+        logger.info(separator)
 
-    umap_config = config.experiments.umap
-    umap_result = umap_reduce(
-        emb_weird_core, emb_sinic_core,
-        en_core, en_core,
-        n_neighbors=umap_config.n_neighbors,
-        min_dist=umap_config.min_dist,
-        metric=umap_config.metric,
-        random_state=config.random_seed,
-    )
+        umap_config = config.experiments.umap
+        umap_result = umap_reduce(
+            emb_weird_core, emb_sinic_core,
+            en_core, en_core,
+            n_neighbors=umap_config.n_neighbors,
+            min_dist=umap_config.min_dist,
+            metric=umap_config.metric,
+            random_state=config.random_seed,
+        )
 
-    n_weird = emb_weird_core.shape[0]
-    coords_weird = umap_result.coords_2d[:n_weird]
-    coords_sinic = umap_result.coords_2d[n_weird:]
+        n_weird = emb_weird_core.shape[0]
+        coords_weird = umap_result.coords_2d[:n_weird]
+        coords_sinic = umap_result.coords_2d[n_weird:]
 
-    output_manager.set_umap_result(coords_weird, coords_sinic, en_core, en_core)
+        output_manager.set_umap_result(coords_weird, coords_sinic, en_core, en_core)
 
     # ==================================================================
     # Save results
@@ -347,13 +379,18 @@ def run_pipeline(config: Config, generate_html: bool = True) -> Path:
     print(f"\n{'=' * 60}")
     print("  SUMMARY")
     print(f"{'=' * 60}")
-    print(f"  1. RSA:        r={rsa_result.spearman_r:.4f}, p={rsa_result.p_value:.4f}")
-    print(f"  2. GW:         dist={gw_result.distance:.6f}, p={gw_result.p_value:.4f}")
-    for ax in axes_result.axes:
-        print(f"  3. Axis ({ax.axis_name[:15]}): rho={ax.spearman_r:.4f}")
-    for fm in clustering_result.fm_results:
-        print(f"  4. Clustering (k={fm.k}): FM={fm.fm_index:.4f}, p={fm.p_value:.4f}")
-    print(f"  5. NDA:        mean_Jaccard={nda_part_a.mean_jaccard:.4f}, p={nda_part_a.p_value:.4f}")
+    if rsa_result:
+        print(f"  1. RSA:        r={rsa_result.spearman_r:.4f}, r²={rsa_result.r_squared:.4f}, p={rsa_result.p_value:.4f}")
+    if gw_result:
+        print(f"  2. GW:         dist={gw_result.distance:.6f}, p={gw_result.p_value:.4f}")
+    if axes_result:
+        for ax in axes_result.axes:
+            print(f"  3. Axis ({ax.axis_name[:15]}): rho={ax.spearman_r:.4f}")
+    if clustering_result:
+        for fm in clustering_result.fm_results:
+            print(f"  4. Clustering (k={fm.k}): FM={fm.fm_index:.4f}, p={fm.p_value:.4f}")
+    if nda_part_a:
+        print(f"  5. NDA:        mean_Jaccard={nda_part_a.mean_jaccard:.4f}, p={nda_part_a.p_value:.4f}")
     print(f"{'=' * 60}")
     print(f"\n  Results saved to: {results_path}")
 
@@ -376,13 +413,7 @@ def run_pipeline(config: Config, generate_html: bool = True) -> Path:
 
 def generate_visualization(config: Config, light_mode: bool = False) -> Path:
     """Generate interactive HTML visualization from results.json."""
-    # Usa il nuovo builder interattivo con fallback al vecchio
-    try:
-        from .visualization.interactive.html_builder import build_html_report
-        use_new_builder = True
-    except ImportError:
-        from .visualization.generate_html import generate_html
-        use_new_builder = False
+    from .visualization.interactive.html_builder import build_html_report
 
     output_dir = config.get_absolute_path("output")
     results_path = output_dir / config.output.results_file
@@ -395,10 +426,7 @@ def generate_visualization(config: Config, light_mode: bool = False) -> Path:
     with open(results_path, "r", encoding="utf-8") as f:
         results = json.load(f)
 
-    if use_new_builder:
-        build_html_report(results, html_path, light_mode=light_mode)
-    else:
-        generate_html(results, html_path)
+    build_html_report(results, html_path, light_mode=light_mode)
 
     logger.info("Visualization generated: %s", html_path)
     return html_path
@@ -419,7 +447,7 @@ def generate_plots(config: Config) -> None:
         NDAExperimentResult, NDAPartAResult, NDAPartBResult,
         TermNeighborhoodResult, DecompositionResult,
     )
-    from .experiments.module_c_umap import UMAPResult
+    from .experiments.umap_viz import UMAPResult
 
     output_dir = config.get_absolute_path("output")
     results_path = output_dir / config.output.results_file
@@ -440,9 +468,22 @@ def generate_plots(config: Config) -> None:
     data = load_dataset(config)
     domains_core = [t.get("domain", "unknown") for t in data["core_terms"]]
 
-    # ─── RSA Heatmaps ─────────────────────────────────────────────────────
+    # ─── RSA ───────────────────────────────────────────────────────────────
     if "1_rsa" in experiments:
         rsa_data = experiments["1_rsa"]
+        ci_data = rsa_data.get("bootstrap_ci")
+        ci_obj = None
+        if ci_data:
+            ci_obj = BootstrapCIResult(
+                estimate=ci_data.get("estimate", rsa_data["spearman_r"]),
+                ci_lower=ci_data["ci_lower"],
+                ci_upper=ci_data["ci_upper"],
+                n_bootstrap=ci_data["n_bootstrap"],
+                alpha=ci_data.get("alpha", 0.05),
+            )
+        null_dist = None
+        if rsa_data.get("null_distribution"):
+            null_dist = np.array(rsa_data["null_distribution"])
         rsa_result = RSAResult(
             rdm_weird=np.array(rsa_data["rdm_weird"]),
             rdm_sinic=np.array(rsa_data["rdm_sinic"]),
@@ -451,15 +492,11 @@ def generate_plots(config: Config) -> None:
             n_permutations=rsa_data["n_permutations"],
             n_pairs=rsa_data["n_pairs"],
             labels=rsa_data["labels"],
+            r_squared=rsa_data.get("r_squared", rsa_data["spearman_r"] ** 2),
+            bootstrap_ci=ci_obj,
+            null_distribution=null_dist,
         )
-        plot_rdm_heatmaps(
-            rsa_result, output_dir=plots_dir,
-            dpi=config.output.plot_dpi,
-            weird_label=config.models["weird"].label,
-            sinic_label=config.models["sinic"].label,
-            domains=domains_core,
-        )
-        logger.info("RSA plots generated")
+        logger.info("RSA result reconstructed from JSON")
 
     # ─── Axes Comparison ──────────────────────────────────────────────────
     if "3_axes" in experiments:
@@ -622,13 +659,204 @@ def generate_plots(config: Config) -> None:
     print(f"\nPlots saved to: {plots_dir}")
 
 
+def run_multi_model_pipeline(config: Config) -> Path:
+    """
+    Execute multi-model analysis across N model pairs.
+
+    Runs each experiment on all (weird, sinic) model pairs from
+    config.model_groups and aggregates results to demonstrate that
+    observed effects are robust to model choice.
+    """
+    from .experiments.multi_model import run_experiment_multi_model
+
+    separator = "=" * 70
+
+    logger.info(separator)
+    logger.info("  CLS Pipeline v%s — Multi-Model Analysis", config.version)
+    logger.info(separator)
+
+    model_pairs = config.get_model_pairs()
+    n_pairs = len(model_pairs)
+    logger.info("Model pairs: %d (%d WEIRD × %d Sinic)",
+                n_pairs,
+                len(config.model_groups["weird"]),
+                len(config.model_groups["sinic"]))
+
+    data = load_dataset(config)
+    core_terms = data["core_terms"]
+    en_core = [t["en"] for t in core_terms]
+    zh_core = [t["zh"] for t in core_terms]
+
+    from .core.device import DeviceManager
+    from .core.hashing import compute_config_hash, compute_file_hash
+
+    device_manager = DeviceManager(config.device.preferred)
+    client = EmbeddingClient(config, device_manager)
+
+    data_path = config.get_absolute_path("processed") / "legal_terms.json"
+    input_data_hash = compute_file_hash(data_path)
+    config_hash = compute_config_hash(config)
+    output_manager = OutputManager(config, input_data_hash, config_hash)
+
+    rsa_config = config.experiments.rsa
+
+    # RSA multi-model
+    logger.info(separator)
+    logger.info("  MULTI-MODEL: RSA")
+    logger.info(separator)
+
+    rsa_multi = run_experiment_multi_model(
+        experiment_fn=run_rsa,
+        model_pairs=model_pairs,
+        client=client,
+        texts_weird=en_core,
+        texts_sinic=zh_core,
+        stat_key="spearman_r",
+        labels=en_core,
+        n_permutations=rsa_config.n_permutations,
+        n_bootstrap=rsa_config.n_bootstrap,
+        seed=config.random_seed,
+    )
+    output_manager.set_multi_model_result("1_rsa", rsa_multi)
+
+    agg = rsa_multi.aggregate
+    print(f"\n{'─' * 50}")
+    print(f"  Multi-Model RSA ({n_pairs} coppie):")
+    print(f"  r medio     = {agg.get('mean', 0):.4f} ± {agg.get('std', 0):.4f}")
+    print(f"  range        = [{agg.get('min', 0):.4f}, {agg.get('max', 0):.4f}]")
+    for i, (pr, (w, s)) in enumerate(zip(rsa_multi.pair_results, rsa_multi.model_pairs)):
+        print(f"    {w} × {s}: r={pr.get('spearman_r', 0):.4f}")
+    print(f"{'─' * 50}\n")
+
+    # GW multi-model
+    from .experiments.exp_gw import gromov_wasserstein_distance
+
+    gw_config = config.experiments.gromov_wasserstein
+
+    logger.info(separator)
+    logger.info("  MULTI-MODEL: Gromov-Wasserstein")
+    logger.info(separator)
+
+    gw_multi = run_experiment_multi_model(
+        experiment_fn=gromov_wasserstein_distance,
+        model_pairs=model_pairs,
+        client=client,
+        texts_weird=en_core,
+        texts_sinic=zh_core,
+        stat_key="distance",
+        entropic_reg=gw_config.entropic_reg,
+        use_sinkhorn=gw_config.use_sinkhorn,
+        n_permutations=gw_config.n_permutations,
+        seed=config.random_seed,
+    )
+    output_manager.set_multi_model_result("2_gw", gw_multi)
+
+    agg_gw = gw_multi.aggregate
+    print(f"\n{'─' * 50}")
+    print(f"  Multi-Model GW ({n_pairs} coppie):")
+    print(f"  d medio     = {agg_gw.get('mean', 0):.6f} ± {agg_gw.get('std', 0):.6f}")
+    print(f"  range        = [{agg_gw.get('min', 0):.6f}, {agg_gw.get('max', 0):.6f}]")
+    for i, (pr, (w, s)) in enumerate(zip(gw_multi.pair_results, gw_multi.model_pairs)):
+        print(f"    {w} × {s}: d={pr.get('distance', 0):.6f}, p={pr.get('p_value', 1):.4f}")
+    print(f"{'─' * 50}\n")
+
+    # Save results
+    results_path = output_manager.save()
+
+    print(f"\n{'=' * 60}")
+    print("  MULTI-MODEL SUMMARY")
+    print(f"{'=' * 60}")
+    print(f"  Model pairs:  {n_pairs}")
+    print(f"  RSA r:        {agg.get('mean', 0):.4f} ± {agg.get('std', 0):.4f}")
+    print(f"  GW d:         {agg_gw.get('mean', 0):.6f} ± {agg_gw.get('std', 0):.6f}")
+    print(f"{'=' * 60}")
+    print(f"\n  Results saved to: {results_path}")
+
+    # Generate multi-model PNG plots
+    if config.output.save_plots:
+        _generate_multi_model_plots(config, rsa_multi, gw_multi)
+
+    # Generate HTML visualization (includes multi-model tab)
+    html_path = generate_visualization(config)
+    print(f"  Visualization: {html_path}")
+
+    client.unload_models()
+    return results_path
+
+
+def _generate_multi_model_plots(config: Config, rsa_multi, gw_multi=None) -> None:
+    """Generate PNG plots for multi-model results."""
+    from .visualization.png import (
+        plot_multi_model_heatmap,
+        plot_multi_model_forest,
+        plot_multi_model_null_distributions,
+    )
+
+    plots_dir = config.get_absolute_path("plots")
+    plots_dir.mkdir(parents=True, exist_ok=True)
+    dpi = config.output.plot_dpi
+
+    # --- RSA plots ---
+    pair_results = rsa_multi.pair_results
+    aggregate = rsa_multi.aggregate
+
+    weird_labels = sorted(set(
+        pr.get("model_weird", "") for pr in pair_results
+    ))
+    sinic_labels = sorted(set(
+        pr.get("model_sinic", "") for pr in pair_results
+    ))
+
+    plot_multi_model_heatmap(
+        pair_results, weird_labels, sinic_labels,
+        plots_dir, stat_key="spearman_r", dpi=dpi,
+    )
+
+    plot_multi_model_forest(
+        pair_results, aggregate,
+        plots_dir, dpi=dpi,
+    )
+
+    plot_multi_model_null_distributions(
+        pair_results,
+        plots_dir, dpi=dpi,
+    )
+
+    # --- GW plots ---
+    if gw_multi is not None:
+        gw_pairs = gw_multi.pair_results
+        plot_multi_model_heatmap(
+            gw_pairs, weird_labels, sinic_labels,
+            plots_dir, stat_key="distance", dpi=dpi,
+        )
+
+    logger.info("Multi-model plots generated")
+    print(f"  Multi-model plots saved to: {plots_dir}")
+
+
 def cmd_run(args: argparse.Namespace) -> int:
     """Execute 'run' subcommand."""
     config = load_config(args.config)
     setup_logging(config)
 
     try:
-        run_pipeline(config, generate_html=not args.no_html)
+        multi_model = getattr(args, "multi_model", False)
+        selected_exp = getattr(args, "exp", None)
+
+        if multi_model:
+            if not config.is_multi_model:
+                logger.error(
+                    "Flag --multi-model richiede la sezione 'model_groups' in config.yaml. "
+                    "Aggiungi model_groups con le liste di modelli WEIRD e Sinic."
+                )
+                return 1
+            run_multi_model_pipeline(config)
+        else:
+            run_pipeline(
+                config,
+                generate_html=not args.no_html,
+                selected_experiments=selected_exp,
+            )
         return 0
     except Exception as e:
         logger.exception("Pipeline failed: %s", e)
@@ -647,12 +875,20 @@ def cmd_info(args: argparse.Namespace) -> int:
         print(f"         dimension: {model.dimension}")
         print(f"         language: {model.language}")
 
+    if config.is_multi_model:
+        print(f"\nMulti-Model Groups:")
+        for group, models in config.model_groups.items():
+            print(f"  {group}: {len(models)} models")
+            for m in models:
+                print(f"    - {m.label} ({m.name})")
+        print(f"  Total pairs: {len(config.get_model_pairs())}")
+
     print(f"\nDevice: {config.device.preferred}")
     print(f"Batch size: {config.device.batch_size}")
     print(f"Random seed: {config.random_seed}")
 
     print(f"\nExperiments:")
-    print(f"  1. RSA:        {config.experiments.rsa.n_permutations} permutations")
+    print(f"  1. RSA:        {config.experiments.rsa.n_permutations} perm, {config.experiments.rsa.n_bootstrap} bootstrap")
     print(f"  2. GW:         reg={config.experiments.gromov_wasserstein.entropic_reg}, {config.experiments.gromov_wasserstein.n_permutations} perm")
     print(f"  3. Axes:       {config.experiments.axes.n_bootstrap} bootstrap resamples")
     print(f"  4. Clustering: k={config.experiments.clustering.k_values}, {config.experiments.clustering.n_permutations} perm")
@@ -718,6 +954,205 @@ def cmd_html(args: argparse.Namespace) -> int:
         return 1
 
 
+# ======================================================================
+# Archive subcommand
+# ======================================================================
+
+def _sanitize_label(label: str) -> str:
+    """Rende il label sicuro per un nome di directory."""
+    label = label.strip().lower()
+    label = re.sub(r"[^\w\-]", "_", label)
+    label = re.sub(r"_+", "_", label).strip("_")
+    return label[:60]
+
+
+def _collect_output_files(output_dir: Path) -> list[Path]:
+    """Elenca tutti i file nella directory di output."""
+    if not output_dir.exists():
+        return []
+    return sorted(p for p in output_dir.rglob("*") if p.is_file())
+
+
+def _read_metadata(results_path: Path) -> dict:
+    """Estrae i metadati da results.json se presente."""
+    if not results_path.exists():
+        return {}
+    try:
+        with open(results_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("metadata", {})
+    except (json.JSONDecodeError, KeyError):
+        return {}
+
+
+def _build_run_name(label: str | None) -> str:
+    """Costruisce il nome della cartella: YYYY-MM-DD_HHhMM_label."""
+    now = datetime.now()
+    date_str = now.strftime("%Y-%m-%d_%Hh%M")
+    if label:
+        clean = _sanitize_label(label)
+        return f"{date_str}_{clean}"
+    return f"{date_str}_unnamed"
+
+
+def _write_manifest(
+    dest: Path,
+    files_moved: list[tuple[str, int]],
+    metadata: dict,
+    label: str | None,
+) -> None:
+    """Scrive un file MANIFEST.txt con i dettagli dell'archiviazione."""
+    lines = [
+        "CLS Pipeline — Run Archive",
+        "=" * 50,
+        f"Archiviata: {datetime.now().isoformat()}",
+        f"Etichetta:  {label or '(nessuna)'}",
+        "",
+    ]
+
+    if metadata:
+        lines.append("Metadati della run:")
+        lines.append(f"  Pipeline version: {metadata.get('pipeline_version', '?')}")
+        lines.append(f"  Timestamp run:    {metadata.get('timestamp_utc', '?')}")
+        lines.append(f"  Config hash:      {metadata.get('config_hash', '?')[:16]}")
+        lines.append(f"  Data hash:        {metadata.get('input_data_hash', '?')[:16]}")
+        lines.append(f"  Random seed:      {metadata.get('random_seed', '?')}")
+        lines.append(f"  Device:           {metadata.get('device', '?')}")
+        for name, info in metadata.get("models", {}).items():
+            lines.append(f"  Modello {name}:    {info.get('name', '?')}")
+        lines.append("")
+
+    lines.append(f"File archiviati ({len(files_moved)}):")
+    total_size = 0
+    for rel_path, size in files_moved:
+        total_size += size
+        lines.append(f"  {rel_path:<45} {size / 1024:>8.1f} KB")
+
+    lines.append("")
+    lines.append(f"Dimensione totale: {total_size / 1024:.1f} KB ({total_size / (1024 * 1024):.2f} MB)")
+
+    (dest / "MANIFEST.txt").write_text("\n".join(lines), encoding="utf-8")
+
+
+def archive_run(config: Config, label: str | None = None, dry_run: bool = False) -> int:
+    """Archivia la run corrente spostando output/ → runs/<label>/."""
+    output_dir = config.get_absolute_path("output")
+    runs_dir = config.project_root / "runs"
+    config_file = config.project_root / "config.yaml"
+
+    print(f"\n{'=' * 60}")
+    print("  CLS Pipeline — Archiviazione Run")
+    print(f"{'=' * 60}")
+
+    output_files = _collect_output_files(output_dir)
+    if not output_files:
+        print("  Niente da archiviare: la cartella output/ è vuota.")
+        return 0
+
+    files_to_move = []
+    for f in output_files:
+        rel = f.relative_to(output_dir)
+        size = f.stat().st_size
+        files_to_move.append((str(rel), size))
+        print(f"  Trovato: {str(rel):<42} ({size / 1024:.1f} KB)")
+
+    total = sum(s for _, s in files_to_move)
+    print(f"  {len(files_to_move)} file, dimensione totale: {total / 1024:.1f} KB")
+
+    # Lettura metadati
+    results_path = output_dir / "results.json"
+    metadata = _read_metadata(results_path)
+
+    run_name = _build_run_name(label)
+    dest = runs_dir / run_name
+
+    has_config = config_file.exists()
+
+    print(f"\n  Destinazione:  runs/{run_name}/")
+    print(f"  Config:        {'sì' if has_config else 'no'}")
+
+    if dry_run:
+        print("  [DRY RUN] Nessun file spostato.")
+        return 0
+
+    if dest.exists():
+        print(f"  ERRORE: La cartella {dest.name} esiste già!")
+        return 1
+
+    dest.mkdir(parents=True)
+
+    moved_count = 0
+    for f in output_files:
+        rel = f.relative_to(output_dir)
+        target = dest / rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.move(str(f), str(target))
+        moved_count += 1
+
+    print(f"  {moved_count} file spostati")
+
+    if has_config:
+        shutil.copy2(str(config_file), str(dest / "config.yaml"))
+
+    _write_manifest(dest, files_to_move, metadata, label)
+
+    # Pulizia sotto-cartelle vuote in output/
+    for d in sorted(output_dir.rglob("*"), reverse=True):
+        if d.is_dir() and not any(d.iterdir()):
+            d.rmdir()
+
+    # Ricrea struttura vuota
+    (output_dir / "plots").mkdir(parents=True, exist_ok=True)
+
+    print(f"\n  Archiviazione completata: runs/{run_name}/")
+    return 0
+
+
+def list_runs(config: Config) -> int:
+    """Elenca tutte le run archiviate."""
+    runs_dir = config.project_root / "runs"
+    if not runs_dir.exists():
+        print("  Nessuna run archiviata (la cartella runs/ non esiste).")
+        return 0
+
+    dirs = sorted(d for d in runs_dir.iterdir() if d.is_dir())
+    if not dirs:
+        print("  Nessuna run archiviata.")
+        return 0
+
+    print(f"\n  Run archiviate ({len(dirs)}):")
+    print(f"  {'─' * 65}")
+
+    for d in dirs:
+        files = list(d.rglob("*"))
+        n_files = sum(1 for f in files if f.is_file())
+        total_size = sum(f.stat().st_size for f in files if f.is_file())
+
+        results = d / "results.json"
+        meta_info = ""
+        if results.exists():
+            meta = _read_metadata(results)
+            if meta.get("timestamp_utc"):
+                meta_info = f"  run: {meta['timestamp_utc'][:19]}"
+
+        print(f"    {d.name:<40} {n_files:>3} file, {total_size / 1024:>7.0f} KB{meta_info}")
+
+    print(f"  {'─' * 65}")
+    return 0
+
+
+def cmd_archive(args: argparse.Namespace) -> int:
+    """Execute 'archive' subcommand."""
+    config = load_config(args.config)
+
+    if getattr(args, "list", False):
+        return list_runs(config)
+
+    label = getattr(args, "label", None)
+    dry_run = getattr(args, "dry_run", False)
+    return archive_run(config, label=label, dry_run=dry_run)
+
+
 def generate_plots_v2(
     config: Config,
     experiments: list[str] | None = None,
@@ -761,7 +1196,7 @@ def generate_plots_v2(
     except Exception:
         domains = None
 
-    all_experiments = ["rsa", "gw", "axes", "clustering", "nda", "umap"]
+    all_experiments = ["rsa", "gw", "axes", "clustering", "nda", "umap", "multi_model"]
     if experiments is None:
         experiments = all_experiments
 
@@ -771,6 +1206,7 @@ def generate_plots_v2(
             plot_clustered_heatmap,
             plot_inter_domain_matrix,
             plot_rdm_correlation,
+            plot_null_distribution,
             plot_transport_histogram,
             plot_top_alignments,
             plot_axes_scatter_ci,
@@ -813,6 +1249,16 @@ def generate_plots_v2(
             rsa["spearman_r"], rsa["p_value"],
             plots_dir, dpi=dpi, formats=formats,
         )
+
+        # Distribuzione nulla del Mantel test
+        if rsa.get("null_distribution"):
+            plot_null_distribution(
+                np.array(rsa["null_distribution"]),
+                rsa["spearman_r"],
+                rsa["p_value"],
+                plots_dir, dpi=dpi, formats=formats,
+            )
+
         logger.info("RSA plots generated (new)")
 
     # ─── GW ──────────────────────────────────────────────────────────────
@@ -929,6 +1375,43 @@ def generate_plots_v2(
             )
         logger.info("UMAP plots generated (new)")
 
+    # ─── Multi-Model ────────────────────────────────────────────────────
+    if "multi_model" in experiments and "multi_model_1_rsa" in exp_data:
+        from .visualization.png import (
+            plot_multi_model_heatmap,
+            plot_multi_model_forest,
+            plot_multi_model_null_distributions,
+        )
+
+        mm_rsa = exp_data["multi_model_1_rsa"]
+        pair_results = mm_rsa.get("pair_results", [])
+        aggregate = mm_rsa.get("aggregate", {})
+
+        if pair_results:
+            weird_labels = sorted(set(
+                pr.get("model_weird", "") for pr in pair_results
+            ))
+            sinic_labels = sorted(set(
+                pr.get("model_sinic", "") for pr in pair_results
+            ))
+
+            plot_multi_model_heatmap(
+                pair_results, weird_labels, sinic_labels,
+                plots_dir, dpi=dpi, formats=formats,
+            )
+
+            plot_multi_model_forest(
+                pair_results, aggregate,
+                plots_dir, dpi=dpi, formats=formats,
+            )
+
+            plot_multi_model_null_distributions(
+                pair_results,
+                plots_dir, dpi=dpi, formats=formats,
+            )
+
+        logger.info("Multi-model plots generated (new)")
+
     print(f"\nPlots saved to: {plots_dir}")
 
 
@@ -954,6 +1437,19 @@ def main() -> int:
         action="store_true",
         help="Skip HTML visualization generation",
     )
+    run_parser.add_argument(
+        "--multi-model",
+        action="store_true",
+        dest="multi_model",
+        help="Run multi-model analysis using model_groups from config.yaml",
+    )
+    run_parser.add_argument(
+        "--exp",
+        nargs="+",
+        choices=["rsa", "gw", "axes", "clustering", "nda", "umap"],
+        default=None,
+        help="Run only selected experiments (default: all)",
+    )
     run_parser.set_defaults(func=cmd_run)
 
     # info command
@@ -969,7 +1465,7 @@ def main() -> int:
     plots_parser.add_argument(
         "--exp",
         nargs="+",
-        choices=["rsa", "gw", "axes", "clustering", "nda", "umap"],
+        choices=["rsa", "gw", "axes", "clustering", "nda", "umap", "multi_model"],
         default=None,
         help="Experiments to plot (default: all)",
     )
@@ -991,11 +1487,33 @@ def main() -> int:
     )
     html_parser.set_defaults(func=cmd_html)
 
+    # archive command
+    archive_parser = subparsers.add_parser("archive", help="Archive current run output")
+    archive_parser.add_argument(
+        "label",
+        nargs="?",
+        default=None,
+        help="Label for the archived run (default: timestamp)",
+    )
+    archive_parser.add_argument(
+        "--list", "-l",
+        action="store_true",
+        help="List archived runs",
+    )
+    archive_parser.add_argument(
+        "--dry-run", "-n",
+        action="store_true",
+        dest="dry_run",
+        help="Preview what would be archived without moving files",
+    )
+    archive_parser.set_defaults(func=cmd_archive)
+
     args = parser.parse_args()
 
     if args.command is None:
         args.command = "run"
         args.no_html = False
+        args.multi_model = False
         args.func = cmd_run
 
     return args.func(args)

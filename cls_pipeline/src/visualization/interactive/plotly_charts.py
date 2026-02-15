@@ -568,6 +568,184 @@ def create_nda_network(
     """
 
 
+def create_multi_model_heatmap(
+    pair_results: list[dict],
+    weird_labels: list[str],
+    sinic_labels: list[str],
+    stat_key: str = "spearman_r",
+) -> str:
+    """
+    Crea heatmap interattiva di consistenza WEIRD × Sinic.
+
+    Returns
+    -------
+    str
+        HTML con div Plotly embedded.
+    """
+    _check_plotly()
+
+    n_w = len(weird_labels)
+    n_s = len(sinic_labels)
+    matrix = [[0.0] * n_s for _ in range(n_w)]
+    p_matrix = [[1.0] * n_s for _ in range(n_w)]
+
+    for pr in pair_results:
+        w = pr.get("model_weird", "")
+        s = pr.get("model_sinic", "")
+        if w in weird_labels and s in sinic_labels:
+            i = weird_labels.index(w)
+            j = sinic_labels.index(s)
+            matrix[i][j] = pr.get(stat_key, 0)
+            p_matrix[i][j] = pr.get("p_value", 1)
+
+    hover_text = []
+    for i in range(n_w):
+        row = []
+        for j in range(n_s):
+            row.append(
+                f"<b>{weird_labels[i]}</b> × <b>{sinic_labels[j]}</b><br>"
+                f"Spearman ρ: {matrix[i][j]:.4f}<br>"
+                f"{significance_label(p_matrix[i][j])}"
+            )
+        hover_text.append(row)
+
+    fig = go.Figure()
+    fig.add_trace(
+        go.Heatmap(
+            z=matrix,
+            x=sinic_labels,
+            y=weird_labels,
+            colorscale="YlGnBu",
+            hovertemplate="%{text}<extra></extra>",
+            text=hover_text,
+            colorbar=dict(title="Spearman ρ"),
+            texttemplate="%{z:.4f}",
+        )
+    )
+
+    vals_flat = [v for row in matrix for v in row]
+    mean_val = np.mean(vals_flat)
+    std_val = np.std(vals_flat)
+
+    fig.update_layout(
+        title=dict(
+            text=f"Cross-Model Consistency: Spearman ρ<br>"
+                 f"<sup>Mean = {mean_val:.4f} ± {std_val:.4f} ({n_w}×{n_s} = {n_w*n_s} pairs)</sup>",
+            x=0.5,
+        ),
+        xaxis_title="Sinic Models",
+        yaxis_title="WEIRD Models",
+        height=max(400, n_w * 80 + 150),
+        **PLOTLY_LAYOUT,
+    )
+
+    return fig.to_html(full_html=False, include_plotlyjs=False)
+
+
+def create_multi_model_forest(
+    pair_results: list[dict],
+    aggregate: dict,
+) -> str:
+    """
+    Crea forest plot interattivo per le coppie di modelli.
+
+    Returns
+    -------
+    str
+        HTML con div Plotly embedded.
+    """
+    _check_plotly()
+
+    n = len(pair_results)
+    labels = []
+    r_values = []
+    ci_lowers = []
+    ci_uppers = []
+    p_values = []
+
+    for pr in pair_results:
+        w = pr.get("model_weird", "?")
+        s = pr.get("model_sinic", "?")
+        labels.append(f"{w} × {s}")
+        r_values.append(pr.get("spearman_r", 0))
+        p_values.append(pr.get("p_value", 1))
+        ci = pr.get("bootstrap_ci", {})
+        ci_lowers.append(ci.get("ci_lower", r_values[-1]))
+        ci_uppers.append(ci.get("ci_upper", r_values[-1]))
+
+    # Ordina per r decrescente
+    order = sorted(range(n), key=lambda i: r_values[i], reverse=True)
+    labels = [labels[i] for i in order]
+    r_values = [r_values[i] for i in order]
+    ci_lowers = [ci_lowers[i] for i in order]
+    ci_uppers = [ci_uppers[i] for i in order]
+    p_values = [p_values[i] for i in order]
+
+    fig = go.Figure()
+
+    # Punti con barre di errore
+    fig.add_trace(
+        go.Scatter(
+            x=r_values,
+            y=list(range(n)),
+            mode="markers",
+            marker=dict(size=10, color=PLOTLY_COLORS["weird"]),
+            error_x=dict(
+                type="data",
+                symmetric=False,
+                array=[ci_uppers[i] - r_values[i] for i in range(n)],
+                arrayminus=[r_values[i] - ci_lowers[i] for i in range(n)],
+                color=PLOTLY_COLORS["weird"],
+                thickness=2,
+                width=6,
+            ),
+            text=[f"<b>{labels[i]}</b><br>ρ = {r_values[i]:.4f}<br>"
+                  f"CI [{ci_lowers[i]:.4f}, {ci_uppers[i]:.4f}]<br>"
+                  f"{significance_label(p_values[i])}"
+                  for i in range(n)],
+            hovertemplate="%{text}<extra></extra>",
+            name="Model pairs",
+        )
+    )
+
+    # Linea e diamante per la media
+    mean_r = aggregate.get("mean", np.mean(r_values))
+    std_r = aggregate.get("std", 0)
+
+    fig.add_vline(x=mean_r, line_dash="dash", line_color=COLORS["accent"],
+                  annotation_text=f"Mean = {mean_r:.4f}")
+
+    fig.add_trace(
+        go.Scatter(
+            x=[mean_r],
+            y=[n + 0.8],
+            mode="markers",
+            marker=dict(size=14, symbol="diamond", color=COLORS["accent"],
+                        line=dict(width=1, color="black")),
+            error_x=dict(type="data", array=[std_r], arrayminus=[std_r],
+                         color=COLORS["accent"], thickness=3, width=8),
+            text=[f"<b>Mean ± SD</b><br>ρ = {mean_r:.4f} ± {std_r:.4f}"],
+            hovertemplate="%{text}<extra></extra>",
+            name="Aggregate",
+        )
+    )
+
+    fig.update_layout(
+        title=f"Multi-Model RSA: Forest Plot ({n} pairs)",
+        xaxis_title="Spearman ρ",
+        yaxis=dict(
+            tickvals=list(range(n)) + [n + 0.8],
+            ticktext=labels + ["Mean ± SD"],
+            autorange="reversed",
+        ),
+        height=max(400, n * 50 + 150),
+        showlegend=False,
+        **PLOTLY_LAYOUT,
+    )
+
+    return fig.to_html(full_html=False, include_plotlyjs=False)
+
+
 def create_umap_scatter(
     coords_weird: list[dict],
     coords_sinic: list[dict],

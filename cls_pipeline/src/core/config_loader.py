@@ -5,6 +5,7 @@ Loads configuration from config.yaml and .env files, providing a unified
 Config object for the entire pipeline.
 """
 
+import itertools
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -45,6 +46,7 @@ class UMAPConfig:
 class RSAConfig:
     """RSA experiment configuration."""
     n_permutations: int = 10000
+    n_bootstrap: int = 1000
 
 
 @dataclass
@@ -130,6 +132,7 @@ class Config:
     logging: LoggingConfig
     project_root: Path
     hf_token: str | None = None
+    model_groups: dict[str, list[ModelConfig]] | None = None
 
     def get_absolute_path(self, path_name: str) -> Path:
         """Get absolute path for a configured path."""
@@ -137,6 +140,33 @@ class Config:
         if path.is_absolute():
             return path
         return self.project_root / path
+
+    @property
+    def is_multi_model(self) -> bool:
+        """Whether multi-model groups are configured."""
+        return self.model_groups is not None and len(self.model_groups) > 0
+
+    def get_model_pairs(self) -> list[tuple[ModelConfig, ModelConfig]]:
+        """
+        Get all (weird, sinic) model pairs from model_groups (cartesian product).
+
+        Returns
+        -------
+        list[tuple[ModelConfig, ModelConfig]]
+            List of (weird_model, sinic_model) pairs.
+
+        Raises
+        ------
+        ValueError
+            If model_groups is not configured or missing groups.
+        """
+        if not self.is_multi_model:
+            raise ValueError("model_groups not configured in config.yaml")
+        weird_models = self.model_groups.get("weird", [])
+        sinic_models = self.model_groups.get("sinic", [])
+        if not weird_models or not sinic_models:
+            raise ValueError("model_groups must have both 'weird' and 'sinic' groups")
+        return list(itertools.product(weird_models, sinic_models))
 
 
 def _parse_model_config(data: dict) -> ModelConfig:
@@ -181,6 +211,7 @@ def _parse_rsa_config(data: dict) -> RSAConfig:
     """Parse RSA configuration from dict."""
     return RSAConfig(
         n_permutations=data.get("n_permutations", 10000),
+        n_bootstrap=data.get("n_bootstrap", 1000),
     )
 
 
@@ -305,6 +336,16 @@ def load_config(
         "sinic": _parse_model_config(models_data["sinic"]),
     }
 
+    # Sezione opzionale model_groups per analisi multi-modello
+    model_groups = None
+    if "model_groups" in data:
+        mg_data = data["model_groups"]
+        model_groups = {}
+        for group_name, group_models in mg_data.items():
+            model_groups[group_name] = [
+                _parse_model_config(m) for m in group_models
+            ]
+
     config = Config(
         version=pipeline.get("version", "2.0.0"),
         name=pipeline.get("name", "CLS Pipeline"),
@@ -317,6 +358,7 @@ def load_config(
         logging=_parse_logging_config(data.get("logging", {})),
         project_root=project_root,
         hf_token=os.getenv("HF_TOKEN"),
+        model_groups=model_groups,
     )
 
     # Create directories
