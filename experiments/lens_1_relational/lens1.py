@@ -319,7 +319,7 @@ def run_rsa_pairs(
         print(f"    {la} × {lb}  ρ={d['rho']:+.3f}  "
               f"r²={d['r_squared']:.3f}  "
               f"CI=[{d['ci_low']:.3f},{d['ci_high']:.3f}]  "
-              f"p={d['p_value']:.3f}  ({elapsed:.0f}s)")
+              f"p={d['p_value']:.4f}  ({elapsed:.0f}s)")
         results.append(d)
     return results
 

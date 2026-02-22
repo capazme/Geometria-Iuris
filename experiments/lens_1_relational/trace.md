@@ -208,6 +208,9 @@ check).
   *PLoS Computational Biology*, 10(4), e1003553.
 - Mantel, N. (1967). The detection of disease clustering and a generalized
   regression approach. *Cancer Research*, 27(2), 209–220.
+- Phipson, B., & Smyth, G.K. (2010). Permutation P-values should never be zero:
+  calculating exact P-values when permutations are randomly drawn. *Statistical
+  Applications in Genetics and Molecular Biology*, 9(1), Article 39.
 - Mann, H.B., & Whitney, D.R. (1947). On a test of whether one of two random
   variables is stochastically larger than the other. *Annals of Mathematical
   Statistics*, 18(1), 50–60.

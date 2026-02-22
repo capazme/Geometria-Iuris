@@ -173,9 +173,16 @@ def mantel_test(
         pi = rng.permutation(n)
         null[i] = spearmanr(tri_a, upper_tri(rdm_b[np.ix_(pi, pi)])).statistic
 
+    # Minimum representable p = 1/n_perm (Phipson & Smyth 2010).
+    # Reporting p=0 from a permutation test is technically incorrect:
+    # the test cannot exclude the possibility that a larger null distribution
+    # would produce at least one exceedance. p < 1/n_perm is the honest bound.
+    p_raw = float((null >= rho_obs).mean())
+    p_bounded = max(p_raw, 1.0 / n_perm)
+
     return MantelResult(
         rho=rho_obs,
-        p_value=float((null >= rho_obs).mean()),
+        p_value=p_bounded,
         r_squared=float(rho_obs ** 2),
         null_distribution=null,
     )
