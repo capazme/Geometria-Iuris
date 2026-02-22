@@ -40,7 +40,7 @@
       "BGE-EN-large": {
         "8_2_1_intra_vs_inter": {
           "statistic": 352721904.0,
-          "p_value": 0.0,
+          "p_value": 0.0001,
           "effect_r": 0.2843,
           "n_x": 15658,
           "n_y": 62948,
@@ -136,7 +136,7 @@
       "E5-large": {
         "8_2_1_intra_vs_inter": {
           "statistic": 377861121.0,
-          "p_value": 0.0,
+          "p_value": 0.0001,
           "effect_r": 0.2333,
           "n_x": 15658,
           "n_y": 62948,
@@ -145,7 +145,7 @@
         },
         "8_2_2_legal_vs_control": {
           "statistic": 1212618299.5,
-          "p_value": 0.0,
+          "p_value": 0.0001,
           "effect_r": 0.2228,
           "n_x": 78606,
           "n_y": 39700,
@@ -232,7 +232,7 @@
       "FreeLaw-EN": {
         "8_2_1_intra_vs_inter": {
           "statistic": 346183777.0,
-          "p_value": 0.0,
+          "p_value": 0.0001,
           "effect_r": 0.2975,
           "n_x": 15658,
           "n_y": 62948,
@@ -335,7 +335,7 @@
         "model_a": "BGE-EN-large",
         "model_b": "E5-large",
         "rho": 0.6544,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.4282,
         "ci_low": 0.6244,
         "ci_high": 0.6879
@@ -344,7 +344,7 @@
         "model_a": "BGE-EN-large",
         "model_b": "FreeLaw-EN",
         "rho": 0.4395,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.1931,
         "ci_low": 0.4047,
         "ci_high": 0.4814
@@ -353,7 +353,7 @@
         "model_a": "E5-large",
         "model_b": "FreeLaw-EN",
         "rho": 0.433,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.1875,
         "ci_low": 0.3985,
         "ci_high": 0.4759
@@ -364,7 +364,7 @@
         "model_a": "BGE-ZH-large",
         "model_b": "Text2vec-large-ZH",
         "rho": 0.3596,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.1293,
         "ci_low": 0.3174,
         "ci_high": 0.4122
@@ -373,7 +373,7 @@
         "model_a": "BGE-ZH-large",
         "model_b": "Dmeta-ZH",
         "rho": 0.452,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.2043,
         "ci_low": 0.4078,
         "ci_high": 0.5047
@@ -382,7 +382,7 @@
         "model_a": "Text2vec-large-ZH",
         "model_b": "Dmeta-ZH",
         "rho": 0.36,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.1296,
         "ci_low": 0.3204,
         "ci_high": 0.4098
@@ -393,7 +393,7 @@
         "model_a": "BGE-EN-large",
         "model_b": "BGE-ZH-large",
         "rho": 0.2437,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0594,
         "ci_low": 0.2017,
         "ci_high": 0.2966
@@ -402,7 +402,7 @@
         "model_a": "BGE-EN-large",
         "model_b": "Text2vec-large-ZH",
         "rho": 0.1486,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0221,
         "ci_low": 0.1036,
         "ci_high": 0.2055
@@ -411,7 +411,7 @@
         "model_a": "BGE-EN-large",
         "model_b": "Dmeta-ZH",
         "rho": 0.2029,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0412,
         "ci_low": 0.1619,
         "ci_high": 0.2554
@@ -420,7 +420,7 @@
         "model_a": "E5-large",
         "model_b": "BGE-ZH-large",
         "rho": 0.1987,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0395,
         "ci_low": 0.1547,
         "ci_high": 0.2564
@@ -429,7 +429,7 @@
         "model_a": "E5-large",
         "model_b": "Text2vec-large-ZH",
         "rho": 0.1443,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0208,
         "ci_low": 0.099,
         "ci_high": 0.2007
@@ -438,7 +438,7 @@
         "model_a": "E5-large",
         "model_b": "Dmeta-ZH",
         "rho": 0.2044,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0418,
         "ci_low": 0.1642,
         "ci_high": 0.2563
@@ -447,7 +447,7 @@
         "model_a": "FreeLaw-EN",
         "model_b": "BGE-ZH-large",
         "rho": 0.1973,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0389,
         "ci_low": 0.1573,
         "ci_high": 0.248
@@ -456,7 +456,7 @@
         "model_a": "FreeLaw-EN",
         "model_b": "Text2vec-large-ZH",
         "rho": 0.1021,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0104,
         "ci_low": 0.0637,
         "ci_high": 0.1545
@@ -465,7 +465,7 @@
         "model_a": "FreeLaw-EN",
         "model_b": "Dmeta-ZH",
         "rho": 0.1528,
-        "p_value": 0.0,
+        "p_value": 0.0001,
         "r_squared": 0.0234,
         "ci_low": 0.1121,
         "ci_high": 0.2041
