@@ -1,0 +1,74 @@
+# Model configuration for Geometria Iuris experiments
+# Source of truth: trace_model_selection.md
+#
+# Two model groups:
+#   weird  — English-language models encoding WEIRD legal tradition
+#   sinic  — Chinese-language models encoding Sinic legal tradition
+#
+# Sinic models are used ONLY in Chapter 9 (cross-tradition experiments).
+# Chapter 8 experiments use weird models only.
+#
+# Cross-terna symmetry (trace_model_selection.md D2/D3):
+#   Slot 1: BGE-large-en  ↔  BGE-large-zh     (same family — architecture control)
+#   Slot 2: E5-large-v2   ↔  text2vec-large    (STS-oriented — different backbone)
+#   Slot 3: FreeLaw-EN    ↔  Dmeta-ZH          (legally-informed pair)
+#
+# instruction: prefix prepended to each text before encoding.
+#   Empty string = no prefix. No prefix is correct for STS/RDM tasks
+#   (Wang et al. 2022 §4; BGE model card). All six models are used in
+#   symmetric similarity tasks, not asymmetric retrieval.
+
+weird:
+  - id: BAAI/bge-large-en-v1.5
+    label: BGE-EN-large
+    lang: en
+    dim: 1024
+    instruction: ""
+    note: BGE family, RetroMAE backbone, 335M params; architecture-control anchor (Slot 1)
+
+  - id: intfloat/e5-large-v2
+    label: E5-large
+    lang: en
+    dim: 1024
+    instruction: ""
+    note: STS-optimised, contrastive training on MS-MARCO + NLI; Wang et al. 2022 (Slot 2)
+
+  - id: freelawproject/modernbert-embed-base_finetune_512
+    label: FreeLaw-EN
+    lang: en
+    dim: 768
+    instruction: ""
+    note: Legal-domain finetuning on CourtListener corpus; ModernBERT backbone (Slot 3)
+
+sinic:
+  - id: BAAI/bge-large-zh-v1.5
+    label: BGE-ZH-large
+    lang: zh
+    dim: 1024
+    instruction: ""
+    note: BGE family, RetroMAE backbone, 335M params; architecture-control anchor (Slot 1)
+
+  - id: GanymedeNil/text2vec-large-chinese
+    label: Text2vec-large-ZH
+    lang: zh
+    dim: 1024
+    instruction: ""
+    note: STS-oriented, CoSENT training on CNSD; LERT-large backbone (Slot 2)
+
+  - id: DMetaSoul/Dmeta-embedding-zh
+    label: Dmeta-ZH
+    lang: zh
+    dim: 768
+    instruction: ""
+    note: Legal/domain-rich finetuning on ZH corpora; monolingual ZH (Slot 3)
+
+# Embedding settings
+embedding:
+  batch_size: 64           # MPS can handle larger batches than CPU
+  normalize: true          # L2-normalize all outputs; cosine sim = dot product
+  device: mps              # Apple Silicon Metal (M1/M2/M3/M4); change to cuda or cpu if needed
+
+# Disk cache
+cache:
+  dir: experiments/data/processed/embeddings_cache
+  enabled: true

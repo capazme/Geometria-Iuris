@@ -1,0 +1,21 @@
+# Geometria Iuris — experiment pipeline dependencies
+# Python >= 3.12
+
+# Embedding models
+sentence-transformers>=3.0.0
+torch>=2.2.0
+transformers>=4.40.0
+
+# Numerical computing
+numpy>=1.26.0
+scipy>=1.12.0
+
+# Config parsing
+pyyaml>=6.0.0
+
+# Chinese text utilities (used in build_dataset.py)
+opencc-python-reimplemented>=0.1.7
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.29.0
