@@ -5,26 +5,36 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 
+# NumPy arrays — large binary artifacts (regenerate with precompute.py)
+*.npy
+
 # OS
 .DS_Store
 
-# Runtime artifacts (directory-based, not extension-based)
-cache/
-output/
-models/
-runs/
-
-# Sensitive
-.env
-
-# Data (large, not tracked; regenerabile con build_dataset)
-data/raw/
-data/processed/
-
-# IDE / editor
+# Runtime / IDE / personal tool dirs
 .idea/
 .vscode/
 *.swp
+.claude/
+.cursor/
+.agent/
+_bmad-output/
+CLAUDE.md
 
-# BMAD framework (personal workflow)
-_bmad/
+# Personal / archival directories
+archive/
+documenti/
+
+# experiments — raw data (never tracked)
+experiments/data/raw/
+
+# experiments — large intermediates (regenerable from raw)
+experiments/data/processed/embeddings/
+experiments/data/processed/embeddings_cache/
+experiments/data/processed/doj_raw.json
+experiments/data/processed/doj_filtered.json
+experiments/data/processed/corpus_stats.md
+
+# experiments — notebook checkpoints
+experiments/notebooks/.ipynb_checkpoints/
+experiments/**/.ipynb_checkpoints/
