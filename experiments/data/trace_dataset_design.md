@@ -1,6 +1,6 @@
 # Trace: Dataset design
 
-**Thesis chapter(s)**: Ch.6 — The legal cloud: corpus design and the logic of legal sampling
+**Thesis chapter(s)**: Ch.2 §2.1 — The legal lexicon as scientific instrument
 **Date**: 2026-02-21
 **Status**: complete
 
@@ -65,13 +65,12 @@ Sources:
   (国家法律法规数据库), launched 2021. flk.npc.gov.cn.
 
 **Thesis text implication**:
-§6.2.1 (Domain stratification) can justify the seven-domain structure by
-reference to two independent authoritative sources — one from each legal
-tradition under comparison. This prevents the charge that the domain taxonomy
-is an arbitrary researcher choice or a WEIRD-centric projection onto Sinic law.
-The merger of `rights` into `constitutional` is itself a substantive finding:
-it reflects a shared deep structure in both traditions that the geometry may or
-may not confirm.
+§2.1 can justify the seven-domain structure by reference to two independent
+authoritative sources — one from each legal tradition under comparison. This
+prevents the charge that the domain taxonomy is an arbitrary researcher choice
+or a WEIRD-centric projection onto Sinic law. The merger of `rights` into
+`constitutional` is itself a substantive finding: it reflects a shared deep
+structure in both traditions that the geometry may or may not confirm.
 
 ---
 
@@ -134,7 +133,7 @@ Field specifications:
   k-NN neighbourhood space for the NDA experiment (Lens V), preventing the
   neighbourhood of core terms from being artificially inflated by spatial
   proximity arising from corpus sparsity.
-- `control`: Items drawn from the Swadesh 100 basic vocabulary list (see D3).
+- `control`: Items drawn from the Swadesh 100 basic vocabulary list (see D3 below).
   No legal content by construction. Domain = null. These serve as a semantic
   baseline: if EN and ZH models align well on Swadesh items but poorly on legal
   terms, divergence in the legal domain is attributable to legal-semantic
@@ -148,12 +147,12 @@ construction time. This ensures that the experiments are not pre-loaded with
 the researcher's expectations.
 
 **Thesis text implication**:
-§6.1 (corpus structure) introduces the three-tier organisation and defines each
-tier's function within the experimental design. §6.2.2 (schema transparency)
-documents the full field specification and justifies the exclusion of interpretive
-fields: the dataset is a neutral instrument; analysis is performed on top of it,
-not embedded within it. §A.1 (data appendix) presents the schema formally and
-lists the full inventory of terms per tier and domain.
+§2.1 introduces the three-tier organisation and defines each tier's function
+within the experimental design, documents the full field specification and
+justifies the exclusion of interpretive fields: the dataset is a neutral
+instrument; analysis is performed on top of it, not embedded within it.
+Appendix A presents the schema formally and lists the full inventory of terms
+per tier and domain.
 
 ---
 
@@ -220,12 +219,11 @@ translations that underpin the standard Swadesh ZH mapping. The full EN→ZH
 Swadesh mapping is documented in §A.1 of the thesis.
 
 **Thesis text implication**:
-§6.1.2 (control terms rationale) presents the Swadesh list as the control
-instrument and explains why competing alternatives were rejected. §7.3
-(baseline interpretation) uses Swadesh alignment scores as the reference level
-against which legal-domain divergence is assessed: a finding of low legal
-alignment on top of high Swadesh alignment is the critical interpretive condition
-for attributing divergence to legal-semantic structure. §A.1 (data appendix)
+§2.1 presents the Swadesh list as the control instrument and explains why
+competing alternatives were rejected. §2.4 uses Swadesh alignment scores as the
+reference level against which legal-domain divergence is assessed: a finding of
+low legal alignment on top of high Swadesh alignment is the critical interpretive
+condition for attributing divergence to legal-semantic structure. Appendix A
 provides the full 100-item Swadesh EN→ZH mapping with Traditional Chinese
 equivalents and OpenCC conversion notes.
 
@@ -303,24 +301,25 @@ it is the only exception.
 terms means that the corpus reflects Hong Kong's common-law-influenced bilingual
 legal tradition. Terms, translation choices, and domain emphases may differ from
 those that would emerge from a Mainland Chinese or Taiwanese source. This
-limitation is explicitly acknowledged in §6.3.1 and is, in fact, a feature of
+limitation is explicitly acknowledged in §4.2 and is, in fact, a feature of
 the study's framing: the comparison is between EN and ZH legal semantics as
 mediated through a common institutional context, which controls for one dimension
-of cross-tradition variation. §6.3.1 discusses the implications for
+of cross-tradition variation. §4.2 discusses the implications for
 generalisability and identifies extending the corpus to Mainland or Taiwanese
 sources as future work.
 
 **Thesis text implication**:
-§6.1 (source description) introduces the HK DOJ Bilingual Legal Glossary and
-establishes its institutional authority as the basis for adopting the DOJ's own
-bilingual pairings without external alignment. §6.1.1 (the selection problem)
-justifies the single-source strategy and rejects multi-source alternatives on
-grounds of harmonisation complexity and absence of additional coverage benefit.
-§6.1.3 (alignment intrinsic to source) articulates the key epistemological point:
-the thesis treats the DOJ's EN↔ZH pairings as authoritative; the experiments
-test the geometry of those pairings, not the validity of the pairings themselves.
-§6.3.1 (limitations) addresses the HK-specific character of the source and its
-implications for claims about cross-tradition Chinese legal semantics more broadly.
+§2.1 introduces the HK DOJ Bilingual Legal Glossary and establishes its
+institutional authority as the basis for adopting the DOJ's own bilingual
+pairings without external alignment. It justifies the single-source strategy
+and rejects multi-source alternatives on grounds of harmonisation complexity
+and absence of additional coverage benefit. §2.2 (Hong Kong as natural
+laboratory) articulates the key epistemological point: the thesis treats the
+DOJ's EN↔ZH pairings as authoritative; the experiments test the geometry of
+those pairings, not the validity of the pairings themselves. §4.2 (irreducible
+entanglement) addresses the HK-specific character of the source and its
+implications for claims about cross-tradition Chinese legal semantics more
+broadly.
 
 ---
 

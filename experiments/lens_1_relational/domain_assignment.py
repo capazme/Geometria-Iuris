@@ -1,8 +1,8 @@
 """
-k-NN domain assignment for background terms (§8.1).
+k-NN domain assignment for background terms (§3.1.1).
 
 Assigns each background term to a legal domain by majority vote among its
-k nearest core terms in embedding space. Used in §8.1 to test whether the
+k nearest core terms in embedding space. Used in §3.1.1 to test whether the
 embedding signal is strong enough to self-organize unlabelled legal terms.
 
 Design decisions: lens_1_relational/trace.md — D_BG1 (k-NN), D_BG2 (k=7)

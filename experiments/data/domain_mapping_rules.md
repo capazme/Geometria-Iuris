@@ -7,8 +7,8 @@
 subject-matter domains used in the thesis *Geometria Iuris*.
 **Validated against**: `experiments/data/processed/doj_filtered.json` (9,387 terms)
 
-**Thesis reference**: §6.1.1 (selection problem), §6.2.1 (domain stratification),
-§6.2.3 (edge cases)
+**Thesis reference**: §2.1 (selection problem), §2.1 (domain stratification),
+§2.1 (edge cases)
 
 ---
 
@@ -430,7 +430,7 @@ judgment, enforcement, execution, tribunal
 
 ## False Friend Candidates
 
-*(High scientific value — see §9.5.3 Normative decompositions)*
+*(High scientific value — see §3.2 Normative decompositions)*
 
 These are terms where the EN and ZH embedding neighborhoods are predicted to diverge
 most significantly, revealing cross-traditional semantic differences.

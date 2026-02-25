@@ -1,22 +1,21 @@
 """
 Lens I — Relational Distance Structure.
 
-Implements the full Lens I analysis pipeline across two chapters:
+Implements the full Lens I analysis pipeline (Ch.3 §3.1):
 
-  Ch.8 §8.1  Background term domain assignment (k-NN signal test)
-  Ch.8 §8.2  Intra-domain vs inter-domain distances (§8.2.1)
-             Legal vs control signal (§8.2.2)
-             Domain topology K×K matrix (§8.2.3)
-  Ch.8 §8.5  Within-tradition RSA robustness (§8.5.1)
-  Ch.9 §9.2  Cross-tradition RSA
+  §3.1.1  Background term domain assignment (k-NN signal test)
+          Intra-domain vs inter-domain distances (Mann-Whitney U)
+          Legal vs control signal (Mann-Whitney U)
+  §3.1.2  Domain topology K×K matrix
+  §3.1.4  Within-tradition RSA robustness + Cross-tradition RSA
 
 Usage
 -----
     cd experiments/
-    python -m lens_1_relational.lens1                   # full run, all defaults
-    python -m lens_1_relational.lens1 --n-perm 200      # faster (dev/debug)
-    python -m lens_1_relational.lens1 --section 8.1     # only background assignment
-    python -m lens_1_relational.lens1 --section 9.2     # only cross-tradition RSA
+    python -m lens_1_relational.lens1                       # full run, all defaults
+    python -m lens_1_relational.lens1 --n-perm 200          # faster (dev/debug)
+    python -m lens_1_relational.lens1 --section 3.1.1       # only background + signal
+    python -m lens_1_relational.lens1 --section 3.1.4       # only RSA
 
 Outputs
 -------
@@ -103,7 +102,7 @@ def _load_vecs_for_model(
 
 
 # ---------------------------------------------------------------------------
-# Domain analysis helpers (§8.2)
+# Domain analysis helpers (§3.1)
 # ---------------------------------------------------------------------------
 
 def _intra_inter_split(
@@ -185,19 +184,19 @@ def _mw_to_dict(res) -> dict:
 # Analysis sections
 # ---------------------------------------------------------------------------
 
-def run_section_81(
+def run_section_311(
     weird_labels: list[str],
     k: int = 7,
     primary_model: str | None = None,
 ) -> dict:
     """
-    §8.1 — Background term domain assignment via k-NN.
+    §3.1.1 — Background term domain assignment via k-NN.
 
     Uses the primary WEIRD model (first in config, BGE-EN-large) for the
     main assignment. Returns summary stats; saves background_review.csv.
     """
     primary = primary_model or weird_labels[0]
-    print(f"\n[§8.1] Background k-NN assignment  (k={k}, model={primary})")
+    print(f"\n[§3.1.1] Background k-NN assignment  (k={k}, model={primary})")
 
     vecs, index = load_precomputed(primary, EMB_DIR)
     terms_core, core_idx, bg_idx, ctrl_idx = _load_terms_by_tier(index)
@@ -240,17 +239,17 @@ def run_section_81(
     }
 
 
-def run_section_82(
+def run_section_31(
     weird_labels: list[str],
 ) -> dict:
     """
-    §8.2 — Relational distance structure (WEIRD models only).
+    §3.1 — Relational distance structure (WEIRD models only).
 
-    §8.2.1  Intra-domain vs inter-domain distances (Mann-Whitney U)
-    §8.2.2  Legal (core) vs control distances (Mann-Whitney U)
-    §8.2.3  Domain topology K×K matrix
+    §3.1.1  Intra-domain vs inter-domain distances (Mann-Whitney U)
+    §3.1.1  Legal (core) vs control distances (Mann-Whitney U)
+    §3.1.2  Domain topology K×K matrix
     """
-    print("\n[§8.2] Domain signal tests (WEIRD models)")
+    print("\n[§3.1] Domain signal tests (WEIRD models)")
 
     # Load index once (shared across all WEIRD models)
     _, index = load_precomputed(weird_labels[0], EMB_DIR)
@@ -267,31 +266,36 @@ def run_section_82(
             label, core_idx, bg_idx, ctrl_idx
         )
 
-        # --- §8.2.1 intra vs inter-domain ---
+        # --- §3.1.1 intra vs inter-domain ---
         rdm_core = compute_rdm(vecs_core)
         intra, inter = _intra_inter_split(rdm_core, domains)
         mw_81 = mannwhitney_with_r(intra, inter, alternative="less")
-        print(f"    §8.2.1  intra(med={mw_81.median_x:.3f}) vs "
+        print(f"    §3.1.1  intra(med={mw_81.median_x:.3f}) vs "
               f"inter(med={mw_81.median_y:.3f})  "
               f"r={mw_81.effect_r:+.3f}  p={mw_81.p_value:.2e}")
 
-        # --- §8.2.2 legal vs control ---
+        # --- §3.1.1 legal vs control ---
         combined = np.vstack([vecs_core, vecs_ctrl])
         rdm_lc = compute_rdm(combined)
         legal_legal = upper_tri(rdm_lc[:n_core, :n_core])
         legal_ctrl  = rdm_lc[:n_core, n_core:].flatten()
         mw_82 = mannwhitney_with_r(legal_legal, legal_ctrl, alternative="less")
-        print(f"    §8.2.2  legal(med={mw_82.median_x:.3f}) vs "
+        print(f"    §3.1.1  legal(med={mw_82.median_x:.3f}) vs "
               f"ctrl(med={mw_82.median_y:.3f})  "
               f"r={mw_82.effect_r:+.3f}  p={mw_82.p_value:.2e}")
 
-        # --- §8.2.3 domain topology ---
+        # --- §3.1.2 domain topology ---
         domain_labels, topo = _domain_topology(rdm_core, domains)
 
+        np.savez_compressed(
+            RESULTS_DIR / "distances" / f"{label}.npz",
+            intra=intra, inter=inter, legal=legal_legal, control=legal_ctrl,
+        )
+
         per_model[label] = {
-            "8_2_1_intra_vs_inter": _mw_to_dict(mw_81),
-            "8_2_2_legal_vs_control": _mw_to_dict(mw_82),
-            "8_2_3_domain_topology": {
+            "intra_vs_inter": _mw_to_dict(mw_81),
+            "legal_vs_control": _mw_to_dict(mw_82),
+            "domain_topology": {
                 "domains": domain_labels,
                 "matrix": topo.tolist(),
             },
@@ -307,6 +311,7 @@ def run_rsa_pairs(
     section_name: str,
     n_perm: int,
     n_boot: int,
+    save_dir: Path | None = None,
 ) -> list[dict]:
     """Run RSA for all pairs (labels_a × labels_b) and return serializable results."""
     pairs = list(combinations(labels_a, 2)) if labels_a is labels_b else list(product(labels_a, labels_b))
@@ -315,6 +320,12 @@ def run_rsa_pairs(
         t0 = time.perf_counter()
         result = rsa(rdms[la], rdms[lb], n_perm=n_perm, n_boot=n_boot)
         elapsed = time.perf_counter() - t0
+        if save_dir is not None:
+            np.savez_compressed(
+                save_dir / f"{la}_x_{lb}.npz",
+                null=result.null_distribution,
+                bootstrap=result.ci.distribution,
+            )
         d = _rsa_to_dict(la, lb, result)
         print(f"    {la} × {lb}  ρ={d['rho']:+.3f}  "
               f"r²={d['r_squared']:.3f}  "
@@ -324,21 +335,21 @@ def run_rsa_pairs(
     return results
 
 
-def run_section_851_and_92(
+def run_section_314(
     weird_labels: list[str],
     sinic_labels: list[str],
     n_perm: int,
     n_boot: int,
 ) -> dict:
     """
-    §8.5.1 Within-tradition RSA + §9.2 Cross-tradition RSA.
+    §3.1.4 Within-tradition RSA + Cross-tradition RSA.
 
     Builds one RDM per model (core terms only) then computes:
-      - 3 within-WEIRD pairs  (§8.5.1)
-      - 3 within-Sinic pairs  (§8.5.1)
-      - 9 cross-tradition pairs (§9.2)
+      - 3 within-WEIRD pairs
+      - 3 within-Sinic pairs
+      - 9 cross-tradition pairs
     """
-    print(f"\n[§8.5.1 + §9.2] RSA  (n_perm={n_perm}, n_boot={n_boot})")
+    print(f"\n[§3.1.4] RSA  (n_perm={n_perm}, n_boot={n_boot})")
 
     all_labels = weird_labels + sinic_labels
     rdms: dict[str, np.ndarray] = {}
@@ -347,27 +358,30 @@ def run_section_851_and_92(
     _, index = load_precomputed(weird_labels[0], EMB_DIR)
     _, core_idx, _, _ = _load_terms_by_tier(index)
 
+    rdm_dir = RESULTS_DIR / "rdms"
     for label in all_labels:
         vecs, _ = load_precomputed(label, EMB_DIR)
         rdms[label] = compute_rdm(vecs[core_idx])
+        np.savez_compressed(rdm_dir / f"{label}.npz", rdm=rdms[label])
         print(f"    {label}  RDM shape={rdms[label].shape}")
 
+    dist_dir = RESULTS_DIR / "distributions"
     print("  Within-WEIRD RSA:")
     within_weird = run_rsa_pairs(
         weird_labels, weird_labels, rdms,
-        "within_weird", n_perm, n_boot,
+        "within_weird", n_perm, n_boot, save_dir=dist_dir,
     )
 
     print("  Within-Sinic RSA:")
     within_sinic = run_rsa_pairs(
         sinic_labels, sinic_labels, rdms,
-        "within_sinic", n_perm, n_boot,
+        "within_sinic", n_perm, n_boot, save_dir=dist_dir,
     )
 
     print("  Cross-tradition RSA:")
     cross = run_rsa_pairs(
         weird_labels, sinic_labels, rdms,
-        "cross", n_perm, n_boot,
+        "cross", n_perm, n_boot, save_dir=dist_dir,
     )
 
     # Summary: intra-tradition vs cross-tradition mean rho
@@ -403,7 +417,7 @@ def main(argv: list[str] | None = None) -> None:
     )
     parser.add_argument(
         "--section",
-        choices=["8.1", "8.2", "8.5+9.2", "all"],
+        choices=["3.1.1", "3.1", "3.1.4", "all"],
         default="all",
         help="Which section(s) to run",
     )
@@ -412,10 +426,15 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--n-boot", type=int, default=1000,
                         help="Bootstrap iterations for CI")
     parser.add_argument("--k", type=int, default=7,
-                        help="k for k-NN domain assignment (§8.1)")
+                        help="k for k-NN domain assignment (§3.1.1)")
+    parser.add_argument("--no-viz", action="store_true",
+                        help="Skip figure generation after pipeline")
     args = parser.parse_args(argv)
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    (RESULTS_DIR / "rdms").mkdir(exist_ok=True)
+    (RESULTS_DIR / "distances").mkdir(exist_ok=True)
+    (RESULTS_DIR / "distributions").mkdir(exist_ok=True)
     weird_labels, sinic_labels = _load_config()
 
     print("=" * 60)
@@ -438,14 +457,14 @@ def main(argv: list[str] | None = None) -> None:
 
     t_start = time.perf_counter()
 
-    if args.section in ("8.1", "all"):
-        output["section_8_1"] = run_section_81(weird_labels, k=args.k)
+    if args.section in ("3.1.1", "all"):
+        output["section_311"] = run_section_311(weird_labels, k=args.k)
 
-    if args.section in ("8.2", "all"):
-        output["section_8_2"] = run_section_82(weird_labels)
+    if args.section in ("3.1", "all"):
+        output["section_31"] = run_section_31(weird_labels)
 
-    if args.section in ("8.5+9.2", "all"):
-        output["section_851_92"] = run_section_851_and_92(
+    if args.section in ("3.1.4", "all"):
+        output["section_314"] = run_section_314(
             weird_labels, sinic_labels,
             n_perm=args.n_perm, n_boot=args.n_boot,
         )
@@ -459,6 +478,10 @@ def main(argv: list[str] | None = None) -> None:
 
     print(f"\n{'=' * 60}")
     print(f"Done in {total:.0f}s  →  {out_path.relative_to(ROOT.parent)}")
+
+    if not args.no_viz:
+        from lens_1_relational.viz import run_viz
+        run_viz(RESULTS_DIR, output)
 
 
 if __name__ == "__main__":

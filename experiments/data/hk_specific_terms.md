@@ -6,8 +6,8 @@
 **Scope**: Terms from the HK DOJ Bilingual Glossary that are specific to the
 Hong Kong / UK common law system and may lack meaningful Sinic equivalents.
 
-**Thesis reference**: §8.3.3 (Boundary objects: the concepts that resist),
-§9.1.3 (What this laboratory makes visible — and what it cannot see)
+**Thesis reference**: §4.1 (Boundary objects: the concepts that resist),
+§4.2 (What this laboratory makes visible — and what it cannot see)
 
 ---
 
@@ -27,10 +27,10 @@ EN↔ZH comparison.
 Three treatment options per term:
 - **EXCLUDE**: Remove from core corpus. Too HK-specific to generalize.
 - **FLAG**: Keep in corpus but mark `hk_specific: true`. Include in analysis but
-  interpret results with caution. Possibly discuss in §8.3.3.
+  interpret results with caution. Possibly discuss in §4.1.
 - **BOUNDARY OBJECT**: Keep in core corpus and foreground as a scientifically interesting
   case. The concept's resistance to clean cross-tradition mapping is itself a finding.
-  Report in §8.3.3 and potentially §9.5.3.
+  Report in §4.1 and potentially §3.2.
 
 ---
 
@@ -80,7 +80,7 @@ law tradition has no equivalent binary. These terms embed this split structurall
 
 | Term | ZH (DOJ) | Treatment | Rationale |
 |------|----------|-----------|-----------|
-| `common law` | 不成文法 | BOUNDARY OBJECT | The ZH gloss (不成文法 = "unwritten law") captures one aspect but loses the historical/institutional dimension. This mistranslation IS the interesting finding: the concept of "common law" as a tradition has no equivalent, and the ZH model will anchor on "unwritten law" semantics. Scientifically valuable for §8.3.3. |
+| `common law` | 不成文法 | BOUNDARY OBJECT | The ZH gloss (不成文法 = "unwritten law") captures one aspect but loses the historical/institutional dimension. This mistranslation IS the interesting finding: the concept of "common law" as a tradition has no equivalent, and the ZH model will anchor on "unwritten law" semantics. Scientifically valuable for §4.1. |
 | `equity` (Chancery sense) | 衡平法 | BOUNDARY OBJECT | The conscience-based jurisdiction of equity has no Sinic equivalent. The ZH term 衡平法 is a coinage (衡平 = balance/equity). Its embedding will be isolated. This is a prime false friend candidate — see domain_mapping_rules.md §False Friend Candidates. |
 | `at law and in equity` | 在普通法及衡平法上 | EXCLUDE | A compound phrase encoding the law/equity split. Too system-specific to stand as a core term. |
 | `clog on the equity of redemption` | 贖回業權的障礙 | EXCLUDE | Highly technical equity doctrine, HK/UK specific. |
@@ -176,7 +176,7 @@ recognised conceptual foothold in Sinic legal discourse.
 
 ## Boundary Objects: Proposed Thesis Treatment
 
-The 6 boundary object terms warrant dedicated discussion in §8.3.3:
+The 6 boundary object terms warrant dedicated discussion in §4.1:
 
 1. **`common law`** — The term that names the entire WEIRD tradition has no true Sinic
    equivalent. The ZH embedding anchors on "unwritten law," losing the historical/

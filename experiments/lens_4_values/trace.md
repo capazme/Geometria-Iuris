@@ -1,6 +1,6 @@
 # Trace: Lens IV — Value axis projection
 
-**Thesis chapter(s)**: Ch.9 §9.4
+**Thesis chapter(s)**: Ch.3 §3.3 — Value dimensions (comparative)
 **Date**: 2026-02-21
 **Status**: pending
 

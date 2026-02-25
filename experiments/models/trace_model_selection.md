@@ -1,6 +1,6 @@
 # Trace: Model selection
 
-**Thesis chapter(s)**: Ch.7 §7.1 — Models as cultural informants
+**Thesis chapter(s)**: Ch.2 §2.3 — Models as cultural informants
 **Date**: 2026-02-21
 **Status**: complete
 
@@ -10,10 +10,9 @@
 
 Models are treated as cultural informants: their training corpora encode the
 linguistic-normative practices of the communities that produced them (the
-DigiVolksgeist hypothesis, Ch.5 §5.3). Model selection is therefore not a
-neutral technical choice — it is a sampling decision with epistemological
-consequences. The thesis must be transparent about which communities are being
-sampled and why.
+DigiVolksgeist hypothesis, §1.3). Model selection is therefore not a neutral
+technical choice — it is a sampling decision with epistemological consequences.
+The thesis must be transparent about which communities are being sampled and why.
 
 Two hard constraints apply to every model considered:
 
@@ -58,20 +57,20 @@ Two hard constraints apply to every model considered:
 
 **Rationale**:
 The 3+3 design provides minimum viable robustness. Each finding reported in
-Ch.9 is described as a "tradition-level signal" only if it holds in ≥7 of 9
+§3.1.4 is described as a "tradition-level signal" only if it holds in ≥7 of 9
 model pairs. A single-pair finding (1+1) or a bare majority (5/9) would not
 meet this threshold, making the epistemological cost of a weaker design too
 high given the comparative claims the thesis advances. The design also
 enables two layers of analysis: within-tradition consistency (do the 3 WEIRD
-models agree with each other on Chapter 8 findings?) and cross-tradition
-robustness (do the 9 pairs agree on Chapter 9 findings?). A 3+3 design is
+models agree with each other on §3.1.1–3.1.2 findings?) and cross-tradition
+robustness (do the 9 pairs agree on §3.1.4 findings?). A 3+3 design is
 the minimum that makes both layers meaningful.
 
 **Thesis text implication**:
-§7.1.1 (model selection rationale) introduces the 3+3 design and defines the
-≥7/9 robustness threshold. The two-layer analysis structure (within-tradition
-+ cross-tradition) is introduced in §7.2 (analysis plan). The threshold is
-revisited in §9.1 when cross-tradition results are first reported.
+§2.3 introduces the 3+3 design and defines the ≥7/9 robustness threshold.
+The two-layer analysis structure (within-tradition + cross-tradition) is
+introduced in §2.4 (analysis plan). The threshold is revisited in §3.1.4
+when cross-tradition results are first reported.
 
 ---
 
@@ -117,10 +116,10 @@ by the fact that RSA/GW/NDA operate on pairwise distance matrices, which are
 dimension-independent.
 
 **Thesis text implication**:
-§7.1.2 (WEIRD model inventory) presents the three models with their training
-regimes and justifies the exclusion of bge-en-icl and Nomic-v1.5. The cross-terna
-symmetry principle (§7.1.4) explains why BGE-EN was chosen specifically as the
-architecture-control anchor for the Sinic side.
+§2.3 presents the three models with their training regimes and justifies the
+exclusion of bge-en-icl and Nomic-v1.5. The cross-terna symmetry principle
+explains why BGE-EN was chosen specifically as the architecture-control anchor
+for the Sinic side.
 
 ---
 
@@ -164,9 +163,8 @@ The explicit cross-terna symmetry prevents the 9-pair robustness analysis from
 conflating architecture effects with tradition effects.
 
 **Thesis text implication**:
-§7.1.3 (Sinic model inventory) presents the three models and their selection
-rationale. §7.1.4 (cross-terna symmetry) formalises the slot structure and its
-anti-confound logic.
+§2.3 presents the three Sinic models and their selection rationale, and
+formalises the slot structure and its anti-confound logic.
 
 ---
 
@@ -194,16 +192,16 @@ anti-confound logic.
   aggregate to enable architecture-effect decomposition.
 
 **Rationale**:
-The two-level structure directly maps onto the thesis argument. Chapter 8 asks:
+The two-level structure directly maps onto the thesis argument. §3.1.1–3.1.2 ask:
 "Is there a stable WEIRD legal geometry?" — answered by within-tradition consistency.
-Chapter 9 asks: "Do WEIRD and Sinic geometries diverge?" — answered by cross-tradition
-pair agreement. Reporting raw pair-level scores in an appendix table (§A.2) preserves
+§3.1.4 asks: "Do WEIRD and Sinic geometries diverge?" — answered by cross-tradition
+pair agreement. Reporting raw pair-level scores in an appendix table preserves
 full transparency without burdening the main text.
 
 **Thesis text implication**:
-§7.2 (analysis plan) introduces the two-level reporting strategy. §8.1 applies
-Level 1 for the first time. §9.1 applies Level 2. §A.2 (appendix) contains
-the full 9-pair result table for each experiment.
+§2.4 introduces the two-level reporting strategy. §3.1.1 applies Level 1 for
+the first time. §3.1.4 applies Level 2. Appendix contains the full 9-pair
+result table for each experiment.
 
 ---
 
@@ -240,14 +238,14 @@ providers) differs structurally from the infrastructure available for the Sinic
 tradition (reliance on academic monolingual models; industrial providers have
 moved to multilingual). The thesis does not treat this asymmetry as a limitation
 to be apologised for — it is a datum about the material conditions of NLP
-research that warrants a brief note in §7.1.
+research that warrants a brief note in §2.3.
 
 **Decision**: Industrial model pair renounced. The 3+3 design uses academic
 models only. The structural gap in the Chinese AI ecosystem is documented as a
-methodological finding in §7.1, not as a limitation.
+methodological finding in §2.3, not as a limitation.
 
 **Thesis text implication**:
-§7.1 (sidebar or inline note, ~150 words): Notes that the natural experiment of
+§2.3 (sidebar or inline note, ~150 words): Notes that the natural experiment of
 pairing a large English industrial model (Cohere) with a Chinese industrial
 equivalent was not realisable because no monolingual large-scale Chinese
 industrial embedding model exists as of February 2026. Interprets this as a

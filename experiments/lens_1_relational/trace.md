@@ -1,6 +1,6 @@
 # Trace: Lens I — Relational distance structure
 
-**Thesis chapter(s)**: Ch.8 §8.1 + §8.2 + §8.5.1 · Ch.9 §9.2
+**Thesis chapter(s)**: Ch.3 §3.1 — The geometry of a legal tradition (macro)
 **Date**: 2026-02-21
 **Status**: in progress
 
@@ -9,19 +9,19 @@
 ## Context
 
 Lens I asks whether legal embedding spaces have non-random relational structure
-(Ch.8) and whether that structure is shared across legal traditions (Ch.9). It
-operationalizes the second-order isomorphism concept introduced in Ch.5 §5.1.
+and whether that structure is shared across legal traditions. It operationalizes
+the second-order isomorphism concept introduced in §1.4.
 
 ### Analysis map
 
 | Analysis | Section | Terms used | Method |
 |---|---|---|---|
-| Background term domain assignment | §8.1 | background (8975) | k-NN majority vote |
-| Intra vs inter-domain distances | §8.2.1 | core (397) | Mann-Whitney U |
-| Legal vs control signal | §8.2.2 | core (397) + control (100) | Mann-Whitney U |
-| Domain topology K×K | §8.2.3 | core (397) | inter-domain distance matrix |
-| Within-WEIRD RSA robustness | §8.5.1 | core (397) | RSA + Mantel + block bootstrap |
-| Cross-tradition RSA | §9.2 | core (397) | RSA + Mantel + block bootstrap |
+| Background term domain assignment | §3.1.1 | background (8975) | k-NN majority vote |
+| Intra vs inter-domain distances | §3.1.1 | core (397) | Mann-Whitney U |
+| Legal vs control signal | §3.1.1 | core (397) + control (100) | Mann-Whitney U |
+| Domain topology K×K | §3.1.2 | core (397) | inter-domain distance matrix |
+| Within-WEIRD RSA robustness | §3.1.4 | core (397) | RSA + Mantel + block bootstrap |
+| Cross-tradition RSA | §3.1.4 | core (397) | RSA + Mantel + block bootstrap |
 
 ---
 
@@ -41,7 +41,7 @@ operationalizes the second-order isomorphism concept introduced in Ch.5 §5.1.
 Indipendente dalla dimensione del modello (768 vs 1024), confrontabile tra
 tradizioni.
 
-**Thesis text implication**: → §7.2 "The statistical apparatus". Giustifica perché
+**Thesis text implication**: → §2.4 "The statistical toolkit". Giustifica perché
 la distanza coseno è la metrica naturale per embedding normalizzati e permette
 confronti tra modelli di architettura diversa.
 
@@ -61,7 +61,7 @@ confronti tra modelli di architettura diversa.
 Spearman cattura la concordanza d'ordinamento indipendentemente dalla scala.
 Standard nella letteratura RSA (Kriegeskorte et al. 2008).
 
-**Thesis text implication**: → §7.2.1 "Permutation tests". Motiva la scelta
+**Thesis text implication**: → §2.4 "The statistical toolkit". Motiva la scelta
 rank-based rispetto alla correlazione lineare per confronti inter-modello.
 
 ---
@@ -85,9 +85,8 @@ minimo p-value rappresentabile sia 1/10000=0.0001 — sufficiente per affermare
 p<0.001 con piena credibilità in un contesto peer-reviewed. Nessun revisore può
 obiettare sulla stabilità della stima.
 
-**Thesis text implication**: → §7.2.1 "Permutation tests: inference without
-distributional assumptions". Centrale per la credibilità statistica dell'intera
-analisi RSA.
+**Thesis text implication**: → §2.4 "The statistical toolkit: permutation inference".
+Centrale per la credibilità statistica dell'intera analisi RSA.
 
 ---
 
@@ -107,12 +106,12 @@ i termini (non le coppie) è l'unità corretta per il bootstrap. Ref: Nili et al
 (2014) PLoS Computational Biology 10(4): e1003553. B=10000 allineato con D3
 (Mantel test) per coerenza del parametro di Monte Carlo attraverso tutta la tesi.
 
-**Thesis text implication**: → §7.2.2 "Block bootstrap for dependent observations".
+**Thesis text implication**: → §2.4 "The statistical toolkit: block bootstrap".
 Questo metodo diventa la giustificazione formale per tutti i CI dell'intera tesi.
 
 ---
 
-### D5 — Statistical test for §8.2.1 e §8.2.2
+### D5 — Statistical test for §3.1.1 (domain signal + legal vs control)
 
 **Options considered**:
 - Option A: Mann-Whitney U (pro: non-parametrico, non assume normalità, adatto
@@ -128,9 +127,9 @@ testa la differenza di locazione (mediana) senza assunzioni distribuzionali.
 L'effect size r = (concordanti - discordanti) / totale dà una misura leggibile
 della separazione tra le due distribuzioni.
 
-**Thesis text implication**: → §8.2.1 e §8.2.2. Il p-value risponde a "il
-segnale è statisticamente significativo?", l'effect size r risponde a "quanto è
-grande?". Entrambi necessari per evitare lo stargazing criticato in §7.2.3.
+**Thesis text implication**: → §3.1.1. Il p-value risponde a "il segnale è
+statisticamente significativo?", l'effect size r risponde a "quanto è grande?".
+Entrambi necessari per evitare lo stargazing criticato in §2.4.
 
 ---
 
@@ -149,15 +148,16 @@ grande?". Entrambi necessari per evitare lo stargazing criticato in §7.2.3.
 **Decision**: Option B — k-NN majority vote
 
 **Rationale**: l'interpretabilità è fondamentale. Lo strumento di revisione
-giuridica (§8.1 + Quod Numeri Tacent) richiede che il giurista veda perché
+giuridica (§3.1.1 + Ch.4 Quod Numeri Tacent) richiede che il giurista veda perché
 un termine è stato assegnato a un dominio. "I tuoi 7 vicini più prossimi sono
 [X, Y, Z...], tutti civil" è un ragionamento verificabile. Il centroide non lo è.
 La differenza di costo computazionale è trascurabile (8975 query su 397 vettori).
 
-**Thesis text implication**: → §8.1 "The first question: is there signal, or is
-there noise?" — l'assegnamento k-NN diventa il test empirico del segnale su
-dati held-out (i background terms). → §10 Quod Numeri Tacent: il giurista
-completa l'interpretazione dove il numero fornisce la misura ma non il giudizio.
+**Thesis text implication**: → §3.1.1 "Domain signal: do legal categories have
+geometric reality?" — l'assegnamento k-NN diventa il test empirico del segnale
+su dati held-out (i background terms). → §4.1 (Ch.4 Quod Numeri Tacent): il
+giurista completa l'interpretazione dove il numero fornisce la misura ma non il
+giudizio.
 
 ---
 
@@ -185,17 +185,16 @@ maggioranza assoluta). In questo caso il codice assegna al più frequente (2 vot
 e segnala `confidence=2/7≈0.29` come "alta ambiguità". La revisione giuridica
 è obbligatoria per questi termini.
 
-**Thesis text implication**: → §8.1. La scelta di k=7 e la soglia di confidence
-4/7 diventano i parametri operativi del signal test. → §7.3 "Robustness checks":
-la sensibilità al k è una verifica di robustezza (k=5 e k=9 come sensitivity
-check).
+**Thesis text implication**: → §3.1.1. La scelta di k=7 e la soglia di confidence
+4/7 diventano i parametri operativi del signal test. → §2.4: la sensibilità al
+k è una verifica di robustezza (k=5 e k=9 come sensitivity check).
 
 ---
 
 ## Open questions
 
-- Sensitivity check su k=5 e k=9: pianificato come robustezza in §7.3
-- Concordanza tra i 3 modelli WEIRD sull'assegnamento: da includere in §8.5.1
+- Sensitivity check su k=5 e k=9: pianificato come robustezza in §2.4
+- Concordanza tra i 3 modelli WEIRD sull'assegnamento: da includere in §3.1.4
 
 ---
 

@@ -93,7 +93,7 @@ def upper_tri(rdm: np.ndarray) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
-# §8.2 — Domain signal tests
+# §3.1.1 — Domain signal tests
 # ---------------------------------------------------------------------------
 
 def mannwhitney_with_r(
@@ -136,7 +136,7 @@ def mannwhitney_with_r(
 
 
 # ---------------------------------------------------------------------------
-# §8.5 / §9.2 — RSA: Mantel test + block bootstrap CI
+# §3.1.4 — RSA: Mantel test + block bootstrap CI
 # ---------------------------------------------------------------------------
 
 def mantel_test(

@@ -1,6 +1,6 @@
 # Trace: Lens V — Semantic neighborhoods
 
-**Thesis chapter(s)**: Ch.9 §9.5
+**Thesis chapter(s)**: Ch.3 §3.2 — Semantic neighborhoods (micro)
 **Date**: 2026-02-21
 **Status**: pending
 
