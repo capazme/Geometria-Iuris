@@ -23,17 +23,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as go
 
-# ---------------------------------------------------------------------------
-# Style — Okabe-Ito colorblind-safe palette
-# ---------------------------------------------------------------------------
+from shared.html_style import (
+    page_head, tabs_bar, plots_script,
+    C_BLUE, C_ORANGE, C_GREEN, C_SKY, C_VERMIL, C_PURPLE, C_BLACK,
+)
 
-C_BLUE   = "#0072B2"
-C_ORANGE = "#E69F00"
-C_GREEN  = "#009E73"
-C_SKY    = "#56B4E9"
-C_VERMIL = "#D55E00"
-C_PURPLE = "#CC79A7"
-C_BLACK  = "#000000"
+# ---------------------------------------------------------------------------
+# Style — Okabe-Ito colorblind-safe palette (imported from shared.html_style)
+# ---------------------------------------------------------------------------
 
 # One color per model (6 models)
 MODEL_COLORS = [C_BLUE, C_ORANGE, C_GREEN, C_SKY, C_VERMIL, C_PURPLE]
@@ -454,16 +451,199 @@ def _pj_drift_heatmap(results: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Drilldown — HTML table (no Plotly, pure HTML/CSS)
+# ---------------------------------------------------------------------------
+
+# Domain color mapping for the NTA table
+_DOMAIN_COLORS = {
+    "administrative": "#4e79a7",
+    "civil": "#f28e2b",
+    "constitutional": "#e15759",
+    "criminal": "#76b7b2",
+    "international": "#59a14f",
+    "labor_social": "#edc948",
+    "procedure": "#b07aa1",
+    "control": "#999999",
+}
+
+
+def _nta_html_block(nta: dict) -> str:
+    """Generate HTML block for NTA with a model dropdown selector."""
+    models = list(nta.keys())
+    if not models:
+        return "<p>No NTA data.</p>"
+
+    blocks: list[str] = []
+
+    # Dropdown
+    options = "\n".join(
+        f'<option value="nta_{i}"{" selected" if i == 0 else ""}>'
+        f'{_short(m)}</option>'
+        for i, m in enumerate(models)
+    )
+    blocks.append(
+        f'<select id="ntaModelSelect" class="nta-select" '
+        f'onchange="ntaSwitchModel(this.value)">\n{options}\n</select>'
+    )
+
+    # One div per model, only first visible
+    for i, (model_label, dd_data) in enumerate(nta.items()):
+        display = "block" if i == 0 else "none"
+        k = dd_data["k"]
+        blocks.append(
+            f'<div id="nta_{i}" class="nta-model" style="display:{display}">'
+        )
+
+        for term_name, term_data in dd_data["terms"].items():
+            blocks.append(_nta_term_table(term_name, term_data, k))
+
+        blocks.append('</div>')
+
+    return "\n".join(blocks)
+
+
+def _nta_term_table(term_name: str, term_data: dict, k: int) -> str:
+    """Render a single term's NTA trajectory as an HTML table."""
+    domain = term_data["domain"]
+    zh = term_data.get("zh", "")
+    color = _DOMAIN_COLORS.get(domain, "#888")
+    parts: list[str] = []
+
+    parts.append(
+        f'<h4 style="margin-top:20px">'
+        f'<span style="background:{color};color:#fff;padding:2px 8px;'
+        f'border-radius:3px;font-size:0.8em">{domain}</span> '
+        f'{term_name}'
+        f'<span style="color:#888;font-size:0.8em;margin-left:8px">'
+        f'{zh}</span></h4>'
+    )
+
+    parts.append(
+        '<table style="border-collapse:collapse;width:100%;'
+        'font-size:0.82em;margin-bottom:16px">'
+    )
+    parts.append(
+        '<tr style="background:#eee;font-weight:bold">'
+        '<td style="padding:4px 8px;border:1px solid #ddd;width:60px">'
+        'Layer</td>'
+    )
+    for r in range(1, k + 1):
+        parts.append(
+            f'<td style="padding:4px 8px;border:1px solid #ddd;'
+            f'text-align:center">#{r}</td>'
+        )
+    parts.append('</tr>')
+
+    for layer_entry in term_data["layers"]:
+        layer = layer_entry["layer"]
+        parts.append(
+            f'<tr><td style="padding:4px 8px;border:1px solid #ddd;'
+            f'font-weight:bold;background:#f9f9f9">L{layer}</td>'
+        )
+        for nb in layer_entry["neighbors"]:
+            nb_color = _DOMAIN_COLORS.get(nb["domain"], "#888")
+            is_control = nb.get("tier") == "control"
+            entered = nb.get("status") == "entered"
+            if entered:
+                bg = "#e8f5e9"
+            elif is_control:
+                bg = "#f0f0f0"
+            else:
+                bg = "#fff"
+            border_style = (
+                "2px solid #4caf50" if entered
+                else "1px solid #ddd"
+            )
+            sim_str = f'{nb["sim"]:.3f}'
+            name_style = "font-style:italic;color:#666" if is_control else ""
+            label_tag = (
+                '<span style="background:#ddd;color:#666;padding:0 4px;'
+                'border-radius:2px;font-size:0.75em;margin-left:4px">'
+                'ctrl</span>'
+                if is_control else ""
+            )
+            parts.append(
+                f'<td style="padding:4px 6px;border:{border_style};'
+                f'background:{bg};position:relative">'
+                f'<span style="color:{nb_color};font-weight:600">'
+                f'●</span> <span style="{name_style}">{nb["en"]}</span>'
+                f'{label_tag}'
+                f'<br><span style="color:#999;font-size:0.85em">'
+                f'{nb["domain"]} · {sim_str}</span>'
+                f'</td>'
+            )
+        parts.append('</tr>')
+
+        # Show exited terms
+        exited = layer_entry.get("exited", [])
+        if exited:
+            ex_parts = []
+            for e in exited:
+                ec = _DOMAIN_COLORS.get(e["domain"], "#888")
+                is_ctrl = e.get("tier") == "control"
+                style = 'font-style:italic;color:#666' if is_ctrl else ''
+                ctrl_tag = (
+                    ' <span style="background:#ddd;color:#666;'
+                    'padding:0 3px;border-radius:2px;font-size:0.75em">'
+                    'ctrl</span>'
+                    if is_ctrl else ""
+                )
+                ex_parts.append(
+                    f'<span style="color:{ec}">●</span> '
+                    f'<span style="{style}">{e["en"]}</span>{ctrl_tag}'
+                )
+            ex_names = ", ".join(ex_parts)
+            parts.append(
+                f'<tr><td style="border:1px solid #ddd"></td>'
+                f'<td colspan="{k}" style="padding:2px 8px;'
+                f'border:1px solid #ddd;background:#fff3e0;'
+                f'font-size:0.85em;color:#bf360c">'
+                f'↗ exited: {ex_names}</td></tr>'
+            )
+
+    parts.append('</table>')
+
+    # Domain composition summary
+    evol = term_data.get("domain_evolution", [])
+    if evol:
+        parts.append(
+            '<div style="margin-bottom:20px;font-size:0.82em">'
+            '<b>Domain composition across layers:</b><br>'
+        )
+        for e in evol:
+            layer = e["layer"]
+            n_legal = e.get("n_legal", 0)
+            n_control = e.get("n_control", 0)
+            dom_str = " · ".join(
+                f'<span style="color:{_DOMAIN_COLORS.get(d, "#888")}">'
+                f'{d}={c}</span>'
+                for d, c in sorted(
+                    e["domains"].items(), key=lambda x: -x[1]
+                )
+            )
+            tier_str = (
+                f' <span style="color:#666">['
+                f'legal={n_legal}, ctrl={n_control}]</span>'
+            )
+            parts.append(f'L{layer}: {dom_str}{tier_str}<br>')
+        parts.append('</div>')
+
+    return "\n".join(parts)
+
+
+# ---------------------------------------------------------------------------
 # HTML builder
 # ---------------------------------------------------------------------------
 
 def build_html(results: dict, save_path: Path) -> Path:
-    """Build a single self-contained Plotly HTML with 4-tab navigation."""
+    """Build a single self-contained Plotly HTML with tabbed navigation."""
     print("    Building Plotly figures...")
     plots = {}
+    extra_html = {}
 
     has_b = "section_313b" in results
     has_a = "section_313a" in results
+    has_nta = "nta" in results
 
     if has_b:
         plots["signal_rsa"] = _pj_domain_signal_rsa(results)
@@ -471,151 +651,320 @@ def build_html(results: dict, save_path: Path) -> Path:
         plots["drift"] = _pj_drift_curves(results)
         plots["jaccard"] = _pj_jaccard_curves(results)
         plots["heatmap"] = _pj_drift_heatmap(results)
+    if has_nta:
+        extra_html["nta"] = _nta_html_block(results["nta"])
 
-    save_path.write_text(_html_template(plots), encoding="utf-8")
+    save_path.write_text(
+        _html_template(plots, extra_html), encoding="utf-8"
+    )
     return save_path
 
 
-def _html_template(plots: dict[str, str]) -> str:
-    tabs_html = ""
-    panels_html = ""
-    plot_entries = []
+def _html_template(
+    plots: dict[str, str],
+    extra_html: dict[str, str] | None = None,
+) -> str:
+    if extra_html is None:
+        extra_html = {}
 
-    # Note blocks per tab (formula + description, no interpretation)
-    notes = {
-        "signal_rsa": """
-    <h3>§3.1.3b — Domain signal emergence &amp; RSA convergence</h3>
-    <p>Two curves per model, one per metric. Use the dropdown to switch model.</p>
-    <p><b>Domain signal $r$ (solid, left axis):</b> at each layer $\\ell$, the RDM over
-    core terms is computed, then split into intra-domain and inter-domain distances.
-    The Mann-Whitney rank-biserial correlation measures separation:</p>
-    <p>$$r_\\ell = 1 - \\frac{2\\,U_\\ell}{n_{\\text{intra}} \\cdot n_{\\text{inter}}}$$</p>
-    <p>$r > 0$ means intra-domain distances are systematically smaller than inter-domain
-    distances at layer $\\ell$. $r = 0$ means no separation.</p>
-    <p><b>RSA convergence $\\rho$ (dashed, right axis):</b> Spearman correlation between
-    the RDM at layer $\\ell$ and the RDM at the final layer $L$:</p>
-    <p>$$\\rho_\\ell = \\text{Spearman}\\big(\\text{upper\\_tri}(\\text{RDM}_\\ell),\\;
-    \\text{upper\\_tri}(\\text{RDM}_L)\\big)$$</p>
-    <p>$\\rho_\\ell = 1$ at the final layer by definition. Lower layers with
-    $\\rho \\approx 1$ indicate that the relational structure is already formed early.</p>
-""",
-        "drift": """
-    <h3>§3.1.3a — Cosine drift by domain</h3>
-    <p>For each term $t$ and each layer transition $\\ell \\to \\ell+1$, the cosine drift
-    measures how much the representation changes:</p>
-    <p>$$\\text{drift}(t, \\ell) = 1 - \\cos\\big(\\mathbf{h}_t^{(\\ell)},\\; \\mathbf{h}_t^{(\\ell+1)}\\big)$$</p>
-    <p>where $\\mathbf{h}_t^{(\\ell)}$ is the pooled (CLS or Mean) hidden state of term $t$
-    at layer $\\ell$, L2-normalized.</p>
-    <p>Each line is the <b>mean drift across all terms in a domain</b> at each transition.
-    High drift at a given transition means that layer is actively transforming the
-    representations of terms in that domain.</p>
-""",
-        "jaccard": """
-    <h3>§3.1.3a — Jaccard neighborhood instability by domain</h3>
-    <p>For each term $t$ and transition $\\ell \\to \\ell+1$, the $k$-NN sets at the two
-    layers are compared using Jaccard distance:</p>
-    <p>$$J(t, \\ell) = 1 - \\frac{|\\text{kNN}(t, \\ell) \\cap \\text{kNN}(t, \\ell+1)|}
-    {|\\text{kNN}(t, \\ell) \\cup \\text{kNN}(t, \\ell+1)|}$$</p>
-    <p>with $k=7$. $\\text{kNN}(t, \\ell)$ is the set of $k$ nearest neighbors of term $t$
-    in cosine similarity at layer $\\ell$ (excluding self).</p>
-    <p>$J = 0$: identical neighborhoods. $J = 1$: completely different neighborhoods.
-    Each line is the mean $J$ across all terms in a domain.</p>
-""",
-        "heatmap": """
-    <h3>§3.1.3a — Drift heatmap (primary model)</h3>
-    <p>Each row is a core term, each column is a layer transition $\\ell \\to \\ell+1$.
-    Cell color encodes $\\text{drift}(t, \\ell)$ (cosine distance between consecutive
-    hidden states). Terms are sorted top-to-bottom by decreasing total drift
-    $\\sum_\\ell \\text{drift}(t, \\ell)$.</p>
-    <p>Hover to see term name, domain, and exact drift value.</p>
-""",
-    }
-
+    # Build tab definitions and panels for Plotly tabs
     tab_defs = [
         ("signal_rsa", "§3.1.3b Signal + RSA", "pSignal"),
-        ("drift", "§3.1.3a Drift", "pDrift"),
-        ("jaccard", "§3.1.3a Jaccard", "pJaccard"),
-        ("heatmap", "§3.1.3a Heatmap", "pHeat"),
+        ("drift",      "§3.1.3a Drift",         "pDrift"),
+        ("jaccard",    "§3.1.3a Jaccard",        "pJaccard"),
+        ("heatmap",    "§3.1.3a Heatmap",        "pHeat"),
     ]
 
+    # Full div IDs keyed by tab key (plots_script expects "plt_signal_rsa", etc.)
+    plotly_plots: dict[str, str] = {}
+    panels_html = ""
+    tabs_list: list[tuple[str, str]] = []  # (panel_id, label)
     first = True
+
     for key, title, div_id in tab_defs:
         if key not in plots:
             continue
+        tabs_list.append((div_id, title))
         active = " active" if first else ""
-        tabs_html += (
-            f'  <button class="tab-btn{active}" '
-            f'onclick="showTab(\'{div_id}\', this)">{title}</button>\n'
+
+        question_content = _panel_questions.get(key, "")
+        question_html = (
+            f'<div class="question">{question_content}</div>'
+            if question_content else ""
         )
-        note_html = f'<div class="note">{notes.get(key, "")}</div>' if key in notes else ""
+        method_content = _panel_methods.get(key, "")
+        method_html = (
+            f'<div class="card">{method_content}</div>'
+            if method_content else ""
+        )
+
+        full_div_id = f"plt_{key}"
+        plotly_plots[full_div_id] = plots[key]
+
         panels_html += (
             f'<div id="{div_id}" class="panel{active}">'
-            f'{note_html}'
-            f'<div id="plt_{key}"></div></div>\n'
+            f'{question_html}'
+            f'{method_html}'
+            f'<div id="{full_div_id}"></div>'
+            f'</div>\n'
         )
-        plot_entries.append(f"  plt_{key}: {plots[key]}")
         first = False
 
-    plots_js = ",\n".join(plot_entries)
+    # NTA tab (pure HTML tables + custom JS)
+    nta_js = ""
+    if "nta" in extra_html:
+        active = " active" if not plots else ""
+        tabs_list.append(("pNTA", "§3.1.3c NTA"))
+        nta_question = (
+            '<b>\u00a73.1.3c \u2014 Neighborhood Trajectory Analysis (NTA).</b> '
+            'While the previous charts show aggregate statistics (averages across many terms), '
+            'this table zooms in on a small number of individually selected terms \u2014 chosen '
+            'because they are polysemous (they carry different meanings in different branches '
+            'of law), because they have particular cross-tradition relevance, or because they '
+            'exhibited unusual behaviour in the aggregate metrics. '
+            'For each selected term, the table lists the exact identity of its $k = 7$ nearest '
+            'neighbors at several sampled layers (not every layer is shown, only a representative '
+            'subset). The <b>neighbor pool</b> from which these 7 closest terms are drawn consists '
+            'of 397 core legal terms (covering 7 branches of law) and 100 non-legal control words '
+            'from the Swadesh-100 list (basic human-experience terms like \"water\", \"fire\", '
+            '\"mother\", used as a baseline). As the model processes through its layers, the '
+            'composition of each term\u2019s neighborhood may change: some neighbors enter the top-7 '
+            'set, others exit. By reading the table from top to bottom (earlier layers to later '
+            'layers), one can observe whether the term\u2019s closest associates shift from one branch '
+            'of law to another, or from non-legal control terms to legal terms, or vice versa.'
+        )
+        nta_legend = """
+<div class="card">
+<h2>Legend \u2014 How to read the NTA tables</h2>
+<p>Each table shows one selected term. The rows represent sampled layers (from earlier layers at the top
+to later layers at the bottom). The columns show the 7 nearest neighbors at that layer, ranked from
+closest (left, #1) to seventh-closest (right, #7). Each neighbor cell displays the neighbor\u2019s name,
+its branch of law (domain), and the cosine similarity score (a number between 0 and 1 measuring how
+close the two vectors are; higher means more similar).</p>
 
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Lens III — Layer Stratigraphy</title>
-<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body, {{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}]}});"></script>
-<style>
-  body {{ font-family: sans-serif; margin: 0; padding: 16px; background: #fafafa; color: #222; }}
-  h1 {{ font-size: 1.2rem; margin-bottom: 12px; }}
-  .tabs {{ display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }}
-  .tab-btn {{
-    padding: 7px 16px; border: 1px solid #ccc; border-radius: 4px;
-    background: #fff; cursor: pointer; font-size: 0.85rem; color: #444;
-  }}
-  .tab-btn.active {{ background: #0072B2; color: #fff; border-color: #0072B2; }}
-  .panel {{ display: none; }}
-  .panel.active {{ display: block; }}
-  .note {{
-    background: #f5f5f5; border-left: 3px solid #0072B2; padding: 10px 14px;
-    margin-bottom: 14px; font-size: 0.85rem; line-height: 1.5;
-  }}
-  .note h3 {{ margin: 0 0 6px 0; font-size: 0.9rem; }}
-  .note p {{ margin: 4px 0; }}
-</style>
-</head>
-<body>
-<h1>Lens III — Layer Stratigraphy</h1>
-<div class="tabs">
-{tabs_html}</div>
+<p><span style="background:#e8f5e9;padding:1px 6px;border:2px solid #4caf50;border-radius:3px">Green cell with green border</span>
+= a neighbor that <b>entered</b> the top-7 set at this layer. This term was <em>not</em> among the 7
+nearest neighbors at the previous sampled layer but has now become close enough to appear. Its arrival
+may reflect the model reorganising its representation of the focal term at this depth.</p>
 
-{panels_html}
-<script>
-function showTab(id, btn) {{
-  document.querySelectorAll(".panel").forEach(el => el.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-  btn.classList.add("active");
-  setTimeout(function() {{
-    var panel = document.getElementById(id);
-    var plots = panel.querySelectorAll("[id^='plt_']");
-    plots.forEach(function(el) {{ Plotly.Plots.resize(el); }});
-  }}, 50);
-}}
+<p><span style="background:#f0f0f0;padding:1px 6px;border-radius:3px;font-style:italic;color:#666">Gray italic text</span>
+<span style="background:#ddd;color:#666;padding:0 4px;border-radius:2px;font-size:0.85em">ctrl</span>
+= a <b>control term</b> (a non-legal word from the Swadesh-100 basic vocabulary list, such as
+\"water\", \"fire\", or \"night\"). Control terms serve as a baseline: if a legal term\u2019s nearest
+neighbors include many control words, it means the model has not yet developed a specifically
+legal representation of that term at that layer.</p>
 
-const figs = {{
-{plots_js}
-}};
+<p><span style="background:#fff3e0;padding:1px 6px;border-radius:3px;color:#bf360c">&#8599; exited</span>
+= a neighbor that <b>left</b> the top-7 set between sampled layers. This term was among the 7 nearest
+neighbors at the previous sampled layer but has now moved farther away. Exited terms appear in an
+orange row beneath the main row, listing all terms that dropped out.</p>
 
-for (const [id, spec] of Object.entries(figs)) {{
-  Plotly.newPlot(id, spec.data, spec.layout, {{responsive: true}});
-}}
-</script>
-</body>
-</html>"""
+<p>The <b>colored dot</b> &#9679; next to each neighbor\u2019s name marks the <b>branch of law</b> (domain)
+that neighbor belongs to. Each domain has a consistent colour throughout all tables (e.g., criminal
+law is always the same colour). This makes it easy to scan visually: a row dominated by dots of one
+colour means most neighbors at that layer come from the same branch of law.</p>
+
+<p><b>Domain composition</b> (shown below each table): for each sampled layer, this summary counts
+how many of the 7 nearest neighbors belong to each branch of law, and how many are legal terms versus
+control terms. The notation <code>[legal=N, ctrl=M]</code> indicates that N of the 7 neighbors are
+core legal terms and M are Swadesh-100 control words (N + M = 7). This allows tracking whether a term\u2019s
+neighborhood shifts from mixed legal/non-legal at early layers to predominantly legal at later layers,
+or whether certain branches of law gain or lose representation across layers.</p>
+</div>"""
+        panels_html += (
+            f'<div id="pNTA" class="panel{active}">'
+            f'<div class="question">{nta_question}</div>'
+            f'{nta_legend}'
+            f'{extra_html["nta"]}'
+            f'</div>\n'
+        )
+        # Extract the <script> block from nta_html_block (it is appended at the end)
+        nta_js = (
+            "function ntaSwitchModel(id) {\n"
+            "  document.querySelectorAll('.nta-model').forEach(\n"
+            "    el => el.style.display = 'none');\n"
+            "  document.getElementById(id).style.display = 'block';\n"
+            "}\n"
+        )
+
+    tabs_bar_html = tabs_bar(tabs_list)
+
+    return (
+        "<!DOCTYPE html>\n"
+        '<html lang="en">\n'
+        + page_head("Lens III \u2014 Layer Stratigraphy")
+        + "\n<body>\n"
+        "<h1>Lens III \u2014 Layer Stratigraphy</h1>\n"
+        '<p class="subtitle">'
+        '\u00a7\u00a73.1.3a\u2013c \u2014 '
+        'Layer-by-layer analysis of 6 embedding models (12\u201324 layers each). '
+        'Modern text-embedding models transform each input term through a series of successive computational stages called layers; '
+        'at each layer the model refines its internal numerical representation of the term, and only the final layer\u2019s output is normally used as the term\u2019s embedding. '
+        'This lens opens the black box: instead of examining only the final output, it extracts the representation at every intermediate layer and measures how it changes. '
+        'Metrics: cosine drift between consecutive layers (how much a term\u2019s vector moves at each step), '
+        'k-nearest-neighbor Jaccard instability (whether a term\u2019s closest associates change identity from one layer to the next), '
+        'domain signal (rank-biserial r: do terms from the same branch of law cluster together at each depth?), '
+        'RSA convergence (Spearman \u03c1 vs. final layer: how early does the overall distance pattern stabilise?), '
+        'and Neighborhood Trajectory Analysis (NTA) for selected terms (tracking the exact identity of each term\u2019s nearest neighbors across layers).'
+        '</p>\n'
+        + tabs_bar_html + "\n\n"
+        + panels_html
+        + "<script>\n"
+        + nta_js
+        + "</script>\n"
+        + plots_script(plotly_plots)
+        + "\n</body>\n</html>"
+    )
+
+
+# Per-tab question boxes (what does this visualization answer?)
+_panel_questions: dict[str, str] = {
+    "signal_rsa": (
+        "<b>Domain signal and RSA convergence per layer.</b> "
+        "Embedding models process text through a series of successive computational stages called "
+        "\"layers\" \u2014 typically between 12 and 24, depending on the model. Each layer refines the "
+        "model\u2019s internal numerical representation of a term, and only the very last layer\u2019s output "
+        "is normally used as the term\u2019s final embedding. This chart tracks two distinct quantities "
+        "across all layers of each model (use the dropdown in the upper-right corner to switch between models). "
+        "<br><br>"
+        "The <b>solid line</b> (left axis) shows the <b>domain signal</b> at each layer: it answers the question "
+        "\"at this depth in the model, do terms belonging to the same branch of law (e.g., two criminal-law terms) "
+        "tend to have more similar representations than terms from different branches?\" "
+        "The metric used is the rank-biserial $r$ from a Mann-Whitney $U$ test. A value of $r > 0$ means that "
+        "same-domain pairs are, on average, closer together than cross-domain pairs; $r = 0$ means no detectable "
+        "separation; $r < 0$ would mean same-domain pairs are actually farther apart. "
+        "<br><br>"
+        "The <b>dashed line</b> (right axis) shows the <b>RSA convergence</b>: it answers the question \"how similar "
+        "is the full pattern of pairwise distances at layer $\\ell$ to the pattern at the final layer?\" "
+        "This is measured by the Spearman rank correlation $\\rho$ between the two distance matrices. "
+        "A value of $\\rho = 1$ means the rank ordering of all 78,606 pairwise distances is identical to the final "
+        "layer\u2019s ordering; lower values mean the distance pattern at that layer is still different from the final output."
+    ),
+    "drift": (
+        "<b>Cosine drift per domain and layer transition.</b> "
+        "Between any two consecutive layers in an embedding model, each term\u2019s internal numerical representation "
+        "(called a \"hidden state\" or \"vector\") changes. Cosine drift quantifies how large that change is: "
+        "it measures the angular difference between the vector at layer $\\ell$ and the vector at layer $\\ell+1$. "
+        "A drift value of 0 means the representation did not change at all; values approaching 1 mean a large change "
+        "(the two vectors point in very different directions); values above 1 are theoretically possible but rare in practice. "
+        "<br><br>"
+        "Each curve in this chart shows the <b>average drift</b> across all terms belonging to one branch of law "
+        "(e.g., all criminal-law terms, all constitutional-law terms). This allows comparison of whether certain "
+        "legal domains undergo more representational change at particular layers. "
+        "The x-axis spans all layer transitions: for a 24-layer model, these are "
+        "layer 0\u21921, 1\u21922, 2\u21923, \u2026, 23\u219224. "
+        "The y-axis shows the mean drift value. Use the dropdown to switch between models."
+    ),
+    "jaccard": (
+        "<b>Neighborhood instability per domain and layer transition.</b> "
+        "For a given term at a given layer, the <b>$k$-nearest neighbors</b> (here $k = 7$) are the 7 other terms "
+        "whose numerical representations (vectors) are most similar to it at that layer. For example, at a certain "
+        "layer the 7 nearest neighbors of \"negligence\" might be {manslaughter, liability, damages, recklessness, tort, duty, fault}. "
+        "The <b>Jaccard distance</b> compares two such neighbor sets across consecutive layers: it counts how many "
+        "neighbors are shared and divides by the total number of distinct neighbors appearing in either set. "
+        "Concretely: if 5 of the 7 neighbors remain the same between layer $\\ell$ and layer $\\ell+1$, the intersection "
+        "has 5 terms and the union has 9 terms (7 + 7 \u2212 5), so the overlap is 5/9, and the Jaccard distance is "
+        "$J = 1 - 5/9 \\approx 0.44$. A Jaccard distance of $J = 0$ means the neighbor set is completely identical "
+        "across the transition; $J = 1$ means the two sets are entirely disjoint (no shared neighbors at all). "
+        "<br><br>"
+        "Each curve shows the <b>mean Jaccard distance</b> across all terms in one branch of law. "
+        "A high value at a particular transition means that, on average, the identity of each term\u2019s closest "
+        "associates is changing rapidly at that layer \u2014 the \"neighborhood\" is being reorganised."
+    ),
+    "heatmap": (
+        "<b>Per-term drift heatmap.</b> "
+        "This heatmap shows the cosine drift for every individual term at every layer transition, laid out as a "
+        "two-dimensional colour-coded grid. Each <b>row</b> is one of the 397 core legal terms; each <b>column</b> "
+        "is one layer transition (e.g., layer 0\u21921, 1\u21922, etc.). The colour intensity of each cell encodes "
+        "the magnitude of the drift at that transition: darker or warmer colours mean larger drift (more change), "
+        "lighter colours mean smaller drift (less change). "
+        "<br><br>"
+        "The terms are sorted top-to-bottom by decreasing <b>total drift</b> $\\sum_\\ell \\text{{drift}}(t, \\ell)$: "
+        "terms at the top of the heatmap undergo the most total representational change across all layers, while "
+        "terms at the bottom are the most stable. "
+        "Hover over any cell to see the exact term name and drift value. Use the dropdown to compare across models."
+    ),
+}
+
+# Per-tab method cards (formula + description)
+_panel_methods: dict[str, str] = {
+    "signal_rsa": (
+        "<h2>Definitions</h2>"
+        "<p><b>Domain signal $r_\\ell$</b> (solid line, left axis): at each layer $\\ell$, "
+        "the model\u2019s internal representations of all 397 core legal terms are extracted. "
+        "From these representations, a 397\u00d7397 distance matrix is computed: each cell "
+        "records how different two terms\u2019 vectors are at that layer. This matrix is then split "
+        "into two groups of pairs: <em>intra-domain</em> pairs (two terms from the same branch of "
+        "law, e.g., two criminal-law terms) and <em>inter-domain</em> pairs (two terms from different "
+        "branches). The Mann-Whitney rank-biserial $r$ measures the degree of separation between these "
+        "two groups:</p>"
+        "<p>$$r_\\ell = 1 - \\frac{2\\,U_\\ell}{n_{\\text{intra}} \\cdot n_{\\text{inter}}}$$</p>"
+        "<p>In plain language: $r > 0$ means that intra-domain distances tend to be <em>smaller</em> "
+        "than inter-domain distances \u2014 terms from the same branch of law are, on average, closer "
+        "together in the model\u2019s representational space. $r = 0$ means there is no detectable "
+        "difference between same-domain and cross-domain distances. $r < 0$ would mean that same-domain "
+        "terms are actually <em>farther apart</em> than cross-domain terms.</p>"
+        "<h3>RSA convergence $\\rho_\\ell$</h3>"
+        "<p>(dashed line, right axis): the Spearman rank correlation between the distance matrix at "
+        "layer $\\ell$ and the distance matrix at the final layer $L$:</p>"
+        "<p>$$\\rho_\\ell = \\text{Spearman}\\!\\left(\\text{upper\\_tri}(\\text{RDM}_\\ell),\\; "
+        "\\text{upper\\_tri}(\\text{RDM}_L)\\right)$$</p>"
+        "<p>In plain language: Spearman\u2019s $\\rho$ compares the <em>rank ordering</em> of all 78,606 "
+        "pairwise distances at layer $\\ell$ with the rank ordering at the final layer. A value of "
+        "$\\rho = 1$ means the two rank orderings are identical \u2014 every pair of terms is in the exact "
+        "same relative position as in the final output. Lower values mean the distance pattern at that "
+        "layer has not yet converged to its final form. At the final layer itself, $\\rho_L = 1$ by "
+        "definition (any matrix is perfectly correlated with itself).</p>"
+    ),
+    "drift": (
+        "<h2>Definition</h2>"
+        "<p>For each term $t$ and layer transition $\\ell \\to \\ell+1$:</p>"
+        "<p>$$\\text{drift}(t, \\ell) = 1 - \\cos\\!\\left(\\mathbf{h}_t^{(\\ell)},\\; "
+        "\\mathbf{h}_t^{(\\ell+1)}\\right)$$</p>"
+        "<p>Here, $\\mathbf{h}_t^{(\\ell)}$ is the model\u2019s internal representation (a high-dimensional "
+        "numerical vector) of term $t$ at layer $\\ell$. The cosine of the angle between two vectors "
+        "measures their <em>directional similarity</em>: a cosine of 1 means the two vectors point in "
+        "exactly the same direction (identical representation), a cosine of 0 means they are perpendicular "
+        "(unrelated directions), and a cosine of \u22121 means they point in opposite directions. "
+        "Drift is defined as 1 minus this cosine, so it ranges from 0 (no change at all between layers) "
+        "to 2 (maximally different directions), though values above 1 are rare in practice. "
+        "In short: drift quantifies <em>how much a term\u2019s numerical representation moves</em> when "
+        "the model transitions from one computational stage to the next.</p>"
+        "<p>Each curve is the mean drift across all terms belonging to one branch of law. "
+        "The colour legend identifies the branch.</p>"
+    ),
+    "jaccard": (
+        "<h2>Definition</h2>"
+        "<p>For each term $t$ and layer transition $\\ell \\to \\ell+1$, the $k$-nearest-neighbor "
+        "sets ($k=7$) are compared:</p>"
+        "<p>$$J(t, \\ell) = 1 - \\frac{|\\text{kNN}(t, \\ell) \\cap \\text{kNN}(t, \\ell+1)|}"
+        "{|\\text{kNN}(t, \\ell) \\cup \\text{kNN}(t, \\ell+1)|}$$</p>"
+        "<p>A concrete example: suppose that at layer 5, the 7 nearest neighbors of "
+        "\"negligence\" are {manslaughter, liability, damages, recklessness, tort, duty, fault}. "
+        "At layer 6, they become {liability, damages, tort, duty, contributory, breach, carelessness}. "
+        "The <em>intersection</em> (terms present in both sets) has 4 terms: liability, damages, tort, duty. "
+        "The <em>union</em> (all distinct terms appearing in either set) has 10 terms. Therefore the "
+        "Jaccard similarity is 4/10 = 0.4, and the Jaccard <em>distance</em> is $J = 1 - 4/10 = 0.6$.</p>"
+        "<p>Each curve is the mean $J$ across all terms in one branch of law. Higher values at a "
+        "particular transition mean that, on average, the identity of each term\u2019s closest associates "
+        "is changing more rapidly at that layer.</p>"
+    ),
+    "heatmap": (
+        "<h2>Reading the heatmap</h2>"
+        "<p>Each row is one of 397 core legal terms. Each column is one layer transition "
+        "$\\ell \\to \\ell+1$ (e.g., layer 0\u21921, 1\u21922, etc.). The colour of each cell encodes "
+        "the cosine drift $\\text{drift}(t, \\ell)$ at that transition for that term: warmer, more "
+        "intense colours correspond to larger drift values (more representational change), while "
+        "lighter colours correspond to smaller drift values (less change).</p>"
+        "<p>Terms are sorted top-to-bottom by decreasing <b>total drift</b> "
+        "$\\sum_\\ell \\text{drift}(t, \\ell)$, which is the sum of all per-transition drift values "
+        "across the entire depth of the model. Terms at the top of the heatmap are those whose "
+        "representations undergo the most total change as the model processes them through all layers; "
+        "terms at the bottom are the most stable. "
+        "Use the model dropdown to compare across models. Hover over any cell to see the exact "
+        "term name and drift value.</p>"
+    ),
+}
 
 
 # ---------------------------------------------------------------------------

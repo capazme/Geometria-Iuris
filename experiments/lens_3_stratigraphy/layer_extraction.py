@@ -83,6 +83,7 @@ def extract_per_layer(
     batch_size: int = 32,
     cache: bool = True,
     force: bool = False,
+    cache_label: str | None = None,
 ) -> np.ndarray:
     """
     Extract per-layer embeddings for all terms.
@@ -105,8 +106,12 @@ def extract_per_layer(
         If True, load from / save to disk cache.
     force : bool
         If True, ignore cache and re-extract.
+    cache_label : str | None
+        Override cache filename (default: model_label). Use to store
+        different term sets (e.g. core+control pool) separately.
     """
-    cache_path = CACHE_DIR / f"{model_label}.npz"
+    effective_label = cache_label or model_label
+    cache_path = CACHE_DIR / f"{effective_label}.npz"
     if cache and not force and cache_path.exists():
         data = np.load(cache_path)
         layers = data["layers"]

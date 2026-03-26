@@ -1,0 +1,967 @@
+==========================================================================================
+NTA EXPLORATION REPORT — Candidate term selection for §3.1.3c
+==========================================================================================
+Terms: 101 | Models: 6 | k=7
+
+
+------------------------------------------------------------------------------------------
+RANKING: Most interesting terms (sorted by cross-model trajectory interest)
+------------------------------------------------------------------------------------------
+
+Interest = peak_ctrl (how many ctrl neighbors at worst) + volatility
+         + final_ctrl (unresolved polysemy) + domain_spread (cross-domain)
+
+  # Term                         Domain           PeakCtrl FinalCtrl  Volat  DomF  Score
+──────────────────────────────────────────────────────────────────────────────────────────
+  1 battery                      criminal              5.5       2.5   11.8   1.8   32.2
+  2 hearsay                      procedure             5.3       2.5    9.7   2.2   30.0
+  3 comity                       international         5.3       2.0    9.5   3.0   29.2
+  4 freedom                      constitutional        5.2       1.2    8.7   2.8   25.3
+  5 patent                       civil                 4.2       1.8    7.3   1.7   22.8
+  6 disclosure                   procedure             3.7       1.0    7.0   3.2   20.5
+  7 equality                     constitutional        3.7       0.8    7.2   3.3   20.3
+  8 strike                       labor_social          3.5       1.3    6.2   2.8   20.0
+  9 accessory                    criminal              3.0       1.5    5.8   2.8   19.2
+ 10 veto                         constitutional        3.2       1.0    6.0   3.3   18.7
+ 11 manslaughter                 criminal              3.3       1.2    5.0   2.2   17.3
+ 12 discovery                    procedure             2.8       1.3    3.8   3.0   16.5
+ 13 nuisance                     civil                 2.8       0.7    5.2   3.5   16.3
+ 14 franchise                    constitutional        2.7       0.8    5.7   2.2   15.7
+ 15 accession                    international         2.7       0.3    5.5   3.7   15.5
+ 16 adoption                     civil                 2.5       0.8    4.8   3.0   15.3
+ 17 restitution                  civil                 3.2       0.0    5.3   3.5   15.2
+ 18 locus standi                 procedure             2.3       1.2    3.5   3.0   14.7
+ 19 succession                   civil                 3.3       0.0    5.3   2.7   14.7
+ 20 actus reus                   criminal              2.3       1.2    3.8   2.5   14.5
+ 21 subrogation                  civil                 2.7       0.2    4.7   3.0   13.5
+ 22 approbation                  criminal              2.3       0.3    3.8   4.0   13.5
+ 23 inheritance                  civil                 2.7       0.2    6.0   1.7   13.5
+ 24 homicide                     criminal              2.2       1.0    4.2   1.3   12.8
+ 25 suffrage                     constitutional        3.2       0.0    4.3   2.0   12.7
+ 26 conciliation                 procedure             2.2       0.2    4.5   3.3   12.7
+ 27 ombudsman                    administrative        2.2       0.5    2.7   4.0   12.5
+ 28 bribery                      criminal              2.3       0.2    4.7   2.3   12.2
+ 29 murder                       criminal              2.2       1.0    3.2   1.7   12.2
+ 30 sovereignty                  constitutional        2.3       0.0    4.7   2.5   11.8
+ 31 asylum                       international         2.2       0.2    4.0   3.0   11.8
+ 32 torture                      civil                 2.3       0.0    4.7   2.3   11.7
+ 33 theft                        criminal              2.7       0.0    4.0   2.2   11.5
+ 34 forgery                      criminal              2.8       0.0    3.7   2.0   11.3
+ 35 remand                       criminal              2.2       0.0    3.8   2.8   11.0
+ 36 corruption                   criminal              2.5       0.2    3.3   2.0   10.8
+ 37 employment                   labor_social          2.3       0.2    4.3   1.3   10.8
+ 38 refugee                      international         1.7       0.2    2.7   4.2   10.7
+ 39 dismissal                    labor_social          2.0       0.0    2.7   4.0   10.7
+ 40 novation                     civil                 1.8       0.3    2.8   3.0   10.5
+ 41 ratification                 international         2.2       0.0    3.0   3.2   10.5
+ 42 conviction                   criminal              2.7       0.0    3.7   1.3   10.3
+ 43 ultra vires                  administrative        1.5       0.5    2.2   3.7   10.3
+ 44 citizenship                  constitutional        2.0       0.2    3.0   2.5   10.0
+ 45 martial law                  constitutional        1.7       0.2    2.3   3.5    9.7
+ 46 treaty                       international         2.0       0.0    3.3   2.0    9.3
+ 47 extortion                    criminal              1.8       0.0    3.0   2.5    9.2
+ 48 tort                         civil                 1.8       0.2    3.5   1.5    9.2
+ 49 trespass                     civil                 1.5       0.0    3.7   2.5    9.2
+ 50 legislation                  constitutional        1.8       0.0    3.0   2.3    9.0
+ 51 easement                     civil                 1.7       0.2    1.8   3.3    9.0
+ 52 copyright                    civil                 1.7       0.5    2.2   2.0    9.0
+ 53 blackmail                    criminal              1.8       0.2    1.8   2.8    8.8
+ 54 defamation                   civil                 1.5       0.2    1.7   3.7    8.8
+ 55 fiduciary                    civil                 2.0       0.0    2.8   2.0    8.8
+ 56 assault                      criminal              1.7       0.2    2.3   2.5    8.7
+ 57 perjury                      criminal              1.7       0.2    1.8   3.0    8.7
+ 58 amendment                    constitutional        1.3       0.2    2.8   2.7    8.7
+ 59 mens rea                     criminal              1.3       0.2    2.5   3.0    8.7
+ 60 res judicata                 procedure             1.7       0.0    1.7   3.7    8.7
+ 61 habeas corpus                constitutional        1.7       0.0    1.7   3.5    8.5
+ 62 pledge                       civil                 1.7       0.0    3.3   1.8    8.5
+ 63 genocide                     international         1.3       0.2    2.0   3.0    8.2
+ 64 pacta sunt servanda          international         1.3       0.0    3.0   2.5    8.2
+ 65 felony                       criminal              1.8       0.2    2.3   1.5    8.0
+ 66 parole                       criminal              1.5       0.2    1.8   2.7    8.0
+ 67 affidavit                    procedure             1.2       0.3    1.5   3.0    7.8
+ 68 jus cogens                   international         1.0       0.0    1.2   4.5    7.7
+ 69 eminent domain               administrative        1.2       0.3    1.8   2.5    7.7
+ 70 constitution                 constitutional        1.5       0.0    2.8   1.7    7.5
+ 71 probation                    criminal              1.2       0.0    2.7   2.3    7.3
+ 72 cause of action              procedure             1.0       0.0    1.7   3.7    7.3
+ 73 rule of law                  constitutional        0.8       0.2    1.3   3.3    6.8
+ 74 burden of proof              procedure             1.3       0.0    1.3   2.8    6.8
+ 75 conspiracy                   criminal              1.2       0.2    1.5   2.2    6.5
+ 76 recklessness                 criminal              1.2       0.2    1.3   2.3    6.5
+ 77 bailment                     civil                 1.2       0.0    1.8   2.3    6.5
+ 78 divorce                      civil                 1.0       0.0    1.0   3.3    6.3
+ 79 constitutional               constitutional        1.0       0.0    2.0   2.2    6.2
+ 80 diplomatic                   international         1.0       0.0    1.0   3.2    6.2
+ 81 larceny                      criminal              1.5       0.0    1.5   1.5    6.0
+ 82 robbery                      criminal              1.2       0.2    1.7   1.5    6.0
+ 83 acquittal                    criminal              1.2       0.0    1.2   2.5    6.0
+ 84 sentencing                   criminal              1.3       0.0    1.8   1.5    6.0
+ 85 extradition                  international         0.8       0.0    0.8   3.5    6.0
+ 86 trade union                  labor_social          1.3       0.0    1.3   2.0    6.0
+ 87 prerogative                  constitutional        0.7       0.0    0.7   3.8    5.8
+ 88 international law            international         0.7       0.0    1.2   3.3    5.8
+ 89 harassment                   labor_social          1.0       0.0    1.7   2.2    5.8
+ 90 human rights                 constitutional        1.0       0.0    1.3   2.5    5.8
+ 91 trustee                      civil                 1.0       0.0    1.2   2.2    5.3
+ 92 mediation                    procedure             0.8       0.0    1.0   2.7    5.3
+ 93 tortious                     civil                 0.7       0.2    0.8   2.3    5.0
+ 94 imprisonment                 criminal              0.7       0.0    0.7   2.7    4.7
+ 95 tortfeasor                   civil                 0.8       0.0    0.8   2.0    4.5
+ 96 covenant                     international         0.7       0.0    1.5   1.7    4.5
+ 97 subpoena                     procedure             0.5       0.0    0.5   2.8    4.3
+ 98 negligence                   civil                 0.7       0.0    0.7   2.2    4.2
+ 99 mortgage                     civil                 0.7       0.0    0.7   2.2    4.2
+100 indictment                   criminal              0.5       0.0    0.5   2.3    3.8
+101 prosecution                  criminal              0.5       0.0    0.5   2.0    3.5
+
+
+==========================================================================================
+DETAIL: Per-term trajectory across all models
+==========================================================================================
+
+── battery (criminal) 毆打 ──
+  BGE-EN-large           ctrl=[1 → 1 → 7 → 5 → 1 → 5 → 6]  peak=7 @L8  final: own_dom=1/7  n_domains=1
+  E5-large               ctrl=[4 → 5 → 0 → 1 → 2 → 3 → 2]  peak=5 @L4  final: own_dom=5/7  n_domains=1
+  FreeLaw-EN             ctrl=[2 → 4 → 6 → 2 → 5 → 4 → 5]  peak=6 @L7  final: own_dom=0/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 5 → 0 → 1 → 1 → 1]  peak=5 @L8  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[7 → 7 → 4 → 4 → 1 → 1 → 1]  peak=7 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 1 → 0 → 3 → 0]  peak=3 @L4  final: own_dom=2/7  n_domains=2
+
+── hearsay (procedure) 傳聞 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 2 → 0 → 0 → 2]  peak=2 @L12  final: own_dom=5/7  n_domains=1
+  E5-large               ctrl=[6 → 6 → 1 → 0 → 0 → 0 → 1]  peak=6 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[6 → 5 → 4 → 1 → 1 → 1 → 5]  peak=6 @L0  final: own_dom=0/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 1 → 4 → 0 → 0 → 2]  peak=4 @L12  final: own_dom=1/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[6 → 6 → 6 → 7 → 1 → 0 → 4]  peak=7 @L12  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 2 → 4 → 6 → 7 → 3 → 1]  peak=7 @L8  final: own_dom=3/7  n_domains=3
+
+── comity (international) 友誼 ──
+  BGE-EN-large           ctrl=[1 → 1 → 4 → 2 → 0 → 0 → 0]  peak=4 @L8  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[6 → 6 → 3 → 0 → 1 → 0 → 0]  peak=6 @L0  final: own_dom=2/7  n_domains=4
+  FreeLaw-EN             ctrl=[1 → 2 → 5 → 2 → 1 → 0 → 3]  peak=5 @L7  final: own_dom=0/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 2 → 2 → 0 → 0 → 1 → 4]  peak=4 @L24  final: own_dom=0/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[7 → 6 → 6 → 3 → 0 → 0 → 2]  peak=7 @L0  final: own_dom=1/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 5 → 6 → 1 → 3 → 3]  peak=6 @L6  final: own_dom=0/7  n_domains=2
+
+── freedom (constitutional) 自由 ──
+  BGE-EN-large           ctrl=[1 → 6 → 2 → 4 → 2 → 5 → 4]  peak=6 @L4  final: own_dom=1/7  n_domains=3
+  E5-large               ctrl=[3 → 4 → 0 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[5 → 1 → 1 → 0 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 2 → 5 → 4 → 5 → 5 → 3]  peak=5 @L8  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[6 → 4 → 2 → 0 → 0 → 1 → 0]  peak=6 @L0  final: own_dom=2/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 2 → 3 → 4 → 4 → 5 → 0]  peak=5 @L10  final: own_dom=4/7  n_domains=3
+
+── patent (civil) 明顯 ──
+  BGE-EN-large           ctrl=[1 → 1 → 1 → 0 → 5 → 6 → 0]  peak=6 @L20  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[0 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L7  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 5 → 6 → 3 → 2 → 3 → 4]  peak=6 @L8  final: own_dom=0/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[6 → 4 → 6 → 5 → 3 → 3 → 2]  peak=6 @L0  final: own_dom=0/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 3 → 6 → 3 → 4 → 5 → 5]  peak=6 @L4  final: own_dom=1/7  n_domains=2
+
+── disclosure (procedure) 公開 ──
+  BGE-EN-large           ctrl=[1 → 4 → 0 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=5/7  n_domains=3
+  E5-large               ctrl=[0 → 3 → 0 → 0 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 1]  peak=2 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 3 → 1 → 1 → 2]  peak=3 @L12  final: own_dom=2/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[5 → 2 → 3 → 1 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 5 → 3 → 2 → 4 → 3]  peak=5 @L4  final: own_dom=2/7  n_domains=3
+
+── equality (constitutional) 平等 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 2]  peak=2 @L4  final: own_dom=2/7  n_domains=3
+  E5-large               ctrl=[2 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 1]  peak=3 @L0  final: own_dom=0/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 2 → 2 → 0 → 4 → 2 → 1]  peak=4 @L16  final: own_dom=4/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[6 → 7 → 3 → 4 → 0 → 1 → 1]  peak=7 @L4  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 2 → 3 → 1 → 3 → 4 → 0]  peak=4 @L10  final: own_dom=3/7  n_domains=3
+
+── strike (labor_social) 罷工 ※比較 go-slow ──
+  BGE-EN-large           ctrl=[1 → 3 → 5 → 0 → 0 → 1 → 2]  peak=5 @L8  final: own_dom=4/7  n_domains=2
+  E5-large               ctrl=[6 → 7 → 0 → 1 → 2 → 3 → 1]  peak=7 @L4  final: own_dom=4/7  n_domains=2
+  FreeLaw-EN             ctrl=[6 → 5 → 7 → 2 → 2 → 2 → 5]  peak=7 @L7  final: own_dom=1/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── accessory (criminal) 從犯 ──
+  BGE-EN-large           ctrl=[1 → 4 → 0 → 0 → 0 → 0 → 5]  peak=5 @L24  final: own_dom=1/7  n_domains=2
+  E5-large               ctrl=[4 → 3 → 0 → 0 → 0 → 0 → 1]  peak=4 @L0  final: own_dom=2/7  n_domains=5
+  FreeLaw-EN             ctrl=[2 → 2 → 2 → 0 → 0 → 0 → 3]  peak=3 @L22  final: own_dom=2/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 1 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[1 → 3 → 1 → 1 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=6/7  n_domains=2
+
+── veto (constitutional) 否決 ──
+  BGE-EN-large           ctrl=[1 → 2 → 1 → 1 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=3/7  n_domains=4
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=4
+  FreeLaw-EN             ctrl=[7 → 6 → 5 → 1 → 4 → 0 → 4]  peak=7 @L0  final: own_dom=0/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=0/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[6 → 5 → 3 → 2 → 1 → 0 → 0]  peak=6 @L0  final: own_dom=0/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 0 → 0 → 0 → 1]  peak=3 @L4  final: own_dom=0/7  n_domains=3
+
+── manslaughter (criminal) 誤殺 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=6/7  n_domains=1
+  E5-large               ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  FreeLaw-EN             ctrl=[5 → 5 → 3 → 0 → 0 → 0 → 1]  peak=5 @L0  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 2 → 2 → 1 → 0 → 1 → 2]  peak=2 @L4  final: own_dom=3/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[6 → 4 → 3 → 3 → 1 → 1 → 2]  peak=6 @L0  final: own_dom=2/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 1 → 5 → 1 → 0 → 0 → 1]  peak=5 @L4  final: own_dom=3/7  n_domains=3
+
+── discovery (procedure) 自動作出文件透露 ──
+  BGE-EN-large           ctrl=[1 → 2 → 3 → 3 → 0 → 0 → 3]  peak=3 @L8  final: own_dom=0/7  n_domains=3
+  E5-large               ctrl=[5 → 5 → 0 → 0 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=1/7  n_domains=4
+  FreeLaw-EN             ctrl=[3 → 4 → 6 → 5 → 5 → 5 → 4]  peak=6 @L7  final: own_dom=1/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L24  final: own_dom=3/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+
+── nuisance (civil) 消除滋擾 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+  E5-large               ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=3/7  n_domains=4
+  FreeLaw-EN             ctrl=[7 → 1 → 4 → 0 → 0 → 0 → 2]  peak=7 @L0  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 2 → 0 → 0 → 0]  peak=2 @L12  final: own_dom=3/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 4 → 2]  peak=4 @L10  final: own_dom=4/7  n_domains=2
+
+── franchise (constitutional) 專營 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[3 → 3 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=3/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L22  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[1 → 1 → 3 → 3 → 0 → 0 → 0]  peak=3 @L8  final: own_dom=2/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 6 → 3 → 0 → 7 → 4]  peak=7 @L10  final: own_dom=2/7  n_domains=2
+
+── accession (international) 加入書 ──
+  BGE-EN-large           ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=3
+  E5-large               ctrl=[0 → 4 → 0 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=1/7  n_domains=4
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[1 → 2 → 3 → 4 → 0 → 0 → 1]  peak=4 @L12  final: own_dom=0/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 5 → 0 → 0 → 2 → 1]  peak=5 @L4  final: own_dom=0/7  n_domains=3
+
+── adoption (civil) 採納 ──
+  BGE-EN-large           ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=2
+  E5-large               ctrl=[2 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 2]  peak=2 @L22  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 1 → 1 → 2 → 0 → 1]  peak=2 @L16  final: own_dom=1/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[5 → 2 → 3 → 2 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 0 → 0 → 2 → 2]  peak=3 @L4  final: own_dom=1/7  n_domains=4
+
+── restitution (civil) 復還 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=5
+  E5-large               ctrl=[4 → 0 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=2/7  n_domains=5
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 2 → 1 → 1 → 1 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[6 → 4 → 1 → 3 → 0 → 0 → 0]  peak=6 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 4 → 5 → 3 → 4 → 0]  peak=5 @L6  final: own_dom=2/7  n_domains=4
+
+── locus standi (procedure) 出庭資格 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+  E5-large               ctrl=[7 → 7 → 1 → 0 → 0 → 0 → 2]  peak=7 @L0  final: own_dom=0/7  n_domains=2
+  FreeLaw-EN             ctrl=[4 → 4 → 0 → 0 → 0 → 0 → 4]  peak=4 @L0  final: own_dom=0/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── succession (civil) 繼任 ──
+  BGE-EN-large           ctrl=[1 → 2 → 1 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[3 → 5 → 0 → 0 → 0 → 0 → 0]  peak=5 @L4  final: own_dom=3/7  n_domains=4
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=4/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 2 → 1 → 0 → 0 → 0]  peak=2 @L8  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[5 → 3 → 1 → 2 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=5/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 0 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=4/7  n_domains=4
+
+── actus reus (criminal) 犯罪行為 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=1/7  n_domains=4
+  FreeLaw-EN             ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 7]  peak=7 @L22  final: own_dom=0/7  n_domains=0
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 4 → 1 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=5/7  n_domains=2
+
+── subrogation (civil) 代位 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=4
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 2 → 4 → 1 → 0 → 0 → 0]  peak=4 @L8  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[6 → 4 → 5 → 6 → 2 → 1 → 1]  peak=6 @L0  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 5 → 0 → 0 → 0]  peak=5 @L6  final: own_dom=5/7  n_domains=2
+
+── approbation (criminal) 認可 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  E5-large               ctrl=[2 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=1/7  n_domains=5
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 2 → 1 → 0 → 1 → 0 → 1]  peak=2 @L4  final: own_dom=0/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[5 → 2 → 2 → 0 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=0/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 2 → 1 → 2 → 1 → 3 → 1]  peak=3 @L10  final: own_dom=0/7  n_domains=4
+
+── inheritance (civil) 繼承 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[2 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[5 → 1 → 3 → 0 → 1 → 0 → 1]  peak=5 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 2 → 0 → 3 → 0]  peak=3 @L20  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[3 → 1 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 0 → 1 → 0 → 0]  peak=2 @L4  final: own_dom=7/7  n_domains=1
+
+── homicide (criminal) 殺人罪 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=6/7  n_domains=1
+  E5-large               ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[6 → 2 → 0 → 0 → 0 → 0 → 1]  peak=6 @L0  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 1 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=6/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[3 → 2 → 1 → 2 → 0 → 2 → 2]  peak=3 @L0  final: own_dom=5/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 1 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=6/7  n_domains=1
+
+── suffrage (constitutional) 普選 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[4 → 0 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[5 → 3 → 1 → 1 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=5/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 1 → 6 → 2 → 0 → 0 → 0]  peak=6 @L4  final: own_dom=7/7  n_domains=1
+
+── conciliation (procedure) 調停 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[5 → 3 → 4 → 2 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=4/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 0 → 0 → 4 → 1]  peak=4 @L10  final: own_dom=0/7  n_domains=4
+
+── ombudsman (administrative) 申訴專員 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+  E5-large               ctrl=[4 → 2 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=1/7  n_domains=3
+  FreeLaw-EN             ctrl=[6 → 1 → 0 → 0 → 0 → 0 → 2]  peak=6 @L0  final: own_dom=0/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+
+── bribery (criminal) 賄賂 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[2 → 2 → 0 → 0 → 1 → 0 → 0]  peak=2 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 2 → 4 → 1 → 0 → 1 → 1]  peak=4 @L8  final: own_dom=2/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[2 → 1 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 5 → 1 → 2 → 0 → 0]  peak=5 @L4  final: own_dom=5/7  n_domains=3
+
+── murder (criminal) 慫使和促致謀殺 ──
+  BGE-EN-large           ctrl=[1 → 0 → 1 → 0 → 1 → 3 → 2]  peak=3 @L20  final: own_dom=4/7  n_domains=2
+  E5-large               ctrl=[1 → 1 → 1 → 1 → 1 → 1 → 1]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[6 → 1 → 0 → 0 → 0 → 0 → 1]  peak=6 @L0  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=6/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+
+── sovereignty (constitutional) 主權 ──
+  BGE-EN-large           ctrl=[1 → 2 → 1 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 4 → 4 → 0]  peak=4 @L16  final: own_dom=4/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=3/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 4 → 1 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=5/7  n_domains=3
+
+── asylum (international) 庇護條約 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 1 → 0 → 1 → 1]  peak=2 @L4  final: own_dom=2/7  n_domains=3
+  E5-large               ctrl=[2 → 3 → 0 → 0 → 0 → 1 → 0]  peak=3 @L4  final: own_dom=2/7  n_domains=3
+  FreeLaw-EN             ctrl=[6 → 4 → 5 → 0 → 0 → 0 → 0]  peak=6 @L0  final: own_dom=2/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 1 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+
+── torture (civil) 酷刑 ──
+  BGE-EN-large           ctrl=[1 → 3 → 1 → 0 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=0/7  n_domains=4
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 1 → 2 → 0 → 0]  peak=2 @L16  final: own_dom=0/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[0 → 2 → 4 → 6 → 1 → 1 → 0]  peak=6 @L12  final: own_dom=0/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 1 → 2 → 0 → 0 → 0]  peak=2 @L6  final: own_dom=0/7  n_domains=2
+
+── theft (criminal) 失竊 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[7 → 4 → 0 → 0 → 0 → 0 → 0]  peak=7 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[4 → 1 → 0 → 2 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=4/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 1 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=5/7  n_domains=2
+
+── forgery (criminal) 偽造 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=4/7  n_domains=2
+  FreeLaw-EN             ctrl=[5 → 3 → 4 → 0 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[6 → 2 → 0 → 0 → 0 → 0 → 0]  peak=6 @L0  final: own_dom=3/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 1 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=2
+
+── remand (criminal) 還押看守 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 1 → 1 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[1 → 3 → 0 → 0 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[6 → 2 → 4 → 0 → 1 → 0 → 0]  peak=6 @L0  final: own_dom=3/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+
+── corruption (criminal) 舞弊 ──
+  BGE-EN-large           ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 3 → 1 → 1 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[7 → 3 → 1 → 0 → 0 → 0 → 1]  peak=7 @L0  final: own_dom=3/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=2
+
+── employment (labor_social) 僱傭 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[1 → 2 → 4 → 4 → 6 → 5 → 1]  peak=6 @L15  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[3 → 1 → 1 → 3 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 1 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=7/7  n_domains=1
+
+── refugee (international) 越南難民證 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 1 → 3 → 1]  peak=3 @L20  final: own_dom=3/7  n_domains=4
+  E5-large               ctrl=[3 → 4 → 0 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=3/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 1 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=5
+
+── dismissal (labor_social) 免職 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 3 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=0/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[4 → 4 → 2 → 2 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=3/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 3 → 1 → 0 → 0]  peak=3 @L4  final: own_dom=2/7  n_domains=5
+
+── novation (civil) 債務或合約義務的更替 ──
+  BGE-EN-large           ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 2]  peak=2 @L24  final: own_dom=2/7  n_domains=4
+  E5-large               ctrl=[3 → 4 → 0 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[3 → 3 → 1 → 0 → 1 → 0 → 0]  peak=3 @L0  final: own_dom=3/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+
+── ratification (international) 追認 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 2 → 0 → 0 → 0 → 0]  peak=2 @L7  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 1 → 3 → 1 → 0 → 0 → 0]  peak=3 @L8  final: own_dom=0/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[6 → 5 → 3 → 0 → 0 → 0 → 0]  peak=6 @L0  final: own_dom=0/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 1 → 1 → 1 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=3
+
+── conviction (criminal) 定罪 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[2 → 1 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 4 → 4 → 4 → 5 → 6 → 0]  peak=6 @L18  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[4 → 0 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 2 → 2 → 0 → 0]  peak=2 @L4  final: own_dom=7/7  n_domains=1
+
+── ultra vires (administrative) 越權的 ※比較 intra vires ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  E5-large               ctrl=[5 → 4 → 2 → 1 → 0 → 0 → 2]  peak=5 @L0  final: own_dom=0/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 1]  peak=1 @L4  final: own_dom=0/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+
+── citizenship (constitutional) 公民身分 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 4 → 0 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[4 → 0 → 0 → 0 → 0 → 0 → 1]  peak=4 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+
+── martial law (constitutional) 戒嚴令 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=1/7  n_domains=4
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L22  final: own_dom=2/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=1/7  n_domains=3
+
+── treaty (international) 條約 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 2 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 5 → 1 → 1 → 0 → 0]  peak=5 @L4  final: own_dom=6/7  n_domains=2
+
+── extortion (criminal) 脅迫 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[5 → 2 → 1 → 0 → 0 → 1 → 0]  peak=5 @L0  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 1 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=1/7  n_domains=3
+
+── tort (civil) 經濟侵權 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 1 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[2 → 1 → 0 → 0 → 1 → 0 → 0]  peak=2 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[1 → 0 → 6 → 2 → 1 → 1 → 1]  peak=6 @L7  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── trespass (civil) 侵害 ──
+  BGE-EN-large           ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 2 → 2 → 0 → 2 → 1 → 0]  peak=2 @L4  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 1 → 3 → 2 → 0 → 2 → 0]  peak=3 @L4  final: own_dom=5/7  n_domains=3
+
+── legislation (constitutional) 法例 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 2 → 3 → 0 → 1 → 0 → 0]  peak=3 @L4  final: own_dom=6/7  n_domains=2
+
+── easement (civil) 採光權 ☛參看 right of (ancient) lights ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[3 → 1 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[4 → 4 → 2 → 0 → 0 → 0 → 1]  peak=4 @L0  final: own_dom=2/7  n_domains=5
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+
+── copyright (civil) 版權標記 ──
+  BGE-EN-large           ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[2 → 4 → 3 → 3 → 6 → 6 → 3]  peak=6 @L15  final: own_dom=4/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── blackmail (criminal) 勒索式的申索 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[7 → 4 → 0 → 0 → 0 → 0 → 0]  peak=7 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L24  final: own_dom=1/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+
+── defamation (civil) 不明顯的誹謗 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=3
+  FreeLaw-EN             ctrl=[4 → 0 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=2/7  n_domains=5
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L24  final: own_dom=1/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+
+── fiduciary (civil) 受託 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 2 → 6 → 0 → 0 → 0 → 0]  peak=6 @L4  final: own_dom=5/7  n_domains=3
+
+── assault (criminal) 猥褻侵犯 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 3 → 6 → 1 → 0 → 0 → 0]  peak=6 @L7  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=2
+
+── perjury (criminal) 作假證供罪 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=3/7  n_domains=4
+  FreeLaw-EN             ctrl=[5 → 0 → 0 → 0 → 0 → 0 → 0]  peak=5 @L0  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── amendment (constitutional) 關鍵性的修改 ──
+  BGE-EN-large           ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 3 → 0 → 0 → 0 → 0]  peak=3 @L7  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+
+── mens rea (criminal) 犯罪意圖 ──
+  BGE-EN-large           ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+  E5-large               ctrl=[3 → 4 → 2 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=1/7  n_domains=4
+  FreeLaw-EN             ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 1]  peak=1 @L4  final: own_dom=1/7  n_domains=5
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── res judicata (procedure) 既判案件 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+  E5-large               ctrl=[4 → 1 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 2 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=5/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+
+── habeas corpus (constitutional) 人身保護令 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  E5-large               ctrl=[4 → 2 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=3/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+
+── pledge (civil) 活質押〔以抵押物的收益（例如租金）償還抵押借款，借款清償後，抵押物復歸質押人的一種質押〕 ──
+  BGE-EN-large           ctrl=[1 → 3 → 2 → 1 → 3 → 1 → 0]  peak=3 @L4  final: own_dom=4/7  n_domains=2
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 4 → 2 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=5/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── genocide (international) 《防止及懲治危害種族罪公約》 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 3 → 2 → 0 → 1 → 0 → 1]  peak=3 @L0  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── pacta sunt servanda (international) 有約必守 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 1 → 0]  peak=1 @L18  final: own_dom=3/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[1 → 0 → 0 → 3 → 0 → 0 → 0]  peak=3 @L12  final: own_dom=3/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 1 → 0 → 0 → 2 → 0]  peak=2 @L10  final: own_dom=6/7  n_domains=2
+
+── felony (criminal) 重刑罪 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[6 → 0 → 0 → 0 → 0 → 0 → 0]  peak=6 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L24  final: own_dom=5/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── parole (criminal) 假釋許可 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[4 → 3 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=4/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+
+── affidavit (procedure) 確證文件已予送達的宗教式誓章 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=2/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+
+── jus cogens (international) 強制性法則 ※比較 jus naturale ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+  E5-large               ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=0/7  n_domains=4
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=5
+
+── eminent domain (administrative) 國家徵用權 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=2
+  E5-large               ctrl=[0 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=0/7  n_domains=3
+  FreeLaw-EN             ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 2]  peak=2 @L0  final: own_dom=0/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=2
+
+── constitution (constitutional) 憲法 ──
+  BGE-EN-large           ctrl=[1 → 1 → 1 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[0 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 4 → 0 → 0 → 0 → 0]  peak=4 @L4  final: own_dom=7/7  n_domains=1
+
+── probation (criminal) 感化令 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 1 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 1 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[3 → 2 → 0 → 1 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=1/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=3/7  n_domains=3
+
+── cause of action (procedure) 在基於同一訴因的一切法律程序中 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  E5-large               ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=5
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 3 → 0 → 0 → 0]  peak=3 @L6  final: own_dom=0/7  n_domains=4
+
+── rule of law (constitutional) 一般法律規則 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L24  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 2 → 0 → 0 → 0]  peak=2 @L6  final: own_dom=2/7  n_domains=3
+
+── burden of proof (procedure) 舉證責任 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[4 → 0 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=3
+
+── conspiracy (criminal) 串謀敗壞公眾道德 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=2
+  FreeLaw-EN             ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 1]  peak=2 @L0  final: own_dom=6/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+
+── recklessness (criminal) 罔顧後果 ☛參看 Caldwell recklessness; Cunningham recklessness ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  E5-large               ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=3/7  n_domains=2
+  FreeLaw-EN             ctrl=[2 → 1 → 1 → 0 → 0 → 0 → 1]  peak=2 @L0  final: own_dom=3/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+
+── bailment (civil) 無酬委託 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 1 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=5/7  n_domains=2
+  FreeLaw-EN             ctrl=[2 → 1 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=0/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 1 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+
+── divorce (civil) 離婚判令 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+
+── constitutional (constitutional) 憲制的 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 1 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 0 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=7/7  n_domains=1
+
+── diplomatic (international) 外交豁免權 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[3 → 0 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+
+── larceny (criminal) 在普通法的盜竊罪 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[4 → 3 → 0 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[2 → 2 → 1 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+
+── robbery (criminal) 持械搶劫 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[3 → 3 → 0 → 0 → 1 → 0 → 0]  peak=3 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── acquittal (criminal) 判予無罪的理由 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[3 → 1 → 0 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=3/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=3
+
+── sentencing (criminal) 量刑指引 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[3 → 0 → 1 → 0 → 0 → 0 → 0]  peak=3 @L0  final: own_dom=5/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  Text2vec-large-ZH      ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── extradition (international) 引渡至……的法律程序 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=2
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=3
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+
+── trade union (labor_social) 組織及加入工會之權利 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[4 → 3 → 1 → 0 → 0 → 0 → 0]  peak=4 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── prerogative (constitutional) 君主特權令狀 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=4
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=1/7  n_domains=4
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=5
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+
+── international law (international) 國際私法 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 2 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=2/7  n_domains=3
+
+── harassment (labor_social) 侵擾 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=0/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=0/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 3 → 1 → 0 → 0 → 0]  peak=3 @L4  final: own_dom=0/7  n_domains=2
+
+── human rights (constitutional) 《歐洲人權公約》 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+  E5-large               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[2 → 0 → 1 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=4/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=2
+
+── trustee (civil) 擅自處理他人信託的人 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L4  final: own_dom=4/7  n_domains=3
+  FreeLaw-EN             ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+
+── mediation (procedure) 社區調解 ──
+  BGE-EN-large           ctrl=[1 → 2 → 0 → 0 → 0 → 0 → 0]  peak=2 @L4  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=2
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=4
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── tortious (civil) 基於侵權而提出的申索 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=2
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 1]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── imprisonment (criminal) 串謀非法禁錮 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=2/7  n_domains=5
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── tortfeasor (civil) 侵權行為者 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[2 → 0 → 0 → 0 → 0 → 0 → 0]  peak=2 @L0  final: own_dom=5/7  n_domains=3
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+
+── covenant (international) 公民權利和政治權利國際公約 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 1 → 1 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 1 → 0 → 0 → 0 → 1 → 0]  peak=1 @L4  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+
+── subpoena (procedure) 傳召證人出庭令 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=4
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+
+── negligence (civil) 罔顧後果的疏忽 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=2
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=3
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=5/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+
+── mortgage (civil) 有關按揭的申索 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  FreeLaw-EN             ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=5/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=2/7  n_domains=4
+
+── indictment (criminal) 多條罪名的公訴書 ──
+  BGE-EN-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=6/7  n_domains=2
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=1/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=3
+
+── prosecution (criminal) 舉證責任在於控方 ──
+  BGE-EN-large           ctrl=[1 → 1 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=7/7  n_domains=1
+  E5-large               ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=6/7  n_domains=2
+  FreeLaw-EN             ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=7/7  n_domains=1
+  BGE-ZH-large           ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=4/7  n_domains=3
+  Text2vec-large-ZH      ctrl=[0 → 0 → 0 → 0 → 0 → 0 → 0]  peak=0 @L0  final: own_dom=4/7  n_domains=3
+  Dmeta-ZH               ctrl=[1 → 0 → 0 → 0 → 0 → 0 → 0]  peak=1 @L0  final: own_dom=3/7  n_domains=2
+
+
+==========================================================================================
+CROSS-TRADITION: Terms where WEIRD and Sinic models diverge most
+==========================================================================================
+
+  # Term                         Domain           Divergence
+────────────────────────────────────────────────────────────
+  1 patent                       civil                  14.0
+  2 accessory                    criminal                9.7
+  3 locus standi                 procedure               9.3
+  4 actus reus                   criminal                8.7
+  5 battery                      criminal                8.0
+  6 discovery                    procedure               7.7
+  7 mens rea                     criminal                6.0
+  8 strike                       labor_social            6.0
+  9 comity                       international           5.3
+ 10 disclosure                   procedure               5.3
+ 11 blackmail                    criminal                5.0
+ 12 manslaughter                 criminal                5.0
+ 13 probation                    criminal                4.3
+ 14 parole                       criminal                4.0
+ 15 divorce                      civil                   4.0
+ 16 burden of proof              procedure               4.0
+ 17 franchise                    constitutional          3.7
+ 18 indictment                   criminal                3.7
+ 19 amendment                    constitutional          3.7
+ 20 subrogation                  civil                   3.7
+ 21 novation                     civil                   3.7
+ 22 remand                       criminal                3.3
+ 23 mortgage                     civil                   3.3
+ 24 covenant                     international           3.3
+ 25 trade union                  labor_social            3.3
+ 26 veto                         constitutional          3.3
+ 27 extortion                    criminal                3.3
+ 28 adoption                     civil                   3.3
+ 29 prosecution                  criminal                3.0
+ 30 genocide                     international           3.0

@@ -5,6 +5,7 @@ Implements the full Lens III analysis pipeline (Ch.3 §3.1.3):
 
   §3.1.3a  Single-term behavior: drift + Jaccard across layers
   §3.1.3b  Global structure: domain signal emergence + RSA convergence
+  §3.1.3c  NTA: Neighborhood Trajectory Analysis (qualitative layer-by-layer k-NN)
 
 Usage
 -----
@@ -12,6 +13,8 @@ Usage
     python -m lens_3_stratigraphy.lens3                        # full run
     python -m lens_3_stratigraphy.lens3 --section 3.1.3a       # drift + Jaccard only
     python -m lens_3_stratigraphy.lens3 --section 3.1.3b       # domain signal + RSA only
+    python -m lens_3_stratigraphy.lens3 --section nta           # NTA only
+    python -m lens_3_stratigraphy.lens3 --force                # bypass cache
     python -m lens_3_stratigraphy.lens3 --no-viz               # skip figures
 
 Outputs
@@ -223,6 +226,7 @@ def run_section_313a(
     core_idx: list[int],
     k: int = 7,
     device: str = "mps",
+    force: bool = False,
 ) -> dict:
     """
     §3.1.3a — Single-term behavior: drift + Jaccard across layers.
@@ -237,7 +241,7 @@ def run_section_313a(
         t0 = time.perf_counter()
         texts = _terms_for_model(terms_core, label)
 
-        layer_vecs = extract_per_layer(label, texts, device=device)
+        layer_vecs = extract_per_layer(label, texts, device=device, force=force)
         n_terms, n_states, dim = layer_vecs.shape
         print(f"    shape: ({n_terms}, {n_states}, {dim})")
 
@@ -281,6 +285,7 @@ def run_section_313b(
     terms_core: list[dict],
     core_idx: list[int],
     device: str = "mps",
+    force: bool = False,
 ) -> dict:
     """
     §3.1.3b — Global structure: domain signal emergence + RSA convergence.
@@ -295,7 +300,7 @@ def run_section_313b(
         t0 = time.perf_counter()
         texts = _terms_for_model(terms_core, label)
 
-        layer_vecs = extract_per_layer(label, texts, device=device)
+        layer_vecs = extract_per_layer(label, texts, device=device, force=force)
         n_terms, n_states, dim = layer_vecs.shape
 
         # RDM at final layer (reference for RSA convergence)
@@ -350,6 +355,196 @@ def _find_threshold(values: list[float], threshold: float) -> int | None:
 
 
 # ---------------------------------------------------------------------------
+# §3.1.3c — Neighborhood Trajectory Analysis (NTA) — trace D5
+# ---------------------------------------------------------------------------
+
+NTA_TARGET_TERMS = [
+    "negligence",       # civil — but general English meaning is moral/everyday
+    "sovereignty",      # constitutional — but also international / political
+    "corruption",       # criminal — but also governance / moral
+    "comity",           # international — but also everyday courtesy
+    "adoption",         # civil (legal) — but also everyday meaning
+    "strike",           # labor — but also military / everyday
+    "disclosure",       # procedure — but also financial / everyday
+    "franchise",        # constitutional — but also commercial
+]
+
+
+def _load_pool_terms() -> tuple[list[dict], list[int]]:
+    """Load core + control terms as the NTA neighbor pool."""
+    _, index = load_precomputed("BGE-EN-large", EMB_DIR)
+    pool_idx = [
+        i for i, t in enumerate(index)
+        if (t["tier"] == "core" and t["domain"]) or t["tier"] == "control"
+    ]
+    pool_terms = [index[i] for i in pool_idx]
+    return pool_terms, pool_idx
+
+
+def run_nta(
+    model_label: str,
+    terms_core: list[dict],
+    core_idx: list[int],
+    target_terms: list[str] | None = None,
+    k: int = 7,
+    device: str = "cpu",
+    sample_layers: list[int] | None = None,
+    force: bool = False,
+) -> dict:
+    """
+    §3.1.3c — Neighborhood Trajectory Analysis (NTA).
+
+    For each target term, traces the k-NN neighborhood across sampled layers.
+    The neighbor pool includes core legal terms (397) and control terms (100
+    Swadesh-like non-legal words), allowing detection of the legal/non-legal
+    boundary shift as representational depth increases.
+
+    Parameters
+    ----------
+    model_label : str
+    terms_core : list[dict] — core terms with en, zh_canonical, domain
+    core_idx : list[int] — indices into the full precomputed vectors
+    target_terms : list[str] — EN names to analyze (exact match)
+    k : int — number of neighbors
+    device : str — PyTorch device
+    sample_layers : list[int] | None — which layers to show (None = auto)
+    force : bool — bypass cache
+
+    Returns
+    -------
+    dict with per-term trajectory data
+    """
+    if target_terms is None:
+        target_terms = NTA_TARGET_TERMS
+
+    # Build pool = core + control
+    pool_terms, pool_idx = _load_pool_terms()
+    n_pool = len(pool_terms)
+    n_core = len(terms_core)
+
+    print(f"\n[NTA] {model_label}, k={k}, {len(target_terms)} terms, "
+          f"pool={n_pool} (core={n_core} + control={n_pool - n_core})")
+
+    # Extract layer vectors for entire pool
+    pool_texts = _terms_for_model(pool_terms, model_label)
+    cache_label = f"{model_label}_pool"
+    layer_vecs = extract_per_layer(
+        model_label, pool_texts, device=device,
+        cache_label=cache_label, force=force,
+    )
+    n_terms_actual, n_states, dim = layer_vecs.shape
+
+    # Build metadata arrays for the pool
+    en_names = [t["en"] for t in pool_terms]
+    domains = [t.get("domain") or "control" for t in pool_terms]
+    tiers = [t["tier"] for t in pool_terms]
+
+    # Map target term names to pool indices
+    name_to_idx = {t["en"].lower(): i for i, t in enumerate(pool_terms)}
+    targets = []
+    for name in target_terms:
+        idx = name_to_idx.get(name.lower())
+        if idx is not None:
+            targets.append((name, idx))
+        else:
+            print(f"  [skip] '{name}' not found in pool")
+
+    if sample_layers is None:
+        n_samples = min(n_states, 7)
+        sample_layers = sorted(set(
+            [int(round(i * (n_states - 1) / (n_samples - 1)))
+             for i in range(n_samples)]
+        ))
+
+    result: dict = {
+        "model": model_label,
+        "k": k,
+        "sample_layers": sample_layers,
+        "pool_size": n_pool,
+        "pool_core": n_core,
+        "pool_control": n_pool - n_core,
+        "terms": {},
+    }
+
+    for term_name, t_idx in targets:
+        print(f"  {term_name} (idx={t_idx}, domain={domains[t_idx]})")
+        layers_data = []
+        prev_nn_set: set[int] | None = None
+
+        for l in sample_layers:
+            vec_t = layer_vecs[t_idx, l, :]
+            sims = layer_vecs[:, l, :] @ vec_t
+            sims[t_idx] = -np.inf
+
+            top_k_idx = np.argsort(sims)[-k:][::-1]
+            nn_set = set(top_k_idx.tolist())
+
+            neighbors = []
+            for rank, ni in enumerate(top_k_idx):
+                entry = {
+                    "rank": rank + 1,
+                    "en": en_names[ni],
+                    "domain": domains[ni],
+                    "tier": tiers[ni],
+                    "sim": round(float(sims[ni]), 4),
+                }
+                if prev_nn_set is not None:
+                    if ni not in prev_nn_set:
+                        entry["status"] = "entered"
+                neighbors.append(entry)
+
+            exited = []
+            if prev_nn_set is not None:
+                for ni in prev_nn_set:
+                    if ni not in nn_set:
+                        exited.append({
+                            "en": en_names[ni],
+                            "domain": domains[ni],
+                            "tier": tiers[ni],
+                        })
+
+            layer_entry = {
+                "layer": l,
+                "neighbors": neighbors,
+            }
+            if exited:
+                layer_entry["exited"] = exited
+
+            layers_data.append(layer_entry)
+            prev_nn_set = nn_set
+
+        # Domain/tier composition per layer
+        domain_evolution = []
+        for ld in layers_data:
+            dom_counts: dict[str, int] = {}
+            n_control = 0
+            n_legal = 0
+            for nb in ld["neighbors"]:
+                d = nb["domain"]
+                dom_counts[d] = dom_counts.get(d, 0) + 1
+                if nb["tier"] == "control":
+                    n_control += 1
+                else:
+                    n_legal += 1
+            domain_evolution.append({
+                "layer": ld["layer"],
+                "domains": dom_counts,
+                "n_legal": n_legal,
+                "n_control": n_control,
+            })
+
+        result["terms"][term_name] = {
+            "idx": t_idx,
+            "domain": domains[t_idx],
+            "zh": pool_terms[t_idx]["zh_canonical"],
+            "layers": layers_data,
+            "domain_evolution": domain_evolution,
+        }
+
+    return result
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -360,7 +555,7 @@ def main(argv: list[str] | None = None) -> None:
     )
     parser.add_argument(
         "--section",
-        choices=["3.1.3a", "3.1.3b", "all"],
+        choices=["3.1.3a", "3.1.3b", "nta", "all"],
         default="all",
         help="Which section(s) to run",
     )
@@ -368,6 +563,8 @@ def main(argv: list[str] | None = None) -> None:
                         help="k for k-NN Jaccard (§3.1.3a)")
     parser.add_argument("--no-viz", action="store_true",
                         help="Skip figure generation after pipeline")
+    parser.add_argument("--force", action="store_true",
+                        help="Ignore cache and re-extract all layer vectors")
     parser.add_argument("--device", type=str, default="cpu",
                         help="PyTorch device (cpu recommended; mps is non-deterministic)")
     args = parser.parse_args(argv)
@@ -402,14 +599,23 @@ def main(argv: list[str] | None = None) -> None:
     if args.section in ("3.1.3a", "all"):
         output["section_313a"] = run_section_313a(
             all_labels, terms_core, core_idx,
-            k=args.k, device=args.device,
+            k=args.k, device=args.device, force=args.force,
         )
 
     if args.section in ("3.1.3b", "all"):
         output["section_313b"] = run_section_313b(
             all_labels, terms_core, core_idx,
-            device=args.device,
+            device=args.device, force=args.force,
         )
+
+    if args.section in ("nta", "all"):
+        nta_results = {}
+        for label in all_labels:
+            nta_results[label] = run_nta(
+                label, terms_core, core_idx,
+                k=args.k, device=args.device, force=args.force,
+            )
+        output["nta"] = nta_results
 
     total = time.perf_counter() - t_start
     output["meta"]["elapsed_seconds"] = round(total, 1)

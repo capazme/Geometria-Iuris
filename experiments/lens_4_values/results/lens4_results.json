@@ -1,0 +1,2789 @@
+{
+  "meta": {
+    "date": "2026-03-02T15:26:54",
+    "n_boot": 10000,
+    "n_core": 397,
+    "n_pool": 9472,
+    "axes": [
+      "individual_collective",
+      "rights_duties",
+      "public_private"
+    ],
+    "weird_models": [
+      "BGE-EN-large",
+      "E5-large",
+      "FreeLaw-EN"
+    ],
+    "sinic_models": [
+      "BGE-ZH-large",
+      "Text2vec-large-ZH",
+      "Dmeta-ZH"
+    ],
+    "elapsed_seconds": 61.0
+  },
+  "section_331": {
+    "per_model": {
+      "BGE-EN-large": {
+        "axes": {
+          "individual_collective": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 9,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          },
+          "rights_duties": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "public_private": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 9,
+            "negative_correct": 10,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          }
+        },
+        "orthogonality": {
+          "individual_collective_vs_rights_duties": 0.3412,
+          "individual_collective_vs_public_private": -0.4528,
+          "rights_duties_vs_public_private": -0.1294
+        }
+      },
+      "E5-large": {
+        "axes": {
+          "individual_collective": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "rights_duties": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "public_private": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 8,
+            "sanity_pass": 18,
+            "sanity_total": 20
+          }
+        },
+        "orthogonality": {
+          "individual_collective_vs_rights_duties": 0.3628,
+          "individual_collective_vs_public_private": -0.4451,
+          "rights_duties_vs_public_private": -0.2217
+        }
+      },
+      "FreeLaw-EN": {
+        "axes": {
+          "individual_collective": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "rights_duties": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "public_private": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 9,
+            "negative_correct": 10,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          }
+        },
+        "orthogonality": {
+          "individual_collective_vs_rights_duties": 0.42,
+          "individual_collective_vs_public_private": -0.4716,
+          "rights_duties_vs_public_private": -0.119
+        }
+      },
+      "BGE-ZH-large": {
+        "axes": {
+          "individual_collective": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "rights_duties": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "public_private": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 9,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          }
+        },
+        "orthogonality": {
+          "individual_collective_vs_rights_duties": 0.2049,
+          "individual_collective_vs_public_private": -0.6127,
+          "rights_duties_vs_public_private": -0.0668
+        }
+      },
+      "Text2vec-large-ZH": {
+        "axes": {
+          "individual_collective": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "rights_duties": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 10,
+            "sanity_pass": 20,
+            "sanity_total": 20
+          },
+          "public_private": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 9,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          }
+        },
+        "orthogonality": {
+          "individual_collective_vs_rights_duties": 0.2868,
+          "individual_collective_vs_public_private": -0.5902,
+          "rights_duties_vs_public_private": -0.1167
+        }
+      },
+      "Dmeta-ZH": {
+        "axes": {
+          "individual_collective": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 9,
+            "negative_correct": 10,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          },
+          "rights_duties": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 9,
+            "negative_correct": 10,
+            "sanity_pass": 19,
+            "sanity_total": 20
+          },
+          "public_private": {
+            "n_pairs_used": 10,
+            "n_pairs_total": 10,
+            "positive_correct": 10,
+            "negative_correct": 8,
+            "sanity_pass": 18,
+            "sanity_total": 20
+          }
+        },
+        "orthogonality": {
+          "individual_collective_vs_rights_duties": 0.1364,
+          "individual_collective_vs_public_private": -0.6376,
+          "rights_duties_vs_public_private": -0.0311
+        }
+      }
+    }
+  },
+  "section_332": {
+    "n_boot": 10000,
+    "per_pair": [
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2574,
+        "ci_low": 0.1604,
+        "ci_high": 0.3514,
+        "bootstrap_estimate": 0.2574
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4243,
+        "ci_low": 0.3345,
+        "ci_high": 0.5042,
+        "bootstrap_estimate": 0.4243
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4654,
+        "ci_low": 0.3798,
+        "ci_high": 0.5461,
+        "bootstrap_estimate": 0.4654
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1999,
+        "ci_low": 0.1053,
+        "ci_high": 0.2937,
+        "bootstrap_estimate": 0.1999
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.2849,
+        "ci_low": 0.1851,
+        "ci_high": 0.3757,
+        "bootstrap_estimate": 0.2849
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.1677,
+        "ci_low": 0.0704,
+        "ci_high": 0.2629,
+        "bootstrap_estimate": 0.1677
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3268,
+        "ci_low": 0.2359,
+        "ci_high": 0.412,
+        "bootstrap_estimate": 0.3268
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4667,
+        "ci_low": 0.3801,
+        "ci_high": 0.5446,
+        "bootstrap_estimate": 0.4667
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4345,
+        "ci_low": 0.345,
+        "ci_high": 0.5179,
+        "bootstrap_estimate": 0.4345
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2815,
+        "ci_low": 0.1864,
+        "ci_high": 0.3724,
+        "bootstrap_estimate": 0.2815
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4715,
+        "ci_low": 0.3857,
+        "ci_high": 0.5487,
+        "bootstrap_estimate": 0.4715
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.5074,
+        "ci_low": 0.4242,
+        "ci_high": 0.5828,
+        "bootstrap_estimate": 0.5074
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2475,
+        "ci_low": 0.1535,
+        "ci_high": 0.333,
+        "bootstrap_estimate": 0.2475
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3148,
+        "ci_low": 0.2234,
+        "ci_high": 0.4012,
+        "bootstrap_estimate": 0.3148
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.2872,
+        "ci_low": 0.1923,
+        "ci_high": 0.3793,
+        "bootstrap_estimate": 0.2872
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2614,
+        "ci_low": 0.1688,
+        "ci_high": 0.348,
+        "bootstrap_estimate": 0.2614
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4912,
+        "ci_low": 0.4061,
+        "ci_high": 0.5694,
+        "bootstrap_estimate": 0.4912
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4717,
+        "ci_low": 0.3876,
+        "ci_high": 0.5496,
+        "bootstrap_estimate": 0.4717
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.401,
+        "ci_low": 0.3121,
+        "ci_high": 0.485,
+        "bootstrap_estimate": 0.401
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3554,
+        "ci_low": 0.26,
+        "ci_high": 0.4422,
+        "bootstrap_estimate": 0.3554
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.5049,
+        "ci_low": 0.4213,
+        "ci_high": 0.5816,
+        "bootstrap_estimate": 0.5049
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2591,
+        "ci_low": 0.162,
+        "ci_high": 0.3525,
+        "bootstrap_estimate": 0.2591
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.2134,
+        "ci_low": 0.1156,
+        "ci_high": 0.3072,
+        "bootstrap_estimate": 0.2134
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3417,
+        "ci_low": 0.2501,
+        "ci_high": 0.432,
+        "bootstrap_estimate": 0.3417
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3936,
+        "ci_low": 0.3022,
+        "ci_high": 0.4808,
+        "bootstrap_estimate": 0.3936
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4014,
+        "ci_low": 0.3079,
+        "ci_high": 0.4877,
+        "bootstrap_estimate": 0.4014
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4371,
+        "ci_low": 0.3513,
+        "ci_high": 0.518,
+        "bootstrap_estimate": 0.4371
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5667,
+        "ci_low": 0.4905,
+        "ci_high": 0.6327,
+        "bootstrap_estimate": 0.5667
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.6447,
+        "ci_low": 0.5767,
+        "ci_high": 0.7024,
+        "bootstrap_estimate": 0.6447
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.6489,
+        "ci_low": 0.585,
+        "ci_high": 0.7063,
+        "bootstrap_estimate": 0.6489
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5447,
+        "ci_low": 0.4649,
+        "ci_high": 0.6168,
+        "bootstrap_estimate": 0.5447
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5254,
+        "ci_low": 0.4443,
+        "ci_high": 0.6008,
+        "bootstrap_estimate": 0.5254
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.6475,
+        "ci_low": 0.581,
+        "ci_high": 0.7071,
+        "bootstrap_estimate": 0.6475
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.459,
+        "ci_low": 0.3702,
+        "ci_high": 0.5404,
+        "bootstrap_estimate": 0.459
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5698,
+        "ci_low": 0.4919,
+        "ci_high": 0.6389,
+        "bootstrap_estimate": 0.5698
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.5314,
+        "ci_low": 0.4516,
+        "ci_high": 0.6063,
+        "bootstrap_estimate": 0.5314
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.546,
+        "ci_low": 0.4676,
+        "ci_high": 0.6152,
+        "bootstrap_estimate": 0.546
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.7235,
+        "ci_low": 0.6657,
+        "ci_high": 0.7731,
+        "bootstrap_estimate": 0.7235
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.5031,
+        "ci_low": 0.4248,
+        "ci_high": 0.5785,
+        "bootstrap_estimate": 0.5031
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.6549,
+        "ci_low": 0.5903,
+        "ci_high": 0.7105,
+        "bootstrap_estimate": 0.6549
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.7494,
+        "ci_low": 0.6932,
+        "ci_high": 0.7961,
+        "bootstrap_estimate": 0.7494
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.7103,
+        "ci_low": 0.6488,
+        "ci_high": 0.7621,
+        "bootstrap_estimate": 0.7103
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.454,
+        "ci_low": 0.3651,
+        "ci_high": 0.5368,
+        "bootstrap_estimate": 0.454
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.5491,
+        "ci_low": 0.4701,
+        "ci_high": 0.6176,
+        "bootstrap_estimate": 0.5491
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.4419,
+        "ci_low": 0.3554,
+        "ci_high": 0.5209,
+        "bootstrap_estimate": 0.4419
+      }
+    ],
+    "summary_per_axis": {
+      "individual_collective": {
+        "mean_cross_rho": 0.292,
+        "mean_within_rho": 0.5376,
+        "mw_statistic": 0.0,
+        "mw_p_value": 0.0002,
+        "mw_effect_r": 1.0
+      },
+      "rights_duties": {
+        "mean_cross_rho": 0.3804,
+        "mean_within_rho": 0.627,
+        "mw_statistic": 0.0,
+        "mw_p_value": 0.0002,
+        "mw_effect_r": 1.0
+      },
+      "public_private": {
+        "mean_cross_rho": 0.402,
+        "mean_within_rho": 0.5805,
+        "mw_statistic": 6.0,
+        "mw_p_value": 0.005994,
+        "mw_effect_r": 0.7778
+      }
+    }
+  },
+  "section_333": {
+    "cross_rhos_by_axis": {
+      "individual_collective": {
+        "mean": 0.292,
+        "std": 0.0643,
+        "values": [
+          0.2574,
+          0.1999,
+          0.3268,
+          0.2815,
+          0.2475,
+          0.2614,
+          0.401,
+          0.2591,
+          0.3936
+        ]
+      },
+      "public_private": {
+        "mean": 0.402,
+        "std": 0.1078,
+        "values": [
+          0.4654,
+          0.1677,
+          0.4345,
+          0.5074,
+          0.2872,
+          0.4717,
+          0.5049,
+          0.3417,
+          0.4371
+        ]
+      },
+      "rights_duties": {
+        "mean": 0.3804,
+        "std": 0.0896,
+        "values": [
+          0.4243,
+          0.2849,
+          0.4667,
+          0.4715,
+          0.3148,
+          0.4912,
+          0.3554,
+          0.2134,
+          0.4014
+        ]
+      }
+    },
+    "kruskal_wallis": {
+      "H": 7.1993,
+      "p_value": 0.027333362144651593,
+      "significant": true
+    },
+    "pairwise": [
+      {
+        "axis_a": "individual_collective",
+        "axis_b": "public_private",
+        "statistic": 14.0,
+        "p_raw": 0.021684,
+        "p_bonferroni": 0.065052,
+        "effect_r": 0.6543,
+        "significant": false
+      },
+      {
+        "axis_a": "individual_collective",
+        "axis_b": "rights_duties",
+        "statistic": 16.0,
+        "p_raw": 0.034069,
+        "p_bonferroni": 0.102208,
+        "effect_r": 0.6049,
+        "significant": false
+      },
+      {
+        "axis_a": "public_private",
+        "axis_b": "rights_duties",
+        "statistic": 49.0,
+        "p_raw": 0.479929,
+        "p_bonferroni": 1.0,
+        "effect_r": -0.2099,
+        "significant": false
+      }
+    ],
+    "n_comparisons": 3,
+    "ranking_most_divergent_first": [
+      {
+        "axis": "individual_collective",
+        "mean_cross_rho": 0.29202222222222224
+      },
+      {
+        "axis": "rights_duties",
+        "mean_cross_rho": 0.38039999999999996
+      },
+      {
+        "axis": "public_private",
+        "mean_cross_rho": 0.4019555555555556
+      }
+    ]
+  },
+  "terms_core": [
+    {
+      "en": "ad damnum pleadings",
+      "zh": "要求作出損害賠償的狀書",
+      "domain": "procedure"
+    },
+    {
+      "en": "administrative",
+      "zh": "行政的",
+      "domain": "administrative"
+    },
+    {
+      "en": "Administrative Appeals Board",
+      "zh": "行政上訴委員會（香港）",
+      "domain": "administrative"
+    },
+    {
+      "en": "admissibility of evidence",
+      "zh": "證據的可接納性",
+      "domain": "procedure"
+    },
+    {
+      "en": "admissible evidence",
+      "zh": "可接納的證據",
+      "domain": "procedure"
+    },
+    {
+      "en": "adoption",
+      "zh": "採納",
+      "domain": "civil"
+    },
+    {
+      "en": "advertent negligence",
+      "zh": "罔顧後果的疏忽 ※比較 inadvertent negligence",
+      "domain": "civil"
+    },
+    {
+      "en": "affidavit",
+      "zh": "確證文件已予送達的宗教式誓章",
+      "domain": "procedure"
+    },
+    {
+      "en": "aider by pleading over",
+      "zh": "藉申辯作出救助",
+      "domain": "procedure"
+    },
+    {
+      "en": "alimony",
+      "zh": "贍養費",
+      "domain": "civil"
+    },
+    {
+      "en": "appellate court",
+      "zh": "審理上訴的法院",
+      "domain": "procedure"
+    },
+    {
+      "en": "appellate jurisdiction",
+      "zh": "上訴司法管轄權",
+      "domain": "procedure"
+    },
+    {
+      "en": "approbate and reprobate",
+      "zh": "取利拒責〔（不可）只取有利部分而拒絕不利部分〕 ☛參看 Qui approbat non reprobat.",
+      "domain": "civil"
+    },
+    {
+      "en": "attestation",
+      "zh": "核簽條款",
+      "domain": "civil"
+    },
+    {
+      "en": "audi alteram partem",
+      "zh": "聽另一方之詞 ※比較 parte inaudita",
+      "domain": "administrative"
+    },
+    {
+      "en": "bailment",
+      "zh": "無酬委託",
+      "domain": "civil"
+    },
+    {
+      "en": "beneficiary",
+      "zh": "受益人",
+      "domain": "civil"
+    },
+    {
+      "en": "bilateral",
+      "zh": "雙邊",
+      "domain": "international"
+    },
+    {
+      "en": "Bill of Rights",
+      "zh": "人權法案",
+      "domain": "constitutional"
+    },
+    {
+      "en": "bribery",
+      "zh": "賄賂",
+      "domain": "criminal"
+    },
+    {
+      "en": "Caldwell recklessness",
+      "zh": "考德威爾魯莽〔輕率魯莽〕 ※比較 Cunningham recklessness",
+      "domain": "criminal"
+    },
+    {
+      "en": "Civil Service Regulations",
+      "zh": "公務員事務規例（香港）",
+      "domain": "administrative"
+    },
+    {
+      "en": "comity",
+      "zh": "友誼",
+      "domain": "international"
+    },
+    {
+      "en": "conciliation",
+      "zh": "調停",
+      "domain": "procedure"
+    },
+    {
+      "en": "conspiracy to defraud",
+      "zh": "串謀欺詐",
+      "domain": "criminal"
+    },
+    {
+      "en": "constitution",
+      "zh": "憲法",
+      "domain": "constitutional"
+    },
+    {
+      "en": "constitutional",
+      "zh": "憲制的",
+      "domain": "constitutional"
+    },
+    {
+      "en": "contractual",
+      "zh": "合約的",
+      "domain": "civil"
+    },
+    {
+      "en": "Contractus legem ex conventione accipiunt.",
+      "zh": "合約的法律效力來自雙方的協議",
+      "domain": "international"
+    },
+    {
+      "en": "contributory negligence",
+      "zh": "共分疏忽",
+      "domain": "civil"
+    },
+    {
+      "en": "convict sb. of an offence",
+      "zh": "判某人罪名成立",
+      "domain": "criminal"
+    },
+    {
+      "en": "conviction",
+      "zh": "定罪",
+      "domain": "criminal"
+    },
+    {
+      "en": "copyright",
+      "zh": "版權標記",
+      "domain": "civil"
+    },
+    {
+      "en": "corruption",
+      "zh": "舞弊",
+      "domain": "criminal"
+    },
+    {
+      "en": "counterclaim",
+      "zh": "反申索書",
+      "domain": "procedure"
+    },
+    {
+      "en": "Court of First Instance",
+      "zh": "原訟法庭（香港）",
+      "domain": "procedure"
+    },
+    {
+      "en": "covenant",
+      "zh": "隨土地轉移的契諾",
+      "domain": "international"
+    },
+    {
+      "en": "cross-examination",
+      "zh": "盤問",
+      "domain": "procedure"
+    },
+    {
+      "en": "Cunningham recklessness",
+      "zh": "坎寧安魯莽〔蓄意魯莽〕 ※比較 Caldwell recklessness",
+      "domain": "criminal"
+    },
+    {
+      "en": "de bonis testatoris",
+      "zh": "立遺囑者的財產",
+      "domain": "civil"
+    },
+    {
+      "en": "de bonis testatoris ac si",
+      "zh": "如無立遺囑者財產則取遺產管理人財產",
+      "domain": "civil"
+    },
+    {
+      "en": "de son tort",
+      "zh": "干預",
+      "domain": "civil"
+    },
+    {
+      "en": "dead pledge",
+      "zh": "死質押〔質押人如不履行償債承諾，即喪失抵押物的贖回權的一種質押〕 ※比較 live pledge",
+      "domain": "civil"
+    },
+    {
+      "en": "defamation",
+      "zh": "不明顯的誹謗",
+      "domain": "civil"
+    },
+    {
+      "en": "die intestate",
+      "zh": "未立遺囑而去世",
+      "domain": "civil"
+    },
+    {
+      "en": "diplomatic privilege",
+      "zh": "外交特權",
+      "domain": "international"
+    },
+    {
+      "en": "Director of Public Prosecutions; DPP",
+      "zh": "刑事檢控專員（香港）",
+      "domain": "criminal"
+    },
+    {
+      "en": "disclosure",
+      "zh": "公開",
+      "domain": "procedure"
+    },
+    {
+      "en": "discovery",
+      "zh": "自動作出文件透露",
+      "domain": "procedure"
+    },
+    {
+      "en": "dismissal",
+      "zh": "免職",
+      "domain": "labor_social"
+    },
+    {
+      "en": "divorce",
+      "zh": "離婚判令",
+      "domain": "civil"
+    },
+    {
+      "en": "divorcement",
+      "zh": "完全分開",
+      "domain": "civil"
+    },
+    {
+      "en": "duplicitous pleading",
+      "zh": "重複而無用的申辯",
+      "domain": "procedure"
+    },
+    {
+      "en": "easement",
+      "zh": "採光權 ☛參看 right of (ancient) lights",
+      "domain": "civil"
+    },
+    {
+      "en": "employee",
+      "zh": "真正的僱員",
+      "domain": "labor_social"
+    },
+    {
+      "en": "employer",
+      "zh": "僱主",
+      "domain": "labor_social"
+    },
+    {
+      "en": "employment",
+      "zh": "僱傭",
+      "domain": "labor_social"
+    },
+    {
+      "en": "enfranchise",
+      "zh": "給予公民選舉權",
+      "domain": "constitutional"
+    },
+    {
+      "en": "ex parte",
+      "zh": "單方面申請的許可",
+      "domain": "procedure"
+    },
+    {
+      "en": "ex parte materna",
+      "zh": "最近親",
+      "domain": "procedure"
+    },
+    {
+      "en": "executor",
+      "zh": "擅自處理他人遺產的人",
+      "domain": "civil"
+    },
+    {
+      "en": "executorship expenses",
+      "zh": "遺囑執行費用",
+      "domain": "civil"
+    },
+    {
+      "en": "executory",
+      "zh": "待執行的",
+      "domain": "civil"
+    },
+    {
+      "en": "ex-tenant",
+      "zh": "前租客",
+      "domain": "civil"
+    },
+    {
+      "en": "extraterritoriality",
+      "zh": "領事裁判權",
+      "domain": "international"
+    },
+    {
+      "en": "fiduciary",
+      "zh": "受託",
+      "domain": "civil"
+    },
+    {
+      "en": "forum non conveniens",
+      "zh": "不便審理的法院",
+      "domain": "international"
+    },
+    {
+      "en": "franchise",
+      "zh": "專營",
+      "domain": "constitutional"
+    },
+    {
+      "en": "freedom",
+      "zh": "自由",
+      "domain": "constitutional"
+    },
+    {
+      "en": "guarantor",
+      "zh": "保證人",
+      "domain": "civil"
+    },
+    {
+      "en": "harassment",
+      "zh": "侵擾",
+      "domain": "labor_social"
+    },
+    {
+      "en": "hearsay",
+      "zh": "傳聞",
+      "domain": "procedure"
+    },
+    {
+      "en": "human rights",
+      "zh": "《歐洲人權公約》",
+      "domain": "constitutional"
+    },
+    {
+      "en": "in camera",
+      "zh": "在法官私室（審議）",
+      "domain": "procedure"
+    },
+    {
+      "en": "in consideration of",
+      "zh": "考慮到",
+      "domain": "civil"
+    },
+    {
+      "en": "inadmissible",
+      "zh": "不得被接納",
+      "domain": "procedure"
+    },
+    {
+      "en": "inadvertent negligence",
+      "zh": "無心的疏忽 ※比較 advertent negligence",
+      "domain": "civil"
+    },
+    {
+      "en": "inchoate",
+      "zh": "不完整",
+      "domain": "criminal"
+    },
+    {
+      "en": "indemnity",
+      "zh": "彌償法律程序",
+      "domain": "civil"
+    },
+    {
+      "en": "inheritance",
+      "zh": "繼承",
+      "domain": "civil"
+    },
+    {
+      "en": "innocent misrepresentation",
+      "zh": "無意的失實陳述",
+      "domain": "civil"
+    },
+    {
+      "en": "intellectual property",
+      "zh": "合資格知識產權",
+      "domain": "civil"
+    },
+    {
+      "en": "inter vivos",
+      "zh": "生者之間的贈予",
+      "domain": "civil"
+    },
+    {
+      "en": "interest-based mediation",
+      "zh": "兼顧各方利益的調解",
+      "domain": "procedure"
+    },
+    {
+      "en": "interlocutory",
+      "zh": "非正審（的）",
+      "domain": "procedure"
+    },
+    {
+      "en": "international law",
+      "zh": "國際私法",
+      "domain": "international"
+    },
+    {
+      "en": "intestate",
+      "zh": "未留遺囑的死者",
+      "domain": "civil"
+    },
+    {
+      "en": "joinder",
+      "zh": "合併控罪",
+      "domain": "procedure"
+    },
+    {
+      "en": "jus cogens",
+      "zh": "強制性法則 ※比較 jus naturale",
+      "domain": "international"
+    },
+    {
+      "en": "landlord",
+      "zh": "地主",
+      "domain": "civil"
+    },
+    {
+      "en": "leaseback",
+      "zh": "售出物業後租回原物業",
+      "domain": "civil"
+    },
+    {
+      "en": "leasehold",
+      "zh": "租賃權 ※比較 freehold",
+      "domain": "civil"
+    },
+    {
+      "en": "leaseholder",
+      "zh": "批租契持有人",
+      "domain": "civil"
+    },
+    {
+      "en": "legislation",
+      "zh": "法例",
+      "domain": "constitutional"
+    },
+    {
+      "en": "legislative",
+      "zh": "立法的",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Legislative Council",
+      "zh": "立法會（香港）",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Letters Patent",
+      "zh": "英皇制誥（英）",
+      "domain": "civil"
+    },
+    {
+      "en": "live pledge",
+      "zh": "活質押〔以抵押物的收益（例如租金）償還抵押借款，借款清償後，抵押物復歸質押人的一種質押〕",
+      "domain": "civil"
+    },
+    {
+      "en": "locus standi",
+      "zh": "出庭資格",
+      "domain": "procedure"
+    },
+    {
+      "en": "mediation",
+      "zh": "社區調解",
+      "domain": "procedure"
+    },
+    {
+      "en": "Minor Employment Claims Adjudication Board",
+      "zh": "小額薪酬索償仲裁處（香港）",
+      "domain": "labor_social"
+    },
+    {
+      "en": "misjoinder",
+      "zh": "錯誤參與訴訟",
+      "domain": "procedure"
+    },
+    {
+      "en": "mispleading",
+      "zh": "狀書中的錯誤",
+      "domain": "procedure"
+    },
+    {
+      "en": "misrepresentation",
+      "zh": "失實陳述",
+      "domain": "civil"
+    },
+    {
+      "en": "mortgage",
+      "zh": "有關按揭的申索",
+      "domain": "civil"
+    },
+    {
+      "en": "mortgagee",
+      "zh": "承按人",
+      "domain": "civil"
+    },
+    {
+      "en": "naturalization",
+      "zh": "入籍",
+      "domain": "constitutional"
+    },
+    {
+      "en": "negligence",
+      "zh": "罔顧後果的疏忽",
+      "domain": "civil"
+    },
+    {
+      "en": "Nemo judex in causa sua",
+      "zh": "任何人不得成為自己案件的法官",
+      "domain": "administrative"
+    },
+    {
+      "en": "non-contentious probate",
+      "zh": "無爭議遺囑認證",
+      "domain": "civil"
+    },
+    {
+      "en": "non-disclosure",
+      "zh": "不予披露",
+      "domain": "procedure"
+    },
+    {
+      "en": "nonjoinder",
+      "zh": "不合併",
+      "domain": "procedure"
+    },
+    {
+      "en": "non-probate",
+      "zh": "非憑遺囑處置的",
+      "domain": "civil"
+    },
+    {
+      "en": "novation",
+      "zh": "債務或合約義務的更替",
+      "domain": "civil"
+    },
+    {
+      "en": "nuisance",
+      "zh": "消除滋擾",
+      "domain": "civil"
+    },
+    {
+      "en": "occupational safety",
+      "zh": "職業安全",
+      "domain": "labor_social"
+    },
+    {
+      "en": "Official Trustee",
+      "zh": "法定受託人",
+      "domain": "civil"
+    },
+    {
+      "en": "Ombudsman",
+      "zh": "申訴專員",
+      "domain": "administrative"
+    },
+    {
+      "en": "pacta sunt servanda",
+      "zh": "有約必守",
+      "domain": "international"
+    },
+    {
+      "en": "palimony",
+      "zh": "〔法庭命令〕 給予前同居者的生活費 ※比較 alimony",
+      "domain": "civil"
+    },
+    {
+      "en": "patent",
+      "zh": "明顯",
+      "domain": "civil"
+    },
+    {
+      "en": "patented",
+      "zh": "受專利權保護的",
+      "domain": "civil"
+    },
+    {
+      "en": "Patents Court",
+      "zh": "專利案件法庭",
+      "domain": "civil"
+    },
+    {
+      "en": "penal",
+      "zh": "刑罰方面的",
+      "domain": "criminal"
+    },
+    {
+      "en": "penalty",
+      "zh": "罰則",
+      "domain": "criminal"
+    },
+    {
+      "en": "perjury",
+      "zh": "作假證供罪",
+      "domain": "criminal"
+    },
+    {
+      "en": "pleading",
+      "zh": "要求作出損害賠償的狀書",
+      "domain": "procedure"
+    },
+    {
+      "en": "pledge",
+      "zh": "活質押〔以抵押物的收益（例如租金）償還抵押借款，借款清償後，抵押物復歸質押人的一種質押〕",
+      "domain": "civil"
+    },
+    {
+      "en": "pledgee",
+      "zh": "承押人",
+      "domain": "civil"
+    },
+    {
+      "en": "prerogative",
+      "zh": "君主特權令狀",
+      "domain": "constitutional"
+    },
+    {
+      "en": "probate",
+      "zh": "遺產辦理",
+      "domain": "civil"
+    },
+    {
+      "en": "protocol",
+      "zh": "條約等的草案",
+      "domain": "international"
+    },
+    {
+      "en": "radical breach of contract",
+      "zh": "徹底違約",
+      "domain": "civil"
+    },
+    {
+      "en": "ratification",
+      "zh": "追認",
+      "domain": "international"
+    },
+    {
+      "en": "recklessness",
+      "zh": "罔顧後果 ☛參看 Caldwell recklessness; Cunningham recklessness",
+      "domain": "criminal"
+    },
+    {
+      "en": "reconciliation",
+      "zh": "和解期",
+      "domain": "procedure"
+    },
+    {
+      "en": "rejoinder",
+      "zh": "被告對原告的第二次答辯",
+      "domain": "procedure"
+    },
+    {
+      "en": "re-mortgage",
+      "zh": "再抵押",
+      "domain": "civil"
+    },
+    {
+      "en": "reprobation",
+      "zh": "反對證人的資格、證供等",
+      "domain": "criminal"
+    },
+    {
+      "en": "republication of a will",
+      "zh": "恢復已撤銷的遺囑 ※比較 publication of a will",
+      "domain": "constitutional"
+    },
+    {
+      "en": "res judicata",
+      "zh": "既判案件",
+      "domain": "procedure"
+    },
+    {
+      "en": "rescission",
+      "zh": "廢除",
+      "domain": "civil"
+    },
+    {
+      "en": "restitution",
+      "zh": "復還",
+      "domain": "civil"
+    },
+    {
+      "en": "sick leave",
+      "zh": "病假",
+      "domain": "labor_social"
+    },
+    {
+      "en": "sitting tenant",
+      "zh": "現時租客",
+      "domain": "civil"
+    },
+    {
+      "en": "sovereign state",
+      "zh": "主權國",
+      "domain": "constitutional"
+    },
+    {
+      "en": "sovereignty",
+      "zh": "主權",
+      "domain": "constitutional"
+    },
+    {
+      "en": "strike",
+      "zh": "罷工 ※比較 go-slow",
+      "domain": "labor_social"
+    },
+    {
+      "en": "subpoena",
+      "zh": "傳召證人出庭令",
+      "domain": "procedure"
+    },
+    {
+      "en": "subpoena ad respondendum",
+      "zh": "傳召到庭答辯令狀☛參看 writ of subpoena ad respondendum",
+      "domain": "procedure"
+    },
+    {
+      "en": "subpoena ad testificandum",
+      "zh": "着令出庭作證的傳召出庭令狀☛參看writ of subpoena ad testificandum",
+      "domain": "procedure"
+    },
+    {
+      "en": "subpoena duces tecum",
+      "zh": "着令攜帶文件出庭的傳召出庭令狀",
+      "domain": "procedure"
+    },
+    {
+      "en": "subrogation",
+      "zh": "代位",
+      "domain": "civil"
+    },
+    {
+      "en": "sub-tenant",
+      "zh": "分租客",
+      "domain": "civil"
+    },
+    {
+      "en": "succession",
+      "zh": "繼任",
+      "domain": "civil"
+    },
+    {
+      "en": "suffrage",
+      "zh": "普選",
+      "domain": "constitutional"
+    },
+    {
+      "en": "summons",
+      "zh": "傳票",
+      "domain": "procedure"
+    },
+    {
+      "en": "surety",
+      "zh": "守行為擔保人",
+      "domain": "civil"
+    },
+    {
+      "en": "suretyship",
+      "zh": "擔保",
+      "domain": "civil"
+    },
+    {
+      "en": "surrejoinder",
+      "zh": "原告的第二次辯駁",
+      "domain": "procedure"
+    },
+    {
+      "en": "sympathetic consideration",
+      "zh": "體恤處理",
+      "domain": "civil"
+    },
+    {
+      "en": "tenant",
+      "zh": "退租租户",
+      "domain": "civil"
+    },
+    {
+      "en": "tenantable",
+      "zh": "處於良好的可租用狀況",
+      "domain": "civil"
+    },
+    {
+      "en": "testamentary",
+      "zh": "遺囑性質的",
+      "domain": "civil"
+    },
+    {
+      "en": "testate",
+      "zh": "按遺囑處理的",
+      "domain": "civil"
+    },
+    {
+      "en": "testation",
+      "zh": "以遺囑處置財產",
+      "domain": "civil"
+    },
+    {
+      "en": "testator",
+      "zh": "立遺囑人",
+      "domain": "civil"
+    },
+    {
+      "en": "testatrix",
+      "zh": "女立遺囑人",
+      "domain": "civil"
+    },
+    {
+      "en": "tort",
+      "zh": "經濟侵權",
+      "domain": "civil"
+    },
+    {
+      "en": "tortfeasor",
+      "zh": "侵權行為者",
+      "domain": "civil"
+    },
+    {
+      "en": "torture",
+      "zh": "酷刑",
+      "domain": "civil"
+    },
+    {
+      "en": "treaty",
+      "zh": "條約",
+      "domain": "international"
+    },
+    {
+      "en": "trespass",
+      "zh": "侵害",
+      "domain": "civil"
+    },
+    {
+      "en": "trespass de bonis asportatis",
+      "zh": "侵害動產行為",
+      "domain": "civil"
+    },
+    {
+      "en": "trespass quare clausum fregit",
+      "zh": "侵入土地",
+      "domain": "civil"
+    },
+    {
+      "en": "trespass vi",
+      "zh": "對人或對物的侵犯",
+      "domain": "civil"
+    },
+    {
+      "en": "trespasser",
+      "zh": "對土地全無權益的闖入者",
+      "domain": "civil"
+    },
+    {
+      "en": "trustee",
+      "zh": "擅自處理他人信託的人",
+      "domain": "civil"
+    },
+    {
+      "en": "ultra vires",
+      "zh": "越權的 ※比較 intra vires",
+      "domain": "administrative"
+    },
+    {
+      "en": "unconstitutional",
+      "zh": "不合憲法的",
+      "domain": "constitutional"
+    },
+    {
+      "en": "underlease",
+      "zh": "分租約",
+      "domain": "civil"
+    },
+    {
+      "en": "unleased land",
+      "zh": "未批租土地",
+      "domain": "civil"
+    },
+    {
+      "en": "unpatented",
+      "zh": "未受專利權保護的",
+      "domain": "civil"
+    },
+    {
+      "en": "unskilled labour",
+      "zh": "非技術勞工",
+      "domain": "labor_social"
+    },
+    {
+      "en": "veto",
+      "zh": "否決",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Wednesbury principles",
+      "zh": "韋恩斯伯里原則〔關於酌情權行使的合理性測試原則〕",
+      "domain": "administrative"
+    },
+    {
+      "en": "tortious act",
+      "zh": "侵權行為",
+      "domain": "civil"
+    },
+    {
+      "en": "class action",
+      "zh": "集體訴訟",
+      "domain": "procedure"
+    },
+    {
+      "en": "industrial action",
+      "zh": "工業行動",
+      "domain": "labor_social"
+    },
+    {
+      "en": "self-proving affidavit",
+      "zh": "遺囑確認誓章〔附在遺囑後面由見證人簽署的誓章〕",
+      "domain": "procedure"
+    },
+    {
+      "en": "multilateral agreement",
+      "zh": "多邊協議",
+      "domain": "international"
+    },
+    {
+      "en": "on indemnity basis",
+      "zh": "按彌償基準（評定訟費）",
+      "domain": "civil"
+    },
+    {
+      "en": "repudiatory breach of contract",
+      "zh": "廢除性違約〔可導致對方拒絕履行合約的違約行為〕",
+      "domain": "civil"
+    },
+    {
+      "en": "trespass on the case",
+      "zh": "侵權訴訟",
+      "domain": "civil"
+    },
+    {
+      "en": "testatum clause",
+      "zh": "契據正文的開始條款〔\"（各方）現訂立（本契據等）如下﹕……\"〕",
+      "domain": "civil"
+    },
+    {
+      "en": "past consideration",
+      "zh": "以過去的事物作為代價",
+      "domain": "civil"
+    },
+    {
+      "en": "valuable consideration",
+      "zh": "有值代價",
+      "domain": "civil"
+    },
+    {
+      "en": "may it please the court",
+      "zh": "請法庭（聆聽）……〔律師在法庭上陳詞時的開場白〕",
+      "domain": "civil"
+    },
+    {
+      "en": "curtilage covenant",
+      "zh": "工地範圍契諾",
+      "domain": "international"
+    },
+    {
+      "en": "restrictive covenant",
+      "zh": "限制性契諾",
+      "domain": "international"
+    },
+    {
+      "en": "rest day",
+      "zh": "休息日",
+      "domain": "labor_social"
+    },
+    {
+      "en": "pre-claim disclosure",
+      "zh": "申索前的披露",
+      "domain": "procedure"
+    },
+    {
+      "en": "staged disclosure",
+      "zh": "分階段披露",
+      "domain": "procedure"
+    },
+    {
+      "en": "pre-contractual document",
+      "zh": "訂約前文件",
+      "domain": "civil"
+    },
+    {
+      "en": "eminent domain",
+      "zh": "國家徵用權",
+      "domain": "administrative"
+    },
+    {
+      "en": "provident fund",
+      "zh": "強制性公積金計劃管理局",
+      "domain": "labor_social"
+    },
+    {
+      "en": "without interruption by the landlord",
+      "zh": "不受業主干擾",
+      "domain": "civil"
+    },
+    {
+      "en": "martial law",
+      "zh": "戒嚴令",
+      "domain": "constitutional"
+    },
+    {
+      "en": "rights-based mediation",
+      "zh": "兼顧各方權利的調解",
+      "domain": "procedure"
+    },
+    {
+      "en": "negligent misrepresentation",
+      "zh": "疏忽的失實陳述",
+      "domain": "civil"
+    },
+    {
+      "en": "subornation of perjury",
+      "zh": "唆使他人作偽證",
+      "domain": "criminal"
+    },
+    {
+      "en": "non-competition covenant",
+      "zh": "不競爭契諾",
+      "domain": "international"
+    },
+    {
+      "en": "consular",
+      "zh": "職業領事官員",
+      "domain": "international"
+    },
+    {
+      "en": "diplomatic",
+      "zh": "外交豁免權",
+      "domain": "international"
+    },
+    {
+      "en": "equality",
+      "zh": "平等",
+      "domain": "constitutional"
+    },
+    {
+      "en": "European Patent Organization",
+      "zh": "歐洲專利組織",
+      "domain": "civil"
+    },
+    {
+      "en": "extradition",
+      "zh": "引渡至……的法律程序",
+      "domain": "international"
+    },
+    {
+      "en": "International Bureau of Intellectual Property",
+      "zh": "知識產權國際局",
+      "domain": "civil"
+    },
+    {
+      "en": "International Labour Office",
+      "zh": "國際勞工局",
+      "domain": "labor_social"
+    },
+    {
+      "en": "International Labour Organization",
+      "zh": "國際勞工組織",
+      "domain": "labor_social"
+    },
+    {
+      "en": "State Intellectual Property Office",
+      "zh": "國家知識產權局",
+      "domain": "civil"
+    },
+    {
+      "en": "United Kingdom Patent Office",
+      "zh": "聯合王國專利局",
+      "domain": "civil"
+    },
+    {
+      "en": "Universal Declaration of Human Rights",
+      "zh": "《世界人權宣言》",
+      "domain": "constitutional"
+    },
+    {
+      "en": "World Intellectual Property Organization",
+      "zh": "世界知識產權組織",
+      "domain": "civil"
+    },
+    {
+      "en": "multilateral",
+      "zh": "多邊協定",
+      "domain": "international"
+    },
+    {
+      "en": "sovereign",
+      "zh": "主權國政府",
+      "domain": "constitutional"
+    },
+    {
+      "en": "stateless",
+      "zh": "無國籍人",
+      "domain": "international"
+    },
+    {
+      "en": "genocide",
+      "zh": "《防止及懲治危害種族罪公約》",
+      "domain": "international"
+    },
+    {
+      "en": "accession",
+      "zh": "加入書",
+      "domain": "international"
+    },
+    {
+      "en": "accessory",
+      "zh": "從犯",
+      "domain": "criminal"
+    },
+    {
+      "en": "accomplice",
+      "zh": "從犯證據",
+      "domain": "criminal"
+    },
+    {
+      "en": "accused",
+      "zh": "被控人……提出異議",
+      "domain": "criminal"
+    },
+    {
+      "en": "acquittal",
+      "zh": "判予無罪的理由",
+      "domain": "criminal"
+    },
+    {
+      "en": "admissibility",
+      "zh": "招認的可接納性",
+      "domain": "procedure"
+    },
+    {
+      "en": "admissible",
+      "zh": "可接納",
+      "domain": "procedure"
+    },
+    {
+      "en": "amendment",
+      "zh": "關鍵性的修改",
+      "domain": "constitutional"
+    },
+    {
+      "en": "approbation",
+      "zh": "認可",
+      "domain": "criminal"
+    },
+    {
+      "en": "appurtenant",
+      "zh": "從屬",
+      "domain": "civil"
+    },
+    {
+      "en": "assault",
+      "zh": "猥褻侵犯",
+      "domain": "criminal"
+    },
+    {
+      "en": "asylum",
+      "zh": "庇護條約",
+      "domain": "international"
+    },
+    {
+      "en": "bailable offence",
+      "zh": "可保釋的罪行",
+      "domain": "criminal"
+    },
+    {
+      "en": "Basic Law",
+      "zh": "基本法",
+      "domain": "constitutional"
+    },
+    {
+      "en": "battery",
+      "zh": "毆打",
+      "domain": "criminal"
+    },
+    {
+      "en": "blackmail",
+      "zh": "勒索式的申索",
+      "domain": "criminal"
+    },
+    {
+      "en": "burden of proof",
+      "zh": "舉證責任",
+      "domain": "procedure"
+    },
+    {
+      "en": "burglary",
+      "zh": "住宅爆竊案",
+      "domain": "criminal"
+    },
+    {
+      "en": "cause of action",
+      "zh": "在基於同一訴因的一切法律程序中",
+      "domain": "procedure"
+    },
+    {
+      "en": "citizenship",
+      "zh": "公民身分",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Civil Procedure Convention",
+      "zh": "民事訴訟程序公約",
+      "domain": "international"
+    },
+    {
+      "en": "co-accused",
+      "zh": "同案被告",
+      "domain": "criminal"
+    },
+    {
+      "en": "Comprehensive Social Security Assistance Scheme",
+      "zh": "綜合社會保障援助計劃",
+      "domain": "labor_social"
+    },
+    {
+      "en": "congress",
+      "zh": "國家級、地區級或市級國會",
+      "domain": "constitutional"
+    },
+    {
+      "en": "conspiracy",
+      "zh": "串謀敗壞公眾道德",
+      "domain": "criminal"
+    },
+    {
+      "en": "constitute",
+      "zh": "是單一人",
+      "domain": "constitutional"
+    },
+    {
+      "en": "contractually",
+      "zh": "明示及有合約責任按通知付還的定期資金",
+      "domain": "civil"
+    },
+    {
+      "en": "Convention on Psychotropic Substances",
+      "zh": "精神藥物公約",
+      "domain": "international"
+    },
+    {
+      "en": "Convention on Temporary Admission",
+      "zh": "暫准進口公約",
+      "domain": "international"
+    },
+    {
+      "en": "conventional",
+      "zh": "常規",
+      "domain": "international"
+    },
+    {
+      "en": "Copyright Register",
+      "zh": "版權註冊紀錄冊",
+      "domain": "civil"
+    },
+    {
+      "en": "co-surety",
+      "zh": "共同擔保人",
+      "domain": "civil"
+    },
+    {
+      "en": "co-trustee",
+      "zh": "共同受託人",
+      "domain": "civil"
+    },
+    {
+      "en": "covenantee",
+      "zh": "契諾受益人",
+      "domain": "international"
+    },
+    {
+      "en": "covenantor",
+      "zh": "契諾承諾人",
+      "domain": "international"
+    },
+    {
+      "en": "criminal law",
+      "zh": "普通刑事法",
+      "domain": "criminal"
+    },
+    {
+      "en": "Deed of Mutual Covenant",
+      "zh": "公契",
+      "domain": "international"
+    },
+    {
+      "en": "distortion",
+      "zh": "扭曲",
+      "domain": "civil"
+    },
+    {
+      "en": "electoral",
+      "zh": "選舉法",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Electoral Registration Officer",
+      "zh": "選舉登記主任",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Employees Compensation Assistance Fund",
+      "zh": "僱員補償援助基金",
+      "domain": "labor_social"
+    },
+    {
+      "en": "envoy",
+      "zh": "公使",
+      "domain": "international"
+    },
+    {
+      "en": "executorship",
+      "zh": "放棄遺囑執行",
+      "domain": "civil"
+    },
+    {
+      "en": "extortion",
+      "zh": "脅迫",
+      "domain": "criminal"
+    },
+    {
+      "en": "extortionate",
+      "zh": "敲詐性",
+      "domain": "criminal"
+    },
+    {
+      "en": "felony",
+      "zh": "重刑罪",
+      "domain": "criminal"
+    },
+    {
+      "en": "first instance",
+      "zh": "原審法庭",
+      "domain": "procedure"
+    },
+    {
+      "en": "forgery",
+      "zh": "偽造",
+      "domain": "criminal"
+    },
+    {
+      "en": "franchised",
+      "zh": "專利巴士",
+      "domain": "constitutional"
+    },
+    {
+      "en": "franchisee",
+      "zh": "獲授專營權者",
+      "domain": "constitutional"
+    },
+    {
+      "en": "franchiser",
+      "zh": "專營權授予者",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Geneva Convention",
+      "zh": "日內瓦公約",
+      "domain": "international"
+    },
+    {
+      "en": "Geneva Conventions",
+      "zh": "日內瓦各項公約",
+      "domain": "international"
+    },
+    {
+      "en": "Genocide Convention",
+      "zh": "危害種族罪公約",
+      "domain": "international"
+    },
+    {
+      "en": "Government Laboratory",
+      "zh": "政府化驗所",
+      "domain": "labor_social"
+    },
+    {
+      "en": "habeas corpus",
+      "zh": "人身保護令",
+      "domain": "constitutional"
+    },
+    {
+      "en": "habeas corpus ad respondendum",
+      "zh": "解交被拘押者到庭答辯令狀",
+      "domain": "constitutional"
+    },
+    {
+      "en": "habeas corpus ad subjiciendum",
+      "zh": "解交被拘押者並說明其拘押日期及原因令狀",
+      "domain": "constitutional"
+    },
+    {
+      "en": "habeas corpus ad testificandum",
+      "zh": "解交被拘押者到庭作證令狀",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Hague Convention",
+      "zh": "海牙公約",
+      "domain": "international"
+    },
+    {
+      "en": "Head of State",
+      "zh": "國家元首",
+      "domain": "constitutional"
+    },
+    {
+      "en": "homicide",
+      "zh": "殺人罪",
+      "domain": "criminal"
+    },
+    {
+      "en": "Hong Kong Special Administrative Region",
+      "zh": "香港特別行政區",
+      "domain": "administrative"
+    },
+    {
+      "en": "imprisonment",
+      "zh": "串謀非法禁錮",
+      "domain": "criminal"
+    },
+    {
+      "en": "in the first instance",
+      "zh": "先行",
+      "domain": "procedure"
+    },
+    {
+      "en": "Independent Commission Against Corruption",
+      "zh": "廉政公署",
+      "domain": "criminal"
+    },
+    {
+      "en": "indictment",
+      "zh": "多條罪名的公訴書",
+      "domain": "criminal"
+    },
+    {
+      "en": "laboratory",
+      "zh": "檢驗所",
+      "domain": "labor_social"
+    },
+    {
+      "en": "labour",
+      "zh": "勞資糾紛",
+      "domain": "labor_social"
+    },
+    {
+      "en": "labouring",
+      "zh": "損害防止條款",
+      "domain": "labor_social"
+    },
+    {
+      "en": "Land Titles Indemnity Fund",
+      "zh": "土地業權彌償基金",
+      "domain": "civil"
+    },
+    {
+      "en": "larceny",
+      "zh": "在普通法的盜竊罪",
+      "domain": "criminal"
+    },
+    {
+      "en": "legal custody",
+      "zh": "合法羈留",
+      "domain": "civil"
+    },
+    {
+      "en": "legislature",
+      "zh": "立法機關",
+      "domain": "constitutional"
+    },
+    {
+      "en": "limitation period",
+      "zh": "時效期限",
+      "domain": "procedure"
+    },
+    {
+      "en": "manslaughter",
+      "zh": "誤殺",
+      "domain": "criminal"
+    },
+    {
+      "en": "Minor Offences Report",
+      "zh": "輕微違紀行為報告",
+      "domain": "criminal"
+    },
+    {
+      "en": "mortgaged",
+      "zh": "已作按揭的",
+      "domain": "civil"
+    },
+    {
+      "en": "murder",
+      "zh": "慫使和促致謀殺",
+      "domain": "criminal"
+    },
+    {
+      "en": "National People's Congress",
+      "zh": "全國人民代表大會代表",
+      "domain": "constitutional"
+    },
+    {
+      "en": "New York Convention",
+      "zh": "紐約公約",
+      "domain": "international"
+    },
+    {
+      "en": "non-employer",
+      "zh": "非僱主受託人",
+      "domain": "labor_social"
+    },
+    {
+      "en": "overtime",
+      "zh": "超時工作",
+      "domain": "labor_social"
+    },
+    {
+      "en": "Paris Convention",
+      "zh": "巴黎公約",
+      "domain": "international"
+    },
+    {
+      "en": "parole",
+      "zh": "假釋許可",
+      "domain": "criminal"
+    },
+    {
+      "en": "Patent Cooperation Treaty",
+      "zh": "專利合作條約",
+      "domain": "international"
+    },
+    {
+      "en": "patentability",
+      "zh": "可享專利性",
+      "domain": "civil"
+    },
+    {
+      "en": "patentable",
+      "zh": "可享專利",
+      "domain": "civil"
+    },
+    {
+      "en": "patentee",
+      "zh": "專利持有人",
+      "domain": "civil"
+    },
+    {
+      "en": "People's Republic of China",
+      "zh": "中華人民共和國",
+      "domain": "constitutional"
+    },
+    {
+      "en": "probation",
+      "zh": "感化令",
+      "domain": "criminal"
+    },
+    {
+      "en": "probationary",
+      "zh": "試用條款",
+      "domain": "criminal"
+    },
+    {
+      "en": "probationer",
+      "zh": "受感化者",
+      "domain": "criminal"
+    },
+    {
+      "en": "probationership",
+      "zh": "見習課程",
+      "domain": "criminal"
+    },
+    {
+      "en": "prosecution",
+      "zh": "舉證責任在於控方",
+      "domain": "criminal"
+    },
+    {
+      "en": "reconstitute",
+      "zh": "重組",
+      "domain": "constitutional"
+    },
+    {
+      "en": "re-employment",
+      "zh": "再度受聘",
+      "domain": "labor_social"
+    },
+    {
+      "en": "remand",
+      "zh": "還押看守",
+      "domain": "criminal"
+    },
+    {
+      "en": "repledge",
+      "zh": "再質押",
+      "domain": "civil"
+    },
+    {
+      "en": "Residual Provident Fund Scheme",
+      "zh": "補遺公積金計劃",
+      "domain": "labor_social"
+    },
+    {
+      "en": "Rhine Navigation Convention",
+      "zh": "萊茵河航行公約",
+      "domain": "international"
+    },
+    {
+      "en": "robbery",
+      "zh": "持械搶劫",
+      "domain": "criminal"
+    },
+    {
+      "en": "Rome Convention",
+      "zh": "羅馬公約",
+      "domain": "international"
+    },
+    {
+      "en": "Senate",
+      "zh": "教務委員會",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Single Convention on Narcotic Drugs",
+      "zh": "麻醉品單一公約",
+      "domain": "international"
+    },
+    {
+      "en": "Social Security Allowance Scheme",
+      "zh": "公共福利金計劃",
+      "domain": "labor_social"
+    },
+    {
+      "en": "solicitor-trustee",
+      "zh": "受託人律師",
+      "domain": "civil"
+    },
+    {
+      "en": "sub-lease",
+      "zh": "分租",
+      "domain": "civil"
+    },
+    {
+      "en": "sub-mortgage",
+      "zh": "轉押",
+      "domain": "civil"
+    },
+    {
+      "en": "Tenants Purchase Scheme",
+      "zh": "租者置其屋計劃",
+      "domain": "civil"
+    },
+    {
+      "en": "theft",
+      "zh": "失竊",
+      "domain": "criminal"
+    },
+    {
+      "en": "Treaty on European Union",
+      "zh": "歐洲聯盟條約",
+      "domain": "international"
+    },
+    {
+      "en": "trusteeship",
+      "zh": "託管",
+      "domain": "civil"
+    },
+    {
+      "en": "under-lease",
+      "zh": "分租租契",
+      "domain": "civil"
+    },
+    {
+      "en": "Vienna Convention on Consular Relations",
+      "zh": "維也納領事關係公約",
+      "domain": "international"
+    },
+    {
+      "en": "European Patent Office",
+      "zh": "歐洲專利局",
+      "domain": "civil"
+    },
+    {
+      "en": "Hong Kong Laboratory Accreditation Scheme",
+      "zh": "香港實驗所認可計劃",
+      "domain": "labor_social"
+    },
+    {
+      "en": "distorted",
+      "zh": "以歪曲或貶損的方式",
+      "domain": "civil"
+    },
+    {
+      "en": "tortious",
+      "zh": "基於侵權而提出的申索",
+      "domain": "civil"
+    },
+    {
+      "en": "non-prosecution",
+      "zh": "上訴因遲滯進行而被駁回",
+      "domain": "criminal"
+    },
+    {
+      "en": "leased",
+      "zh": "批租地區",
+      "domain": "civil"
+    },
+    {
+      "en": "Treaties on Asylum",
+      "zh": "庇護條約",
+      "domain": "international"
+    },
+    {
+      "en": "refugee",
+      "zh": "越南難民證",
+      "domain": "international"
+    },
+    {
+      "en": "non-contractual",
+      "zh": "非合約或有出資義務",
+      "domain": "civil"
+    },
+    {
+      "en": "pledged",
+      "zh": "質押存款",
+      "domain": "civil"
+    },
+    {
+      "en": "trade union",
+      "zh": "組織及加入工會之權利",
+      "domain": "labor_social"
+    },
+    {
+      "en": "joinder of issue",
+      "zh": "默示就……有爭論點提出",
+      "domain": "procedure"
+    },
+    {
+      "en": "unleased",
+      "zh": "佔用未批租土地",
+      "domain": "civil"
+    },
+    {
+      "en": "rule of law",
+      "zh": "一般法律規則",
+      "domain": "constitutional"
+    },
+    {
+      "en": "stratification",
+      "zh": "社會分層",
+      "domain": "international"
+    },
+    {
+      "en": "Administrative Secretary",
+      "zh": "政務司長",
+      "domain": "administrative"
+    },
+    {
+      "en": "Covenant",
+      "zh": "公民權利和政治權利國際公約",
+      "domain": "international"
+    },
+    {
+      "en": "Hong Kong Bill of Rights",
+      "zh": "香港人權法案",
+      "domain": "constitutional"
+    },
+    {
+      "en": "Resolution of the Legislative Council",
+      "zh": "立法局決議",
+      "domain": "constitutional"
+    },
+    {
+      "en": "criminally",
+      "zh": "構成刑事罪行",
+      "domain": "criminal"
+    },
+    {
+      "en": "non-parole",
+      "zh": "不准假釋期",
+      "domain": "criminal"
+    },
+    {
+      "en": "actus reus",
+      "zh": "犯罪行為",
+      "domain": "criminal"
+    },
+    {
+      "en": "arraignment",
+      "zh": "公訴提控",
+      "domain": "criminal"
+    },
+    {
+      "en": "co-tenant",
+      "zh": "共有人",
+      "domain": "civil"
+    },
+    {
+      "en": "criminalise",
+      "zh": "刑事化",
+      "domain": "criminal"
+    },
+    {
+      "en": "disenfranchise",
+      "zh": "剝奪權利",
+      "domain": "constitutional"
+    },
+    {
+      "en": "enfranchisement",
+      "zh": "賦權予租客購置批租土地的永久產權",
+      "domain": "constitutional"
+    },
+    {
+      "en": "mens rea",
+      "zh": "犯罪意圖",
+      "domain": "criminal"
+    },
+    {
+      "en": "gratification",
+      "zh": "變態的性滿足",
+      "domain": "international"
+    },
+    {
+      "en": "quasi-penal",
+      "zh": "類似懲罰性",
+      "domain": "criminal"
+    },
+    {
+      "en": "sentencing",
+      "zh": "量刑指引",
+      "domain": "criminal"
+    },
+    {
+      "en": "going equipped for burglary",
+      "zh": "外出時備有入屋犯法用的物品",
+      "domain": "criminal"
+    },
+    {
+      "en": "restitutionary",
+      "zh": "復還性質的補救方法",
+      "domain": "civil"
+    },
+    {
+      "en": "Sexual Conviction Record Check Scheme",
+      "zh": "性罪行定罪紀錄查核機制",
+      "domain": "criminal"
+    },
+    {
+      "en": "quasi-class action",
+      "zh": "類似集體訴訟",
+      "domain": "procedure"
+    },
+    {
+      "en": "appellate",
+      "zh": "審理上訴的法官",
+      "domain": "procedure"
+    },
+    {
+      "en": "criminality",
+      "zh": "刑責",
+      "domain": "criminal"
+    },
+    {
+      "en": "incarceration",
+      "zh": "監禁",
+      "domain": "criminal"
+    },
+    {
+      "en": "patently",
+      "zh": "明顯欠缺論據的陳詞",
+      "domain": "civil"
+    },
+    {
+      "en": "pre-sentencing",
+      "zh": "判刑前的報告",
+      "domain": "criminal"
+    },
+    {
+      "en": "recidivist",
+      "zh": "屢犯者",
+      "domain": "criminal"
+    },
+    {
+      "en": "European Court of Human Rights",
+      "zh": "歐洲人權法院",
+      "domain": "constitutional"
+    },
+    {
+      "en": "post-release",
+      "zh": "釋後監管",
+      "domain": "civil"
+    },
+    {
+      "en": "recidivism",
+      "zh": "再犯風險",
+      "domain": "criminal"
+    },
+    {
+      "en": "European Convention on Human Rights",
+      "zh": "《歐洲人權公約》",
+      "domain": "international"
+    },
+    {
+      "en": "criminalisation",
+      "zh": "過度刑事化",
+      "domain": "criminal"
+    },
+    {
+      "en": "innovation",
+      "zh": "創新科技及工業局局長",
+      "domain": "civil"
+    },
+    {
+      "en": "civil service",
+      "zh": "公務員事務局局長",
+      "domain": "administrative"
+    },
+    {
+      "en": "Labour Department",
+      "zh": "勞工處",
+      "domain": "labor_social"
+    },
+    {
+      "en": "China National Intellectual Property Administration",
+      "zh": "國家知識產權局",
+      "domain": "civil"
+    },
+    {
+      "en": "International Labour Conference",
+      "zh": "國際勞工大會",
+      "domain": "labor_social"
+    },
+    {
+      "en": "sublease",
+      "zh": "分租租約",
+      "domain": "civil"
+    },
+    {
+      "en": "distort",
+      "zh": "歪曲",
+      "domain": "civil"
+    },
+    {
+      "en": "Multilateral Investment Guarantee Agency",
+      "zh": "多邊投資擔保機構",
+      "domain": "international"
+    }
+  ]
+}

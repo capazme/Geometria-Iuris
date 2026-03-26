@@ -152,6 +152,44 @@ The `--device cpu` flag is now the default.
 → §2.3 Models as cultural informants — the reproducibility guarantee is
 important for scientific claims.
 
+### D5 — §3.1.3c Neighborhood Trajectory Analysis (NTA)
+**Options considered**:
+- Option A: Show k-NN list at every layer for selected terms (full table)
+- Option B: Show only entry/exit events (delta-based: which terms enter/exit
+  the neighborhood at each transition)
+- Option C: Both — full table with entry/exit highlighting
+
+**Decision**: Option C — Full k-NN table with entry/exit annotations
+**Rationale**: The quantitative metrics (drift, Jaccard) show *how much* a
+neighborhood changes; the NTA shows *what* changes. Specific examples
+make the thesis argument concrete: "at layer 12, 'corruption' loses its
+general neighbors and gains criminal law terms" is more compelling than
+"Jaccard increases at layer 12". The NTA also serves as qualitative
+validation of the Jaccard metric.
+
+The neighbor pool includes **core legal terms** (397) and **control terms**
+(100 Swadesh-like non-legal words), allowing detection of the legal/non-legal
+boundary shift across layers. This design choice quantifies the transition
+from general-purpose to domain-specific representations.
+
+Selected terms (criteria: polysemy between legal domains or legal/general):
+- **negligence**: moral/everyday → civil law
+- **sovereignty**: political → constitutional/international law
+- **corruption**: moral/governance → criminal law
+- **comity**: everyday courtesy → international law
+- **adoption**: everyday → civil (family) law
+- **strike**: military/everyday → labor law
+- **disclosure**: everyday → procedural law
+- **franchise**: commercial → constitutional law
+
+All 6 models. EN terms for WEIRD models, ZH translations for Sinic models.
+
+**Thesis text implication**: → §3.1.3 The depth of legal meaning — the
+NTA provides narrative examples that anchor the quantitative curves.
+These examples can be cited directly in the thesis text as evidence of the
+"letterale → sistematico" transition. The legal/control ratio at each layer
+quantifies the depth at which domain-specific meaning crystallizes.
+
 ---
 
 ## Open questions

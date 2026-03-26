@@ -28,17 +28,10 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-# ---------------------------------------------------------------------------
-# Style — Okabe-Ito colorblind-safe palette
-# ---------------------------------------------------------------------------
-
-C_BLUE   = "#0072B2"
-C_ORANGE = "#E69F00"
-C_GREEN  = "#009E73"
-C_SKY    = "#56B4E9"
-C_VERMIL = "#D55E00"
-C_PURPLE = "#CC79A7"
-C_BLACK  = "#000000"
+from shared.html_style import (
+    CSS, C_BLUE, C_ORANGE, C_GREEN, C_SKY, C_VERMIL, C_PURPLE, C_BLACK,
+    format_p, page_head, plots_script, tabs_bar,
+)
 
 DPI = 300
 
@@ -352,40 +345,6 @@ def fig_rsa_null(results_dir: Path, results: dict, save_dir: Path) -> Path:
 # Interactive HTML — Plotly helpers
 # ---------------------------------------------------------------------------
 
-def _pj_domains_bar(results: dict) -> str:
-    domain_counts = results["section_311"]["domain_counts"]
-    domains = sorted(domain_counts, key=domain_counts.__getitem__, reverse=True)
-    fig = go.Figure(go.Bar(
-        x=domains, y=[domain_counts[d] for d in domains],
-        marker_color=C_BLUE, opacity=0.85,
-    ))
-    fig.update_layout(
-        title="§3.1.1 — Background domain distribution",
-        xaxis_title="Domain", yaxis_title="Term count",
-        template="simple_white", height=400,
-    )
-    return fig.to_json()
-
-
-def _pj_confidence_hist(results_dir: Path, results: dict) -> str:
-    confidences = []
-    with open(results_dir / "background_review.csv", newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            confidences.append(float(row["confidence"]))
-    threshold = results["section_311"]["low_confidence_threshold"]
-    fig = go.Figure()
-    fig.add_trace(go.Histogram(x=confidences, nbinsx=40, marker_color=C_BLUE,
-                               opacity=0.8, name="Confidence"))
-    fig.add_vline(x=threshold, line_dash="dash", line_color=C_VERMIL,
-                  annotation_text=f"Threshold {threshold:.2f}")
-    fig.update_layout(
-        title="§3.1.1 — k-NN confidence distribution",
-        xaxis_title="Confidence", yaxis_title="Count",
-        template="simple_white", height=400, showlegend=False,
-    )
-    return fig.to_json()
-
-
 def _downsample(arr: np.ndarray, max_n: int = 5000) -> np.ndarray:
     """Downsample array for Plotly violin (KDE is stable at ~5k points)."""
     if len(arr) <= max_n:
@@ -394,9 +353,13 @@ def _downsample(arr: np.ndarray, max_n: int = 5000) -> np.ndarray:
     return rng.choice(arr, size=max_n, replace=False)
 
 
-def _pj_violin_intra_inter(results_dir: Path, weird_labels: list[str]) -> str:
+def _pj_violin_intra_inter(
+    results_dir: Path, results: dict, weird_labels: list[str],
+) -> str:
+    """Violin: intra vs inter-domain distances, with stat annotations."""
     dist_dir = results_dir / "distances"
-    fig = make_subplots(cols=3, rows=1,
+    per_model = results["section_31"]["per_model"]
+    fig = make_subplots(cols=3, rows=1, horizontal_spacing=0.08,
                         subplot_titles=[_short(l) for l in weird_labels])
     for i, label in enumerate(weird_labels, 1):
         path = dist_dir / f"{label}.npz"
@@ -404,22 +367,40 @@ def _pj_violin_intra_inter(results_dir: Path, weird_labels: list[str]) -> str:
             continue
         npz = np.load(path)
         for arr, name, color in [
-            (npz["intra"], "Intra", C_SKY),
-            (npz["inter"], "Inter", C_ORANGE),
+            (npz["intra"], "Intra-domain", C_SKY),
+            (npz["inter"], "Inter-domain", C_ORANGE),
         ]:
             fig.add_trace(go.Violin(
                 y=_downsample(arr), name=name, box_visible=True,
                 meanline_visible=True, fillcolor=color, line_color=C_BLACK,
                 opacity=0.75, showlegend=(i == 1),
             ), row=1, col=i)
-    fig.update_layout(title="§3.1.1 — Intra vs inter-domain distances",
-                      template="simple_white", height=500, violinmode="group")
+        mw = per_model[label]["intra_vs_inter"]
+        fig.add_annotation(
+            text=(f"r = {mw['effect_r']:+.3f}<br>"
+                  f"med: {mw['median_x']:.3f} vs {mw['median_y']:.3f}"),
+            xref=f"x{'' if i == 1 else i} domain",
+            yref=f"y{'' if i == 1 else i} domain",
+            x=0.5, y=1.0, showarrow=False,
+            font=dict(size=11), bgcolor="rgba(255,255,255,0.85)",
+            bordercolor="#ccc", borderwidth=1, borderpad=4,
+        )
+    fig.update_layout(
+        template="simple_white", height=450, violinmode="group",
+        margin=dict(t=50, b=40),
+    )
+    for i in range(1, 4):
+        fig.update_yaxes(title_text="Cosine distance" if i == 1 else "", row=1, col=i)
     return fig.to_json()
 
 
-def _pj_violin_legal_control(results_dir: Path, weird_labels: list[str]) -> str:
+def _pj_violin_legal_control(
+    results_dir: Path, results: dict, weird_labels: list[str],
+) -> str:
+    """Violin: legal vs control distances, with stat annotations."""
     dist_dir = results_dir / "distances"
-    fig = make_subplots(cols=3, rows=1,
+    per_model = results["section_31"]["per_model"]
+    fig = make_subplots(cols=3, rows=1, horizontal_spacing=0.08,
                         subplot_titles=[_short(l) for l in weird_labels])
     for i, label in enumerate(weird_labels, 1):
         path = dist_dir / f"{label}.npz"
@@ -427,69 +408,202 @@ def _pj_violin_legal_control(results_dir: Path, weird_labels: list[str]) -> str:
             continue
         npz = np.load(path)
         for arr, name, color in [
-            (npz["legal"], "Legal", C_BLUE),
-            (npz["control"], "Control", C_VERMIL),
+            (npz["legal"], "Legal-legal", C_BLUE),
+            (npz["control"], "Legal-control", C_VERMIL),
         ]:
             fig.add_trace(go.Violin(
                 y=_downsample(arr), name=name, box_visible=True,
                 meanline_visible=True, fillcolor=color, line_color=C_BLACK,
                 opacity=0.75, showlegend=(i == 1),
             ), row=1, col=i)
-    fig.update_layout(title="§3.1.1 — Legal vs control distances",
-                      template="simple_white", height=500, violinmode="group")
+        mw = per_model[label]["legal_vs_control"]
+        r_val = mw["effect_r"]
+        flag = " ⚠" if r_val < 0 else ""
+        fig.add_annotation(
+            text=(f"r = {r_val:+.3f}{flag}<br>"
+                  f"med: {mw['median_x']:.3f} vs {mw['median_y']:.3f}"),
+            xref=f"x{'' if i == 1 else i} domain",
+            yref=f"y{'' if i == 1 else i} domain",
+            x=0.5, y=1.0, showarrow=False,
+            font=dict(size=11, color=C_VERMIL if r_val < 0 else "#222"),
+            bgcolor="rgba(255,255,255,0.85)",
+            bordercolor=C_VERMIL if r_val < 0 else "#ccc",
+            borderwidth=1, borderpad=4,
+        )
+    fig.update_layout(
+        template="simple_white", height=450, violinmode="group",
+        margin=dict(t=50, b=40),
+    )
+    for i in range(1, 4):
+        fig.update_yaxes(title_text="Cosine distance" if i == 1 else "", row=1, col=i)
     return fig.to_json()
 
 
 def _pj_topology(results: dict) -> str:
+    """3-panel K×K domain topology heatmaps."""
     per_model = results["section_31"]["per_model"]
     models = list(per_model.keys())
-    fig = make_subplots(cols=3, rows=1,
+    fig = make_subplots(cols=3, rows=1, horizontal_spacing=0.06,
                         subplot_titles=[_short(m) for m in models])
     for i, mlabel in enumerate(models, 1):
         topo = per_model[mlabel]["domain_topology"]
-        domains = [d[:6] for d in topo["domains"]]
+        domains = topo["domains"]
         matrix = np.array(topo["matrix"])
         fig.add_trace(go.Heatmap(
             z=matrix, x=domains, y=domains, colorscale="RdYlBu_r",
-            showscale=(i == 3),
+            showscale=(i == 3), zmin=0.15, zmax=0.70,
             text=[[f"{v:.3f}" for v in row] for row in matrix],
+            texttemplate="%{text}",
             hovertemplate="%{y} → %{x}: %{z:.3f}<extra></extra>",
         ), row=1, col=i)
-    fig.update_layout(title="§3.1.2 — Domain topology",
-                      template="simple_white", height=450)
+    fig.update_layout(
+        template="simple_white", height=480,
+        margin=dict(t=50, b=10),
+    )
     return fig.to_json()
 
 
 def _pj_rsa_forest(results: dict) -> str:
+    """Forest plot: Spearman rho with CI, grouped by tradition pair type."""
     rsa_data = results["section_314"]
-    traces = []
-    for group, color, group_label in [
+
+    # Build ordered list: within-WEIRD, within-Sinic, then cross
+    items: list[tuple[str, str, float, float, float, str]] = []
+    for group, color in [
+        ("within_weird", C_BLUE),
+        ("within_sinic", C_VERMIL),
+        ("cross_tradition", C_GREEN),
+    ]:
+        for r in rsa_data[group]:
+            items.append((
+                f"{_short(r['model_a'])} × {_short(r['model_b'])}",
+                group.replace("_", "-"),
+                r["rho"], r["ci_low"], r["ci_high"], color,
+            ))
+
+    # Reverse for bottom-to-top display
+    items = items[::-1]
+    fig = go.Figure()
+    seen: set[str] = set()
+    for label, gname, rho, lo, hi, color in items:
+        show = gname not in seen
+        seen.add(gname)
+        fig.add_trace(go.Scatter(
+            x=[rho], y=[label], mode="markers",
+            marker=dict(size=10, color=color),
+            error_x=dict(type="data", symmetric=False,
+                         array=[hi - rho], arrayminus=[rho - lo]),
+            name=gname if show else "",
+            legendgroup=gname, showlegend=show,
+            hovertemplate=f"ρ = {rho:.3f} [{lo:.3f}, {hi:.3f}]<extra>{label}</extra>",
+        ))
+
+    # Mean markers
+    summary = rsa_data["summary"]
+    for val, label, color, sym in [
+        (summary["mean_rho_within_weird"], "WEIRD mean", C_BLUE, "diamond"),
+        (summary["mean_rho_within_sinic"], "Sinic mean", C_VERMIL, "diamond"),
+        (summary["mean_rho_cross"], "Cross mean", C_GREEN, "diamond"),
+    ]:
+        fig.add_vline(x=val, line_dash="dot", line_color=color, opacity=0.4)
+
+    fig.add_vline(x=0, line_dash="dash", line_color="gray", opacity=0.5)
+    fig.update_layout(
+        xaxis_title="Spearman ρ",
+        template="simple_white", height=520,
+        xaxis=dict(range=[-0.05, 0.80]),
+        margin=dict(l=200, t=30, b=50),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, x=0.5, xanchor="center"),
+    )
+    return fig.to_json()
+
+
+def _pj_rsa_null(results_dir: Path, results: dict) -> str:
+    """Combined null distribution plot for selected RSA pairs."""
+    dist_dir = results_dir / "distributions"
+    rsa_data = results["section_314"]
+    # Pick 3 representative pairs: best within-WEIRD, best within-Sinic, best cross
+    representatives = []
+    for group, color, gname in [
         ("within_weird", C_BLUE, "Within-WEIRD"),
         ("within_sinic", C_VERMIL, "Within-Sinic"),
         ("cross_tradition", C_GREEN, "Cross-tradition"),
     ]:
-        ylabels, rhos, lo, hi = [], [], [], []
-        for r in rsa_data[group]:
-            ylabels.append(f"{_short(r['model_a'])} × {_short(r['model_b'])}")
-            rhos.append(r["rho"])
-            lo.append(r["ci_low"])
-            hi.append(r["ci_high"])
-        traces.append(go.Scatter(
-            x=rhos, y=ylabels, mode="markers",
-            marker=dict(size=9, color=color),
-            error_x=dict(
-                type="data", symmetric=False,
-                array=[h - r for h, r in zip(hi, rhos)],
-                arrayminus=[r - l for r, l in zip(rhos, lo)],
-            ),
-            name=group_label,
-        ))
-    fig = go.Figure(traces)
-    fig.add_vline(x=0, line_dash="dash", line_color="gray")
+        best = max(rsa_data[group], key=lambda r: r["rho"])
+        representatives.append((best, color, gname))
+
+    fig = make_subplots(cols=3, rows=1, horizontal_spacing=0.06,
+                        subplot_titles=[g for _, _, g in representatives])
+    for i, (r, color, gname) in enumerate(representatives, 1):
+        fname = dist_dir / f"{r['model_a']}_x_{r['model_b']}.npz"
+        if not fname.exists():
+            continue
+        null = np.load(fname)["null"]
+        fig.add_trace(go.Histogram(
+            x=null.tolist(), nbinsx=60, marker_color=color, opacity=0.5,
+            name=f"Null ({gname})", showlegend=False,
+        ), row=1, col=i)
+        fig.add_vline(
+            x=r["rho"], line_color=C_BLACK, line_width=2.5,
+            annotation_text=f"ρ = {r['rho']:.3f}",
+            annotation_font_size=11, row=1, col=i,
+        )
+        fig.update_xaxes(title_text="ρ (null)", row=1, col=i)
     fig.update_layout(
-        title="RSA forest plot — §3.1.4",
-        xaxis_title="Spearman ρ",
-        template="simple_white", height=550,
+        template="simple_white", height=320,
+        margin=dict(t=50, b=50),
+    )
+    return fig.to_json()
+
+
+def _pj_rsa_matrix(results: dict) -> str:
+    """6×6 RSA correlation matrix: WEIRD models first, then Sinic."""
+    rsa = results["section_314"]
+    weird = results["meta"]["weird_models"]
+    sinic = results["meta"]["sinic_models"]
+    labels = weird + sinic
+    short_labels = [_short(l) for l in labels]
+    n = len(labels)
+
+    # Build symmetric matrix from pairwise results
+    rho_map: dict[tuple[str, str], float] = {}
+    for group in ("within_weird", "within_sinic", "cross_tradition"):
+        for r in rsa[group]:
+            rho_map[(r["model_a"], r["model_b"])] = r["rho"]
+            rho_map[(r["model_b"], r["model_a"])] = r["rho"]
+
+    matrix = np.ones((n, n), dtype=np.float64)
+    for i, a in enumerate(labels):
+        for j, b in enumerate(labels):
+            if i != j:
+                matrix[i, j] = rho_map.get((a, b), 0.0)
+
+    # Annotation text
+    text = [[f"{matrix[i, j]:.3f}" if i != j else "1" for j in range(n)]
+            for i in range(n)]
+
+    fig = go.Figure(go.Heatmap(
+        z=matrix, x=short_labels, y=short_labels,
+        colorscale="RdYlBu_r", zmin=0, zmax=0.75, reversescale=True,
+        text=text, texttemplate="%{text}", textfont=dict(size=13),
+        hovertemplate="%{y} × %{x}: ρ = %{z:.3f}<extra></extra>",
+        colorbar=dict(title="ρ", len=0.8),
+    ))
+
+    # Add block-structure lines
+    n_weird = len(weird)
+    fig.add_shape(type="rect", x0=-0.5, x1=n_weird - 0.5,
+                  y0=-0.5, y1=n_weird - 0.5,
+                  line=dict(color=C_BLUE, width=2.5))
+    fig.add_shape(type="rect", x0=n_weird - 0.5, x1=n - 0.5,
+                  y0=n_weird - 0.5, y1=n - 0.5,
+                  line=dict(color=C_VERMIL, width=2.5))
+
+    fig.update_layout(
+        template="simple_white", height=440, width=520,
+        margin=dict(t=20, b=10, l=10, r=10),
+        xaxis=dict(side="bottom", tickangle=0),
+        yaxis=dict(autorange="reversed"),
     )
     return fig.to_json()
 
@@ -498,165 +612,498 @@ def _pj_rsa_forest(results: dict) -> str:
 # HTML builder
 # ---------------------------------------------------------------------------
 
+def _signal_summary_html(results: dict) -> str:
+    """Build HTML summary table for §3.1.1 signal tests."""
+    per_model = results["section_31"]["per_model"]
+    rows = []
+    for label in per_model:
+        ii = per_model[label]["intra_vs_inter"]
+        lc = per_model[label]["legal_vs_control"]
+        lc_flag = ' class="anomaly"' if lc["effect_r"] < 0 else ""
+        rows.append(f"""<tr>
+          <td><b>{_short(label)}</b></td>
+          <td>{ii['median_x']:.3f}</td><td>{ii['median_y']:.3f}</td>
+          <td><b>{ii['effect_r']:+.3f}</b></td><td>{format_p(ii['p_value'])}</td>
+          <td>{lc['median_x']:.3f}</td><td>{lc['median_y']:.3f}</td>
+          <td{lc_flag}><b>{lc['effect_r']:+.3f}</b></td>
+          <td{lc_flag}>{format_p(lc['p_value'])}</td>
+        </tr>""")
+    return "\n".join(rows)
+
+
+def _rsa_table_html(results: dict) -> str:
+    """Build HTML table rows for RSA results."""
+    rsa = results["section_314"]
+    rows = []
+    for group, group_label, css in [
+        ("within_weird", "Within-WEIRD", "rsa-weird"),
+        ("within_sinic", "Within-Sinic", "rsa-sinic"),
+        ("cross_tradition", "Cross-tradition", "rsa-cross"),
+    ]:
+        for r in rsa[group]:
+            rows.append(f"""<tr class="{css}">
+              <td>{group_label}</td>
+              <td>{_short(r['model_a'])} × {_short(r['model_b'])}</td>
+              <td><b>{r['rho']:.3f}</b></td>
+              <td>[{r['ci_low']:.3f}, {r['ci_high']:.3f}]</td>
+              <td>{r['r_squared']:.3f}</td>
+              <td>{format_p(r['p_value'])}</td>
+            </tr>""")
+    return "\n".join(rows)
+
+
 def build_html(results_dir: Path, results: dict, save_path: Path) -> Path:
-    """Build a single self-contained Plotly HTML with 5-tab navigation."""
+    """Build a single self-contained Plotly HTML with tab navigation."""
     weird_labels = results["meta"]["weird_models"]
     print("    Building Plotly figures...")
     plots = {
-        "domains":       _pj_domains_bar(results),
-        "confidence":    _pj_confidence_hist(results_dir, results),
-        "intra_inter":   _pj_violin_intra_inter(results_dir, weird_labels),
-        "legal_control": _pj_violin_legal_control(results_dir, weird_labels),
+        "rsa_matrix":    _pj_rsa_matrix(results),
+        "intra_inter":   _pj_violin_intra_inter(results_dir, results, weird_labels),
+        "legal_control": _pj_violin_legal_control(results_dir, results, weird_labels),
         "topology":      _pj_topology(results),
         "forest":        _pj_rsa_forest(results),
+        "null":          _pj_rsa_null(results_dir, results),
     }
-    save_path.write_text(_html_template(plots), encoding="utf-8")
+    html = _html_template(plots, results)
+    save_path.write_text(html, encoding="utf-8")
     return save_path
 
 
-def _html_template(plots: dict[str, str]) -> str:
+def _html_template(plots: dict[str, str], results: dict) -> str:
+    meta = results["meta"]
+    s31 = results.get("section_31", {})
+    s314 = results.get("section_314", {})
+    summary = s314.get("summary", {})
+    n_core = s31.get("n_core", "?")
+    n_ctrl = s31.get("n_control", "?")
+
+    signal_rows = _signal_summary_html(results) if s31 else ""
+    rsa_rows = _rsa_table_html(results) if s314 else ""
+
+    rho_w = summary.get("mean_rho_within_weird", 0)
+    rho_s = summary.get("mean_rho_within_sinic", 0)
+    rho_x = summary.get("mean_rho_cross", 0)
+    drop = summary.get("cross_tradition_drop", 0)
+
+    _head = page_head("Lens I — Relational Distance Structure")
+    _tabs = tabs_bar([
+        ("overview", "Overview"),
+        ("signal", "Domain Signal"),
+        ("topology", "Domain Topology"),
+        ("rsa", "Cross-Tradition RSA"),
+    ])
+    _plots_dict = {
+        "plt_rsa_matrix":    plots["rsa_matrix"],
+        "plt_intra_inter":   plots["intra_inter"],
+        "plt_legal_control": plots["legal_control"],
+        "plt_topology":      plots["topology"],
+        "plt_forest":        plots["forest"],
+        "plt_null":          plots["null"],
+    }
+    _script = plots_script(_plots_dict)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Lens I — Relational Distance Structure</title>
-<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-  onload="renderMathInElement(document.body, {{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'$',right:'$',display:false}}]}});"></script>
-<style>
-  body {{ font-family: sans-serif; margin: 0; padding: 16px; background: #fafafa; color: #222; }}
-  h1 {{ font-size: 1.2rem; margin-bottom: 12px; }}
-  .tabs {{ display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }}
-  .tab-btn {{
-    padding: 7px 16px; border: 1px solid #ccc; border-radius: 4px;
-    background: #fff; cursor: pointer; font-size: 0.85rem; color: #444;
-  }}
-  .tab-btn.active {{ background: {C_BLUE}; color: #fff; border-color: {C_BLUE}; }}
-  .panel {{ display: none; }}
-  .panel.active {{ display: block; }}
-  .row2 {{ display: flex; gap: 12px; }}
-  .row2 > div {{ flex: 1; min-width: 0; }}
-  .note {{
-    background: #f5f5f5; border-left: 3px solid {C_BLUE}; padding: 10px 14px;
-    margin-bottom: 14px; font-size: 0.85rem; line-height: 1.5;
-  }}
-  .note h3 {{ margin: 0 0 6px 0; font-size: 0.9rem; }}
-  .note p {{ margin: 4px 0; }}
-</style>
-</head>
+{_head}
 <body>
-<h1>Lens I — Relational Distance Structure</h1>
-<div class="tabs">
-  <button class="tab-btn active" onclick="showTab('p311', this)">§3.1.1 Background</button>
-  <button class="tab-btn" onclick="showTab('p311b', this)">§3.1.1 Intra/Inter</button>
-  <button class="tab-btn" onclick="showTab('p311c', this)">§3.1.1 Legal/Control</button>
-  <button class="tab-btn" onclick="showTab('p312', this)">§3.1.2 Topology</button>
-  <button class="tab-btn" onclick="showTab('pRSA', this)">§3.1.4 RSA</button>
+<h1>Lens I &mdash; Relational Distance Structure</h1>
+<p class="subtitle">
+  {n_core} core terms &times; 6 models (3&nbsp;WEIRD + 3&nbsp;Sinic) &middot;
+  {n_ctrl} control terms &middot;
+  Mantel B={meta.get("n_perm", "?"):,} &middot;
+  Bootstrap B={meta.get("n_boot", "?"):,} &middot;
+  Run: {meta.get("date", "?")[:10]}
+</p>
+
+{_tabs}
+
+<!-- ==================== OVERVIEW ==================== -->
+<div id="overview" class="panel active">
+  <div class="card">
+    <h2>Experimental setup</h2>
+    <p>This experiment uses <b>embedding models</b>: neural networks that have been
+    trained on very large collections of text (called "corpora") and that learn to
+    represent each word or phrase as a list of numbers &mdash; a numerical vector &mdash;
+    in a high-dimensional space. The key property of these models is that words
+    which tend to appear in similar linguistic contexts receive similar vectors.
+    Six such models are used here. Three were trained primarily on English-language
+    corpora and are labelled <b>"WEIRD"</b> (an acronym introduced by Henrich et al.
+    2010, standing for Western, Educated, Industrialised, Rich, Democratic, which
+    characterises the cultural context of the training data). The other three were
+    trained on Chinese-language corpora and are labelled <b>"Sinic"</b>.</p>
+
+    <p>The legal vocabulary under examination consists of <b>397 core legal terms</b>
+    drawn from the <b>Hong Kong Department of Justice Bilingual Legal Glossary</b>,
+    a professionally curated bilingual resource that pairs English legal terms with
+    their official Chinese translations. These 397 terms span <b>7 branches of law</b>:
+    criminal law (e.g., "murder", "manslaughter", "robbery"),
+    civil law (e.g., "tort", "negligence", "easement"),
+    constitutional law (e.g., "sovereignty", "separation of powers", "judicial review"),
+    international law (e.g., "treaty", "asylum", "extradition"),
+    procedure (e.g., "discovery", "subpoena", "appeal"),
+    labour and social law (e.g., "collective bargaining", "minimum wage", "pension"),
+    and administrative law (e.g., "delegated legislation", "licensing", "judicial notice").
+    In addition, <b>100 control terms</b> are included: these are words from the
+    <b>Swadesh-100 list</b>, a standard set of basic, culturally universal vocabulary
+    items such as "water", "fire", "hand", "sleep", "stone", and "sun". Because
+    these words have no specifically legal content, they serve as a <b>non-legal
+    baseline</b> against which the behaviour of legal terms can be compared.</p>
+
+    <p>For each of the 6 models, a <b>Relational Dissimilarity Matrix (RDM)</b> is
+    computed. An RDM is a large symmetric table with 397 rows and 397 columns, one
+    for each legal term. Each cell records the <b>cosine distance</b> between the
+    vectors of the two corresponding terms: formally,
+    $\\text{{RDM}}[i,j] = 1 - \\cos(\\mathbf{{v}}_i, \\mathbf{{v}}_j)$. Cosine distance
+    is a measure of how different two vectors are: a value of 0 means the two vectors
+    are identical (pointing in exactly the same direction), while a value approaching 1
+    means they are maximally different (though in practice, values in these models
+    rarely exceed 0.7). The RDM thus captures the full pattern of semantic distances
+    among all 397 legal terms as perceived by one model. Three analyses are then
+    performed on these matrices:</p>
+    <ol style="font-size:0.88rem; color:#444; padding-left:20px;">
+      <li><b>Intra vs. inter-domain distances</b> &mdash; the 78,606 pairwise distances
+      from each RDM are divided into those where both terms belong to the same branch
+      of law ("intra-domain") and those where the terms belong to different branches
+      ("inter-domain"). A Mann-Whitney $U$ test then asks whether these two groups
+      of distances differ systematically.</li>
+      <li><b>Legal vs. control distances</b> &mdash; distances among the 397 legal
+      terms are compared with distances between legal terms and the 100 Swadesh-100
+      control words, using the same Mann-Whitney $U$ test. This checks whether the
+      model treats legal vocabulary differently from ordinary, non-legal words.</li>
+      <li><b>Cross-model RSA</b> &mdash; the Spearman rank correlation between the RDMs
+      of two different models is computed, measuring how similarly the two models
+      organise the 397 legal terms relative to each other. The 15 possible model pairs
+      are partitioned into within-WEIRD, within-Sinic, and cross-tradition comparisons.</li>
+    </ol>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <p class="plot-label">Each cell in this 6&times;6 matrix shows the <b>Spearman
+      rank correlation ($\\rho$)</b> between the full 397&times;397 distance matrices
+      of two models. Spearman $\\rho$ measures how well the <i>rank ordering</i> of
+      all 78,006 pairwise distances agrees between two models: it ranges from $-1$
+      (the rankings are perfectly inverted) through $0$ (no systematic agreement)
+      to $+1$ (perfect agreement in rankings). The six models are arranged with the
+      3 WEIRD models occupying the first three rows and columns, and the 3 Sinic models
+      occupying the last three, creating a visible 2&times;2 block structure.</p>
+      <div id="plt_rsa_matrix"></div>
+      <p style="font-size:0.78rem; color:#888; margin-top:6px;">
+        <span style="color:var(--blue);">&block;</span> The blue rectangle highlights
+        the 3&times;3 block of WEIRD-vs-WEIRD comparisons. &nbsp;
+        <span style="color:var(--vermil);">&block;</span> The red rectangle highlights
+        the 3&times;3 block of Sinic-vs-Sinic comparisons. &nbsp;
+        All other cells are cross-tradition comparisons (one WEIRD model paired with
+        one Sinic model).
+        Colour scale: darker red = higher $\\rho$ (stronger agreement), darker blue =
+        lower $\\rho$ (weaker agreement).
+      </p>
+    </div>
+    <div>
+      <div class="metrics" style="flex-direction:column;">
+        <div class="metric blue">
+          <div class="label">Within-WEIRD &rho;&macr;</div>
+          <div class="value">{rho_w:.3f}</div>
+        </div>
+        <div class="metric vermil">
+          <div class="label">Within-Sinic &rho;&macr;</div>
+          <div class="value">{rho_s:.3f}</div>
+        </div>
+        <div class="metric green">
+          <div class="label">Cross-tradition &rho;&macr;</div>
+          <div class="value">{rho_x:.3f}</div>
+        </div>
+        <div class="metric">
+          <div class="label">Tradition gap &Delta;&rho;</div>
+          <div class="value" style="color:#333;">{drop:.3f}</div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:12px; line-height:1.5;">
+        These four values summarise the matrix on the left.
+        <b>Within-WEIRD $\\bar{{\\rho}}$</b> is the mean of the 3 correlation
+        values in the blue (WEIRD-vs-WEIRD) block.
+        <b>Within-Sinic $\\bar{{\\rho}}$</b> is the mean of the 3 correlation
+        values in the red (Sinic-vs-Sinic) block.
+        <b>Cross-tradition $\\bar{{\\rho}}$</b> is the mean of the 9 off-block
+        correlations (each pairing one WEIRD model with one Sinic model).
+        <b>Tradition gap $\\Delta\\rho$</b> = Within-WEIRD $\\bar{{\\rho}}$ &minus;
+        Cross-tradition $\\bar{{\\rho}}$.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Summary statistics</h2>
+    <p>Intra-domain vs. inter-domain: rank-biserial $r$ ranges from
+    $+0.23$ to $+0.30$ across the 3 WEIRD models (all $p &lt; 10^{{-100}}$).
+    The <b>rank-biserial $r$</b> quantifies the probability that a randomly
+    drawn distance from the first group (intra-domain) is smaller than a
+    randomly drawn distance from the second group (inter-domain), rescaled to
+    the range $[-1, +1]$. For example, a value of $r = +0.30$ means that in
+    roughly 65% of such random draws, the intra-domain distance is the smaller
+    of the two.</p>
+    <p>RSA: within-tradition mean $\\bar{{\\rho}}_{{\\text{{WEIRD}}}} = {rho_w:.2f}$,
+    $\\bar{{\\rho}}_{{\\text{{Sinic}}}} = {rho_s:.2f}$;
+    cross-tradition mean $\\bar{{\\rho}}_{{\\text{{cross}}}} = {rho_x:.2f}$;
+    gap $\\Delta\\rho = {drop:.2f}$.
+    All 15 pairwise $\\rho$ values have $p = 0.0001$ (floor at $B = 10\\,000$
+    permutations).</p>
+  </div>
+
+  <div class="card">
+    <h2>Note on FreeLaw-EN</h2>
+    <p>FreeLaw-EN (BAAI/bge-base-en, fine-tuned on legal corpora by the
+    FreeLaw Project) is included in this experiment alongside two general-purpose
+    English embedding models (BGE-EN-large and E5-large). It is the only model
+    with a negative rank-biserial in the legal-vs-control test ($r = -0.17$,
+    $p = 1.0$): legal-legal distances are on average <i>larger</i> than
+    legal-control distances. The intra-vs-inter domain test, however, remains
+    positive ($r = +0.30$), with the same sign and comparable magnitude as the
+    other two WEIRD models.</p>
+  </div>
 </div>
 
-<div id="p311" class="panel active">
-  <div class="note">
-    <h3>§3.1.1 — Background term domain assignment</h3>
-    <p>Each background term $b$ is assigned to a domain via $k$-NN majority vote among the
-    $k=7$ nearest core terms in cosine similarity space.</p>
-    <p><b>Left:</b> distribution of assigned domains across all background terms.</p>
-    <p><b>Right:</b> confidence = fraction of $k$ neighbors agreeing on the majority domain.
-    $$\\text{{confidence}}(b) = \\frac{{\\#\\{{\\text{{neighbors with majority domain}}\\}}}}{{k}}$$
-    The dashed line marks the low-confidence threshold $4/k$.</p>
+<!-- ==================== DOMAIN SIGNAL ==================== -->
+<div id="signal" class="panel">
+  <div class="question">
+    <b>Intra-domain vs. inter-domain distances.</b>
+    Imagine laying out all 397 legal terms and drawing a line between every
+    possible pair &mdash; that gives 78,606 unique pairs (the number of entries
+    in the upper triangle of the 397&times;397 distance matrix). Each pair is
+    then classified into one of two groups. A pair is <b>"intra-domain"</b> if
+    both terms belong to the same branch of law (for example, "murder" and
+    "manslaughter" are both criminal-law terms). A pair is <b>"inter-domain"</b>
+    if the two terms belong to different branches (for example, "murder" from
+    criminal law and "easement" from civil law). The question is whether the
+    cosine distance &mdash; the numerical measure of how far apart the two
+    terms are in the model's vector space &mdash; tends to be systematically
+    different for these two groups.
   </div>
-  <div class="row2">
-    <div id="plt_domains"></div>
-    <div id="plt_confidence"></div>
-  </div>
-</div>
 
-<div id="p311b" class="panel">
-  <div class="note">
-    <h3>§3.1.1 — Intra-domain vs inter-domain distances</h3>
-    <p>For each WEIRD model, the Relational Dissimilarity Matrix (RDM) over core terms is computed:</p>
-    <p>$$\\text{{RDM}}[i,j] = 1 - \\cos(\\mathbf{{v}}_i, \\mathbf{{v}}_j) = 1 - \\frac{{\\mathbf{{v}}_i \\cdot \\mathbf{{v}}_j}}{{\\|\\mathbf{{v}}_i\\| \\, \\|\\mathbf{{v}}_j\\|}}$$</p>
-    <p>The upper triangle of the RDM is split into <b>intra-domain</b> pairs (both terms share the
-    same domain) and <b>inter-domain</b> pairs. The distributions shown are these two sets.
-    If the embedding encodes domain structure, intra-domain distances should be systematically
-    smaller than inter-domain distances.</p>
-    <p>Statistical test: Mann-Whitney $U$ with rank-biserial $r = 1 - 2U/(n_x n_y)$, one-sided (intra &lt; inter).</p>
+  <div class="card">
+    <h2>Violin plots &mdash; intra vs. inter-domain</h2>
+    <p>Each of the three panels below shows the full distribution of cosine
+    distances for one WEIRD embedding model, split into intra-domain pairs
+    (blue) and inter-domain pairs (orange). A <b>violin plot</b> combines two
+    visual elements: the <i>outer shape</i> is a density estimate (a smoothed
+    histogram) where wider sections indicate that more data points fall at that
+    distance value, and the <i>inner rectangle</i> is a standard box plot showing
+    the interquartile range (the middle 50% of the data) with a horizontal line
+    at the median. Together, these allow the reader to see both the central
+    tendency and the full shape of each distribution at a glance.</p>
+    <p>The <b>annotation</b> at the top of each panel reports two quantities:
+    the rank-biserial $r$ (explained below) and the median cosine distance for
+    each of the two groups. These numerical summaries complement the visual
+    impression provided by the violins.</p>
+    <p>Rank-biserial $r = 1 - 2U/(n_x \\cdot n_y)$, where $U$ is the
+    Mann-Whitney statistic. $r &gt; 0$: intra-domain distances tend to be
+    smaller than inter-domain distances; $r &lt; 0$: intra-domain distances tend
+    to be larger; $r = 0$: no systematic difference between the two groups.</p>
   </div>
   <div id="plt_intra_inter"></div>
-</div>
 
-<div id="p311c" class="panel">
-  <div class="note">
-    <h3>§3.1.1 — Legal vs control distances</h3>
-    <p>Same RDM construction. Distances are split into:</p>
-    <ul style="margin:4px 0; padding-left:20px;">
-      <li><b>Legal–legal:</b> upper triangle of the core-term sub-matrix (only legal terms).</li>
-      <li><b>Legal–control:</b> all pairwise distances between core terms and control terms
-      (non-legal concrete/everyday words).</li>
-    </ul>
-    <p>If the embedding clusters legal terms more tightly than random words, legal–legal
-    distances should be smaller than legal–control distances.</p>
-    <p>Statistical test: Mann-Whitney $U$, one-sided (legal &lt; control), rank-biserial $r$.</p>
+  <div class="card" style="margin-top: 8px;">
+    <h2>Violin plots &mdash; legal vs. control</h2>
+    <p>This second set of violin plots compares two different groups of
+    distances: <b>legal-legal</b> distances (blue), which are the cosine
+    distances between pairs of legal terms (the same 78,606 pairs from the
+    RDM), and <b>legal-control</b> distances (red), which are the cosine
+    distances between each of the 397 legal terms and each of the 100
+    Swadesh-100 control words (39,700 pairs). The control words &mdash;
+    basic, culturally universal vocabulary such as "water", "fire", "hand",
+    "sleep" &mdash; have no specifically legal content and serve as a
+    non-legal baseline. The violin format is the same as above (outer shape =
+    density estimate, inner rectangle = box plot with median line).
+    $r &gt; 0$: legal-legal distances tend to be smaller than legal-control
+    distances; $r &lt; 0$: legal-legal distances tend to be larger.</p>
   </div>
   <div id="plt_legal_control"></div>
+
+  <div class="card" style="margin-top: 8px;">
+    <h2>Summary statistics</h2>
+    <table class="data">
+      <thead>
+        <tr>
+          <th rowspan="2">Model</th>
+          <th colspan="4" style="text-align:center; border-bottom:1px solid #ddd;">Intra vs. Inter-domain</th>
+          <th colspan="4" style="text-align:center; border-bottom:1px solid #ddd;">Legal vs. Control</th>
+        </tr>
+        <tr>
+          <th>Med. intra</th><th>Med. inter</th><th>r</th><th>p</th>
+          <th>Med. legal</th><th>Med. control</th><th>r</th><th>p</th>
+        </tr>
+      </thead>
+      <tbody>
+        {signal_rows}
+      </tbody>
+    </table>
+    <p style="font-size:0.8rem; color:#888; line-height:1.5;">
+      The statistical test used is the <b>one-sided Mann-Whitney $U$</b> test.
+      "One-sided" means that the test specifically asks whether distances in the
+      first group (intra-domain, or legal-legal) tend to be <i>smaller</i> than
+      distances in the second group (inter-domain, or legal-control), rather than
+      simply asking whether the two groups differ in either direction.
+      The effect size is the rank-biserial $r = 1 - 2U/(n_x n_y)$.
+      The $p$-values are not bounded below and are reported at machine precision
+      where applicable (i.e., values smaller than approximately $10^{{-300}}$
+      are reported as such).
+    </p>
+  </div>
 </div>
 
-<div id="p312" class="panel">
-  <div class="note">
-    <h3>§3.1.2 — Domain topology</h3>
-    <p>A $K \\times K$ matrix where $K$ is the number of legal domains. Each cell is the mean
-    cosine distance between all pairs of terms belonging to domains $d_i$ and $d_j$:</p>
-    <p>$$T[d_i, d_j] = \\frac{{1}}{{|d_i| \\cdot |d_j|}} \\sum_{{a \\in d_i}} \\sum_{{b \\in d_j}} \\text{{RDM}}[a, b]$$</p>
-    <p>Diagonal entries use only the upper triangle (intra-domain mean distance).
-    Lower values indicate domains that are closer in the embedding space.</p>
+<!-- ==================== TOPOLOGY ==================== -->
+<div id="topology" class="panel">
+  <div class="question">
+    <b>Domain topology.</b> This matrix provides a bird's-eye view of how
+    each embedding model positions the 7 branches of law relative to each
+    other. It is a $K \\times K$ matrix (where $K = 7$, one row and one
+    column per branch of law). Each cell records the <b>average cosine
+    distance</b> between all pairs of terms that span the two branches
+    indicated by the row and column. For example, the cell at row "criminal"
+    and column "procedure" averages over all cosine distances between every
+    criminal-law term and every procedural-law term. Diagonal cells (e.g.,
+    "criminal" vs. "criminal") show the average distance among terms
+    <i>within</i> the same branch &mdash; a measure of how spread out that
+    branch is in the model's vector space (computed from the upper triangle
+    only, to avoid counting each pair twice).
+  </div>
+  <div class="card">
+    <h2>Reading the heatmap</h2>
+    <p>One heatmap is shown for each of the three WEIRD models, displayed
+    side by side for direct visual comparison. The <b>colour scale</b> maps
+    blue to lower mean distance and red to higher mean distance. Crucially,
+    the scale is <b>fixed across all three panels</b> (ranging from 0.15 to
+    0.70) so that colours are directly comparable from one model to the next:
+    the same shade of blue or red means the same numerical distance in every
+    panel. Each cell also displays its exact numerical value as a text label.
+    Hover over any cell for additional detail.</p>
   </div>
   <div id="plt_topology"></div>
 </div>
 
-<div id="pRSA" class="panel">
-  <div class="note">
-    <h3>§3.1.4 — Representational Similarity Analysis (RSA)</h3>
-    <p>For each pair of models $(A, B)$, an RDM is computed over the same 397 core terms.
-    RSA measures the correlation between the two RDMs:</p>
-    <p>$$\\rho = \\text{{Spearman}}\\big(\\text{{upper\\_tri}}(\\text{{RDM}}_A),\\; \\text{{upper\\_tri}}(\\text{{RDM}}_B)\\big)$$</p>
-    <p><b>Significance:</b> Mantel permutation test ($B=10\\,000$). Rows and columns of $\\text{{RDM}}_B$
-    are jointly permuted to generate a null distribution of $\\rho$ values.
-    $p = \\max\\big(\\#\\{{\\rho_\\pi \\geq \\rho_{{\\text{{obs}}}}\\}} / B,\\; 1/B\\big)$ (Phipson &amp; Smyth 2010).</p>
-    <p><b>Confidence interval:</b> Block bootstrap ($B=1\\,000$). Term indices (not pairs) are
-    resampled with replacement to respect the dependency structure (Nili et al. 2014).</p>
-    <p>Each point is one model pair. Error bars = 95% bootstrap CI. Colors distinguish
-    within-WEIRD, within-Sinic, and cross-tradition pairs.</p>
+<!-- ==================== RSA ==================== -->
+<div id="rsa" class="panel">
+  <div class="question">
+    <b>Representational Similarity Analysis (RSA).</b>
+    RSA (Kriegeskorte et al. 2008) is a technique originally developed in
+    computational neuroscience and adapted here for comparing legal-semantic
+    spaces. The core idea is as follows: comparing individual term vectors
+    directly across two different embedding models is impossible, because each
+    model uses its own internal coordinate system (the axes of one model's
+    vector space have no correspondence with those of another). RSA sidesteps
+    this problem by comparing the <i>pattern of distances</i> instead. If two
+    models both place "murder" close to "manslaughter" and far from "easement",
+    their 397&times;397 distance matrices will be correlated &mdash; even though
+    the actual vector coordinates may be entirely different. Specifically, for
+    each of the 15 possible model pairs, the <b>Spearman rank correlation
+    $\\rho$</b> is computed between the upper triangles of the two RDMs (78,006
+    pairwise distance values each). The 15 pairs are partitioned into three
+    groups: 3 within-WEIRD (comparing two English-trained models), 3
+    within-Sinic (comparing two Chinese-trained models), and 9 cross-tradition
+    (comparing one English-trained model with one Chinese-trained model).
   </div>
+
+  <div class="card">
+    <h2>Statistical methods</h2>
+    <p><b>Significance: Mantel permutation test</b>
+    ($B = {meta.get("n_perm", "?"):,}$ permutations). The Mantel test assesses
+    whether the observed correlation between two distance matrices could have
+    arisen purely by chance. It works by randomly shuffling the rows and columns
+    of one matrix simultaneously (which destroys any true correspondence between
+    the two matrices while preserving each matrix's internal structure) and then
+    recomputing the Spearman correlation. This shuffling-and-recomputing step is
+    repeated $B$ times (here $B = {meta.get("n_perm", "?"):,}$), producing a
+    distribution of "null" correlations &mdash; i.e., the range of correlation
+    values one would expect if the two matrices were unrelated. The $p$-value is
+    the proportion of these null correlations that are equal to or larger than
+    the actually observed $\\rho$. If $p$ is very small, the observed correlation
+    is unlikely to be a coincidence. The $p$-value is bounded below by $1/B$
+    (following Phipson &amp; Smyth 2010), meaning the smallest reportable value
+    with $B = {meta.get("n_perm", "?"):,}$ is $0.0001$.</p>
+    <p><b>Confidence intervals: block bootstrap</b>
+    ($B = {meta.get("n_boot", "?"):,}$ resamples). The confidence interval
+    quantifies the precision of the estimated $\\rho$. It is computed by
+    repeatedly resampling the 397 legal terms <i>with replacement</i>: in each
+    resample, some terms appear multiple times and others are omitted entirely.
+    For each resample, the corresponding sub-matrices are extracted from the two
+    RDMs and the Spearman $\\rho$ is recomputed. This "block" resampling strategy
+    (rather than resampling individual distance pairs) respects the fact that
+    distances involving the same term are not statistically independent of each
+    other (Nili et al. 2014). The reported 95% confidence interval spans from
+    the 2.5th to the 97.5th percentile of the $B$ resampled $\\rho$ values.</p>
+  </div>
+
+  <p class="plot-label"><b>Forest plot.</b> Each row represents one of the 15
+  model pairs. The <b>dot</b> marks the observed Spearman $\\rho$ for that pair.
+  The <b>horizontal bar</b> extending from each dot shows the 95% bootstrap
+  confidence interval: the range of $\\rho$ values within which the true
+  correlation plausibly falls, given the resampling variability described above.
+  If two bars do not overlap, the difference between the corresponding $\\rho$
+  values is robust to resampling. <b>Vertical dotted lines</b> mark the mean
+  $\\rho$ for each group. Colour coding: <span style="color:var(--blue);">blue</span>
+  = within-WEIRD pairs, <span style="color:var(--vermil);">red</span> =
+  within-Sinic pairs, <span style="color:var(--green);">green</span> =
+  cross-tradition pairs.</p>
   <div id="plt_forest"></div>
+
+  <div class="metrics" style="margin-top: 12px;">
+    <div class="metric blue">
+      <div class="label">Within-WEIRD &rho;</div>
+      <div class="value">{rho_w:.3f}</div>
+    </div>
+    <div class="metric vermil">
+      <div class="label">Within-Sinic &rho;</div>
+      <div class="value">{rho_s:.3f}</div>
+    </div>
+    <div class="metric green">
+      <div class="label">Cross-tradition &rho;</div>
+      <div class="value">{rho_x:.3f}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Tradition gap &Delta;&rho;</div>
+      <div class="value" style="color:#333;">{drop:.3f}</div>
+    </div>
+  </div>
+
+  <p class="plot-label"><b>Null distributions.</b> Each histogram shows the
+  distribution of Spearman $\\rho$ values obtained by the Mantel permutation
+  test for one representative model pair (the pair with the highest observed
+  $\\rho$ in each group). The coloured bars represent the "null" correlations
+  &mdash; i.e., the values of $\\rho$ that arise when rows and columns of one
+  RDM are randomly shuffled, destroying any genuine correspondence between the
+  two matrices. The <b>black vertical line</b> marks the actually observed
+  $\\rho$. When the observed $\\rho$ falls far to the right of the null
+  histogram, none (or almost none) of the random permutations produced a
+  correlation as large, and the corresponding $p$-value is at or near the
+  floor of $1/B$.</p>
+  <div id="plt_null"></div>
+
+  <div class="card" style="margin-top: 8px;">
+    <h2>Full results table</h2>
+    <p style="font-size:0.82rem; color:#666; line-height:1.5; margin-bottom:8px;">
+      Column definitions:
+      <b>$\\rho$</b> = Spearman rank correlation between the two models' RDMs.
+      <b>95% CI</b> = bootstrap confidence interval (2.5th to 97.5th percentile
+      of the block-bootstrap distribution).
+      <b>$r^2$</b> = coefficient of determination, representing the proportion
+      of variance in one RDM's distance rankings that is accounted for by the
+      other RDM's distance rankings.
+      <b>$p$</b> = Mantel permutation $p$-value (bounded below by $1/B$).
+    </p>
+    <table class="data">
+      <thead>
+        <tr><th>Group</th><th>Pair</th><th>&rho;</th><th>95% CI</th><th>r&sup2;</th><th>p</th></tr>
+      </thead>
+      <tbody>
+        {rsa_rows}
+      </tbody>
+    </table>
+  </div>
+
+
 </div>
 
-<script>
-function showTab(id, btn) {{
-  document.querySelectorAll(".panel").forEach(el => el.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-  btn.classList.add("active");
-  setTimeout(function() {{
-    var panel = document.getElementById(id);
-    var plots = panel.querySelectorAll("[id^='plt_']");
-    plots.forEach(function(el) {{ Plotly.Plots.resize(el); }});
-  }}, 50);
-}}
-
-const figs = {{
-  plt_domains:       {plots["domains"]},
-  plt_confidence:    {plots["confidence"]},
-  plt_intra_inter:   {plots["intra_inter"]},
-  plt_legal_control: {plots["legal_control"]},
-  plt_topology:      {plots["topology"]},
-  plt_forest:        {plots["forest"]}
-}};
-
-for (const [id, spec] of Object.entries(figs)) {{
-  Plotly.newPlot(id, spec.data, spec.layout, {{responsive: true}});
-}}
-</script>
+{_script}
 </body>
 </html>"""
 

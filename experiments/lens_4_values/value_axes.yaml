@@ -1,0 +1,82 @@
+# Value axis definitions for Lens IV (§3.3)
+#
+# Each axis has 10 EN pairs and 10 ZH pairs.
+# Format: [positive_pole, negative_pole]
+# Positive pole = first element of the axis name (e.g. "individual" in individual_collective)
+#
+# Independent construction: EN pairs used by WEIRD models, ZH pairs by Sinic models.
+# Kozlowski method: axis = L2_normalize(mean(embed(pos) - embed(neg)))
+#
+# Sources: Kozlowski et al. (2019), Legrand (1996), Merryman & Pérez-Perdomo (2007)
+
+individual_collective:
+  en_pairs:
+    - [individual, collective]
+    - [personal, communal]
+    - [private, public]
+    - [autonomy, solidarity]
+    - [liberty, conformity]
+    - [independence, interdependence]
+    - [self-reliance, cooperation]
+    - [freedom, obligation]
+    - [consent, authority]
+    - [voluntary, mandatory]
+  zh_pairs:
+    - [个人, 集体]
+    - [私人, 公共]
+    - [自主, 团结]
+    - [自由, 服从]
+    - [独立, 互助]
+    - [自力更生, 合作]
+    - [私心, 公心]
+    - [同意, 权威]
+    - [自愿, 强制]
+    - [个体, 群体]
+
+rights_duties:
+  en_pairs:
+    - [right, duty]
+    - [entitlement, obligation]
+    - [freedom, responsibility]
+    - [liberty, constraint]
+    - [permission, prohibition]
+    - [immunity, liability]
+    - [privilege, burden]
+    - [claim, debt]
+    - [autonomy, compliance]
+    - [empowerment, subjection]
+  zh_pairs:
+    - [权利, 义务]
+    - [自由, 责任]
+    - [许可, 禁止]
+    - [豁免, 责任]
+    - [特权, 负担]
+    - [请求, 债务]
+    - [自主, 服从]
+    - [赋权, 从属]
+    - [资格, 义务]
+    - [权力, 限制]
+
+public_private:
+  en_pairs:
+    - [public, private]
+    - [state, individual]
+    - [government, citizen]
+    - [regulation, autonomy]
+    - [collective, personal]
+    - [official, unofficial]
+    - [institutional, domestic]
+    - [sovereignty, liberty]
+    - [administration, enterprise]
+    - [bureaucracy, market]
+  zh_pairs:
+    - [公共, 私人]
+    - [国家, 个人]
+    - [政府, 公民]
+    - [监管, 自主]
+    - [集体, 个人]
+    - [官方, 非官方]
+    - [机构, 家庭]
+    - [主权, 自由]
+    - [行政, 企业]
+    - [官僚, 市场]

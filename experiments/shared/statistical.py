@@ -233,6 +233,60 @@ def block_bootstrap_rsa(
     return BootstrapCI(low=float(lo), high=float(hi), distribution=boots)
 
 
+# ---------------------------------------------------------------------------
+# Generic bootstrap CI (reusable across experiments)
+# ---------------------------------------------------------------------------
+
+@dataclass
+class GenericBootstrapCI:
+    estimate: float
+    ci_low: float
+    ci_high: float
+    distribution: np.ndarray  # (n_boot,)
+
+
+def bootstrap_ci_generic(
+    data: np.ndarray,
+    stat_fn: callable,
+    n_boot: int = 1000,
+    ci_level: float = 0.95,
+    seed: int = 42,
+) -> GenericBootstrapCI:
+    """
+    Row-resample bootstrap CI for an arbitrary statistic.
+
+    Parameters
+    ----------
+    data : (N, ...) — rows are observations, resampled with replacement
+    stat_fn : callable — data -> scalar
+    n_boot : int
+    ci_level : float
+    seed : int
+
+    Returns
+    -------
+    GenericBootstrapCI
+    """
+    data = np.asarray(data)
+    estimate = float(stat_fn(data))
+    rng = np.random.default_rng(seed)
+    n = len(data)
+    alpha = (1.0 - ci_level) / 2.0
+    boots = np.empty(n_boot, dtype=np.float64)
+
+    for i in range(n_boot):
+        idx = rng.choice(n, size=n, replace=True)
+        boots[i] = stat_fn(data[idx])
+
+    lo, hi = np.percentile(boots, [100.0 * alpha, 100.0 * (1.0 - alpha)])
+    return GenericBootstrapCI(
+        estimate=estimate,
+        ci_low=float(lo),
+        ci_high=float(hi),
+        distribution=boots,
+    )
+
+
 def rsa(
     rdm_a: np.ndarray,
     rdm_b: np.ndarray,

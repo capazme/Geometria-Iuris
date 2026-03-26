@@ -58,6 +58,22 @@ scientifica generale (riferimento: liceo classico + derivate concettualmente).
 - [G2 — RSA convergence to final: curva ρ(l)](#g2--rsa-convergence-to-final-curva-ρl)
 - [G3 — Threshold detection: soglie 50% e 90%](#g3--threshold-detection-soglie-50-e-90)
 
+### Analisi §3.1.3c — Neighborhood Trajectory Analysis (NTA)
+- [N1 — Pool construction: core + control](#n1--pool-construction-core--control)
+- [N2 — k-NN retrieval per layer](#n2--k-nn-retrieval-per-layer)
+- [N3 — Entry/exit detection](#n3--entryexit-detection)
+- [N4 — Domain/tier composition tracking](#n4--domaintier-composition-tracking)
+
+### Analisi §3.3 — Value axis projection
+- [V1 — Kozlowski difference-vector: costruzione dell'asse](#v1--kozlowski-difference-vector-costruzione-dellasse)
+- [V2 — Proiezione su un asse: cosine similarity come punteggio](#v2--proiezione-su-un-asse-cosine-similarity-come-punteggio)
+- [V3 — Sanity check: orientamento dell'asse](#v3--sanity-check-orientamento-dellasse)
+- [V4 — Cosine similarity inter-asse (diagnostica ortogonalità)](#v4--cosine-similarity-inter-asse-diagnostica-ortogonalità)
+- [V5 — Spearman ρ tra vettori di punteggio](#v5--spearman-ρ-tra-vettori-di-punteggio)
+- [V6 — Row-resample bootstrap per Spearman ρ](#v6--row-resample-bootstrap-per-spearman-ρ)
+- [V7 — Mann-Whitney U su gruppi di ρ (cross vs within)](#v7--mann-whitney-u-su-gruppi-di-ρ-cross-vs-within)
+- [V8 — Kruskal-Wallis H + post-hoc Bonferroni](#v8--kruskal-wallis-h--post-hoc-bonferroni)
+
 ---
 
 ## Fondamenti
@@ -2268,4 +2284,785 @@ banale per la discussione nel testo della tesi.
 
 ---
 
-*Fine trace v2.1 — §3.1.3 ampliata con dettaglio matematico completo.*
+## Analisi §3.1.3c — Neighborhood Trajectory Analysis (NTA)
+
+La NTA è il complemento qualitativo ai due esperimenti quantitativi (§3.1.3a e
+§3.1.3b). Mentre drift e Jaccard misurano *quanto* cambia un vicinato, la NTA
+mostra *cosa* cambia — quali termini entrano ed escono dal k-NN di una parola
+scelta, layer per layer. Il pool di vicini include sia termini giuridici (core)
+che non giuridici (control), permettendo di osservare il momento in cui un
+termine "diventa legale" (i suoi vicini non-legali vengono sostituiti da
+termini di dominio).
+
+---
+
+### N1 — Pool construction: core + control
+
+**Source**: `lens_3_stratigraphy/lens3.py` → `_load_pool_terms()`
+**Usata in**: §3.1.3c — definire lo spazio in cui cercare i vicini
+
+**Il problema**
+
+Nella §3.1.3a, il k-NN di ogni termine è calcolato nel pool di soli 397
+termini core (tutti giuridici). Questo permette di vedere *quale* dominio
+legale domina il vicinato, ma non permette di vedere se il vicinato contiene
+termini non-legali. Per la NTA, serve un pool che includa anche parole
+quotidiane come baseline.
+
+**Composizione del pool**
+
+```
+Pool P = Core ∪ Control
+
+Core:    {t ∈ Index : tier(t) = "core" ∧ domain(t) ≠ ∅}  → 397 termini
+Control: {t ∈ Index : tier(t) = "control"}                 → 100 termini
+
+|P| = 497
+```
+
+I **control terms** sono 100 parole Swadesh-like (pronomi, verbi di base,
+sostantivi concreti: "I", "sleep", "water", "stone", ...). Non hanno dominio
+giuridico — sono il punto zero della specializzazione semantica.
+
+**Ogni termine nel pool ha due attributi categorici:**
+
+```
+tier(t) ∈ {"core", "control"}
+domain(t) ∈ {"civil", "criminal", "constitutional", ..., "control"}
+```
+
+Dove `domain = "control"` è assegnato ai termini con `tier = "control"` che
+non hanno dominio giuridico nel dataset.
+
+**Implementazione**
+
+```python
+def _load_pool_terms():
+    _, index = load_precomputed("BGE-EN-large", EMB_DIR)
+    pool_idx = [
+        i for i, t in enumerate(index)
+        if (t["tier"] == "core" and t["domain"]) or t["tier"] == "control"
+    ]
+    # pool_idx: lista di 497 indici nell'array completo
+    pool_terms = [index[i] for i in pool_idx]
+    return pool_terms, pool_idx
+```
+
+**Perché il pool è lo stesso per tutti i modelli?**
+
+L'indice (`index.json`) contiene sia `en` che `zh_canonical` per ogni termine.
+I modelli EN usano `t["en"]`, i modelli ZH usano `t["zh_canonical"]`. Il pool
+è strutturalmente identico (stessi 497 termini, stesso ordine), ma il testo
+passato al tokenizer cambia per lingua. I layer vectors vengono salvati con
+`cache_label="{model}_pool"` per non confondersi con i vettori core-only
+(397 termini) usati in §3.1.3a/b.
+
+---
+
+### N2 — k-NN retrieval per layer
+
+**Source**: `lens_3_stratigraphy/lens3.py` → `run_nta()` (inner loop)
+**Usata in**: §3.1.3c — trovare i k vicini più simili a un termine target
+
+**La formula**
+
+Per un termine target t, al layer l, il k-NN set è:
+
+```
+kNN(t, l) = argmax_k {sim(t, j, l) : j ∈ P \ {t}}
+
+dove sim(t, j, l) = ĥ_t^(l) · ĥ_j^(l)    (dot product di vettori L2-normalizzati)
+```
+
+`argmax_k` significa: i k indici j con il valore più alto di sim.
+
+**Perché il dot product è equivalente alla cosine similarity?**
+
+Poiché tutti i vettori sono L2-normalizzati (→ E3):
+
+```
+cos(ĥ_t, ĥ_j) = (ĥ_t · ĥ_j) / (‖ĥ_t‖ · ‖ĥ_j‖) = ĥ_t · ĥ_j / (1 · 1) = ĥ_t · ĥ_j
+```
+
+Il dot product e la cosine similarity coincidono. Questo permette di calcolare
+tutte le similitudini con una singola moltiplicazione matrice-vettore.
+
+**Implementazione riga per riga**
+
+```python
+# layer_vecs: (497, L+1, dim) — vettori pool L2-normalizzati
+# t_idx: indice del termine target nel pool
+# l: indice del layer corrente
+
+vec_t = layer_vecs[t_idx, l, :]       # (dim,) — vettore del target
+sims = layer_vecs[:, l, :] @ vec_t    # (497,) — sim con ogni termine del pool
+sims[t_idx] = -np.inf                 # esclude self (→ D2)
+top_k_idx = np.argsort(sims)[-k:][::-1]  # k indici con sim più alta, decrescente
+```
+
+**`np.argsort(sims)[-k:][::-1]`** — come funziona?
+
+1. `np.argsort(sims)` → restituisce gli indici che *ordinerebbero* sims in
+   ordine crescente: `[idx_min, ..., idx_max]`
+2. `[-k:]` → prende gli ultimi k (i più grandi)
+3. `[::-1]` → inverte l'ordine → dal più grande al più piccolo
+
+**Esempio con k=3 e 6 termini**
+
+```
+sims = [0.42, -inf, 0.71, 0.33, 0.89, 0.55]
+                ↑ self escluso
+
+argsort = [1, 3, 0, 5, 2, 4]    (dal più piccolo al più grande)
+[-3:]   = [5, 2, 4]              (i 3 più grandi)
+[::-1]  = [4, 2, 5]              (ordine decrescente)
+
+Risultato: kNN = {indice 4 (sim=0.89), indice 2 (sim=0.71), indice 5 (sim=0.55)}
+```
+
+**Costo computazionale**
+
+Per ogni termine target, ogni layer campionato:
+- 1 matmul (497,dim) × (dim,) = O(497 × dim)
+- 1 argsort di 497 elementi = O(497 × log 497)
+
+Con 8 target terms, 7 layer campionati, 6 modelli:
+8 × 7 × 6 = 336 operazioni — trascurabile (~1s totale).
+
+---
+
+### N3 — Entry/exit detection
+
+**Source**: `lens_3_stratigraphy/lens3.py` → `run_nta()` (entry/exit logic)
+**Usata in**: §3.1.3c — evidenziare quali vicini cambiano tra un layer e il successivo
+
+**Il concetto**
+
+Per ogni coppia di layer consecutivi campionati (l_prev, l_curr), calcoliamo:
+
+```
+Entered(t, l_curr) = kNN(t, l_curr) \ kNN(t, l_prev)
+Exited(t, l_curr)  = kNN(t, l_prev) \ kNN(t, l_curr)
+```
+
+Dove `\` è la differenza insiemistica: A \ B = {x ∈ A : x ∉ B}.
+
+**Entered**: termini che sono nel vicinato al layer corrente ma non erano nel
+vicinato al layer precedente. Sono i "nuovi arrivati".
+
+**Exited**: termini che erano nel vicinato al layer precedente ma non sono più
+nel vicinato corrente. Sono stati "espulsi".
+
+**Relazione con Jaccard (D2)**
+
+La Jaccard distance tra due layer è:
+
+```
+J = 1 - |kNN_prev ∩ kNN_curr| / |kNN_prev ∪ kNN_curr|
+```
+
+Ma `|kNN_prev ∪ kNN_curr| = 2k - |kNN_prev ∩ kNN_curr|`, e il numero di
+entered/exited è:
+
+```
+|Entered| = |Exited| = k - |kNN_prev ∩ kNN_curr|
+```
+
+Quindi Jaccard = 0 significa |Entered| = |Exited| = 0 (vicinato identico), e
+Jaccard = 1 significa |Entered| = |Exited| = k (vicinato completamente diverso).
+
+**La NTA rende Jaccard leggibile**: J = 0.57 per "strike" al layer 8 non dice
+molto. Ma vedere che sono *entrati* "lockout", "arbitration", "collective
+bargaining" ed è *uscito* "hit" (ctrl) racconta una storia precisa.
+
+**Implementazione**
+
+```python
+# prev_nn_set: set[int] — indici del kNN al layer precedente
+# nn_set: set[int] — indici del kNN al layer corrente
+
+for ni in top_k_idx:
+    entry = {"rank": rank, "en": name, "domain": dom, "tier": tier, "sim": s}
+    if prev_nn_set is not None:
+        if ni not in prev_nn_set:
+            entry["status"] = "entered"      # ← nuovo arrivato
+
+exited = []
+if prev_nn_set is not None:
+    for ni in prev_nn_set:
+        if ni not in nn_set:
+            exited.append({"en": name, "domain": dom, "tier": tier})
+```
+
+**Nota**: al layer 0 (embedding layer), `prev_nn_set = None` — non c'è un layer
+precedente, quindi non si può parlare di entered/exited. Tutti i vicini sono
+mostrati senza annotazione.
+
+---
+
+### N4 — Domain/tier composition tracking
+
+**Source**: `lens_3_stratigraphy/lens3.py` → `run_nta()` (domain_evolution)
+**Usata in**: §3.1.3c — quantificare la transizione legal/non-legal layer per layer
+
+**Il concetto**
+
+Per ogni termine target t, a ogni layer campionato l, contiamo:
+
+```
+n_legal(t, l) = |{j ∈ kNN(t, l) : tier(j) = "core"}|
+n_control(t, l) = |{j ∈ kNN(t, l) : tier(j) = "control"}|
+
+Con: n_legal + n_control = k = 7
+```
+
+Questa è la metrica che cattura il momento di "cristallizzazione legale":
+quando n_control passa da >0 a 0, il termine ha perso tutti i vicini
+non-giuridici — il suo vicinato è interamente composto da termini legali.
+
+**Decomposizione per dominio**
+
+Oltre al conteggio legal/control, contiamo anche per dominio specifico:
+
+```
+dom_counts(t, l) = {d: |{j ∈ kNN(t, l) : domain(j) = d}| for d in all_domains}
+```
+
+Esempio: per "corruption" al layer 24 di BGE-EN-large:
+
+```
+dom_counts = {criminal: 7}
+n_legal = 7, n_control = 0
+```
+
+Il termine è completamente convergito al dominio criminale. Al layer 0 invece:
+
+```
+dom_counts = {civil: 5, control: 1, procedure: 1}
+n_legal = 6, n_control = 1
+```
+
+Il vicinato all'embedding layer è dominato da termini civili (il dominio più
+numeroso nel dataset — effetto di base rate), con un termine di controllo.
+
+**Implementazione**
+
+```python
+domain_evolution = []
+for ld in layers_data:
+    dom_counts = {}       # {domain_name: count}
+    n_control = 0
+    n_legal = 0
+    for nb in ld["neighbors"]:
+        d = nb["domain"]
+        dom_counts[d] = dom_counts.get(d, 0) + 1
+        if nb["tier"] == "control":
+            n_control += 1
+        else:
+            n_legal += 1
+    domain_evolution.append({
+        "layer": ld["layer"],
+        "domains": dom_counts,
+        "n_legal": n_legal,
+        "n_control": n_control,
+    })
+```
+
+**Pattern osservati (confermati su 6 modelli)**
+
+```
+1. Layer 0 — Embedding layer: vicinati quasi identici per tutti i target terms.
+   L'embedding layer non ha ancora applicato nessun transformer block.
+   Dominano i termini del dominio più numeroso (civil) per effetto base rate.
+
+2. Layer 4–8 — Peak di control terms per termini polisemici:
+   Termini con forte uso non-giuridico (strike, comity, disclosure) raggiungono
+   il massimo di control neighbors (fino a 5–7 su 7) ai layer intermedi-bassi.
+   Il modello sta ancora rappresentando il significato quotidiano.
+
+3. Layer 12+ — Cristallizzazione:
+   n_control → 0 per la maggior parte dei termini. Il vicinato diventa
+   interamente legale e converge verso il dominio atteso.
+
+4. Eccezioni sistematiche:
+   - "strike" mantiene 1–5 ctrl al layer finale in 3/6 modelli
+     → la polisemia militare/sportiva resiste al fine-tuning
+   - "comity" mantiene ctrl al finale in BGE-ZH e Dmeta
+     → il concetto di "comity" è meno grammaticalizzato in cinese
+```
+
+**Legame con la tesi**
+
+La sequenza n_control = [1, 2, 5, 3, 0, 0, 0] per un termine polisemico
+fornisce un dato concreto per → §3.1.3 "The depth of legal meaning": il
+significato giuridico non è presente ab initio nell'embedding layer, ma
+*emerge* attraverso i layer di attenzione. Il layer dove n_control → 0 è
+il *punto di cristallizzazione* — il passaggio dal "letterale" al "sistematico"
+nella terminologia di Tarello.
+
+---
+
+*Fine trace v2.2 — §3.1.3c NTA aggiunta con dettaglio matematico completo.*
+
+---
+
+## Analisi §3.3 — Value axis projection
+
+Le sezioni seguenti spiegano le operazioni computazionali di Lens IV (§3.3),
+che costruisce assi valoriali da coppie di antonimi e misura l'allineamento
+delle proiezioni tra tradizioni giuridiche.
+
+---
+
+### V1 — Kozlowski difference-vector: costruzione dell'asse
+
+**Source**: `lens_4_values/lens4.py` → `_build_axis()`
+**Usata in**: §3.3.1 — axis construction
+
+**Concetto**
+
+Il metodo di Kozlowski et al. (2019) costruisce un *asse semantico* a partire
+da coppie di antonimi. L'idea: se "individual" e "collective" occupano posizioni
+diverse nello spazio, la direzione che va da "collective" a "individual" definisce
+la dimensione "individuale–collettivo".
+
+**Procedura**
+
+Data una lista di P coppie di antonimi (positivo, negativo):
+
+```
+Per ogni coppia i:
+    diff_i = embed(pos_i) - embed(neg_i)
+
+asse = L2_normalize( mean(diff_1, diff_2, ..., diff_P) )
+```
+
+In formule:
+
+```
+â = (1/P) Σᵢ (eₚₒₛᵢ − eₙₑᵍᵢ)
+asse = â / ‖â‖
+```
+
+dove `‖â‖` è la norma euclidea (lunghezza) del vettore medio.
+
+**Perché la media di più coppie?**
+
+Una singola coppia (es. "individual" vs "collective") è rumorosa: la direzione
+individual→collective potrebbe catturare idiosincrasie di quelle due parole
+specifiche. Con 10 coppie, il rumore idiosincratico si cancella e resta il
+segnale condiviso — la direzione che *tutte* le coppie hanno in comune.
+
+Kozlowski et al. (2019) raccomandano almeno 5 coppie. Il nostro pipeline usa
+10 coppie per asse per lingua (EN e ZH indipendenti).
+
+**Perché normalizzare L2?**
+
+Dopo la media, il vettore ha una lunghezza arbitraria. La normalizzazione L2
+(`â / ‖â‖`) lo porta a lunghezza 1, in modo che il prodotto scalare con
+qualsiasi vettore target corrisponda direttamente alla *similarità coseno*.
+
+**Codice**
+
+```python
+def _build_axis(pair_vectors):
+    diffs = np.array([pos - neg for pos, neg in pair_vectors])
+    mean_diff = diffs.mean(axis=0)
+    norm = np.linalg.norm(mean_diff)
+    if norm > 0:
+        mean_diff /= norm
+    return mean_diff
+```
+
+**Intuizione per il giurista**
+
+Immagina di avere 10 giuristi che ti indicano dove si trova il concetto
+"individuale" rispetto a "collettivo". Ogni giurista punta in una direzione
+leggermente diversa. La media delle 10 indicazioni è la miglior stima
+della direzione condivisa. La normalizzazione dice: "non ci interessa
+quanto è forte il segnale, solo la direzione."
+
+**Legame con la tesi**: → §3.3.1 "We construct three value axes following
+Kozlowski et al. (2019), computing the mean difference vector of 10 antonym
+pairs per axis and per language, then L2-normalizing."
+
+---
+
+### V2 — Proiezione su un asse: cosine similarity come punteggio
+
+**Source**: `lens_4_values/lens4.py` → `_project_terms()`
+**Usata in**: §3.3.2 — cross-tradition alignment
+
+**Concetto**
+
+Una volta costruito l'asse (un vettore unitario di direzione), *proiettiamo*
+ogni termine giuridico su quell'asse. Il risultato è uno *score*: un singolo
+numero che dice "quanto questo termine è vicino al polo positivo dell'asse."
+
+**Operazione**
+
+```
+score(t) = embed(t) · asse = Σₖ embed(t)[k] × asse[k]
+```
+
+Poiché sia `embed(t)` sia `asse` sono normalizzati L2, il prodotto scalare
+è la *similarità coseno* tra il termine e la direzione dell'asse.
+
+- `score > 0`: il termine è più vicino al polo positivo (es. "individual")
+- `score < 0`: il termine è più vicino al polo negativo (es. "collective")
+- `score ≈ 0`: il termine è neutro rispetto a questa dimensione
+
+**Codice**
+
+```python
+def _project_terms(vecs_core, axis_vec):
+    return (vecs_core @ axis_vec).astype(np.float64)
+```
+
+`vecs_core` ha forma `(397, dim)`, `axis_vec` ha forma `(dim,)`. Il risultato
+è un vettore di 397 score, uno per ogni termine core.
+
+**Range dei valori**: con vettori normalizzati, lo score è in [-1, +1].
+In pratica raramente si avvicina ai limiti: valori tipici sono nell'intervallo
+[-0.3, +0.3], perché i termini giuridici sono distribuiti in molte dimensioni
+e la proiezione su una singola direzione cattura solo una frazione della
+varianza totale.
+
+**Intuizione per il giurista**
+
+Immagina l'asse individuale–collettivo come un righello. La proiezione
+colloca ogni concetto giuridico su quel righello: "habeas corpus" più verso
+l'individuale, "public interest" più verso il collettivo. Lo score è
+semplicemente la posizione sul righello.
+
+**Legame con la tesi**: → §3.3.2 "Each of the 397 core legal terms is
+projected onto each value axis via cosine similarity, yielding a score
+in [-1, +1] that represents the term's position along the value dimension."
+
+---
+
+### V3 — Sanity check: orientamento dell'asse
+
+**Source**: `lens_4_values/lens4.py` → `main()` (inline in axis loop)
+**Usata in**: §3.3.1 — axis construction quality
+
+**Concetto**
+
+Il sanity check verifica che l'asse funzioni correttamente: gli antonimi
+positivi devono proiettare con score > 0 e i negativi con score < 0.
+Se "individual" proiettasse a < 0 sull'asse individuale–collettivo,
+l'asse sarebbe invertito o corrotto.
+
+**Procedura**
+
+Per ciascuna delle 10 coppie (pos, neg) usate per costruire l'asse:
+
+```
+positive_correct = count(embed(pos_i) · asse > 0)
+negative_correct = count(embed(neg_i) · asse < 0)
+sanity_pass = positive_correct + negative_correct
+sanity_total = 2 × n_pairs
+```
+
+**Interpretazione**
+
+- `20/20`: tutti gli antonimi proiettano nel verso corretto → asse robusto
+- `18/20`: 1 coppia ambigua → accettabile (il metodo medio è resiliente)
+- `<16/20`: 2+ coppie invertite → l'asse potrebbe catturare un'altra dimensione
+
+**Limiti del sanity check**
+
+Questo test verifica solo la *direzione* (segno), non il *potere discriminante*:
+una proiezione di +0.001 passa il test tanto quanto +0.500. Non verifica neppure
+che l'asse catturi la dimensione *intesa* piuttosto che un confondente correlato.
+Per una validazione più forte, si potrebbe aggiungere la coerenza intra-asse
+(coseno medio tra i singoli vettori-differenza e il vettore asse).
+
+**Legame con la tesi**: → §3.3.1 "The sanity pass rate ranges from 18/20 to
+20/20 across all 6 models and 3 axes, confirming that the axes capture the
+intended polarity."
+
+---
+
+### V4 — Cosine similarity inter-asse (diagnostica ortogonalità)
+
+**Source**: `lens_4_values/lens4.py` → `run_section_331()`
+**Usata in**: §3.3.1 — orthogonality diagnostic
+
+**Concetto**
+
+Se tre assi misurano dimensioni *indipendenti*, i loro vettori-asse dovrebbero
+essere ortogonali: il coseno tra qualsiasi coppia di assi dovrebbe essere ≈ 0.
+
+**Operazione**
+
+```
+cos(asse_A, asse_B) = asse_A · asse_B
+```
+
+Poiché entrambi sono normalizzati L2, il prodotto scalare è direttamente
+la similarità coseno.
+
+**Risultati osservati**
+
+| Coppia di assi | Range osservato | Significato |
+|---|---|---|
+| individual_collective vs rights_duties | +0.14 a +0.42 | Correlazione moderata |
+| individual_collective vs public_private | -0.45 a -0.64 | Anti-correlazione forte |
+| rights_duties vs public_private | -0.03 a -0.22 | Quasi ortogonali |
+
+L'anti-correlazione tra individual_collective e public_private è consistente
+su tutti i 6 modelli (WEIRD e Sinic). Questo non è un artefatto — riflette
+la struttura concettuale: la dicotomia individuo/collettivo e la dicotomia
+pubblico/privato sono facce complementari della stessa *summa divisio*
+nella tradizione giuridica (Sacco 2019).
+
+**Conseguenza per l'analisi**: le proiezioni sui tre assi non sono
+statisticamente indipendenti. Il Kruskal-Wallis in §3.3.3 va interpretato
+con cautela, perché confronta ρ su assi parzialmente sovrapposti.
+
+**Legame con la tesi**: → §3.3.1 "The inter-axis cosine matrix reveals
+that individual_collective and public_private are anti-correlated (cos ∈
+[-0.45, -0.64]), consistent with the *summa divisio* interpretation in
+comparative legal theory."
+
+---
+
+### V5 — Spearman ρ tra vettori di punteggio
+
+**Source**: `scipy.stats.spearmanr()`
+**Usata in**: §3.3.2 — cross-tradition alignment
+
+**Concetto**
+
+Per ciascuna coppia di modelli (15 coppie totali: 9 cross + 6 within) e
+ciascun asse (3), calcoliamo la correlazione di Spearman tra i 397 score
+di proiezione. Questo misura: "i due modelli mettono gli stessi termini
+nello stesso ordine lungo questa dimensione valoriale?"
+
+**Differenza chiave rispetto a Lens I (RSA)**
+
+In Lens I, Spearman è calcolata tra i triangoli superiori di due RDM
+(N(N-1)/2 = 78.606 coppie, non indipendenti). In Lens IV, Spearman è
+calcolata tra due vettori di N=397 score (uno per termine, indipendenti).
+
+Questa differenza è cruciale:
+- Lens I: le 78.606 coppie *non sono* indipendenti (ogni termine appare
+  in N-1 coppie) → serve il block bootstrap e il Mantel test
+- Lens IV: i 397 score *sono* indipendenti (ogni termine produce uno
+  score autonomo) → il bootstrap iid e la Spearman standard sono validi
+
+**Operazione**
+
+```
+ρ = Spearman(scores_model_A, scores_model_B)
+```
+
+dove `scores_model_A` e `scores_model_B` sono vettori di 397 numeri.
+
+La correlazione di Spearman è la correlazione di Pearson applicata ai *ranghi*
+(per la formula completa → sezione S1). È robusta a distribuzioni non-normali
+e misura correlazione *monotona*, non lineare.
+
+**Costruzione indipendente degli assi**
+
+I modelli WEIRD costruiscono l'asse da coppie EN; i modelli Sinic da coppie ZH.
+Il ρ cross-tradizione misura quindi: "le dimensioni valoriali costruite
+*endogenamente* da ciascuna tradizione linguistica producono ordinamenti simili
+dei concetti giuridici?"
+
+Un ρ alto = convergenza strutturale nonostante costruzione indipendente.
+Un ρ basso = divergenza, che può riflettere sia diversità concettuale genuina
+sia non-equivalenza degli assi. Il ρ è un *lower bound* sull'allineamento reale.
+
+**Legame con la tesi**: → §3.3.2 "The Spearman ρ between independently
+constructed axes measures rank alignment of 397 legal terms. It represents
+a lower bound on true cultural alignment because it compounds genuine
+divergence with axis construction noise."
+
+---
+
+### V6 — Row-resample bootstrap per Spearman ρ
+
+**Source**: `lens_4_values/lens4.py` → `_spearman_bootstrap()` →
+`shared/statistical.py` → `bootstrap_ci_generic()`
+**Usata in**: §3.3.2 — confidence intervals
+
+**Concetto**
+
+Il *bootstrap* (Efron 1979) stima l'incertezza di una statistica ricampionando
+i dati. Per Lens IV usiamo il *row-resample bootstrap*: ricampioniamo i
+397 termini (righe), non le coppie di termini come in Lens I.
+
+**Perché row-resample e non block bootstrap?**
+
+In Lens I, ogni termine appare in N-1 coppie della RDM → le osservazioni non
+sono indipendenti → serve il block bootstrap che ricampiona blocchi di termini,
+preservando la struttura di dipendenza (→ sezione S5).
+
+In Lens IV, ogni termine produce un singolo score di proiezione, indipendente
+dagli score degli altri termini. Le 397 osservazioni sono iid (condizionatamente
+al modello e all'asse). Il bootstrap iid sulle righe è quindi appropriato e
+più efficiente del block bootstrap.
+
+**Procedura**
+
+```
+data = column_stack([scores_A, scores_B])   # (397, 2)
+
+Per b = 1, ..., B (B=10000):
+    1. Campiona 397 indici con ripetizione
+    2. Seleziona le righe corrispondenti: data_b = data[indices]
+    3. Calcola ρ_b = Spearman(data_b[:, 0], data_b[:, 1])
+
+CI_95% = [percentile_2.5(ρ_1..ρ_B), percentile_97.5(ρ_1..ρ_B)]
+```
+
+**Scelta di B=10000**
+
+B=10000 allineato con Lens I per coerenza del parametro di Monte Carlo
+attraverso la tesi. Con B=10000, ciascun endpoint del CI al 95% è basato su
+250 valori (10000 × 0.025), con errore Monte Carlo SE ≈ 0.0016 — trascurabile
+rispetto all'ampiezza tipica del CI (~0.18).
+
+**Codice**
+
+```python
+def _spearman_bootstrap(scores_a, scores_b, n_boot=10000, seed=42):
+    stacked = np.column_stack([scores_a, scores_b])
+    def stat_fn(data):
+        return float(spearmanr(data[:, 0], data[:, 1]).statistic)
+    return bootstrap_ci_generic(stacked, stat_fn, n_boot=n_boot, seed=seed)
+```
+
+**Intuizione per il giurista**
+
+Hai 397 termini. Il bootstrap chiede: "se avessi avuto 397 termini *diversi*
+(ma campionati dallo stesso universo giuridico), avrei ottenuto un ρ simile?"
+Ripetendo 10.000 volte, otteniamo la distribuzione della risposta. L'intervallo
+che contiene il 95% delle risposte è il CI.
+
+**Legame con la tesi**: → §3.3.2 "95% bootstrap percentile intervals (B=10,000,
+row-resampling terms) quantify uncertainty. Row-resampling is appropriate because
+each term yields one independent projection score, unlike RSA where observations
+are structurally dependent pairs."
+
+---
+
+### V7 — Mann-Whitney U su gruppi di ρ (cross vs within)
+
+**Source**: `shared/statistical.py` → `mannwhitney_with_r()`
+**Usata in**: §3.3.2 — tradition separation test
+
+**Concetto**
+
+Per ciascun asse, abbiamo 9 valori ρ cross-tradizione e 6 valori ρ
+within-tradizione. La domanda: "i ρ cross sono *sistematicamente* più bassi
+dei ρ within?" Risponde il test di Mann-Whitney U (non-parametrico).
+
+**Operazione**
+
+```
+H0: cross_rhos e within_rhos provengono dalla stessa distribuzione
+H1: cross_rhos sono stocasticamente inferiori (alternative="less")
+```
+
+Il test calcola la statistica U e il p-value. L'effect size è il
+rank-biserial correlation r (→ sezione A2):
+
+```
+r = 1 - 2U / (n₁ × n₂)
+```
+
+dove n₁=9 (cross), n₂=6 (within). r → 1 significa separazione completa.
+
+**Campioni piccoli e pseudo-replicazione**
+
+Con n₁=9 e n₂=6, il test ha potenza limitata. Inoltre, i 9 ρ cross provengono
+da una griglia 3×3 di modelli: ogni modello EN appare in 3 coppie e ogni modello
+ZH in 3 coppie. Le osservazioni non sono completamente indipendenti. I gradi
+di libertà effettivi sono inferiori a 9 e 6.
+
+Di conseguenza, i p-value del Mann-Whitney vanno interpretati come *indicativi*,
+non come test formali. Gli effect size (r=0.78–1.00) sono invece interpretabili:
+indicano separazione quasi completa tra i gruppi, indipendentemente dalla
+significatività formale.
+
+**Risultati osservati**
+
+| Asse | cross ρ̄ | within ρ̄ | effect r | p |
+|---|---|---|---|---|
+| individual_collective | 0.292 | 0.538 | +1.00 | 0.0002 |
+| rights_duties | 0.380 | 0.627 | +1.00 | 0.0002 |
+| public_private | 0.402 | 0.581 | +0.78 | 0.006 |
+
+**Legame con la tesi**: → §3.3.2 "The Mann-Whitney test is reported as
+descriptive evidence of tradition separation. Effect sizes (r=0.78–1.00)
+indicate near-complete separation, though the test's formal p-values
+are approximate due to pseudo-replication in the 3×3 model grid."
+
+---
+
+### V8 — Kruskal-Wallis H + post-hoc Bonferroni
+
+**Source**: `scipy.stats.kruskal()` + `mannwhitney_with_r()`
+**Usata in**: §3.3.3 — which axes diverge most?
+
+**Concetto**
+
+Il Kruskal-Wallis H è l'analogo non-parametrico dell'ANOVA a una via.
+Confronta le *distribuzioni* dei ρ cross-tradizione tra i 3 assi (9 valori
+per asse, 27 totali).
+
+```
+H0: i 3 gruppi di ρ cross provengono dalla stessa distribuzione
+H1: almeno un gruppo differisce
+```
+
+**Perché Kruskal-Wallis e non ANOVA?**
+
+- Solo 9 osservazioni per gruppo → impossibile verificare normalità
+- I ρ sono bounded (correlazioni), distribuzione potenzialmente asimmetrica
+- Il test non-parametrico non richiede assunzioni distribuzionali
+
+**Post-hoc**
+
+Se H è significativo (p < 0.05), si eseguono confronti pairwise tra coppie di
+assi con Mann-Whitney, correggendo per 3 confronti con Bonferroni:
+`p_adjusted = min(p_raw × 3, 1.0)`.
+
+**Power e limiti**
+
+Con n=9 per gruppo e η²_H ≈ 0.16 (effect size medio-grande), la potenza
+stimata è ~0.50 — insufficiente per raggiungere con sicurezza p < 0.05.
+Il risultato KW (H=7.20, p=0.027) è significativo, ma i post-hoc pairwise
+non sopravvivono alla correzione Bonferroni (p_adj > 0.05 per tutti e 3
+i confronti). Questo è atteso con la potenza disponibile.
+
+**Interpretazione corretta**
+
+Il KW rileva una differenza globale tra assi (p=0.027), con individual_collective
+(ρ̄=0.292) come asse più divergente. Ma il design non ha sufficiente potenza
+per isolare *quale* coppia di assi differisce. Il ranking descrittivo
+(individual_collective < rights_duties < public_private) è il dato riportabile.
+
+**Risultati osservati**
+
+```
+KW: H=7.20, p=0.027 (significativo)
+
+Post-hoc (Bonferroni, 3 confronti):
+  ind_coll vs public_private:  r=+0.65  p_adj=0.065  (n.s.)
+  ind_coll vs rights_duties:   r=+0.60  p_adj=0.102  (n.s.)
+  public_private vs rights_duties: r=-0.21  p_adj=1.000  (n.s.)
+```
+
+**Legame con la tesi**: → §3.3.3 "The Kruskal-Wallis test detects a global
+difference in cross-tradition alignment across axes (H=7.20, p=0.027), with
+individual_collective as the most divergent axis. Post-hoc pairwise tests do
+not survive Bonferroni correction, consistent with the limited power of
+n=9 per group."
+
+---
+
+*Fine trace v2.3 — §3.3 Value axis projection aggiunta con 8 sezioni (V1-V8).*
