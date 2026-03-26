@@ -1,0 +1,1808 @@
+GEOMETRIA IURIS — INDICE DELLE FONTI
+Generato: febbraio 2026
+================================================================================
+
+LEGENDA
+  [PDF]  file presente in questa cartella → path relativo indicato
+  [LIB]  libro/monografia non disponibile in formato digitale libero
+  [PAY]  articolo disponibile solo dietro paywall
+  [DUP]  copia duplicata (arXiv + versione pubblicata): indicata la versione canonica
+  [?]    file pre-esistente, identificazione incerta
+
+I path sono relativi alla cartella documenti/fonti/
+
+================================================================================
+1. MODELLI DI EMBEDDING E LANGUAGE MODELS (FONDAMENTI)
+================================================================================
+
+Harris, Z. S. (1954). Distributional Structure. Word, 10(2–3), 146–162.
+  [PAY] — Taylor & Francis. Nessun preprint accessibile.
+  Descr.: Articolo fondativo dell'ipotesi distribuzionale: le parole che occorrono in contesti
+           simili tendono ad avere significati simili. Principio teorico alla base di tutti i
+           modelli di embedding utilizzati nella tesi.
+
+Firth, J. R. (1957). A Synopsis of Linguistic Theory 1930–1955. Oxford: Philological Society.
+  [LIB] — volume collettaneo fuori stampa.
+  Descr.: Formulazione classica del principio contestuale ("you shall know a word by the company
+           it keeps"). Complementa Harris (1954) sul versante linguistico britannico e fornisce
+           la giustificazione teorica per la semantica distribuzionale moderna.
+
+Mikolov, T. et al. (2013). Efficient Estimation of Word Representations in Vector Space
+        [Word2Vec]. arXiv:1301.3781.
+  [PDF] arxiv_1301.3781_word2vec_mikolov2013.pdf
+  Descr.: Introduce Word2Vec (Skip-gram e CBOW), dimostrando che rappresentazioni vettoriali
+           dense catturano regolarità semantiche e sintattiche. Pietra miliare per l'idea che
+           la geometria dello spazio vettoriale codifica relazioni concettuali.
+
+Mikolov, T. et al. (2013). Linguistic Regularities in Distributed Word Representations.
+        NAACL-HLT 2013. ACL Anthology: N13-1090.
+  [PDF] acl_N13-1090_word2vec_linguistic_regularities_mikolov2013.pdf
+  [DUP] stesso lavoro dell'arXiv sopra (versione pubblicata).
+  Descr.: Versione pubblicata del paper Word2Vec. Documenta le analogie vettoriali (es.
+           king - man + woman ≈ queen), modello concettuale ripreso nella tesi per le
+           proiezioni su assi semantici à la Kozlowski.
+
+Pennington, J. et al. (2014). GloVe: Global Vectors for Word Representation. EMNLP. D14-1162.
+  [PDF] acl_D14-1162_glove_pennington2014.pdf
+  Descr.: Modello di embedding statico basato su fattorizzazione della matrice di co-occorrenza
+           globale. Alternativa a Word2Vec con proprietà algebriche esplicite; riferimento
+           per comprendere l'evoluzione dai modelli statici ai transformer contestuali.
+
+Vaswani, A. et al. (2017). Attention Is All You Need. NeurIPS 30, 5998–6008. arXiv:1706.03762.
+  [PDF] arxiv_1706.03762_attention_is_all_you_need_vaswani2017.pdf
+  Descr.: Introduce l'architettura Transformer basata su self-attention, che sostituisce le
+           reti ricorrenti. Fondamento di tutti i modelli di embedding contestuali (BERT, E5,
+           BGE) impiegati nella pipeline sperimentale della tesi.
+
+Devlin, J. et al. (2019). BERT: Pre-training of Deep Bidirectional Transformers for Language
+        Understanding. NAACL-HLT, 4171–4186. arXiv:1810.04805 / ACL Anthology: N19-1423.
+  [PDF] arxiv_1810.04805_bert_devlin2019.pdf
+  [DUP] acl_N19-1423_bert_devlin2019.pdf (versione pubblicata — identica)
+  Descr.: Pre-training bidirezionale con masked language modeling e next sentence prediction.
+           Architettura di riferimento per Sentence-BERT e per i modelli di embedding
+           (E5, BGE, Nomic) usati nella pipeline CLS.
+
+Reimers, N. & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT.
+        EMNLP. arXiv:1908.10084 / ACL Anthology: D19-1410.
+  [PDF] arxiv_1908.10084_sentence_bert_reimers2019.pdf
+  Descr.: Adatta BERT a una rete siamese per produrre embedding di frase comparabili via
+           similarità coseno. Framework sentence-transformers alla base della pipeline CLS;
+           SBERT-ZH-v2 (modello sinico) discende direttamente da questa architettura.
+
+Wang, L. et al. (2022). Text Embeddings by Weakly-Supervised Contrastive Pre-training [E5].
+        arXiv:2212.09741.
+  [PDF] arxiv_2212.09741_e5_wang2022.pdf
+  Descr.: Presenta E5, modello di embedding testuale addestrato con contrastive learning
+           debolmente supervisionato su coppie testo-testo web. E5-large-v2 è uno dei tre
+           modelli WEIRD utilizzati nella pipeline multi-modello della tesi.
+
+Xiao, S. et al. (2023). C-Pack: Packaged Resources to Advance General Chinese Embedding [BGE].
+        arXiv:2309.07597.
+  [PDF] arxiv_2309.07597_bge_xiao2023.pdf
+  Descr.: Introduce la famiglia BGE (BAAI General Embedding) con risorse per il cinese:
+           dati di training, modello e benchmark C-MTEB. BGE-ZH-v1.5 è il modello sinico
+           primario e BGE-EN-v1.5 uno dei modelli WEIRD nella pipeline della tesi.
+
+Nussbaum, Z. et al. (2024). Nomic Embed: Training a Reproducible Long Context Text Embedder.
+        arXiv:2402.01613.
+  [PDF] arxiv_2402.01613_nomic_embed_nussbaum2024.pdf
+  Descr.: Modello di embedding open-source con supporto per contesti lunghi e training
+           riproducibile. Nomic-v1.5 è il terzo modello WEIRD nella configurazione
+           multi-modello della tesi (3×3 WEIRD × Sinic).
+
+Muennighoff, N. et al. (2023). MTEB: Massive Text Embedding Benchmark. EACL.
+        arXiv:2210.07316 / ACL Anthology: 2023.eacl-main.148.
+  [PDF] arxiv_2210.07316_mteb_muennighoff2023.pdf
+  [DUP] acl_2023.eacl-main.148_mteb_muennighoff2023.pdf (versione pubblicata)
+  Descr.: Benchmark unificato per valutare modelli di embedding su 8 task e 58 dataset.
+           Riferimento per la selezione dei modelli WEIRD (E5, BGE-EN, Nomic) e per
+           giustificare la comparabilità delle loro prestazioni generali.
+
+Ruder, S., Vulić, I. & Søgaard, A. (2019). A Survey of Cross-Lingual Word Embedding Models.
+        JAIR, 65, 569–631. arXiv:1706.04902.
+  [PDF] jair_ruder2019_crosslingual_embeddings_survey.pdf
+  Descr.: Rassegna sistematica dei metodi per allineare spazi di embedding tra lingue diverse
+           (mapping, joint training, pseudo-dizionari). Quadro teorico per comprendere perché
+           la tesi confronta spazi EN e ZH separati anziché usare un unico spazio allineato.
+
+================================================================================
+2. LEGAL NLP E DIRITTO COMPUTAZIONALE
+================================================================================
+
+Chalkidis, I. et al. (2020). LEGAL-BERT: The Muppets Straight out of Law School.
+        Findings of EMNLP, 2898–2904. arXiv:2010.02559 / ACL Anthology: 2020.findings-emnlp.261.
+  [PDF] arxiv_2010.02559_legal_bert_chalkidis2020.pdf
+  [DUP] acl_2020.findings-emnlp.261_legal_bert_chalkidis2020.pdf (versione pubblicata)
+  Descr.: BERT pre-addestrato su corpora giuridici inglesi (legislazione EU/UK, contratti,
+           giurisprudenza). Dimostra che il domain-specific pre-training migliora i task legali.
+           Riferimento per la discussione sull'adeguatezza di modelli generici vs. legali.
+
+Zheng, L. et al. (2021). When Does Pretraining Help? Assessing Self-Supervised Learning
+        for Law and Politics. NAACL-HLT. ACL Anthology: 2021.naacl-main.401.
+  [PDF] acl_2021.naacl-main.401_pretraining_law_zheng2021.pdf
+  Descr.: Valuta sistematicamente quando il pre-training auto-supervisionato migliora task
+           di classificazione in ambito giuridico e politico. Utile per giustificare la scelta
+           di modelli generici nella tesi, dato che il vantaggio del domain pre-training
+           non è universale.
+
+Mouritsen, S. C. (2010). The Dictionary Is Not a Fortress: Definitional Fallacies and a
+        Corpus-Based Approach to Plain Meaning. BYU Law Review, 2010(5), 1915–1980.
+  [PAY] — HeinOnline, nessun preprint.
+  Descr.: Critica l'uso dei dizionari nell'interpretazione giuridica e propone metodi
+           corpus-based per determinare il "plain meaning". Anticipa l'uso di dati linguistici
+           quantitativi nel diritto, tema centrale della tesi.
+
+Solan, L. M. & Gales, T. (2017). Corpus Linguistics as a Tool in Legal Interpretation.
+        BYU Law Review, 2017(6), 1311–1372.
+  [PAY] — HeinOnline.
+  Descr.: Esamina l'applicazione della linguistica dei corpora all'interpretazione giuridica
+           statunitense, discutendo potenzialità e limiti. Connette la corpus linguistics
+           tradizionale con l'analisi computazionale del significato giuridico.
+
+Katz, D. M. (2012). Quantitative Legal Prediction—or—How I Learned to Stop Worrying
+        and Start Preparing for the Data-Driven Future of the Legal Services Industry.
+        Emory Law Journal, 62(4), 909–966.
+  [PAY] — Emory Law Journal. Potenzialmente su SSRN.
+  Descr.: Manifesto programmatico per la predizione quantitativa nel diritto. Argomenta che
+           metodi computazionali e machine learning trasformeranno l'analisi giuridica.
+           Contesto generale per il posizionamento della tesi nel filone "law as data".
+
+Carlson, D., Livermore, M. A. & Rockmore, D. N. (2020). A Quantitative Analysis of
+        Writing Style on the U.S. Supreme Court. Washington University Law Review, 97(5).
+  [PAY] — Washington University Law Review.
+  Descr.: Analisi stilometrica computazionale delle opinioni della Corte Suprema USA.
+           Esempio di applicazione di metodi quantitativi testuali al diritto, affine
+           all'approccio embedding-based della tesi ma su dimensioni stilistiche.
+
+Pound, R. (1910). Law in Books and Law in Action. American Law Review, 44, 12–36.
+  [PAY] — JSTOR (pre-1923, tecnicamente pubblico dominio ma non trovato in PDF libero).
+  Descr.: Distinzione classica tra diritto formale (law in books) e diritto vivente (law in
+           action). Rilevante per la tesi come premessa teorica: gli embedding catturano il
+           significato d'uso effettivo, non la definizione normativa astratta.
+
+Nay, J. J. et al. (2024). Large Language Models as Tax Attorneys: A Case Study in Large
+        Language Model Text Analytics. Artificial Intelligence and Law, 32, 5–43. arXiv:2212.10804.
+  [PDF] arxiv_2212.10804_llms_tax_attorneys_nay2023.pdf
+  Descr.: Studio empirico che valuta GPT su quesiti di diritto tributario, confrontando
+           le prestazioni con quelle di avvocati fiscalisti. Illustra le capacità e i limiti
+           dei LLM nell'analisi giuridica specializzata.
+
+Livermore, M. A. & Rockmore, D. N. (eds.) (2019). Law as Data: Computation, Text, and
+        the Future of Legal Analysis. Santa Fe: SFI Press.
+  [LIB]
+  Descr.: Volume collettaneo che raccoglie contributi su text mining, NLP e analisi
+           computazionale applicati al diritto. Inquadramento programmatico del campo
+           "computational legal studies" in cui si inserisce la tesi.
+
+Bommasani, R. et al. (2021). On the Opportunities and Risks of Foundation Models.
+        arXiv:2108.07258.
+  [PDF] arxiv_2108.07258_foundation_models_bommasani2021.pdf
+  Descr.: Rapporto Stanford (200+ autori) che definisce i "foundation model" e ne analizza
+           impatto, rischi e applicazioni interdisciplinari. Contestualizza i modelli di
+           embedding della tesi nel panorama più ampio dell'AI generativa.
+
+================================================================================
+3. ANALISI E INTERPRETABILITÀ DEI TRANSFORMER
+================================================================================
+
+Ethayarajh, K. (2019). How Contextual are Contextualized Word Representations? Comparing
+        the Geometry of BERT, ELMo, and GPT-2 Representations. EMNLP. ACL: D19-1006.
+  [PDF] acl_D19-1006_contextual_representations_ethayarajh2019.pdf
+  Descr.: Analisi geometrica dello spazio di embedding di BERT, ELMo e GPT-2: misura
+           anisotropia, self-similarity e contestualità per layer. Fondamentale per
+           comprendere le proprietà geometriche degli spazi che la tesi confronta.
+
+Jawahar, G., Sagot, B. & Seddah, D. (2019). What Does BERT Learn about the Structure of
+        Language? ACL, 3651–3657. ACL Anthology: P19-1356.
+  [PDF] acl_P19-1356_bert_structure_language_jawahar2019.pdf
+  Descr.: Probing study che mostra come i layer di BERT codificano progressivamente
+           informazioni fonetiche, sintattiche e semantiche. Evidenza che la struttura
+           interna dei transformer riflette una gerarchia linguistica.
+
+Clark, K. et al. (2019). What Does BERT Look At? An Analysis of BERT's Attention.
+        BlackboxNLP Workshop, ACL. ACL Anthology: W19-4828. arXiv:1906.04341.
+  [PDF] arxiv_1906.04341_bert_attention_clark2019.pdf
+  [DUP] acl_W19-4828_bert_attention_clark2019.pdf
+  Descr.: Analisi dei pattern di attenzione di BERT: individua teste specializzate per
+           relazioni sintattiche (coreference, dependency). Contribuisce alla comprensione
+           di come i transformer costruiscono le rappresentazioni semantiche.
+
+Belinkov, Y. & Glass, J. (2019). Analysis Methods in Neural Language Processing: A Survey.
+        TACL, 7, 49–72. arXiv:1904.07531 / ACL Anthology: Q19-1004.
+  [PDF] arxiv_1904.07531_analysis_nlp_belinkov2019.pdf
+  [DUP] acl_Q19-1004_analysis_neural_nlp_belinkov2019.pdf
+  Descr.: Rassegna dei metodi di analisi per reti neurali nel NLP: probing classifier,
+           ablation, visualizzazione dell'attenzione. Inquadra metodologicamente gli
+           strumenti per interpretare cosa codificano gli embedding.
+
+Tenney, I. et al. (2019). BERT Rediscovers the Classical NLP Pipeline. ACL.
+        arXiv:1905.05950 / ACL Anthology: P19-1452.
+  [PDF] arxiv_1905.05950_bert_rediscovers_tenney2019.pdf
+  [DUP] acl_P19-1452_bert_rediscovers_nlp_tenney2019.pdf
+  Descr.: Mostra che BERT replica internamente la pipeline NLP classica (POS, parsing,
+           NER, SRL) nei suoi layer successivi. Conferma che le rappresentazioni
+           intermedie hanno struttura linguistica interpretabile.
+
+Hewitt, J. & Manning, C. D. (2019). A Structural Probe for Finding Syntax in Word
+        Representations. NAACL. arXiv:1905.06316 / ACL Anthology: N19-1419.
+  [PDF] arxiv_1905.06316_structural_probe_hewitt2019.pdf
+  [DUP] acl_N19-1419_structural_probe_hewitt2019.pdf
+  Descr.: Dimostra che gli alberi sintattici sono codificati come struttura geometrica
+           (distanze e norme) nello spazio di BERT. Evidenza diretta che la geometria
+           degli embedding ha contenuto linguistico strutturato.
+
+Rogers, A. et al. (2020). A Primer in BERTology: What We Know About How BERT Works.
+        TACL, 8, 842–866. arXiv:2002.12327 / ACL Anthology: 2020.tacl-1.54.
+  [PDF] arxiv_2002.12327_bertology_rogers2020.pdf
+  [DUP] acl_2020.tacl-1.54_bertology_primer_rogers2020.pdf
+  Descr.: Meta-rassegna di oltre 150 studi su BERT: cosa codifica ogni layer, come il
+           fine-tuning modifica le rappresentazioni, limiti noti. Riferimento enciclopedico
+           per la sezione della tesi sulla natura delle rappresentazioni transformer.
+
+Conneau, A. et al. (2018). What You Can Cram into a Single $&!#* Vector: Probing Sentence
+        Embeddings for Linguistic Properties. ACL, 2126–2136. arXiv:1805.01070 / ACL: P18-1198.
+  [PDF] arxiv_1805.01070_what_you_can_cram_conneau2018.pdf
+  [DUP] acl_P18-1198_what_you_can_cram_conneau2018.pdf
+  Descr.: Introduce 10 probing task per valutare quali proprietà linguistiche (lunghezza,
+           profondità sintattica, tempo verbale) sono codificate in un singolo vettore frase.
+           Metodologia di riferimento per l'interpretabilità degli embedding di frase.
+
+Conneau, A. et al. (2020). Unsupervised Cross-lingual Representation Learning at Scale
+        [XLM-R]. ACL. arXiv:1911.02116 / ACL Anthology: 2020.acl-main.747.
+  [PDF] arxiv_1911.02116_xlmr_conneau2020.pdf
+  [DUP] acl_2020.acl-main.747_xlmr_conneau2020.pdf
+  Descr.: XLM-RoBERTa: pre-training multilingue su 100 lingue con 2.5TB di dati CommonCrawl.
+           Alternativa a modelli monolingui separati; la tesi usa modelli monolingui anziché
+           XLM-R per preservare la specificità culturale degli spazi semantici.
+
+================================================================================
+4. EMBEDDING: BIAS CULTURALI E ANALISI DIACRONICA
+================================================================================
+
+Caliskan, A., Bryson, J. J. & Narayanan, A. (2017). Semantics Derived Automatically from
+        Language Corpora Contain Human-like Biases. Science, 356(6334), 183–186.
+  [PAY] — Science/AAAS. Versione preprint non trovata.
+  Descr.: Introduce il WEAT (Word Embedding Association Test) dimostrando che gli embedding
+           replicano bias impliciti umani (genere, razza, età). Evidenza che gli spazi
+           vettoriali catturano strutture culturali, premessa per il confronto cross-culturale.
+  Nota: il file 2020.emnlp-main.257.pdf pre-esistente potrebbe contenere un lavoro correlato.
+
+Bolukbasi, T. et al. (2016). Man is to Computer Programmer as Woman is to Homemaker?
+        Debiasing Word Embeddings. NeurIPS, 4349–4357. arXiv:1607.06520.
+  [PDF] arxiv_1607.06520_debiasing_embeddings_bolukbasi2016.pdf
+  Descr.: Identifica e quantifica il bias di genere in Word2Vec tramite proiezione su
+           sottospazi, proponendo tecniche di debiasing. Metodologicamente affine alla
+           proiezione su assi della tesi (Kozlowski), applicata però a dimensioni culturali.
+
+Kozlowski, A. C. et al. (2019). The Geometry of Culture: Analyzing the Meanings of Class
+        through Word Embeddings. American Sociological Review, 84(5). arXiv:1803.09288.
+  [PDF] arxiv_1803.09288_geometry_of_culture_kozlowski2019.pdf
+  Descr.: Metodo di proiezione su assi semantici (multi-pair axis) per misurare dimensioni
+           culturali (classe, genere, razza) negli embedding. Fonte diretta dell'esperimento
+           exp_axes della pipeline CLS: la tesi adatta il metodo al dominio giuridico.
+
+Garg, N. et al. (2018). Word Embeddings Quantify 100 Years of Gender and Ethnic Stereotypes.
+        PNAS, 115(16), E3635–E3644.
+  [PDF] pnas_garg2018_word_embeddings_stereotypes.pdf
+  Descr.: Analisi diacronica dei bias di genere e etnia in embedding addestrati su corpora
+           storici (1900-2000). Dimostra che gli embedding funzionano come "termometro
+           culturale", ispirando l'uso analogo per il lessico giuridico cross-culturale.
+
+Hamilton, W. L., Leskovec, J. & Jurafsky, D. (2016). Diachronic Word Embeddings Reveal
+        Statistical Laws of Semantic Change. ACL, 1489–1501. arXiv:1605.09096 / ACL: P16-1141.
+  [PDF] arxiv_1605.09096_diachronic_embeddings_hamilton2016.pdf
+  [DUP] acl_P16-1141_diachronic_hamilton2016.pdf
+  Descr.: Individua leggi statistiche del cambiamento semantico tramite embedding diacronici
+           (legge di Zipf applicata al drift semantico). Metodologia per tracciare l'evoluzione
+           del significato, potenzialmente applicabile alla terminologia giuridica comparata.
+
+Kutuzov, A. et al. (2018). Diachronic Word Embeddings and Semantic Shifts: A Survey.
+        COLING, 1384–1397. ACL Anthology: C18-1117.
+  [PDF] acl_C18-1117_diachronic_semantic_shifts_kutuzov2018.pdf
+  Descr.: Rassegna dei metodi per rilevare shift semantici con embedding diacronici:
+           allineamento di spazi, metriche di drift, valutazione. Complementa Hamilton (2016)
+           con una panoramica sistematica delle tecniche disponibili.
+
+Wevers, M. & Koolen, M. (2020). Digital Begriffsgeschichte: Tracing Semantic Change Using
+        Word Embeddings. Historical Methods, 53(4), 226–243. arXiv:2005.03895.
+  [PDF] arxiv_2005.03895_digital_begriffsgeschichte_wevers2020.pdf
+  Descr.: Applica embedding diacronici alla storia dei concetti (Begriffsgeschichte) di
+           Koselleck. Ponte teorico tra digital humanities e semantica distribuzionale,
+           direttamente rilevante per il concetto di "DigiVolksgeist" della tesi.
+
+Spirling, A. & Rodriguez, P. L. (2020). Word Embeddings: What Works, What Doesn't, and
+        How to Tell the Difference for Applied Research. Journal of Politics, 82(2).
+  [PAY] — Journal of Politics. Preprint GitHub non accessibile.
+  Descr.: Guida pratica all'uso di word embeddings nella scienza politica: scelte di
+           pre-processing, iperparametri, e validazione. Rilevante per le decisioni
+           metodologiche sulla configurazione degli embedding nella pipeline CLS.
+
+================================================================================
+5. REPRESENTATIONAL SIMILARITY ANALYSIS (RSA) E GEOMETRIA RAPPRESENTAZIONALE
+================================================================================
+
+Shepard, R. N. & Chipman, S. (1970). Second-order Isomorphism of Internal Representations:
+        Shapes of States. Cognitive Psychology, 1(1), 1–17.
+  [PAY] — Elsevier/ScienceDirect.
+  Descr.: Introduce il concetto di isomorfismo di secondo ordine: le rappresentazioni interne
+           preservano le relazioni di similarità tra stimoli, non le proprietà degli stimoli
+           stessi. Fondamento teorico della RSA e del confronto tra spazi nella tesi.
+
+Kriegeskorte, N. et al. (2008). Representational Similarity Analysis — Connecting the
+        Branches of Systems Neuroscience. Frontiers in Systems Neuroscience, 2(4).
+  [PDF] frontiers_kriegeskorte2008_rsa.pdf
+  Descr.: Articolo fondativo della RSA: confrontare rappresentazioni tramite matrici di
+           dissimilarità (RDM) e correlazione di Spearman/Mantel. Metodo principale
+           dell'esperimento exp_rsa della pipeline CLS della tesi.
+
+Kriegeskorte, N. & Kievit, R. A. (2013). Representational Geometry: Integrating Cognition,
+        Computation, and the Brain. Trends in Cognitive Sciences, 17(11), 529–540.
+  [PAY] — Cell Press/Elsevier. Preprint MRC-CBU non accessibile via curl.
+  Descr.: Formalizza il concetto di "geometria rappresentazionale": le relazioni geometriche
+           nello spazio delle rappresentazioni (distanze, angoli) sono il livello di analisi
+           adeguato per confrontare sistemi cognitivi. Base teorica per l'approccio della tesi.
+
+Diedrichsen, J. & Kriegeskorte, N. (2017). Representational Models: A Common Framework for
+        Understanding Encoding, Pattern-Component, and Representational-Similarity Analysis.
+        PLOS Computational Biology, 13(4), e1005508.
+  [PDF] plos_diedrichsen2017_representational_models.pdf
+  Descr.: Unifica encoding models, pattern-component analysis e RSA in un framework bayesiano
+           comune. Chiarisce le assunzioni statistiche della RSA e le condizioni per
+           l'inferenza valida, rilevante per la robustezza metodologica della tesi.
+
+Nili, H. et al. (2014). A Toolbox for Representational Similarity Analysis. PLOS
+        Computational Biology, 10(4), e1003553.
+  [PDF] plos_nili2014_rsa_toolbox.pdf
+  Descr.: Toolbox MATLAB per RSA con test statistici (bootstrap, permutazione, Mantel).
+           Riferimento diretto per l'implementazione del block bootstrap sulle RDM nella
+           pipeline CLS (block_bootstrap_rdm_ci segue le raccomandazioni di questo paper).
+
+================================================================================
+6. SEMANTICA GEOMETRICA E SPAZI CONCETTUALI
+================================================================================
+
+Stevens, S. S. (1946). On the Theory of Scales of Measurement. Science, 103(2684), 677–680.
+  [PAY] — Science/AAAS (1946, tecnicamente pubblico dominio ma non in PDF libero).
+  Descr.: Tassonomia classica delle scale di misura (nominale, ordinale, intervallo, rapporto).
+           Fondamento per discutere a quale livello di misurazione operano le distanze
+           coseno negli spazi di embedding e quali operazioni sono lecite su di esse.
+
+Krantz, D. H., Luce, R. D., Suppes, P. & Tversky, A. (1971). Foundations of Measurement,
+        Vol. I. New York: Academic Press.
+  [LIB]
+  Descr.: Trattato assiomatico sulla teoria della misurazione: condizioni necessarie per
+           rappresentazioni numeriche di strutture empiriche. Riferimento per la legittimità
+           epistemologica delle operazioni metriche sugli spazi di embedding.
+
+Gärdenfors, P. (2000). Conceptual Spaces: The Geometry of Thought. Cambridge, MA: MIT Press.
+  [LIB]
+  Descr.: Opera fondativa della teoria degli spazi concettuali: i concetti sono regioni
+           convesse in spazi geometrici con dimensioni di qualità. Quadro teorico principale
+           della tesi per interpretare gli embedding come spazi concettuali giuridici.
+
+Gärdenfors, P. (2014). The Geometry of Meaning: Semantics Based on Conceptual Spaces.
+        Cambridge, MA: MIT Press.
+  [LIB]
+  Descr.: Estende la teoria degli spazi concettuali alla semantica lessicale: significati
+           di parole come regioni, metafore come mappings tra domini. Collegamento diretto
+           tra la geometria concettuale e la semantica distribuzionale degli embedding.
+
+Gärdenfors, P. (2025). The Geometry and Dynamics of Meaning. Topics in Cognitive Science, 17(1).
+  [PDF] The Geometry and Dynamics of Meaning.pdf
+  Descr.: Sintesi recente che integra aspetti dinamici nella teoria degli spazi concettuali:
+           come i significati evolvono e si trasformano. Aggiornamento del framework
+           di Gärdenfors con connessioni esplicite ai modelli computazionali contemporanei.
+
+Philippopoulos-Mihalopoulos, A. (2015). Spatial Justice: Body, Lawscape, Atmosphere.
+        London: Routledge.
+  [LIB]
+  Descr.: Teoria della giustizia spaziale che concepisce il diritto come "lawscape" —
+           continuum spaziale tra norme e corpi. Offre un parallelo filosofico alla
+           spazializzazione del diritto operata dalla tesi tramite geometria vettoriale.
+
+================================================================================
+7. FILOSOFIA DEL DIRITTO E TEORIA GIURIDICA
+================================================================================
+
+--- Teoria del diritto e metodologia ---
+
+Bobbio, N. (1960). Teoria dell'ordinamento giuridico. Torino: Giappichelli.
+  [LIB]
+  Descr.: Sistematizzazione della teoria dell'ordinamento: coerenza, completezza, gerarchia
+           delle fonti. Fornisce il quadro strutturale del diritto positivo italiano su cui
+           la tesi innesta la dimensione semantica computazionale.
+
+Kelsen, H. (1934/1960). Reine Rechtslehre. Wien: Deuticke.
+  [LIB]
+  Descr.: La "dottrina pura del diritto": separazione tra Sein e Sollen, norma fondamentale,
+           struttura gerarchica a gradi. Riferimento per la questione se una geometria
+           semantica possa catturare la struttura normativa kelseniana.
+
+Hart, H. L. A. (1961). The Concept of Law. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Teoria del diritto come unione di regole primarie e secondarie; distinzione tra
+           punto di vista interno ed esterno. La tesi richiama Hart per la dimensione
+           linguistica del diritto e il ruolo della "open texture" dei concetti giuridici.
+
+Ferrajoli, L. (2007). Principia iuris. Teoria del diritto e della democrazia. Roma-Bari: Laterza.
+  [LIB]
+  Descr.: Sistema assiomatico-formale della teoria del diritto e della democrazia
+           costituzionale. Tentativo di formalizzazione logica del diritto che dialoga
+           con l'approccio computazionale della tesi sulla struttura del lessico giuridico.
+
+Raz, J. (1979). The Authority of Law: Essays on Law and Morality. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Saggi sull'autorità del diritto e sul rapporto tra diritto e morale nel quadro
+           del positivismo esclusivo. Rilevante per la discussione sui limiti di un'analisi
+           puramente semantica che non cattura la dimensione normativa dell'autorità.
+
+Paulson, S. L. (1998). Normativity and Norms: Critical Perspectives on Kelsenian Themes.
+        Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Raccolta di saggi critici sul normativismo kelseniano: Grundnorm, validità,
+           efficacia. Approfondisce i temi di Kelsen rilevanti per la tesi: può la
+           struttura normativa emergere dalla geometria semantica?
+
+--- Interpretazione e ermeneutica giuridica ---
+
+Tarello, G. (1980). L'interpretazione della legge. Milano: Giuffrè.
+  [LIB]
+  Descr.: Trattato fondamentale sull'interpretazione giuridica nella tradizione italiana:
+           argomenti interpretativi, canoni, ruolo del significato letterale. Base per
+           discutere come gli embedding catturano (o mancano) il significato giuridico.
+
+Guastini, R. (2011). Interpretare e argomentare. Milano: Giuffrè.
+  [LIB]
+  Descr.: Teoria analitica dell'interpretazione: ambiguità, vaghezza, lacune, antinomie.
+           Rilevante per comprendere perché termini giuridici apparentemente equivalenti
+           possono occupare posizioni diverse nello spazio semantico.
+
+Chiassoni, P. (2007). Tecnica dell'interpretazione giuridica. Bologna: Il Mulino.
+  [LIB]
+  Descr.: Manuale sistematico sulle tecniche interpretative: argomento letterale, sistematico,
+           teleologico. Complementa Tarello e Guastini nella tradizione analitica genovese
+           dell'interpretazione giuridica.
+
+Comanducci, P. (1999). Assaggi di metaetica. Torino: Giappichelli.
+  [LIB]
+  Descr.: Saggi di metaetica analitica: status dei giudizi morali, cognitivismo vs.
+           non-cognitivismo. Contesto per la dimensione etico-normativa dei concetti
+           giuridici che la tesi analizza sul piano semantico.
+
+Viola, F. & Zaccaria, G. (1999). Diritto e interpretazione. Lineamenti di teoria ermeneutica
+        del diritto. Roma-Bari: Laterza.
+  [LIB]
+  Descr.: Teoria ermeneutica del diritto nella tradizione gadameriana: il significato
+           giuridico emerge nell'atto interpretativo, non è dato a priori. Contrappunto
+           filosofico all'idea di significato "fisso" catturabile dagli embedding.
+
+Marmor, A. (2005). Interpretation and Legal Theory. 2nd ed. Oxford: Hart Publishing.
+  [LIB]
+  Descr.: Teoria analitica dell'interpretazione giuridica nel quadro del positivismo
+           esclusivo: convenzioni semantiche, intenzione del legislatore, significato
+           letterale. Utile per la distinzione tra significato linguistico e giuridico.
+
+Barak, A. (2005). Purposive Interpretation in Law. Princeton: Princeton University Press.
+  [LIB]
+  Descr.: Teoria dell'interpretazione teleologica (purposive) sviluppata dal presidente della
+           Corte Suprema israeliana. Illustra come lo scopo normativo trascenda il significato
+           lessicale, dimensione non catturabile dalla sola analisi degli embedding.
+
+Betti, E. (1962). Teoria generale della interpretazione. 2 voll. Milano: Giuffrè.
+  [LIB]
+  Descr.: Teoria ermeneutica generale con applicazione al diritto: canoni dell'autonomia
+           dell'oggetto e dell'adeguatezza dell'intendere. Quadro ermeneutico classico
+           italiano per l'interpretazione come comprensione del senso oggettivato.
+
+Ricoeur, P. (1976). Interpretation Theory: Discourse and the Surplus of Meaning.
+        Fort Worth: TCU Press.
+  [LIB]
+  Descr.: Teoria del "surplus di senso": il testo produce significati eccedenti l'intenzione
+           autoriale. Rilevante per la tesi come riflessione sul fatto che gli embedding
+           catturano una dimensione del significato, non la sua totalità ermeneutica.
+
+Eco, U. (1990). I limiti dell'interpretazione. Milano: Bompiani.
+  [LIB]
+  Descr.: Riflessione semiotica sui vincoli dell'interpretazione: intentio operis vs.
+           intentio lectoris. Pertinente alla domanda se gli embedding rappresentino un
+           significato "dell'opera" (del corpus) o una proiezione del modello.
+
+--- Positivismo analitico ---
+
+Scarpelli, U. (1965). Cos'è il positivismo giuridico. Milano: Comunità.
+  [LIB]
+  Descr.: Definizione analitica del positivismo giuridico nella tradizione italiana:
+           convenzionalismo, separazione diritto-morale, ruolo del linguaggio. Contesto
+           per la dimensione linguistico-analitica della filosofia del diritto italiana.
+
+Villa, V. (1993). Conoscenza giuridica e concetto di diritto positivo. Torino: Giappichelli.
+  [LIB]
+  Descr.: Epistemologia del diritto positivo: come si conosce e si definisce il diritto.
+           Riflessione sulla natura della conoscenza giuridica pertinente alla domanda
+           se metodi computazionali possano produrre conoscenza genuina sul diritto.
+
+Patterson, D. (1996). Law and Truth. Oxford: Oxford University Press.
+  [LIB]
+  Descr.: Critica le teorie corrispondentiste della verità giuridica, proponendo una
+           concezione wittgensteiniana basata su pratiche linguistiche. Rilevante per i limiti
+           epistemologici di un approccio che identifica significato giuridico e uso linguistico.
+
+Bix, B. H. (1993). Law, Language, and Legal Determinacy. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Analisi del rapporto tra linguaggio e determinatezza del diritto: vaghezza,
+           open texture, indeterminatezza radicale. Direttamente pertinente alla questione
+           se gli embedding possano misurare l'indeterminatezza semantica dei concetti giuridici.
+
+--- Realismo giuridico ---
+
+Llewellyn, K. N. (1960). The Common Law Tradition: Deciding Appeals. Boston: Little, Brown.
+  [LIB]
+  Descr.: Classico del realismo giuridico americano: il diritto è ciò che i giudici fanno,
+           non ciò che le regole prescrivono. Argomenta che il significato giuridico emerge
+           dalla pratica decisionale, coerente con l'approccio distribuzionale della tesi.
+
+================================================================================
+8. FONDAZIONE LEIBNIZIANA E FORMALIZZAZIONE
+================================================================================
+
+Leibniz, G. W. (1667). Nova Methodus Discendae Docendaeque Jurisprudentiae.
+  [LIB] — edizioni storiche; disponibile parzialmente su archive.org.
+  Descr.: Opera giovanile di Leibniz che propone un metodo razionale per l'insegnamento
+           del diritto, combinando logica, topica e sistematica. Primo tentativo di
+           formalizzazione del sapere giuridico, antenato del progetto della tesi.
+
+Leibniz, G. W. (1684). Meditationes de Cognitione, Veritate et Ideis.
+  [LIB] — testo latino in pubblico dominio.
+  Descr.: Classificazione dei tipi di conoscenza (oscura/chiara, confusa/distinta, adeguata).
+           Il progetto leibniziano di una characteristica universalis — calcolo razionale
+           sul pensiero — è l'antenato filosofico della "geometria dei concetti" della tesi.
+
+De Iuliis, F. (2014). Leibniz e il diritto. Napoli: Editoriale Scientifica.
+  [PDF] DeIuliis1.pdf
+  Descr.: Monografia sul pensiero giuridico di Leibniz: ars combinatoria applicata al diritto,
+           jurisprudentia universalis, calcolo giuridico. Collegamento storico tra il progetto
+           leibniziano di formalizzazione e l'approccio computazionale contemporaneo.
+
+Artosi, A., Pieri, B. & Sartor, G. (eds.) (2013). Leibniz: Logico-Philosophical Puzzles in
+        the Law. Dordrecht: Springer.
+  [LIB]
+  Descr.: Raccolta di saggi sui problemi logico-filosofici del diritto in Leibniz: condizionali
+           giuridici, deontica, gradi di prova. Edizione critica di testi leibniziani con
+           commento che ne attualizza la rilevanza per l'informatica giuridica.
+
+Dascal, M. (2008). Leibniz: What Kind of Rationalist? Berlin: Springer.
+  [LIB]
+  Descr.: Analisi del razionalismo leibniziano: non dogmatico ma "soft", attento alla
+           retorica e alla controversia. Rilevante per la tesi come modello di razionalità
+           formale che non esclude l'interpretazione e il contesto culturale.
+
+Alchourrón, C. E. & Bulygin, E. (1971). Normative Systems. Wien: Springer.
+  [LIB]
+  Descr.: Formalizzazione logica dei sistemi normativi: completezza, coerenza, lacune.
+           Opera fondativa della logica giuridica contemporanea; modello di rigore formale
+           applicato al diritto che ispira l'approccio computazionale della tesi.
+
+Kalinowski, G. (1965). Introduction à la logique juridique. Paris: LGDJ.
+  [LIB]
+  Descr.: Introduzione alla logica deontica applicata al ragionamento giuridico nella
+           tradizione continentale. Ponte tra logica formale e argomentazione giuridica,
+           complementare all'approccio di Alchourrón e Bulygin.
+
+================================================================================
+9. LOGICA DEONTICA E INFORMATICA GIURIDICA
+================================================================================
+
+von Wright, G. H. (1951). Deontic Logic. Mind, 60(237), 1–15.
+  [PAY] — Oxford University Press/JSTOR.
+  Descr.: Articolo fondativo della logica deontica moderna: operatori di obbligo, permesso,
+           divieto formalizzati in un calcolo proposizionale. Base per ogni successiva
+           formalizzazione logica delle norme giuridiche.
+
+Hilpinen, R. (Ed.) (1971). Deontic Logic: Introductory and Systematic Readings.
+        Dordrecht: D. Reidel.
+  [LIB]
+  Descr.: Antologia classica di logica deontica: include contributi di von Wright, Hansson,
+           Chellas. Riferimento enciclopedico per i fondamenti formali del ragionamento
+           normativo che la tesi tenta di catturare geometricamente.
+
+Hohfeld, W. N. (1913). Some Fundamental Legal Conceptions as Applied in Judicial Reasoning.
+        Yale Law Journal, 23(1), 16–59.
+  [PDF] hohfeld1913_fundamental_legal_conceptions.pdf
+  Descr.: Tassonomia delle relazioni giuridiche fondamentali: diritto/dovere, privilegio/
+           no-right, potere/soggezione, immunità/disabilità. Schema concettuale strutturato
+           che si presta naturalmente a una rappresentazione geometrica nello spazio semantico.
+
+Markovich, R. (2020). Understanding Hohfeld and Formalizing Legal Rights. Studia Logica, 108,
+        129–158. arXiv:1909.10023.
+  [PDF] arxiv_1909.10023_understanding_hohfeld_markovich2020.pdf
+  Descr.: Formalizzazione logica contemporanea dello schema hohfeldiano con logica modale
+           e deontica. Dimostra che le relazioni giuridiche fondamentali hanno una struttura
+           formale precisa, verificabile potenzialmente tramite embedding.
+
+Makinson, D. (1999). On a Fundamental Problem of Deontic Logic. In: Norms, Logics and
+        Information Systems. IOS Press.
+  [PAY] — IOS Press.
+  Descr.: Analizza il problema fondamentale della logica deontica: la relazione tra norme
+           come entità prescrittive e proposizioni normative come entità descrittive.
+           Pertinente alla distinzione tra dimensione normativa e semantica del diritto.
+
+Bench-Capon, T. & Sartor, G. (2003). A Model of Legal Reasoning with Cases Incorporating
+        Theories and Values. Artificial Intelligence, 150(1–2), 97–143.
+  [PAY] — Elsevier.
+  Descr.: Modello computazionale del ragionamento per casi che integra teorie e valori
+           nella selezione dei precedenti. Esempio di AI simbolica nel diritto, approccio
+           complementare (e potenzialmente integrabile) con quello sub-simbolico della tesi.
+
+Sartor, G. (2005). Legal Reasoning: A Cognitive Approach to the Law. Dordrecht: Springer.
+  [LIB]
+  Descr.: Approccio cognitivo al ragionamento giuridico: defeasibility, argomentazione,
+           ruolo delle norme nella decisione. Collegamento tra scienza cognitiva e diritto
+           che la tesi estende utilizzando rappresentazioni vettoriali distribuzionali.
+
+================================================================================
+10. DIRITTO COMPARATO
+================================================================================
+
+Watson, A. (1974). Legal Transplants: An Approach to Comparative Law. Edinburgh: Edinburgh UP.
+  [LIB]
+  Descr.: Teoria dei "trapianti giuridici": le istituzioni giuridiche si trasferiscono tra
+           sistemi per imitazione, non per necessità sociale. Quadro teorico per la questione
+           se i termini giuridici cinesi siano "trapianti" semantici dall'Occidente.
+
+Teubner, G. (1998). Legal Irritants: Good Faith in British Law or How Unifying Law Ends Up
+        in New Divergences. Modern Law Review, 61(1), 11–32.
+  [PAY] — Wiley.
+  Descr.: Critica la metafora del "trapianto" sostituendola con "irritante giuridico": un
+           concetto importato si trasforma nel nuovo sistema. Rilevante per la tesi: la
+           divergenza semantica cross-culturale potrebbe riflettere questa trasformazione.
+
+Zweigert, K. & Kötz, H. (1998). Introduction to Comparative Law. 3rd ed. Oxford: Oxford UP.
+  [LIB]
+  Descr.: Manuale classico di diritto comparato: famiglie giuridiche, metodo funzionale,
+           praesumptio similitudinis. Riferimento per la classificazione dei sistemi
+           giuridici che la tesi mette alla prova tramite analisi geometrica.
+
+Legrand, P. (1997). The Impossibility of Legal Transplants. Maastricht Journal of European
+        and Comparative Law, 4(2), 111–124.
+  [PAY] — SAGE.
+  Descr.: Tesi radicale: i trapianti giuridici sono impossibili perché il significato di una
+           regola è inseparabile dalla sua cultura. Supporta l'ipotesi della tesi che gli
+           spazi semantici EN e ZH divergano strutturalmente sui concetti giuridici.
+
+Glenn, H. P. (2014). Legal Traditions of the World. 5th ed. Oxford: Oxford University Press.
+  [LIB]
+  Descr.: Trattato comparatistico sulle tradizioni giuridiche mondiali (common law, civil law,
+           ctonica, islamica, confuciana, indù, ebraica). Fornisce il contesto per la
+           tradizione giuridica sinica e la sua specificità rispetto a quella occidentale.
+
+Mattei, U. (1997). Three Patterns of Law: Taxonomy and Change in the World's Legal Systems.
+        American Journal of Comparative Law, 45(1), 5–44.
+  [PAY] — Oxford UP/JSTOR.
+  Descr.: Tassonomia alternativa dei sistemi giuridici basata su tre pattern: rule of
+           professional law, rule of political law, rule of traditional law. Offre categorie
+           per interpretare le divergenze cross-culturali rilevate dalla pipeline.
+
+Berkowitz, D., Pistor, K. & Richard, J.-F. (2003). Economic Development, Legality, and the
+        Transplant Effect. European Economic Review, 47(1), 165–195.
+  [PAY] — Elsevier.
+  Descr.: Studio empirico sul "transplant effect": i paesi che hanno ricevuto il diritto
+           per imposizione (vs. adozione volontaria) mostrano legalità più debole. Evidenza
+           quantitativa che il contesto culturale conta nella ricezione del diritto.
+
+Menski, W. F. (2006). Comparative Law in a Global Context. 2nd ed. Cambridge: Cambridge UP.
+  [LIB]
+  Descr.: Diritto comparato con prospettiva globale: critica l'eurocentrismo e include
+           tradizioni asiatiche, africane, islamiche. Quadro per una comparazione giuridica
+           non limitata alle categorie occidentali, pertinente al confronto EN-ZH.
+
+Chen, A. H. Y. (2011). An Introduction to the Legal System of the People's Republic of China.
+        4th ed. Hong Kong: LexisNexis.
+  [LIB]
+  Descr.: Introduzione sistematica al sistema giuridico cinese: fonti, istituzioni, diritto
+           costituzionale, civile, penale. Riferimento per la comprensione del contesto
+           istituzionale dei termini giuridici cinesi analizzati nella tesi.
+
+Peerenboom, R. (2002). China's Long March toward Rule of Law. Cambridge: Cambridge UP.
+  [LIB]
+  Descr.: Analisi del percorso della Cina verso lo stato di diritto: riforme, ostacoli,
+           rule of law con "caratteristiche cinesi". Contesto storico-politico per
+           comprendere la specificità del lessico giuridico cinese contemporaneo.
+
+Šarčević, S. (1997). New Approach to Legal Translation. The Hague: Kluwer Law International.
+  [LIB]
+  Descr.: Teoria della traduzione giuridica come atto di comunicazione inter-sistemica: non
+           basta tradurre parole, occorre trovare equivalenti funzionali. Direttamente
+           pertinente alla costruzione del glossario bilingue HK DOJ usato nella tesi.
+
+Cao, D. (2007). Translating Law. Clevedon: Multilingual Matters.
+  [LIB]
+  Descr.: Monografia sulla traduzione giuridica con attenzione specifica al cinese e
+           all'inglese: equivalenza funzionale, incongruenza terminologica, bilinguismo
+           legislativo. Riferimento chiave per i problemi traduttivi del dataset HK DOJ.
+
+Chan, C. H.-Y. (2016). Legal Translation and Bilingual Law Drafting in Hong Kong.
+        London: Routledge.
+  [LIB]
+  Descr.: Studio specifico sulla traduzione giuridica e la redazione bilingue a Hong Kong:
+           il sistema che ha prodotto il glossario HK DOJ. Contesto istituzionale diretto
+           della fonte primaria della tesi.
+
+Bailey, L. R. & Biel, Ł. (2022). Translating Legal Terminology: Between Inter-systemic
+        Incongruity and Multilingual Harmonization. Linguistica Antverpiensia, 21.
+  [PAY] — Linguistica Antverpiensia.
+  Descr.: Analisi dell'incongruenza inter-sistemica nella traduzione della terminologia
+           giuridica e delle strategie di armonizzazione multilingue. Problematica centrale
+           per la tesi: la divergenza semantica riflette incongruenze tra sistemi giuridici.
+
+================================================================================
+11. RAGIONAMENTO ANALOGICO E TEORIA CATEGORIALE
+================================================================================
+
+Sunstein, C. R. (1993). On Analogical Reasoning. Harvard Journal of Law & Public Policy,
+        16(3), 741–760.
+  [PAY] — Harvard Journal of Law & Public Policy.
+  Descr.: Analisi del ragionamento per analogia nel diritto: struttura logica, criteri di
+           rilevanza, legittimità. L'analogia giuridica ha un corrispettivo geometrico nella
+           vicinanza vettoriale che la tesi esplora tramite embedding.
+
+Brewer, S. (1996). Exemplary Reasoning: Semantics, Pragmatics, and the Rational Force of
+        Legal Argument by Analogy. Harvard Law Review, 109(4), 925–1028.
+  [PAY] — Harvard Law Review.
+  Descr.: Teoria del ragionamento esemplare: l'analogia giuridica opera tramite abduzione di
+           regole da casi paradigmatici. Approfondimento semantico e pragmatico dell'analogia
+           che può essere formalizzata come relazione geometrica tra embedding.
+
+Weinreb, L. L. (2005). Legal Reason: The Use of Analogy in Legal Argument.
+        Cambridge: Cambridge UP.
+  [LIB]
+  Descr.: Monografia sull'uso dell'analogia nell'argomentazione giuridica: fondamenti
+           epistemologici, limiti, rapporto con la deduzione. Complementa Sunstein e Brewer
+           con una trattazione monografica del tema.
+
+Rosch, E. (1978). Principles of Categorization. In Rosch & Lloyd (Eds.), Cognition and
+        Categorization, 27–48. Hillsdale: Erlbaum.
+  [LIB]
+  Descr.: Teoria dei prototipi: le categorie cognitive hanno struttura graduata con membri
+           più o meno tipici. Fondamento per l'idea che i concetti giuridici abbiano una
+           struttura prototipica catturabile dalla geometria dello spazio di embedding.
+
+Lakoff, G. (1987). Women, Fire, and Dangerous Things: What Categories Reveal about the Mind.
+        Chicago: University of Chicago Press.
+  [LIB]
+  Descr.: Critica le categorie classiche (condizioni necessarie e sufficienti) proponendo
+           modelli cognitivi idealizzati e categorizzazione radiale. Rilevante per i limiti
+           della categorizzazione giuridica tradizionale che la tesi esplora geometricamente.
+
+Star, S. L. & Griesemer, J. R. (1989). Institutional Ecology, Translations and Boundary
+        Objects. Social Studies of Science, 19(3), 387–420.
+  [PAY] — SAGE.
+  Descr.: Introduce il concetto di "boundary object": oggetti abbastanza plastici da adattarsi
+           a contesti diversi ma robusti abbastanza da mantenere identità. I termini giuridici
+           bilingui del glossario HK DOJ funzionano come boundary objects tra sistemi.
+
+================================================================================
+12. STATISTICA E METODOLOGIA SPERIMENTALE
+================================================================================
+
+Wasserstein, R. L. & Lazar, N. A. (2016). The ASA's Statement on p-Values: Context,
+        Process, and Purpose. The American Statistician, 70(2), 129–133.
+  [PAY] — Taylor & Francis.
+  Descr.: Dichiarazione ufficiale dell'ASA sull'uso corretto dei p-value: non sono misure
+           della probabilità dell'ipotesi né della dimensione dell'effetto. Riferimento per
+           l'interpretazione cautela dei test di permutazione nella pipeline CLS.
+
+Benjamini, Y. & Hochberg, Y. (1995). Controlling the False Discovery Rate: A Practical and
+        Powerful Approach to Multiple Testing. JRSS-B, 57(1), 289–300.
+  [PAY] — Royal Statistical Society/Wiley.
+  Descr.: Procedura FDR (False Discovery Rate) per la correzione dei test multipli: controlla
+           la proporzione attesa di falsi positivi. Applicabile alla pipeline multi-modello
+           della tesi quando si confrontano 9 coppie di modelli simultaneamente.
+
+Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences. 2nd ed.
+        Hillsdale: Erlbaum.
+  [LIB]
+  Descr.: Riferimento classico per l'analisi della potenza statistica e le convenzioni sulle
+           effect size (d di Cohen, r). Utile per valutare la dimensione degli effetti
+           osservati negli esperimenti RSA e GW della pipeline.
+
+Cumming, G. (2012). Understanding the New Statistics: Effect Sizes, Confidence Intervals,
+        and Meta-Analysis. New York: Routledge.
+  [LIB]
+  Descr.: Approccio alla statistica centrato su effect size e intervalli di confidenza anziché
+           su p-value. Metodologia adottata nella pipeline CLS che riporta bootstrap CI
+           accanto ai test di permutazione.
+
+Good, P. (2005). Permutation, Parametric and Bootstrap Tests of Hypotheses. 3rd ed.
+        New York: Springer.
+  [LIB]
+  Descr.: Trattato sui test di permutazione e bootstrap: teoria, implementazione, confronto
+           con test parametrici. Riferimento metodologico per i test di permutazione usati
+           negli esperimenti GW, clustering e NDA della pipeline.
+
+Efron, B. & Tibshirani, R. J. (1993). An Introduction to the Bootstrap.
+        New York: Chapman and Hall.
+  [LIB]
+  Descr.: Trattato fondamentale sul metodo bootstrap: teoria, varianti (parametrico, non
+           parametrico), applicazioni. Fondamento della procedura di block bootstrap per
+           gli intervalli di confidenza delle correlazioni RSA nella pipeline CLS.
+
+Ioannidis, J. P. A. (2005). Why Most Published Research Findings Are False.
+        PLoS Medicine, 2(8), e124.
+  [PDF] plos_ioannidis2005_why_research_findings_false.pdf
+  Descr.: Argomenta formalmente che la maggioranza dei risultati pubblicati sono falsi
+           positivi, a causa di bassa potenza, bias di pubblicazione e flessibilità analitica.
+           Motivazione per la robustezza metodologica (multi-modello, permutazioni) della tesi.
+
+Nosek, B. A. et al. (2018). The Preregistration Revolution. PNAS, 115(11), 2600–2606.
+  [PDF] pnas_nosek2018_preregistration_revolution.pdf
+  Descr.: Manifesto per la pre-registrazione degli studi: distinguere ipotesi esplorative
+           da confermative prima dell'analisi. Contesto per la trasparenza metodologica
+           nella ricerca computazionale, inclusa la pipeline della tesi.
+
+Salganik, M. J. (2018). Bit by Bit: Social Research in the Digital Age.
+        Princeton: Princeton University Press.
+  [PDF] book_salganik2018_bit_by_bit.pdf
+  Descr.: Guida metodologica alla ricerca sociale nell'era digitale: big data, esperimenti,
+           etica computazionale. Quadro per le questioni metodologiche dell'uso di dati
+           testuali massivi (corpora di training) come proxy della cultura giuridica.
+  Nota: disponibile anche online all'indirizzo https://www.bitbybitbook.com
+
+Spirling, A. & Rodriguez, P. L. (2020). Word Embeddings: What Works, What Doesn't, and
+        How to Tell the Difference for Applied Research. Journal of Politics, 82(2).
+  [PAY] — v. sezione 4 sopra.
+  Descr.: Duplicato della voce in sezione 4. V. descrizione sopra.
+
+--- Analisi dei cluster ---
+
+Fowlkes, E. B. & Mallows, C. L. (1983). A Method for Comparing Two Hierarchical Clusterings.
+        JASA, 78(383), 553–569.
+  [PAY] — JASA/Taylor & Francis.
+  Descr.: Introduce l'indice Fowlkes-Mallows (FM) per confrontare due clustering gerarchici.
+           Metrica principale dell'esperimento exp_clustering della pipeline CLS per
+           misurare la corrispondenza tra cluster EN e ZH a diversi valori di k.
+
+Hubert, L. & Arabie, P. (1985). Comparing Partitions. Journal of Classification, 2(1), 193–218.
+  [PAY] — Springer.
+  Descr.: Introduce l'Adjusted Rand Index (ARI) per confrontare partizioni con correzione
+           per il caso. Metrica complementare al FM per la validazione del clustering
+           cross-linguistico nella pipeline.
+
+Rousseeuw, P. J. (1987). Silhouettes: A Graphical Aid to the Interpretation and Validation of
+        Cluster Analysis. Journal of Computational and Applied Mathematics, 20, 53–65.
+  [PAY] — Elsevier.
+  Descr.: Introduce il coefficiente silhouette: misura la coesione intra-cluster e la
+           separazione inter-cluster per ogni osservazione. Strumento diagnostico per
+           valutare la qualità dei cluster semantici nella pipeline.
+
+Caliński, T. & Harabasz, J. (1974). A Dendrite Method for Cluster Analysis.
+        Communications in Statistics, 3(1), 1–27.
+  [PAY] — Taylor & Francis.
+  Descr.: Introduce l'indice Calinski-Harabasz (rapporto varianza inter/intra-cluster) per
+           determinare il numero ottimale di cluster. Criterio per la selezione di k
+           nell'esperimento di clustering gerarchico della pipeline.
+
+Ward, J. H. (1963). Hierarchical Grouping to Optimize an Objective Function.
+        JASA, 58(301), 236–244.
+  [PAY] — JASA.
+  Descr.: Metodo di clustering agglomerativo che minimizza la varianza intra-cluster ad ogni
+           fusione. Algoritmo di linkage utilizzato nell'esperimento exp_clustering della
+           pipeline per costruire i dendrogrammi dei termini giuridici.
+
+Monti, S. et al. (2003). Consensus Clustering: A Resampling-Based Method for Class
+        Discovery and Visualization of Gene Expression Microarray Data.
+        Machine Learning, 52(1), 91–118.
+  [PAY] — Springer.
+  Descr.: Metodo di consensus clustering basato su ricampionamento per valutare la stabilità
+           dei cluster. Approccio trasferibile alla validazione della robustezza dei cluster
+           semantici rispetto a perturbazioni dei dati di embedding.
+
+Strehl, A. & Ghosh, J. (2002). Cluster Ensembles — A Knowledge Reuse Framework for
+        Combining Multiple Partitions. JMLR, 3, 583–617.
+  [PDF] jmlr_strehl2002_cluster_ensembles.pdf
+  Descr.: Framework per combinare partizioni multiple in un cluster consensus: introduce
+           NMI (Normalized Mutual Information) e metodi di aggregazione. Riferimento per le
+           metriche di confronto tra clustering cross-linguistici.
+
+================================================================================
+13. FILOSOFIA DELLA SCIENZA
+================================================================================
+
+Popper, K. (1959). The Logic of Scientific Discovery. London: Hutchinson.
+  [LIB]
+  Descr.: Fondamenti del falsificazionismo: una teoria è scientifica se falsificabile.
+           Quadro epistemologico per la struttura degli esperimenti della tesi, progettati
+           con ipotesi nulle falsificabili tramite test di permutazione.
+
+Kuhn, T. (1962). The Structure of Scientific Revolutions. Chicago: University of Chicago Press.
+  [LIB]
+  Descr.: Teoria dei paradigmi e delle rivoluzioni scientifiche: incommensurabilità tra
+           paradigmi, scienza normale vs. straordinaria. Rilevante per la discussione sulla
+           (in)commensurabilità tra sistemi giuridici diversi che la tesi tenta di misurare.
+
+Lakatos, I. (1978). The Methodology of Scientific Research Programmes.
+        Cambridge: Cambridge University Press.
+  [LIB]
+  Descr.: Programmi di ricerca con nucleo duro e cintura protettiva: criteri di progressività
+           e degenerazione. Quadro per valutare se l'approccio "geometria del diritto" sia
+           un programma di ricerca progressivo o un artificio descrittivo.
+
+Cartwright, N. (1983). How the Laws of Physics Lie. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Argomenta che le leggi della fisica sono idealizzazioni false ma utili: i modelli
+           funzionano localmente, non universalmente. Pertinente ai limiti epistemologici
+           del modello geometrico della tesi come approssimazione utile, non verità.
+
+Hacking, I. (1983). Representing and Intervening. Cambridge: Cambridge University Press.
+  [LIB]
+  Descr.: Distinzione tra rappresentare (teorie) e intervenire (esperimenti): il realismo
+           sulle entità si basa sulla capacità di manipolarle. Rilevante per la questione
+           ontologica se le strutture geometriche degli embedding siano "reali".
+
+Levins, R. (1966). The Strategy of Model Building in Population Biology.
+        American Scientist, 54(4), 421–431.
+  [PAY] — Sigma Xi. Spesso citato, raramente in PDF libero.
+  Descr.: Strategia di modellizzazione con trade-off tra generalità, realismo e precisione.
+           Introduce il concetto di robustezza: un risultato è robusto se emerge da modelli
+           diversi. Fondamento per l'approccio multi-modello (3×3) della tesi.
+
+Wimsatt, W. C. (1981). Robustness, Reliability, and Overdetermination. In Brewer & Collins
+        (Eds.), Scientific Inquiry and the Social Sciences.
+  [LIB]
+  Descr.: Formalizza il principio di robustezza: un fenomeno è affidabile se rilevato tramite
+           metodi indipendenti (overdetermination). Giustificazione epistemologica per i 5
+           esperimenti convergenti (RSA, GW, axes, clustering, NDA) della pipeline.
+
+Weisberg, M. (2006). Robustness Analysis. Philosophy of Science, 73(5), 730–742.
+  [PAY] — University of Chicago Press. Archivio PhilSci non accessibile.
+  Descr.: Analisi filosofica della robustezza nei modelli scientifici: condizioni per cui
+           la convergenza di modelli diversi supporta un'inferenza. Complementa Levins e
+           Wimsatt con una trattazione più formale del concetto.
+
+Michell, J. (2003). The Quantitative Imperative: Positivism, Naïve Realism, and the Place
+        of Qualitative Methods in Psychology. Theory & Psychology, 13(1), 5–31.
+  [PAY] — SAGE.
+  Descr.: Critica l'applicazione acritica di metodi quantitativi a fenomeni non metrici:
+           la quantificazione presuppone una struttura additiva verificabile. Monito
+           epistemologico per l'uso di metriche geometriche su concetti giuridici.
+
+Flick, U. (2018). Triangulation. In: The SAGE Handbook of Qualitative Data Collection.
+        London: Sage, 527–544.
+  [LIB]
+  Descr.: Capitolo sulla triangolazione metodologica: combinare metodi diversi per rafforzare
+           le inferenze. Concetto applicato nella tesi attraverso la convergenza di 5
+           esperimenti quantitativi sulla stessa struttura semantica.
+
+================================================================================
+14. LINGUISTICA E FILOSOFIA DEL LINGUAGGIO
+================================================================================
+
+Frege, G. (1892). Über Sinn und Bedeutung. Zeitschrift für Philosophie und philosophische
+        Kritik, 100, 25–50. [Trad. inglese: "On Sense and Reference".]
+  [PAY] — Traduzione inglese canonica (Black/Geach) non trovata in PDF libero.
+  Descr.: Distinzione fondamentale tra Sinn (senso) e Bedeutung (riferimento): due espressioni
+           possono avere lo stesso riferimento ma senso diverso. Questione centrale per la
+           tesi: gli embedding catturano il senso (distribuzionale) o il riferimento?
+  Nota: il testo tedesco originale è pubblico dominio ma non localizzato in PDF stabile.
+
+de Saussure, F. (1916). Cours de linguistique générale. Paris: Payot.
+  [LIB]
+  Descr.: Fondamenti della linguistica strutturale: arbitrarietà del segno, langue vs. parole,
+           valore come sistema di differenze. Il principio saussuriano che il significato è
+           differenziale è il precursore filosofico della semantica distribuzionale.
+
+Austin, J. L. (1962). How to Do Things with Words. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Teoria degli atti linguistici: locuzione, illocuzione, perlocuzione. Il linguaggio
+           giuridico è performativo per eccellenza (promulgare, sentenziare); dimensione
+           pragmatica che gli embedding testuali non catturano direttamente.
+
+Wittgenstein, L. (1953). Philosophische Untersuchungen / Philosophical Investigations.
+        Oxford: Blackwell.
+  [LIB]
+  Descr.: Filosofia del linguaggio ordinario: significato come uso, giochi linguistici,
+           somiglianze di famiglia. L'idea che il significato sia determinato dall'uso è il
+           fondamento filosofico dell'ipotesi distribuzionale su cui si basa la tesi.
+
+Gadamer, H.-G. (1960). Wahrheit und Methode. Tübingen: Mohr Siebeck.
+  [LIB]
+  Descr.: Ermeneutica filosofica: comprensione come fusione di orizzonti, circolo ermeneutico,
+           pregiudizio come condizione della comprensione. Contrappunto ermeneutico alla
+           pretesa di oggettività dell'analisi computazionale del significato.
+
+Dilthey, W. (1883). Einleitung in die Geisteswissenschaften. Leipzig: Duncker & Humblot.
+  [LIB]
+  Descr.: Fondamento della distinzione tra scienze della natura (Erklären) e scienze dello
+           spirito (Verstehen). Questione epistemologica centrale: la tesi usa metodi
+           naturalistici (geometria, statistica) per indagare un oggetto ermeneutico (il diritto).
+
+Hofstede, G. (2001). Culture's Consequences: Comparing Values, Behaviors, Institutions and
+        Organizations across Nations. 2nd ed. Thousand Oaks: Sage.
+  [LIB]
+  Descr.: Modello delle dimensioni culturali (individualismo/collettivismo, distanza dal
+           potere, ecc.) basato su dati cross-nazionali. Quadro per interpretare le
+           divergenze semantiche EN-ZH come riflesso di differenze culturali strutturali.
+
+Schwartz, S. H. (2006). A Theory of Cultural Value Orientations: Explication and
+        Applications. Comparative Sociology, 5(2–3), 137–182.
+  [PAY] — Brill.
+  Descr.: Teoria dei valori culturali con 7 dimensioni (autonomia, embeddedness, gerarchia,
+           ecc.) e validazione cross-culturale su 70+ paesi. Alternativa a Hofstede per
+           l'interpretazione delle dimensioni culturali negli spazi di embedding.
+
+================================================================================
+15. DIGITAL HUMANITIES E CULTURAL ANALYTICS
+================================================================================
+
+Moretti, F. (2005). Graphs, Maps, Trees: Abstract Models for Literary History. London: Verso.
+  [LIB]
+  Descr.: Propone modelli astratti (grafi, mappe, alberi) per la storia letteraria quantitativa.
+           Precursore del "distant reading" e della cultural analytics; analogo strutturale
+           dell'approccio della tesi (geometria come strumento di analisi culturale).
+
+Moretti, F. (2013). Distant Reading. London: Verso.
+  [LIB]
+  Descr.: Raccolta di saggi sul "distant reading": analisi di grandi corpora senza lettura
+           ravvicinata dei singoli testi. La tesi applica lo stesso principio epistemologico
+           al diritto: analisi geometrica di migliaia di termini giuridici.
+
+Manovich, L. (2020). Cultural Analytics. Cambridge, MA: MIT Press.
+  [LIB]
+  Descr.: Fondamenti della "cultural analytics": analisi computazionale su larga scala di
+           artefatti culturali (immagini, testi, media). Quadro interdisciplinare che
+           legittima l'uso di metodi computazionali per lo studio della cultura giuridica.
+
+Underwood, T. (2019). Distant Horizons: Digital Evidence and Literary Change.
+        Chicago: University of Chicago Press.
+  [LIB]
+  Descr.: Usa modelli statistici e NLP per studiare il cambiamento letterario su larga scala.
+           Esempio metodologico di come evidenza digitale può rivelare strutture invisibili
+           alla lettura tradizionale, analogo all'approccio della tesi al diritto.
+
+Tarissan, F. (2021). Au cœur des réseaux: des sciences aux citoyens. Paris: Le Pommier.
+  [LIB]
+  Descr.: Introduzione divulgativa alla scienza delle reti: proprietà topologiche, dinamiche,
+           applicazioni sociali. Contesto per la visualizzazione a rete dei "false friends"
+           nell'esperimento NDA della pipeline.
+
+================================================================================
+16. HERMENEUTICA TESTUALE E CRITICA COMPARATISTICA
+================================================================================
+
+von Savigny, F. C. (1814). Vom Beruf unsrer Zeit für Gesetzgebung und Rechtswissenschaft.
+        Heidelberg: Mohr.
+  [LIB] — 1814, pubblico dominio ma non in PDF annotato.
+  Descr.: Manifesto della Scuola Storica del diritto: il diritto nasce dal Volksgeist (spirito
+           del popolo), non dalla legislazione razionale. Concetto fondativo per il titolo
+           della tesi ("DigiVolksgeist"): la geometria semantica come Volksgeist digitale.
+
+Ehrlich, E. (1913). Grundlegung der Soziologie des Rechts. München: Duncker & Humblot.
+  [LIB]
+  Descr.: Fondazione della sociologia del diritto: il "diritto vivente" (lebendes Recht) è
+           nelle pratiche sociali, non nei codici. Complementa Savigny: gli embedding
+           catturano il diritto vivente del corpus, non il diritto dei testi normativi.
+
+================================================================================
+17. OPERE DELL'AUTORE
+================================================================================
+
+Puzio, G. (2025/2026). DigiVolksgeist: Legal Meaning in Cross-Cultural Vector Spaces.
+  [PDF] EN_DigiVolksgeist_Puzio.pdf
+  Descr.: Tesi dell'autore: esplora la geometria degli spazi semantici del diritto in inglese
+           e cinese tramite RSA, Gromov-Wasserstein, clustering, proiezione su assi e NDA.
+           Questa è l'opera principale a cui tutte le altre voci bibliografiche fanno riferimento.
+
+================================================================================
+18. FILE PRE-ESISTENTI — IDENTIFICAZIONE INCERTA / NON IN BIBLIOGRAFIA
+================================================================================
+
+[?]  2020.emnlp-main.257.pdf
+     ACL Anthology ID 2020.emnlp-main.257 (EMNLP 2020, paper principale n. 257).
+     Identificazione incerta: probabilmente un paper NLP citato in bozze precedenti.
+     Path: 2020.emnlp-main.257.pdf
+  Descr.: File pre-esistente con identificazione incerta. Probabilmente un paper EMNLP 2020
+           su bias negli embedding o NLP multilingue, citato in versioni precedenti della tesi.
+
+[?]  2411.07739v1.pdf
+     arXiv 2411.07739v1 (novembre 2024). Identificazione incerta: potrebbe essere
+     un preprint correlato alla ricerca, non presente nella bibliografia ragionata attuale.
+     Path: 2411.07739v1.pdf
+  Descr.: Preprint arXiv di novembre 2024, non ancora identificato con certezza. Potrebbe
+           riguardare embedding, NLP legale o semantica geometrica recente.
+
+[?]  bub_gb_FRywty4wAhMC.pdf
+     Google Books ID bub_gb_FRywty4wAhMC. Probabilmente uno dei libri della biblioteca.
+     Identificazione incerta.
+     Path: bub_gb_FRywty4wAhMC.pdf
+  Descr.: Volume digitalizzato da Google Books, non identificato. Potrebbe corrispondere
+           a una delle monografie [LIB] dell'indice disponibile in scansione parziale.
+
+[EXTRA] Lessig, L. (2006). Code and Other Laws of Cyberspace, Version 2.0.
+        New York: Basic Books. ISBN 9780465039142.
+        NON in bibliografia Geometria Iuris. Presente in cartella per altri scopi.
+        Path: Code _ And Other Laws of Cyberspace...pdf
+  Descr.: Tesi che il codice informatico è una forma di regolazione al pari della legge.
+           Non direttamente in bibliografia ma tematicamente affine alla riflessione
+           sul rapporto tra diritto e tecnologia computazionale.
+
+[EXTRA] Jean, A. (2021). Les algorithmes font-ils la loi? Paris: Éditions de l'Observatoire.
+        ISBN 9781032915036. NON in bibliografia Geometria Iuris.
+        Path: Les algorithmes font-ils la loi _ ...epub
+  Descr.: Saggio divulgativo sul rapporto tra algoritmi e diritto nella società francese.
+           Non in bibliografia; presente in cartella come lettura di contesto sul tema
+           più ampio della governance algoritmica.
+
+================================================================================
+RIEPILOGO
+================================================================================
+
+File presenti in cartella:                57
+  - Scaricati in questa sessione:         50
+  - Pre-esistenti:                         7
+
+Per categoria di accesso:
+  [PDF] Disponibili in cartella:          36 voci (incluse alcune doppie ACL+arXiv)
+        Voci bibliografiche uniche: ≈ 28
+  [LIB] Libri non scaricabili:           ≈ 44
+  [PAY] Articoli dietro paywall:         ≈ 18
+  [?]   Identificazione incerta:           3
+
+Non ottenuti (paywall confermato):
+  - Weisberg (2006) — Philosophy of Science (U of Chicago Press)
+  - Frege (1892) — traduzione inglese standard (testo tedesco pubblico dominio)
+  - Caliskan et al. (2017) — Science/AAAS
+  - Stevens (1946) — Science (1946)
+  - Krantz et al. (1971, libro)
+  - von Wright (1951) — Mind (Oxford UP/JSTOR)
+  - Teubner (1998) — Modern Law Review
+  - Legrand (1997) — Maastricht Journal
+
+================================================================================
+
+================================================================================
+VOCI AGGIUNTIVE — Revisione LLM, febbraio 2026
+Integrate da suggerimenti di un secondo modello. Le voci [?VERIF] hanno citazione
+incompleta o non verificata: controllare autore, titolo esatto e DOI prima dell'uso.
+================================================================================
+
+--------------------------------------------------------------------------------
+19. FILOSOFIA DEL DIRITTO E TEORIA GIURIDICA (aggiuntive)
+--------------------------------------------------------------------------------
+
+--- Teoria argomentativa e bilanciamento ---
+
+Alexy, R. (1989). A Theory of Legal Argumentation: The Theory of Rational Discourse
+        as Theory of Legal Justification. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Teoria dell'argomentazione giuridica come discorso razionale: regole del discorso,
+           pretesa di correttezza. Quadro normativo per valutare la razionalità delle
+           inferenze che la tesi trae dalla geometria semantica.
+
+Alexy, R. (1985). A Theory of Constitutional Rights. Oxford: Oxford University Press.
+  [LIB]
+  Descr.: Teoria dei diritti fondamentali come principi (mandati di ottimizzazione) e formula
+           di bilanciamento. Struttura dei diritti che potrebbe riflettersi nella posizione
+           relativa dei concetti costituzionali nello spazio di embedding.
+
+MacCormick, N. (1978). Legal Reasoning and Legal Theory. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Teoria del ragionamento giuridico nel quadro del positivismo istituzionale:
+           deduzione, consequenzialismo, coerenza narrativa. Modello di razionalità
+           giuridica che la tesi tenta di rilevare nella struttura degli embedding.
+
+MacCormick, N. (2005). Rhetoric and the Rule of Law: A Theory of Legal Reasoning.
+        Oxford: Oxford University Press.
+  [LIB]
+  Descr.: Revisione matura della teoria di MacCormick: integra retorica e rule of law,
+           coerenza e universalizzabilità come criteri di razionalità giuridica.
+           Complementa il volume del 1978 con una prospettiva più matura.
+
+Habermas, J. (1992). Between Facts and Norms: Contributions to a Discourse Theory of
+        Law and Democracy. Frankfurt: Suhrkamp. [Trad. ingl. MIT Press, 1996.]
+  [LIB]
+  Descr.: Teoria discorsiva del diritto: legittimità fondata sulla deliberazione razionale.
+           Il diritto come medium tra fatticità e validità; rilevante per la tensione tra
+           dato empirico (embedding) e pretesa normativa del diritto.
+
+Dworkin, R. (1986). Law's Empire. Cambridge, MA: Harvard University Press.
+  [LIB]
+  Descr.: Teoria interpretativista del diritto: il diritto è una pratica argomentativa,
+           il giudice cerca l'interpretazione che presenta la pratica nella sua luce migliore.
+           Sfida alla catturabilità computazionale del significato giuridico.
+
+--- Realismo e critica alla misurabilità ---
+
+Tamanaha, B. Z. (2017). A Realistic Theory of Law. Cambridge: Cambridge University Press.
+  [LIB]
+  Descr.: Teoria realista del diritto che rifiuta l'essenzialismo: il diritto è un artefatto
+           sociale convenzionale senza natura intrinseca. Posizione compatibile con l'idea
+           che la struttura semantica sia contingente e culturalmente determinata.
+
+Fish, S. (1980). Doing What Comes Naturally: Change, Rhetoric, and the Practice of Theory
+        in Literary and Legal Studies. Durham: Duke University Press.
+  [LIB]
+  Descr.: Critica anti-fondazionalista: il significato è sempre interpretato all'interno di
+           "comunità interpretative". Obiezione radicale all'idea di un significato
+           oggettivo catturabile dagli embedding, da discutere nei limiti della tesi.
+
+Unger, R. M. (1986). The Critical Legal Studies Movement. Cambridge, MA: Harvard UP.
+  [LIB]
+  Descr.: Manifesto dei Critical Legal Studies: il diritto è politica, le categorie giuridiche
+           sono contingenti e ideologiche. Prospettiva critica sull'oggettività delle
+           strutture semantiche che la tesi rileva computazionalmente.
+
+Troper, M. (2005). Qu'est-ce que la theorie du droit? Revue de philosophie juridique.
+  [PAY] — articolo in rivista francese. Troper e professore a Paris Nanterre; autore
+           reale e prolifico di filosofia del diritto (realismo francese). L'anno 2005
+           e il titolo esatto non sono stati verificabili via ricerca aperta; il paper
+           potrebbe corrispondere a un capitolo del suo volume "La theorie du droit, le
+           droit, l'Etat" (PUF, 2001) o a un articolo in "Droits" o altra rivista
+           francese. [?VERIF — anno e rivista precisi da confermare su Cairn.info o JSTOR]
+  Descr.: Troper è esponente del realismo giuridico francese: la teoria del diritto studia
+           gli atti di interpretazione, non le norme astratte. Citazione incerta ma la
+           posizione è rilevante per il rapporto tra significato testuale e pratica giuridica.
+
+--- Approcci sociologici ed empirici ---
+
+Raz, J. (1975). Practical Reason and Norms. London: Hutchinson.
+  [LIB]
+  Descr.: Teoria delle norme come ragioni per l'azione: norme escludenti, ragioni di primo
+           e secondo ordine. Quadro per la dimensione pratica del diritto che trascende
+           la rappresentazione semantica.
+  Nota: distinto da Raz (1979) The Authority of Law, gia in sezione 7.
+
+Hart, H. L. A. (1983). Essays in Jurisprudence and Philosophy. Oxford: Clarendon Press.
+  [LIB]
+  Descr.: Raccolta di saggi di Hart su temi di giurisprudenza e filosofia analitica:
+           definizione, causalità nel diritto, libertà. Approfondisce temi del Concept of Law
+           rilevanti per l'analisi linguistica dei concetti giuridici.
+  Nota: distinto da Hart (1961) The Concept of Law, gia in sezione 7.
+
+Kennedy, D. (1979). The Structure of Blackstone's Commentaries.
+        Buffalo Law Review, 28, 205.
+  [PAY] — articolo seminale di Critical Legal Studies. DOI non disponibile (pre-digitale).
+  Descr.: Decostruzione strutturalista dei Commentari di Blackstone: rivela le contraddizioni
+           interne del diritto privato liberale. Testo fondativo dei CLS, rilevante per la
+           critica alla presunta neutralità delle categorie giuridiche.
+
+Kennedy, D. (1991). A Semiotics of Legal Argument.
+        Syracuse Law Review, 42, 75.
+  [PAY] — paper distinto dal 1979. I due titoli sono stati confusi nella fonte
+           suggerente: si tratta di due articoli separati dello stesso autore.
+  Descr.: Analisi semiotica dell'argomentazione giuridica: strutture retoriche ricorrenti
+           (bipolarità, nesting) che organizzano il discorso giuridico. Approccio strutturale
+           al significato giuridico complementare a quello distribuzionale della tesi.
+
+Friedman, L. M. (1975). The Legal System: A Social Science Perspective.
+        New York: Russell Sage Foundation.
+  [LIB]
+  Descr.: Il sistema giuridico analizzato con strumenti delle scienze sociali: input,
+           output, feedback, cultura giuridica interna/esterna. Introduce il concetto
+           di "cultura giuridica" che la tesi cerca di rilevare negli spazi semantici.
+
+Tyler, T. R. (1990). Why People Obey the Law. New Haven: Yale University Press.
+  [LIB]
+  Descr.: Studio empirico sulla legittimità percepita e l'obbedienza al diritto: la
+           procedural justice conta più della deterrenza. Complementa Friedman sulla
+           dimensione culturale e percettiva del diritto.
+
+--------------------------------------------------------------------------------
+20. FILOSOFIA DELLA SCIENZA (aggiuntive)
+--------------------------------------------------------------------------------
+
+Hacking, I. (1999). The Social Construction of What? Cambridge, MA: Harvard UP.
+  [LIB]
+  Descr.: Analisi critica del costruzionismo sociale: cosa significa dire che qualcosa è
+           "socialmente costruito"? Pertinente alla questione se le categorie giuridiche
+           siano costruzioni sociali e se gli embedding le riflettano fedelmente.
+  Nota: distinto da Hacking (1983) Representing and Intervening, gia in sezione 13.
+
+Giere, R. N. (2006). Scientific Perspectivism. Chicago: University of Chicago Press.
+  [LIB]
+  Descr.: Ogni teoria scientifica offre una prospettiva parziale sulla realtà, non una
+           rappresentazione completa. Quadro per interpretare i risultati della tesi:
+           ogni modello di embedding offre una "prospettiva" diversa sul significato.
+
+Mayo, D. G. (2018). Statistical Inference as Severe Testing: How to Get Beyond the
+        Statistics Wars. Cambridge: Cambridge University Press.
+  [LIB]
+  Descr.: Teoria dell'inferenza come "test severo": un risultato è significativo solo se
+           il metodo avrebbe rilevato l'errore con alta probabilità. Quadro per valutare
+           la severità dei test di permutazione e bootstrap della pipeline CLS.
+
+Efron, B. (1979). Bootstrap Methods: Another Look at the Jackknife.
+        The Annals of Statistics, 7(1), 1-26. DOI: 10.1214/aos/1176344552.
+  [PDF] projecteuclid_efron1979_bootstrap_jackknife.pdf
+  Descr.: Articolo fondativo del metodo bootstrap: ricampionamento con rimpiazzo per stimare
+           la distribuzione campionaria di una statistica. Base teorica per tutte le procedure
+           di bootstrap (standard e block) impiegate nella pipeline della tesi.
+
+--------------------------------------------------------------------------------
+21. LINGUISTICA E SEMANTICA DISTRIBUZIONALE (aggiuntive)
+--------------------------------------------------------------------------------
+
+Schwartz, S. H. (1992). Universals in the Content and Structure of Values: Theoretical
+        Advances and Empirical Tests in 20 Countries. In Zanna (Ed.), Advances in
+        Experimental Social Psychology, 25, 1-65. New York: Academic Press.
+  [LIB]
+  Descr.: Opera fondativa della teoria dei valori universali: 10 tipi di valori motivazionali
+           con struttura circolare (conflitto/compatibilità). Versione originale della teoria
+           poi sintetizzata in Schwartz (2006), v. sezione 14.
+  Nota: book chapter. Distinto da Schwartz (2006) gia in sezione 14. Questa e
+         l'opera fondativa della teoria dei valori culturali di base.
+
+Boleda, G. & Herbelot, A. (2016). Formal Distributional Semantics: Introduction to the
+        Special Issue. Computational Linguistics, 42(4), 619-635.
+  [PDF] acl_J16-4001_formal_distributional_semantics_boleda2016.pdf
+  Descr.: Introduzione alla semantica distribuzionale formale: ponte tra rappresentazioni
+           vettoriali e semantica formale (teoria dei tipi, logica). Quadro teorico per
+           integrare l'approccio geometrico con la semantica formale del diritto.
+
+Griffiths, T. L. (2018). Distributional Models of Word Meaning.
+        Annual Review of Linguistics, 4, 275-296.
+        DOI: 10.1146/annurev-linguistics-030514-125018.
+  [PAY] — Annual Reviews. Preprint non trovato; cercare sul sito del Computational
+           Cognitive Science Lab, Princeton University.
+  Descr.: Rassegna dei modelli distribuzionali dal punto di vista della scienza cognitiva:
+           topic model, embedding neurali, confronto con rappresentazioni umane. Collegamento
+           tra semantica computazionale e psicologia della categorizzazione.
+
+--------------------------------------------------------------------------------
+22. AI, BIAS E CRITICA COMPUTAZIONALE
+--------------------------------------------------------------------------------
+
+Crawford, K. (2021). Atlas of AI: Power, Politics, and the Planetary Costs of
+        Artificial Intelligence. New Haven: Yale University Press.
+  [LIB]
+  Descr.: Critica politica e materiale dell'AI: estrazione di risorse, lavoro invisibile,
+           classificazione come potere. Contesto critico per riflettere sulle implicazioni
+           politiche dell'analisi computazionale del diritto.
+
+Benjamin, R. (2019). Race After Technology: Abolitionist Tools for the New Jim Code.
+        Cambridge: Polity Press.
+  [LIB]
+  Descr.: Analisi di come la tecnologia riproduce discriminazione razziale sotto apparenza
+           di neutralità ("New Jim Code"). Monito sulla non-neutralità degli strumenti
+           computazionali applicati a domini socialmente sensibili come il diritto.
+
+Noble, S. U. (2018). Algorithms of Oppression: How Search Engines Reinforce Racism.
+        New York: NYU Press.
+  [LIB]
+  Descr.: Studio su come gli algoritmi di ricerca perpetuano stereotipi razziali e di genere.
+           I bias nei corpora di training si propagano negli embedding, questione direttamente
+           rilevante per l'affidabilità dell'analisi cross-culturale della tesi.
+
+--------------------------------------------------------------------------------
+23. SOCIOLOGIA, FILOSOFIA POLITICA, SCIENZE SOCIALI
+--------------------------------------------------------------------------------
+
+Bourdieu, P. (1977). Outline of a Theory of Practice. Cambridge: Cambridge UP.
+  [LIB]
+  Descr.: Teoria della pratica: habitus, campo, capitale simbolico. Il "campo giuridico"
+           bourdieuiano ha una struttura relazionale che la tesi tenta di catturare
+           attraverso le relazioni geometriche nello spazio di embedding.
+
+Nussbaum, M. C. (2007). The Clash Within: Democracy, Religious Violence, and India's
+        Future. Cambridge, MA: Harvard University Press.
+  [LIB]
+  Descr.: Analisi delle tensioni interne alla democrazia indiana: pluralismo culturale,
+           violenza religiosa, identità. Prospettiva sulle differenze intra-culturali
+           che complicano le dicotomie nette (WEIRD vs. Sinic) della tesi.
+
+Trebilcock, M. J. (1993). The Limits of Freedom of Contract. Cambridge, MA: Harvard UP.
+  [LIB]
+  Descr.: Analisi interdisciplinare (diritto, economia, filosofia) dei limiti alla libertà
+           contrattuale. Esempio di concetto giuridico ("libertà contrattuale") la cui
+           estensione semantica varia tra tradizioni giuridiche.
+
+Foucault, M. (1969). L'Archeologie du savoir. Paris: Gallimard.
+        [Trad. ingl.: The Archaeology of Knowledge. Pantheon, 1972.]
+  [LIB]
+  Descr.: Metodo archeologico: le formazioni discorsive determinano cosa può essere detto
+           e pensato in un'epoca. Le regolarità distribuzionali catturate dagli embedding
+           sono una versione computazionale della "formazione discorsiva" foucaultiana.
+
+--------------------------------------------------------------------------------
+24. LEGAL NLP APPLICATA — VERIFICATA (revisione marzo 2026)
+--------------------------------------------------------------------------------
+
+Chau, B. K. e Livermore, M. A. (2024). Computational Legal Studies Comes of Age.
+        European Journal of Empirical Legal Studies, 1(1), 89-104.
+        DOI: 10.62355/ejels.19684. SSRN:4826144.
+  [PDF] ejels_chau_livermore2024_computational_legal_studies_comes_of_age.pdf
+  Descr.: Stato dell'arte dei computational legal studies: definizione del campo, metodi
+           prevalenti, prospettive future. Posiziona la tesi nel contesto della maturazione
+           disciplinare degli studi giuridici computazionali.
+  Nota: la fonte suggerente citava "van den Hoven et al." come autori — non corretto.
+        Autori reali: Bao Kham Chau e Michael A. Livermore (UVA Law).
+
+Rice, D. (2019). Understanding Legal Meaning Through Word Embeddings.
+        SSRN:3455747. DOI: 10.2139/ssrn.3455747.
+  [SSRN] — preprint disponibile su SSRN (accesso libero con registrazione).
+           Autore: Douglas Rice, UMass Amherst Political Science.
+           Il paper usa word embeddings su oltre un milione di decisioni giudiziarie USA.
+  Descr.: Applica word embeddings a oltre un milione di decisioni giudiziarie USA per
+           analizzare il significato dei concetti giuridici. Precedente diretto per l'approccio
+           della tesi, applicato però a un contesto monolingue (solo inglese).
+
+Choi, J. H. (2024). Measuring Clarity in Legal Text.
+        University of Chicago Law Review, 91(1), 1. SSRN:4151849.
+  [PDF] uchicago_choi2024_measuring_clarity_legal_text.pdf
+  Descr.: Propone metriche computazionali per la chiarezza del testo giuridico basate su
+           NLP. Approccio quantitativo alla qualità del linguaggio giuridico che complementa
+           l'analisi semantica della tesi con una dimensione di leggibilità.
+
+Bhupatiraju, S., Chen, D. L. e Venkataramanan, K. (2024). Mapping the Geometry of
+        Law Using Natural Language Processing. European Journal of Empirical Legal
+        Studies, 1(1), 49-68. DOI: 10.62355/ejels.18073.
+  [PDF] ejels_bhupatiraju2024_mapping_geometry_law_nlp.pdf
+  Descr.: Usa NLP per mappare la "geometria del diritto": struttura dello spazio giuridico
+           tramite embedding di testi normativi. Lavoro più direttamente affine alla tesi,
+           condivide l'intuizione che il diritto abbia una geometria analizzabile.
+
+Niklaus, J. et al. (2023). LEXTREME: A Multi-Lingual and Multi-Task Benchmark
+        for the Legal Domain. arXiv:2301.13126.
+  [PDF] arxiv_2301.13126_lextreme_niklaus2023.pdf
+  Descr.: Benchmark multilingue e multi-task per NLP legale: classificazione, NER, QA in
+           24 lingue europee. Riferimento per la valutazione delle capacità dei modelli
+           di embedding su testi giuridici multilingui.
+  Nota: questo e il benchmark legale multilingue reale; probabilmente corrispondente
+         al "Massive Legal Embedding Benchmark (MLEB)" citato dal modello suggerente.
+
+Behnke, G. e Wais, N. (2023). On the Semantic Difference of Judicial and
+        Standard Language. In Proceedings of ICAIL 2023 (19th International
+        Conference on Artificial Intelligence and Law), Braga. ACM.
+        ISBN: 9798400701979.
+  [PAY] — dietro paywall ACM. DARE UvA: dare.uva.nl (autore affiliato UvA).
+  Descr.: Studia la differenza semantica tra linguaggio giudiziario e linguaggio standard
+           tramite metodi computazionali. Direttamente pertinente: dimostra che il registro
+           giuridico ha una struttura semantica distinta rilevabile dagli embedding.
+
+Geeraerts, D. et al. (2023). Lexical Variation and Change: A Distributional
+        Semantic Approach. Oxford: Oxford University Press. ISBN: 9780198890676.
+  [PAY/LIB] — volume monografico (Geeraerts, Speelman, Heylen, Montes, De Pascale,
+              Franco, Lang). Include il capitolo "Distributional Semantics and the
+              Fog of Meaning" come Capitolo 4 dello stesso volume. Le due voci
+              suggerite dal LLM (libro + capitolo) sono la stessa opera.
+  Descr.: Monografia sulla variazione e il cambiamento lessicale tramite semantica
+           distribuzionale. Il Cap. 4 ("Fog of Meaning") discute i limiti della
+           rappresentazione vettoriale per la polisemia e la vaghezza lessicale.
+
+Taylor, W. K. (2025). Embedding Constitutional Rights.
+        Global Constitutionalism, 14(3), 445. Cambridge UP.
+        DOI: 10.1017/S2045381724000340 (da verificare su Cambridge Core).
+  [PAY] — Cambridge Core. ATTENZIONE: "embedding" qui e usato in senso giuridico-
+           sociologico (come i diritti si radicano nella pratica sociale), NON nel
+           senso tecnico di word embedding / NLP. Paper potenzialmente irrilevante
+           per la tesi a meno che non si voglia fare un gioco di parole concettuale.
+  Descr.: Studia come i diritti costituzionali si "radicano" (embed) nella pratica sociale
+           e istituzionale. Uso metaforico di "embedding" in senso sociologico; possibile
+           ponte concettuale tra embedding tecnico e radicamento giuridico-culturale.
+
+[?VERIF] "Textual Similarity for Legal Precedents Discovery." ScienceDirect, 2024.
+  Non verificato. Potrebbe essere in Knowledge-Based Systems, Expert Systems, o
+  Information Sciences. Autori non forniti dalla fonte suggerente. Cercare su
+  ScienceDirect con questo titolo e anno 2024.
+  Descr.: Dovrebbe trattare di similarità testuale per la ricerca di precedenti giuridici.
+           Citazione non verificata; se confermata, pertinente all'uso di embedding per
+           il retrieval di testi giuridici simili.
+
+Nay, J. (2022). Law Informs Code: A Legal Informatics Approach to Aligning Artificial
+        Intelligence with Humans. arXiv:2209.13007.
+  [PDF] arxiv_2209.13007_law_informs_code_nay2022.pdf
+  Descr.: Propone che il diritto possa informare il design dell'AI: principi giuridici come
+           vincoli per l'allineamento dell'intelligenza artificiale. Ponte tra informatica
+           giuridica e AI safety, dello stesso autore del paper "tax attorneys" (sez. 2).
+  Nota: scaricato in luogo di "Bridging Legal Knowledge and AI: RAG (arXiv, 2022)" —
+         titolo suggerito probabilmente inesatto. Il paper scaricato e autentico e
+         pertinente (Nay e anche autore del tax attorneys paper gia in sezione 2).
+
+Prakken, H. e collaboratori. (2024). [Titolo non specificato].
+  Henry Prakken e professore di AI & Law (Utrecht University), autore reale e molto
+  citato. Alcuni lavori 2024: keynote JURIX 2024; co-autore di "A Case-based-reasoning
+  analysis of the COMPAS dataset" (JURIX 2024, IOS Press, pp. 180-190).
+  Il capitolo "Computational Models of Legal Argument" e in: Bench-Capon, T. (ed.),
+  Artificial Intelligence and Legal Analytics, Cambridge UP (pre-2024).
+  [?VERIF] Specificare quale esatto paper Prakken 2024 si intende citare.
+  Descr.: Prakken è autore di riferimento per i modelli computazionali dell'argomentazione
+           giuridica (defeasible reasoning, case-based reasoning). Citazione specifica da
+           verificare, ma l'opera complessiva è rilevante per l'approccio AI & Law.
+
+McBride, P. e Diver, L. (2023). Research Study on Computational Law. [DRAFT]
+        Progetto CoHuBiCoL (VUB). URL: cohubicol.com/assets/uploads/crcl23/...
+  [WEB/DRAFT] — documento istituzionale, non pubblicato in rivista.
+  Descr.: Studio del progetto CoHuBiCoL (VUB) sul diritto computazionale: interazione tra
+           testo giuridico e codice informatico. Documento istituzionale che esplora le
+           implicazioni della computabilità del diritto.
+               AVVISO: il tentativo di download ha restituito invece un capitolo di
+               Mireille Hildebrandt ("Chapter 1: The mode of existence of text-driven
+               positive law") — salvato separatamente come:
+               hildebrandt_chapter1_textdriven_positive_law_cohubicol.pdf
+
+Yuill, S. (2019). Section Editorial: Critical Approaches to Computational Law.
+        Computational Culture, 7 (October 2019). computationalculture.net.
+  [WEB] computationalculture_yuill2019_critical_approaches_computational_law.html
+        Rivista open access, solo HTML. Contiene due paper nella stessa sezione:
+        Karagianni ("Software As Dispute Resolution System") e
+        Dixon-Roman, Nyame-Mensah & Russell ("Algorithmic Legal Reasoning as
+        Racializing Assemblages").
+  Descr.: Editoriale di una sezione dedicata agli approcci critici al diritto computazionale.
+           Include contributi su dispute resolution algoritmica e ragionamento giuridico
+           come "assemblaggio razzializzante". Prospettiva critica sul legal computing.
+
+--------------------------------------------------------------------------------
+25. SEMANTICA GEOMETRICA RECENTE — VERIFICATA (revisione marzo 2026)
+--------------------------------------------------------------------------------
+
+Pala, K., Shalu S., Nedumpozhimana, V. e Choudhary, K. K. (2025). A Geometric
+        Semantic Model and Parts-of-Sense Inference Annotation Framework.
+        Frontiers in Artificial Intelligence, 8. DOI: 10.3389/frai.2025.1666074.
+  [PDF] frontiers_pala2025_geometric_semantic_model_parts_of_sense.pdf
+  Descr.: Modello semantico geometrico con framework di annotazione basato su "parti del
+           senso" (parts-of-sense). Proposta recente di formalizzazione geometrica della
+           semantica lessicale, affine alla cornice teorica della tesi.
+
+Sun, Y., Huang, Q., Xu, Z., Sun, Y., Tang, Y. e Tung, A. K. H. (2024).
+        One Swallow Does Not Make a Summer: Understanding Semantic Structures
+        in Embedding Spaces. arXiv:2512.00852.
+  [PDF] arxiv_2512.00852_2025_understanding_semantic_structures_embedding_spaces.pdf
+  Descr.: Analisi delle strutture semantiche negli spazi di embedding: identifica pattern
+           regolari e irregolari, mettendo in guardia da generalizzazioni affrettate.
+           Rilevante per la prudenza interpretativa necessaria nell'analisi della tesi.
+
+Tennenholtz, G. et al. (2024). Demystifying Embedding Spaces using Large Language
+        Models. In: The Twelfth International Conference on Learning Representations
+        (ICLR 2024). arXiv:2310.04475. OpenReview: openreview.net/forum?id=qoYogklIPz.
+  [PDF] arxiv_2310.04475_tennenholtz2024_demystifying_embedding_spaces.pdf
+  Descr.: Usa LLM per interpretare la struttura degli spazi di embedding: le dimensioni
+           latenti possono essere etichettate con concetti naturali. Metodo per rendere
+           interpretabili le direzioni geometriche, rilevante per gli esperimenti exp_axes.
+  Nota: il precedente tentativo di download usava arXiv:2310.04546 (sbagliato).
+        ID corretto: 2310.04475. File verificato (3.5MB, 34 pp.).
+
+LOT Publication 474:
+  AVVISO — la pubblicazione LOT numero 474 e in realta: Gulian, M. (2017).
+  "The development of the speech production mechanism in young children: Evidence
+  from the acquisition of onset clusters in Dutch." Leiden University. 298 pp.
+  NESSUNA relazione con semantica geometrica o distribuzionale.
+  Il file e stato scaricato e poi eliminato. La voce originale era erronea.
+  La tesi "Geometric Methods for Context Sensitive Distributional Semantics"
+  e di E. Emms (Queen Mary University of London, 2018) — numero LOT diverso.
+  [ELIMINATO — citazione errata]
+
+Aceves, P. e Evans, J. A. (2024). Mobilizing Conceptual Spaces: How Word Embedding
+        Models Can Inform Measurement and Theory Within Organization Science.
+        Organization Science, 35(3), 788-814. DOI: 10.1287/orsc.2023.1686.
+  [PDF] socarxiv_aceves2023_mobilizing_conceptual_spaces_orgsci.pdf
+  (Preprint SocArXiv: osf.io/preprints/socarxiv/sng73/)
+  Descr.: Collega esplicitamente gli spazi concettuali di Gärdenfors con i word embedding
+           per la misurazione nelle scienze organizzative. Ponte teorico tra la tradizione
+           cognitiva degli spazi concettuali e l'approccio computazionale della tesi.
+
+Geeraerts, D. et al. (2023). Lexical Variation and Change: A Distributional Semantic
+        Approach. Oxford: Oxford University Press. ISBN: 9780198890676.
+  Autori: Geeraerts, Speelman, Heylen, Montes, De Pascale, Franco, Lang.
+  Capitolo 4: "Distributional Semantics and the Fog of Meaning" — stesso volume.
+  [PAY/LIB] — gia citato anche in sezione 24. Le due voci del LLM sono una sola opera.
+  Descr.: Duplicato della voce in sezione 24. V. descrizione sopra.
+
+Yuill, S. (2019). Section Editorial: Critical Approaches to Computational Law.
+  [WEB] → gia riportato in sezione 24.
+  Descr.: Duplicato della voce in sezione 24. V. descrizione sopra.
+
+================================================================================
+RIEPILOGO AGGIORNATO (dopo revisione LLM, febbraio 2026)
+================================================================================
+
+File presenti in cartella:                 63
+  - Scaricati in questa sessione:          56
+  - Pre-esistenti:                          7
+
+Nuovi scaricati in questa revisione (5 validi):
+  acl_J16-4001_formal_distributional_semantics_boleda2016.pdf
+  projecteuclid_efron1979_bootstrap_jackknife.pdf
+  arxiv_2209.13007_law_informs_code_nay2022.pdf
+  arxiv_2301.13126_lextreme_niklaus2023.pdf
+  The Geometry and Dynamics of Meaning.pdf  [aggiunto manualmente dall'utente]
+  [NOTA: thesis_geometric_distributional_semantics_utrecht_2018.pdf era errato
+   (Gulian 2017 LOT 474 = fonetika) — eliminato nella revisione successiva]
+
+Nuove voci aggiunte all'indice:            ~35
+
+Non scaricati (paywall):
+  Nuovi:
+  - Griffiths (2018) — Annual Review of Linguistics (Annual Reviews paywall)
+  - van den Hoven (citazione errata) → corretta in sezione 24 come Chau & Livermore
+  Precedenti invariati:
+  - Weisberg (2006) — Philosophy of Science (U of Chicago Press)
+  - Frege (1892) — traduzione inglese standard
+  - Caliskan et al. (2017) — Science/AAAS
+  - Stevens (1946) — Science (1946)
+  - von Wright (1951) — Mind (Oxford UP/JSTOR)
+
+Voci a citazione incerta [?VERIF] — risolte nella quarta revisione: v. riepilogo finale.
+
+================================================================================
+
+================================================================================
+VOCI AGGIUNTIVE — Terza revisione LLM, febbraio 2026
+================================================================================
+
+--------------------------------------------------------------------------------
+26. EPISTEMOLOGIA GIURIDICA E METODOLOGIA (aggiuntive)
+--------------------------------------------------------------------------------
+
+Lagodny, O. (2021). "Law as 'Argumentative Science': Functional Transfer of Basics
+        of Scientific Theory." [Rivista/Volume non specificato].
+  [PAY] / [?VERIF] — citazione incompleta: manca il nome della rivista o del volume.
+                     Verificare su Google Scholar / SSRN.
+  Descr.: Propone di concepire il diritto come "scienza argomentativa" e di trasferire
+           criteri della teoria della scienza alla metodologia giuridica. Citazione incerta
+           ma la tesi è pertinente al rapporto tra metodo scientifico e diritto.
+
+Damaska, M. (2003). Epistemology and Legal Regulation of Proof.
+        Law, Probability and Risk, 2(2), 117-130.
+        DOI: 10.1093/lpr/2.2.117.
+  [PAY] — Oxford University Press, Law, Probability and Risk.
+  Descr.: Analisi epistemologica della prova giuridica: come le regole processuali riflettono
+           assunzioni sulla conoscenza e la verità. Pertinente alla distinzione tra evidenza
+           statistica (come nella pipeline CLS) ed evidenza giuridica formale.
+
+Nota: Le voci seguenti sono GIA PRESENTI nell'indice ma ricompaiono in questa lista
+con ruoli diversi; si riportano per completezza tematica:
+  - Kelsen (1934/1960) Pure Theory of Law — v. sezione 7
+  - Kuhn (1962) The Structure of Scientific Revolutions — v. sezione 13
+  - Wittgenstein (1953) Philosophical Investigations — v. sezione 14
+  - Hart (1961) The Concept of Law — v. sezione 7
+
+--------------------------------------------------------------------------------
+27. SCIENZE COGNITIVE E ISOMORFISMO (aggiuntive)
+--------------------------------------------------------------------------------
+
+Nota: Le voci seguenti sono GIA PRESENTI nell'indice:
+  - Gärdenfors (2000, 2014) — v. sezione 6
+  - Shepard & Chipman (1970) — v. sezione 5
+  - Kriegeskorte, Mur & Bandettini (2008) RSA — v. sezione 5
+
+Edelman, S. (1998). Representation is Representation of Similarities.
+        Behavioral and Brain Sciences, 21(4), 449-467.
+        DOI: 10.1017/S0140525X98001253.
+  [PAY] — Cambridge University Press. Pagina autore (Cornell/Weizmann) non
+           disponibile via curl. Cercare su semanticscholar.org/author/Shimon-Edelman.
+  Descr.: Tesi forte: ogni rappresentazione è rappresentazione di similarità, non di
+           proprietà intrinseche. Fondamento per la RSA e per l'approccio della tesi:
+           confrontare spazi semantici tramite strutture di similarità è l'unico confronto
+           possibile tra rappresentazioni in spazi diversi.
+
+--------------------------------------------------------------------------------
+28. COMPUTATIONAL LEGAL SCIENCE (aggiuntive)
+--------------------------------------------------------------------------------
+
+Lettieri, N. et al. (2018). Ex machina: Analytical Platforms, Law and the Challenges
+        of Computational Legal Science. Future Internet, 10(5), 37.
+        DOI: 10.3390/fi10050037. MDPI (open access).
+  [PDF] mdpi_lettieri2018_ex_machina_computational_legal_science.pdf
+  Descr.: Propone piattaforme analitiche per la "computational legal science": integrazione
+           di data mining, NLP e visualizzazione per l'analisi giuridica. Visione
+           infrastrutturale del campo in cui si inserisce la pipeline della tesi.
+
+Ju, T. et al. (2024). How Large Language Models Encode Context Knowledge?
+        A Layer-Wise Probing Study. In Proceedings of LREC-COLING 2024,
+        pp. 8235-8246. ACL Anthology: 2024.lrec-main.722. arXiv:2402.16061.
+  [PDF] arxiv_2402.16061_ju2024_llm_layer_probing.pdf
+  Descr.: Studio di probing layer-by-layer su LLM: come la conoscenza contestuale è
+           codificata nei diversi strati. Estende la "BERTology" ai modelli generativi
+           più recenti, rilevante per la comprensione delle rappresentazioni interne.
+
+--------------------------------------------------------------------------------
+29. DIRITTO COMPARATO E SISTEMI SINICI (aggiuntive)
+--------------------------------------------------------------------------------
+
+Ruskola, T. (2013). Legal Orientalism: China, the United States, and Modern Law.
+        Cambridge, MA: Harvard University Press.
+  [LIB]
+  Descr.: Critica l'"orientalismo giuridico": la costruzione occidentale della Cina come
+           sistema senza "vero" diritto. Rilevante per la tesi come avvertimento contro
+           l'interpretazione della divergenza semantica come inferiorità del sistema cinese.
+
+Nota: voci gia presenti:
+  - Peerenboom (2002) China's Long March — v. sezione 10
+  - Glenn (2014) Legal Traditions of the World, 5th ed. — v. sezione 10
+    (la lista cita l'edizione 2000/1st; il contenuto e sostanzialmente identico)
+
+Sin, K. K., Xuan, X., Kit, C., Chan, C. H., e Ip, H. H. (2025). Solving the
+        Unsolvable: Translating Case Law in Hong Kong. arXiv:2501.09444.
+  [PDF] arxiv_2501.09444_sin2025_solving_unsolvable_translating_hk_case_law.pdf
+  Descr.: Studio sulla traduzione del case law hongkonghese: sfide della traduzione giuridica
+           bilingue (EN-ZH) in un sistema di common law. Direttamente pertinente al contesto
+           istituzionale del glossario HK DOJ usato come fonte primaria della tesi.
+  Nota: titolo esatto verificato via pdfinfo (34 pp., 7 MB). Il file precedente
+        (8 pp., titolo assente) era un download erroneo ed e stato eliminato.
+
+--------------------------------------------------------------------------------
+30. STATISTICA ROBUSTA — BOOTSTRAP (aggiuntive)
+--------------------------------------------------------------------------------
+
+Nota: Efron (1979) e gia presente in sezione 20 (aggiunto nella revisione precedente).
+  [PDF] projecteuclid_efron1979_bootstrap_jackknife.pdf
+
+Kunsch, H. R. (1989). The Jackknife and the Bootstrap for General Stationary
+        Observations. The Annals of Statistics, 17(3), 1217-1241.
+        DOI: 10.1214/aos/1176347265.
+  [PDF] projecteuclid_kunsch1989_block_bootstrap.pdf
+  Descr.: Introduce il block bootstrap per osservazioni dipendenti: ricampiona blocchi
+           contigui anziché singole osservazioni. Fondamento teorico diretto per la funzione
+           block_bootstrap_rdm_ci nella pipeline CLS, dove le coppie di termini nelle RDM
+           non sono indipendenti.
+  Nota: riferimento standard per il block bootstrap su serie temporali dipendenti.
+
+Pesta, M. (2017). Block Bootstrap for Dependent Errors-in-Variables.
+        Communications in Statistics — Theory and Methods.
+        DOI: 10.1080/03610926.2016.1148731.
+  [PAY] — Taylor & Francis.
+  Descr.: Estende il block bootstrap ai modelli errors-in-variables con dipendenza.
+           Riferimento tecnico per le proprietà asintotiche del block bootstrap in
+           contesti di dipendenza strutturale, come le RDM della pipeline.
+
+================================================================================
+RIEPILOGO COMPLESSIVO (dopo quarta revisione — verifica [?VERIF], marzo 2026)
+================================================================================
+
+File presenti in cartella (totale):        74   [73 PDF + 1 HTML]
+
+  Nuovi scaricati in questa revisione (verifica [?VERIF]):
+    arxiv_2402.16061_ju2024_llm_layer_probing.pdf
+    arxiv_2310.04475_tennenholtz2024_demystifying_embedding_spaces.pdf
+    socarxiv_aceves2023_mobilizing_conceptual_spaces_orgsci.pdf
+    ejels_bhupatiraju2024_mapping_geometry_law_nlp.pdf
+    ejels_chau_livermore2024_computational_legal_studies_comes_of_age.pdf
+    uchicago_choi2024_measuring_clarity_legal_text.pdf
+    frontiers_pala2025_geometric_semantic_model_parts_of_sense.pdf
+    arxiv_2512.00852_2025_understanding_semantic_structures_embedding_spaces.pdf
+    arxiv_2501.09444_sin2025_solving_unsolvable_translating_hk_case_law.pdf
+    hildebrandt_chapter1_textdriven_positive_law_cohubicol.pdf
+    computationalculture_yuill2019_critical_approaches_computational_law.html [WEB]
+
+  Eliminati (file errati o HTML):
+    thesis_geometric_distributional_semantics_utrecht_2018.pdf  [Gulian 2017 fonetika]
+    lot474_thesis_verification.pdf  [Gulian 2017 fonetika]
+    sin2025_translating_case_law_hk_bilingual.pdf  [download errato, 8 pp.]
+    acm_behnke2023_semantic_difference_judicial_language.pdf  [HTML, non PDF]
+    [+ 3 file HTML spacciati per PDF rimossi durante download]
+
+Voci [?VERIF] risolte:
+  - Chau & Livermore 2024 [PDF] (la fonte citava "van den Hoven" — errato)
+  - Rice 2019 [SSRN] (autore: Douglas Rice, UMass Amherst)
+  - Choi 2024 [PDF] (UChicago Law Review 91(1))
+  - Bhupatiraju et al. 2024 [PDF] (EJELS, DOI: 10.62355/ejels.18073)
+  - Behnke & Wais 2023 [PAY] (ICAIL 2023, ACM)
+  - Pala et al. 2025 [PDF] (Frontiers AI, DOI: 10.3389/frai.2025.1666074)
+  - Sun et al. 2024 [PDF] (arXiv:2512.00852)
+  - Tennenholtz et al. 2024 [PDF] (arXiv:2310.04475 — ID corretto, non .04546)
+  - Aceves & Evans 2024 [PDF] (Organization Science, DOI: 10.1287/orsc.2023.1686)
+  - Geeraerts et al. 2023 [PAY/LIB] (Oxford UP — include cap. "Fog of Meaning")
+  - Kennedy [PAY] — DUE paper distinti: Buffalo LR 1979 + Syracuse LR 1991
+  - Ju 2024 [PDF] (ACL 2024.lrec-main.722, arXiv:2402.16061)
+  - Sin 2025 [PDF] (arXiv:2501.09444, titolo verificato)
+  - LOT 474 [ELIMINATO] — e Gulian 2017 (fonetika olandese), non semantica geometrica
+  - Taylor 2025 [PAY] (Cambridge Core — "embedding" in senso sociologico, non NLP)
+  - Yuill 2019 [WEB] (Computational Culture 7, editorial)
+  - Troper 2005 [?VERIF rimane] — autore reale ma anno/rivista non confermati
+
+Non scaricati (paywall o accesso limitato):
+  - Rice (2019) — SSRN (accesso libero con registrazione)
+  - Behnke & Wais (2023) — ACM paywall (ICAIL 2023)
+  - Lagodny (2021) — rivista/volume non specificato, non rintracciato [?VERIF]
+  - Damaska (2003) — Oxford UP, Law Probability and Risk
+  - Edelman (1998) — Cambridge UP, Behavioral and Brain Sciences
+  - Griffiths (2018) — Annual Reviews [v. sezione 21]
+  - Pesta (2017) — Taylor & Francis
+  - Troper (2005) — rivista francese [?VERIF anno/rivista]
+  - Geeraerts et al. (2023) — Oxford UP (disponibile in biblioteca)
+  - Taylor (2025) — Cambridge Core
+
+Voci ancora non verificabili (hallucination sospette):
+  - "Textual Similarity for Legal Precedents Discovery" 2024 — autori sconosciuti
+  - "Prakken et al. 2024" — nessun paper specifico identificato con quel titolo
+  - "Bridging Legal Knowledge and AI: RAG 2022" — titolo non trovato su arXiv
+
+================================================================================
