@@ -44,3 +44,6 @@ experiments/**/results/layer_vectors/
 # experiments — notebook checkpoints
 experiments/notebooks/.ipynb_checkpoints/
 experiments/**/.ipynb_checkpoints/
+
+*.zip
+*.pdf

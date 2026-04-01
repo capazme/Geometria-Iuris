@@ -106,7 +106,7 @@ def _compute_knn(
     vecs_all: np.ndarray,
     core_idx: list[int],
     k: int = 15,
-) -> np.ndarray:
+) -> tuple[np.ndarray, np.ndarray]:
     """
     Compute k nearest neighbors for each core term in the full pool.
 
@@ -119,6 +119,7 @@ def _compute_knn(
     Returns
     -------
     knn : (n_core, k) int64 — pool indices of neighbors (NOT core indices)
+    knn_sims : (n_core, k) float64 — cosine similarities to each neighbor
     """
     core_vecs = vecs_all[core_idx]                     # (n_core, dim)
     sims = core_vecs @ vecs_all.T                      # (n_core, N_pool)
@@ -131,7 +132,11 @@ def _compute_knn(
     # Top-k by descending similarity
     # argsort ascending → take last k → reverse for descending order
     top_k = np.argsort(sims, axis=1)[:, -k:][:, ::-1]
-    return top_k.astype(np.int64)
+
+    # Extract the cosine similarities for the selected neighbors
+    knn_sims = np.take_along_axis(sims, top_k, axis=1)
+
+    return top_k.astype(np.int64), knn_sims
 
 
 # ---------------------------------------------------------------------------
@@ -325,9 +330,15 @@ def _majority_neighbors(
     ]
 
 
+def _neighborhood_quality(knn_sims: np.ndarray) -> np.ndarray:
+    """Mean cosine similarity to k-NN per term. Shape: (n_core,)."""
+    return knn_sims.mean(axis=1)
+
+
 def run_section_322(
     cross_results: list[dict],
     knn_all: dict[str, np.ndarray],
+    knn_sims_all: dict[str, np.ndarray],
     terms_core: list[dict],
     index: list[dict],
     weird_labels: list[str],
@@ -337,14 +348,35 @@ def run_section_322(
     """
     §3.2.2 — Juridical false friends.
 
-    Rank terms by mean cross-tradition Jaccard (ascending = most divergent).
-    Top-20 = false friend candidates. For each: show majority-vote neighbors
-    from WEIRD and Sinic models.
+    Two-stage ranking:
+    1. Neighborhood quality filter — exclude terms without dense neighborhoods
+       in both traditions (mean cosine similarity to k-NN, min of WEIRD/Sinic).
+    2. Rank surviving terms by mean cross-tradition Jaccard (ascending).
+
+    Top-20 from the filtered pool = genuine false friends.
     """
     print("\n[§3.2.2] Juridical false friends")
     n_core = len(terms_core)
 
-    # Compute per-term mean cross-tradition Jaccard
+    # ── Stage 1: Neighborhood quality ──
+    # Per-term mean cosine similarity to k-NN, per model
+    quality_per_model = {
+        label: _neighborhood_quality(knn_sims_all[label])
+        for label in weird_labels + sinic_labels
+    }
+    # Average per tradition
+    weird_q = np.mean([quality_per_model[l] for l in weird_labels], axis=0)
+    sinic_q = np.mean([quality_per_model[l] for l in sinic_labels], axis=0)
+    # Conservative: min of the two traditions
+    quality = np.minimum(weird_q, sinic_q)  # (n_core,)
+
+    quality_cutoff = float(np.percentile(quality, 25))
+    quality_mask = quality >= quality_cutoff
+    n_passed = int(quality_mask.sum())
+    print(f"  Neighborhood quality: cutoff={quality_cutoff:.4f} "
+          f"(Q1, 25th pctl), {n_passed}/{n_core} terms pass")
+
+    # ── Stage 2: Cross-tradition Jaccard on filtered terms ──
     per_term_jaccard = np.zeros(n_core, dtype=np.float64)
     n_cross = 0
     for r in cross_results:
@@ -354,11 +386,16 @@ def run_section_322(
         n_cross += 1
     per_term_jaccard /= n_cross
 
-    # Rank ascending (lowest Jaccard = most divergent)
-    ranked_idx = np.argsort(per_term_jaccard)
+    # Rank only filtered terms: ascending Jaccard, then descending quality
+    filtered_idx = np.where(quality_mask)[0]
+    filtered_jaccard = per_term_jaccard[filtered_idx]
+    filtered_quality = quality[filtered_idx]
+    # lexsort: last key is primary → (secondary=-quality, primary=jaccard)
+    rank_order = np.lexsort((-filtered_quality, filtered_jaccard))
+    ranked_filtered = filtered_idx[rank_order]
 
     top_20 = []
-    for rank, ti in enumerate(ranked_idx[:20]):
+    for rank, ti in enumerate(ranked_filtered[:20]):
         term = terms_core[ti]
         weird_nb = _majority_neighbors(knn_all, weird_labels, ti, index, top_n=5)
         sinic_nb = _majority_neighbors(knn_all, sinic_labels, ti, index, top_n=5)
@@ -369,25 +406,23 @@ def run_section_322(
             "domain": term["domain"],
             "mean_jaccard": round(float(per_term_jaccard[ti]), 4),
             "divergence": round(1.0 - float(per_term_jaccard[ti]), 4),
+            "quality": round(float(quality[ti]), 4),
+            "quality_weird": round(float(weird_q[ti]), 4),
+            "quality_sinic": round(float(sinic_q[ti]), 4),
             "weird_neighbors": weird_nb,
             "sinic_neighbors": sinic_nb,
         }
         top_20.append(entry)
         print(f"    #{rank+1:2d}  {term['en']:<25s}  J̄={per_term_jaccard[ti]:.4f}  "
-              f"div={1-per_term_jaccard[ti]:.4f}  [{term['domain']}]")
+              f"q={quality[ti]:.4f}  [{term['domain']}]")
 
-    # Check a priori candidates
-    a_priori_lower = {t.lower() for t in A_PRIORI_FALSE_FRIENDS}
-    top_20_lower = {e["en"].lower() for e in top_20}
-    overlap = a_priori_lower & top_20_lower
-    print(f"\n  A priori overlap: {len(overlap)}/12 candidates in top-20: {sorted(overlap)}")
-
-    # Save per-term mean cross-tradition Jaccard for viz
+    # Save per-term arrays for viz
     npz_dir = RESULTS_DIR / "jaccard_per_term"
     npz_dir.mkdir(parents=True, exist_ok=True)
     np.save(npz_dir / "mean_cross_tradition.npy", per_term_jaccard)
+    np.save(npz_dir / "neighborhood_quality.npy", quality)
 
-    # All 397 terms with their mean Jaccard (for full-table viz)
+    # All 397 terms with Jaccard + quality (for full-table viz)
     all_terms_data = []
     for ti in range(n_core):
         t = terms_core[ti]
@@ -397,6 +432,10 @@ def run_section_322(
             "domain": t["domain"],
             "mean_jaccard": round(float(per_term_jaccard[ti]), 4),
             "divergence": round(1.0 - float(per_term_jaccard[ti]), 4),
+            "quality": round(float(quality[ti]), 4),
+            "quality_weird": round(float(weird_q[ti]), 4),
+            "quality_sinic": round(float(sinic_q[ti]), 4),
+            "passed_filter": bool(quality_mask[ti]),
         })
 
     return {
@@ -409,10 +448,22 @@ def run_section_322(
             "min": round(float(per_term_jaccard.min()), 4),
             "max": round(float(per_term_jaccard.max()), 4),
         },
-        "a_priori_validation": {
-            "candidates": A_PRIORI_FALSE_FRIENDS,
-            "in_top_20": sorted(overlap),
-            "hit_rate": round(len(overlap) / len(A_PRIORI_FALSE_FRIENDS), 4),
+        "quality_filter": {
+            "metric": "min(mean_cosine_sim_WEIRD, mean_cosine_sim_Sinic)",
+            "cutoff_percentile": 25,
+            "cutoff_value": round(quality_cutoff, 4),
+            "n_total": n_core,
+            "n_passed": n_passed,
+            "n_excluded": n_core - n_passed,
+            "quality_distribution": {
+                "mean": round(float(quality.mean()), 4),
+                "std": round(float(quality.std()), 4),
+                "min": round(float(quality.min()), 4),
+                "q25": round(float(np.percentile(quality, 25)), 4),
+                "median": round(float(np.median(quality)), 4),
+                "q75": round(float(np.percentile(quality, 75)), 4),
+                "max": round(float(quality.max()), 4),
+            },
         },
     }
 
@@ -576,8 +627,11 @@ def main(argv: list[str] | None = None) -> None:
     print(f"\n[knn] Computing k={args.k} nearest neighbors...")
     t0 = time.perf_counter()
     knn_all: dict[str, np.ndarray] = {}
+    knn_sims_all: dict[str, np.ndarray] = {}
     for label in all_labels:
-        knn_all[label] = _compute_knn(vecs_all[label], core_idx, k=args.k)
+        knn_all[label], knn_sims_all[label] = _compute_knn(
+            vecs_all[label], core_idx, k=args.k,
+        )
         print(f"    {label}  knn shape={knn_all[label].shape}")
     print(f"  Done ({time.perf_counter()-t0:.1f}s)")
 
@@ -608,7 +662,8 @@ def main(argv: list[str] | None = None) -> None:
             print("\n[§3.2.2] Skipped — requires §3.2.1 cross_tradition results.")
         else:
             output["section_322"] = run_section_322(
-                cross_results, knn_all, terms_core, index,
+                cross_results, knn_all, knn_sims_all,
+                terms_core, index,
                 weird_labels, sinic_labels, k=args.k,
             )
 
