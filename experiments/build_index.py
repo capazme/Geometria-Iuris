@@ -33,6 +33,20 @@ LENSES = [
         ),
     },
     {
+        "id": "lens2",
+        "number": "II",
+        "title": "Emergent Taxonomy",
+        "section": "§4.4",
+        "color": "#CC79A7",
+        "html": "lens_2_taxonomy/results/figures/html/lens2_interactive.html",
+        "json": "lens_2_taxonomy/results/lens2_results.json",
+        "description": (
+            "Tests whether hierarchical clustering on embedding distances "
+            "recovers the human 7-domain legal taxonomy (Fowlkes-Mallows index). "
+            "FM(k) curves reveal taxonomic horizons across traditions."
+        ),
+    },
+    {
         "id": "lens3",
         "number": "III",
         "title": "Layer Stratigraphy",
@@ -102,6 +116,19 @@ def _load_metrics(lens: dict) -> dict:
             metrics["Within-Sinic ρ"] = f"{s['mean_rho_within_sinic']:.3f}"
             metrics["Cross ρ"] = f"{s['mean_rho_cross']:.3f}"
             metrics["Δρ"] = f"{s['cross_tradition_drop']:.3f}"
+
+    elif lid == "lens2":
+        s441 = data.get("section_441", {})
+        s443 = data.get("section_443", {})
+        if s441:
+            pm = s441.get("per_model", {})
+            fm_vals = [v["fm"] for v in pm.values()]
+            if fm_vals:
+                metrics["FM vs human (mean)"] = f"{sum(fm_vals)/len(fm_vals):.3f}"
+        if s443:
+            sm = s443.get("summary", {})
+            if sm.get("mean_fm_cross"):
+                metrics["Cross-trad FM"] = f"{sm['mean_fm_cross']:.3f}"
 
     elif lid == "lens3":
         models = data.get("section_313b", {}).get("per_model", {})

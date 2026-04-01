@@ -27,6 +27,9 @@ MAIN_SOURCES = [
     {"prefix": "L1", "label": "I — Relational Distance",
      "path": ROOT / "lens_1_relational/results/figures/html/lens1_interactive.html",
      "color": C_BLUE},
+    {"prefix": "L2", "label": "II — Emergent Taxonomy",
+     "path": ROOT / "lens_2_taxonomy/results/figures/html/lens2_interactive.html",
+     "color": "#CC79A7"},
     {"prefix": "L3", "label": "III — Layer Stratigraphy",
      "path": ROOT / "lens_3_stratigraphy/results/figures/html/lens3_interactive.html",
      "color": C_GREEN},
@@ -266,24 +269,13 @@ def _build_home() -> str:
         color = lens["color"]
         # Map lens IDs to section IDs for onclick
         section_map = {
-            "lens1": "sec_L1", "lens3": "sec_L3",
+            "lens1": "sec_L1", "lens2": "sec_L2", "lens3": "sec_L3",
             "lens4": "sec_L4", "lens5": "sec_L5",
         }
         sec_id = section_map.get(lens["id"], "home")
         onclick = f"document.querySelector(&quot;.lens-tab[data-sec='{sec_id}']&quot;).click()"
 
         extras_html = ""
-        if lens["id"] == "lens3":
-            extras_html = (
-                ' <a class="idx-extra" href="#" '
-                "onclick=\"event.preventDefault();"
-                "document.querySelector('.lens-tab[data-sec=sec_STRAT]').click()\">"
-                'Stratigraphy experiments</a>'
-                ' <a class="idx-extra" href="#" '
-                "onclick=\"event.preventDefault();"
-                "document.querySelector('.lens-tab[data-sec=sec_NTA]').click()\">"
-                'NTA exploration</a>'
-            )
 
         cards_html += f"""
     <div class="idx-card" style="border-left-color:{color}; cursor:pointer;"
@@ -306,7 +298,7 @@ def _build_home() -> str:
   <p class="subtitle">Measuring Legal Meaning Across Cultural Normative Structures
   in Embedding Spaces</p>
   <div class="idx-hero-stats">
-    <div class="idx-hero-stat"><div class="val">4</div><div class="lbl">Lenses</div></div>
+    <div class="idx-hero-stat"><div class="val">5</div><div class="lbl">Lenses</div></div>
     <div class="idx-hero-stat"><div class="val">6</div><div class="lbl">Models</div></div>
     <div class="idx-hero-stat"><div class="val">9,472</div><div class="lbl">Terms</div></div>
     <div class="idx-hero-stat"><div class="val">397</div><div class="lbl">Core terms</div></div>
@@ -492,27 +484,52 @@ def build_combined() -> Path:
         if extras:
             extra_scripts.append(extras)
 
-    # ── Supplementary files ──
+    # ── Supplementary files: inject as extra inner tabs inside Lens III ──
+    supp_panels = []
+    supp_tab_buttons = []
     for src in SUPP_SOURCES:
         print(f"  Parsing {src['prefix']}: {src['path'].name}")
         escaped = _extract_supp(src)
-        sec_id = f"sec_{src['prefix']}"
-        iframe_html = (
-            f'<div id="{sec_id}" class="lens-section">\n'
+        panel_id = f"L3_{src['prefix']}"
+        supp_panels.append(
+            f'<div id="{panel_id}" class="panel">\n'
             f'  <iframe srcdoc="{escaped}" '
-            f'style="width:100%;height:calc(100vh - 60px);border:none;" '
+            f'style="width:100%;height:calc(100vh - 120px);border:none;" '
             f'loading="lazy"></iframe>\n'
             f'</div>'
         )
-        sections_html.append(iframe_html)
+        supp_tab_buttons.append(
+            f'<button class="tab-btn" '
+            f'onclick="showTab(\'{panel_id}\', this)">{src["label"]}</button>'
+        )
 
-    # ── Build top-level tabs ──
-    all_sources = MAIN_SOURCES + SUPP_SOURCES
+    # Inject supplementary panels and tab buttons into the L3 section
+    if supp_panels:
+        l3_idx = next(
+            i for i, s in enumerate(sections_html)
+            if 'id="sec_L3"' in s
+        )
+        l3_html = sections_html[l3_idx]
+        # Append extra tab buttons to the tabs div
+        tabs_close = "</div>"  # closing tag of .tabs div
+        extra_btns = "\n".join(supp_tab_buttons)
+        l3_html = l3_html.replace(
+            tabs_close, f"{extra_btns}\n{tabs_close}", 1,
+        )
+        # Append iframe panels before the closing </div> of the lens-section
+        extra_panels = "\n".join(supp_panels)
+        l3_html = l3_html.rstrip()
+        # Remove trailing </div> and re-add after panels
+        if l3_html.endswith("</div>"):
+            l3_html = l3_html[:-6] + f"\n{extra_panels}\n</div>"
+        sections_html[l3_idx] = l3_html
+
+    # ── Build top-level tabs (main lenses only) ──
     tab_buttons = [
         '<button class="lens-tab active" data-sec="home" '
         'onclick="showLens(\'home\', this)">Home</button>'
     ]
-    for src in all_sources:
+    for src in MAIN_SOURCES:
         sec_id = f"sec_{src['prefix']}"
         tab_buttons.append(
             f'<button class="lens-tab" data-sec="{sec_id}" '
@@ -576,7 +593,8 @@ def build_combined() -> Path:
     size_mb = out.stat().st_size / (1024 * 1024)
     print(f"\n  Output: {out}")
     print(f"  Size:   {size_mb:.1f} MB")
-    print(f"  Sections: {len(all_sources)} lens + Home")
+    print(f"  Sections: {len(MAIN_SOURCES)} lenses + Home"
+          f" ({len(SUPP_SOURCES)} supplementary inside Lens III)")
 
     # Sanity: check for duplicate IDs
     all_ids = re.findall(r'id="([^"]+)"', html)
