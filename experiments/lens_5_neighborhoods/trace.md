@@ -133,6 +133,54 @@ proves valuable, it belongs in a future revision of the index.
 
 ---
 
+### D5 — Neighborhood quality filter for false friends
+
+**Options considered**:
+- A: A priori candidate list (12 terms pre-labeled as likely false friends) —
+  validates against human intuition (pro: external anchor; con: subjective,
+  potentially biased by researcher's legal background, 0/12 hit rate suggests
+  the list itself is flawed)
+- B: Corpus frequency filter (exclude terms below a frequency threshold) —
+  proxy for "model familiarity" (pro: simple; con: frequency data is not
+  available for all models, frequency ≠ embedding quality)
+- C: Neighborhood quality = mean cosine similarity to k-NN — direct measure
+  of embedding density, computed per model per tradition, min of WEIRD/Sinic
+  means as conservative aggregator (pro: data-driven, no external data needed,
+  directly measures what matters; con: adds a hyperparameter for the cutoff
+  percentile)
+
+**Decision**: Option C. Cutoff at 25th percentile (Q1) of the quality
+distribution across 397 core terms.
+
+**Rationale**: The unfiltered ranking selects 27 terms with Jaccard = 0 at the
+top. These fall into two categories: (a) terms the models barely "know" — sparse
+neighborhoods, low cosine similarity to neighbors — where zero overlap is an
+artifact of weak embeddings; (b) terms the models know well — dense, high-
+similarity neighborhoods — where zero overlap reflects genuine cross-tradition
+divergence. The quality metric separates these cases without requiring external
+data or subjective labeling.
+
+Results: cutoff = 0.6402 (25th percentile). 298/397 terms pass. 8 of 27 zero-
+Jaccard terms excluded (quality too low = noise), 19 retained as genuine false
+friends with quality ranging 0.65–0.78. Among these, quality serves as secondary
+sort: "patent" (q=0.78) ranks highest because it is well-embedded in both
+traditions yet placed in completely disjoint neighborhoods.
+
+Sensitivity: the 25th percentile is conventional (Q1 of the IQR). Alternative
+cutoffs at 10th percentile (less aggressive, 358 terms pass) and 50th percentile
+(more aggressive, 199 terms pass) can be reported as robustness checks.
+
+**Thesis text implication**: → §3.2.2 "To distinguish genuine semantic
+divergence from embedding artifacts, we condition the false friend ranking on
+neighborhood quality — defined as the mean cosine similarity between each term
+and its k nearest neighbors, averaged within each tradition and aggregated
+conservatively as min(quality_WEIRD, quality_Sinic). Terms below the 25th
+percentile of this quality distribution are excluded: their neighborhoods are
+too sparse to support meaningful overlap comparison. The remaining 298 terms
+are ranked by ascending Jaccard similarity, with quality as tiebreaker."
+
+---
+
 ## Open questions
 
 - None at this stage.

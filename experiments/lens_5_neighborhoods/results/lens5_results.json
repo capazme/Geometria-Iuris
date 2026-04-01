@@ -1,6 +1,6 @@
 {
   "meta": {
-    "date": "2026-04-01T01:39:56",
+    "date": "2026-04-01T11:30:15",
     "k": 15,
     "n_perm": 1000,
     "n_core": 397,
@@ -15,7 +15,7 @@
       "Text2vec-large-ZH",
       "Dmeta-ZH"
     ],
-    "elapsed_seconds": 13.2
+    "elapsed_seconds": 10.8
   },
   "section_321": {
     "k": 15,

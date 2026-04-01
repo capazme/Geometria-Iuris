@@ -204,7 +204,7 @@ def fig_false_friends_bars(results: dict, save_dir: Path) -> Path:
     ax.set_yticks(list(y_pos))
     ax.set_yticklabels(labels, fontsize=8)
     ax.set_xlabel("Divergence score (1 − J̄)", fontsize=10)
-    ax.set_title("§3.2.2 — Top-20 juridical false friends", fontsize=11)
+    ax.set_title("§3.2.2 — Top-20 juridical false friends (quality-filtered)", fontsize=11)
 
     used_domains = sorted(set(e["domain"] for e in top_20))
     handles = [mpatches.Patch(color=DOMAIN_COLORS.get(d, "#999"), label=d)
@@ -212,6 +212,39 @@ def fig_false_friends_bars(results: dict, save_dir: Path) -> Path:
     ax.legend(handles=handles, loc="lower right", frameon=False, fontsize=7)
     plt.tight_layout()
     out = save_dir / "322_false_friends.png"
+    fig.savefig(out, dpi=DPI, bbox_inches="tight")
+    plt.close(fig)
+    return out
+
+
+# ---------------------------------------------------------------------------
+# PNG: §3.2.2 — Quality × Jaccard scatter
+# ---------------------------------------------------------------------------
+
+def fig_quality_scatter(results: dict, save_dir: Path) -> Path:
+    """Scatter: neighborhood quality (x) vs mean cross-tradition Jaccard (y)."""
+    _apply_style()
+    s322 = results["section_322"]
+    all_terms = s322["all_terms"]
+    qf = s322["quality_filter"]
+    cutoff = qf["cutoff_value"]
+
+    fig, ax = plt.subplots(figsize=(9, 6))
+    for d in sorted(DOMAIN_COLORS):
+        xs = [t["quality"] for t in all_terms if t["domain"] == d]
+        ys = [t["mean_jaccard"] for t in all_terms if t["domain"] == d]
+        ax.scatter(xs, ys, c=DOMAIN_COLORS[d], s=18, alpha=0.6, label=d, zorder=2)
+
+    ax.axvline(cutoff, color="#333", linewidth=1, linestyle="--", alpha=0.7, zorder=1)
+    ax.text(cutoff - 0.005, ax.get_ylim()[1] * 0.95, f"Q1 = {cutoff:.3f}",
+            ha="right", fontsize=8, color="#333")
+
+    ax.set_xlabel("Neighborhood quality (min of WEIRD, Sinic mean cos sim)")
+    ax.set_ylabel("Mean cross-tradition Jaccard (J̄)")
+    ax.set_title("§3.2.2 — Quality vs. overlap: identifying genuine false friends", fontsize=11)
+    ax.legend(loc="upper left", frameon=False, fontsize=7, ncol=2)
+    plt.tight_layout()
+    out = save_dir / "322_quality_scatter.png"
     fig.savefig(out, dpi=DPI, bbox_inches="tight")
     plt.close(fig)
     return out
@@ -433,21 +466,60 @@ def _pj_term_scatter(results: dict, results_dir: Path) -> str:
     return fig.to_json()
 
 
+def _pj_quality_scatter(results: dict) -> str:
+    """Scatter: neighborhood quality (x) vs mean cross-tradition Jaccard (y)."""
+    s322 = results["section_322"]
+    all_terms = s322["all_terms"]
+    qf = s322["quality_filter"]
+    cutoff = qf["cutoff_value"]
+
+    fig = go.Figure()
+    for d in sorted(DOMAIN_COLORS):
+        terms_d = [t for t in all_terms if t["domain"] == d]
+        hovers = [
+            f"<b>{t['en']}</b> ({t['zh']})<br>"
+            f"Quality: {t['quality']:.4f}<br>"
+            f"Jaccard: {t['mean_jaccard']:.4f}<br>"
+            f"{'PASSED' if t['passed_filter'] else 'EXCLUDED'}"
+            for t in terms_d
+        ]
+        fig.add_trace(go.Scatter(
+            x=[t["quality"] for t in terms_d],
+            y=[t["mean_jaccard"] for t in terms_d],
+            mode="markers",
+            marker=dict(
+                size=7, color=DOMAIN_COLORS[d], opacity=0.6,
+                symbol=["circle" if t["passed_filter"] else "x" for t in terms_d],
+            ),
+            name=d, hovertext=hovers, hoverinfo="text",
+        ))
+    fig.add_vline(x=cutoff, line_dash="dash", line_color="#333",
+                  annotation_text=f"Q1 cutoff = {cutoff:.3f}")
+    fig.update_layout(
+        title="§3.2.2 — Quality vs. overlap (hover for details)",
+        xaxis_title="Neighborhood quality (min of WEIRD, Sinic mean cos sim)",
+        yaxis_title="Mean cross-tradition Jaccard (J̄)",
+        template="simple_white", height=550,
+    )
+    return fig.to_json()
+
+
 def _pj_false_friends_table(results: dict) -> str:
     """Detailed table of top-20 false friends with WEIRD vs Sinic neighbor lists."""
     s322 = results["section_322"]
     top_20 = s322["top_20"]
 
     # Build a rich go.Table
-    header_vals = ["#", "Term (EN)", "Term (ZH)", "Domain", "Div.",
+    header_vals = ["#", "Term (EN)", "Term (ZH)", "Domain", "Div.", "Quality",
                    "WEIRD neighbors (majority-vote)", "Sinic neighbors (majority-vote)"]
-    cells = [[] for _ in range(7)]
+    cells = [[] for _ in range(8)]
     for e in top_20:
         cells[0].append(e["rank"])
         cells[1].append(e["en"])
         cells[2].append(e["zh"])
         cells[3].append(e["domain"])
         cells[4].append(f"{e['divergence']:.3f}")
+        cells[5].append(f"{e.get('quality', 0):.3f}")
         w_nb = "<br>".join(
             f"{n['en']} [{n['domain']}] ({n['votes']}v)"
             for n in e["weird_neighbors"]
@@ -456,8 +528,8 @@ def _pj_false_friends_table(results: dict) -> str:
             f"{n['en']} [{n['domain']}] ({n['votes']}v)"
             for n in e["sinic_neighbors"]
         )
-        cells[5].append(w_nb)
-        cells[6].append(s_nb)
+        cells[6].append(w_nb)
+        cells[7].append(s_nb)
 
     fig = go.Figure(go.Table(
         header=dict(
@@ -468,7 +540,7 @@ def _pj_false_friends_table(results: dict) -> str:
         ),
         cells=dict(
             values=cells,
-            fill_color=[["#f9f9f9", "#ffffff"] * 10] * 7,
+            fill_color=[["#f9f9f9", "#ffffff"] * 10] * 8,
             align="left",
             font=dict(size=10),
             height=60,
@@ -497,7 +569,8 @@ def _pj_false_friends_bars(results: dict) -> str:
         hovers.append(
             f"<b>{e['en']}</b> ({e['zh']})<br>"
             f"Domain: {e['domain']}<br>"
-            f"Divergence: {e['divergence']:.4f}<br><br>"
+            f"Divergence: {e['divergence']:.4f}<br>"
+            f"Quality: {e.get('quality', 0):.4f}<br><br>"
             f"<b>WEIRD top-5:</b><br>{weird_nb}<br><br>"
             f"<b>Sinic top-5:</b><br>{sinic_nb}"
         )
@@ -575,6 +648,7 @@ def build_html(results_dir: Path, results: dict, save_path: Path) -> Path:
         "forest":         _pj_pair_forest(results),
         "histogram":      _pj_term_histogram(results),
         "scatter":        _pj_term_scatter(results, results_dir),
+        "quality":        _pj_quality_scatter(results),
         "ff_bars":        _pj_false_friends_bars(results),
         "ff_table":       _pj_false_friends_table(results),
         "domain_box":     _pj_domain_boxplot(results),
@@ -590,10 +664,11 @@ def _html_template(plots: dict[str, str]) -> str:
         ("p2", "Per-term histogram"),
         ("p3", "Per-term scatter"),
         ("p4", "Pair forest"),
-        ("p5", "False friends (bars)"),
-        ("p6", "False friends (table)"),
-        ("p7", "Domain distributions"),
-        ("p8", "Domain × pair heatmap"),
+        ("p5", "Quality filter"),
+        ("p6", "False friends (bars)"),
+        ("p7", "False friends (table)"),
+        ("p8", "Domain distributions"),
+        ("p9", "Domain × pair heatmap"),
     ])
 
     plt_plots = {f"plt_{k}": v for k, v in plots.items()}
@@ -682,6 +757,23 @@ def _html_template(plots: dict[str, str]) -> str:
 
 <div id="p5" class="panel">
   <div class="question">
+    <b>Why filter by neighborhood quality, and what does the scatter plot show?</b>
+    A term with Jaccard = 0 can mean two very different things: (a) the models place it in genuinely different semantic neighborhoods across traditions, or (b) the models barely "know" the term, producing sparse, unreliable neighborhoods. Neighborhood quality distinguishes the two cases by measuring the mean cosine similarity between each term and its 15 nearest neighbors, averaged per tradition and aggregated conservatively as the minimum of the WEIRD and Sinic quality scores. Terms below the 25th percentile are excluded from the false friend ranking.
+  </div>
+  <div class="card">
+    <h2>Reading the scatter</h2>
+    <p>The horizontal axis (X) shows neighborhood quality: higher values mean the term has denser, more reliable neighborhoods.
+    The vertical axis (Y) shows the mean cross-tradition Jaccard.
+    The dashed vertical line marks the Q1 cutoff (25th percentile).
+    Terms to the left of the line (low quality) are excluded from the false friend ranking — their Jaccard scores are unreliable.
+    Terms in the bottom-right quadrant (high quality, low Jaccard) are the most convincing false friends: well-known in both traditions but placed in completely different neighborhoods.
+    Hover over any point to see the term, its quality score, and whether it passed the filter.</p>
+  </div>
+  <div id="plt_quality"></div>
+</div>
+
+<div id="p6" class="panel">
+  <div class="question">
     <b>What are "false friends" in this context, and what does the divergence score measure?</b>
     In comparative linguistics, "false friends" (faux amis) are words that look or sound similar across two languages but carry different meanings — for example, the Italian "attuale" means "current", not "actual".
     Here the concept is extended to legal terminology: a legal "false friend" is a term whose surface translation is equivalent across English and Chinese, but whose semantic associations — as captured by the embedding model — differ substantially.
@@ -700,7 +792,7 @@ def _html_template(plots: dict[str, str]) -> str:
   <div id="plt_ff_bars"></div>
 </div>
 
-<div id="p6" class="panel">
+<div id="p7" class="panel">
   <div class="question">
     <b>How are the "consensus neighbors" for each tradition determined?</b>
     For each of the top-20 high-divergence terms, this table shows the top-5 nearest neighbors as agreed upon by the models within each tradition, using a majority-vote procedure.
@@ -718,7 +810,7 @@ def _html_template(plots: dict[str, str]) -> str:
   <div id="plt_ff_table"></div>
 </div>
 
-<div id="p7" class="panel">
+<div id="p8" class="panel">
   <div class="question">
     <b>Does neighborhood overlap vary across branches of law?</b>
     This panel presents one box plot per branch of law (e.g., constitutional, criminal, civil, international), showing the distribution of per-term mean cross-tradition Jaccard values ($\\bar{{J}}_{{\\text{{cross}}}}$) within each branch.
@@ -737,7 +829,7 @@ def _html_template(plots: dict[str, str]) -> str:
   <div id="plt_domain_box"></div>
 </div>
 
-<div id="p8" class="panel">
+<div id="p9" class="panel">
   <div class="question">
     <b>Is the pattern of neighborhood overlap consistent across all 9 cross-tradition model pairs, or does it depend on which specific models are compared?</b>
     This heatmap serves as a robustness check. If a branch of law shows low overlap, it is important to verify that this pattern holds across all 9 cross-tradition pairs — not just one or two.
@@ -786,6 +878,10 @@ def run_viz(results_dir: Path, results: dict) -> None:
 
     if "section_322" in results:
         p = fig_term_histogram(results, png_dir)
+        generated.append(p)
+        print(f"  {p.name}")
+
+        p = fig_quality_scatter(results, png_dir)
         generated.append(p)
         print(f"  {p.name}")
 

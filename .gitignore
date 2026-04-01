@@ -34,12 +34,9 @@ experiments/data/raw/
 experiments/data/processed/embeddings/
 experiments/data/processed/embeddings_cache/
 experiments/data/processed/doj_raw.json
-experiments/data/processed/doj_filtered.json
 experiments/data/processed/corpus_stats.md
 
 # experiments — generated figures and HTML (regenerable from results JSON)
-experiments/**/results/figures/
-experiments/**/results/layer_vectors/
 
 # experiments — notebook checkpoints
 experiments/notebooks/.ipynb_checkpoints/
