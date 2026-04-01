@@ -274,6 +274,62 @@ must be checked for zero intersection with all other axes' pair sets.
 
 ---
 
+### D7 — Removal of Kruskal-Wallis test from §3.3.3
+
+**Options considered**:
+- A: Keep Kruskal-Wallis omnibus test comparing 9 cross-tradition rho values
+  across 3 axes (pro: formal test; con: violates independence — the same 9
+  model pairs produce values for all 3 axes, and the axes themselves are
+  non-orthogonal with cosine similarity up to ~0.5)
+- B: Replace KW with a permutation test that respects the paired structure
+  (pro: valid; con: complex design for a secondary comparison)
+- C: Report descriptive ranking only (pro: honest, avoids false precision
+  from an invalid test; con: no inferential claim)
+
+**Decision**: Option C — descriptive ranking only.
+
+**Rationale**: The Kruskal-Wallis H test requires independent observations.
+With the same 9 model pairs contributing one value per axis, and axes that
+share up to 25% of their variance (cosine ≈ −0.5), both the within-group
+and between-group independence assumptions are violated. Reporting the ranking
+with means and standard deviations is more honest than a p-value from an
+invalid test. The forest plot in the visualization already makes the axis
+differences visually apparent.
+
+**Thesis text implication**: → §3.3.3 "The three axes exhibit different
+degrees of cross-tradition convergence: public/private (ρ̄_cross = 0.402)
+shows the strongest alignment, followed by rights/duties (0.380) and
+individual/collective (0.292). We report these descriptively rather than
+via omnibus testing, because the 9 cross-tradition values per axis derive
+from the same model pairs and the axes are non-orthogonal."
+
+---
+
+### D8 — Replacement of Mann-Whitney with permutation test for cross/within comparison
+
+**Options considered**:
+- A: Mann-Whitney U on 9 cross vs 6 within values (pro: standard; con: with
+  n=15 total the test has very low power, and U=0 with r=1.0 is a ceiling
+  artefact rather than a measurement)
+- B: Permutation test on group labels (pro: exact, no distributional
+  assumptions, well-suited for small samples; con: slightly more complex)
+
+**Decision**: Option B — permutation test (10,000 permutations) on the
+cross/within group label assignment.
+
+**Rationale**: With only 15 observations the Mann-Whitney U test produces
+artefactual extreme values (U=0, r=1.0) that give false precision. The
+permutation test shuffles the cross/within labels 10,000 times and computes
+the difference in means, producing an empirical p-value that is honest about
+the small sample size.
+
+**Thesis text implication**: → §3.3.2 "The separation between cross-tradition
+and within-tradition correlation values is assessed by permutation test
+(10,000 shuffles of group labels) rather than Mann-Whitney U, given the
+small sample size (n_cross=9, n_within=6)."
+
+---
+
 ## References
 
 - Efron, B., & Tibshirani, R. J. (1993). *An introduction to the bootstrap*.

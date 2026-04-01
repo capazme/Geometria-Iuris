@@ -33,7 +33,7 @@ from pathlib import Path
 
 import numpy as np
 import yaml
-from scipy.stats import kruskal, spearmanr
+from scipy.stats import spearmanr
 
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
@@ -43,6 +43,7 @@ from shared.statistical import (
     GenericBootstrapCI,
     bootstrap_ci_generic,
     mannwhitney_with_r,
+    permutation_test_groups,
 )
 
 RESULTS_DIR = Path(__file__).parent / "results"
@@ -348,7 +349,7 @@ def run_section_332(
                   f"ρ={rho_raw:+.4f}  CI=[{ci.ci_low:+.4f}, {ci.ci_high:+.4f}]  "
                   f"({elapsed:.1f}s)")
 
-    # Summary per axis: Mann-Whitney cross vs within
+    # Summary per axis: permutation test cross vs within
     summary_per_axis: dict[str, dict] = {}
     for ax_name in axis_names:
         cross_rhos = np.array([
@@ -359,17 +360,16 @@ def run_section_332(
             e["rho"] for e in per_pair
             if e["axis"] == ax_name and e["group"] in ("within_weird", "within_sinic")
         ])
-        mw = mannwhitney_with_r(cross_rhos, within_rhos, alternative="less")
+        pt = permutation_test_groups(cross_rhos, within_rhos, alternative="less")
         summary_per_axis[ax_name] = {
             "mean_cross_rho": round(float(cross_rhos.mean()), 4),
             "mean_within_rho": round(float(within_rhos.mean()), 4),
-            "mw_statistic": round(mw.statistic, 2),
-            "mw_p_value": round(mw.p_value, 6),
-            "mw_effect_r": round(mw.effect_r, 4),
+            "perm_p_value": pt.p_value,
+            "effect_r": round(pt.effect_r, 4),
         }
         print(f"\n  [{ax_name}] cross ρ̄={cross_rhos.mean():.4f}  "
               f"within ρ̄={within_rhos.mean():.4f}  "
-              f"r={mw.effect_r:+.4f}  p={mw.p_value:.4f}")
+              f"r={pt.effect_r:+.4f}  p={pt.p_value:.4f}")
 
     return {
         "n_boot": n_boot,
@@ -386,10 +386,12 @@ def run_section_333(section_332_results: dict) -> dict:
     """
     §3.3.3 — Compare axes: which axis has the lowest cross-tradition rho?
 
-    Kruskal-Wallis on cross-tradition rho across 3 axes.
-    If significant: pairwise Mann-Whitney with Bonferroni.
+    Descriptive comparison only. Kruskal-Wallis was removed because the three
+    axes are not orthogonal (cosine similarity up to ~0.5) and the 9 cross-
+    tradition values per axis come from the same 9 model pairs, violating the
+    independence assumption required by KW.
     """
-    print("\n[§3.3.3] Which axes diverge most?")
+    print("\n[§3.3.3] Which axes diverge most? (descriptive)")
 
     per_pair = section_332_results["per_pair"]
     axis_names = sorted(set(e["axis"] for e in per_pair))
@@ -404,42 +406,13 @@ def run_section_333(section_332_results: dict) -> dict:
         print(f"  {ax_name:25s}  n={len(rhos)}  mean ρ={rhos.mean():.4f}  "
               f"std={rhos.std():.4f}")
 
-    # Kruskal-Wallis
-    groups_list = [cross_rhos_by_axis[ax] for ax in axis_names]
-    h_stat, kw_p = kruskal(*groups_list)
-    print(f"\n  Kruskal-Wallis: H={h_stat:.2f}  p={kw_p:.4e}")
-
-    # Pairwise Mann-Whitney with Bonferroni if significant
-    pairwise: list[dict] = []
-    n_comparisons = len(axis_names) * (len(axis_names) - 1) // 2
-    if kw_p < 0.05:
-        print(f"  Pairwise Mann-Whitney (Bonferroni, {n_comparisons} comparisons):")
-        for a1, a2 in combinations(axis_names, 2):
-            mw = mannwhitney_with_r(
-                cross_rhos_by_axis[a1], cross_rhos_by_axis[a2],
-                alternative="two-sided",
-            )
-            p_adj = min(mw.p_value * n_comparisons, 1.0)
-            sig = "*" if p_adj < 0.05 else ""
-            pairwise.append({
-                "axis_a": a1,
-                "axis_b": a2,
-                "statistic": round(mw.statistic, 2),
-                "p_raw": round(mw.p_value, 6),
-                "p_bonferroni": round(p_adj, 6),
-                "effect_r": round(mw.effect_r, 4),
-                "significant": bool(p_adj < 0.05),
-            })
-            if sig:
-                print(f"    {a1} vs {a2}:  r={mw.effect_r:+.3f}  p_adj={p_adj:.4f} {sig}")
-    else:
-        print("  Not significant — skipping pairwise tests.")
-
     # Rank axes by mean cross rho (ascending = most divergent first)
     ranked = sorted(
         [(ax, float(cross_rhos_by_axis[ax].mean())) for ax in axis_names],
         key=lambda x: x[1],
     )
+    print(f"\n  Ranking (most divergent first): "
+          + ", ".join(f"{ax} ({rho:.3f})" for ax, rho in ranked))
 
     return {
         "cross_rhos_by_axis": {
@@ -450,13 +423,6 @@ def run_section_333(section_332_results: dict) -> dict:
             }
             for ax, arr in cross_rhos_by_axis.items()
         },
-        "kruskal_wallis": {
-            "H": round(float(h_stat), 4),
-            "p_value": float(kw_p),
-            "significant": bool(kw_p < 0.05),
-        },
-        "pairwise": pairwise,
-        "n_comparisons": n_comparisons,
         "ranking_most_divergent_first": [
             {"axis": ax, "mean_cross_rho": rho} for ax, rho in ranked
         ],

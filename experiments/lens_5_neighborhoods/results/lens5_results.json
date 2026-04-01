@@ -1,6 +1,6 @@
 {
   "meta": {
-    "date": "2026-04-01T11:30:15",
+    "date": "2026-04-01T13:16:42",
     "k": 15,
     "n_perm": 1000,
     "n_core": 397,
@@ -15,7 +15,7 @@
       "Text2vec-large-ZH",
       "Dmeta-ZH"
     ],
-    "elapsed_seconds": 10.8
+    "elapsed_seconds": 10.4
   },
   "section_321": {
     "k": 15,
@@ -28,7 +28,8 @@
         "mean_jaccard": 0.0962,
         "std_jaccard": 0.0862,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "BGE-EN-large",
@@ -37,7 +38,8 @@
         "mean_jaccard": 0.079,
         "std_jaccard": 0.0757,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "BGE-EN-large",
@@ -46,7 +48,8 @@
         "mean_jaccard": 0.0916,
         "std_jaccard": 0.0865,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "E5-large",
@@ -55,7 +58,8 @@
         "mean_jaccard": 0.0943,
         "std_jaccard": 0.0916,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "E5-large",
@@ -64,7 +68,8 @@
         "mean_jaccard": 0.0759,
         "std_jaccard": 0.0772,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "E5-large",
@@ -73,7 +78,8 @@
         "mean_jaccard": 0.0916,
         "std_jaccard": 0.0975,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "FreeLaw-EN",
@@ -82,7 +88,8 @@
         "mean_jaccard": 0.0967,
         "std_jaccard": 0.095,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "FreeLaw-EN",
@@ -91,7 +98,8 @@
         "mean_jaccard": 0.0801,
         "std_jaccard": 0.0771,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "FreeLaw-EN",
@@ -100,7 +108,8 @@
         "mean_jaccard": 0.0874,
         "std_jaccard": 0.0916,
         "median_jaccard": 0.0714,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       }
     ],
     "within_weird": [
@@ -111,7 +120,8 @@
         "mean_jaccard": 0.3274,
         "std_jaccard": 0.1458,
         "median_jaccard": 0.3043,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "BGE-EN-large",
@@ -120,7 +130,8 @@
         "mean_jaccard": 0.2256,
         "std_jaccard": 0.136,
         "median_jaccard": 0.2,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "E5-large",
@@ -129,7 +140,8 @@
         "mean_jaccard": 0.2196,
         "std_jaccard": 0.1407,
         "median_jaccard": 0.2,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       }
     ],
     "within_sinic": [
@@ -140,7 +152,8 @@
         "mean_jaccard": 0.3436,
         "std_jaccard": 0.1627,
         "median_jaccard": 0.3043,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "BGE-ZH-large",
@@ -149,7 +162,8 @@
         "mean_jaccard": 0.3694,
         "std_jaccard": 0.1712,
         "median_jaccard": 0.3636,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       },
       {
         "model_a": "Text2vec-large-ZH",
@@ -158,15 +172,15 @@
         "mean_jaccard": 0.2665,
         "std_jaccard": 0.1572,
         "median_jaccard": 0.25,
-        "p_value": 0.001
+        "p_value": 0.001,
+        "p_holm": 0.015
       }
     ],
     "summary": {
       "mean_cross": 0.0881,
       "mean_within": 0.292,
-      "mw_statistic": 0.0,
-      "mw_p_value": 0.0008864684330484136,
-      "mw_effect_r": 1.0
+      "perm_p_value": 0.00039996000399960006,
+      "effect_r": 1.0
     }
   },
   "section_322": {

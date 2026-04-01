@@ -191,6 +191,37 @@ k è una verifica di robustezza (k=5 e k=9 come sensitivity check).
 
 ---
 
+### D6 — Multiple comparison correction
+
+**Decision**: Holm-Bonferroni step-down correction applied to all 15 Mantel
+test p-values (3 within-WEIRD + 3 within-Sinic + 9 cross-tradition).
+
+**Rationale**: With 15 simultaneous tests at alpha=0.05, the family-wise
+error rate (FWER) would be inflated without correction. Holm-Bonferroni is
+uniformly more powerful than Bonferroni while still controlling FWER. In
+practice, all 15 uncorrected p-values are at the permutation floor
+(≤ 0.001), so all remain significant after correction. The correction is
+applied for methodological completeness.
+
+**Thesis text implication**: → §3.1.4 "P-values are corrected for multiple
+comparisons using the Holm-Bonferroni procedure across all 15 model pairs.
+All corrected p-values remain below 0.015."
+
+---
+
+### D7 — Phipson & Smyth p-value formula
+
+**Decision**: Permutation p-values computed as (b+1)/(m+1) following
+Phipson & Smyth (2010), where b = number of null values ≥ observed,
+m = number of permutations. This replaces the earlier approximation
+max(p_raw, 1/m).
+
+**Rationale**: The (b+1)/(m+1) formula is the exact implementation
+recommended by Phipson & Smyth. It is slightly more conservative (no
+p-value is ever exactly zero) and is the standard cited in the literature.
+
+---
+
 ## Open questions
 
 - Sensitivity check su k=5 e k=9: pianificato come robustezza in §2.4

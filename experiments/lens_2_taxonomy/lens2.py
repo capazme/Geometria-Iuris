@@ -39,7 +39,7 @@ from scipy.spatial.distance import squareform
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
-from shared.statistical import mannwhitney_with_r
+from shared.statistical import permutation_test_groups
 
 RESULTS_DIR = Path(__file__).parent / "results"
 RDM_DIR = ROOT / "lens_1_relational" / "results" / "rdms"
@@ -136,7 +136,9 @@ def _permutation_test_fm(
     for i in range(n_perm):
         shuffled = rng.permutation(human_labels)
         null[i] = _fm_score(shuffled, model_labels)
-    p_value = float(max((null >= obs).mean(), 1.0 / n_perm))
+    # Phipson & Smyth (2010): p = (b + 1) / (m + 1)
+    b = int((null >= obs).sum())
+    p_value = (b + 1) / (n_perm + 1)
     return obs, p_value, null
 
 
@@ -290,14 +292,14 @@ def run_section_443(
     print("  Within-Sinic:")
     within_s = _fm_pairs(within_sinic_pairs, "within_sinic")
 
-    # Mann-Whitney: cross vs all within
+    # Permutation test: cross vs all within (more appropriate than MW for n=9 vs n=6)
     cross_vals = np.array([r["fm"] for r in cross])
     within_vals = np.array([r["fm"] for r in within_w + within_s])
-    mw = mannwhitney_with_r(cross_vals, within_vals, alternative="less")
+    pt = permutation_test_groups(cross_vals, within_vals, alternative="less")
 
     print(f"\n  Summary: cross FM̄={cross_vals.mean():.4f}  "
           f"within FM̄={within_vals.mean():.4f}  "
-          f"r={mw.effect_r:+.4f}  p={mw.p_value:.4f}")
+          f"r={pt.effect_r:+.4f}  p={pt.p_value:.4f}")
 
     return {
         "k": 7,
@@ -310,10 +312,9 @@ def run_section_443(
             "mean_fm_within_sinic": round(float(np.mean([r["fm"] for r in within_s])), 4),
             "mean_fm_within": round(float(within_vals.mean()), 4),
         },
-        "mw_cross_vs_within": {
-            "statistic": round(mw.statistic, 2),
-            "p_value": mw.p_value,
-            "effect_r": round(mw.effect_r, 4),
+        "perm_cross_vs_within": {
+            "p_value": pt.p_value,
+            "effect_r": round(pt.effect_r, 4),
         },
     }
 

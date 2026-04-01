@@ -43,6 +43,7 @@ from shared.embeddings import load_precomputed
 from shared.statistical import (
     RSAResult,
     compute_rdm,
+    holm_correction,
     mannwhitney_with_r,
     rsa,
     upper_tri,
@@ -383,6 +384,13 @@ def run_section_314(
         weird_labels, sinic_labels, rdms,
         "cross", n_perm, n_boot, save_dir=dist_dir,
     )
+
+    # Holm correction across all 15 Mantel p-values
+    all_pairs = within_weird + within_sinic + cross
+    raw_ps = [r["p_value"] for r in all_pairs]
+    adj_ps = holm_correction(raw_ps)
+    for r, p_adj in zip(all_pairs, adj_ps):
+        r["p_holm"] = round(p_adj, 6)
 
     # Summary: intra-tradition vs cross-tradition mean rho
     rho_weird  = np.mean([r["rho"] for r in within_weird])

@@ -56,6 +56,94 @@ class RSAResult:
     null_distribution: np.ndarray
 
 
+def holm_correction(p_values: list[float]) -> list[float]:
+    """
+    Holm-Bonferroni step-down correction for multiple comparisons.
+
+    More powerful than Bonferroni while still controlling FWER.
+    Returns adjusted p-values (capped at 1.0).
+    """
+    n = len(p_values)
+    indexed = sorted(enumerate(p_values), key=lambda x: x[1])
+    adjusted = [0.0] * n
+    cummax = 0.0
+    for rank, (orig_idx, p) in enumerate(indexed):
+        adj = p * (n - rank)
+        cummax = max(cummax, adj)
+        adjusted[orig_idx] = min(cummax, 1.0)
+    return adjusted
+
+
+@dataclass
+class PermutationGroupResult:
+    """Result of a permutation test comparing two groups of scalar values."""
+    observed_diff: float   # mean(group_a) - mean(group_b)
+    p_value: float
+    effect_r: float        # rank-biserial correlation (same as MW)
+    n_a: int
+    n_b: int
+    mean_a: float
+    mean_b: float
+
+
+def permutation_test_groups(
+    group_a: np.ndarray,
+    group_b: np.ndarray,
+    n_perm: int = 10_000,
+    alternative: str = "less",
+    seed: int = 42,
+) -> PermutationGroupResult:
+    """
+    Permutation test on the difference of means between two groups.
+
+    Pools all values, randomly re-assigns labels, and recomputes the
+    difference n_perm times. More appropriate than Mann-Whitney for
+    very small samples (e.g., n=9 vs n=6).
+
+    Parameters
+    ----------
+    group_a, group_b : 1-D arrays of scalar values
+    alternative : 'less' (H1: mean_a < mean_b), 'greater', 'two-sided'
+    """
+    a = np.asarray(group_a, dtype=float)
+    b = np.asarray(group_b, dtype=float)
+    n_a, n_b = len(a), len(b)
+    pooled = np.concatenate([a, b])
+    obs_diff = float(a.mean() - b.mean())
+
+    rng = np.random.default_rng(seed)
+    null = np.empty(n_perm, dtype=np.float64)
+    for i in range(n_perm):
+        rng.shuffle(pooled)
+        null[i] = pooled[:n_a].mean() - pooled[n_a:].mean()
+
+    # Phipson & Smyth (2010): p = (b + 1) / (m + 1)
+    if alternative == "less":
+        b_count = int((null <= obs_diff).sum())
+    elif alternative == "greater":
+        b_count = int((null >= obs_diff).sum())
+    else:
+        b_count = int((np.abs(null) >= abs(obs_diff)).sum())
+    p_value = (b_count + 1) / (n_perm + 1)
+
+    # Rank-biserial effect size (same formula as MW)
+    from scipy.stats import mannwhitneyu as _mwu
+    try:
+        u = _mwu(a, b, alternative=alternative).statistic
+        effect_r = 1.0 - 2.0 * u / (n_a * n_b)
+    except ValueError:
+        effect_r = 0.0
+
+    return PermutationGroupResult(
+        observed_diff=obs_diff,
+        p_value=p_value,
+        effect_r=float(effect_r),
+        n_a=n_a, n_b=n_b,
+        mean_a=float(a.mean()),
+        mean_b=float(b.mean()),
+    )
+
+
 # ---------------------------------------------------------------------------
 # RDM construction
 # ---------------------------------------------------------------------------
@@ -124,9 +212,11 @@ def mannwhitney_with_r(
     res = mannwhitneyu(x, y, alternative=alternative)
     u = res.statistic
     effect_r = 1.0 - 2.0 * u / (len(x) * len(y))
+    # Floor p-value to avoid reporting exact 0.0 (scipy float underflow)
+    p_val = float(max(res.pvalue, np.finfo(float).tiny))
     return MannWhitneyResult(
         statistic=float(u),
-        p_value=float(res.pvalue),
+        p_value=p_val,
         effect_r=float(effect_r),
         n_x=len(x),
         n_y=len(y),
@@ -173,12 +263,11 @@ def mantel_test(
         pi = rng.permutation(n)
         null[i] = spearmanr(tri_a, upper_tri(rdm_b[np.ix_(pi, pi)])).statistic
 
-    # Minimum representable p = 1/n_perm (Phipson & Smyth 2010).
-    # Reporting p=0 from a permutation test is technically incorrect:
-    # the test cannot exclude the possibility that a larger null distribution
-    # would produce at least one exceedance. p < 1/n_perm is the honest bound.
-    p_raw = float((null >= rho_obs).mean())
-    p_bounded = max(p_raw, 1.0 / n_perm)
+    # Phipson & Smyth (2010): p = (b + 1) / (m + 1) where b = number of
+    # null values >= observed, m = number of permutations. This ensures
+    # p is never exactly zero and is slightly conservative.
+    b = int((null >= rho_obs).sum())
+    p_bounded = (b + 1) / (n_perm + 1)
 
     return MantelResult(
         rho=rho_obs,

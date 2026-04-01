@@ -342,7 +342,7 @@ def _pj_cross_forest(results: dict) -> str:
             hovertemplate="%{y}<br>FM = %{x:.4f}<extra></extra>",
         ))
     fig = go.Figure(traces)
-    mw = s443["mw_cross_vs_within"]
+    mw = s443["perm_cross_vs_within"]
     fig.update_layout(
         title=f"§4.4.3 — Taxonomic agreement at k=7 (MW p={mw['p_value']:.4f}, r={mw['effect_r']:+.3f})",
         xaxis_title="Fowlkes-Mallows index (k=7)",
@@ -370,7 +370,7 @@ def _html_template(results: dict, plots: dict[str, str]) -> str:
     s441 = results.get("section_441", {})
     s443 = results.get("section_443", {})
     pm = s441.get("per_model", {})
-    mw = s443.get("mw_cross_vs_within", {})
+    mw = s443.get("perm_cross_vs_within", {})
 
     tabs = tabs_bar([
         ("p1", "§4.4.1 Recovery"),

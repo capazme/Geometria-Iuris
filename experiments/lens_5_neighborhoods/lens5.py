@@ -40,7 +40,11 @@ ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
 from shared.embeddings import load_precomputed
-from shared.statistical import mannwhitney_with_r
+from shared.statistical import (
+    holm_correction,
+    mannwhitney_with_r,
+    permutation_test_groups,
+)
 
 RESULTS_DIR = Path(__file__).parent / "results"
 EMB_DIR = ROOT / "data" / "processed" / "embeddings"
@@ -196,11 +200,10 @@ def _permutation_test_jaccard(
         pi = rng.permutation(n_core)
         null[p] = _jaccard_pair(knn_a[pi], knn_b).mean()
 
-    # One-sided: how often does the null produce Jaccard >= observed?
-    # (aligned pairs should have HIGHER Jaccard than random)
-    # So p = P(null >= obs) tests H0: alignment doesn't help
-    p_raw = float((null >= obs_mean).mean())
-    p_value = max(p_raw, 1.0 / n_perm)   # Phipson & Smyth bound
+    # Phipson & Smyth (2010): p = (b + 1) / (m + 1)
+    # One-sided: aligned pairs should have HIGHER Jaccard than random
+    b = int((null >= obs_mean).sum())
+    p_value = (b + 1) / (n_perm + 1)
 
     return obs_mean, p_value, null
 
@@ -269,15 +272,22 @@ def run_section_321(
     print("  Within-Sinic pairs:")
     within_sinic_results = _run_pairs(within_sinic_pairs, "within_sinic")
 
-    # Summary: cross vs within mean Jaccard (Mann-Whitney)
+    # Holm correction across all 15 permutation p-values
+    all_pair_results = cross_results + within_weird_results + within_sinic_results
+    raw_ps = [r["p_value"] for r in all_pair_results]
+    adj_ps = holm_correction(raw_ps)
+    for r, p_adj in zip(all_pair_results, adj_ps):
+        r["p_holm"] = round(p_adj, 6)
+
+    # Summary: cross vs within mean Jaccard (permutation test on group labels)
     cross_means = np.array([r["mean_jaccard"] for r in cross_results])
     within_means = np.array(
         [r["mean_jaccard"] for r in within_weird_results + within_sinic_results]
     )
-    mw = mannwhitney_with_r(cross_means, within_means, alternative="less")
+    pt = permutation_test_groups(cross_means, within_means, alternative="less")
     print(f"\n  Summary: cross J̄={cross_means.mean():.4f}  "
           f"within J̄={within_means.mean():.4f}  "
-          f"r={mw.effect_r:+.4f}  p={mw.p_value:.4f}")
+          f"r={pt.effect_r:+.4f}  p={pt.p_value:.4f}")
 
     return {
         "k": k,
@@ -288,9 +298,8 @@ def run_section_321(
         "summary": {
             "mean_cross": round(float(cross_means.mean()), 4),
             "mean_within": round(float(within_means.mean()), 4),
-            "mw_statistic": round(mw.statistic, 2),
-            "mw_p_value": mw.p_value,
-            "mw_effect_r": round(mw.effect_r, 4),
+            "perm_p_value": pt.p_value,
+            "effect_r": round(pt.effect_r, 4),
         },
     }
 
