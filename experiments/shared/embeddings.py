@@ -139,10 +139,10 @@ class EmbeddingClient:
         with config_path.open(encoding="utf-8") as f:
             raw = yaml.safe_load(f)
 
-        # Parse model specifications from the two tradition groups
+        # Parse model specifications from all tradition groups
         self._specs: dict[str, ModelSpec] = {}
         self._groups: dict[str, list[str]] = {}
-        for group in ("weird", "sinic"):
+        for group in ("weird", "sinic", "bilingual"):
             ids: list[str] = []
             for entry in raw.get(group, []):
                 spec = ModelSpec(
@@ -299,9 +299,20 @@ class EmbeddingClient:
         """Sinic model specs in config order."""
         return [self._specs[mid] for mid in self._groups["sinic"]]
 
-    def group_ids(self, group: Literal["weird", "sinic"]) -> list[str]:
+    @property
+    def bilingual_specs(self) -> list[ModelSpec]:
+        """Bilingual control model specs in config order."""
+        return [self._specs[mid] for mid in self._groups.get("bilingual", [])]
+
+    def group_ids(self, group: Literal["weird", "sinic", "bilingual"]) -> list[str]:
         """Model IDs for a given tradition group."""
-        return list(self._groups[group])
+        return list(self._groups.get(group, []))
+
+    def unload_model(self, model_id: str) -> None:
+        """Remove a loaded model from memory (useful on RAM-constrained machines)."""
+        if model_id in self._loaded:
+            del self._loaded[model_id]
+            logger.info("Unloaded model '%s'", model_id)
 
     # ------------------------------------------------------------------
     # Private helpers
@@ -320,7 +331,7 @@ class EmbeddingClient:
         if model_id not in self._loaded:
             logger.info("Loading model '%s' ...", model_id)
             self._loaded[model_id] = SentenceTransformer(
-                model_id, device=self._device
+                model_id, device=self._device, trust_remote_code=True,
             )
         return self._loaded[model_id]
 

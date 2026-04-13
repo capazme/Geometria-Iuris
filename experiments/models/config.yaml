@@ -62,6 +62,41 @@ sinic:
     instruction: ""
     note: Legal/domain-rich finetuning on ZH corpora; monolingual ZH (Slot 3)
 
+# Bilingual control models (β upgrade, Phase 2)
+#
+#   These encode BOTH English and Chinese natively. They serve as causal
+#   controls: if the cross-tradition gap persists even within a single
+#   bilingual model, the gap is in the legal semantics, not an artifact
+#   of monolingual encoders.
+#
+#   Precompute generates two embedding sets per model:
+#     {label}-EN/vectors.npy  (English terms)
+#     {label}-ZH/vectors.npy  (Chinese terms)
+#
+#   instruction: "" — same no-prefix convention as the monolingual models
+#   (symmetric STS/RDM tasks; see Wang et al. 2022 §4).
+
+bilingual:
+  - id: BAAI/bge-m3
+    label: BGE-M3
+    lang: bi
+    dim: 1024
+    instruction: ""
+    note: >-
+      Multilingual (100+ langs), BGE family 560M params; same lab as Slot 1
+      anchors (BGE-EN/ZH-v1.5), enabling direct within-family control.
+      Replaces Conan-v2 (API-only, no public weights). Control β Slot 1.
+
+  - id: Qwen/Qwen3-Embedding-0.6B
+    label: Qwen3-0.6B
+    lang: bi
+    dim: 1024
+    instruction: ""
+    note: >-
+      Multilingual (100+ langs), Qwen3 family 0.6B variant (dim=1024 matches
+      BGE/E5/Text2vec); arXiv:2506.05176. Chosen over 8B for 16GB RAM
+      constraint — upgrade path to 4B/8B exists. Control β Slot 2.
+
 # Embedding settings
 embedding:
   batch_size: 64           # MPS can handle larger batches than CPU

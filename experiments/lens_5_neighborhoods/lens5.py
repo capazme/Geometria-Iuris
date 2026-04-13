@@ -61,13 +61,17 @@ A_PRIORI_FALSE_FRIENDS = [
 # Config loading
 # ---------------------------------------------------------------------------
 
-def _load_config() -> tuple[list[str], list[str]]:
-    """Return (weird_labels, sinic_labels) from config.yaml."""
+def _load_config() -> tuple[list[str], list[str], list[tuple[str, str]]]:
+    """Return (weird_labels, sinic_labels, bilingual_pairs) from config.yaml."""
     with CONFIG_PATH.open(encoding="utf-8") as f:
         raw = yaml.safe_load(f)
     weird = [m["label"] for m in raw.get("weird", [])]
     sinic = [m["label"] for m in raw.get("sinic", [])]
-    return weird, sinic
+    bilingual = [
+        (f"{m['label']}-EN", f"{m['label']}-ZH")
+        for m in raw.get("bilingual", [])
+    ]
+    return weird, sinic, bilingual
 
 
 # ---------------------------------------------------------------------------
@@ -218,6 +222,7 @@ def run_section_321(
     knn_all: dict[str, np.ndarray],
     k: int,
     n_perm: int,
+    bilingual_pairs: list[tuple[str, str]] | None = None,
 ) -> dict:
     """
     §3.2.1 — Neighborhood overlap: cross vs within-tradition Jaccard.
@@ -226,13 +231,11 @@ def run_section_321(
     - 9 cross-tradition pairs (3 WEIRD × 3 Sinic)
     - 3 within-WEIRD pairs (C(3,2))
     - 3 within-Sinic pairs (C(3,2))
-
-    Each pair: per-term Jaccard + permutation test on mean.
-    Summary: Mann-Whitney comparing cross vs within distributions.
+    - N within-bilingual pairs (β control: same model, EN↔ZH)
     """
+    bilingual_pairs = bilingual_pairs or []
     print(f"\n[§3.2.1] Neighborhood overlap (k={k}, n_perm={n_perm})")
 
-    # Per-term Jaccard arrays saved to NPZ for granular visualizations
     npz_dir = RESULTS_DIR / "jaccard_per_term"
     npz_dir.mkdir(parents=True, exist_ok=True)
 
@@ -246,7 +249,6 @@ def run_section_321(
             )
             elapsed = time.perf_counter() - t0
             print(f"    {la} × {lb}:  J̄={obs_mean:.4f}  p={p_val:.4f}  ({elapsed:.1f}s)")
-            # Save per-term Jaccard array for granular viz
             np.save(npz_dir / f"{la}_x_{lb}.npy", jacc)
             results.append({
                 "model_a": la,
@@ -272,14 +274,20 @@ def run_section_321(
     print("  Within-Sinic pairs:")
     within_sinic_results = _run_pairs(within_sinic_pairs, "within_sinic")
 
-    # Holm correction across all 15 permutation p-values
-    all_pair_results = cross_results + within_weird_results + within_sinic_results
+    # β control: within-bilingual pairs (same model, EN↔ZH)
+    within_bilingual_results: list[dict] = []
+    if bilingual_pairs:
+        print("  Within-bilingual pairs (β control):")
+        within_bilingual_results = _run_pairs(bilingual_pairs, "within_bilingual")
+
+    # Holm correction across ALL permutation p-values
+    all_pair_results = cross_results + within_weird_results + within_sinic_results + within_bilingual_results
     raw_ps = [r["p_value"] for r in all_pair_results]
     adj_ps = holm_correction(raw_ps)
     for r, p_adj in zip(all_pair_results, adj_ps):
         r["p_holm"] = round(p_adj, 6)
 
-    # Summary: cross vs within mean Jaccard (permutation test on group labels)
+    # Summary: cross vs within mean Jaccard
     cross_means = np.array([r["mean_jaccard"] for r in cross_results])
     within_means = np.array(
         [r["mean_jaccard"] for r in within_weird_results + within_sinic_results]
@@ -289,19 +297,30 @@ def run_section_321(
           f"within J̄={within_means.mean():.4f}  "
           f"r={pt.effect_r:+.4f}  p={pt.p_value:.4f}")
 
-    return {
+    summary = {
+        "mean_cross": round(float(cross_means.mean()), 4),
+        "mean_within": round(float(within_means.mean()), 4),
+        "perm_p_value": pt.p_value,
+        "effect_r": round(pt.effect_r, 4),
+    }
+
+    result: dict = {
         "k": k,
         "n_perm": n_perm,
         "cross_tradition": cross_results,
         "within_weird": within_weird_results,
         "within_sinic": within_sinic_results,
-        "summary": {
-            "mean_cross": round(float(cross_means.mean()), 4),
-            "mean_within": round(float(within_means.mean()), 4),
-            "perm_p_value": pt.p_value,
-            "effect_r": round(pt.effect_r, 4),
-        },
     }
+
+    if within_bilingual_results:
+        bi_means = np.array([r["mean_jaccard"] for r in within_bilingual_results])
+        summary["mean_bilingual"] = round(float(bi_means.mean()), 4)
+        result["within_bilingual"] = within_bilingual_results
+        print(f"  β control: bilingual J̄={bi_means.mean():.4f}  "
+              f"(cross mono={cross_means.mean():.4f}, within mono={within_means.mean():.4f})")
+
+    result["summary"] = summary
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -611,17 +630,28 @@ def main(argv: list[str] | None = None) -> None:
                         help="Permutations for significance test")
     parser.add_argument("--no-viz", action="store_true",
                         help="Skip figure generation after pipeline")
+    parser.add_argument("--emb-dir", default=None,
+                        help="Override embedding directory (default: data/processed/embeddings)")
     args = parser.parse_args(argv)
+
+    # Allow overriding the embedding directory (e.g. for attested-context pool)
+    global EMB_DIR
+    if args.emb_dir:
+        EMB_DIR = ROOT / args.emb_dir
+        print(f"  [override] EMB_DIR = {EMB_DIR}")
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    weird_labels, sinic_labels = _load_config()
-    all_labels = weird_labels + sinic_labels
+    weird_labels, sinic_labels, bilingual_pairs = _load_config()
+    bilingual_labels = [en for en, zh in bilingual_pairs] + [zh for en, zh in bilingual_pairs]
+    all_labels = weird_labels + sinic_labels + bilingual_labels
 
     print("=" * 60)
     print("Lens V — Semantic Neighborhoods")
     print(f"  WEIRD : {weird_labels}")
     print(f"  Sinic : {sinic_labels}")
+    if bilingual_pairs:
+        print(f"  Bilingual β: {bilingual_pairs}")
     print(f"  k={args.k}  n_perm={args.n_perm}")
     print("=" * 60)
 
@@ -653,6 +683,7 @@ def main(argv: list[str] | None = None) -> None:
             "n_pool": len(index),
             "weird_models": weird_labels,
             "sinic_models": sinic_labels,
+            "bilingual_models": [f"{en}/{zh}" for en, zh in bilingual_pairs],
         }
     }
 
@@ -662,6 +693,7 @@ def main(argv: list[str] | None = None) -> None:
         output["section_321"] = run_section_321(
             weird_labels, sinic_labels, knn_all,
             k=args.k, n_perm=args.n_perm,
+            bilingual_pairs=bilingual_pairs,
         )
 
     cross_results = output.get("section_321", {}).get("cross_tradition", [])

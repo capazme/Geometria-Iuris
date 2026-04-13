@@ -33,6 +33,8 @@ experiments/data/raw/
 # experiments — large intermediates (regenerable from raw)
 experiments/data/processed/embeddings/
 experiments/data/processed/embeddings_cache/
+experiments/data/processed/embeddings_contextualized/
+experiments/data/processed/elegislation/
 experiments/data/processed/doj_raw.json
 experiments/data/processed/corpus_stats.md
 
@@ -44,3 +46,4 @@ experiments/**/.ipynb_checkpoints/
 
 *.zip
 *.pdf
+*.md

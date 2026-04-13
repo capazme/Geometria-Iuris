@@ -91,13 +91,16 @@ def sha256_file(path: Path) -> str:
 
 def embed_model(
     client: EmbeddingClient,
-    model_label: str,
+    model_id: str,
+    output_label: str,
+    lang_tag: str,
     texts: list[str],
+    dim: int,
     out_dir: Path,
     source_sha256: str,
 ) -> None:
-    spec = next(s for s in client.all_specs if s.label == model_label)
-    model_dir = out_dir / model_label
+    """Embed texts with a single model and save to out_dir/output_label/."""
+    model_dir = out_dir / output_label
     meta_path = model_dir / "meta.json"
     vec_path = model_dir / "vectors.npy"
 
@@ -105,36 +108,34 @@ def embed_model(
     if vec_path.exists() and meta_path.exists():
         existing = json.loads(meta_path.read_text())
         if existing.get("source_sha256") == source_sha256:
-            logger.info("[%s] Already computed — skipping.", model_label)
+            logger.info("[%s] Already computed — skipping.", output_label)
             return
 
     model_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info("[%s] Embedding %d texts (lang=%s, dim=%d) ...",
-                model_label, len(texts), spec.lang, spec.dim)
+                output_label, len(texts), lang_tag, dim)
     t0 = time.perf_counter()
 
-    # Embed in one call; the client's disk cache is bypassed here because we
-    # write to a structured directory instead of the SHA-256 cache.
-    vecs = client.embed(texts, spec.id, use_cache=False)
+    vecs = client.embed(texts, model_id, use_cache=False)
 
     elapsed = time.perf_counter() - t0
-    logger.info("[%s] Done in %.1fs  shape=%s", model_label, elapsed, vecs.shape)
+    logger.info("[%s] Done in %.1fs  shape=%s", output_label, elapsed, vecs.shape)
 
     np.save(vec_path, vecs)
 
     meta = {
-        "model_id": spec.id,
-        "model_label": model_label,
-        "lang": spec.lang,
-        "dim": spec.dim,
+        "model_id": model_id,
+        "model_label": output_label,
+        "lang": lang_tag,
+        "dim": dim,
         "n_terms": len(texts),
         "date": date.today().isoformat(),
         "elapsed_s": round(elapsed, 2),
         "source_sha256": source_sha256,
     }
     meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False))
-    logger.info("[%s] Saved to %s", model_label, model_dir)
+    logger.info("[%s] Saved to %s", output_label, model_dir)
 
 
 # ---------------------------------------------------------------------------
@@ -158,14 +159,7 @@ def main(args: argparse.Namespace) -> int:
     index_path.write_text(json.dumps(index, indent=2, ensure_ascii=False))
     logger.info("Index written: %s (%d entries)", index_path, len(index))
 
-    if args.dry_run:
-        logger.info("\n[DRY RUN] Would embed %d EN + %d ZH texts across %d models.",
-                    len(en_texts), len(zh_texts),
-                    len(args.models) if args.models else 6)
-        return 0
-
     client = EmbeddingClient(CONFIG, device=args.device or None)
-    logger.info("Device: %s", client._device)
 
     # Determine which models to run
     all_specs = {s.label: s for s in client.all_specs}
@@ -176,14 +170,44 @@ def main(args: argparse.Namespace) -> int:
         logger.error("Unknown model labels: %s. Available: %s", unknown, list(all_specs))
         return 1
 
+    # Build the run plan: list of (model_id, output_label, lang_tag, texts, dim)
+    run_plan: list[tuple[str, str, str, list[str], int]] = []
     for label in labels:
         spec = all_specs[label]
-        texts = en_texts if spec.lang == "en" else zh_texts
+        if spec.lang == "bi":
+            # Bilingual models produce two embedding sets (EN + ZH)
+            run_plan.append((spec.id, f"{label}-EN", "en", en_texts, spec.dim))
+            run_plan.append((spec.id, f"{label}-ZH", "zh", zh_texts, spec.dim))
+        elif spec.lang == "en":
+            run_plan.append((spec.id, label, "en", en_texts, spec.dim))
+        else:
+            run_plan.append((spec.id, label, "zh", zh_texts, spec.dim))
+
+    if args.dry_run:
+        logger.info("\n[DRY RUN] %d embedding jobs planned:", len(run_plan))
+        for mid, olabel, ltag, texts, dim in run_plan:
+            logger.info("  %s → %s (%s, %d texts, dim=%d)",
+                        mid.split("/")[-1], olabel, ltag, len(texts), dim)
+        return 0
+
+    logger.info("Device: %s", client._device)
+
+    prev_model_id: str | None = None
+    for model_id, output_label, lang_tag, texts, dim in run_plan:
+        # Unload previous model if --unload-between is set (saves RAM)
+        if args.unload_between and prev_model_id and prev_model_id != model_id:
+            client.unload_model(prev_model_id)
+            import gc; gc.collect()
+
         try:
-            embed_model(client, label, texts, EMBEDDINGS_DIR, source_sha256)
+            embed_model(
+                client, model_id, output_label, lang_tag,
+                texts, dim, EMBEDDINGS_DIR, source_sha256,
+            )
         except Exception as exc:
-            logger.error("[%s] FAILED: %s", label, exc)
+            logger.error("[%s] FAILED: %s", output_label, exc)
             return 1
+        prev_model_id = model_id
 
     logger.info("\nAll done. Embeddings in: %s", EMBEDDINGS_DIR)
     return 0
@@ -204,5 +228,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dry-run", action="store_true",
         help="Print what would be computed without encoding",
+    )
+    parser.add_argument(
+        "--unload-between", action="store_true",
+        help="Unload each model after use to save RAM (recommended on 16GB machines)",
     )
     sys.exit(main(parser.parse_args()))

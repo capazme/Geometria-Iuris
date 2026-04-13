@@ -62,13 +62,21 @@ CONFIG_PATH = ROOT / "models" / "config.yaml"
 # Config loading
 # ---------------------------------------------------------------------------
 
-def _load_config() -> tuple[list[str], list[str]]:
-    """Return (weird_labels, sinic_labels) from config.yaml."""
+def _load_config() -> tuple[list[str], list[str], list[tuple[str, str]]]:
+    """Return (weird_labels, sinic_labels, bilingual_pairs) from config.yaml.
+
+    bilingual_pairs: list of (en_label, zh_label) for bilingual control models.
+    Each bilingual model produces two embedding dirs: {label}-EN and {label}-ZH.
+    """
     with CONFIG_PATH.open(encoding="utf-8") as f:
         raw = yaml.safe_load(f)
     weird = [m["label"] for m in raw.get("weird", [])]
     sinic = [m["label"] for m in raw.get("sinic", [])]
-    return weird, sinic
+    bilingual = [
+        (f"{m['label']}-EN", f"{m['label']}-ZH")
+        for m in raw.get("bilingual", [])
+    ]
+    return weird, sinic, bilingual
 
 
 # ---------------------------------------------------------------------------
@@ -341,6 +349,7 @@ def run_section_314(
     sinic_labels: list[str],
     n_perm: int,
     n_boot: int,
+    bilingual_pairs: list[tuple[str, str]] | None = None,
 ) -> dict:
     """
     §3.1.4 Within-tradition RSA + Cross-tradition RSA.
@@ -349,10 +358,14 @@ def run_section_314(
       - 3 within-WEIRD pairs
       - 3 within-Sinic pairs
       - 9 cross-tradition pairs
+      - N within-bilingual pairs (β control: same model, EN↔ZH)
     """
+    bilingual_pairs = bilingual_pairs or []
     print(f"\n[§3.1.4] RSA  (n_perm={n_perm}, n_boot={n_boot})")
 
-    all_labels = weird_labels + sinic_labels
+    # Collect all labels that need RDMs
+    bilingual_labels = [en for en, zh in bilingual_pairs] + [zh for en, zh in bilingual_pairs]
+    all_labels = weird_labels + sinic_labels + bilingual_labels
     rdms: dict[str, np.ndarray] = {}
 
     print("  Computing RDMs...")
@@ -385,8 +398,19 @@ def run_section_314(
         "cross", n_perm, n_boot, save_dir=dist_dir,
     )
 
-    # Holm correction across all 15 Mantel p-values
-    all_pairs = within_weird + within_sinic + cross
+    # β control: within-bilingual pairs (same model, EN↔ZH)
+    within_bilingual: list[dict] = []
+    if bilingual_pairs:
+        print("  Within-bilingual RSA (β control):")
+        for en_label, zh_label in bilingual_pairs:
+            pair_results = run_rsa_pairs(
+                [en_label], [zh_label], rdms,
+                "within_bilingual", n_perm, n_boot, save_dir=dist_dir,
+            )
+            within_bilingual.extend(pair_results)
+
+    # Holm correction across ALL Mantel p-values
+    all_pairs = within_weird + within_sinic + cross + within_bilingual
     raw_ps = [r["p_value"] for r in all_pairs]
     adj_ps = holm_correction(raw_ps)
     for r, p_adj in zip(all_pairs, adj_ps):
@@ -401,17 +425,28 @@ def run_section_314(
     drop = rho_weird - rho_cross
     print(f"  Cross-tradition drop (WEIRD→cross): Δρ = {drop:.3f}")
 
-    return {
+    summary = {
+        "mean_rho_within_weird": round(float(rho_weird), 4),
+        "mean_rho_within_sinic": round(float(rho_sinic), 4),
+        "mean_rho_cross": round(float(rho_cross), 4),
+        "cross_tradition_drop": round(float(drop), 4),
+    }
+
+    result = {
         "within_weird": within_weird,
         "within_sinic": within_sinic,
         "cross_tradition": cross,
-        "summary": {
-            "mean_rho_within_weird": round(float(rho_weird), 4),
-            "mean_rho_within_sinic": round(float(rho_sinic), 4),
-            "mean_rho_cross": round(float(rho_cross), 4),
-            "cross_tradition_drop": round(float(drop), 4),
-        },
     }
+
+    if within_bilingual:
+        rho_bi = np.mean([r["rho"] for r in within_bilingual])
+        print(f"  β control: within-bilingual ρ̄={rho_bi:.3f}")
+        print(f"  Gap persists? bilingual ρ̄ ({rho_bi:.3f}) vs monolingual cross ρ̄ ({rho_cross:.3f})")
+        summary["mean_rho_within_bilingual"] = round(float(rho_bi), 4)
+        result["within_bilingual"] = within_bilingual
+
+    result["summary"] = summary
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -437,18 +472,28 @@ def main(argv: list[str] | None = None) -> None:
                         help="k for k-NN domain assignment (§3.1.1)")
     parser.add_argument("--no-viz", action="store_true",
                         help="Skip figure generation after pipeline")
+    parser.add_argument("--emb-dir", default=None,
+                        help="Override embedding directory (default: data/processed/embeddings)")
     args = parser.parse_args(argv)
+
+    # Allow overriding the embedding directory (e.g. for attested-context pool)
+    global EMB_DIR
+    if args.emb_dir:
+        EMB_DIR = ROOT / args.emb_dir
+        print(f"  [override] EMB_DIR = {EMB_DIR}")
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     (RESULTS_DIR / "rdms").mkdir(exist_ok=True)
     (RESULTS_DIR / "distances").mkdir(exist_ok=True)
     (RESULTS_DIR / "distributions").mkdir(exist_ok=True)
-    weird_labels, sinic_labels = _load_config()
+    weird_labels, sinic_labels, bilingual_pairs = _load_config()
 
     print("=" * 60)
     print("Lens I — Relational Distance Structure")
     print(f"  WEIRD : {weird_labels}")
     print(f"  Sinic : {sinic_labels}")
+    if bilingual_pairs:
+        print(f"  Bilingual β: {bilingual_pairs}")
     print(f"  n_perm={args.n_perm}  n_boot={args.n_boot}  k={args.k}")
     print("=" * 60)
 
@@ -460,6 +505,7 @@ def main(argv: list[str] | None = None) -> None:
             "k_nn": args.k,
             "weird_models": weird_labels,
             "sinic_models": sinic_labels,
+            "bilingual_models": [f"{en}/{zh}" for en, zh in bilingual_pairs],
         }
     }
 
@@ -475,6 +521,7 @@ def main(argv: list[str] | None = None) -> None:
         output["section_314"] = run_section_314(
             weird_labels, sinic_labels,
             n_perm=args.n_perm, n_boot=args.n_boot,
+            bilingual_pairs=bilingual_pairs,
         )
 
     total = time.perf_counter() - t_start

@@ -1,0 +1,9 @@
+{
+  "label": "Qwen3-0.6B-ZH",
+  "model_id": "Qwen/Qwen3-Embedding-0.6B",
+  "lang": "zh",
+  "n_terms": 9472,
+  "n_contexts": 8,
+  "context_source": "attested+synthetic_fallback",
+  "attested_source": "hk_elegislation"
+}

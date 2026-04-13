@@ -1,0 +1,9 @@
+{
+  "label": "FreeLaw-EN",
+  "model_id": "freelawproject/modernbert-embed-base_finetune_512",
+  "lang": "en",
+  "n_terms": 9472,
+  "n_contexts": 8,
+  "context_source": "attested+synthetic_fallback",
+  "attested_source": "hk_elegislation"
+}
