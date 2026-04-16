@@ -1,0 +1,19 @@
+{
+  "n_active_features": 4096,
+  "n_features_with_significant_enrichment": 15,
+  "n_significant_tests": 15,
+  "dsi_mean": 0.5700522645103947,
+  "dsi_median": 0.5,
+  "dsi_max": 1.0,
+  "dsi_p90": 1.0,
+  "domain_feature_counts": {
+    "administrative": 1,
+    "civil": 1,
+    "constitutional": 0,
+    "criminal": 4,
+    "international": 4,
+    "labor_social": 5,
+    "procedure": 0
+  },
+  "model_label": "Text2vec-large-ZH"
+}

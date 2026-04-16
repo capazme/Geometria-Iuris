@@ -1,0 +1,19 @@
+{
+  "n_active_features": 4096,
+  "n_features_with_significant_enrichment": 18,
+  "n_significant_tests": 18,
+  "dsi_mean": 0.5579883201882281,
+  "dsi_median": 0.5,
+  "dsi_max": 1.0,
+  "dsi_p90": 1.0,
+  "domain_feature_counts": {
+    "administrative": 3,
+    "civil": 2,
+    "constitutional": 3,
+    "criminal": 2,
+    "international": 5,
+    "labor_social": 3,
+    "procedure": 0
+  },
+  "model_label": "Qwen3-0.6B-ZH"
+}

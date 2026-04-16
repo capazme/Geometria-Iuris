@@ -1,0 +1,2449 @@
+{
+  "meta": {
+    "module": "lens_5_neighborhoods/false_friends_polysemy_v2.py",
+    "thesis_section": "§3.2 (apples-to-apples polysemy validation)",
+    "date": "2026-04-11T06:00:00",
+    "weird_models": [
+      "BGE-EN-large",
+      "E5-large",
+      "FreeLaw-EN"
+    ],
+    "sinic_models": [
+      "BGE-ZH-large",
+      "Text2vec-large-ZH",
+      "Dmeta-ZH"
+    ],
+    "k_nn": 15,
+    "n_false_friends": 12,
+    "bare_pool": "data/processed/embeddings",
+    "ctx_pool": "data/processed/embeddings_contextualized",
+    "ctx_aggregator": "mean of 8 templated variants per term",
+    "n_terms_pool": 9472,
+    "n_core_terms": 397
+  },
+  "phase_2_baselines": {
+    "bare_pool": {
+      "mean_within_weird_jaccard": 0.2575459499102956,
+      "mean_within_sinic_jaccard": 0.3264987787578431,
+      "mean_cross_jaccard": 0.08809315474144931,
+      "within_weird_pairs": [
+        {
+          "a": "BGE-EN-large",
+          "b": "E5-large",
+          "mean_jaccard": 0.3274326185999258
+        },
+        {
+          "a": "BGE-EN-large",
+          "b": "FreeLaw-EN",
+          "mean_jaccard": 0.22562813995478614
+        },
+        {
+          "a": "E5-large",
+          "b": "FreeLaw-EN",
+          "mean_jaccard": 0.21957709117617497
+        }
+      ],
+      "within_sinic_pairs": [
+        {
+          "a": "BGE-ZH-large",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.3436234889850216
+        },
+        {
+          "a": "BGE-ZH-large",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.36938391946665616
+        },
+        {
+          "a": "Text2vec-large-ZH",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.2664889278218517
+        }
+      ],
+      "cross_pairs": [
+        {
+          "a": "BGE-EN-large",
+          "b": "BGE-ZH-large",
+          "mean_jaccard": 0.09618694443278372
+        },
+        {
+          "a": "BGE-EN-large",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.079031530484897
+        },
+        {
+          "a": "BGE-EN-large",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.09160330270776307
+        },
+        {
+          "a": "E5-large",
+          "b": "BGE-ZH-large",
+          "mean_jaccard": 0.09429526412229876
+        },
+        {
+          "a": "E5-large",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.07592088870398078
+        },
+        {
+          "a": "E5-large",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.09155928380849926
+        },
+        {
+          "a": "FreeLaw-EN",
+          "b": "BGE-ZH-large",
+          "mean_jaccard": 0.09671989303100766
+        },
+        {
+          "a": "FreeLaw-EN",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.08012522803571863
+        },
+        {
+          "a": "FreeLaw-EN",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.08739605734609492
+        }
+      ]
+    },
+    "ctx_pool": {
+      "mean_within_weird_jaccard": 0.3738224744436936,
+      "mean_within_sinic_jaccard": 0.4028467279251355,
+      "mean_cross_jaccard": 0.10080629050921845,
+      "within_weird_pairs": [
+        {
+          "a": "BGE-EN-large",
+          "b": "E5-large",
+          "mean_jaccard": 0.41673048905649207
+        },
+        {
+          "a": "BGE-EN-large",
+          "b": "FreeLaw-EN",
+          "mean_jaccard": 0.3597045711077729
+        },
+        {
+          "a": "E5-large",
+          "b": "FreeLaw-EN",
+          "mean_jaccard": 0.345032363166816
+        }
+      ],
+      "within_sinic_pairs": [
+        {
+          "a": "BGE-ZH-large",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.41483130023205145
+        },
+        {
+          "a": "BGE-ZH-large",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.44182607191640705
+        },
+        {
+          "a": "Text2vec-large-ZH",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.35188281162694784
+        }
+      ],
+      "cross_pairs": [
+        {
+          "a": "BGE-EN-large",
+          "b": "BGE-ZH-large",
+          "mean_jaccard": 0.11073453495875786
+        },
+        {
+          "a": "BGE-EN-large",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.0899026517008458
+        },
+        {
+          "a": "BGE-EN-large",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.10132422477654145
+        },
+        {
+          "a": "E5-large",
+          "b": "BGE-ZH-large",
+          "mean_jaccard": 0.10621236496420673
+        },
+        {
+          "a": "E5-large",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.08594110759462194
+        },
+        {
+          "a": "E5-large",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.09716143040033595
+        },
+        {
+          "a": "FreeLaw-EN",
+          "b": "BGE-ZH-large",
+          "mean_jaccard": 0.11663709661476984
+        },
+        {
+          "a": "FreeLaw-EN",
+          "b": "Text2vec-large-ZH",
+          "mean_jaccard": 0.09304736980505353
+        },
+        {
+          "a": "FreeLaw-EN",
+          "b": "Dmeta-ZH",
+          "mean_jaccard": 0.10629583376783289
+        }
+      ]
+    },
+    "published_reference": {
+      "within_weird": 0.258,
+      "within_sinic": 0.327,
+      "cross": 0.088
+    }
+  },
+  "phase_3_false_friends": {
+    "bare_pool_results": [
+      {
+        "rank": 1,
+        "en": "patent",
+        "zh": "明顯",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 120,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.31666666666666665,
+        "mean_within_sinic_jaccard": 0.36904761904761907,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.2
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.25
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.25
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "en": "de son tort",
+        "zh": "干預",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 41,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.1019704433497537,
+        "mean_within_sinic_jaccard": 0.4523809523809524,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.2
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.07142857142857142
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.034482758620689655
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "en": "patently",
+        "zh": "明顯欠缺論據的陳詞",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 381,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.21939799331103682,
+        "mean_within_sinic_jaccard": 0.24656084656084656,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.2
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.2
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "en": "locus standi",
+        "zh": "出庭資格",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 98,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.3655185394315829,
+        "mean_within_sinic_jaccard": 0.30952380952380953,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.36363636363636365
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.25
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.25
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "en": "nonjoinder",
+        "zh": "不合併",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 111,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.08658582796513832,
+        "mean_within_sinic_jaccard": 0.17037037037037037,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.07142857142857142
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.2
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.2
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "en": "subrogation",
+        "zh": "代位",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 152,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.21939799331103682,
+        "mean_within_sinic_jaccard": 0.6145510835913313,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.2
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.7647058823529411
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "en": "divorcement",
+        "zh": "完全分開",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 51,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.2608058608058608,
+        "mean_within_sinic_jaccard": 0.2846153846153846,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.2
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.2
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.15384615384615385
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "en": "ex parte materna",
+        "zh": "最近親",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 59,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.18703703703703703,
+        "mean_within_sinic_jaccard": 0.4448836187966623,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.25
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.2
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.6666666666666666
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "en": "remand",
+        "zh": "還押看守",
+        "domain": "criminal",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 325,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.14285714285714285,
+        "mean_within_sinic_jaccard": 0.3852813852813853,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.0
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.0
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "en": "labouring",
+        "zh": "損害防止條款",
+        "domain": "labor_social",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 297,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.23117623117623118,
+        "mean_within_sinic_jaccard": 0.3241106719367589,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.1111111111111111
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.30434782608695654
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "en": "reprobation",
+        "zh": "反對證人的資格、證供等",
+        "domain": "criminal",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 138,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.08965517241379312,
+        "mean_within_sinic_jaccard": 0.17552334943639292,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.2
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.034482758620689655
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.30434782608695654
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "en": "joinder",
+        "zh": "合併控罪",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 87,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.15384615384615385,
+        "mean_within_sinic_jaccard": 0.35454545454545455,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.2
+          }
+        ]
+      }
+    ],
+    "ctx_pool_results": [
+      {
+        "rank": 1,
+        "en": "patent",
+        "zh": "明顯",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 120,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.7320261437908496,
+        "mean_within_sinic_jaccard": 0.4069264069264069,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.7647058823529411
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.7647058823529411
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.6666666666666666
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "en": "de son tort",
+        "zh": "干預",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 41,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.1692307692307692,
+        "mean_within_sinic_jaccard": 0.6081871345029239,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.2
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.6666666666666666
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "en": "patently",
+        "zh": "明顯欠缺論據的陳詞",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 381,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.2044767090139141,
+        "mean_within_sinic_jaccard": 0.27394344785649133,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.0
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.034482758620689655
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.30434782608695654
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "en": "locus standi",
+        "zh": "出庭資格",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 98,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.3852813852813853,
+        "mean_within_sinic_jaccard": 0.39285714285714285,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.36363636363636365
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.25
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "en": "nonjoinder",
+        "zh": "不合併",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 111,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.07234081372012406,
+        "mean_within_sinic_jaccard": 0.4761904761904762,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.07142857142857142
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "en": "subrogation",
+        "zh": "代位",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 152,
+        "mean_cross_jaccard": 0.011494252873563218,
+        "max_cross_jaccard": 0.034482758620689655,
+        "mean_within_weird_jaccard": 0.2878787878787879,
+        "mean_within_sinic_jaccard": 0.5818713450292398,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.034482758620689655
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.25
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.25
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.6666666666666666
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "en": "divorcement",
+        "zh": "完全分開",
+        "domain": "civil",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 51,
+        "mean_cross_jaccard": 0.0038314176245210726,
+        "max_cross_jaccard": 0.034482758620689655,
+        "mean_within_weird_jaccard": 0.3871635610766046,
+        "mean_within_sinic_jaccard": 0.5526315789473685,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.30434782608695654
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "en": "ex parte materna",
+        "zh": "最近親",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 59,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.36904761904761907,
+        "mean_within_sinic_jaccard": 0.5789473684210527,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.25
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.42857142857142855
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "en": "remand",
+        "zh": "還押看守",
+        "domain": "criminal",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 325,
+        "mean_cross_jaccard": 0.0038314176245210726,
+        "max_cross_jaccard": 0.034482758620689655,
+        "mean_within_weird_jaccard": 0.14906832298136644,
+        "mean_within_sinic_jaccard": 0.4090909090909091,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.07142857142857142
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.07142857142857142
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.36363636363636365
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "en": "labouring",
+        "zh": "損害防止條款",
+        "domain": "labor_social",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 297,
+        "mean_cross_jaccard": 0.0,
+        "max_cross_jaccard": 0.0,
+        "mean_within_weird_jaccard": 0.4307359307359307,
+        "mean_within_sinic_jaccard": 0.39588100686498856,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.5
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.30434782608695654
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.30434782608695654
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "en": "reprobation",
+        "zh": "反對證人的資格、證供等",
+        "domain": "criminal",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 138,
+        "mean_cross_jaccard": 0.022988505747126436,
+        "max_cross_jaccard": 0.034482758620689655,
+        "mean_within_weird_jaccard": 0.19528619528619529,
+        "mean_within_sinic_jaccard": 0.5025062656641605,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.36363636363636365
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.1111111111111111
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.1111111111111111
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.5789473684210527
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "en": "joinder",
+        "zh": "合併控罪",
+        "domain": "procedure",
+        "published_mean_jaccard": 0.0,
+        "pool_index": 87,
+        "mean_cross_jaccard": 0.007662835249042145,
+        "max_cross_jaccard": 0.034482758620689655,
+        "mean_within_weird_jaccard": 0.1692307692307692,
+        "mean_within_sinic_jaccard": 0.4523809523809524,
+        "cross_pairs": [
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "BGE-EN-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.034482758620689655
+          },
+          {
+            "weird": "E5-large",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "BGE-ZH-large",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Text2vec-large-ZH",
+            "jaccard": 0.0
+          },
+          {
+            "weird": "FreeLaw-EN",
+            "sinic": "Dmeta-ZH",
+            "jaccard": 0.0
+          }
+        ],
+        "within_weird_pairs": [
+          {
+            "a": "BGE-EN-large",
+            "b": "E5-large",
+            "jaccard": 0.2
+          },
+          {
+            "a": "BGE-EN-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          },
+          {
+            "a": "E5-large",
+            "b": "FreeLaw-EN",
+            "jaccard": 0.15384615384615385
+          }
+        ],
+        "within_sinic_pairs": [
+          {
+            "a": "BGE-ZH-large",
+            "b": "Text2vec-large-ZH",
+            "jaccard": 0.5
+          },
+          {
+            "a": "BGE-ZH-large",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          },
+          {
+            "a": "Text2vec-large-ZH",
+            "b": "Dmeta-ZH",
+            "jaccard": 0.42857142857142855
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "bare_mean_cross_jaccard": 0.0,
+      "ctx_mean_cross_jaccard": 0.004150702426564496,
+      "bare_max_cross_jaccard": 0.0,
+      "ctx_max_cross_jaccard": 0.034482758620689655,
+      "n_terms_nonzero_in_ctx": 5,
+      "n_terms_total": 12
+    }
+  }
+}

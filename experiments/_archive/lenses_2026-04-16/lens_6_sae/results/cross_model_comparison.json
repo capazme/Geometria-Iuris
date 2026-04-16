@@ -1,0 +1,192 @@
+{
+  "BGE-EN-large": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 27,
+    "n_significant_tests": 27,
+    "dsi_mean": 0.5401602449585137,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 3,
+      "civil": 2,
+      "constitutional": 3,
+      "criminal": 7,
+      "international": 5,
+      "labor_social": 7,
+      "procedure": 0
+    },
+    "model_label": "BGE-EN-large"
+  },
+  "E5-large": {
+    "n_active_features": 4073,
+    "n_features_with_significant_enrichment": 18,
+    "n_significant_tests": 18,
+    "dsi_mean": 0.5324386218865662,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 1,
+      "civil": 2,
+      "constitutional": 1,
+      "criminal": 2,
+      "international": 7,
+      "labor_social": 5,
+      "procedure": 0
+    },
+    "model_label": "E5-large"
+  },
+  "FreeLaw-EN": {
+    "n_active_features": 3072,
+    "n_features_with_significant_enrichment": 20,
+    "n_significant_tests": 20,
+    "dsi_mean": 0.5543155784799382,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 0,
+      "civil": 1,
+      "constitutional": 6,
+      "criminal": 5,
+      "international": 3,
+      "labor_social": 5,
+      "procedure": 0
+    },
+    "model_label": "FreeLaw-EN"
+  },
+  "BGE-ZH-large": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 21,
+    "n_significant_tests": 21,
+    "dsi_mean": 0.5676996087476389,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 2,
+      "civil": 1,
+      "constitutional": 1,
+      "criminal": 2,
+      "international": 9,
+      "labor_social": 6,
+      "procedure": 0
+    },
+    "model_label": "BGE-ZH-large"
+  },
+  "Text2vec-large-ZH": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 15,
+    "n_significant_tests": 15,
+    "dsi_mean": 0.5700522645103947,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 1,
+      "civil": 1,
+      "constitutional": 0,
+      "criminal": 4,
+      "international": 4,
+      "labor_social": 5,
+      "procedure": 0
+    },
+    "model_label": "Text2vec-large-ZH"
+  },
+  "Dmeta-ZH": {
+    "n_active_features": 3066,
+    "n_features_with_significant_enrichment": 13,
+    "n_significant_tests": 13,
+    "dsi_mean": 0.5659278826388829,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 3,
+      "civil": 1,
+      "constitutional": 0,
+      "criminal": 1,
+      "international": 3,
+      "labor_social": 5,
+      "procedure": 0
+    },
+    "model_label": "Dmeta-ZH"
+  },
+  "BGE-M3-EN": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 22,
+    "n_significant_tests": 22,
+    "dsi_mean": 0.5410732291903539,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 1,
+      "civil": 3,
+      "constitutional": 2,
+      "criminal": 5,
+      "international": 7,
+      "labor_social": 3,
+      "procedure": 1
+    },
+    "model_label": "BGE-M3-EN"
+  },
+  "BGE-M3-ZH": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 11,
+    "n_significant_tests": 11,
+    "dsi_mean": 0.5724534094872382,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 1,
+      "civil": 1,
+      "constitutional": 1,
+      "criminal": 0,
+      "international": 5,
+      "labor_social": 3,
+      "procedure": 0
+    },
+    "model_label": "BGE-M3-ZH"
+  },
+  "Qwen3-0.6B-EN": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 38,
+    "n_significant_tests": 38,
+    "dsi_mean": 0.5427436555994898,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 1,
+      "civil": 3,
+      "constitutional": 8,
+      "criminal": 12,
+      "international": 9,
+      "labor_social": 5,
+      "procedure": 0
+    },
+    "model_label": "Qwen3-0.6B-EN"
+  },
+  "Qwen3-0.6B-ZH": {
+    "n_active_features": 4096,
+    "n_features_with_significant_enrichment": 18,
+    "n_significant_tests": 18,
+    "dsi_mean": 0.5579883201882281,
+    "dsi_median": 0.5,
+    "dsi_max": 1.0,
+    "dsi_p90": 1.0,
+    "domain_feature_counts": {
+      "administrative": 3,
+      "civil": 2,
+      "constitutional": 3,
+      "criminal": 2,
+      "international": 5,
+      "labor_social": 3,
+      "procedure": 0
+    },
+    "model_label": "Qwen3-0.6B-ZH"
+  }
+}

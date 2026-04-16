@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "module": "lens_2_taxonomy/clustering_ctx_robustness.py",
+    "thesis_section": "§4.4 robustness check — contextualised pool",
+    "date": "2026-04-11T12:07:20",
+    "weird_models": [
+      "BGE-EN-large",
+      "E5-large",
+      "FreeLaw-EN"
+    ],
+    "sinic_models": [
+      "BGE-ZH-large",
+      "Text2vec-large-ZH",
+      "Dmeta-ZH"
+    ],
+    "k_human": 7,
+    "n_core": 397,
+    "n_human_domains": 7,
+    "human_domains": [
+      "administrative",
+      "civil",
+      "constitutional",
+      "criminal",
+      "international",
+      "labor_social",
+      "procedure"
+    ],
+    "bare_pool": "data/processed/embeddings",
+    "ctx_pool": "data/processed/embeddings_contextualized"
+  },
+  "bare_pool": {
+    "per_model": {
+      "BGE-EN-large": {
+        "fm_vs_human_k7": 0.4513
+      },
+      "E5-large": {
+        "fm_vs_human_k7": 0.4439
+      },
+      "FreeLaw-EN": {
+        "fm_vs_human_k7": 0.445
+      },
+      "BGE-ZH-large": {
+        "fm_vs_human_k7": 0.4296
+      },
+      "Text2vec-large-ZH": {
+        "fm_vs_human_k7": 0.4242
+      },
+      "Dmeta-ZH": {
+        "fm_vs_human_k7": 0.4291
+      }
+    },
+    "within_weird_pairs": [
+      {
+        "a": "BGE-EN-large",
+        "b": "E5-large",
+        "fm": 0.9625
+      },
+      {
+        "a": "BGE-EN-large",
+        "b": "FreeLaw-EN",
+        "fm": 0.9449
+      },
+      {
+        "a": "E5-large",
+        "b": "FreeLaw-EN",
+        "fm": 0.9502
+      }
+    ],
+    "within_sinic_pairs": [
+      {
+        "a": "BGE-ZH-large",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.8476
+      },
+      {
+        "a": "BGE-ZH-large",
+        "b": "Dmeta-ZH",
+        "fm": 0.9224
+      },
+      {
+        "a": "Text2vec-large-ZH",
+        "b": "Dmeta-ZH",
+        "fm": 0.8316
+      }
+    ],
+    "cross_pairs": [
+      {
+        "a": "BGE-EN-large",
+        "b": "BGE-ZH-large",
+        "fm": 0.8869
+      },
+      {
+        "a": "BGE-EN-large",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.8193
+      },
+      {
+        "a": "BGE-EN-large",
+        "b": "Dmeta-ZH",
+        "fm": 0.8962
+      },
+      {
+        "a": "E5-large",
+        "b": "BGE-ZH-large",
+        "fm": 0.9024
+      },
+      {
+        "a": "E5-large",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.8312
+      },
+      {
+        "a": "E5-large",
+        "b": "Dmeta-ZH",
+        "fm": 0.907
+      },
+      {
+        "a": "FreeLaw-EN",
+        "b": "BGE-ZH-large",
+        "fm": 0.9152
+      },
+      {
+        "a": "FreeLaw-EN",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.8396
+      },
+      {
+        "a": "FreeLaw-EN",
+        "b": "Dmeta-ZH",
+        "fm": 0.9097
+      }
+    ],
+    "mean_fm_vs_human": 0.4371833333333333,
+    "mean_fm_within_weird": 0.9525333333333333,
+    "mean_fm_within_sinic": 0.8672,
+    "mean_fm_cross": 0.8786111111111111,
+    "drop_symmetric": 0.03125555555555548
+  },
+  "ctx_pool": {
+    "per_model": {
+      "BGE-EN-large": {
+        "fm_vs_human_k7": 0.3874
+      },
+      "E5-large": {
+        "fm_vs_human_k7": 0.4425
+      },
+      "FreeLaw-EN": {
+        "fm_vs_human_k7": 0.4436
+      },
+      "BGE-ZH-large": {
+        "fm_vs_human_k7": 0.4496
+      },
+      "Text2vec-large-ZH": {
+        "fm_vs_human_k7": 0.4243
+      },
+      "Dmeta-ZH": {
+        "fm_vs_human_k7": 0.4307
+      }
+    },
+    "within_weird_pairs": [
+      {
+        "a": "BGE-EN-large",
+        "b": "E5-large",
+        "fm": 0.9179
+      },
+      {
+        "a": "BGE-EN-large",
+        "b": "FreeLaw-EN",
+        "fm": 0.8722
+      },
+      {
+        "a": "E5-large",
+        "b": "FreeLaw-EN",
+        "fm": 0.9436
+      }
+    ],
+    "within_sinic_pairs": [
+      {
+        "a": "BGE-ZH-large",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.9001
+      },
+      {
+        "a": "BGE-ZH-large",
+        "b": "Dmeta-ZH",
+        "fm": 0.9155
+      },
+      {
+        "a": "Text2vec-large-ZH",
+        "b": "Dmeta-ZH",
+        "fm": 0.9232
+      }
+    ],
+    "cross_pairs": [
+      {
+        "a": "BGE-EN-large",
+        "b": "BGE-ZH-large",
+        "fm": 0.8729
+      },
+      {
+        "a": "BGE-EN-large",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.8573
+      },
+      {
+        "a": "BGE-EN-large",
+        "b": "Dmeta-ZH",
+        "fm": 0.8879
+      },
+      {
+        "a": "E5-large",
+        "b": "BGE-ZH-large",
+        "fm": 0.9256
+      },
+      {
+        "a": "E5-large",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.9234
+      },
+      {
+        "a": "E5-large",
+        "b": "Dmeta-ZH",
+        "fm": 0.9487
+      },
+      {
+        "a": "FreeLaw-EN",
+        "b": "BGE-ZH-large",
+        "fm": 0.9351
+      },
+      {
+        "a": "FreeLaw-EN",
+        "b": "Text2vec-large-ZH",
+        "fm": 0.9078
+      },
+      {
+        "a": "FreeLaw-EN",
+        "b": "Dmeta-ZH",
+        "fm": 0.9231
+      }
+    ],
+    "mean_fm_vs_human": 0.42968333333333336,
+    "mean_fm_within_weird": 0.9112333333333332,
+    "mean_fm_within_sinic": 0.9129333333333333,
+    "mean_fm_cross": 0.909088888888889,
+    "drop_symmetric": 0.0029944444444442997
+  }
+}

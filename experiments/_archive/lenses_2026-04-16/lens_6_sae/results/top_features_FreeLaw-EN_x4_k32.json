@@ -1,0 +1,2504 @@
+[
+  {
+    "feature_idx": 8,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "sit",
+        "domain": "none"
+      },
+      {
+        "en": "sit",
+        "domain": "none"
+      },
+      {
+        "en": "situs",
+        "domain": "none"
+      },
+      {
+        "en": "sitting",
+        "domain": "none"
+      },
+      {
+        "en": "lex situs",
+        "domain": "none"
+      },
+      {
+        "en": "situate",
+        "domain": "none"
+      },
+      {
+        "en": "lex rei sitae",
+        "domain": "none"
+      },
+      {
+        "en": "abet",
+        "domain": "none"
+      },
+      {
+        "en": "in situ",
+        "domain": "none"
+      },
+      {
+        "en": "abut",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 10,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "certainty",
+        "domain": "none"
+      },
+      {
+        "en": "fluctuation",
+        "domain": "none"
+      },
+      {
+        "en": "certain",
+        "domain": "none"
+      },
+      {
+        "en": "uncertainty",
+        "domain": "none"
+      },
+      {
+        "en": "adjustment",
+        "domain": "none"
+      },
+      {
+        "en": "sense of grievance",
+        "domain": "none"
+      },
+      {
+        "en": "noise",
+        "domain": "none"
+      },
+      {
+        "en": "adjust",
+        "domain": "none"
+      },
+      {
+        "en": "concern",
+        "domain": "none"
+      },
+      {
+        "en": "adjuster",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 13,
+    "dsi": 1.0,
+    "best_domain": "constitutional",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "godchild",
+        "domain": "none"
+      },
+      {
+        "en": "five",
+        "domain": "none"
+      },
+      {
+        "en": "godparent",
+        "domain": "none"
+      },
+      {
+        "en": "out of court",
+        "domain": "none"
+      },
+      {
+        "en": "response",
+        "domain": "none"
+      },
+      {
+        "en": "aforethought",
+        "domain": "none"
+      },
+      {
+        "en": "put",
+        "domain": "none"
+      },
+      {
+        "en": "answer",
+        "domain": "none"
+      },
+      {
+        "en": "out-of-court",
+        "domain": "none"
+      },
+      {
+        "en": "dead letter",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 16,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 3,
+    "n_labeled_in_top": 3,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "scientifically",
+        "domain": "none"
+      },
+      {
+        "en": "scientist",
+        "domain": "none"
+      },
+      {
+        "en": "science",
+        "domain": "none"
+      },
+      {
+        "en": "scienter",
+        "domain": "none"
+      },
+      {
+        "en": "scientific",
+        "domain": "none"
+      },
+      {
+        "en": "Sciences",
+        "domain": "none"
+      },
+      {
+        "en": "disciplinary",
+        "domain": "none"
+      },
+      {
+        "en": "Government Laboratory",
+        "domain": "labor_social"
+      },
+      {
+        "en": "disciplinary action",
+        "domain": "none"
+      },
+      {
+        "en": "reseal",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 18,
+    "dsi": 1.0,
+    "best_domain": "criminal",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "mix",
+        "domain": "none"
+      },
+      {
+        "en": "mixed",
+        "domain": "none"
+      },
+      {
+        "en": "mixing",
+        "domain": "none"
+      },
+      {
+        "en": "mixture",
+        "domain": "none"
+      },
+      {
+        "en": "ethnicity",
+        "domain": "none"
+      },
+      {
+        "en": "venit et decit",
+        "domain": "none"
+      },
+      {
+        "en": "ethnic",
+        "domain": "none"
+      },
+      {
+        "en": "chit fund",
+        "domain": "none"
+      },
+      {
+        "en": "fixture list",
+        "domain": "none"
+      },
+      {
+        "en": "ethnical",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 23,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "plant",
+        "domain": "none"
+      },
+      {
+        "en": "hedge",
+        "domain": "none"
+      },
+      {
+        "en": "grass-roots",
+        "domain": "none"
+      },
+      {
+        "en": "grass",
+        "domain": "none"
+      },
+      {
+        "en": "village",
+        "domain": "none"
+      },
+      {
+        "en": "garrison",
+        "domain": "none"
+      },
+      {
+        "en": "supergrass",
+        "domain": "none"
+      },
+      {
+        "en": "leaf",
+        "domain": "none"
+      },
+      {
+        "en": "curtilage",
+        "domain": "none"
+      },
+      {
+        "en": "harvest",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 25,
+    "dsi": 1.0,
+    "best_domain": "procedure",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "exclusively",
+        "domain": "none"
+      },
+      {
+        "en": "exclusively responsible",
+        "domain": "none"
+      },
+      {
+        "en": "solely",
+        "domain": "none"
+      },
+      {
+        "en": "by or on behalf of",
+        "domain": "none"
+      },
+      {
+        "en": "take full responsibility for ...",
+        "domain": "none"
+      },
+      {
+        "en": "direct marketing",
+        "domain": "none"
+      },
+      {
+        "en": "specially",
+        "domain": "none"
+      },
+      {
+        "en": "in behalf of",
+        "domain": "none"
+      },
+      {
+        "en": "conclusively",
+        "domain": "none"
+      },
+      {
+        "en": "directly",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 27,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "querela inofficiosi testamenti",
+        "domain": "none"
+      },
+      {
+        "en": "clawback",
+        "domain": "none"
+      },
+      {
+        "en": "disallow",
+        "domain": "none"
+      },
+      {
+        "en": "allow",
+        "domain": "none"
+      },
+      {
+        "en": "clawback obligations",
+        "domain": "none"
+      },
+      {
+        "en": "allowable",
+        "domain": "none"
+      },
+      {
+        "en": "back-door listing",
+        "domain": "none"
+      },
+      {
+        "en": "alight",
+        "domain": "none"
+      },
+      {
+        "en": "disallowance",
+        "domain": "none"
+      },
+      {
+        "en": "follow",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 31,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "brief-writing",
+        "domain": "none"
+      },
+      {
+        "en": "watching brief",
+        "domain": "none"
+      },
+      {
+        "en": "brief",
+        "domain": "none"
+      },
+      {
+        "en": "short title",
+        "domain": "none"
+      },
+      {
+        "en": "short",
+        "domain": "none"
+      },
+      {
+        "en": "short",
+        "domain": "none"
+      },
+      {
+        "en": "minute",
+        "domain": "none"
+      },
+      {
+        "en": "mock trial",
+        "domain": "none"
+      },
+      {
+        "en": "visitation",
+        "domain": "none"
+      },
+      {
+        "en": "conference",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 34,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 5,
+    "n_labeled_in_top": 5,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "subrule",
+        "domain": "none"
+      },
+      {
+        "en": "subzone",
+        "domain": "none"
+      },
+      {
+        "en": "sub-sale",
+        "domain": "none"
+      },
+      {
+        "en": "substandard",
+        "domain": "none"
+      },
+      {
+        "en": "subdelegate",
+        "domain": "none"
+      },
+      {
+        "en": "subsector",
+        "domain": "none"
+      },
+      {
+        "en": "subregulation",
+        "domain": "none"
+      },
+      {
+        "en": "sub-purchase",
+        "domain": "none"
+      },
+      {
+        "en": "subcontract",
+        "domain": "none"
+      },
+      {
+        "en": "sub-mortgage",
+        "domain": "civil"
+      }
+    ]
+  },
+  {
+    "feature_idx": 35,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 3,
+    "n_labeled_in_top": 3,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "crystallise",
+        "domain": "none"
+      },
+      {
+        "en": "crystallisation",
+        "domain": "none"
+      },
+      {
+        "en": "telex",
+        "domain": "none"
+      },
+      {
+        "en": "mode of trial",
+        "domain": "none"
+      },
+      {
+        "en": "crossover",
+        "domain": "none"
+      },
+      {
+        "en": "trial",
+        "domain": "none"
+      },
+      {
+        "en": "The Nordic Investment Bank",
+        "domain": "none"
+      },
+      {
+        "en": "doxxing",
+        "domain": "none"
+      },
+      {
+        "en": "pre-trial",
+        "domain": "none"
+      },
+      {
+        "en": "mock trial",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 36,
+    "dsi": 1.0,
+    "best_domain": "administrative",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "exchange company",
+        "domain": "none"
+      },
+      {
+        "en": "on-exchange",
+        "domain": "none"
+      },
+      {
+        "en": "off-exchange",
+        "domain": "none"
+      },
+      {
+        "en": "exchange",
+        "domain": "none"
+      },
+      {
+        "en": "Exchange Fund",
+        "domain": "none"
+      },
+      {
+        "en": "stock exchange",
+        "domain": "none"
+      },
+      {
+        "en": "Unified Exchange Compensation Fund",
+        "domain": "none"
+      },
+      {
+        "en": "exchange market",
+        "domain": "none"
+      },
+      {
+        "en": "parcel",
+        "domain": "none"
+      },
+      {
+        "en": "Stock Exchange Company",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 40,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "liquidate",
+        "domain": "none"
+      },
+      {
+        "en": "liquidated",
+        "domain": "none"
+      },
+      {
+        "en": "liquidator",
+        "domain": "none"
+      },
+      {
+        "en": "futures",
+        "domain": "none"
+      },
+      {
+        "en": "unliquidated",
+        "domain": "none"
+      },
+      {
+        "en": "deleterious",
+        "domain": "none"
+      },
+      {
+        "en": "liquid",
+        "domain": "none"
+      },
+      {
+        "en": "transitional",
+        "domain": "none"
+      },
+      {
+        "en": "letting",
+        "domain": "none"
+      },
+      {
+        "en": "liquidation",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 46,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "orphan",
+        "domain": "none"
+      },
+      {
+        "en": "apparatus",
+        "domain": "none"
+      },
+      {
+        "en": "Stock Connect",
+        "domain": "none"
+      },
+      {
+        "en": "Expressum facit cessare tacitum.",
+        "domain": "none"
+      },
+      {
+        "en": "equipment",
+        "domain": "none"
+      },
+      {
+        "en": "casus omissus",
+        "domain": "none"
+      },
+      {
+        "en": "plant",
+        "domain": "none"
+      },
+      {
+        "en": "pacta sunt servanda",
+        "domain": "international"
+      },
+      {
+        "en": "museum",
+        "domain": "none"
+      },
+      {
+        "en": "omnibus",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 49,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 2,
+    "n_labeled_in_top": 2,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "kiting cheque",
+        "domain": "none"
+      },
+      {
+        "en": "thrift",
+        "domain": "none"
+      },
+      {
+        "en": "crossed cheque",
+        "domain": "none"
+      },
+      {
+        "en": "debit",
+        "domain": "none"
+      },
+      {
+        "en": "arithmetic",
+        "domain": "none"
+      },
+      {
+        "en": "scrip",
+        "domain": "none"
+      },
+      {
+        "en": "pyramid",
+        "domain": "none"
+      },
+      {
+        "en": "unrealized profit",
+        "domain": "none"
+      },
+      {
+        "en": "kiting transaction",
+        "domain": "none"
+      },
+      {
+        "en": "realized profit",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 50,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "Government Printer",
+        "domain": "none"
+      },
+      {
+        "en": "printer",
+        "domain": "none"
+      },
+      {
+        "en": "cartridge",
+        "domain": "none"
+      },
+      {
+        "en": "appointer",
+        "domain": "none"
+      },
+      {
+        "en": "notarial certificate",
+        "domain": "none"
+      },
+      {
+        "en": "Employed Barrister's Certificate",
+        "domain": "none"
+      },
+      {
+        "en": "importer",
+        "domain": "none"
+      },
+      {
+        "en": "notarial",
+        "domain": "none"
+      },
+      {
+        "en": "frame up",
+        "domain": "none"
+      },
+      {
+        "en": "interpreter",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 52,
+    "dsi": 1.0,
+    "best_domain": "constitutional",
+    "best_domain_count": 4,
+    "n_labeled_in_top": 4,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "Magna Charta",
+        "domain": "none"
+      },
+      {
+        "en": "Magna Carta",
+        "domain": "none"
+      },
+      {
+        "en": "ex turpi causa",
+        "domain": "none"
+      },
+      {
+        "en": "Great Writ",
+        "domain": "none"
+      },
+      {
+        "en": "ius in re aliena",
+        "domain": "none"
+      },
+      {
+        "en": "Lex uno ore omnes alloquitur.",
+        "domain": "none"
+      },
+      {
+        "en": "exempli gratia; e.g.",
+        "domain": "none"
+      },
+      {
+        "en": "jus in re aliena",
+        "domain": "none"
+      },
+      {
+        "en": "Expressum facit cessare tacitum.",
+        "domain": "none"
+      },
+      {
+        "en": "ex gratia",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 53,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 4,
+    "n_labeled_in_top": 4,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "trigamy",
+        "domain": "none"
+      },
+      {
+        "en": "deuterogamy",
+        "domain": "none"
+      },
+      {
+        "en": "bigamy",
+        "domain": "none"
+      },
+      {
+        "en": "ex cathedra",
+        "domain": "none"
+      },
+      {
+        "en": "hedonic damages",
+        "domain": "none"
+      },
+      {
+        "en": "monogamy",
+        "domain": "none"
+      },
+      {
+        "en": "retributory damages",
+        "domain": "none"
+      },
+      {
+        "en": "redate",
+        "domain": "none"
+      },
+      {
+        "en": "derogate",
+        "domain": "none"
+      },
+      {
+        "en": "abolition",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 55,
+    "dsi": 1.0,
+    "best_domain": "administrative",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "Gazette",
+        "domain": "administrative"
+      },
+      {
+        "en": "gazette",
+        "domain": "none"
+      },
+      {
+        "en": "owe",
+        "domain": "none"
+      },
+      {
+        "en": "address",
+        "domain": "none"
+      },
+      {
+        "en": "inquire",
+        "domain": "none"
+      },
+      {
+        "en": "no case to answer",
+        "domain": "none"
+      },
+      {
+        "en": "nothing",
+        "domain": "none"
+      },
+      {
+        "en": "indecipherable",
+        "domain": "none"
+      },
+      {
+        "en": "take-nothing judgment",
+        "domain": "none"
+      },
+      {
+        "en": "enquire",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 57,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "non-means-tested",
+        "domain": "none"
+      },
+      {
+        "en": "means test",
+        "domain": "none"
+      },
+      {
+        "en": "means",
+        "domain": "none"
+      },
+      {
+        "en": "testatrix",
+        "domain": "civil"
+      },
+      {
+        "en": "mean",
+        "domain": "none"
+      },
+      {
+        "en": "marshall",
+        "domain": "none"
+      },
+      {
+        "en": "Lloyd",
+        "domain": "none"
+      },
+      {
+        "en": "stress-testing",
+        "domain": "none"
+      },
+      {
+        "en": "worm",
+        "domain": "none"
+      },
+      {
+        "en": "Lucas-Box meaning",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 58,
+    "dsi": 1.0,
+    "best_domain": "administrative",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "write",
+        "domain": "none"
+      },
+      {
+        "en": "recall",
+        "domain": "none"
+      },
+      {
+        "en": "readable",
+        "domain": "none"
+      },
+      {
+        "en": "overwrite",
+        "domain": "none"
+      },
+      {
+        "en": "novel",
+        "domain": "none"
+      },
+      {
+        "en": "printout",
+        "domain": "none"
+      },
+      {
+        "en": "length",
+        "domain": "none"
+      },
+      {
+        "en": "in full",
+        "domain": "none"
+      },
+      {
+        "en": "history",
+        "domain": "none"
+      },
+      {
+        "en": "judicial review",
+        "domain": "administrative"
+      }
+    ]
+  },
+  {
+    "feature_idx": 59,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "Capital Works Reserve Fund",
+        "domain": "none"
+      },
+      {
+        "en": "sustain",
+        "domain": "none"
+      },
+      {
+        "en": "sustainability",
+        "domain": "none"
+      },
+      {
+        "en": "sustainable",
+        "domain": "none"
+      },
+      {
+        "en": "Capital Investment Fund",
+        "domain": "none"
+      },
+      {
+        "en": "woodwork",
+        "domain": "none"
+      },
+      {
+        "en": "sensorineural",
+        "domain": "none"
+      },
+      {
+        "en": "find",
+        "domain": "none"
+      },
+      {
+        "en": "in autre droit",
+        "domain": "none"
+      },
+      {
+        "en": "autre droit",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 60,
+    "dsi": 1.0,
+    "best_domain": "criminal",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "leakage",
+        "domain": "none"
+      },
+      {
+        "en": "pawnshop",
+        "domain": "none"
+      },
+      {
+        "en": "hack",
+        "domain": "none"
+      },
+      {
+        "en": "sabotage",
+        "domain": "none"
+      },
+      {
+        "en": "contraband",
+        "domain": "none"
+      },
+      {
+        "en": "hacker",
+        "domain": "none"
+      },
+      {
+        "en": "anticipatory breach",
+        "domain": "none"
+      },
+      {
+        "en": "breach",
+        "domain": "none"
+      },
+      {
+        "en": "smuggling",
+        "domain": "none"
+      },
+      {
+        "en": "slot",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 66,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 3,
+    "n_labeled_in_top": 3,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "no win, no fee",
+        "domain": "none"
+      },
+      {
+        "en": "no win, less fee",
+        "domain": "none"
+      },
+      {
+        "en": "no win, low fee",
+        "domain": "none"
+      },
+      {
+        "en": "wagering contract",
+        "domain": "none"
+      },
+      {
+        "en": "negotiable instrument",
+        "domain": "none"
+      },
+      {
+        "en": "aleatory contract",
+        "domain": "none"
+      },
+      {
+        "en": "obligate",
+        "domain": "none"
+      },
+      {
+        "en": "synallagmatic contract",
+        "domain": "none"
+      },
+      {
+        "en": "turnkey contract",
+        "domain": "none"
+      },
+      {
+        "en": "solus agreement",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 68,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "fund",
+        "domain": "none"
+      },
+      {
+        "en": "funding",
+        "domain": "none"
+      },
+      {
+        "en": "categorize",
+        "domain": "none"
+      },
+      {
+        "en": "fundraiser",
+        "domain": "none"
+      },
+      {
+        "en": "co-funding",
+        "domain": "none"
+      },
+      {
+        "en": "sub-fund",
+        "domain": "none"
+      },
+      {
+        "en": "landfill",
+        "domain": "none"
+      },
+      {
+        "en": "utter",
+        "domain": "none"
+      },
+      {
+        "en": "framework",
+        "domain": "none"
+      },
+      {
+        "en": "chit-fund",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 69,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "until",
+        "domain": "none"
+      },
+      {
+        "en": "taxi",
+        "domain": "none"
+      },
+      {
+        "en": "upper court",
+        "domain": "none"
+      },
+      {
+        "en": "tie",
+        "domain": "none"
+      },
+      {
+        "en": "till",
+        "domain": "none"
+      },
+      {
+        "en": "lower court",
+        "domain": "none"
+      },
+      {
+        "en": "Mary Major",
+        "domain": "none"
+      },
+      {
+        "en": "higher court",
+        "domain": "none"
+      },
+      {
+        "en": "prior",
+        "domain": "none"
+      },
+      {
+        "en": "ancillary",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 70,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 5,
+    "n_labeled_in_top": 5,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "new Jason clause",
+        "domain": "none"
+      },
+      {
+        "en": "Jason clause",
+        "domain": "none"
+      },
+      {
+        "en": "jus dare",
+        "domain": "none"
+      },
+      {
+        "en": "Hague-Visby Rules",
+        "domain": "none"
+      },
+      {
+        "en": "Judges' Rules",
+        "domain": "none"
+      },
+      {
+        "en": "jeofails",
+        "domain": "none"
+      },
+      {
+        "en": "lawyer",
+        "domain": "none"
+      },
+      {
+        "en": "Paris Convention",
+        "domain": "international"
+      },
+      {
+        "en": "Hague Convention",
+        "domain": "international"
+      },
+      {
+        "en": "Sanderson order",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 71,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "root",
+        "domain": "none"
+      },
+      {
+        "en": "root",
+        "domain": "none"
+      },
+      {
+        "en": "compile",
+        "domain": "none"
+      },
+      {
+        "en": "command",
+        "domain": "none"
+      },
+      {
+        "en": "repossession",
+        "domain": "none"
+      },
+      {
+        "en": "file",
+        "domain": "none"
+      },
+      {
+        "en": "container terminal",
+        "domain": "none"
+      },
+      {
+        "en": "compilation",
+        "domain": "none"
+      },
+      {
+        "en": "installation",
+        "domain": "none"
+      },
+      {
+        "en": "log",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 73,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "restore",
+        "domain": "none"
+      },
+      {
+        "en": "retry",
+        "domain": "none"
+      },
+      {
+        "en": "conservation",
+        "domain": "none"
+      },
+      {
+        "en": "recaption",
+        "domain": "none"
+      },
+      {
+        "en": "Home Ownership Scheme",
+        "domain": "none"
+      },
+      {
+        "en": "erasure",
+        "domain": "none"
+      },
+      {
+        "en": "conservational",
+        "domain": "none"
+      },
+      {
+        "en": "containment",
+        "domain": "none"
+      },
+      {
+        "en": "egress",
+        "domain": "none"
+      },
+      {
+        "en": "restorative",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 75,
+    "dsi": 1.0,
+    "best_domain": "procedure",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "capitula; cap.",
+        "domain": "none"
+      },
+      {
+        "en": "cap.; capitula",
+        "domain": "none"
+      },
+      {
+        "en": "cap",
+        "domain": "none"
+      },
+      {
+        "en": "capias",
+        "domain": "none"
+      },
+      {
+        "en": "capacitor",
+        "domain": "none"
+      },
+      {
+        "en": "Capital Investment Fund",
+        "domain": "none"
+      },
+      {
+        "en": "capital",
+        "domain": "none"
+      },
+      {
+        "en": "doli capax",
+        "domain": "none"
+      },
+      {
+        "en": "capitalization",
+        "domain": "none"
+      },
+      {
+        "en": "capitalist",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 78,
+    "dsi": 1.0,
+    "best_domain": "criminal",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "College of Nursing, Hong Kong",
+        "domain": "none"
+      },
+      {
+        "en": "tabula in naufragio",
+        "domain": "none"
+      },
+      {
+        "en": "nursing",
+        "domain": "none"
+      },
+      {
+        "en": "wireless",
+        "domain": "none"
+      },
+      {
+        "en": "dysnomy",
+        "domain": "none"
+      },
+      {
+        "en": "warranty",
+        "domain": "none"
+      },
+      {
+        "en": "nurse",
+        "domain": "none"
+      },
+      {
+        "en": "rural",
+        "domain": "none"
+      },
+      {
+        "en": "nolle prosequi",
+        "domain": "none"
+      },
+      {
+        "en": "nursery",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 80,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "switch",
+        "domain": "none"
+      },
+      {
+        "en": "impede",
+        "domain": "none"
+      },
+      {
+        "en": "impediment",
+        "domain": "none"
+      },
+      {
+        "en": "snake",
+        "domain": "none"
+      },
+      {
+        "en": "strike",
+        "domain": "labor_social"
+      },
+      {
+        "en": "cable",
+        "domain": "none"
+      },
+      {
+        "en": "plagium",
+        "domain": "none"
+      },
+      {
+        "en": "rope",
+        "domain": "none"
+      },
+      {
+        "en": "summer vacation",
+        "domain": "none"
+      },
+      {
+        "en": "watchman",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 82,
+    "dsi": 1.0,
+    "best_domain": "constitutional",
+    "best_domain_count": 2,
+    "n_labeled_in_top": 2,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "pesticide",
+        "domain": "none"
+      },
+      {
+        "en": "mitigation",
+        "domain": "none"
+      },
+      {
+        "en": "mercantile agent",
+        "domain": "none"
+      },
+      {
+        "en": "mitigate",
+        "domain": "none"
+      },
+      {
+        "en": "plastic",
+        "domain": "none"
+      },
+      {
+        "en": "abatement",
+        "domain": "none"
+      },
+      {
+        "en": "vegetative",
+        "domain": "none"
+      },
+      {
+        "en": "permittee",
+        "domain": "none"
+      },
+      {
+        "en": "pound",
+        "domain": "none"
+      },
+      {
+        "en": "infectious agent",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 83,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "enumeration",
+        "domain": "none"
+      },
+      {
+        "en": "deliberation",
+        "domain": "none"
+      },
+      {
+        "en": "enrol",
+        "domain": "none"
+      },
+      {
+        "en": "propel",
+        "domain": "none"
+      },
+      {
+        "en": "vary",
+        "domain": "none"
+      },
+      {
+        "en": "engross",
+        "domain": "none"
+      },
+      {
+        "en": "federation",
+        "domain": "none"
+      },
+      {
+        "en": "accelerate",
+        "domain": "none"
+      },
+      {
+        "en": "reinforce",
+        "domain": "none"
+      },
+      {
+        "en": "reinstate",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 85,
+    "dsi": 1.0,
+    "best_domain": "procedure",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "movement",
+        "domain": "none"
+      },
+      {
+        "en": "on the motion of …",
+        "domain": "none"
+      },
+      {
+        "en": "on its own motion",
+        "domain": "none"
+      },
+      {
+        "en": "motion",
+        "domain": "none"
+      },
+      {
+        "en": "of its own motion",
+        "domain": "none"
+      },
+      {
+        "en": "gesture",
+        "domain": "none"
+      },
+      {
+        "en": "of one's own motion",
+        "domain": "none"
+      },
+      {
+        "en": "move",
+        "domain": "none"
+      },
+      {
+        "en": "commotion",
+        "domain": "none"
+      },
+      {
+        "en": "mobility",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 86,
+    "dsi": 1.0,
+    "best_domain": "criminal",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "four",
+        "domain": "none"
+      },
+      {
+        "en": "fourth",
+        "domain": "none"
+      },
+      {
+        "en": "four corners",
+        "domain": "none"
+      },
+      {
+        "en": "four unities",
+        "domain": "none"
+      },
+      {
+        "en": "five",
+        "domain": "none"
+      },
+      {
+        "en": "on all fours",
+        "domain": "none"
+      },
+      {
+        "en": "however",
+        "domain": "none"
+      },
+      {
+        "en": "perforate",
+        "domain": "none"
+      },
+      {
+        "en": "daily",
+        "domain": "none"
+      },
+      {
+        "en": "sufficiently",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 87,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "God's penny",
+        "domain": "none"
+      },
+      {
+        "en": "lifting the corporate veil",
+        "domain": "none"
+      },
+      {
+        "en": "godchild",
+        "domain": "none"
+      },
+      {
+        "en": "piercing the corporate veil",
+        "domain": "none"
+      },
+      {
+        "en": "my Lord",
+        "domain": "none"
+      },
+      {
+        "en": "godparent",
+        "domain": "none"
+      },
+      {
+        "en": "goodwill",
+        "domain": "none"
+      },
+      {
+        "en": "Family Court of Australia",
+        "domain": "none"
+      },
+      {
+        "en": "delist",
+        "domain": "none"
+      },
+      {
+        "en": "Red Cross",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 89,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "take silk",
+        "domain": "none"
+      },
+      {
+        "en": "silk",
+        "domain": "none"
+      },
+      {
+        "en": "higher rights of audience",
+        "domain": "none"
+      },
+      {
+        "en": "no case to answer",
+        "domain": "none"
+      },
+      {
+        "en": "audited",
+        "domain": "none"
+      },
+      {
+        "en": "audience",
+        "domain": "none"
+      },
+      {
+        "en": "Commission of Audit",
+        "domain": "none"
+      },
+      {
+        "en": "Equal Opportunities Commission",
+        "domain": "none"
+      },
+      {
+        "en": "Review Body on Bid Challenges",
+        "domain": "none"
+      },
+      {
+        "en": "Energy Audit Form",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 92,
+    "dsi": 1.0,
+    "best_domain": "administrative",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "acquaint",
+        "domain": "none"
+      },
+      {
+        "en": "such",
+        "domain": "none"
+      },
+      {
+        "en": "opportunistic",
+        "domain": "none"
+      },
+      {
+        "en": "familiar",
+        "domain": "none"
+      },
+      {
+        "en": "similarity",
+        "domain": "none"
+      },
+      {
+        "en": "representative",
+        "domain": "none"
+      },
+      {
+        "en": "similar",
+        "domain": "none"
+      },
+      {
+        "en": "non-representative",
+        "domain": "none"
+      },
+      {
+        "en": "potential",
+        "domain": "none"
+      },
+      {
+        "en": "ought reasonably to have known",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 104,
+    "dsi": 1.0,
+    "best_domain": "constitutional",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "contracted years of service",
+        "domain": "none"
+      },
+      {
+        "en": "insertion",
+        "domain": "none"
+      },
+      {
+        "en": "retainer",
+        "domain": "none"
+      },
+      {
+        "en": "insert",
+        "domain": "none"
+      },
+      {
+        "en": "cartridge",
+        "domain": "none"
+      },
+      {
+        "en": "insider information",
+        "domain": "none"
+      },
+      {
+        "en": "exclusive economic zone",
+        "domain": "none"
+      },
+      {
+        "en": "discount",
+        "domain": "none"
+      },
+      {
+        "en": "insider dealing",
+        "domain": "none"
+      },
+      {
+        "en": "insider",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 106,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "die",
+        "domain": "none"
+      },
+      {
+        "en": "die",
+        "domain": "none"
+      },
+      {
+        "en": "die without issue",
+        "domain": "none"
+      },
+      {
+        "en": "malum prohibitum",
+        "domain": "none"
+      },
+      {
+        "en": "perjure",
+        "domain": "none"
+      },
+      {
+        "en": "rejected claim",
+        "domain": "none"
+      },
+      {
+        "en": "dies juridicus",
+        "domain": "none"
+      },
+      {
+        "en": "dies non juridicus",
+        "domain": "none"
+      },
+      {
+        "en": "unaccompanied",
+        "domain": "none"
+      },
+      {
+        "en": "annulment",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 108,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "in whole or in part",
+        "domain": "none"
+      },
+      {
+        "en": "to a material extent",
+        "domain": "none"
+      },
+      {
+        "en": "to the extent of",
+        "domain": "none"
+      },
+      {
+        "en": "entirely",
+        "domain": "none"
+      },
+      {
+        "en": "wholly",
+        "domain": "none"
+      },
+      {
+        "en": "to the extent that",
+        "domain": "none"
+      },
+      {
+        "en": "partially",
+        "domain": "none"
+      },
+      {
+        "en": "mainly",
+        "domain": "none"
+      },
+      {
+        "en": "entirety",
+        "domain": "none"
+      },
+      {
+        "en": "partly",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 109,
+    "dsi": 1.0,
+    "best_domain": "administrative",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "arson",
+        "domain": "none"
+      },
+      {
+        "en": "authorship",
+        "domain": "none"
+      },
+      {
+        "en": "at the court's own initiative",
+        "domain": "none"
+      },
+      {
+        "en": "automated",
+        "domain": "none"
+      },
+      {
+        "en": "architectural",
+        "domain": "none"
+      },
+      {
+        "en": "architect",
+        "domain": "none"
+      },
+      {
+        "en": "fact-finding process",
+        "domain": "none"
+      },
+      {
+        "en": "author",
+        "domain": "none"
+      },
+      {
+        "en": "Review Body on Bid Challenges",
+        "domain": "none"
+      },
+      {
+        "en": "advisory opinion of the court",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 110,
+    "dsi": 1.0,
+    "best_domain": "procedure",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "rendering",
+        "domain": "none"
+      },
+      {
+        "en": "abridgement",
+        "domain": "none"
+      },
+      {
+        "en": "render",
+        "domain": "none"
+      },
+      {
+        "en": "hurdle",
+        "domain": "none"
+      },
+      {
+        "en": "deployment",
+        "domain": "none"
+      },
+      {
+        "en": "ashes",
+        "domain": "none"
+      },
+      {
+        "en": "dispatch",
+        "domain": "none"
+      },
+      {
+        "en": "amorphous",
+        "domain": "none"
+      },
+      {
+        "en": "drainage",
+        "domain": "none"
+      },
+      {
+        "en": "ad damnum pleadings",
+        "domain": "procedure"
+      }
+    ]
+  },
+  {
+    "feature_idx": 114,
+    "dsi": 1.0,
+    "best_domain": "criminal",
+    "best_domain_count": 2,
+    "n_labeled_in_top": 2,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "compound",
+        "domain": "none"
+      },
+      {
+        "en": "compounded",
+        "domain": "none"
+      },
+      {
+        "en": "propound",
+        "domain": "none"
+      },
+      {
+        "en": "compound legal proceedings",
+        "domain": "none"
+      },
+      {
+        "en": "unsound",
+        "domain": "none"
+      },
+      {
+        "en": "compound for a debt",
+        "domain": "none"
+      },
+      {
+        "en": "unsoundness",
+        "domain": "none"
+      },
+      {
+        "en": "impound",
+        "domain": "none"
+      },
+      {
+        "en": "impounding",
+        "domain": "none"
+      },
+      {
+        "en": "soundness",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 116,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 2,
+    "n_labeled_in_top": 2,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "encode",
+        "domain": "none"
+      },
+      {
+        "en": "peg",
+        "domain": "none"
+      },
+      {
+        "en": "by means of",
+        "domain": "none"
+      },
+      {
+        "en": "works",
+        "domain": "none"
+      },
+      {
+        "en": "printed",
+        "domain": "none"
+      },
+      {
+        "en": "pass",
+        "domain": "none"
+      },
+      {
+        "en": "by whatever means",
+        "domain": "none"
+      },
+      {
+        "en": "disponer",
+        "domain": "none"
+      },
+      {
+        "en": "pack",
+        "domain": "none"
+      },
+      {
+        "en": "transmit",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 119,
+    "dsi": 1.0,
+    "best_domain": "international",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "company",
+        "domain": "none"
+      },
+      {
+        "en": "Companies Register",
+        "domain": "none"
+      },
+      {
+        "en": "group of companies",
+        "domain": "none"
+      },
+      {
+        "en": "related company",
+        "domain": "none"
+      },
+      {
+        "en": "Companies Court",
+        "domain": "none"
+      },
+      {
+        "en": "related corporation",
+        "domain": "none"
+      },
+      {
+        "en": "accompany",
+        "domain": "none"
+      },
+      {
+        "en": "non-company",
+        "domain": "none"
+      },
+      {
+        "en": "connected company",
+        "domain": "none"
+      },
+      {
+        "en": "company service",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 120,
+    "dsi": 1.0,
+    "best_domain": "labor_social",
+    "best_domain_count": 7,
+    "n_labeled_in_top": 7,
+    "significant_domains": [
+      "labor_social"
+    ],
+    "top_terms": [
+      {
+        "en": "employer",
+        "domain": "labor_social"
+      },
+      {
+        "en": "employ",
+        "domain": "none"
+      },
+      {
+        "en": "re-employ",
+        "domain": "none"
+      },
+      {
+        "en": "employee",
+        "domain": "labor_social"
+      },
+      {
+        "en": "personnel",
+        "domain": "none"
+      },
+      {
+        "en": "non-employer",
+        "domain": "labor_social"
+      },
+      {
+        "en": "worker",
+        "domain": "none"
+      },
+      {
+        "en": "employable",
+        "domain": "none"
+      },
+      {
+        "en": "managerial",
+        "domain": "none"
+      },
+      {
+        "en": "occupational",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 122,
+    "dsi": 1.0,
+    "best_domain": "civil",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "forthwith",
+        "domain": "none"
+      },
+      {
+        "en": "thereupon",
+        "domain": "none"
+      },
+      {
+        "en": "later",
+        "domain": "none"
+      },
+      {
+        "en": "no later",
+        "domain": "none"
+      },
+      {
+        "en": "there",
+        "domain": "none"
+      },
+      {
+        "en": "there",
+        "domain": "none"
+      },
+      {
+        "en": "further",
+        "domain": "none"
+      },
+      {
+        "en": "with necessary modifications",
+        "domain": "none"
+      },
+      {
+        "en": "next quarter day",
+        "domain": "none"
+      },
+      {
+        "en": "future interest",
+        "domain": "none"
+      }
+    ]
+  },
+  {
+    "feature_idx": 130,
+    "dsi": 1.0,
+    "best_domain": "constitutional",
+    "best_domain_count": 1,
+    "n_labeled_in_top": 1,
+    "significant_domains": [],
+    "top_terms": [
+      {
+        "en": "merits",
+        "domain": "none"
+      },
+      {
+        "en": "Senior Counsel",
+        "domain": "none"
+      },
+      {
+        "en": "merit",
+        "domain": "none"
+      },
+      {
+        "en": "Senior Counsel; S.C.",
+        "domain": "none"
+      },
+      {
+        "en": "retention",
+        "domain": "none"
+      },
+      {
+        "en": "issuance",
+        "domain": "none"
+      },
+      {
+        "en": "pursuance",
+        "domain": "none"
+      },
+      {
+        "en": "seduction",
+        "domain": "none"
+      },
+      {
+        "en": "Senate",
+        "domain": "constitutional"
+      },
+      {
+        "en": "retaining",
+        "domain": "none"
+      }
+    ]
+  }
+]

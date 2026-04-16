@@ -1,0 +1,19 @@
+{
+  "n_active_features": 4096,
+  "n_features_with_significant_enrichment": 21,
+  "n_significant_tests": 21,
+  "dsi_mean": 0.5676996087476389,
+  "dsi_median": 0.5,
+  "dsi_max": 1.0,
+  "dsi_p90": 1.0,
+  "domain_feature_counts": {
+    "administrative": 2,
+    "civil": 1,
+    "constitutional": 1,
+    "criminal": 2,
+    "international": 9,
+    "labor_social": 6,
+    "procedure": 0
+  },
+  "model_label": "BGE-ZH-large"
+}

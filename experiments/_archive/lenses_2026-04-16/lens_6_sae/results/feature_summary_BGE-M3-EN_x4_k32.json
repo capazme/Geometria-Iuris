@@ -1,0 +1,19 @@
+{
+  "n_active_features": 4096,
+  "n_features_with_significant_enrichment": 22,
+  "n_significant_tests": 22,
+  "dsi_mean": 0.5410732291903539,
+  "dsi_median": 0.5,
+  "dsi_max": 1.0,
+  "dsi_p90": 1.0,
+  "domain_feature_counts": {
+    "administrative": 1,
+    "civil": 3,
+    "constitutional": 2,
+    "criminal": 5,
+    "international": 7,
+    "labor_social": 3,
+    "procedure": 1
+  },
+  "model_label": "BGE-M3-EN"
+}

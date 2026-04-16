@@ -1,0 +1,19 @@
+{
+  "n_active_features": 4073,
+  "n_features_with_significant_enrichment": 18,
+  "n_significant_tests": 18,
+  "dsi_mean": 0.5324386218865662,
+  "dsi_median": 0.5,
+  "dsi_max": 1.0,
+  "dsi_p90": 1.0,
+  "domain_feature_counts": {
+    "administrative": 1,
+    "civil": 2,
+    "constitutional": 1,
+    "criminal": 2,
+    "international": 7,
+    "labor_social": 5,
+    "procedure": 0
+  },
+  "model_label": "E5-large"
+}

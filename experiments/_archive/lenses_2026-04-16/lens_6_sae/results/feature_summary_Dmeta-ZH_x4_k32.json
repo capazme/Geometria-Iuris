@@ -1,0 +1,19 @@
+{
+  "n_active_features": 3066,
+  "n_features_with_significant_enrichment": 13,
+  "n_significant_tests": 13,
+  "dsi_mean": 0.5659278826388829,
+  "dsi_median": 0.5,
+  "dsi_max": 1.0,
+  "dsi_p90": 1.0,
+  "domain_feature_counts": {
+    "administrative": 3,
+    "civil": 1,
+    "constitutional": 0,
+    "criminal": 1,
+    "international": 3,
+    "labor_social": 5,
+    "procedure": 0
+  },
+  "model_label": "Dmeta-ZH"
+}
