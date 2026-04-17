@@ -342,3 +342,147 @@ small sample size (n_cross=9, n_within=6)."
   and Comparative Law Quarterly*, 45(1), 52-81.
 - Merryman, J. H., & Perez-Perdomo, R. (2007). *The civil law tradition*.
   Stanford University Press.
+
+---
+
+## D9 — Axis set expansion from 3 to 6 (2026-04-17)
+
+**Status**: decided and implemented
+
+**Context**: Per pivot trace `experiments/trace_pivot_2lens.md` D4, Lens IV is
+being redesigned as one of the two surviving lenses. Part of the "per bene"
+upgrade is expanding the value-axis set to broaden the measurement of
+cross-tradition divergence, under the constraint that every added axis must
+be doctrinally defended and token-disjoint from existing axes (pair
+collisions in either polarity produce measurement leakage, as errata E1
+showed).
+
+**Options considered**:
+- Option A: keep 3 axes (individual_collective, rights_duties, public_private)
+  - Pro: minimal surface area; fewer pairs to curate.
+  - Contro: the 3 axes share considerable conceptual territory (public_private
+    and individual_collective carry overlapping cultural loadings), leaving
+    major jurisprudential dimensions unmeasured.
+- Option B: expand to 6 axes.
+  - Pro: broader coverage of doctrinally independent dimensions; denser test
+    of the instrument; answers the co-relatore's "too methodological" critique
+    by producing more interpretable domain-specific results.
+  - Contro: 60 more pole-pairs to curate; 3× the audit surface for collision
+    detection; longer compute time at rerun.
+
+**Decision**: Option B — expand to 6 axes.
+
+New axes added, with conceptual slots:
+- `state_market` — regulatory-economic configuration (Hayek/Polanyi/Sunstein
+  on the WEIRD side; PRC 社会主义市场经济, HK "positive non-interventionism"
+  on the Sinic side). Distinct from `public_private` because this axis
+  tracks where the legal order places the state-direction vs market-ordering
+  boundary, not the ulpianean classification of norms.
+- `natural_positive` — source of legal authority (Aquinas/Grotius/Finnis/
+  Fuller/Dworkin vs Bentham/Austin/Hart/Kelsen/Raz on the WEIRD side; the
+  classical 天理/国法/人情 triad, Daoist-Legalist 道/法, Confucian 礼/令 on
+  the Sinic side). Orthogonal to `rights_duties` (deontic structure) and
+  `public_private` (classification).
+- `status_contract` — Maine's canonical dyad (status/birthright/kinship
+  vs contract/agreement/negotiation). Measures the mechanism of social
+  binding. ZH side exploits dense classical ascriptive vocabulary (宗法,
+  名分, 辈分, 世袭, 门第, 血缘) against modern civil-code terminology (合同,
+  协议, 意思表示, 缔约).
+
+Pair design was delegated to three parallel LLM agents (senior-jurist persona,
+each with the full existing `value_axes.yaml` contents as context and an
+explicit vocabulary-to-avoid list from the 3 locked axes). Outputs at
+`experiments/data/review/poles_<axis>.md` with per-pair doctrinal rationale,
+known trade-offs, and vocabulary-overlap audits.
+
+**Thesis text implication**: → §3.3.1 gains three sub-sections introducing
+the new axes, each with its doctrinal anchor (Hayek/Polanyi for state_market,
+Aquinas-to-Dworkin for natural_positive, Maine for status_contract) and ZH
+philosophical counterpart. The 6-axis panel becomes "six independently
+grounded dimensions of legal meaning", with the orthogonality diagnostic
+(D8) extended to an inter-axis 6×6 cosine similarity matrix.
+
+---
+
+## D10 — Cross-axis mirror-pair fixes (2026-04-17)
+
+**Status**: decided and implemented
+
+**Context**: While auditing for D9 integration, programmatic validation
+(`yaml.safe_load` + pair-set intersection check) revealed two
+cross-axis **mirror collisions** that were not caught by the original
+errata E1:
+
+1. `individual_collective` EN `[private, public]` (private positive) vs
+   `public_private` EN `[public, private]` (public positive) — same pair,
+   opposite polarity. Contribution: (private − public) vs (public − private),
+   anti-correlated 100% on this pair.
+2. `individual_collective` ZH `[私人, 公共]` (私人 positive) vs
+   `public_private` ZH `[公共, 私人]` (公共 positive) — same issue.
+3. `individual_collective` ZH `[个人, 集体]` (个人 positive) vs
+   `public_private` ZH `[集体, 个人]` (集体 positive) — same issue on a
+   second token pair.
+
+The EN counterpart of (3) — `public_private` EN pair `[collective, personal]`
+— was not a strict mirror of any `individual_collective` pair, but reused the
+tokens `collective` and `personal` with inverted polarity relative to
+`individual_collective` pairs `[individual, collective]` and
+`[personal, communal]`, producing the same leakage in weaker form.
+
+**Options considered for fix**:
+- Option A: accept the leakage and disclose as a limit. Contro: measurable
+  anti-correlation on every pair-sharing token biases the inter-axis
+  correlation diagnostic (D8) artificially toward independence.
+- Option B: remove the offending pairs (axes would have 9 instead of 10
+  pairs). Contro: breaks Kozlowski's "≥5 pairs for stability" implicit
+  convention and would require per-axis handling in the code.
+- Option C: replace the offending pairs with non-colliding pairs that
+  remain doctrinally valid for the axis.
+
+**Decision**: Option C — replace.
+
+Fixes applied to `value_axes.yaml`:
+
+1. `individual_collective` EN: `[private, public]` → `[distinct, shared]`
+   (direct I-vs-we opposition; no token used in any other axis).
+2. `individual_collective` ZH: `[私人, 公共]` → `[单独, 共同]`
+   (alone/together; clean I-vs-we register).
+3. `public_private` EN: `[collective, personal]` → `[statutory, customary]`
+   (classical public-law/private-custom distinction; belongs in the
+   classification register of public_private, not the social-ontology
+   register of individual_collective).
+4. `public_private` ZH: `[集体, 个人]` → `[公立, 私立]`
+   (public vs private institutional form, canonical HK usage for
+   publicly/privately operated entities; preserves the classification
+   register).
+
+Post-fix validation: six axes × twenty pairs each = 120 pairs total, **zero
+cross-axis pair collisions** in either polarity (verified programmatically,
+2026-04-17). Single-token cross-axis overlaps remain informationally logged
+(11 EN tokens, 6 ZH tokens shared across ≥2 axes) but are Kozlowski-tolerable
+because their partner tokens differ, keeping the axis-direction contributions
+non-colinear.
+
+**Thesis text implication**: → §3.3.1 adds a short "Pair-independence
+verification" note disclosing the fixes and the resulting zero-collision
+state. → §2.4 methodology: the pair-collision audit becomes a named
+pre-registration step for any future Lens IV expansion.
+
+**Cross-reference**: this extends errata E1 (single-axis duplicate 权利/义务)
+to the cross-axis case. The underlying principle is the same: pair identity
+is a feature, not a coincidence, and must be unique across the axis panel.
+
+---
+
+## References (D9, D10 additions)
+
+- Maine, H. S. (1861). *Ancient Law*. John Murray.
+- Hayek, F. A. (1944). *The Road to Serfdom*. Routledge.
+- Polanyi, K. (1944). *The Great Transformation*. Farrar & Rinehart.
+- Finnis, J. (1980). *Natural Law and Natural Rights*. Clarendon Press.
+- Hart, H. L. A. (1961). *The Concept of Law*. Clarendon Press.
+- Dworkin, R. (1977). *Taking Rights Seriously*. Harvard UP.
+- Qu Tongzu 瞿同祖 (1961). *Law and Society in Traditional China*. Mouton.
+- Xu Xianming 徐显明 (ed.) (2008). *身份法与契约法:中国民法的现代化*.
+- Corwin, E. S. (1928). "The 'Higher Law' Background of American Constitutional
+  Law." *Harvard Law Review*, 42(2), 149–185.
