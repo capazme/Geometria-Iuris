@@ -905,6 +905,77 @@ Ch.1 §1.3.
 
 ---
 
+## D12 — D9 archival (2026-04-17)
+
+**Status**: archived; not rerun on the rebalanced dataset.
+
+**Context**: The pivot documented in `experiments/trace_pivot_2lens.md`
+archived Lens III (layer stratigraphy). D9 (layer-aware Lens I
+sensitivity sweep) was a hybrid that read from the Lens III cache
+(`lens_3_stratigraphy/results/layer_vectors/{label}.npz`) and produced
+a Lens I robustness report. With Lens III archived and the core
+dataset rebalanced from 397 terms to 350 terms (D5 of the pivot trace),
+D9's inputs are doubly invalidated:
+
+1. Source path moved to `_archive/lenses_2026-04-16/` on 2026-04-16.
+2. The cached layer vectors have shape `(397, L+1, dim)` — pre-rebalance
+   term indexing. On the current 350-core dataset (27 promotions, 107
+   drops relative to the old core), naive reuse of the cache would
+   produce systematically misaligned RDMs.
+
+**Options considered**:
+- Option A: regenerate layer_vectors on the rebalanced 350-core dataset
+  by re-running `lens_3_stratigraphy/layer_extraction.py` on the six
+  monolingual models. Compute: ~30-60 min on M-series MPS; storage
+  ~425 MB. Pro: preserves the D9 robustness argument intact. Contro:
+  reintroduces Lens III infrastructure that the pivot removed for
+  narrative reasons; the layer-depth finding was always an ancillary
+  check, not a headline of Lens I.
+- Option B: archive D9 together with the rest of the Lens III
+  material. Document the pre-rebalance layer-sweep result as prior
+  evidence in `_archive/lenses_2026-04-16/lens_3_stratigraphy/trace.md`
+  and mark D9 in this trace as superseded. Pro: respects the pivot's
+  "fewer experiments, deeper execution" principle; zero compute;
+  removes the last code file in Lens I that depended on archived
+  infrastructure. Contro: loses the layer-depth robustness claim for
+  the v2 rerun.
+
+**Decision**: Option B — archive.
+
+**Rationale**: the attested-context robustness (D11) already provides
+a substantive second robustness axis for Lens I, covering a different
+threat model (Firthian attestation of context) from layer-depth. Adding
+layer-depth back would inflate the chapter for a point that does not
+survive the pivot's narrative reduction. The pre-rebalance finding
+(Δρ_sym peak 0.346 at 5L/6, consistent with the phase-transition zone
+documented in the archived Lens III) stands as prior evidence on the
+pre-rebalance dataset; it is not claimed as a result of the v2 analysis.
+
+**Files moved** (2026-04-17):
+- `experiments/lens_1_relational/layer_sensitivity.py` →
+  `experiments/_archive/lenses_2026-04-16/lens_3_stratigraphy/`
+- `experiments/lens_1_relational/results/layer_sensitivity.json` →
+  `experiments/_archive/lenses_2026-04-16/lens_3_stratigraphy/results/`
+- `experiments/lens_1_relational/results/figures/html/layer_sensitivity.html` →
+  `experiments/_archive/lenses_2026-04-16/lens_3_stratigraphy/results/`
+
+**Remaining Lens I scope (post-pivot)**:
+- §3.1.1 Domain signal (D1-D7, D_BG1-D_BG2)
+- §3.1.2 Domain topology
+- §3.1.4 Cross-tradition RSA (D1-D7) with β bilingual control (D10)
+  and δ attested-context robustness (D11) as headline
+- §3.1.5 Parametric categorical probe (D8 revised)
+
+**Thesis text implication**: → §3.1 loses its planned layer-sweep
+paragraph. The cross-tradition gap is defended against the "encoder
+artefact" critique by the bilingual control (D10) and against the
+"synthetic context artefact" critique by attested contexts (D11). The
+"at what layer does meaning crystallise" question, if it resurfaces
+in review, is answered by citing the archived Lens III finding as
+prior evidence without reclaiming it in the v2 analysis.
+
+---
+
 ## References
 
 - Kriegeskorte, N., Mur, M., & Bandettini, P. (2008). Representational similarity
