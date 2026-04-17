@@ -47,3 +47,4 @@ experiments/**/.ipynb_checkpoints/
 *.zip
 *.pdf
 *.md
+*.bak_*

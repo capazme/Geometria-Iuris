@@ -315,21 +315,147 @@ claim.
 
 ---
 
-## Execution order (after D3-D6 approval)
+## Finalization — D5 and D6 (2026-04-17)
 
-1. Audit admin candidates (user-driven curation) → updated dataset.
-2. Pole-pair audit of existing Lens IV axes → updated `value_axes.yaml`.
-3. Define new axes (doctrinal justification in Lens IV trace D-entry) →
-   `value_axes.yaml` extended.
-4. Precompute embeddings on new dataset for all 8 models, bare + attested.
-5. Rerun Lens I on new dataset, 8 models, bare + attested.
-6. Rerun Lens IV on new dataset, 8 models, bare + attested, new axes.
-7. Rewrite `build_dashboard.py` around Lens I + IV only.
-8. Regenerate dashboard. Produce one-page executive summary for the
+### D5 (dataset) — FINALIZED
+
+**Decision**: Option γ — cap at 50 terms per domain (target total: 350 core).
+
+**Curation execution**: seven parallel LLM agents, each acting as a senior
+HK jurist with access to `legal_terms.json` and the e-Legislation attested
+context index, produced one `decisions_<domain>.json` under
+`experiments/data/review/`. Each agent applied the criteria:
+near-synonym consolidation, domain-mismatch filtering, narrow-technicality
+pruning, low-attestation pruning, conceptual-centrality ranking (for
+drops); and gap-filling against sub-area coverage + HK-Cap attestation
+(for promotions).
+
+Curation summary:
+- **civil** drop 86: morphological consolidation (mortgage/patent/trustee
+  families), Latin maxims (de bonis testatoris family, trespass-on-the-case
+  family), domain-mismatch (torture, may it please the court). Kept 50
+  balanced across contract 10, tort 8, property-real 10, IP 5, family 4,
+  succession 8, trusts 3, remedies 2.
+- **criminal** drop 16: 13 morphological derivations (criminalise,
+  criminality, probationary family, etc.), 2 sub-doctrinal variants
+  (Caldwell/Cunningham recklessness), 1 HK instrument (Minor Offences
+  Report).
+- **procedure** drop 3: 1 Roman-law locution (ex parte materna), 1 archaic
+  doctrine (aider by pleading over), 1 subpoena near-synonym.
+- **international** drop 2: stratification, gratification (both domain
+  mismatches).
+- **constitutional** promote 2: Chief Executive (行政長官), Court of Final
+  Appeal (終審法院) — filled separation-of-powers asymmetry.
+- **administrative** promote 5: Executive Council, Public Service
+  Commission, quasi-judicial, bylaw, complaint.
+- **labor_social** promote 20: full Cap. 57 / Cap. 282 / Cap. 485 / Cap.
+  509 / discrimination-caps coverage.
+
+**Post-hoc ZH-canonical cleanup (D5.1 addendum, 2026-04-17)**: two
+labor_social promotions were replaced after review because their ZH
+canonical carried parentheses or was a phrase rather than a term. The
+replacements preserve the conceptual slot:
+
+- `pregnancy` → `parental` (父母責任): retains the family-status intersection
+  between Cap. 57 (parental-leave provisions) and Cap. 527 (Family Status
+  Discrimination); ZH is a clean 4-character legal phrase.
+- `Ordinary Assessment Board` → `incapacitate` (喪失工作能力): replaces an
+  institutional-actor term with the doctrinal concept on which the entire
+  Employees Compensation Ordinance Cap. 282 regime turns (total vs
+  partial, temporary vs permanent incapacity).
+
+**Cross-translation validation set (D5.4) — REJECTED**: a hand-curated
+list of "expected EN↔ZH equivalents" was explicitly rejected as a
+methodological bias risk. The HK DOJ Bilingual Glossary provides the
+institutional anchor; adding a researcher-curated list would make the
+instrument measure agreement with the researcher's prior beliefs about
+translation, closing the validation into a circle. This is the same
+failure mode that led to the archival of Lens V (false friends).
+
+**Application**: `experiments/data/apply_decisions.py` (2026-04-17)
+flipped tiers for 107 drops and 27 promotes, with timestamped backup
+`legal_terms.json.bak_20260417_123849`. Per-domain post counts verified
+at exactly 50. Human-readable report at
+`experiments/data/processed/rebalance_report.md`.
+
+**Thesis text implication**: → §2.1. The dataset section now describes
+a uniform 50-per-domain core (N=350) with the curation criteria above.
+The agent-assisted curation is disclosed transparently: "Curation
+decisions were produced by a structured LLM-assisted review procedure
+(per-domain prompts with fixed criteria and pre-specified target counts,
+documented in `experiments/data/review/decisions_*.json`), subject to
+author verification and post-hoc ZH-canonical cleanup."
+
+---
+
+### D6 (model panel) — FINALIZED
+
+**Decision**: **3+3 monolingual + 2 bilingual controls** (total 8 models).
+No additions. The 2 bilingual controls (BGE-M3, Qwen3-0.6B) are retained
+not as "extra experiments" but as the causal identification strategy for
+the cross-tradition gap.
+
+Sub-decisions:
+
+- **D6.1** (Qwen3-4B scale control): **deferred** to post-first-rerun. If
+  the co-relatore or the commission specifically ask for scale robustness,
+  Qwen3-4B can be added as an Appendix B "Scale robustness" addendum in
+  a few hours. Adding it now inflates compute cost (~+4h for attested
+  contexts at 200× slowdown) without addressing the critique the
+  thesis actually faces (instrument-without-result, not
+  robustness-insufficient).
+
+- **D6.2** (E5-Mistral-7B WEIRD scale control): **rejected**. Breaks the
+  3+3 symmetry, stresses the 16GB RAM budget even under 4-bit
+  quantization, and duplicates the E5 family already represented by
+  `e5-large-v2` in Slot 2.
+
+- **D6.3** (e5-large-v2 monolingual EN vs multilingual-e5-large):
+  **confirmed monolingual** (`intfloat/e5-large-v2`). The monolingual
+  choice is load-bearing for the cross-tradition design: a multilingual
+  encoder in the WEIRD slot would contaminate the panel with ZH-aware
+  weights, weakening the very causal identification the bilingual
+  controls (BGE-M3, Qwen3-0.6B) are deliberately carrying. The
+  pre-session OVERVIEW.md referenced the multilingual name in error;
+  config.yaml was always correct.
+
+**Rationale for the reduction "tentation"**: the user raised whether
+the 2 bilingual controls could be dropped for simplicity (going back to
+a pure 3+3 panel). They cannot, because the bilinguals do not measure
+*more*, they measure the *same thing under a causal control*. Dropping
+them would force every cross-tradition finding to be defended in prose
+("maybe it's just that the encoders are different") rather than in a
+number ("within-bilingual ρ̄ > cross-mono ρ̄ by X"). The Phase 2 work
+for bilingual precompute is already sunk cost; the incremental run cost
+at Lens I/IV time is negligible.
+
+**Thesis text implication**: → §2.3 becomes a clean "3+3 symmetric panel
++ 2 bilingual causal controls" narrative. One paragraph names the
+six-way symmetry (architecture / STS / domain anchors on each side),
+one paragraph names the two bilingual controls and what they control
+for. No further models need to be introduced or defended.
+
+---
+
+## Execution order (after D3-D4 approval)
+
+1. ~~Audit admin candidates~~ — DONE via D5 finalization.
+2. ~~Apply rebalance~~ — DONE via `apply_decisions.py`.
+3. Pole-pair audit of existing Lens IV axes → updated `value_axes.yaml`.
+   **[D4 open]**
+4. Define new Lens IV axes (doctrinal justification in Lens IV trace
+   D-entry) → `value_axes.yaml` extended. **[D4 open]**
+5. Precompute embeddings on new 350-term core for all 8 models, bare +
+   attested.
+6. Rerun Lens I on new dataset, 8 models, bare + attested. **[D3 open]**
+7. Rerun Lens IV on new dataset, 8 models, bare + attested, revised +
+   expanded axes. **[D4 open]**
+8. Rewrite `build_dashboard.py` around Lens I + IV only.
+9. Regenerate dashboard. Produce one-page executive summary for the
    co-relatore from the new numbers.
 
-Estimated time to step 7: 2-3 working days of curation + 1-2 overnight
-compute runs.
+Estimated time to step 8: 1-2 overnight compute runs after D3-D4
+approval.
 
 ---
 
