@@ -437,6 +437,172 @@ for. No further models need to be introduced or defended.
 
 ---
 
+## D7 — Dashboard redesign (Lens I + IV) with unified visual language
+
+**Options considered**:
+
+- Option A — patch existing `lens_{1,4}/viz.py` generators. Pro: keeps
+  a single generation pipeline. Contro: those modules are tightly
+  coupled to the pre-pivot multi-tab Plotly layout via
+  `shared/html_style.py`; retrofitting the index.html design system
+  (parchment palette, sticky nav, accordion glossary, step lists,
+  metric chips, pipeline diagram with per-stage expansion, KaTeX
+  formulas) would be a rewrite dressed as a patch.
+- Option B — write new generators under `experiments/dashboard_v2/`
+  that read the same result JSONs and emit new `lens1.html` and
+  `lens4.html`, leaving the legacy `viz.py` modules untouched.
+  Pro: clean slate, shared design system via a dedicated
+  `shared_ui.py` module extracted from `index.html`; two generators
+  (old and new) transiently coexist until the old ones are retired.
+  Contro: a short period with duplicate generators.
+
+**Decision**: Option B.
+
+**Rationale**: the new landing page `experiments/dashboard_v2/index.html`
+sets the quality bar for the "per il relatore" artefact — parchment
+palette, serif typography, sticky nav, accordion glossary, step lists
+with formulas, pipeline diagram, metric chips linking text to glossary,
+non-interpretive captions. The lens pages need to match that bar.
+Option B extracts CSS + JS verbatim into `shared_ui.py` (single source
+of truth for the design system) and lets each generator focus on its
+own data and figures without inheriting the old tab apparatus.
+
+The new generators consume the same JSONs produced by `lens1.py` and
+`lens4.py`; no re-computation is triggered. The `distributions/` npz
+archive (null + bootstrap per pair) and `scores/` npy folder
+(projection per model × axis) were already present from previous
+runs and feed the Mantel null panel (Lens I §3.1.4) and the divergent
+terms dumbbell (Lens IV §3.3.4) respectively.
+
+**Non-interpretive discipline**: every Plotly figure is wrapped in
+prose that describes *what is computed*, never *what the number means*.
+Language like "suggests", "indicates that", "reveals", "is explained
+by" is banned from both pages (grep-verified post-build). The
+bare-vs-attested disclaimer is repeated on each page.
+
+**Scope limitation noted**: `section_31` (intra-vs-inter, legal-vs-
+control, domain topology) was only computed for the three WEIRD
+models; the Lens I dashboard discloses this explicitly rather than
+silently dropping the Sinic side.
+
+**Thesis text implication**: → §3.1 and §3.3 can now cite the
+dashboard as a one-click appendix in which each measurement is
+separated from each interpretation. Ch. 4 (Quod numeri tacent) will
+carry the interpretive weight; the dashboards carry only the
+measurements. This separation is itself part of the methodological
+contribution: showing that the instrument's numbers can be displayed
+intelligibly to a legal reader without begging the question of what
+they mean.
+
+**Files created**:
+
+- `experiments/dashboard_v2/shared_ui.py` — design system (CSS + JS +
+  HTML fragment helpers + canonical glossary entries).
+- `experiments/dashboard_v2/generate_lens1.py` — builds `lens1.html`
+  (~460 KB) from `lens1_results.json` + `categorical_probe.json` +
+  `distances/*.npz` + `distributions/*.npz`.
+- `experiments/dashboard_v2/generate_lens4.py` — builds `lens4.html`
+  (~120 KB) from `lens4_results.json` + `value_axes.yaml` +
+  `scores/*.npy`.
+
+**Files untouched (legacy — retire after acceptance)**:
+
+- `experiments/lens_1_relational/viz.py`
+- `experiments/lens_4_values/viz.py`
+- `experiments/shared/html_style.py`
+
+**Acceptance**: the three pages bundled into a zip weigh ~190 KB,
+well under the 2 MB email-attachment ceiling.
+
+---
+
+## D8 — Completeness pass on both dashboards (2026-04-18)
+
+After D7, the lens pages still disclosed several "only covered for N models"
+caveats. The user instructed to remove the gaps rather than document them:
+`metti dati raw` and `mostra tutto quello che abbiamo`.
+
+**Options considered**:
+
+- Option A — keep the caveats (original D7 scope). Contro: several lines of
+  the dashboards amount to "this measure would have been nice to have for
+  Sinic / bilingual models too". For the co-relatore who will read the
+  pages in five minutes, these caveats are a distraction from the
+  experiment's actual coverage.
+- Option B — close every gap that the existing data allows (no new runs).
+  Contro: some gaps (legal-vs-control for Sinic/bilinguals, categorical
+  probe for bilinguals, Lens IV per-model sections for bilinguals) require
+  either re-deriving from vectors.npy or actually re-running the original
+  experiment scripts.
+- Option C — Option B plus targeted re-runs of the two pipelines where
+  re-deriving from vectors.npy is not sufficient (categorical probe +
+  Lens IV).
+
+**Decision**: Option C.
+
+**Rationale**: D7's original non-goal "no rerunning the lenses" was the
+right call under the constraint "we are just polishing the dashboards";
+the user's April 18 instruction explicitly lifted that constraint in
+exchange for complete coverage.
+
+**Operations carried out**:
+
+1. `generate_lens1.py`:
+   - legal-vs-control effect r computed on-the-fly from each model's
+     `vectors.npy` + the `tier` labels in `embeddings/index.json`; now
+     covers all 10 models. The pre-computed `distances/*.npz` dumps for
+     the three WEIRD models remain the gold reference for their rows.
+   - Mantel null distribution upgraded from a single canonical pair to a
+     Plotly dropdown over all 17 pairs. Each pair shows its histogram +
+     observed ρ + p-value.
+2. `lens_1_relational/categorical_probe.py`: appended 4 bilingual
+   "slots" (BGE-M3-EN, BGE-M3-ZH, Qwen3-0.6B-EN, Qwen3-0.6B-ZH) to
+   `WEIRD_MODELS` / `SINIC_MODELS` and re-ran. The resulting
+   `categorical_probe.json` now has 10 entries per test (was 6).
+3. `lens_4_values/lens4.py`: extended `_load_config` and
+   `_load_model_id_map` to read the `bilingual` group from
+   `models/config.yaml` and materialise each bilingual model as two
+   labels (`{label}-EN` and `{label}-ZH`), with the EN halves joining
+   the weird bucket and the ZH halves joining the sinic bucket. The
+   bilingual EN×ZH pair (same model, two languages) is now captured in
+   the output but is lens4-classified as "cross"; the dashboard
+   generator reclassifies those specific pairs to a dedicated
+   "within_bilingual" bucket (`_classify_pair`) for visual and
+   interpretive clarity as a causal control. Full re-run (344 s).
+4. `generate_lens4.py`: `WEIRD_MODELS` / `SINIC_MODELS` tuples grown to
+   5 labels each (3 original + 2 bilingual halves); all figures
+   (`fig_sanity_heatmap`, `fig_orthogonality`, `fig_axes_forest`,
+   `fig_divergent_dumbbell`) now cover 10 models; forest plot facet
+   height scales with pair count (45 per axis now vs. 15 before).
+5. `index.html`: PCA scatter redesigned from 2-component BGE-EN-only
+   to full 3-component per-model scatter, with a model dropdown
+   (optgroup grouped by tradition) and per-model explained-variance
+   badge. Data computed by a new helper,
+   `dashboard_v2/compute_pca_all_models.py`, which writes
+   `dataset_pca3d.json` (all 10 models × 350 terms × 3 PCs + term
+   metadata). Embedded inline into index.html.
+6. Prose of Lens IV also rewritten for jurist audience by a sub-agent,
+   parallel treatment to the one that D7 applied to Lens I.
+
+**Scope note**: Option C removes all caveats about model coverage. The
+only remaining scope limitation on the bare-encoder dashboards is the
+attested-context extension itself (out of scope for Phase 2), which is
+documented in a single disclaimer at the top of each page.
+
+**Thesis text implication**: → §3.1 and §3.3 can now cite the
+dashboards as an appendix that covers the full 10-model panel under
+the bare encoder, with no model-group asymmetries. Every number in
+the pages is reproducible from a `python -m ...` command in the
+experiments folder, and the `compute_pca_all_models.py` helper is the
+single source of truth for the landing-page 3D projection.
+
+**File sizes after D8**: `index.html` 382 KB (with inline 3D PCA data
+for 10 models); `lens1.html` 20.7 MB (raw distance distributions
+embedded per user request); `lens4.html` 160 KB. Combined zip ≈ 5.5 MB,
+still well within email-attachment tolerance.
+
+---
+
 ## Execution order (after D3-D4 approval)
 
 1. ~~Audit admin candidates~~ — DONE via D5 finalization.

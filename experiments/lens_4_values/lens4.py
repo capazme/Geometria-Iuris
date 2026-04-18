@@ -57,7 +57,15 @@ AXES_PATH = Path(__file__).parent / "value_axes.yaml"
 # ---------------------------------------------------------------------------
 
 def _load_config() -> tuple[list[str], list[str], dict[str, str]]:
-    """Return (weird_labels, sinic_labels, label_to_lang) from config.yaml."""
+    """Return (weird_labels, sinic_labels, label_to_lang) from config.yaml.
+
+    Each bilingual model (lang='bi' in config) is materialised as TWO
+    separate labels `{label}-EN` and `{label}-ZH`, consistent with the
+    split precomputed embedding folders. The EN-side label joins the
+    weird bucket, the ZH-side label joins the sinic bucket. This lets
+    downstream code treat bilinguals as additional monolingual-like
+    models while retaining their causal-control semantics.
+    """
     with CONFIG_PATH.open(encoding="utf-8") as f:
         raw = yaml.safe_load(f)
     weird = [m["label"] for m in raw.get("weird", [])]
@@ -66,17 +74,32 @@ def _load_config() -> tuple[list[str], list[str], dict[str, str]]:
     for group in ("weird", "sinic"):
         for m in raw.get(group, []):
             label_to_lang[m["label"]] = m["lang"]
+    # Bilingual split: append `{label}-EN` to weird and `{label}-ZH` to sinic.
+    for m in raw.get("bilingual", []):
+        en_label = f"{m['label']}-EN"
+        zh_label = f"{m['label']}-ZH"
+        weird.append(en_label)
+        sinic.append(zh_label)
+        label_to_lang[en_label] = "en"
+        label_to_lang[zh_label] = "zh"
     return weird, sinic, label_to_lang
 
 
 def _load_model_id_map() -> dict[str, str]:
-    """Return {label: hf_model_id} from config.yaml."""
+    """Return {label: hf_model_id} from config.yaml.
+
+    Bilingual models are duplicated under two labels (`{label}-EN` and
+    `{label}-ZH`), both mapping to the same underlying HF id.
+    """
     with CONFIG_PATH.open(encoding="utf-8") as f:
         raw = yaml.safe_load(f)
     mapping: dict[str, str] = {}
     for group in ("weird", "sinic"):
         for m in raw.get(group, []):
             mapping[m["label"]] = m["id"]
+    for m in raw.get("bilingual", []):
+        mapping[f"{m['label']}-EN"] = m["id"]
+        mapping[f"{m['label']}-ZH"] = m["id"]
     return mapping
 
 
