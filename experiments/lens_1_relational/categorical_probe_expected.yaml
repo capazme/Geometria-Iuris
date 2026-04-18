@@ -1,0 +1,280 @@
+# Pre-registration for the §3.1.4 categorical parametric probe.
+#
+# Committed 2026-04-11, *before* the Phase 0 rerun of categorical_probe.py.
+# This file is the canonical source for:
+#   - 11-category ordinal sequences per test (EN + ZH)
+#   - 5 paraphrase templates per test per language
+#   - expected break positions for positive tests
+#
+# Design constraints (set 2026-04-11 by the approved plan):
+#   - Every test uses exactly 11 categories.
+#   - Midpoint gap index for 11-cat sequences is 4 (between elements 4 and 5).
+#   - Positive tests must have their expected legal break at a gap index
+#     whose distance from the midpoint is >= 2, so the PC1 max-gap
+#     heuristic is not confounded with the linguistic midpoint.
+#   - Tests that cannot satisfy the distance->=2 constraint are flagged
+#     `borderline: true` and their interpretation is restricted in the
+#     dashboard.
+#
+# No field in this file may be modified post-hoc. Any amendment must
+# be recorded in lens_1_relational/trace.md as an explicit decision
+# with justification, and the committed diff is the audit trail.
+
+meta:
+  date: "2026-04-11"
+  n_categories_per_test: 11
+  midpoint_gap_index: 4
+  distance_threshold: 2
+  n_paraphrase_templates: 5
+  pre_registered_by: "approved plan 2026-04-11"
+  note: >
+    5 tests x 2 languages x 5 paraphrase templates x 11 categories x
+    6 models ~= 3300 encodings total (many cached from prior runs).
+
+tests:
+
+  test_1_age_imputability:
+    polarity: positive
+    label: "Age and criminal imputability"
+    legal_threshold: "HK Cap. 226 s. 3 — conclusive doli incapax below age 10; rebuttable presumption 10-14"
+    categories_en:
+      - infant
+      - toddler
+      - young child
+      - child
+      - minor
+      - juvenile
+      - teenager
+      - young adult
+      - adult
+      - middle-aged adult
+      - elderly person
+    categories_zh:
+      - 嬰兒
+      - 幼兒
+      - 年幼兒童
+      - 兒童
+      - 未成年人
+      - 少年
+      - 青少年
+      - 青年
+      - 成年人
+      - 中年人
+      - 老年人
+    expected_break_en: [child, minor]
+    expected_break_zh: [兒童, 未成年人]
+    expected_gap_index: 3
+    distance_from_midpoint: 1
+    borderline: true
+    borderline_note: >
+      Expected gap index 3 is only distance 1 from the 11-cat midpoint
+      (gap idx 4). A modal break at gap 3 is consistent with either the
+      doli incapax threshold OR the linguistic midpoint; the probe cannot
+      distinguish these under the PC1 max-gap methodology. This test is
+      kept in the pre-registration for historical continuity with the
+      original §3.1.4 design, but its interpretation in the dashboard is
+      restricted: a gap-3 hit is reported as "doli incapax zone, possibly
+      confounded with linguistic midpoint". Test 3 (contractual capacity)
+      is the primary age-based positive test.
+    templates_en:
+      - "the accused was an {category} when the act was committed"
+      - "an {category} committed the act in question"
+      - "at the time of the offence, the defendant was an {category}"
+      - "the perpetrator, an {category}, carried out the unlawful act"
+      - "the unlawful act was committed by an {category}"
+    templates_zh:
+      - "犯案時，被告人是一名{category}"
+      - "一名{category}實施了該違法行為"
+      - "案發時，被告人為一名{category}"
+      - "行為人是一名{category}"
+      - "該違法行為由一名{category}所實施"
+
+  test_2_magnitude_negative_control:
+    polarity: negative
+    label: "Contract value (negative control)"
+    legal_threshold: null
+    legal_threshold_note: >
+      HK Cap. 219 s. 3 (descendant of Statute of Frauds 1677 s. 4)
+      imposes the writing requirement on contracts for the sale of
+      land regardless of consideration. No monetary threshold exists.
+      The legally correct response is the absence of any structural
+      break aligned with the value sequence.
+    categories_en:
+      - symbolic
+      - nominal
+      - token
+      - small
+      - modest
+      - moderate
+      - substantial
+      - considerable
+      - large
+      - very large
+      - massive
+    categories_zh:
+      - 象徵性
+      - 名義上
+      - 微不足道
+      - 小額
+      - 適度
+      - 中等
+      - 可觀
+      - 相當
+      - 巨大
+      - 極巨
+      - 龐大
+    expected_break_en: []
+    expected_break_zh: []
+    expected_gap_index: -1
+    distance_from_midpoint: null
+    borderline: false
+    templates_en:
+      - "an oral agreement for the sale of land for a {category} consideration was entered into between the parties"
+      - "the parties orally agreed to sell land for a {category} sum"
+      - "an oral land sale contract was concluded for a {category} price"
+      - "the parties entered an oral contract for the sale of land at a {category} consideration"
+      - "an oral land transaction was made for a {category} amount"
+    templates_zh:
+      - "雙方就以{category}代價買賣土地訂立口頭協議"
+      - "雙方以{category}價格口頭約定買賣土地"
+      - "就以{category}金額出售土地，雙方訂立口頭合約"
+      - "當事人以{category}代價口頭達成土地買賣協議"
+      - "土地買賣雙方以{category}價金口頭成交"
+
+  test_3_age_contractual_capacity:
+    polarity: positive
+    label: "Age and contractual capacity"
+    legal_threshold: "HK age of majority at 18 (Cap. 410 s. 2)"
+    categories_en:
+      - infant
+      - toddler
+      - young child
+      - child
+      - minor
+      - juvenile
+      - teenager
+      - young adult
+      - adult
+      - middle-aged adult
+      - elderly person
+    categories_zh:
+      - 嬰兒
+      - 幼兒
+      - 年幼兒童
+      - 兒童
+      - 未成年人
+      - 少年
+      - 青少年
+      - 青年
+      - 成年人
+      - 中年人
+      - 老年人
+    expected_break_en: [teenager, young adult]
+    expected_break_zh: [青少年, 青年]
+    expected_gap_index: 6
+    distance_from_midpoint: 2
+    borderline: false
+    templates_en:
+      - "a contract for the sale of property was entered into by an {category}"
+      - "an {category} signed a contract to purchase real estate"
+      - "a property sale agreement was concluded by an {category}"
+      - "the contract for the sale of real estate was made by an {category}"
+      - "an {category} entered into an agreement to buy property"
+    templates_zh:
+      - "由一名{category}訂立財產買賣合約"
+      - "一名{category}簽訂購買房地產的合約"
+      - "由一名{category}締結財產出售協議"
+      - "房地產買賣合約由一名{category}訂立"
+      - "一名{category}訂立購買財產的協議"
+
+  test_4_offence_severity:
+    polarity: positive
+    label: "Offence severity (summary / indictable divide)"
+    legal_threshold: "HK summary / indictable procedural distinction (Magistrates Ordinance Cap. 227; Criminal Procedure Ordinance Cap. 221)"
+    categories_en:
+      - "a bylaw contravention"
+      - "a regulatory breach"
+      - "a minor infraction"
+      - "a petty offence"
+      - "a minor offence"
+      - "a simple offence"
+      - "a summary offence"
+      - "an indictable offence"
+      - "a serious indictable offence"
+      - "a grave offence"
+      - "the most serious offence"
+    categories_zh:
+      - "違反附例"
+      - "違反規例"
+      - "輕微違法"
+      - "小罪"
+      - "輕罪"
+      - "普通罪行"
+      - "簡易罪行"
+      - "可公訴罪行"
+      - "嚴重可公訴罪行"
+      - "重罪"
+      - "最嚴重罪行"
+    expected_break_en: ["a summary offence", "an indictable offence"]
+    expected_break_zh: ["簡易罪行", "可公訴罪行"]
+    expected_gap_index: 6
+    distance_from_midpoint: 2
+    borderline: false
+    templates_en:
+      - "the defendant was charged with {category}"
+      - "the prosecution involves {category}"
+      - "the case before the court concerns {category}"
+      - "the court convicted the defendant of {category}"
+      - "the accused was found guilty of {category}"
+    templates_zh:
+      - "被告人被控以{category}"
+      - "控方所提出的指控涉及{category}"
+      - "本案涉及{category}"
+      - "法庭裁定被告人犯有{category}"
+      - "被告人被裁定干犯{category}"
+
+  test_5_disposal_severity:
+    polarity: positive
+    label: "Criminal disposal severity (determinate / indeterminate)"
+    legal_threshold: "determinate prison sentence vs indeterminate detention / life imprisonment"
+    categories_en:
+      - "a caution"
+      - "a fine"
+      - "a community service order"
+      - "a probation order"
+      - "a suspended sentence"
+      - "a short custodial sentence"
+      - "a determinate prison sentence"
+      - "a long prison sentence"
+      - "a very long prison sentence"
+      - "an indeterminate detention"
+      - "life imprisonment"
+    categories_zh:
+      - "警告"
+      - "罰款"
+      - "社會服務令"
+      - "感化令"
+      - "緩刑"
+      - "短期監禁"
+      - "一般刑期"
+      - "長期刑期"
+      - "極長期刑期"
+      - "不定期羈留"
+      - "終身監禁"
+    expected_break_en: ["a very long prison sentence", "an indeterminate detention"]
+    expected_break_zh: ["極長期刑期", "不定期羈留"]
+    expected_gap_index: 8
+    distance_from_midpoint: 4
+    borderline: false
+    templates_en:
+      - "the court sentenced the defendant to {category}"
+      - "the defendant received {category}"
+      - "the offender was given {category}"
+      - "the judge handed down {category}"
+      - "{category} was imposed on the defendant"
+    templates_zh:
+      - "法庭判處被告人{category}"
+      - "被告人獲判{category}"
+      - "犯罪者被判{category}"
+      - "法官對被告人判處{category}"
+      - "被告人被處以{category}"

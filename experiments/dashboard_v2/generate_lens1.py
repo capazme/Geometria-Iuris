@@ -778,7 +778,7 @@ def section_rsa(section_314, null_distributions):
     )
 
     return (
-        ui.section_open("314", "§3.1.4 — Representational Similarity Analysis")
+        ui.section_open("313", "§3.1.3 — Representational Similarity Analysis across model pairs")
         + '<p>È il cuore di Lens I. Due modelli diversi producono vettori di dimensione diversa: non si possono confrontare direttamente termine per termine, perché abitano spazi incommensurabili. La Representational Similarity Analysis aggira il problema spostando il confronto a un livello superiore: non si confrontano i vettori, si confrontano le <em>mappe di vicinanze</em> che i modelli costruiscono fra gli stessi termini. Due modelli "concordano" se, pur vivendo in spazi diversi, ordinano le 61&thinsp;075 coppie di termini dalla più vicina alla più lontana nello stesso modo.</p>'
         + '<p>In pratica: per ogni coppia di modelli (A, B) si prendono le rispettive '
         + ui.metric_chip("g-rdm", "RDM") + ' (la tabella delle distanze fra tutti i termini in ciascuna mappa) e si calcola la '
@@ -787,12 +787,12 @@ def section_rsa(section_314, null_distributions):
         + ui.metric_chip("g-boot", "intervallo di confidenza bootstrap") + ' al 95%.</p>'
 
         + '<h3>Forest plot delle 17 correlazioni</h3>'
-        + ui.plotly_embed(forest, "fig-314-forest", 560)
+        + ui.plotly_embed(forest, "fig-313-forest", 560)
         + ui.plot_caption("Ogni punto è la ρ osservata fra i due modelli della coppia; la barra orizzontale è l\'intervallo di confidenza al 95% calcolato con block bootstrap a livello di termine. Il colore codifica la categoria della coppia. Passando il cursore sopra ciascun punto compare la p-value corretta per confronti multipli (Holm).")
 
         + '<h3>Come si decide se ρ è "reale" o potrebbe essere casuale (test di Mantel)</h3>'
         + '<p>Data una ρ osservata, ad esempio ρ = 0.2, come si stabilisce se quel valore è una proprietà effettiva delle due mappe o se potrebbe emergere per caso? La procedura (Mantel 1967) è la seguente: si conservano intatte le due RDM ma, in una delle due, si permutano casualmente le etichette dei 350 termini; si ricalcola ρ su questa versione scompaginata; si ripete l\'operazione 1000 volte. Si ottiene così una distribuzione di riferimento delle ρ compatibili con l\'ipotesi di assenza di relazione. La p-value è la frazione di ρ permutate che risultano uguali o superiori alla ρ osservata. Il menù a tendina in alto consente di selezionare qualunque delle 17 coppie: l\'istogramma mostra le 1000 ρ permutate, la linea verticale segna la ρ osservata di quella specifica coppia.</p>'
-        + ui.plotly_embed(null_fig, "fig-314-null", 440)
+        + ui.plotly_embed(null_fig, "fig-313-null", 440)
         + ui.plot_caption(f"Coppia di default all\'apertura: {default_summary['pair'][0]} × {default_summary['pair'][1]} ({default_summary['group']}); ρ osservata = {default_summary['rho']:+.3f}; p = (1 + numero di ρ permutate ≥ ρ osservata) / (1 + B) = {default_summary['p']:.3g}. La stessa procedura è stata applicata a tutte le 17 coppie: in tutte la p risulta ≤ 0.001, soglia minima raggiungibile con B = 1000 permutazioni. Dropdown in alto a sinistra per ispezionare le altre coppie.")
 
         + '<h3>Come si quantifica l\'incertezza di ρ (block bootstrap a livello di termine)</h3>'
@@ -940,7 +940,7 @@ def section_categorical_probe(probe):
         details_blocks.append(_probe_test_details_html(t_key, tests[t_key], label, polarity))
 
     return (
-        ui.section_open("315", "§3.1.5 — Sonda categoriale parametrica")
+        ui.section_open("314", "§3.1.4 — Parametric categorical probes")
         + '<p>Una sonda parametrica pre-registrata è un esperimento congegnato in due momenti distinti. Prima di guardare i dati si fissano, per iscritto: (i) una scala di 11 categorie ordinate con un significato giuridico chiaro (ad esempio 11 reati in ordine crescente di gravità, oppure 11 età in anni); (ii) un asse di proiezione, costruito con una famiglia di 5 frasi modello in cui la categoria compare in una posizione sintattica fissa ("X è punito con..."); (iii) un confine giuridicamente rilevante nella scala (ad esempio la soglia fra summary e indictable, o l\'età di 10 o 18 anni). Solo dopo si interroga il modello e si verifica se, proiettando le 11 categorie sull\'asse, il "salto" maggiore fra categorie consecutive cade proprio al confine pre-registrato.</p>'
         + '<p>Le grandezze calcolate sono:</p>'
         + '<ul>'
@@ -951,7 +951,7 @@ def section_categorical_probe(probe):
         + '<p>Il test 2 (ordine di grandezza di cifre in denaro) è un <em>controllo negativo</em>: non è un asse giuridicamente pre-registrato e non dovrebbe produrre ρ elevate. Serve da soglia di riferimento: se anche in un test senza struttura giuridica pre-registrata emergessero ρ alte, il paradigma sarebbe sospetto.</p>'
 
         + '<h3>Risultati per test e per modello</h3>'
-        + ui.plotly_embed(fig, "fig-315-forest", 340)
+        + ui.plotly_embed(fig, "fig-314-forest", 340)
         + ui.plot_caption("Ogni punto è la ρ ensemble di un singolo modello per un singolo test; il colore distingue il gruppo del modello (blu WEIRD, rosso Sinic, verde bilingue). Valori più prossimi a 1 significano che l\'ordine sulla proiezione riproduce l\'ordine giuridico pre-registrato; valori prossimi a 0 significano assenza di corrispondenza. I modelli bilingui sono rappresentati dalle loro due incarnazioni linguistiche: BGE-M3-EN codifica i template inglesi, BGE-M3-ZH i template cinesi, e analogamente per Qwen3-0.6B.")
 
         + '<h3>Aggregato per test</h3>'
@@ -1010,7 +1010,7 @@ def section_footer_page():
 
 def build():
     results, probe, per_model_signal, legal_vs_control, null_distributions, _ = load_all()
-    title = "Geometria Iuris · Lens I — struttura relazionale"
+    title = "Geometria Iuris · §3.1 — Representational similarity of legal lexicons"
     subtitle = "RSA sui 350 termini del HK DoJ Glossary · encoder bare · " + results["meta"]["date"][:10]
 
     nav_items = [
@@ -1018,8 +1018,8 @@ def build():
         ("#pipeline",  "Pipeline"),
         ("#311",       "§3.1.1 segnale"),
         ("#312",       "§3.1.2 topologia"),
-        ("#314",       "§3.1.4 RSA"),
-        ("#315",       "§3.1.5 sonda"),
+        ("#313",       "§3.1.3 RSA"),
+        ("#314",       "§3.1.4 sonda"),
         ("#tecnica",   "Tecnica"),
         ("#glossary",  "Glossario"),
     ]

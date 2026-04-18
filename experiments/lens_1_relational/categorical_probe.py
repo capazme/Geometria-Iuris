@@ -1,7 +1,7 @@
 """
-Lens I §3.1.5 — Categorical parametric probe (pre-registered rebuild).
+Lens I §3.1.4 — Categorical parametric probe (pre-registered rebuild).
 
-This is the Phase 0 rebuild of the original §3.1.5 categorical probe,
+This is the Phase 0 rebuild of the original §3.1.4 categorical probe,
 redesigned in response to the 2026-04-11 adversarial review which
 identified two structural defects in the earlier version:
 
@@ -295,7 +295,7 @@ def main() -> None:
     report = {
         "meta": {
             "module": "lens_1_relational/categorical_probe.py",
-            "thesis_section": "§3.1.5 — Parametric validation (pre-registered rebuild)",
+            "thesis_section": "§3.1.4 — Parametric validation (pre-registered rebuild)",
             "date": datetime.now().isoformat(timespec="seconds"),
             "weird_models": [m[1] for m in WEIRD_MODELS],
             "sinic_models": [m[1] for m in SINIC_MODELS],
@@ -427,7 +427,7 @@ def _render_html(report: dict) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "categorical_probe.html"
 
-    head = page_head("§3.1.5 — Parametric probe (pre-registered)")
+    head = page_head("§3.1.4 — Parametric probe (pre-registered)")
 
     test_cards = []
     for tid, t in report["tests"].items():
@@ -543,7 +543,7 @@ def _render_html(report: dict) -> None:
     pre_meta = meta.get("pre_registration_meta", {})
 
     body = f"""<body>
-<h1>§3.1.5 &mdash; Parametric validation of the §3.1 instrument</h1>
+<h1>§3.1.4 &mdash; Parametric validation of the §3.1 instrument</h1>
 <p class="subtitle">Pre-registered categorical probe. Five tests, each
 using 11 ordinal categories, encoded through 5 paraphrase templates per
 language on the 3+3 model design. Expected break positions are pre-registered

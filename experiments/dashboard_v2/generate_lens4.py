@@ -512,7 +512,7 @@ def section_pipeline():
 
 
 def section_axes_construction(axes_yaml, section_331):
-    parts = [ui.section_open("331", "§3.3.1 — Sei assi, 120 coppie di poli")]
+    parts = [ui.section_open("321", "§3.2.1 — Axis construction from pole pairs")]
     parts.append('<p>Questa sezione mostra la costruzione materiale degli assi: per ciascuna delle sei antitesi concettuali sono elencate le dieci coppie di poli in inglese (usate dai tre modelli WEIRD) e le dieci coppie di poli in cinese (usate dai tre modelli Sinic). Accanto si riporta un controllo di coerenza, il <em>sanity check</em>: si costruisce il vettore-asse usando solo nove delle dieci coppie (leave-one-out) e si verifica che la decima coppia, esclusa dal calcolo, sia correttamente orientata rispetto al vettore risultante. Poiché ciascuna coppia ha un polo positivo e uno negativo, e si lasciano fuori a turno tutte e dieci, per asse si collezionano 20 verifiche: dieci sui poli positivi e dieci sui poli negativi.</p>')
 
     for axis in AXES_ORDER:
@@ -550,7 +550,7 @@ def section_axes_construction(axes_yaml, section_331):
         ))
 
     parts.append('<h3>Heatmap sanity-pass per modello × asse</h3>')
-    parts.append(ui.plotly_embed(fig_sanity_heatmap(section_331), "fig-331-sanity", 380))
+    parts.append(ui.plotly_embed(fig_sanity_heatmap(section_331), "fig-321-sanity", 380))
     parts.append(ui.plot_caption(
         "Ogni cella riporta il rapporto <em>pass / totale</em>: il totale è 20 (dieci poli positivi più dieci poli negativi), "
         "il numeratore il numero di poli che, quando la loro coppia viene esclusa dal calcolo del vettore-asse, risultano "
@@ -564,7 +564,7 @@ def section_axes_construction(axes_yaml, section_331):
 def section_orthogonality(section_331):
     fig = fig_orthogonality(section_331)
     return (
-        ui.section_open("331b", "§3.3.1b — Ortogonalità inter-asse")
+        ui.section_open("322", "§3.2.2 — Inter-axis cosine similarity")
         + '<p>Le sei antitesi sono state scelte a priori dal ricercatore come direzioni teoricamente distinte. '
         + 'Ma nulla garantisce, a costruzione avvenuta, che siano anche direzioni <em>materialmente</em> distinte '
         + 'nello spazio di un modello: due assi diversi sul piano concettuale potrebbero, nella geometria interna di un encoder, '
@@ -575,7 +575,7 @@ def section_orthogonality(section_331):
         + 'un coseno prossimo a +1 che i due assi puntano nella stessa direzione (i due nomi, in quel modello, coprono la stessa geometria); '
         + 'un coseno prossimo a −1 che puntano in direzioni opposte. Il valore conta per la leggibilità dei risultati nelle sezioni successive: '
         + 'correlazioni calcolate su assi fortemente sovrapposti andrebbero lette con cautela, perché riproducono lo stesso segnale sotto etichette diverse.</p>'
-        + ui.plotly_embed(fig, "fig-331b-ortho", 480)
+        + ui.plotly_embed(fig, "fig-322-ortho", 480)
         + ui.plot_caption("Il menù a tendina in alto a sinistra seleziona il modello. I valori in cella sono i coseni grezzi fra vettori-asse, "
                           "in \\([-1,+1]\\). La diagonale è fissa a 1 per costruzione.")
         + ui.section_close()
@@ -602,7 +602,7 @@ def section_alignment(section_332):
         col_classes=["", "num", "num", "num strong", "num", "num"],
     )
     return (
-        ui.section_open("332", "§3.3.2 — Allineamento cross-linguistico")
+        ui.section_open("323", "§3.2.3 — Cross-linguistic alignment of per-term projections")
         + '<p>È il cuore di Lens IV. Per ogni asse si dispone, per ciascun modello, di una lista ordinata di 350 termini dal punteggio più negativo al più positivo. '
         + 'La domanda è: quanto due modelli ordinano i termini nello stesso modo lungo lo stesso asse? '
         + 'Per rispondere si prendono a due a due tutti i modelli (45 coppie complessive con dieci modelli) e per ciascuna coppia si calcola la '
@@ -613,7 +613,7 @@ def section_alignment(section_332):
         + '23 cross-tradizione (combinazioni EN × ZH di modelli diversi), e 2 coppie di controllo bilingue (BGE-M3-EN × BGE-M3-ZH e Qwen3-0.6B-EN × Qwen3-0.6B-ZH), '
         + 'in cui lo stesso modello codifica entrambe le lingue ed è quindi un controllo architetturale.</p>'
         + '<h3>Forest plot per asse (2×3)</h3>'
-        + ui.plotly_embed(forest, "fig-332-forest", 860)
+        + ui.plotly_embed(forest, "fig-323-forest", 860)
         + ui.plot_caption("Ogni punto è la ρ osservata per la coppia di modelli indicata; la barra orizzontale è l\'intervallo di confidenza al 95% "
                           "calcolato con bootstrap a livello di termine (10&thinsp;000 ricampionamenti dei 350 termini). "
                           "Colori: blu = intra-WEIRD, vermiglio = intra-Sinic, verde = intra-bilingue (controllo β), bronzo = cross-tradizione. "
@@ -636,15 +636,15 @@ def section_alignment(section_332):
 def section_ranking(section_332):
     fig, _ = fig_ranking_bar(section_332["summary_per_axis"])
     return (
-        ui.section_open("333", "§3.3.3 — Gerarchia di divergenza")
+        ui.section_open("324", "§3.2.4 — Aggregate ranking of axes by mean cross ρ")
         + '<p>Questa sezione riordina i sei assi secondo un solo numero: la ρ̄ cross, cioè la media delle 9 correlazioni '
-        + 'cross-tradizione dell\'asse, già riportata in §3.3.2. Gli assi sono disposti dall\'alto in basso per ρ̄ cross crescente: '
+        + 'cross-tradizione dell\'asse, già riportata in §3.2.3. Gli assi sono disposti dall\'alto in basso per ρ̄ cross crescente: '
         + 'in alto compaiono gli assi su cui la concordanza media fra modelli WEIRD e Sinic è più bassa (ρ̄ cross vicino a zero), '
         + 'in basso gli assi su cui la concordanza media è più alta. La quantità descritta è il grado di accordo fra modelli secondo questa misura, '
         + 'non il "peso culturale" dell\'asse: la gerarchia dice quale asse presenta il disaccordo maggiore fra le due tradizioni di modelli lungo la scala ρ̄ cross, senza attribuzioni di causa.</p>'
         + '<p>Il diamante blu sovrapposto a ciascuna barra indica, per riferimento, la ρ̄ within dello stesso asse (media delle 6 correlazioni intra-gruppo). '
-        + 'La distanza orizzontale fra barra e diamante è il Δ = within − cross della tabella di §3.3.2.</p>'
-        + ui.plotly_embed(fig, "fig-333-bar", 380)
+        + 'La distanza orizzontale fra barra e diamante è il Δ = within − cross della tabella di §3.2.3.</p>'
+        + ui.plotly_embed(fig, "fig-324-bar", 380)
         + ui.plot_caption("Barra bronzo: ρ̄ cross (media delle 9 correlazioni cross-tradizione). Diamante blu: ρ̄ within (media delle 6 correlazioni intra-gruppo). "
                           "Una linea verticale marca lo zero sull\'asse x.")
         + ui.section_close()
@@ -654,8 +654,8 @@ def section_ranking(section_332):
 def section_divergent(scores, terms):
     fig = fig_divergent_dumbbell(scores, terms, n_top=18)
     return (
-        ui.section_open("334", "§3.3.4 — Termini più divergenti per asse")
-        + '<p>Mentre §3.3.2 e §3.3.3 aggregano su tutti i 350 termini, questa sezione scende al singolo termine. '
+        ui.section_open("325", "§3.2.5 — Term-level cross-linguistic differences")
+        + '<p>Mentre §3.2.3 e §3.2.4 aggregano su tutti i 350 termini, questa sezione scende al singolo termine. '
         + 'Procedura: fissato un asse, per ciascun termine si calcola la media dei punteggi che i cinque modelli del lato EN '
         + '(tre monolinguali inglesi più due bilingui BGE-M3-EN e Qwen3-0.6B-EN) gli hanno assegnato lungo quell\'asse (W̄), '
         + 'e la media dei punteggi che i cinque modelli del lato ZH (tre monolinguali cinesi più BGE-M3-ZH e Qwen3-0.6B-ZH) gli hanno assegnato (S̄). '
@@ -664,7 +664,7 @@ def section_divergent(scores, terms):
         + 'uno per W̄ (cerchio blu) e uno per S̄ (quadrato vermiglio), uniti da un filo. La descrizione è puramente meccanica: '
         + 'si elencano i termini su cui i due gruppi di modelli, in media, dissentono di più secondo questa misura, senza interpretazione giuridica '
         + 'del motivo del dissenso.</p>'
-        + ui.plotly_embed(fig, "fig-334-dumbbell", 620)
+        + ui.plotly_embed(fig, "fig-325-dumbbell", 620)
         + ui.plot_caption("Il menù a tendina in alto seleziona l\'asse. La scala x è centrata a zero: valori positivi indicano tendenza "
                           "verso il polo positivo (la prima parola del nome dell\'asse, es. <em>individual</em> in <em>individual ↔ collective</em>), "
                           "valori negativi verso il polo negativo. La lunghezza del filo fra i due punti è |W̄ − S̄|.")
@@ -717,17 +717,17 @@ def section_footer_page():
 
 def build():
     results, axes_yaml, scores = load_all()
-    title = "Geometria Iuris · Lens IV — proiezione su assi di valori"
+    title = "Geometria Iuris · §3.2 — Kozlowski value-axis projection"
     subtitle = "Kozlowski axes · 6 assi × 10 coppie × 2 lingue · encoder bare · " + results["meta"]["date"][:10]
 
     nav_items = [
         ("#domanda",   "Domanda"),
         ("#pipeline",  "Pipeline"),
-        ("#331",       "§3.3.1 assi"),
-        ("#331b",      "§3.3.1b ortogonalità"),
-        ("#332",       "§3.3.2 forest"),
-        ("#333",       "§3.3.3 gerarchia"),
-        ("#334",       "§3.3.4 divergenti"),
+        ("#321",       "§3.2.1 assi"),
+        ("#322",       "§3.2.2 ortogonalità"),
+        ("#323",       "§3.2.3 forest"),
+        ("#324",       "§3.2.4 gerarchia"),
+        ("#325",       "§3.2.5 divergenti"),
         ("#tecnica",   "Tecnica"),
         ("#glossary",  "Glossario"),
     ]

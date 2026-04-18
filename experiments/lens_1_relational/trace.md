@@ -20,8 +20,8 @@ the second-order isomorphism concept introduced in §1.4.
 | Intra vs inter-domain distances | §3.1.1 | core (397) | Mann-Whitney U |
 | Legal vs control signal | §3.1.1 | core (397) + control (100) | Mann-Whitney U |
 | Domain topology K×K | §3.1.2 | core (397) | inter-domain distance matrix |
-| Within-WEIRD RSA robustness | §3.1.4 | core (397) | RSA + Mantel + block bootstrap |
-| Cross-tradition RSA | §3.1.4 | core (397) | RSA + Mantel + block bootstrap |
+| Within-WEIRD RSA robustness | §3.1.3 | core (397) | RSA + Mantel + block bootstrap |
+| Cross-tradition RSA | §3.1.3 | core (397) | RSA + Mantel + block bootstrap |
 
 ---
 
@@ -203,7 +203,7 @@ practice, all 15 uncorrected p-values are at the permutation floor
 (≤ 0.001), so all remain significant after correction. The correction is
 applied for methodological completeness.
 
-**Thesis text implication**: → §3.1.4 "P-values are corrected for multiple
+**Thesis text implication**: → §3.1.3 "P-values are corrected for multiple
 comparisons using the Holm-Bonferroni procedure across all 15 model pairs.
 All corrected p-values remain below 0.015."
 
@@ -222,12 +222,12 @@ p-value is ever exactly zero) and is the standard cited in the literature.
 
 ---
 
-### D8 — Parametric stress test for §3.1.5
+### D8 — Parametric stress test for §3.1.4
 **Date**: 2026-04-11
 **Status**: decided
 
 **Context**: Lens I's existing analyses (§3.1.1 domain signal, §3.1.2
-topology, §3.1.4 cross-tradition RSA) measure whether the embedding geometry
+topology, §3.1.3 cross-tradition RSA) measure whether the embedding geometry
 reflects the taxonomic and cross-tradition organisation of the legal lexicon.
 They do not, however, test a more elementary property of a measurement
 instrument: *does the instrument respond monotonically and with recognisable
@@ -267,10 +267,10 @@ legal system itself.
   relator criticised; reframes a validation check as a full experiment,
   inflating the apparent dispersion of the thesis.
 
-- **Option D2 — Sub-section §3.1.5 under Lens I** ("Parametric validation:
+- **Option D2 — Sub-section §3.1.4 under Lens I** ("Parametric validation:
   thresholds and monotonic gradients"). The stress test lives inside Lens I
   as its fifth sub-section, following §3.1.1 (domain signal), §3.1.2
-  (topology), §3.1.3 (stratigraphy), §3.1.4 (cross-tradition RSA). No new
+  (topology), §3.1.3 (stratigraphy), §3.1.3 (cross-tradition RSA). No new
   lens; no new trace file; the sub-section is described as a *validation*
   of the instrument, not as an independent experiment. Pro: respects the
   co-relator's "fewer experiments, deeper validation" feedback; structurally,
@@ -282,9 +282,9 @@ legal system itself.
   Contro: §3.1 grows by one sub-section, slightly heavier; the sub-section
   must not expand beyond ~3–4 pages to preserve proportion.
 
-**Decision**: **Option D2** — sub-section §3.1.5 within Lens I.
+**Decision**: **Option D2** — sub-section §3.1.4 within Lens I.
 
-**Scope specification for §3.1.5**: the sub-section contains two parametric
+**Scope specification for §3.1.4**: the sub-section contains two parametric
 tests, not more. Both are chosen to exhibit discontinuities at known legal
 thresholds, and both are reported on both the WEIRD and Sinic model sides
 to preserve the cross-tradition structure of the chapter.
@@ -453,21 +453,21 @@ for 'strong evidence' (commonly ΔBIC > 10)".
 
 **Thesis text implication**:
 
-→ §3.1.5 [new sub-section]: "Parametric validation: thresholds and
+→ §3.1.4 [new sub-section]: "Parametric validation: thresholds and
 monotonic gradients". Structure: (1) motivation (following Sofroniew et al.
 2026, parametric stress tests are a direct check on the instrument's
 sensitivity to meaning rather than form); (2) positive test (age and
 imputability); (3) negative control (contract value, where no threshold
 exists); (4) results figure (PC1 vs parameter, with discontinuities
 highlighted); (5) brief interpretation (what the test confirms about the
-instrument established in §3.1.1–§3.1.4); (6) limits (this is validation
+instrument established in §3.1.1–§3.1.3); (6) limits (this is validation
 at a single point, not generalisation to all thresholds in HK law).
 
 → §3.1 as a whole: gains a validation sub-section that closes the
 interpretive loop. The preceding sub-sections establish that the embedding
-geometry reflects domain, topology, and cross-tradition structure; §3.1.5
+geometry reflects domain, topology, and cross-tradition structure; §3.1.4
 establishes that it also responds correctly to parametric variation over
-a legally specified quantity. The RSA result of §3.1.4 acquires a new
+a legally specified quantity. The RSA result of §3.1.3 acquires a new
 independent support: if the instrument produces the correlation drop *and*
 detects the imputability threshold in HK law *and* correctly refrains from
 inventing a threshold in the negative control, the three results together
@@ -484,7 +484,7 @@ reflection of legal-semantic structure). The counter to this scepticism
 is strengthened by the parametric test because training-corpus artefacts
 do not, in general, reproduce statutory thresholds.
 
-→ **Addressing the co-relator's feedback directly**: §3.1.5 is the
+→ **Addressing the co-relator's feedback directly**: §3.1.4 is the
 sub-section specifically designed as a rebuttal to the "too many experiments,
 few concrete results" critique. It produces a visible, legally recognisable,
 quantitatively verifiable result (the imputability threshold appears in the
@@ -532,7 +532,7 @@ conservatively as not reliably numerical.
 as the primary procedure**. The categorical fallback specified above (Test
 1-cat with eleven age categories from "infant" to "elderly"; Test 2-cat
 with five magnitude categories from "nominal" to "very large") becomes the
-**primary form** of the §3.1.5 parametric stress test, run on all six
+**primary form** of the §3.1.4 parametric stress test, run on all six
 models uniformly.
 
 The numerical sweep is retained as a per-model **secondary check**: it is
@@ -548,7 +548,7 @@ the same EmbeddingClient and the same RDM utilities from
 `shared/statistical.py`. Per-model results are written to
 `lens_1_relational/results/categorical_probe.json`.
 
-**Thesis text implication update**: §3.1.5 is written around the
+**Thesis text implication update**: §3.1.4 is written around the
 categorical results as the headline. The numerical sweep, with its
 per-model failures, is moved to the Appendix and recast as evidence about
 the **numeracy limitations of contrastively-trained sentence encoders** in
@@ -566,7 +566,7 @@ and `experiments/pre_checks/results/precheck_results.md`, section
 **Status**: pre-registered, rebuilt, and run
 
 The 2026-04-11 adversarial review of the first implementation of the
-§3.1.5 categorical probe identified two structural defects that
+§3.1.4 categorical probe identified two structural defects that
 invalidated its original results:
 
 1. **Midpoint artefact on 6-category tests**. Tests 4 (offence
@@ -658,9 +658,9 @@ HK criminal procedure, is not the dominant geometric feature of the
 offence severity cloud. The dominant feature is the "not really
 criminal" vs "criminal" transition at the bottom of the scale.
 
-**Lessons for §3.1.5 in the thesis text**:
+**Lessons for §3.1.4 in the thesis text**:
 
-The §3.1.5 section should:
+The §3.1.4 section should:
 - report Test 5 as the clean positive validation of the probe
   methodology (4/6 exact hits, off-midpoint, determinate vs
   indeterminate)
@@ -689,7 +689,7 @@ The §3.1.5 section should:
 - `experiments/lens_1_relational/results/figures/html/categorical_probe.html`
   (descriptive; no interpretive "perfect validation" language)
 
-The dashboard surface for §3.1.5 is the new `sec_3_1.html` section
+The dashboard surface for §3.1.4 is the new `sec_3_1.html` section
 page (Phase 1) and the `#parametric-probe` tab of the regenerated
 `lens1_interactive.html` (Phase 2).
 
@@ -707,7 +707,7 @@ The sweep reuses the per-layer pooled-vector cache produced by Lens III
 aggregate scalars at six fractional depths per model: embedding, L/4,
 L/2, 2L/3, 5L/6, L. No new encodings are required.
 
-**Two definitions of Δρ**. The published §3.1.4 pipeline
+**Two definitions of Δρ**. The published §3.1.3 pipeline
 (`lens1.py:401`) uses an **asymmetric** definition:
 `Δρ_asym = within_WEIRD − cross`, which ignores the within-Sinic
 baseline entirely. This was the definition I originally used in this
@@ -738,7 +738,7 @@ for any robustness claim.
 ¹ CLS-pooled Sinic models give constant layer-0 output; within-Sinic
 is undefined at the embedding layer.
 
-The final-layer row reproduces the published §3.1.4 numbers
+The final-layer row reproduces the published §3.1.3 numbers
 (0.509 / 0.463 / 0.249 / 0.260) **exactly**, which is a clean sanity
 check on the pipeline: the layer sweep is recomputing the same
 quantities as the published pipeline.
@@ -774,13 +774,13 @@ The ctx-pool Δρ_sym at the final layer (0.281) is larger than the
 bare-pool Δρ_sym at 5L/6 (0.346 was the peak, 0.237 at final). The
 two robustness checks (layer sweep + contextualisation) are
 consistent with each other: the cross-tradition gap documented by
-§3.1.4 is robust across layer depth (symmetric definition) and
+§3.1.3 is robust across layer depth (symmetric definition) and
 across representation choice, and is slightly larger under the
 cleaner contextualised representation.
 
 **Implications for the thesis**:
 
-→ §3.1.4 reports the bare-pool final-layer numbers
+→ §3.1.3 reports the bare-pool final-layer numbers
 (0.509 / 0.463 / 0.249, Δρ_sym 0.237) as the headline. Both the
 layer sweep (Δρ_sym peak 0.346 at 5L/6) and the ctx-pool run
 (Δρ_sym 0.281) are reported as robustness checks in a "Robustness
@@ -852,7 +852,7 @@ that may include cross-lingual alignment objectives; their ρ̄ is an upper
 bound on "what a shared architecture can recover", not a clean isolation of
 linguistic vs legal divergence.
 
-**Thesis text implication**: → §3.1.4 gains a "causal control" subsection.
+**Thesis text implication**: → §3.1.3 gains a "causal control" subsection.
 The bilingual result converts the cross-tradition drop from an observation
 into a controlled finding. The gap cannot be dismissed as an artifact.
 
@@ -873,7 +873,7 @@ section-level bilingual text from actual ordinances. Up to 8 attested
 contexts per term per language, mean-aggregated identically to the
 synthetic pipeline.
 
-**Results** (bare → attested comparison on §3.1.4 RSA):
+**Results** (bare → attested comparison on §3.1.3 RSA):
 
 | Category | Bare ρ̄ | Attested ρ̄ | Δρ |
 |---|---|---|---|
@@ -901,7 +901,7 @@ Ch.1 §1.3.
 ## Open questions
 
 - Sensitivity check su k=5 e k=9: pianificato come robustezza in §2.4
-- Concordanza tra i 3 modelli WEIRD sull'assegnamento: da includere in §3.1.4
+- Concordanza tra i 3 modelli WEIRD sull'assegnamento: da includere in §3.1.3
 
 ---
 
@@ -962,9 +962,9 @@ pre-rebalance dataset; it is not claimed as a result of the v2 analysis.
 **Remaining Lens I scope (post-pivot)**:
 - §3.1.1 Domain signal (D1-D7, D_BG1-D_BG2)
 - §3.1.2 Domain topology
-- §3.1.4 Cross-tradition RSA (D1-D7) with β bilingual control (D10)
+- §3.1.3 Cross-tradition RSA (D1-D7) with β bilingual control (D10)
   and δ attested-context robustness (D11) as headline
-- §3.1.5 Parametric categorical probe (D8 revised)
+- §3.1.4 Parametric categorical probe (D8 revised)
 
 **Thesis text implication**: → §3.1 loses its planned layer-sweep
 paragraph. The cross-tradition gap is defended against the "encoder

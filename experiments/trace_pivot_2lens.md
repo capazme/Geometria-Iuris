@@ -140,16 +140,16 @@ Phase 2 additions from "robustness sub-section" to "headline result".
    by Lens I at runtime — or copied into `lens_1_relational/` for
    self-containment. Recommend **copy** to make Lens I self-contained.
 
-2. **Keep §3.1.5 parametric categorical probe** as is. The D8/D8-update
+2. **Keep §3.1.4 parametric categorical probe** as is. The D8/D8-update
    design (11-category sequences, pre-registered expected positions,
    Test 5 determinate/indeterminate as clean positive, Test 4 as
    honest negative) is well-documented and satisfies the transparency
    criterion (all category sequences pre-registered in YAML before the
-   rerun). This is the single §3.1.5 sub-section that directly
+   rerun). This is the single §3.1.4 sub-section that directly
    answers the co-relatore's "concrete result" request inside Lens I.
 
 3. **Promote D10 (bilingual control) and D11 (attested contexts) to
-   headline**: rewrite §3.1.4 so the primary reported number is the
+   headline**: rewrite §3.1.3 so the primary reported number is the
    cross-tradition drop *under the bilingual control* (the causal
    control), with the monolingual result and the attested-vs-bare
    contrast reported as layered evidence. The current text treats
@@ -471,8 +471,8 @@ The new generators consume the same JSONs produced by `lens1.py` and
 `lens4.py`; no re-computation is triggered. The `distributions/` npz
 archive (null + bootstrap per pair) and `scores/` npy folder
 (projection per model × axis) were already present from previous
-runs and feed the Mantel null panel (Lens I §3.1.4) and the divergent
-terms dumbbell (Lens IV §3.3.4) respectively.
+runs and feed the Mantel null panel (Lens I §3.1.3) and the divergent
+terms dumbbell (Lens IV §3.2.5) respectively.
 
 **Non-interpretive discipline**: every Plotly figure is wrapped in
 prose that describes *what is computed*, never *what the number means*.
@@ -485,7 +485,7 @@ control, domain topology) was only computed for the three WEIRD
 models; the Lens I dashboard discloses this explicitly rather than
 silently dropping the Sinic side.
 
-**Thesis text implication**: → §3.1 and §3.3 can now cite the
+**Thesis text implication**: → §3.1 and §3.2 can now cite the
 dashboard as a one-click appendix in which each measurement is
 separated from each interpretation. Ch. 4 (Quod numeri tacent) will
 carry the interpretive weight; the dashboards carry only the
@@ -589,7 +589,7 @@ only remaining scope limitation on the bare-encoder dashboards is the
 attested-context extension itself (out of scope for Phase 2), which is
 documented in a single disclaimer at the top of each page.
 
-**Thesis text implication**: → §3.1 and §3.3 can now cite the
+**Thesis text implication**: → §3.1 and §3.2 can now cite the
 dashboards as an appendix that covers the full 10-model panel under
 the bare encoder, with no model-group asymmetries. Every number in
 the pages is reproducible from a `python -m ...` command in the
@@ -600,6 +600,114 @@ single source of truth for the landing-page 3D projection.
 for 10 models); `lens1.html` 20.7 MB (raw distance distributions
 embedded per user request); `lens4.html` 160 KB. Combined zip ≈ 5.5 MB,
 still well within email-attachment tolerance.
+
+---
+
+## D9 — Chapter 3 index revision (2026-04-18)
+
+After the D1 pivot and the D8 completeness pass, the canonical Ch. 3
+index in `documenti/003_GeometriaIuris_Indice.docx` no longer matched
+what the experiments actually produce:
+
+- §3.1.3 "The depth of legal meaning" (layer stratigraphy) points to
+  Lens III, archived by D2.
+- §3.1.5 is absent from the index but the parametric categorical
+  probe (Phase 0 rebuild, post adversarial review) has been running
+  in production as "§3.1.5" for months.
+- §3.2 "Semantic neighborhoods" points to Lens V, archived by D2.
+  No experiment remains to fill it.
+- §3.3 "Value dimensions" has 3 sub-sections in the index but the
+  Lens IV pipeline produces 5 measurement sections (axis construction,
+  inter-axis orthogonality, cross-linguistic alignment, ranking,
+  term-level divergence).
+- The chapter title "Three experiments" predates the pivot.
+
+**Options considered**:
+
+- Option A — keep the old numbering with holes (§3.1.3, §3.2 empty;
+  §3.1.5 dangling; §3.3 with undocumented sub-sections). *Contro*:
+  a reader of the index sees gaps they cannot resolve without the
+  pivot traces; the index stops being a useful navigation device.
+- Option B — renumber contiguously so the index matches the experiments
+  one-to-one with no holes. *Pro*: the index becomes an honest table of
+  contents that the co-relatore can read without supplementary context.
+  *Contro*: every trace and code file that cites §X.Y needs a mechanical
+  sweep.
+
+**Decision**: **Option B**.
+
+**Rationale**: the thesis is under external review. An index with
+"archived per D2" holes is a footnote that neither the relatore nor
+the co-relatore will read in time. A clean, contiguous index that
+mirrors what lives in `experiments/` is easier to read and
+defensible on its own terms. The narrative cost of the renumber
+(one sentence in the pivot trace) is lower than the readability cost
+of the holes. Also: the chapter is technique-only (interpretation
+goes to Ch. 4 per the existing title "Quod numeri tacent"), so the
+sub-section titles can be chosen to describe *what is computed*, not
+*what is found* — removing an entire class of framing debates.
+
+**New Chapter 3 structure**:
+
+```
+Chapter 3 — The two experiments
+Per speculum in aenigmate
+
+3.1 First experiment · Representational similarity of legal lexicons
+    3.1.1 Intra-domain vs inter-domain distance distributions
+    3.1.2 Per-model domain topology
+    3.1.3 Representational Similarity Analysis across model pairs
+    3.1.4 Parametric categorical probes
+
+3.2 Second experiment · Kozlowski value-axis projection
+    3.2.1 Axis construction from pole pairs
+    3.2.2 Inter-axis cosine similarity
+    3.2.3 Cross-linguistic alignment of per-term projections
+    3.2.4 Aggregate ranking of axes by mean cross ρ
+    3.2.5 Term-level cross-linguistic differences
+```
+
+**Mechanical rename map** (prior → current):
+
+- §3.1.3 (layer stratigraphy) → removed, archived in appendix note
+- §3.1.4 (cross-tradition RSA) → §3.1.3
+- §3.1.5 (categorical probe)  → §3.1.4
+- §3.2 (semantic neighborhoods, Lens V) → removed
+- §3.3 (value dimensions)    → §3.2
+  - §3.3.1  → §3.2.1
+  - §3.3.1b → §3.2.2 (old ad hoc sub-section letter removed)
+  - §3.3.2  → §3.2.3
+  - §3.3.3  → §3.2.4
+  - §3.3.4  → §3.2.5
+
+**Non-interpretive discipline**: the sub-section titles strip
+interpretive framing (no more "the correlation drop", "a hierarchy of
+divergence", "which axes disagree most"). Each title names the
+quantity computed, not the reading. Reading lives in Ch. 4
+(*Quod numeri tacent*).
+
+**Thesis text implication**: → Ch. 3 can now be drafted directly
+against §3.1.1 ... §3.2.5 with no reference to archived material in
+the running text. Each sub-section's code path and result JSON is
+in a 1-to-1 correspondence to its thesis sub-section number.
+
+**Files touched**:
+
+- `documenti/003_GeometriaIuris_Indice.docx` — source of truth updated.
+- `CLAUDE.md` — mapping table and key-results table rewritten against
+  the new numbering.
+- `experiments/trace_pivot_2lens.md` — mechanical rename applied to
+  all §X.Y references in D1–D8.
+- `experiments/lens_1_relational/trace.md` — mechanical rename applied.
+- `experiments/lens_4_values/trace.md` — mechanical rename applied.
+- `experiments/lens_1_relational/categorical_probe.py` + pre-reg YAML —
+  header comments updated from §3.1.5 to §3.1.4.
+- `experiments/lens_1_relational/results/categorical_probe.json` —
+  `meta.thesis_section` and embedded historical note rewritten.
+- `experiments/dashboard_v2/generate_lens{1,4}.py` — section IDs,
+  H2 titles, Plotly div IDs, sticky nav, internal cross-refs.
+- `experiments/dashboard_v2/index.html` — TOC labels, section intros
+  for the two experiments, button-card labels.
 
 ---
 

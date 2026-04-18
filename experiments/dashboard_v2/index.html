@@ -239,11 +239,11 @@
     <li><a href="#models">Modelli</a></li>
     <li><a href="#dataset">Dataset</a></li>
     <li><a href="#glossary">Glossario</a></li>
-    <li><a href="#lens1">Lens I</a></li>
-    <li><a href="#lens4">Lens IV</a></li>
+    <li><a href="#lens1">Esperimento §3.1</a></li>
+    <li><a href="#lens4">Esperimento §3.2</a></li>
     <li><a href="#method">Metodologia</a></li>
-    <li><a href="lens1.html">Dashboard Lens I ↗</a></li>
-    <li><a href="lens4.html">Dashboard Lens IV ↗</a></li>
+    <li><a href="lens1.html">Dashboard §3.1 ↗</a></li>
+    <li><a href="lens4.html">Dashboard §3.2 ↗</a></li>
   </ul>
 </nav>
 
@@ -490,7 +490,7 @@
 <summary>Matrice di dissimilarità (RDM) <span class="sym">D ∈ ℝ<sup>N×N</sup></span></summary>
 <div class="body">
 <p>Per un pool di N termini e un modello fissato, la RDM è la matrice N×N che contiene, nella cella (i, j), la <a class="metric" data-target="g-cosdist">distanza coseno</a> tra i vettori del termine <em>i</em> e del termine <em>j</em>. La matrice è simmetrica e ha zero sulla diagonale.</p>
-<p>Contiene interamente la "geometria" del lessico secondo quel modello: tutte le relazioni di vicinanza e distanza tra i termini. È l'oggetto che la <em>Representational Similarity Analysis</em> (RSA, §3.1.4) confronta tra modelli.</p>
+<p>Contiene interamente la "geometria" del lessico secondo quel modello: tutte le relazioni di vicinanza e distanza tra i termini. È l'oggetto che la <em>Representational Similarity Analysis</em> (RSA, §3.1.3) confronta tra modelli.</p>
 <dl>
   <dt>Dimensioni</dt><dd>qui 350×350 = 122&nbsp;500 celle, di cui 61&nbsp;075 indipendenti (triangolo superiore senza diagonale).</dd>
   <dt>Ragione scelta</dt><dd>astrae dalla dimensione dello spazio (un modello può avere 768 dimensioni, un altro 1024: le loro RDM restano comparabili perché sono entrambe N×N).</dd>
@@ -582,7 +582,7 @@
 
 <!-- ====================================================================== -->
 <section id="lens1">
-<h2>Lens I — struttura relazionale</h2>
+<h2>Primo esperimento — Representational similarity of legal lexicons <small style="font-weight:400;color:var(--muted);">(§3.1)</small></h2>
 <p>Lens I produce una <a class="metric" data-target="g-rdm">RDM</a> per ciascuno degli otto modelli, poi calcola tutte le correlazioni tra coppie di RDM con verifica statistica.</p>
 
 <h3>Esecuzione</h3>
@@ -621,7 +621,7 @@
 
 <!-- ====================================================================== -->
 <section id="lens4">
-<h2>Lens IV — proiezione su assi di valori</h2>
+<h2>Secondo esperimento — Kozlowski value-axis projection <small style="font-weight:400;color:var(--muted);">(§3.2)</small></h2>
 <p>Lens IV costruisce sei <a class="metric" data-target="g-kozlowski">assi di valori alla Kozlowski</a>, proietta i 350 termini su ciascun asse, e calcola le correlazioni cross-tradizione tra modelli.</p>
 
 <h3>Esecuzione</h3>
@@ -858,11 +858,11 @@
 <div class="button-row">
   <a href="lens1.html">
     <strong>Lens I — dashboard completo →</strong>
-    <span>§3.1.1 domain signal · §3.1.2 topologia K×K · §3.1.4 RSA forest · §3.1.5 probe categorico.</span>
+    <span>§3.1.1 domain signal · §3.1.2 topologia K×K · §3.1.3 RSA forest · §3.1.4 probe categorico.</span>
   </a>
   <a href="lens4.html">
     <strong>Lens IV — dashboard completo →</strong>
-    <span>§3.3.1 costruzione assi · §3.3.2 forest per asse · cosine inter-asse · punteggi divergenti.</span>
+    <span>§3.2.1 costruzione assi · §3.2.2 cosine inter-asse · §3.2.3 forest per asse · §3.2.5 punteggi divergenti.</span>
   </a>
 </div>
 </section>

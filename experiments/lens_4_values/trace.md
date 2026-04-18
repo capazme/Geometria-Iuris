@@ -1,6 +1,6 @@
 # Trace: Lens IV — Value axis projection
 
-**Thesis chapter(s)**: Ch.3 §3.3 — Value dimensions (comparative)
+**Thesis chapter(s)**: Ch.3 §3.2 — Value dimensions (comparative)
 **Date**: 2026-03-02
 **Status**: complete (Phase 1–2 done; Phase 3–4 deferred)
 
@@ -13,9 +13,9 @@ constructs geometric axes from antonym pairs and projects legal terms onto them,
 measuring cross-linguistic alignment of each axis.
 
 Three thesis subsections:
-- **§3.3.1**: Axis construction — building value dimensions from antonym pairs
-- **§3.3.2**: Cross-tradition alignment — Spearman rho + bootstrap CI per axis per pair
-- **§3.3.3**: Which axes diverge most?
+- **§3.2.1**: Axis construction — building value dimensions from antonym pairs
+- **§3.2.3**: Cross-tradition alignment — Spearman rho + bootstrap CI per axis per pair
+- **§3.2.4**: Which axes diverge most?
 
 ---
 
@@ -23,12 +23,12 @@ Three thesis subsections:
 
 | # | Analysis | Section | Method | Input | N | Math trace |
 |---|----------|---------|--------|-------|---|------------|
-| 1 | Axis construction + sanity | §3.3.1 | Kozlowski diff-vector, orientation check | 10 antonym pairs × 3 axes × 2 langs | 6 models × 3 axes × 20 pairs | V1–V3 |
-| 2 | Inter-axis orthogonality | §3.3.1 | Cosine similarity between axis vectors | Axis vectors per model | 6 models × 3 axis-pairs | V4 |
-| 3 | Cross-linguistic alignment | §3.3.2 | Spearman ρ + row-resample bootstrap CI | Projection scores on 397 core terms | 15 model-pairs × 3 axes = 45 | V5–V6 |
-| 4 | Within vs cross comparison | §3.3.2 | Mann-Whitney U (9 cross vs 6 within) | ρ values per axis | 3 axes × 15 ρ = 45 | V7 |
-| 5 | Axis divergence ranking | §3.3.3 | Kruskal-Wallis H + Bonferroni post-hoc | Cross-tradition ρ per axis | 3 axes × 9 cross ρ = 27 | V8 |
-| 6 | Divergent term identification | §3.3.2 | |WEIRD-avg − Sinic-avg| on projections | Per-term avg scores across 3 models | 397 terms × 3 axes | — |
+| 1 | Axis construction + sanity | §3.2.1 | Kozlowski diff-vector, orientation check | 10 antonym pairs × 3 axes × 2 langs | 6 models × 3 axes × 20 pairs | V1–V3 |
+| 2 | Inter-axis orthogonality | §3.2.1 | Cosine similarity between axis vectors | Axis vectors per model | 6 models × 3 axis-pairs | V4 |
+| 3 | Cross-linguistic alignment | §3.2.3 | Spearman ρ + row-resample bootstrap CI | Projection scores on 397 core terms | 15 model-pairs × 3 axes = 45 | V5–V6 |
+| 4 | Within vs cross comparison | §3.2.3 | Mann-Whitney U (9 cross vs 6 within) | ρ values per axis | 3 axes × 15 ρ = 45 | V7 |
+| 5 | Axis divergence ranking | §3.2.4 | Kruskal-Wallis H + Bonferroni post-hoc | Cross-tradition ρ per axis | 3 axes × 9 cross ρ = 27 | V8 |
+| 6 | Divergent term identification | §3.2.3 | |WEIRD-avg − Sinic-avg| on projections | Per-term avg scores across 3 models | 397 terms × 3 axes | — |
 
 ---
 
@@ -49,12 +49,12 @@ Three thesis subsections:
 **Rationale**: These three capture the fundamental comparative law tensions
 documented in the literature. The archive pipeline validated these axes with
 interpretable results. Adding more axes would require new antonym pairs
-without corresponding thesis sections. → §3.3.1 "We construct three value
+without corresponding thesis sections. → §3.2.1 "We construct three value
 axes reflecting foundational tensions in comparative legal theory."
 
 **Thesis text implication**: The thesis can claim that value organization was
 measured along three theoretically-grounded dimensions. It cannot claim
-exhaustive coverage of all possible cultural value dimensions. → §3.3.1
+exhaustive coverage of all possible cultural value dimensions. → §3.2.1
 
 ---
 
@@ -76,12 +76,12 @@ the EN axis captures how English-trained models organize the dimension, the ZH
 axis captures how Chinese-trained models do. The comparison is rank-based
 (Spearman rho on projection scores), which is valid even when axes are
 independently constructed — we compare the *ordering* of terms, not the
-absolute scores. → §3.3.1
+absolute scores. → §3.2.1
 
 **Thesis text implication**: The thesis can claim that each tradition's models
 construct value dimensions from their own linguistic resources, and that the
 comparison measures whether these independently-constructed dimensions produce
-similar orderings of legal concepts. → §3.3.1
+similar orderings of legal concepts. → §3.2.1
 
 ---
 
@@ -103,12 +103,12 @@ similar orderings of legal concepts. → §3.3.1
 **Rationale**: Standard in computational sociology (Kozlowski 2019), validated in
 the archive pipeline. The mean-of-differences approach cancels idiosyncratic noise
 from individual pairs while preserving the shared directional signal. Projection
-via cosine similarity yields scores in [-1, 1]. → §3.3.1
+via cosine similarity yields scores in [-1, 1]. → §3.2.1
 
 **Thesis text implication**: The thesis can describe axis construction as
 "following Kozlowski et al. (2019), we compute the mean difference vector of
 10 antonym pairs and project legal terms via cosine similarity." The linear
-assumption is documented as a methodological limit. → §3.3.1
+assumption is documented as a methodological limit. → §3.2.1
 
 ---
 
@@ -133,13 +133,13 @@ percentile method) provides uncertainty quantification without distributional
 assumptions — see D5 for bootstrap variant justification, D6 for B choice. All
 15 pairs are tested: 9 cross-tradition + 3 within-WEIRD + 3 within-Sinic.
 Mann-Whitney compares cross ρ vs within ρ per axis as a descriptive summary;
-see D7 caveat on pseudo-replication. → §3.3.2
+see D7 caveat on pseudo-replication. → §3.2.3
 
 **Thesis text implication**: The thesis can report Spearman ρ and 95% bootstrap CI
 for each of 45 comparisons (15 pairs × 3 axes), and a descriptive Mann-Whitney
 summary comparing cross vs within groups. It can claim that rank alignment (not
 absolute scores) is the unit of comparison. The MW should be framed as descriptive
-rather than confirmatory due to pseudo-replication (see D7). → §3.3.2, §3.3.3
+rather than confirmatory due to pseudo-replication (see D7). → §3.2.3, §3.2.4
 
 ---
 
@@ -161,12 +161,12 @@ resamples at the term level to respect this structure. In Lens IV, projection sc
 are per-term scalars: score_i = cos(embed(term_i), axis). Each term's score is
 independent given the axis vector. Row-resample bootstrap (resample N term indices
 with replacement, resubset both score vectors, recompute Spearman) is therefore
-the correct and sufficient approach. → §3.3.2, math trace V6.
+the correct and sufficient approach. → §3.2.3, math trace V6.
 
 **Thesis text implication**: The thesis can justify the bootstrap variant by noting
 that "unlike RSA (§3.1), where each term contributes to N−1 pairwise distances,
 projection scores are independent per-term, making row-resample bootstrap
-appropriate (Efron & Tibshirani, 1993)." → §3.3.2
+appropriate (Efron & Tibshirani, 1993)." → §3.2.3
 
 ---
 
@@ -185,15 +185,15 @@ appropriate (Efron & Tibshirani, 1993)." → §3.3.2
 **Rationale**: Consistency across all lenses: Lens I uses B=10000 for permutation
 tests (Nili 2014), Lens IV should use the same for bootstrap CIs. The runtime
 cost is negligible (61s for full pipeline). This ensures the thesis can state a
-uniform Monte Carlo standard across experiments. → §3.3.2, §2.4 (methods chapter)
+uniform Monte Carlo standard across experiments. → §3.2.3, §2.4 (methods chapter)
 
 **Thesis text implication**: "All resampling procedures use B=10,000 iterations,
 following the recommendation of Nili et al. (2014) for stable Monte Carlo
-estimates." This is a single sentence that covers both lenses. → §3.3.2
+estimates." This is a single sentence that covers both lenses. → §3.2.3
 
 ---
 
-### D7 — Kruskal-Wallis vs ANOVA for §3.3.3 + pseudo-replication caveat
+### D7 — Kruskal-Wallis vs ANOVA for §3.2.4 + pseudo-replication caveat
 
 **Options considered**:
 - Option A: One-way ANOVA on cross-tradition ρ grouped by axis
@@ -211,13 +211,13 @@ entire Lens IV analysis. The pseudo-replication caveat applies equally to both
 options: the 9 cross-tradition ρ values per axis come from a 3×3 grid where each
 model appears in 3 pairs, violating independence. This must be disclosed in the
 thesis. With KW H=7.20, p=0.027, the result is significant even at α=0.05, but
-the effective sample size is smaller than the nominal N=9. → §3.3.3, math trace V8.
+the effective sample size is smaller than the nominal N=9. → §3.2.4, math trace V8.
 
 **Thesis text implication**: "A Kruskal-Wallis test reveals significant heterogeneity
 in cross-tradition alignment across the three value axes (H=7.20, p=0.027). We
 note that the nine ρ values per axis derive from a 3×3 model grid, introducing
 partial non-independence; the test should be interpreted as indicative rather than
-confirmatory." → §3.3.3
+confirmatory." → §3.2.4
 
 ---
 
@@ -239,14 +239,14 @@ are complementary aspects of the same fundamental division (the "summa divisio"
 between public and private law — Sacco 2019). Their moderate cosine similarity
 (0.17–0.38 depending on model) is *expected* and *interpretable*, not a confound.
 rights_duties shows near-zero cosine with the other two, confirming it captures an
-independent dimension. The diagnostic is reported per-model in §3.3.1 and visualized
-in the interactive HTML. → §3.3.1, math trace V4.
+independent dimension. The diagnostic is reported per-model in §3.2.1 and visualized
+in the interactive HTML. → §3.2.1, math trace V4.
 
 **Thesis text implication**: "Inter-axis cosine similarity reveals that
 individual_collective and public_private share moderate geometric overlap (cos θ =
 0.17–0.38), consistent with comparative law's 'summa divisio' between these two
 organizing principles (Sacco, 2019). rights_duties is near-orthogonal to both
-(cos θ < 0.10), suggesting it captures a genuinely independent dimension." → §3.3.1
+(cos θ < 0.10), suggesting it captures a genuinely independent dimension." → §3.2.1
 
 ---
 
@@ -274,7 +274,7 @@ must be checked for zero intersection with all other axes' pair sets.
 
 ---
 
-### D7 — Removal of Kruskal-Wallis test from §3.3.3
+### D7 — Removal of Kruskal-Wallis test from §3.2.4
 
 **Options considered**:
 - A: Keep Kruskal-Wallis omnibus test comparing 9 cross-tradition rho values
@@ -296,7 +296,7 @@ with means and standard deviations is more honest than a p-value from an
 invalid test. The forest plot in the visualization already makes the axis
 differences visually apparent.
 
-**Thesis text implication**: → §3.3.3 "The three axes exhibit different
+**Thesis text implication**: → §3.2.4 "The three axes exhibit different
 degrees of cross-tradition convergence: public/private (ρ̄_cross = 0.402)
 shows the strongest alignment, followed by rights/duties (0.380) and
 individual/collective (0.292). We report these descriptively rather than
@@ -323,7 +323,7 @@ permutation test shuffles the cross/within labels 10,000 times and computes
 the difference in means, producing an empirical p-value that is honest about
 the small sample size.
 
-**Thesis text implication**: → §3.3.2 "The separation between cross-tradition
+**Thesis text implication**: → §3.2.3 "The separation between cross-tradition
 and within-tradition correlation values is assessed by permutation test
 (10,000 shuffles of group labels) rather than Mann-Whitney U, given the
 small sample size (n_cross=9, n_within=6)."
@@ -395,7 +395,7 @@ explicit vocabulary-to-avoid list from the 3 locked axes). Outputs at
 `experiments/data/review/poles_<axis>.md` with per-pair doctrinal rationale,
 known trade-offs, and vocabulary-overlap audits.
 
-**Thesis text implication**: → §3.3.1 gains three sub-sections introducing
+**Thesis text implication**: → §3.2.1 gains three sub-sections introducing
 the new axes, each with its doctrinal anchor (Hayek/Polanyi for state_market,
 Aquinas-to-Dworkin for natural_positive, Maine for status_contract) and ZH
 philosophical counterpart. The 6-axis panel becomes "six independently
@@ -463,7 +463,7 @@ cross-axis pair collisions** in either polarity (verified programmatically,
 because their partner tokens differ, keeping the axis-direction contributions
 non-colinear.
 
-**Thesis text implication**: → §3.3.1 adds a short "Pair-independence
+**Thesis text implication**: → §3.2.1 adds a short "Pair-independence
 verification" note disclosing the fixes and the resulting zero-collision
 state. → §2.4 methodology: the pair-collision audit becomes a named
 pre-registration step for any future Lens IV expansion.
