@@ -512,7 +512,7 @@ def section_pipeline():
 
 
 def section_axes_construction(axes_yaml, section_331):
-    parts = [ui.section_open("321", "§3.2.1 — Axis construction from pole pairs")]
+    parts = [ui.section_open("321", "§3.2.1 — Building an axis from pairs of opposites")]
     parts.append('<p>Questa sezione mostra la costruzione materiale degli assi: per ciascuna delle sei antitesi concettuali sono elencate le dieci coppie di poli in inglese (usate dai tre modelli WEIRD) e le dieci coppie di poli in cinese (usate dai tre modelli Sinic). Accanto si riporta un controllo di coerenza, il <em>sanity check</em>: si costruisce il vettore-asse usando solo nove delle dieci coppie (leave-one-out) e si verifica che la decima coppia, esclusa dal calcolo, sia correttamente orientata rispetto al vettore risultante. Poiché ciascuna coppia ha un polo positivo e uno negativo, e si lasciano fuori a turno tutte e dieci, per asse si collezionano 20 verifiche: dieci sui poli positivi e dieci sui poli negativi.</p>')
 
     for axis in AXES_ORDER:
@@ -564,7 +564,7 @@ def section_axes_construction(axes_yaml, section_331):
 def section_orthogonality(section_331):
     fig = fig_orthogonality(section_331)
     return (
-        ui.section_open("322", "§3.2.2 — Inter-axis cosine similarity")
+        ui.section_open("322", "§3.2.2 — Whether the chosen axes are independent")
         + '<p>Le sei antitesi sono state scelte a priori dal ricercatore come direzioni teoricamente distinte. '
         + 'Ma nulla garantisce, a costruzione avvenuta, che siano anche direzioni <em>materialmente</em> distinte '
         + 'nello spazio di un modello: due assi diversi sul piano concettuale potrebbero, nella geometria interna di un encoder, '
@@ -602,7 +602,7 @@ def section_alignment(section_332):
         col_classes=["", "num", "num", "num strong", "num", "num"],
     )
     return (
-        ui.section_open("323", "§3.2.3 — Cross-linguistic alignment of per-term projections")
+        ui.section_open("323", "§3.2.3 — Agreement between models on the ranking along each axis")
         + '<p>È il cuore di Lens IV. Per ogni asse si dispone, per ciascun modello, di una lista ordinata di 350 termini dal punteggio più negativo al più positivo. '
         + 'La domanda è: quanto due modelli ordinano i termini nello stesso modo lungo lo stesso asse? '
         + 'Per rispondere si prendono a due a due tutti i modelli (45 coppie complessive con dieci modelli) e per ciascuna coppia si calcola la '
@@ -636,7 +636,7 @@ def section_alignment(section_332):
 def section_ranking(section_332):
     fig, _ = fig_ranking_bar(section_332["summary_per_axis"])
     return (
-        ui.section_open("324", "§3.2.4 — Aggregate ranking of axes by mean cross ρ")
+        ui.section_open("324", "§3.2.4 — Axes ordered by cross-linguistic agreement")
         + '<p>Questa sezione riordina i sei assi secondo un solo numero: la ρ̄ cross, cioè la media delle 9 correlazioni '
         + 'cross-tradizione dell\'asse, già riportata in §3.2.3. Gli assi sono disposti dall\'alto in basso per ρ̄ cross crescente: '
         + 'in alto compaiono gli assi su cui la concordanza media fra modelli WEIRD e Sinic è più bassa (ρ̄ cross vicino a zero), '
@@ -654,7 +654,7 @@ def section_ranking(section_332):
 def section_divergent(scores, terms):
     fig = fig_divergent_dumbbell(scores, terms, n_top=18)
     return (
-        ui.section_open("325", "§3.2.5 — Term-level cross-linguistic differences")
+        ui.section_open("325", "§3.2.5 — Terms with the largest between-group difference")
         + '<p>Mentre §3.2.3 e §3.2.4 aggregano su tutti i 350 termini, questa sezione scende al singolo termine. '
         + 'Procedura: fissato un asse, per ciascun termine si calcola la media dei punteggi che i cinque modelli del lato EN '
         + '(tre monolinguali inglesi più due bilingui BGE-M3-EN e Qwen3-0.6B-EN) gli hanno assegnato lungo quell\'asse (W̄), '
@@ -717,17 +717,17 @@ def section_footer_page():
 
 def build():
     results, axes_yaml, scores = load_all()
-    title = "Geometria Iuris · §3.2 — Kozlowski value-axis projection"
+    title = "Geometria Iuris · §3.2 — Projecting terms onto value axes"
     subtitle = "Kozlowski axes · 6 assi × 10 coppie × 2 lingue · encoder bare · " + results["meta"]["date"][:10]
 
     nav_items = [
         ("#domanda",   "Domanda"),
         ("#pipeline",  "Pipeline"),
-        ("#321",       "§3.2.1 assi"),
-        ("#322",       "§3.2.2 ortogonalità"),
-        ("#323",       "§3.2.3 forest"),
-        ("#324",       "§3.2.4 gerarchia"),
-        ("#325",       "§3.2.5 divergenti"),
+        ("#321",       "§3.2.1 costruzione assi"),
+        ("#322",       "§3.2.2 indipendenza"),
+        ("#323",       "§3.2.3 accordo per asse"),
+        ("#324",       "§3.2.4 ordinamento"),
+        ("#325",       "§3.2.5 scarto termini"),
         ("#tecnica",   "Tecnica"),
         ("#glossary",  "Glossario"),
     ]

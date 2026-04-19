@@ -702,7 +702,7 @@ def section_domain_signal(per_model_signal, legal_vs_control):
     violin_fig = fig_intra_vs_inter(per_model_signal)
     legal_fig = fig_legal_vs_control_effect(legal_vs_control)
     return (
-        ui.section_open("311", "§3.1.1 — Segnale di dominio")
+        ui.section_open("311", "§3.1.1 — Distances within and between legal domains")
         + '<p>Prima di confrontare mappe diverse, occorre accertarsi che ciascuna mappa distingua almeno le partizioni più elementari del lessico giuridico: i sette domini (costituzionale, civile, penale, ecc.). Se un modello non colloca sistematicamente i termini di uno stesso dominio più vicini fra loro che a termini di domini differenti, vuol dire che non percepisce il diritto come un insieme articolato di rami; in quel caso qualunque misura più fine costruita sopra la sua geometria sarebbe priva di fondamento. Questa sezione è perciò il test di pre-requisito per le misure che seguono.</p>'
         + '<p>Si considerano due popolazioni di distanze:</p>'
         + '<ul><li><em>intra-dominio</em> (8&thinsp;575 coppie): entrambi i termini appartengono allo stesso dominio;</li>'
@@ -731,7 +731,7 @@ def section_domain_signal(per_model_signal, legal_vs_control):
 def section_domain_topology(per_model_signal):
     fig = fig_domain_topology(per_model_signal)
     return (
-        ui.section_open("312", "§3.1.2 — Topologia per dominio")
+        ui.section_open("312", "§3.1.2 — Maps of distance across legal domains")
         + '<p>La §3.1.1 restituisce un unico numero per ciascun modello (r: il dominio è colto o no). Qui si apre il quadro: invece di aggregare tutte le coppie, si aggregano <em>per coppia di domini</em>. Il risultato è una tabella 7×7 di prossimità fra rami del diritto, leggibile come una carta delle distanze fra branche disciplinari secondo la mappa di un singolo modello.</p>'
         + '<p>Ogni cella contiene la media delle '
         + ui.metric_chip("g-cosdist", "distanze coseno") + ' fra tutte le coppie di termini in cui il primo termine appartiene al dominio della riga e il secondo al dominio della colonna. La diagonale (dominio × sé stesso) misura la <em>coesione interna</em> del dominio: valori bassi significano che i termini di quel ramo sono ben raggruppati nella mappa del modello. Fuori diagonale si legge la distanza media fra due rami distinti: valori bassi significano che il modello li colloca vicini, valori alti che li colloca distanti.</p>'
@@ -778,7 +778,7 @@ def section_rsa(section_314, null_distributions):
     )
 
     return (
-        ui.section_open("313", "§3.1.3 — Representational Similarity Analysis across model pairs")
+        ui.section_open("313", "§3.1.3 — Agreement between pairs of models")
         + '<p>È il cuore di Lens I. Due modelli diversi producono vettori di dimensione diversa: non si possono confrontare direttamente termine per termine, perché abitano spazi incommensurabili. La Representational Similarity Analysis aggira il problema spostando il confronto a un livello superiore: non si confrontano i vettori, si confrontano le <em>mappe di vicinanze</em> che i modelli costruiscono fra gli stessi termini. Due modelli "concordano" se, pur vivendo in spazi diversi, ordinano le 61&thinsp;075 coppie di termini dalla più vicina alla più lontana nello stesso modo.</p>'
         + '<p>In pratica: per ogni coppia di modelli (A, B) si prendono le rispettive '
         + ui.metric_chip("g-rdm", "RDM") + ' (la tabella delle distanze fra tutti i termini in ciascuna mappa) e si calcola la '
@@ -940,7 +940,7 @@ def section_categorical_probe(probe):
         details_blocks.append(_probe_test_details_html(t_key, tests[t_key], label, polarity))
 
     return (
-        ui.section_open("314", "§3.1.4 — Parametric categorical probes")
+        ui.section_open("314", "§3.1.4 — Pre-registered ordinal probes")
         + '<p>Una sonda parametrica pre-registrata è un esperimento congegnato in due momenti distinti. Prima di guardare i dati si fissano, per iscritto: (i) una scala di 11 categorie ordinate con un significato giuridico chiaro (ad esempio 11 reati in ordine crescente di gravità, oppure 11 età in anni); (ii) un asse di proiezione, costruito con una famiglia di 5 frasi modello in cui la categoria compare in una posizione sintattica fissa ("X è punito con..."); (iii) un confine giuridicamente rilevante nella scala (ad esempio la soglia fra summary e indictable, o l\'età di 10 o 18 anni). Solo dopo si interroga il modello e si verifica se, proiettando le 11 categorie sull\'asse, il "salto" maggiore fra categorie consecutive cade proprio al confine pre-registrato.</p>'
         + '<p>Le grandezze calcolate sono:</p>'
         + '<ul>'
@@ -1010,16 +1010,16 @@ def section_footer_page():
 
 def build():
     results, probe, per_model_signal, legal_vs_control, null_distributions, _ = load_all()
-    title = "Geometria Iuris · §3.1 — Representational similarity of legal lexicons"
+    title = "Geometria Iuris · §3.1 — Comparing how models organise the legal lexicon"
     subtitle = "RSA sui 350 termini del HK DoJ Glossary · encoder bare · " + results["meta"]["date"][:10]
 
     nav_items = [
         ("#domanda",   "Domanda"),
         ("#pipeline",  "Pipeline"),
-        ("#311",       "§3.1.1 segnale"),
-        ("#312",       "§3.1.2 topologia"),
-        ("#313",       "§3.1.3 RSA"),
-        ("#314",       "§3.1.4 sonda"),
+        ("#311",       "§3.1.1 distanze"),
+        ("#312",       "§3.1.2 mappa"),
+        ("#313",       "§3.1.3 accordo"),
+        ("#314",       "§3.1.4 sonde"),
         ("#tecnica",   "Tecnica"),
         ("#glossary",  "Glossario"),
     ]

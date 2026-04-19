@@ -711,6 +711,117 @@ in a 1-to-1 correspondence to its thesis sub-section number.
 
 ---
 
+## D10 — Plain-language index per professor feedback (2026-04-19)
+
+The relatore criticised the post-D9 index as *barocco*: Latin
+epigraphs in the ToC, sub-sections with colons and multi-clause
+descriptive subtitles, technical jargon visible at ToC level,
+mathematical symbols in headings.
+
+**Options considered**:
+
+- Option A — surgical fix on Ch. 3 only, since that is what D9
+  just touched. *Contro*: the professor's critique was explicitly
+  about the whole index; a Ch.-3-only fix would leave the other
+  chapters visibly inconsistent.
+- Option B — whole-index rewrite to a plain form: one short
+  phrase per entry, no Latin in the ToC, no jargon, no symbols.
+  Keep the scholarly substance in the chapter body (epigraphs
+  may remain as incipits inside the chapter but not in the ToC).
+
+**Decision**: **Option B** — whole-index rewrite.
+
+**Rationale**: the index is the first thing both the relatore and
+the co-relatore read; a reader who cannot parse the ToC without a
+glossary will bring that friction to every subsequent chapter. The
+substantive content of each chapter is unchanged; the cost of the
+rewrite is a one-day mechanical sweep.
+
+**New index**:
+
+```
+Chapter 1 — The measurability of legal meaning
+  1.1 The absence of measurement in legal knowledge
+  1.2 Law as language
+  1.3 Language as space
+  1.4 Geometry as a legal instrument
+  1.5 What this thesis does not claim
+
+Chapter 2 — Corpus, models, statistics
+  2.1 Building the legal lexicon
+  2.2 Hong Kong as natural laboratory
+  2.3 Language models as cultural informants
+  2.4 Statistical tools
+
+Chapter 3 — The two experiments
+  3.1 Comparing how models organise the legal lexicon
+    3.1.1 Distances within and between legal domains
+    3.1.2 Maps of distance across legal domains
+    3.1.3 Agreement between pairs of models
+    3.1.4 Pre-registered ordinal probes
+  3.2 Projecting terms onto value axes
+    3.2.1 Building an axis from pairs of opposites
+    3.2.2 Whether the chosen axes are independent
+    3.2.3 Agreement between models on the ranking along each axis
+    3.2.4 Axes ordered by cross-linguistic agreement
+    3.2.5 Terms with the largest between-group difference
+
+Chapter 4 — Reading the results
+  4.1 What the experiments show together
+  4.2 What this thesis cannot conclude
+
+Conclusions
+```
+
+**Rule of thumb applied to every ToC entry**:
+
+1. One short phrase, no colons, no multi-clause subtitles.
+2. No Latin in the ToC. Epigraphs may live as incipits at the
+   top of each chapter's body, below the chapter title.
+3. No technical jargon (*Representational Similarity Analysis*,
+   *Kozlowski projection*, *cosine similarity*, *rank-biserial*,
+   *RDM*) in the ToC.
+4. No mathematical symbols (ρ, Δ, W̄, S̄) in the ToC.
+5. No rhetorical questions ("do legal categories have geometric
+   reality?", "which domains diverge most?") in the ToC.
+6. Chapter titles are declarative and literal ("The measurability
+   of legal meaning", not *Meaning without measure*; "Corpus,
+   models, statistics", not *The apparatus*; "Reading the results",
+   not *Reading the geometry*).
+
+**Dashboard propagation**: the H1 titles of the Lens I and Lens IV
+dashboard pages adopt the new §3.1 / §3.2 plain titles ("Comparing
+how models organise the legal lexicon" / "Projecting terms onto
+value axes"). The sticky nav labels of each dashboard replace
+jargon tokens (*RSA*, *ortogonalità*, *forest*, *gerarchia*,
+*divergenti*) with plain Italian shortcuts. Section H2 titles
+inside each dashboard are rewritten to match the new sub-section
+labels exactly.
+
+**Files touched**:
+
+- `documenti/003_GeometriaIuris_Indice.docx` — full ToC rewrite.
+- `CLAUDE.md` — indice section updated to the plain version.
+- `experiments/dashboard_v2/generate_lens1.py` — H1, nav, five
+  `section_open` calls.
+- `experiments/dashboard_v2/generate_lens4.py` — H1, nav, five
+  `section_open` calls.
+- `experiments/dashboard_v2/index.html` — two section H2 labels.
+- `experiments/dashboard_v2/lens{1,4}.html` — regenerated.
+- `experiments/trace_pivot_2lens.md` — this D10 entry.
+
+Interpretive-phrase grep on all three HTMLs: **0 hits** (unchanged,
+the plain rewrite is also descriptively neutral).
+
+**Thesis text implication**: → the co-relatore receives a ToC that
+reads like a technical report, not a monograph. The epigraphs and
+the more evocative old titles can be reintroduced as incipits
+within each chapter's body where the reader is already committed
+to that chapter's internal rhythm; in the index, they were
+gatekeeping.
+
+---
+
 ## Execution order (after D3-D4 approval)
 
 1. ~~Audit admin candidates~~ — DONE via D5 finalization.
