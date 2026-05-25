@@ -1,0 +1,669 @@
+{
+  "domain": "procedure",
+  "date": "2026-05-01",
+  "target_count": 50,
+  "decisions": {
+    "keep_strict": [
+      {
+        "term_idx": 34,
+        "en": "counterclaim",
+        "zh_canonical": "反申索書",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pleadings"
+      },
+      {
+        "term_idx": 156,
+        "en": "summons",
+        "zh_canonical": "傳票",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pleadings"
+      },
+      {
+        "term_idx": 3,
+        "en": "admissibility of evidence",
+        "zh_canonical": "證據的可接納性",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence"
+      },
+      {
+        "term_idx": 71,
+        "en": "hearsay",
+        "zh_canonical": "傳聞",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence"
+      },
+      {
+        "term_idx": 75,
+        "en": "inadmissible",
+        "zh_canonical": "不得被接納",
+        "k_en": 8,
+        "k_zh": 7,
+        "sub_area": "evidence"
+      },
+      {
+        "term_idx": 244,
+        "en": "burden of proof",
+        "zh_canonical": "舉證責任",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence"
+      },
+      {
+        "term_idx": 150,
+        "en": "subpoena ad testificandum",
+        "zh_canonical": "着令出庭作證的傳召出庭令狀☛參看writ of subpoena ad testificandum",
+        "k_en": 8,
+        "k_zh": 7,
+        "sub_area": "evidence"
+      },
+      {
+        "term_idx": 37,
+        "en": "cross-examination",
+        "zh_canonical": "盤問",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "trial_conduct"
+      },
+      {
+        "term_idx": 47,
+        "en": "disclosure",
+        "zh_canonical": "公開",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pre_trial"
+      },
+      {
+        "term_idx": 84,
+        "en": "interlocutory",
+        "zh_canonical": "非正審（的）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pre_trial"
+      },
+      {
+        "term_idx": 111,
+        "en": "nonjoinder",
+        "zh_canonical": "不合併",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "pre_trial"
+      },
+      {
+        "term_idx": 302,
+        "en": "limitation period",
+        "zh_canonical": "時效期限",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "pre_trial"
+      },
+      {
+        "term_idx": 10,
+        "en": "appellate court",
+        "zh_canonical": "審理上訴的法院",
+        "k_en": 7,
+        "k_zh": 7,
+        "sub_area": "appeals"
+      },
+      {
+        "term_idx": 11,
+        "en": "appellate jurisdiction",
+        "zh_canonical": "上訴司法管轄權",
+        "k_en": 6,
+        "k_zh": 7,
+        "sub_area": "appeals"
+      },
+      {
+        "term_idx": 35,
+        "en": "Court of First Instance",
+        "zh_canonical": "原訟法庭（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "appeals"
+      },
+      {
+        "term_idx": 274,
+        "en": "first instance",
+        "zh_canonical": "原審法庭",
+        "k_en": 8,
+        "k_zh": 7,
+        "sub_area": "appeals"
+      },
+      {
+        "term_idx": 23,
+        "en": "conciliation",
+        "zh_canonical": "調停",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "costs_adr"
+      },
+      {
+        "term_idx": 7,
+        "en": "affidavit",
+        "zh_canonical": "確證文件已予送達的宗教式誓章",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence"
+      },
+      {
+        "term_idx": 99,
+        "en": "mediation",
+        "zh_canonical": "社區調解",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "costs_adr"
+      },
+      {
+        "term_idx": 246,
+        "en": "cause of action",
+        "zh_canonical": "在基於同一訴因的一切法律程序中",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pleadings"
+      }
+    ],
+    "keep_kunder4": [
+      {
+        "term_idx": 48,
+        "en": "discovery",
+        "zh_canonical": "自動作出文件透露",
+        "k_en": 8,
+        "k_zh": 0,
+        "sub_area": "pre_trial",
+        "rationale": "Discovery (production and inspection of documents) is a foundational pre-trial mechanism in HK civil procedure (RHC O.24). ZH k_zh=0 because RHC are not part of the Cap. e-Legislation corpus; the concept is doctrinally indispensable."
+      },
+      {
+        "term_idx": 58,
+        "en": "ex parte",
+        "zh_canonical": "單方面申請的許可",
+        "k_en": 8,
+        "k_zh": 0,
+        "sub_area": "pre_trial",
+        "rationale": "Ex parte applications (without notice to the opposing party) are a basic interlocutory procedural form (RHC O.32, O.41 r.5). ZH attestation absent because the Latin term and the procedure are regulated by Rules of Court. Canonical concept."
+      }
+    ],
+    "drop": [
+      {
+        "term_idx": 0,
+        "en": "ad damnum pleadings",
+        "zh_canonical": "要求作出損害賠償的狀書",
+        "rationale": "Both k=0; 'ad damnum' is a US/historical pleading lemma not used in HK practice. Subsumed under 'cause of action'."
+      },
+      {
+        "term_idx": 4,
+        "en": "admissible evidence",
+        "zh_canonical": "可接納的證據",
+        "rationale": "k=8/8; near-synonym of 'admissibility of evidence' (idx=3) and 'admissible' (idx=234, also dropped); morphological consolidation to a single positive lemma."
+      },
+      {
+        "term_idx": 52,
+        "en": "duplicitous pleading",
+        "zh_canonical": "重複而無用的申辯",
+        "rationale": "Both k=0; obsolete pleadings concept (duplicity) not in HK current practice; subsumed under general 'pleading'."
+      },
+      {
+        "term_idx": 73,
+        "en": "in camera",
+        "zh_canonical": "在法官私室（審議）",
+        "rationale": "k=8/0; in-camera proceedings handled by 'permission' / general procedural lexicon; ZH attestation absent and the Latin lemma is fragmentary in HK statutes."
+      },
+      {
+        "term_idx": 83,
+        "en": "interest-based mediation",
+        "zh_canonical": "兼顧各方利益的調解",
+        "rationale": "Both k=0; descriptive variant of mediation rather than a distinct lemma; the canonical 'mediation' (idx=99) is retained in keep_kunder4."
+      },
+      {
+        "term_idx": 87,
+        "en": "joinder",
+        "zh_canonical": "合併控罪",
+        "rationale": "k=8/0; morphological consolidation: 'nonjoinder' (idx=111) retained as the strict-passing form; 'joinder' covered by RHC and not canonical at lemma level here."
+      },
+      {
+        "term_idx": 98,
+        "en": "locus standi",
+        "zh_canonical": "出庭資格",
+        "rationale": "Both k=0; superseded by modern 'standing' jurisprudence; concept covered by judicial-review category and 'permission' for leave."
+      },
+      {
+        "term_idx": 101,
+        "en": "misjoinder",
+        "zh_canonical": "錯誤參與訴訟",
+        "rationale": "k=4/0; near-synonym of 'nonjoinder' (idx=111) retained in keep_strict (k=4/4); morphological consolidation."
+      },
+      {
+        "term_idx": 102,
+        "en": "mispleading",
+        "zh_canonical": "狀書中的錯誤",
+        "rationale": "Both k=0; near-obsolete archaism; not used in HK procedure."
+      },
+      {
+        "term_idx": 110,
+        "en": "non-disclosure",
+        "zh_canonical": "不予披露",
+        "rationale": "k=8/2; near-synonym of 'disclosure' (idx=47) retained; negation/morphological derivative."
+      },
+      {
+        "term_idx": 126,
+        "en": "pleading",
+        "zh_canonical": "要求作出損害賠償的狀書",
+        "rationale": "k=8/0; near-synonym consolidation: morphological pair with 'plead' (promoted, k=8/8) which is the canonical lemma; 'pleadings'-as-noun is implied by 'plead'."
+      },
+      {
+        "term_idx": 135,
+        "en": "reconciliation",
+        "zh_canonical": "和解期",
+        "rationale": "k=8/0; reconciliation is post-marriage-breakdown specific (Cap. 179) rather than ADR procedural lemma; 'mediation' and 'conciliation' cover the procedural slot."
+      },
+      {
+        "term_idx": 136,
+        "en": "rejoinder",
+        "zh_canonical": "被告對原告的第二次答辯",
+        "rationale": "Both k=0; archaic pleading-stage term superseded; subsumed under 'pleading' / 'plead'."
+      },
+      {
+        "term_idx": 140,
+        "en": "res judicata",
+        "zh_canonical": "既判案件",
+        "rationale": "Both k=0; common-law doctrinal label rather than a HK statutory lemma; not attested in Cap. corpus."
+      },
+      {
+        "term_idx": 148,
+        "en": "subpoena",
+        "zh_canonical": "傳召證人出庭令",
+        "rationale": "k=8/1; near-synonym consolidation: 'subpoena ad testificandum' (idx=150) retained as canonical Latinate form passing strict gate."
+      },
+      {
+        "term_idx": 151,
+        "en": "subpoena duces tecum",
+        "zh_canonical": "着令攜帶文件出庭的傳召出庭令狀",
+        "rationale": "k=8/6; near-synonym consolidation with 'subpoena ad testificandum' (idx=150) retained; both are subpoena subtypes and one canonical Latinate form suffices."
+      },
+      {
+        "term_idx": 159,
+        "en": "surrejoinder",
+        "zh_canonical": "原告的第二次辯駁",
+        "rationale": "Both k=0; archaic pleading-stage term obsolete in modern HK procedure."
+      },
+      {
+        "term_idx": 187,
+        "en": "class action",
+        "zh_canonical": "集體訴訟",
+        "rationale": "Both k=0; HK procedure does not codify class-action under that name; group litigation handled via representative proceedings (RHC O.15 r.12)."
+      },
+      {
+        "term_idx": 189,
+        "en": "self-proving affidavit",
+        "zh_canonical": "遺囑確認誓章〔附在遺囑後面由見證人簽署的誓章〕",
+        "rationale": "Both k=0; over-specific affidavit subtype; subsumed under 'affidavit' (idx=7) retained in keep_kunder4."
+      },
+      {
+        "term_idx": 201,
+        "en": "pre-claim disclosure",
+        "zh_canonical": "申索前的披露",
+        "rationale": "Both k=0; over-specific disclosure subtype; subsumed under 'disclosure' (idx=47) retained in keep_strict."
+      },
+      {
+        "term_idx": 202,
+        "en": "staged disclosure",
+        "zh_canonical": "分階段披露",
+        "rationale": "Both k=0; over-specific disclosure subtype; subsumed under 'disclosure'."
+      },
+      {
+        "term_idx": 208,
+        "en": "rights-based mediation",
+        "zh_canonical": "兼顧各方權利的調解",
+        "rationale": "Both k=0; descriptive variant of mediation; canonical 'mediation' (idx=99) retained."
+      },
+      {
+        "term_idx": 233,
+        "en": "admissibility",
+        "zh_canonical": "招認的可接納性",
+        "rationale": "k=8/0; morphological derivative of 'admissibility of evidence' (idx=3) retained."
+      },
+      {
+        "term_idx": 234,
+        "en": "admissible",
+        "zh_canonical": "可接納",
+        "rationale": "k=8/8; morphological derivative of 'admissibility of evidence' / 'admissible evidence' / 'inadmissible'; consolidating to two lemmata (idx=3 positive, idx=75 negative) sufficient."
+      },
+      {
+        "term_idx": 292,
+        "en": "in the first instance",
+        "zh_canonical": "先行",
+        "rationale": "Drop: low attestation and not doctrinally central."
+      },
+      {
+        "term_idx": 354,
+        "en": "joinder of issue",
+        "zh_canonical": "默示就……有爭論點提出",
+        "rationale": "k=6/0; archaic pleading-stage construct superseded; covered by 'plead' and 'pleading' lemmata."
+      },
+      {
+        "term_idx": 377,
+        "en": "quasi-class action",
+        "zh_canonical": "類似集體訴訟",
+        "rationale": "Both k=0; over-specific compound; collective litigation absent from HK statutory taxonomy."
+      },
+      {
+        "term_idx": 378,
+        "en": "appellate",
+        "zh_canonical": "審理上訴的法官",
+        "rationale": "k=8/0; morphological derivative of 'appellate court' (idx=10) and 'appellate jurisdiction' (idx=11) retained."
+      }
+    ],
+    "promote": [
+      {
+        "term_idx": 2687,
+        "en": "plead",
+        "zh_canonical": "答辯",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pleadings",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical pleadings verb ('to plead'); used throughout HK procedural statutes (e.g. Cap. 4A, Cap. 221) for entering pleas/pleadings."
+      },
+      {
+        "term_idx": 1473,
+        "en": "endorsement",
+        "zh_canonical": "加簽",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pleadings",
+        "knn_confidence": 0.571,
+        "rationale": "Endorsement on writ/pleading is a canonical procedural act (RHC O.6 r.2; Cap. 4A). High attestation in statutory cross-references."
+      },
+      {
+        "term_idx": 2565,
+        "en": "originating",
+        "zh_canonical": "原訴",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pleadings",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical procedural lemma underpinning 'originating summons', 'originating process', 'originating motion' (RHC O.7-O.10)."
+      },
+      {
+        "term_idx": 1900,
+        "en": "in personam",
+        "zh_canonical": "對人訴訟",
+        "k_en": 8,
+        "k_zh": 6,
+        "sub_area": "pleadings",
+        "knn_confidence": 0.571,
+        "rationale": "Action in personam is a canonical pleading category (against a specific party), contrasted with in rem; statutory recognition in Cap. 4 and admiralty rules."
+      },
+      {
+        "term_idx": 479,
+        "en": "adduce evidence",
+        "zh_canonical": "提供證據",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence",
+        "knn_confidence": 1.0,
+        "rationale": "Foundational evidentiary verb-phrase ('to adduce evidence'); ubiquitous in HK Evidence Ord. Cap. 8 and procedural ordinances. knn_confidence=1.00."
+      },
+      {
+        "term_idx": 3915,
+        "en": "give evidence",
+        "zh_canonical": "作證",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence",
+        "knn_confidence": 1.0,
+        "rationale": "Foundational evidentiary act (Cap. 8, Cap. 221). knn_confidence=1.00."
+      },
+      {
+        "term_idx": 3913,
+        "en": "fresh evidence",
+        "zh_canonical": "新證據",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence",
+        "knn_confidence": 1.0,
+        "rationale": "Canonical category in appellate procedure (Ladd v Marshall test); attested in Cap. 4 (CFA Ord.) and case law on appeals."
+      },
+      {
+        "term_idx": 3406,
+        "en": "testimony",
+        "zh_canonical": "證供",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "evidence",
+        "knn_confidence": 0.857,
+        "rationale": "Core evidentiary noun across HK procedure (Cap. 8, Cap. 221, Cap. 9). Strong attestation."
+      },
+      {
+        "term_idx": 7373,
+        "en": "summarily",
+        "zh_canonical": "循簡易程序",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "trial_conduct",
+        "knn_confidence": 0.857,
+        "rationale": "Procedural mode lemma ('summarily/summary trial') central to Magistrates Ord. Cap. 227 and District Court Cap. 336."
+      },
+      {
+        "term_idx": 577,
+        "en": "amicus curiae",
+        "zh_canonical": "法庭之友",
+        "k_en": 5,
+        "k_zh": 5,
+        "sub_area": "trial_conduct",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical role in HK appellate practice (法庭之友): non-party participation by leave; doctrinally established despite k=5/5."
+      },
+      {
+        "term_idx": 5152,
+        "en": "credible",
+        "zh_canonical": "可信",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "trial_conduct",
+        "knn_confidence": 0.571,
+        "rationale": "Credible-witness/credible-evidence is core to evidentiary assessment at trial (Cap. 8). High attestation."
+      },
+      {
+        "term_idx": 8182,
+        "en": "of its own motion",
+        "zh_canonical": "主動",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "trial_conduct",
+        "knn_confidence": 0.714,
+        "rationale": "Canonical procedural locution: court acting 'of its own motion' (sua sponte); pervasive in Cap. 4, Cap. 336, Cap. 9."
+      },
+      {
+        "term_idx": 969,
+        "en": "commence proceedings",
+        "zh_canonical": "展開法律程序",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pre_trial",
+        "knn_confidence": 0.571,
+        "rationale": "Foundational pre-trial step. Statutory phrase across procedure ordinances (Cap. 88 limitation triggers, Cap. 4)."
+      },
+      {
+        "term_idx": 8892,
+        "en": "letter of request",
+        "zh_canonical": "請求書",
+        "k_en": 6,
+        "k_zh": 8,
+        "sub_area": "pre_trial",
+        "knn_confidence": 0.857,
+        "rationale": "Canonical evidence-on-commission instrument (Cap. 76 Evidence (Foreign Proceedings) Ord.). k_zh=8 strong."
+      },
+      {
+        "term_idx": 1337,
+        "en": "disclose",
+        "zh_canonical": "充分披露",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "pre_trial",
+        "knn_confidence": 0.714,
+        "rationale": "Core pre-trial verb (disclose, document disclosure); complements 'disclosure' already retained."
+      },
+      {
+        "term_idx": 3937,
+        "en": "preliminary hearing",
+        "zh_canonical": "初步聆訊",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "pre_trial",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical pre-trial step in committal/criminal procedure (Cap. 227); strong doctrinal weight despite k=4/4."
+      },
+      {
+        "term_idx": 1151,
+        "en": "Court of Appeal",
+        "zh_canonical": "上訴法庭（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "appeals",
+        "knn_confidence": 0.571,
+        "rationale": "HK Court of Appeal: institutional anchor of appellate procedure (Cap. 4)."
+      },
+      {
+        "term_idx": 6231,
+        "en": "Justice of Appeal",
+        "zh_canonical": "上訴法庭法官",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "appeals",
+        "knn_confidence": 0.571,
+        "rationale": "Statutory office (Cap. 4 s.5); core appellate-bench category."
+      },
+      {
+        "term_idx": 8503,
+        "en": "appealable",
+        "zh_canonical": "可予上訴",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "appeals",
+        "knn_confidence": 0.714,
+        "rationale": "Canonical appellate-procedure adjective: which decisions are appealable (Cap. 4, Cap. 336, Cap. 484)."
+      },
+      {
+        "term_idx": 1164,
+        "en": "cross-appeal",
+        "zh_canonical": "交相上訴",
+        "k_en": 4,
+        "k_zh": 5,
+        "sub_area": "appeals",
+        "knn_confidence": 0.857,
+        "rationale": "Canonical appellate procedural mechanism (RHC O.59 r.6); Cap. 4."
+      },
+      {
+        "term_idx": 5400,
+        "en": "dissentient",
+        "zh_canonical": "持異議的成員",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "appeals",
+        "knn_confidence": 0.571,
+        "rationale": "Dissenting member of an appellate panel; canonical to appeals jurisprudence (Cap. 484, Cap. 4)."
+      },
+      {
+        "term_idx": 7082,
+        "en": "resolve",
+        "zh_canonical": "解決",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "costs_adr",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical ADR/dispute-resolution lemma ('resolve disputes'); used in Cap. 620, Cap. 609 (arbitration)."
+      },
+      {
+        "term_idx": 5392,
+        "en": "disputes",
+        "zh_canonical": "解決爭議",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "costs_adr",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical ADR object-noun ('disputes resolution'); foundational to Mediation Ord. Cap. 620 and Arbitration Ord. Cap. 609."
+      },
+      {
+        "term_idx": 6114,
+        "en": "inquest",
+        "zh_canonical": "死因研訊",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "judicial_review",
+        "knn_confidence": 0.714,
+        "rationale": "Inquest is the canonical coronial procedure (Coroners Ord. Cap. 504); a procedural form distinct from civil/criminal trial."
+      },
+      {
+        "term_idx": 7987,
+        "en": "reviewable",
+        "zh_canonical": "可覆核決定",
+        "k_en": 8,
+        "k_zh": 4,
+        "sub_area": "judicial_review",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical JR-adjacent adjective: reviewable decisions (Cap. 4 s.21K; Cap. 484, Cap. 32)."
+      },
+      {
+        "term_idx": 6798,
+        "en": "pre-inquest",
+        "zh_canonical": "研訊前檢討",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "judicial_review",
+        "knn_confidence": 0.714,
+        "rationale": "Pre-inquest review is a canonical coronial-procedure step (Cap. 504); paired with 'inquest'."
+      },
+      {
+        "term_idx": 1841,
+        "en": "impartiality",
+        "zh_canonical": "公正性",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "judicial_review",
+        "knn_confidence": 0.714,
+        "rationale": "Judicial impartiality is a foundational due-process / judicial-review concept (Cap. 4, Cap. 383)."
+      },
+      {
+        "term_idx": 2665,
+        "en": "permission",
+        "zh_canonical": "准許",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other",
+        "knn_confidence": 0.571,
+        "rationale": "Canonical procedural lemma for leave-of-court ('with the permission of the court') across Cap. 4, Cap. 336, Cap. 4A; substitutes 'leave' in modern drafting."
+      }
+    ]
+  },
+  "final_count": 50,
+  "confidence_self_assessment": {
+    "overall": 0.78,
+    "rationale": "Procedure is the domain most penalised by the Rules-of-Court gap in the Cap. corpus: many canonical concepts (affidavit, discovery, ex parte, mediation, cause of action) live primarily in RHC/RDC, depressing ZH attestation. The full keep_kunder4 budget was used for those five doctrinally indispensable lemmata. Sub-area balance is achieved (max 10), with evidence and pre_trial at the cap. Weakest decisions concern (a) consolidating subpoena variants by retaining only 'subpoena ad testificandum' over the bare 'subpoena' (idx=148) and 'subpoena duces tecum' (idx=151), (b) promoting generic legal-drafting verbs ('plead', 'disclose', 'resolve') whose procedural specificity is contextual not lexical, and (c) the judicial_review sub-area which in HK relies on JR doctrine (RHC O.53) absent from the Cap. corpus, forcing reliance on adjacent lemmata (inquest, reviewable, impartiality, pre-inquest) rather than core JR remedies (certiorari, mandamus, prohibition, declaration).",
+    "weakest_decisions": [
+      {
+        "term_idx": 148,
+        "concern": "Bare 'subpoena' (k_en=8) dropped in favour of the Latinate subtype; defensible morphological consolidation but the bare lemma is more frequent in HK case law."
+      },
+      {
+        "term_idx": 151,
+        "concern": "'subpoena duces tecum' meets strict gate (k=8/6) but was dropped to keep evidence sub-area at the cap; could be retained at the cost of evicting another evidence promote."
+      },
+      {
+        "term_idx": 7082,
+        "concern": "'resolve' is a generic verb whose procedural specificity comes from collocation ('resolve disputes'); risks bringing non-procedural usage."
+      },
+      {
+        "term_idx": 1841,
+        "concern": "'impartiality' assigned to judicial_review for procedural-due-process anchorage but the lemma is broader; placement is interpretive."
+      },
+      {
+        "term_idx": 5152,
+        "concern": "'credible' assigned to trial_conduct as 'credible witness'; risk of capturing non-evidentiary usage (credible threat etc.)."
+      }
+    ]
+  },
+  "notes": "Procedure curation uses the full 5-slot keep_kunder4 budget per the domain-specific note: HK procedural canon depends heavily on Rules of Court (RHC, RDC) and case law, neither of which is in the Cap. e-Legislation corpus. ZH attestation is structurally suppressed for foundational lemmata (affidavit, discovery, ex parte, mediation, cause of action) — exception applied. Aggressive morphological consolidation across the admissibility cluster (idx 3,4,75,233,234), the joinder cluster (idx 87,101,111,354), the pleading/plead cluster (idx 126,2687) and the subpoena cluster (idx 148,150,151). Sub-area distribution: evidence=10, pre_trial=10, appeals=9, pleadings=7, trial_conduct=5, judicial_review=4, costs_adr=4, other=1. No sub-area exceeds the 10-cap. Judicial-review remedies (certiorari, mandamus, prohibition, declaration) are absent from the candidate pool because they are RHC O.53 not Cap.; the JR sub-area is therefore populated by adjacent procedural lemmata (inquest, reviewable, impartiality, pre-inquest). [PASS-2 OVERRIDE 2026-05-02: zh_clean overridden for 3 gloss-artefact terms; 3 moved keep_kunder4 → keep_strict.]"
+}

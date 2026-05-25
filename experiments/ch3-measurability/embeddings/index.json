@@ -1,0 +1,2186 @@
+[
+  {
+    "en": "register",
+    "zh": "登記",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "certificate",
+    "zh": "證明書",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "licence",
+    "zh": "牌照",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "registration",
+    "zh": "登記",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "practice",
+    "zh": "實務",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "application",
+    "zh": "申請",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "permit",
+    "zh": "准許證",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "requirement",
+    "zh": "要求",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "address",
+    "zh": "地址",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "procedure",
+    "zh": "程序",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "compliance",
+    "zh": "遵從",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "inspection",
+    "zh": "公眾查閱",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "statutory",
+    "zh": "法例",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "duly",
+    "zh": "妥當地",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "expenses",
+    "zh": "費用",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "accounting",
+    "zh": "會計",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "enforcement",
+    "zh": "強制執行",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "tax",
+    "zh": "稅",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "code",
+    "zh": "守則",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "Registrar",
+    "zh": "登記官",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "controller",
+    "zh": "控制人",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "administrative",
+    "zh": "行政",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "regulatory",
+    "zh": "規管",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "notification",
+    "zh": "通知書",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "comply",
+    "zh": "遵守",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "provisional",
+    "zh": "暫定",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "public interest",
+    "zh": "公眾利益",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "suspension",
+    "zh": "暫停",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "accreditation",
+    "zh": "評審",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "maintenance",
+    "zh": "保養",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "complaint",
+    "zh": "投訴",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "in force",
+    "zh": "繼續有效",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "set aside",
+    "zh": "作廢",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "revocation",
+    "zh": "撤回",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "implementation",
+    "zh": "實施",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "exemption",
+    "zh": "豁免",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "entry",
+    "zh": "入境",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "levy",
+    "zh": "徵款",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "modification",
+    "zh": "修改",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "regulation",
+    "zh": "規例",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "governing",
+    "zh": "規管",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "inspector",
+    "zh": "視察主任",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "approval",
+    "zh": "批准",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "authorization",
+    "zh": "訂明授權",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "taxation",
+    "zh": "課稅",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "administer",
+    "zh": "主持",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "discipline",
+    "zh": "紀律",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "surcharge",
+    "zh": "附加費",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "expenditure",
+    "zh": "開支",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "non-compliance",
+    "zh": "不符合",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "recall",
+    "zh": "召回",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "registry",
+    "zh": "登記處",
+    "domain": "administrative",
+    "tier": "core"
+  },
+  {
+    "en": "provision",
+    "zh": "條款",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "trade mark",
+    "zh": "商標",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "property",
+    "zh": "物業",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "obligation",
+    "zh": "義務",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "grant",
+    "zh": "批予",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "asset",
+    "zh": "資產",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "transfer",
+    "zh": "移交",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "custody",
+    "zh": "保管",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "trust",
+    "zh": "信託",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "transaction",
+    "zh": "交易",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "patent",
+    "zh": "專利",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "entity",
+    "zh": "實體",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "settlement",
+    "zh": "清繳",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "copyright",
+    "zh": "版權",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "insurance",
+    "zh": "保險",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "prejudice",
+    "zh": "妨害",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "stock",
+    "zh": "股票",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "trustee",
+    "zh": "受託人",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "land",
+    "zh": "土地",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "infringement",
+    "zh": "侵權",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "loan",
+    "zh": "貸款",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "deposit",
+    "zh": "按金",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "undertaking",
+    "zh": "承諾",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "family",
+    "zh": "家事",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "share capital",
+    "zh": "股本",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "ownership",
+    "zh": "擁有權",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "futures",
+    "zh": "期貨",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "deed",
+    "zh": "契約",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "estate",
+    "zh": "產業",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "holder",
+    "zh": "持有人",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "premises",
+    "zh": "處所",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "client",
+    "zh": "當事人",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "derivative",
+    "zh": "衍生",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "contractor",
+    "zh": "承包商",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "partnership",
+    "zh": "合夥",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "contractual",
+    "zh": "合約",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "counterparty",
+    "zh": "對手方",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "equity",
+    "zh": "衡平法",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "lease",
+    "zh": "租賃",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "lien",
+    "zh": "留置權",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "gift",
+    "zh": "贈與",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "priority",
+    "zh": "優先權",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "damages",
+    "zh": "損害賠償",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "misrepresentation",
+    "zh": "失實陳述",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "testamentary",
+    "zh": "遺囑性質",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "unincorporated",
+    "zh": "非法團",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "marriage",
+    "zh": "婚姻",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "distribution",
+    "zh": "分派",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "proceeds",
+    "zh": "得益",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "conveyance",
+    "zh": "轉讓",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "insolvency",
+    "zh": "無力償債",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "vesting",
+    "zh": "轉歸",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "purchaser",
+    "zh": "買家",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "charitable",
+    "zh": "慈善信託",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "proprietary",
+    "zh": "所有權",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "disposition",
+    "zh": "產權處置",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "rental",
+    "zh": "租金",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "offeror",
+    "zh": "要約人",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "dividend",
+    "zh": "股息",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "licensee",
+    "zh": "持牌人",
+    "domain": "civil",
+    "tier": "core"
+  },
+  {
+    "en": "act",
+    "zh": "法",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "state",
+    "zh": "國家",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Board",
+    "zh": "教務委員會",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Committee",
+    "zh": "上訴委員會",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "system",
+    "zh": "制度",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "election",
+    "zh": "選舉",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "constituency",
+    "zh": "選區",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "panel",
+    "zh": "名單",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "title",
+    "zh": "簡稱",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "freedom",
+    "zh": "自由",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "vote",
+    "zh": "投票",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "representative",
+    "zh": "代理人",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "voting",
+    "zh": "投票",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "representation",
+    "zh": "代理",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "equal",
+    "zh": "平等",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "organization",
+    "zh": "組織",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "government",
+    "zh": "政府",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "judicial",
+    "zh": "司法",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "territorial",
+    "zh": "領土",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Director",
+    "zh": "署長",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "nomination",
+    "zh": "提名",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "ballot",
+    "zh": "投票",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "political",
+    "zh": "政治",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "candidate",
+    "zh": "候選人",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "majority",
+    "zh": "大多數",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "meeting",
+    "zh": "會議",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "poll",
+    "zh": "投票",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "absolute",
+    "zh": "全權",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Legislative Council",
+    "zh": "立法會",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "liberty",
+    "zh": "自由",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Commissioner",
+    "zh": "海關關長",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "education",
+    "zh": "教育機構",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "bill",
+    "zh": "法案",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "elector",
+    "zh": "選民",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "electoral",
+    "zh": "選舉法",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "delegate",
+    "zh": "獲授權人",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "society",
+    "zh": "社團",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "territory",
+    "zh": "領土",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "waters",
+    "zh": "領海",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "District Council",
+    "zh": "區議會議員",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Election Committee",
+    "zh": "選舉委員",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "quorum",
+    "zh": "法定人數",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Presiding Officer",
+    "zh": "主持",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "third party",
+    "zh": "第三方",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "constitution",
+    "zh": "憲法",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "assembly",
+    "zh": "集會",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "incorporation",
+    "zh": "法團",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "Heung Yee Kuk",
+    "zh": "鄉議局",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "religion",
+    "zh": "宗教",
+    "domain": "constitutional",
+    "tier": "core"
+  },
+  {
+    "en": "offence",
+    "zh": "罪行",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "charge",
+    "zh": "押記",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "sentence",
+    "zh": "判刑",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "justice",
+    "zh": "公正",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "debt",
+    "zh": "債務",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "criminal",
+    "zh": "刑事",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "unlawful",
+    "zh": "不合法",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "disciplinary",
+    "zh": "紀律處分程序",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "false",
+    "zh": "虛假",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "conviction",
+    "zh": "定罪",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "arrest",
+    "zh": "逮捕",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "penalty",
+    "zh": "罰則",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "prosecution",
+    "zh": "檢控",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "suspend",
+    "zh": "中止",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "breach",
+    "zh": "違反",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "intent",
+    "zh": "意圖",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "wilfully",
+    "zh": "故意地",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "failure",
+    "zh": "不履行",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "knowingly",
+    "zh": "故意",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "imprisonment",
+    "zh": "監禁",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "detention",
+    "zh": "拘留",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "crime",
+    "zh": "犯罪",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "harm",
+    "zh": "傷害",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "punishment",
+    "zh": "懲罰",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "terrorist",
+    "zh": "恐怖分子",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "fraudulent",
+    "zh": "欺詐",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "guilty",
+    "zh": "有罪",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "forfeiture",
+    "zh": "沒收",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "assault",
+    "zh": "襲擊",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "prisoner",
+    "zh": "囚犯",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "misconduct",
+    "zh": "失當行為",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "threat",
+    "zh": "威脅",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "conceal",
+    "zh": "隱藏",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "contravention",
+    "zh": "違反",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "restraint",
+    "zh": "限制",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "indecent",
+    "zh": "不雅",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "offender",
+    "zh": "罪犯",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "dangerous",
+    "zh": "危險",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "trafficking",
+    "zh": "販運",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "unlawfully",
+    "zh": "非法",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "attempt",
+    "zh": "企圖",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "murder",
+    "zh": "謀殺",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "obscene",
+    "zh": "淫褻",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "perjury",
+    "zh": "作假證供罪",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "defraud",
+    "zh": "欺詐",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "confiscation",
+    "zh": "沒收令",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "juvenile",
+    "zh": "少年",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "punish",
+    "zh": "處罰",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "violence",
+    "zh": "暴力",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "seizure",
+    "zh": "扣押",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "bail",
+    "zh": "保釋",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "intention",
+    "zh": "意向",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "plea",
+    "zh": "答辯",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "revoke",
+    "zh": "撤回",
+    "domain": "criminal",
+    "tier": "core"
+  },
+  {
+    "en": "international",
+    "zh": "國際義務",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "convention",
+    "zh": "慣例",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "agreement",
+    "zh": "協定",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "protection",
+    "zh": "保護",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "arrangement",
+    "zh": "安排",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "consular",
+    "zh": "領事",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "trade",
+    "zh": "交易",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "declaration",
+    "zh": "宣告",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "standard",
+    "zh": "標準",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "defence",
+    "zh": "抗辯",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "United Nations",
+    "zh": "聯合國",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "Mainland",
+    "zh": "內地",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "mutual",
+    "zh": "相互",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "protocol",
+    "zh": "議定書",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "multilateral",
+    "zh": "多邊",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "independent",
+    "zh": "獨立",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "association",
+    "zh": "協會",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "maritime",
+    "zh": "海上",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "arbitral",
+    "zh": "仲裁",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "diplomatic",
+    "zh": "外交",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "marine",
+    "zh": "海上",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "war",
+    "zh": "戰爭",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "non-Hong Kong",
+    "zh": "非香港",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "aircraft",
+    "zh": "飛機",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "intermediary",
+    "zh": "中介人",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "boundary",
+    "zh": "土地界線",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "conference",
+    "zh": "會議",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "conflict",
+    "zh": "抵觸",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "particulars",
+    "zh": "詳情",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "military",
+    "zh": "軍隊",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "safeguard",
+    "zh": "保障措施",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "material particular",
+    "zh": "要項",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "tanker",
+    "zh": "化學品液貨船",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "bilateral",
+    "zh": "雙邊",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "international law",
+    "zh": "國際法",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "overseas",
+    "zh": "海外",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "outbound",
+    "zh": "外遊費",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "sea-going",
+    "zh": "海域航行船舶",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "arbitrator",
+    "zh": "仲裁員",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "vicinity",
+    "zh": "鄰近範圍",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "regional",
+    "zh": "區域",
+    "domain": "international",
+    "tier": "core"
+  },
+  {
+    "en": "account",
+    "zh": "帳戶",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "financial",
+    "zh": "財務",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "business",
+    "zh": "事務",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "payment",
+    "zh": "中期付款",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "contract",
+    "zh": "合同",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "office",
+    "zh": "職位",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "company",
+    "zh": "公司",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "fund",
+    "zh": "基金",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "fee",
+    "zh": "費用",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "benefit",
+    "zh": "利益",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "amount",
+    "zh": "款額",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "care",
+    "zh": "小心",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "professional",
+    "zh": "專業",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "contribution",
+    "zh": "供款",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "worker",
+    "zh": "傭工",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "Chinese medicine",
+    "zh": "中醫藥學",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "position",
+    "zh": "職位",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "employment",
+    "zh": "僱傭",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "work",
+    "zh": "作品",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "exercise",
+    "zh": "實行",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "profit",
+    "zh": "利潤",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "health",
+    "zh": "健康",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "management",
+    "zh": "管理",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "delivery",
+    "zh": "交付",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "compensation",
+    "zh": "補償",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "discrimination",
+    "zh": "殘疾歧視",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "child",
+    "zh": "兒童",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "leave",
+    "zh": "許可",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "assistance",
+    "zh": "協助",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "employee",
+    "zh": "僱員",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "current",
+    "zh": "流通",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "level",
+    "zh": "等級",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "escalator",
+    "zh": "自動梯",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "sum",
+    "zh": "款項",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "hour",
+    "zh": "合理時間",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "unit",
+    "zh": "單位",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "manager",
+    "zh": "管理人",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "labour",
+    "zh": "勞工",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "remuneration",
+    "zh": "酬金",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "industry",
+    "zh": "行業",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "healthcare",
+    "zh": "醫護服務",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "payable",
+    "zh": "應支付",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "pay",
+    "zh": "付款",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "age",
+    "zh": "年齡",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "medical",
+    "zh": "醫療護理",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "disability",
+    "zh": "弱能",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "full-time",
+    "zh": "全職",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "emergency",
+    "zh": "緊急情況",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "works",
+    "zh": "工程設施",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "building",
+    "zh": "建築",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "insurer",
+    "zh": "保險人",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "staff",
+    "zh": "員工",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "entitlement",
+    "zh": "享有權",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "employer",
+    "zh": "僱主",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "harassment",
+    "zh": "侵擾",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "occupational",
+    "zh": "職業",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "wage",
+    "zh": "報酬",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "gratuity",
+    "zh": "酬金",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "winding up",
+    "zh": "清盤",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "applicant",
+    "zh": "申請人",
+    "domain": "labor_social",
+    "tier": "core"
+  },
+  {
+    "en": "proceeding",
+    "zh": "法律程序",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "evidence",
+    "zh": "證據",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "appeal",
+    "zh": "上訴",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "statement",
+    "zh": "報表",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "claim",
+    "zh": "申索",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "court",
+    "zh": "法院",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "review",
+    "zh": "審核",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "issue",
+    "zh": "爭論點",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "hearing",
+    "zh": "編定聆訊日期",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "lawful",
+    "zh": "合法",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "proof",
+    "zh": "證據",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "arbitration",
+    "zh": "仲裁",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "examine",
+    "zh": "訊問",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "witness",
+    "zh": "證人",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "investigation",
+    "zh": "調查",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "surrender",
+    "zh": "交出",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "process",
+    "zh": "程序",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "objection",
+    "zh": "反對理由",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "bona fide",
+    "zh": "善意",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "examination",
+    "zh": "覆問",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "certified",
+    "zh": "經核證",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "inquiry",
+    "zh": "研訊",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "disclosure",
+    "zh": "公開",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "fine",
+    "zh": "罰款",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "written",
+    "zh": "成文",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "adjudication",
+    "zh": "終審",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "admit",
+    "zh": "承認",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "serve",
+    "zh": "送達",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "determine",
+    "zh": "終止",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "signature",
+    "zh": "簽名",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "mediation",
+    "zh": "調解",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "limitation",
+    "zh": "限制",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "petition",
+    "zh": "呈請",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "presumption",
+    "zh": "推定",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "audit",
+    "zh": "審核",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "initiate",
+    "zh": "提起法律程序",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "substantiate",
+    "zh": "證實",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "summons",
+    "zh": "傳票",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "prove",
+    "zh": "證明",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "admissible",
+    "zh": "可接納",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "exhibit",
+    "zh": "證物",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "beyond reasonable doubt",
+    "zh": "合理疑點",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "conciliation",
+    "zh": "調停",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "interlocutory",
+    "zh": "非正審",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "permission",
+    "zh": "准許",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "resolve",
+    "zh": "解決",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "in writing",
+    "zh": "以書面",
+    "domain": "procedure",
+    "tier": "core"
+  },
+  {
+    "en": "certified copy",
+    "zh": "核證文本",
+    "domain": "procedure",
+    "tier": "core"
+  }
+]

@@ -1,0 +1,2294 @@
+{
+  "domain": "procedure",
+  "target_count": 50,
+  "current_core": [
+    {
+      "term_idx": 0,
+      "en": "ad damnum pleadings",
+      "zh_canonical": "要求作出損害賠償的狀書",
+      "en_clean": "ad damnum pleadings",
+      "zh_clean": "要求作出損害賠償的狀書",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 3,
+      "en": "admissibility of evidence",
+      "zh_canonical": "證據的可接納性",
+      "en_clean": "admissibility of evidence",
+      "zh_clean": "證據的可接納性",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 4,
+      "en": "admissible evidence",
+      "zh_canonical": "可接納的證據",
+      "en_clean": "admissible evidence",
+      "zh_clean": "可接納的證據",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 7,
+      "en": "affidavit",
+      "zh_canonical": "確證文件已予送達的宗教式誓章",
+      "en_clean": "affidavit",
+      "zh_clean": "確證文件已予送達的宗教式誓章",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 10,
+      "en": "appellate court",
+      "zh_canonical": "審理上訴的法院",
+      "en_clean": "appellate court",
+      "zh_clean": "審理上訴的法院",
+      "k_en": 7,
+      "k_zh": 7,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 11,
+      "en": "appellate jurisdiction",
+      "zh_canonical": "上訴司法管轄權",
+      "en_clean": "appellate jurisdiction",
+      "zh_clean": "上訴司法管轄權",
+      "k_en": 6,
+      "k_zh": 7,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 23,
+      "en": "conciliation",
+      "zh_canonical": "調停",
+      "en_clean": "conciliation",
+      "zh_clean": "調停",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 34,
+      "en": "counterclaim",
+      "zh_canonical": "反申索書",
+      "en_clean": "counterclaim",
+      "zh_clean": "反申索書",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 35,
+      "en": "Court of First Instance",
+      "zh_canonical": "原訟法庭（香港）",
+      "en_clean": "Court of First Instance",
+      "zh_clean": "原訟法庭",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 37,
+      "en": "cross-examination",
+      "zh_canonical": "盤問",
+      "en_clean": "cross-examination",
+      "zh_clean": "盤問",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 47,
+      "en": "disclosure",
+      "zh_canonical": "公開",
+      "en_clean": "disclosure",
+      "zh_clean": "公開",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 48,
+      "en": "discovery",
+      "zh_canonical": "自動作出文件透露",
+      "en_clean": "discovery",
+      "zh_clean": "自動作出文件透露",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 52,
+      "en": "duplicitous pleading",
+      "zh_canonical": "重複而無用的申辯",
+      "en_clean": "duplicitous pleading",
+      "zh_clean": "重複而無用的申辯",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 58,
+      "en": "ex parte",
+      "zh_canonical": "單方面申請的許可",
+      "en_clean": "ex parte",
+      "zh_clean": "單方面申請的許可",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 71,
+      "en": "hearsay",
+      "zh_canonical": "傳聞",
+      "en_clean": "hearsay",
+      "zh_clean": "傳聞",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 73,
+      "en": "in camera",
+      "zh_canonical": "在法官私室（審議）",
+      "en_clean": "in camera",
+      "zh_clean": "在法官私室",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 75,
+      "en": "inadmissible",
+      "zh_canonical": "不得被接納",
+      "en_clean": "inadmissible",
+      "zh_clean": "不得被接納",
+      "k_en": 8,
+      "k_zh": 7,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 83,
+      "en": "interest-based mediation",
+      "zh_canonical": "兼顧各方利益的調解",
+      "en_clean": "interest-based mediation",
+      "zh_clean": "兼顧各方利益的調解",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 84,
+      "en": "interlocutory",
+      "zh_canonical": "非正審（的）",
+      "en_clean": "interlocutory",
+      "zh_clean": "非正審",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 87,
+      "en": "joinder",
+      "zh_canonical": "合併控罪",
+      "en_clean": "joinder",
+      "zh_clean": "合併控罪",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 98,
+      "en": "locus standi",
+      "zh_canonical": "出庭資格",
+      "en_clean": "locus standi",
+      "zh_clean": "出庭資格",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 99,
+      "en": "mediation",
+      "zh_canonical": "社區調解",
+      "en_clean": "mediation",
+      "zh_clean": "社區調解",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 101,
+      "en": "misjoinder",
+      "zh_canonical": "錯誤參與訴訟",
+      "en_clean": "misjoinder",
+      "zh_clean": "錯誤參與訴訟",
+      "k_en": 4,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 102,
+      "en": "mispleading",
+      "zh_canonical": "狀書中的錯誤",
+      "en_clean": "mispleading",
+      "zh_clean": "狀書中的錯誤",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 110,
+      "en": "non-disclosure",
+      "zh_canonical": "不予披露",
+      "en_clean": "non-disclosure",
+      "zh_clean": "不予披露",
+      "k_en": 8,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 111,
+      "en": "nonjoinder",
+      "zh_canonical": "不合併",
+      "en_clean": "nonjoinder",
+      "zh_clean": "不合併",
+      "k_en": 4,
+      "k_zh": 4,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 126,
+      "en": "pleading",
+      "zh_canonical": "要求作出損害賠償的狀書",
+      "en_clean": "pleading",
+      "zh_clean": "要求作出損害賠償的狀書",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 135,
+      "en": "reconciliation",
+      "zh_canonical": "和解期",
+      "en_clean": "reconciliation",
+      "zh_clean": "和解期",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 136,
+      "en": "rejoinder",
+      "zh_canonical": "被告對原告的第二次答辯",
+      "en_clean": "rejoinder",
+      "zh_clean": "被告對原告的第二次答辯",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 140,
+      "en": "res judicata",
+      "zh_canonical": "既判案件",
+      "en_clean": "res judicata",
+      "zh_clean": "既判案件",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 148,
+      "en": "subpoena",
+      "zh_canonical": "傳召證人出庭令",
+      "en_clean": "subpoena",
+      "zh_clean": "傳召證人出庭令",
+      "k_en": 8,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 150,
+      "en": "subpoena ad testificandum",
+      "zh_canonical": "着令出庭作證的傳召出庭令狀☛參看writ of subpoena ad testificandum",
+      "en_clean": "subpoena ad testificandum",
+      "zh_clean": "着令出庭作證的傳召出庭令狀",
+      "k_en": 8,
+      "k_zh": 7,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 151,
+      "en": "subpoena duces tecum",
+      "zh_canonical": "着令攜帶文件出庭的傳召出庭令狀",
+      "en_clean": "subpoena duces tecum",
+      "zh_clean": "着令攜帶文件出庭的傳召出庭令狀",
+      "k_en": 8,
+      "k_zh": 6,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 156,
+      "en": "summons",
+      "zh_canonical": "傳票",
+      "en_clean": "summons",
+      "zh_clean": "傳票",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 159,
+      "en": "surrejoinder",
+      "zh_canonical": "原告的第二次辯駁",
+      "en_clean": "surrejoinder",
+      "zh_clean": "原告的第二次辯駁",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 187,
+      "en": "class action",
+      "zh_canonical": "集體訴訟",
+      "en_clean": "class action",
+      "zh_clean": "集體訴訟",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 189,
+      "en": "self-proving affidavit",
+      "zh_canonical": "遺囑確認誓章〔附在遺囑後面由見證人簽署的誓章〕",
+      "en_clean": "self-proving affidavit",
+      "zh_clean": "遺囑確認誓章",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 201,
+      "en": "pre-claim disclosure",
+      "zh_canonical": "申索前的披露",
+      "en_clean": "pre-claim disclosure",
+      "zh_clean": "申索前的披露",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 202,
+      "en": "staged disclosure",
+      "zh_canonical": "分階段披露",
+      "en_clean": "staged disclosure",
+      "zh_clean": "分階段披露",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 208,
+      "en": "rights-based mediation",
+      "zh_canonical": "兼顧各方權利的調解",
+      "en_clean": "rights-based mediation",
+      "zh_clean": "兼顧各方權利的調解",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 233,
+      "en": "admissibility",
+      "zh_canonical": "招認的可接納性",
+      "en_clean": "admissibility",
+      "zh_clean": "招認的可接納性",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 234,
+      "en": "admissible",
+      "zh_canonical": "可接納",
+      "en_clean": "admissible",
+      "zh_clean": "可接納",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 244,
+      "en": "burden of proof",
+      "zh_canonical": "舉證責任",
+      "en_clean": "burden of proof",
+      "zh_clean": "舉證責任",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 246,
+      "en": "cause of action",
+      "zh_canonical": "在基於同一訴因的一切法律程序中",
+      "en_clean": "cause of action",
+      "zh_clean": "在基於同一訴因的一切法律程序中",
+      "k_en": 8,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 274,
+      "en": "first instance",
+      "zh_canonical": "原審法庭",
+      "en_clean": "first instance",
+      "zh_clean": "原審法庭",
+      "k_en": 8,
+      "k_zh": 7,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 292,
+      "en": "in the first instance",
+      "zh_canonical": "先行",
+      "en_clean": "in the first instance",
+      "zh_clean": "先行",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 302,
+      "en": "limitation period",
+      "zh_canonical": "時效期限",
+      "en_clean": "limitation period",
+      "zh_clean": "時效期限",
+      "k_en": 4,
+      "k_zh": 4,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 354,
+      "en": "joinder of issue",
+      "zh_canonical": "默示就……有爭論點提出",
+      "en_clean": "joinder of issue",
+      "zh_clean": "默示就……有爭論點提出",
+      "k_en": 6,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 377,
+      "en": "quasi-class action",
+      "zh_canonical": "類似集體訴訟",
+      "en_clean": "quasi-class action",
+      "zh_clean": "類似集體訴訟",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 378,
+      "en": "appellate",
+      "zh_canonical": "審理上訴的法官",
+      "en_clean": "appellate",
+      "zh_clean": "審理上訴的法官",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    }
+  ],
+  "backfill_candidates": [
+    {
+      "term_idx": 479,
+      "en": "adduce evidence",
+      "zh_canonical": "提供證據",
+      "en_clean": "adduce evidence",
+      "zh_clean": "提供證據",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "procedure": 7
+      },
+      "knn_top_neighbour_sim": 0.8333
+    },
+    {
+      "term_idx": 3913,
+      "en": "fresh evidence",
+      "zh_canonical": "新證據",
+      "en_clean": "fresh evidence",
+      "zh_clean": "新證據",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "procedure": 7
+      },
+      "knn_top_neighbour_sim": 0.7826
+    },
+    {
+      "term_idx": 3915,
+      "en": "give evidence",
+      "zh_canonical": "作證",
+      "en_clean": "give evidence",
+      "zh_clean": "作證",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "procedure": 7
+      },
+      "knn_top_neighbour_sim": 0.7879
+    },
+    {
+      "term_idx": 488,
+      "en": "adjudge",
+      "zh_canonical": "被判定破產",
+      "en_clean": "adjudge",
+      "zh_clean": "被判定破產",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6883
+    },
+    {
+      "term_idx": 1382,
+      "en": "divulge",
+      "zh_canonical": "泄漏",
+      "en_clean": "divulge",
+      "zh_clean": "泄漏",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7701
+    },
+    {
+      "term_idx": 2810,
+      "en": "proof",
+      "zh_canonical": "證據",
+      "en_clean": "proof",
+      "zh_clean": "證據",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7568
+    },
+    {
+      "term_idx": 3406,
+      "en": "testimony",
+      "zh_canonical": "證供",
+      "en_clean": "testimony",
+      "zh_clean": "證供",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7366
+    },
+    {
+      "term_idx": 3586,
+      "en": "verification",
+      "zh_canonical": "核實",
+      "en_clean": "verification",
+      "zh_clean": "核實",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7204
+    },
+    {
+      "term_idx": 3914,
+      "en": "further evidence",
+      "zh_canonical": "進一步證據",
+      "en_clean": "further evidence",
+      "zh_clean": "進一步證據",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7761
+    },
+    {
+      "term_idx": 4586,
+      "en": "as the case may be",
+      "zh_canonical": "視屬何情況而定",
+      "en_clean": "as the case may be",
+      "zh_clean": "視屬何情況而定",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "procedure": 6
+      },
+      "knn_top_neighbour_sim": 0.6631
+    },
+    {
+      "term_idx": 5138,
+      "en": "countersign",
+      "zh_canonical": "加簽",
+      "en_clean": "countersign",
+      "zh_clean": "加簽",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7628
+    },
+    {
+      "term_idx": 6014,
+      "en": "in writing",
+      "zh_canonical": "以書面",
+      "en_clean": "in writing",
+      "zh_clean": "以書面",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7355
+    },
+    {
+      "term_idx": 6178,
+      "en": "intervening",
+      "zh_canonical": "相隔期間",
+      "en_clean": "intervening",
+      "zh_clean": "相隔期間",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7147
+    },
+    {
+      "term_idx": 7373,
+      "en": "summarily",
+      "zh_canonical": "循簡易程序",
+      "en_clean": "summarily",
+      "zh_clean": "循簡易程序",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6407
+    },
+    {
+      "term_idx": 8892,
+      "en": "letter of request",
+      "zh_canonical": "請求書",
+      "en_clean": "letter of request",
+      "zh_clean": "請求書",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6892
+    },
+    {
+      "term_idx": 2339,
+      "en": "messuage",
+      "zh_canonical": "宅院",
+      "en_clean": "messuage",
+      "zh_clean": "宅院",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "international": 1,
+        "procedure": 6
+      },
+      "knn_top_neighbour_sim": 0.6857
+    },
+    {
+      "term_idx": 1164,
+      "en": "cross-appeal",
+      "zh_canonical": "交相上訴",
+      "en_clean": "cross-appeal",
+      "zh_clean": "交相上訴",
+      "k_en": 4,
+      "k_zh": 5,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7911
+    },
+    {
+      "term_idx": 490,
+      "en": "adjudication",
+      "zh_canonical": "終審",
+      "en_clean": "adjudication",
+      "zh_clean": "終審",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "procedure": 5
+      },
+      "knn_top_neighbour_sim": 0.734
+    },
+    {
+      "term_idx": 761,
+      "en": "bespeak",
+      "zh_canonical": "表明",
+      "en_clean": "bespeak",
+      "zh_clean": "表明",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6989
+    },
+    {
+      "term_idx": 1017,
+      "en": "conclusive",
+      "zh_canonical": "不可推翻的",
+      "en_clean": "conclusive",
+      "zh_clean": "不可推翻",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.6717
+    },
+    {
+      "term_idx": 1337,
+      "en": "disclose",
+      "zh_canonical": "充分披露",
+      "en_clean": "disclose",
+      "zh_clean": "充分披露",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.8886
+    },
+    {
+      "term_idx": 1841,
+      "en": "impartiality",
+      "zh_canonical": "公正性",
+      "en_clean": "impartiality",
+      "zh_clean": "公正性",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7143
+    },
+    {
+      "term_idx": 4009,
+      "en": "without notice",
+      "zh_canonical": "不知悉",
+      "en_clean": "without notice",
+      "zh_clean": "不知悉",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6925
+    },
+    {
+      "term_idx": 4629,
+      "en": "attesting",
+      "zh_canonical": "見證人",
+      "en_clean": "attesting",
+      "zh_clean": "見證人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "administrative": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7369
+    },
+    {
+      "term_idx": 5352,
+      "en": "disclaim",
+      "zh_canonical": "放棄",
+      "en_clean": "disclaim",
+      "zh_clean": "放棄",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "civil": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7478
+    },
+    {
+      "term_idx": 5406,
+      "en": "distinctly",
+      "zh_canonical": "明確",
+      "en_clean": "distinctly",
+      "zh_clean": "明確",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "procedure": 5,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6453
+    },
+    {
+      "term_idx": 5694,
+      "en": "first-mentioned",
+      "zh_canonical": "首述的",
+      "en_clean": "first-mentioned",
+      "zh_clean": "首述",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.8021
+    },
+    {
+      "term_idx": 5776,
+      "en": "gathering",
+      "zh_canonical": "聚集",
+      "en_clean": "gathering",
+      "zh_clean": "聚集",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7171
+    },
+    {
+      "term_idx": 6008,
+      "en": "in the case of",
+      "zh_canonical": "如",
+      "en_clean": "in the case of",
+      "zh_clean": "如",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "procedure": 5,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7655
+    },
+    {
+      "term_idx": 6114,
+      "en": "inquest",
+      "zh_canonical": "死因研訊",
+      "en_clean": "inquest",
+      "zh_clean": "死因研訊",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6922
+    },
+    {
+      "term_idx": 6584,
+      "en": "occurrence",
+      "zh_canonical": "事故",
+      "en_clean": "occurrence",
+      "zh_clean": "事故",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "civil": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7279
+    },
+    {
+      "term_idx": 6599,
+      "en": "on record",
+      "zh_canonical": "予以記錄",
+      "en_clean": "on record",
+      "zh_clean": "予以記錄",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.641
+    },
+    {
+      "term_idx": 7580,
+      "en": "verify",
+      "zh_canonical": "核實",
+      "en_clean": "verify",
+      "zh_clean": "核實",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6985
+    },
+    {
+      "term_idx": 8182,
+      "en": "of its own motion",
+      "zh_canonical": "主動",
+      "en_clean": "of its own motion",
+      "zh_clean": "主動",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "procedure": 5,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6186
+    },
+    {
+      "term_idx": 8395,
+      "en": "findings",
+      "zh_canonical": "調查結果",
+      "en_clean": "findings",
+      "zh_clean": "調查結果",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.782
+    },
+    {
+      "term_idx": 9329,
+      "en": "uncovered",
+      "zh_canonical": "不受信用保障涵蓋部分",
+      "en_clean": "uncovered",
+      "zh_clean": "不受信用保障涵蓋部分",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7613
+    },
+    {
+      "term_idx": 7959,
+      "en": "verified",
+      "zh_canonical": "核實副本",
+      "en_clean": "verified",
+      "zh_clean": "核實副本",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "international": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7003
+    },
+    {
+      "term_idx": 4890,
+      "en": "cite",
+      "zh_canonical": "引稱",
+      "en_clean": "cite",
+      "zh_clean": "引稱",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6886
+    },
+    {
+      "term_idx": 4989,
+      "en": "completeness",
+      "zh_canonical": "設備的有效性或完備性",
+      "en_clean": "completeness",
+      "zh_clean": "設備的有效性或完備性",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "international": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6897
+    },
+    {
+      "term_idx": 7472,
+      "en": "transparency",
+      "zh_canonical": "透明度",
+      "en_clean": "transparency",
+      "zh_clean": "透明度",
+      "k_en": 5,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.784
+    },
+    {
+      "term_idx": 6798,
+      "en": "pre-inquest",
+      "zh_canonical": "研訊前檢討",
+      "en_clean": "pre-inquest",
+      "zh_clean": "研訊前檢討",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7098
+    },
+    {
+      "term_idx": 8503,
+      "en": "appealable",
+      "zh_canonical": "可予上訴",
+      "en_clean": "appealable",
+      "zh_clean": "可予上訴",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 5,
+        "labor_social": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7737
+    },
+    {
+      "term_idx": 694,
+      "en": "attest",
+      "zh_canonical": "核簽",
+      "en_clean": "attest",
+      "zh_clean": "核簽",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "civil": 1,
+        "criminal": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7245
+    },
+    {
+      "term_idx": 969,
+      "en": "commence proceedings",
+      "zh_canonical": "展開法律程序",
+      "en_clean": "commence proceedings",
+      "zh_clean": "展開法律程序",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "procedure": 4,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.7235
+    },
+    {
+      "term_idx": 1036,
+      "en": "confidential",
+      "zh_canonical": "保密",
+      "en_clean": "confidential",
+      "zh_clean": "保密",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7063
+    },
+    {
+      "term_idx": 1151,
+      "en": "Court of Appeal",
+      "zh_canonical": "上訴法庭（香港）",
+      "en_clean": "Court of Appeal",
+      "zh_clean": "上訴法庭",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "procedure": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7938
+    },
+    {
+      "term_idx": 1414,
+      "en": "dutiable",
+      "zh_canonical": "應課稅的",
+      "en_clean": "dutiable",
+      "zh_clean": "應課稅",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7878
+    },
+    {
+      "term_idx": 1442,
+      "en": "electronic record",
+      "zh_canonical": "電子紀錄",
+      "en_clean": "electronic record",
+      "zh_clean": "電子紀錄",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6732
+    },
+    {
+      "term_idx": 1473,
+      "en": "endorsement",
+      "zh_canonical": "加簽",
+      "en_clean": "endorsement",
+      "zh_clean": "加簽",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 1,
+        "procedure": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7449
+    },
+    {
+      "term_idx": 1547,
+      "en": "exception",
+      "zh_canonical": "例外",
+      "en_clean": "exception",
+      "zh_clean": "例外",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "procedure": 4,
+        "criminal": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7115
+    },
+    {
+      "term_idx": 1552,
+      "en": "exclusive",
+      "zh_canonical": "專有",
+      "en_clean": "exclusive",
+      "zh_clean": "專有",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.6849
+    },
+    {
+      "term_idx": 1651,
+      "en": "first",
+      "zh_canonical": "表面",
+      "en_clean": "first",
+      "zh_clean": "表面",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.8204
+    },
+    {
+      "term_idx": 2188,
+      "en": "legitimacy",
+      "zh_canonical": "合法性",
+      "en_clean": "legitimacy",
+      "zh_clean": "合法性",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 1,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7208
+    },
+    {
+      "term_idx": 2565,
+      "en": "originating",
+      "zh_canonical": "原訴",
+      "en_clean": "originating",
+      "zh_clean": "原訴",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6779
+    },
+    {
+      "term_idx": 2665,
+      "en": "permission",
+      "zh_canonical": "准許",
+      "en_clean": "permission",
+      "zh_clean": "准許",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "procedure": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7979
+    },
+    {
+      "term_idx": 2687,
+      "en": "plead",
+      "zh_canonical": "答辯",
+      "en_clean": "plead",
+      "zh_clean": "答辯",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 1,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.924
+    },
+    {
+      "term_idx": 3117,
+      "en": "saleable area",
+      "zh_canonical": "實用面積",
+      "en_clean": "saleable area",
+      "zh_clean": "實用面積",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "procedure": 4,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6625
+    },
+    {
+      "term_idx": 3467,
+      "en": "unconscionable",
+      "zh_canonical": "不合情理",
+      "en_clean": "unconscionable",
+      "zh_clean": "不合情理",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 2,
+        "constitutional": 1,
+        "procedure": 4
+      },
+      "knn_top_neighbour_sim": 0.7232
+    },
+    {
+      "term_idx": 3877,
+      "en": "insider dealing",
+      "zh_canonical": "內幕交易",
+      "en_clean": "insider dealing",
+      "zh_clean": "內幕交易",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 3,
+        "procedure": 4
+      },
+      "knn_top_neighbour_sim": 0.6769
+    },
+    {
+      "term_idx": 4006,
+      "en": "on its own motion",
+      "zh_canonical": "主動",
+      "en_clean": "on its own motion",
+      "zh_clean": "主動",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "procedure": 4,
+        "criminal": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6331
+    },
+    {
+      "term_idx": 4244,
+      "en": "requesting",
+      "zh_canonical": "提出請求的法院",
+      "en_clean": "requesting",
+      "zh_clean": "提出請求的法院",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 1,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7604
+    },
+    {
+      "term_idx": 4368,
+      "en": "abstract",
+      "zh_canonical": "撮錄",
+      "en_clean": "abstract",
+      "zh_clean": "撮錄",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7205
+    },
+    {
+      "term_idx": 4491,
+      "en": "allowable",
+      "zh_canonical": "可容許",
+      "en_clean": "allowable",
+      "zh_clean": "可容許",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.793
+    },
+    {
+      "term_idx": 4587,
+      "en": "as the context permits",
+      "zh_canonical": "在文意許可的情況下",
+      "en_clean": "as the context permits",
+      "zh_clean": "在文意許可的情況下",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "civil": 1,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6493
+    },
+    {
+      "term_idx": 4590,
+      "en": "ascertainable",
+      "zh_canonical": "可確定的",
+      "en_clean": "ascertainable",
+      "zh_clean": "可確定",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7111
+    },
+    {
+      "term_idx": 4598,
+      "en": "assessable",
+      "zh_canonical": "應評稅入息",
+      "en_clean": "assessable",
+      "zh_clean": "應評稅入息",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "procedure": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7409
+    },
+    {
+      "term_idx": 4839,
+      "en": "certified copy",
+      "zh_canonical": "核證文本",
+      "en_clean": "certified copy",
+      "zh_clean": "核證文本",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 1,
+        "international": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7028
+    },
+    {
+      "term_idx": 4850,
+      "en": "changer",
+      "zh_canonical": "貨幣兌換商",
+      "en_clean": "changer",
+      "zh_clean": "貨幣兌換商",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6626
+    },
+    {
+      "term_idx": 4954,
+      "en": "commentary",
+      "zh_canonical": "評註",
+      "en_clean": "commentary",
+      "zh_clean": "評註",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "criminal": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7686
+    },
+    {
+      "term_idx": 5020,
+      "en": "conferencing",
+      "zh_canonical": "視像會議",
+      "en_clean": "conferencing",
+      "zh_clean": "視像會議",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6883
+    },
+    {
+      "term_idx": 5124,
+      "en": "correspondence",
+      "zh_canonical": "通信",
+      "en_clean": "correspondence",
+      "zh_clean": "通信",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7068
+    },
+    {
+      "term_idx": 5137,
+      "en": "counter-claim",
+      "zh_canonical": "反申索書",
+      "en_clean": "counter-claim",
+      "zh_clean": "反申索書",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "civil": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.9349
+    },
+    {
+      "term_idx": 5152,
+      "en": "credible",
+      "zh_canonical": "可信",
+      "en_clean": "credible",
+      "zh_clean": "可信",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "criminal": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7608
+    },
+    {
+      "term_idx": 5306,
+      "en": "detection",
+      "zh_canonical": "發現",
+      "en_clean": "detection",
+      "zh_clean": "發現",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6913
+    },
+    {
+      "term_idx": 5392,
+      "en": "disputes",
+      "zh_canonical": "解決爭議",
+      "en_clean": "disputes",
+      "zh_clean": "解決爭議",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "procedure": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7522
+    },
+    {
+      "term_idx": 5577,
+      "en": "evidencing",
+      "zh_canonical": "證明",
+      "en_clean": "evidencing",
+      "zh_clean": "證明",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 1,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7113
+    },
+    {
+      "term_idx": 5638,
+      "en": "expose",
+      "zh_canonical": "遺棄",
+      "en_clean": "expose",
+      "zh_clean": "遺棄",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7367
+    },
+    {
+      "term_idx": 5730,
+      "en": "formulate",
+      "zh_canonical": "制訂",
+      "en_clean": "formulate",
+      "zh_clean": "制訂",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "administrative": 1,
+        "procedure": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.694
+    },
+    {
+      "term_idx": 6198,
+      "en": "investigating",
+      "zh_canonical": "調查人員",
+      "en_clean": "investigating",
+      "zh_clean": "調查人員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "procedure": 4,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.7666
+    },
+    {
+      "term_idx": 6226,
+      "en": "journalistic",
+      "zh_canonical": "新聞材料",
+      "en_clean": "journalistic",
+      "zh_clean": "新聞材料",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "constitutional": 1,
+        "criminal": 1,
+        "procedure": 4
+      },
+      "knn_top_neighbour_sim": 0.6602
+    },
+    {
+      "term_idx": 6231,
+      "en": "Justice of Appeal",
+      "zh_canonical": "上訴法庭法官",
+      "en_clean": "Justice of Appeal",
+      "zh_clean": "上訴法庭法官",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "procedure": 4,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7815
+    },
+    {
+      "term_idx": 6560,
+      "en": "notifiable",
+      "zh_canonical": "須予通知的",
+      "en_clean": "notifiable",
+      "zh_clean": "須予通知",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.669
+    },
+    {
+      "term_idx": 7082,
+      "en": "resolve",
+      "zh_canonical": "解決",
+      "en_clean": "resolve",
+      "zh_clean": "解決",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6995
+    },
+    {
+      "term_idx": 7114,
+      "en": "reveal",
+      "zh_canonical": "公開",
+      "en_clean": "reveal",
+      "zh_clean": "公開",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "criminal": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7889
+    },
+    {
+      "term_idx": 7359,
+      "en": "substantiality",
+      "zh_canonical": "實質分量",
+      "en_clean": "substantiality",
+      "zh_clean": "實質分量",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6878
+    },
+    {
+      "term_idx": 7497,
+      "en": "uncertified",
+      "zh_canonical": "未經核證",
+      "en_clean": "uncertified",
+      "zh_clean": "未經核證",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 1,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6973
+    },
+    {
+      "term_idx": 7520,
+      "en": "unexpected",
+      "zh_canonical": "突發",
+      "en_clean": "unexpected",
+      "zh_clean": "突發",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 3
+      },
+      "knn_top_neighbour_sim": 0.6536
+    },
+    {
+      "term_idx": 7540,
+      "en": "unobstructed",
+      "zh_canonical": "無阻",
+      "en_clean": "unobstructed",
+      "zh_clean": "無阻",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "procedure": 4,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7096
+    },
+    {
+      "term_idx": 7599,
+      "en": "visible",
+      "zh_canonical": "可見",
+      "en_clean": "visible",
+      "zh_clean": "可見",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 1,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6834
+    },
+    {
+      "term_idx": 7944,
+      "en": "written consent",
+      "zh_canonical": "同意書",
+      "en_clean": "written consent",
+      "zh_clean": "同意書",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 1,
+        "international": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7028
+    },
+    {
+      "term_idx": 9346,
+      "en": "unlisted",
+      "zh_canonical": "非上市",
+      "en_clean": "unlisted",
+      "zh_clean": "非上市",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7111
+    },
+    {
+      "term_idx": 1366,
+      "en": "dissemination",
+      "zh_canonical": "散布",
+      "en_clean": "dissemination",
+      "zh_clean": "散布",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 1,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6696
+    },
+    {
+      "term_idx": 1079,
+      "en": "contend",
+      "zh_canonical": "爭訟",
+      "en_clean": "contend",
+      "zh_clean": "爭訟",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "civil": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7477
+    },
+    {
+      "term_idx": 5098,
+      "en": "conversant",
+      "zh_canonical": "熟悉",
+      "en_clean": "conversant",
+      "zh_clean": "熟悉",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "international": 3
+      },
+      "knn_top_neighbour_sim": 0.7477
+    },
+    {
+      "term_idx": 1900,
+      "en": "in personam",
+      "zh_canonical": "對人訴訟",
+      "en_clean": "in personam",
+      "zh_clean": "對人訴訟",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "procedure": 4,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.6761
+    },
+    {
+      "term_idx": 5578,
+      "en": "evident",
+      "zh_canonical": "明顯",
+      "en_clean": "evident",
+      "zh_clean": "明顯",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 1,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6977
+    },
+    {
+      "term_idx": 5966,
+      "en": "in connexion with",
+      "zh_canonical": "所關連的",
+      "en_clean": "in connexion with",
+      "zh_clean": "所關連",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "civil": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.6725
+    },
+    {
+      "term_idx": 6356,
+      "en": "make public",
+      "zh_canonical": "公布",
+      "en_clean": "make public",
+      "zh_clean": "公布",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "administrative": 1,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6975
+    },
+    {
+      "term_idx": 8136,
+      "en": "terms of issue",
+      "zh_canonical": "發行條款",
+      "en_clean": "terms of issue",
+      "zh_clean": "發行條款",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "administrative": 1,
+        "procedure": 4
+      },
+      "knn_top_neighbour_sim": 0.7117
+    },
+    {
+      "term_idx": 7267,
+      "en": "soliciting",
+      "zh_canonical": "兜客",
+      "en_clean": "soliciting",
+      "zh_clean": "兜客",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7608
+    },
+    {
+      "term_idx": 7987,
+      "en": "reviewable",
+      "zh_canonical": "可覆核決定",
+      "en_clean": "reviewable",
+      "zh_clean": "可覆核決定",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6896
+    },
+    {
+      "term_idx": 3917,
+      "en": "insufficient evidence",
+      "zh_canonical": "沒有足夠證據",
+      "en_clean": "insufficient evidence",
+      "zh_clean": "沒有足夠證據",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "civil": 1,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.742
+    },
+    {
+      "term_idx": 3896,
+      "en": "signal of distress",
+      "zh_canonical": "遇險訊號",
+      "en_clean": "signal of distress",
+      "zh_clean": "遇險訊號",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "procedure": 4,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6769
+    },
+    {
+      "term_idx": 8018,
+      "en": "understandable",
+      "zh_canonical": "易於理解",
+      "en_clean": "understandable",
+      "zh_clean": "易於理解",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "labor_social": 1,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.6675
+    },
+    {
+      "term_idx": 5099,
+      "en": "conversation",
+      "zh_canonical": "任何對話的大意",
+      "en_clean": "conversation",
+      "zh_clean": "任何對話的大意",
+      "k_en": 7,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "international": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7452
+    },
+    {
+      "term_idx": 8017,
+      "en": "readable",
+      "zh_canonical": "易於閱讀",
+      "en_clean": "readable",
+      "zh_clean": "易於閱讀",
+      "k_en": 6,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "procedure": 4,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7115
+    },
+    {
+      "term_idx": 577,
+      "en": "amicus curiae",
+      "zh_canonical": "法庭之友",
+      "en_clean": "amicus curiae",
+      "zh_clean": "法庭之友",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.713
+    },
+    {
+      "term_idx": 3952,
+      "en": "notifiable interest",
+      "zh_canonical": "須具報（的）權益",
+      "en_clean": "notifiable interest",
+      "zh_clean": "須具報權益",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 3,
+        "procedure": 4
+      },
+      "knn_top_neighbour_sim": 0.6745
+    },
+    {
+      "term_idx": 7519,
+      "en": "unexecuted",
+      "zh_canonical": "未簽立",
+      "en_clean": "unexecuted",
+      "zh_clean": "未簽立",
+      "k_en": 4,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "civil": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.679
+    },
+    {
+      "term_idx": 3937,
+      "en": "preliminary hearing",
+      "zh_canonical": "初步聆訊",
+      "en_clean": "preliminary hearing",
+      "zh_clean": "初步聆訊",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "criminal": 1,
+        "civil": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7084
+    },
+    {
+      "term_idx": 5400,
+      "en": "dissentient",
+      "zh_canonical": "持異議的成員",
+      "en_clean": "dissentient",
+      "zh_clean": "持異議的成員",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 4,
+        "constitutional": 1,
+        "labor_social": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7011
+    }
+  ],
+  "candidate_pool_stats": {
+    "total_predicted_to_domain": 479,
+    "high_mid_confidence": 111,
+    "passed_to_agent": 111
+  }
+}

@@ -1,0 +1,6561 @@
+{
+  "lang": "en",
+  "n_terms": 364,
+  "n_terms_k_ge_4": 364,
+  "n_terms_k_lt_4": 0,
+  "min_n_attested": 6,
+  "max_n_attested": 8,
+  "median_n_attested": 8.0,
+  "mean_n_attested": 7.991758241758242,
+  "per_term": [
+    {
+      "en": "register",
+      "zh": "登記",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "390",
+        "390",
+        "392",
+        "392",
+        "392",
+        "403",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "certificate",
+      "zh": "證明書",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "391",
+        "392A",
+        "392",
+        "392",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "licence",
+      "zh": "牌照",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "registration",
+      "zh": "登記",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "400C",
+        "400C",
+        "400D",
+        "400D",
+        "400",
+        "400",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "practice",
+      "zh": "實務",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "386",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "application",
+      "zh": "申請",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "384A",
+        "386",
+        "386",
+        "386",
+        "386",
+        "390A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "permit",
+      "zh": "准許證",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "389",
+        "391",
+        "400A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "requirement",
+      "zh": "要求",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "address",
+      "zh": "地址",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "390B",
+        "390",
+        "392",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "procedure",
+      "zh": "程序",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "382",
+        "382",
+        "382",
+        "382",
+        "383"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "compliance",
+      "zh": "遵從",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384",
+        "390",
+        "391",
+        "392",
+        "394",
+        "394",
+        "397",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "inspection",
+      "zh": "公眾查閱",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "392",
+        "400B",
+        "400B",
+        "400",
+        "400",
+        "400",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "statutory",
+      "zh": "法例",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "392",
+        "411",
+        "412",
+        "415A",
+        "415",
+        "426A",
+        "426A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "duly",
+      "zh": "妥當地",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "386",
+        "388",
+        "389",
+        "397",
+        "398",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "expenses",
+      "zh": "費用",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384",
+        "388B",
+        "390",
+        "397",
+        "397",
+        "399",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "accounting",
+      "zh": "會計",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "399",
+        "401",
+        "401",
+        "416",
+        "426",
+        "430D",
+        "430",
+        "450"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "enforcement",
+      "zh": "強制執行",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "405",
+        "414",
+        "414"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "tax",
+      "zh": "稅",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401",
+        "402",
+        "483",
+        "485A",
+        "485A",
+        "485A",
+        "485A",
+        "485"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "code",
+      "zh": "守則",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391",
+        "397",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Registrar",
+      "zh": "登記官",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "390A",
+        "390A",
+        "390B",
+        "390B",
+        "390B",
+        "390B",
+        "390B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "controller",
+      "zh": "控制人",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "448C",
+        "448C",
+        "448C",
+        "448C",
+        "448C",
+        "448C",
+        "448C",
+        "460"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "administrative",
+      "zh": "行政",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "383",
+        "383",
+        "383",
+        "392",
+        "397",
+        "400C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "regulatory",
+      "zh": "規管",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "430B",
+        "485",
+        "520A",
+        "549",
+        "549",
+        "549",
+        "549",
+        "556D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "notification",
+      "zh": "通知書",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401",
+        "401",
+        "401",
+        "401",
+        "403",
+        "406",
+        "406",
+        "406"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "comply",
+      "zh": "遵守",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "384A",
+        "384",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "provisional",
+      "zh": "暫定",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "415A",
+        "415",
+        "415",
+        "415"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "public interest",
+      "zh": "公眾利益",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "389",
+        "392A",
+        "394",
+        "397",
+        "397",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "suspension",
+      "zh": "暫停",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388",
+        "391",
+        "398",
+        "400",
+        "401",
+        "406D",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "accreditation",
+      "zh": "評審",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406G",
+        "406G",
+        "406G",
+        "406G",
+        "493",
+        "493",
+        "493",
+        "493"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "maintenance",
+      "zh": "保養",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "386",
+        "400",
+        "401",
+        "401",
+        "403",
+        "406D",
+        "406E"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "complaint",
+      "zh": "投訴",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "394",
+        "397",
+        "397",
+        "397",
+        "397",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "in force",
+      "zh": "繼續有效",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "383",
+        "383",
+        "388",
+        "388",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "set aside",
+      "zh": "作廢",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "400B",
+        "434",
+        "435A",
+        "442",
+        "447A",
+        "453",
+        "479",
+        "481"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "revocation",
+      "zh": "撤回",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "392",
+        "392",
+        "392",
+        "392",
+        "406G",
+        "406G",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "implementation",
+      "zh": "實施",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413O",
+        "413O",
+        "413O",
+        "478C",
+        "478T",
+        "482",
+        "482",
+        "483"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "exemption",
+      "zh": "豁免",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "392A",
+        "392",
+        "392",
+        "392",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "entry",
+      "zh": "入境",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "391",
+        "398",
+        "400",
+        "403",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "levy",
+      "zh": "徵款",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "411A",
+        "411",
+        "411",
+        "411",
+        "411",
+        "411",
+        "411"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "modification",
+      "zh": "修改",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "392",
+        "401",
+        "413A",
+        "413P",
+        "413P",
+        "413P",
+        "413P"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "regulation",
+      "zh": "規例",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "388B",
+        "390",
+        "391",
+        "391",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "governing",
+      "zh": "規管",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388",
+        "388",
+        "391",
+        "411",
+        "423",
+        "426",
+        "426"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "inspector",
+      "zh": "視察主任",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "390",
+        "392",
+        "413A",
+        "413H",
+        "448B",
+        "448B",
+        "448B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "approval",
+      "zh": "批准",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "389",
+        "389",
+        "390",
+        "392",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "authorization",
+      "zh": "訂明授權",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "391",
+        "400",
+        "400",
+        "406",
+        "421",
+        "424",
+        "448C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "taxation",
+      "zh": "課稅",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "397",
+        "480",
+        "484A",
+        "484A",
+        "484A",
+        "484B",
+        "484"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "administer",
+      "zh": "主持",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "390",
+        "391",
+        "397",
+        "421",
+        "423",
+        "426A",
+        "426A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "discipline",
+      "zh": "紀律",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388",
+        "400C",
+        "400C",
+        "400D",
+        "400D",
+        "406",
+        "408"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "surcharge",
+      "zh": "附加費",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "398",
+        "398",
+        "398",
+        "398",
+        "398",
+        "426K",
+        "426K"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "expenditure",
+      "zh": "開支",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "388",
+        "389",
+        "392",
+        "397",
+        "397",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "non-compliance",
+      "zh": "不符合",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "447",
+        "448",
+        "449B",
+        "449",
+        "478AF",
+        "478AF",
+        "478AF",
+        "485A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "recall",
+      "zh": "召回",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "424",
+        "424",
+        "428B",
+        "428B",
+        "448B",
+        "456",
+        "475",
+        "475"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "registry",
+      "zh": "登記處",
+      "domain": "administrative",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405",
+        "413A",
+        "413A",
+        "413B",
+        "413B",
+        "413D",
+        "413D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "provision",
+      "zh": "條款",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "384",
+        "386",
+        "388B",
+        "388B",
+        "388B",
+        "388",
+        "390B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "trade mark",
+      "zh": "商標",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406G",
+        "412",
+        "424C",
+        "424C",
+        "514",
+        "514",
+        "514",
+        "541M"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "property",
+      "zh": "物業",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "obligation",
+      "zh": "義務",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "389",
+        "397",
+        "397",
+        "397",
+        "397",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "grant",
+      "zh": "批予",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "394",
+        "397",
+        "401A",
+        "401",
+        "401",
+        "401",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "asset",
+      "zh": "資產",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405",
+        "426",
+        "426",
+        "426",
+        "426",
+        "426",
+        "426"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "transfer",
+      "zh": "移交",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "387",
+        "387",
+        "394",
+        "394",
+        "394",
+        "394",
+        "394",
+        "401A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "custody",
+      "zh": "保管",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "383",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "trust",
+      "zh": "信託",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "405A",
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "transaction",
+      "zh": "交易",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "419",
+        "426",
+        "426",
+        "440",
+        "440",
+        "448C",
+        "450",
+        "452"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "patent",
+      "zh": "專利",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "448",
+        "478G",
+        "514A",
+        "514C",
+        "514C",
+        "514C",
+        "514C",
+        "514C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "entity",
+      "zh": "實體",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "485A",
+        "485A",
+        "485A",
+        "485",
+        "485",
+        "485",
+        "485",
+        "485"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "settlement",
+      "zh": "清繳",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "410",
+        "438",
+        "446",
+        "448C",
+        "448C",
+        "448C",
+        "449B",
+        "453"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "copyright",
+      "zh": "版權",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "392A",
+        "392",
+        "514",
+        "522",
+        "522",
+        "522",
+        "528B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "insurance",
+      "zh": "保險",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "398",
+        "411A",
+        "411",
+        "411",
+        "411",
+        "411",
+        "411"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "prejudice",
+      "zh": "妨害",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "388",
+        "394",
+        "397",
+        "397",
+        "397",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "stock",
+      "zh": "股票",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405",
+        "415C",
+        "415C",
+        "426",
+        "455",
+        "466",
+        "478AF"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "trustee",
+      "zh": "受託人",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "388",
+        "405A",
+        "405A",
+        "405A",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "land",
+      "zh": "土地",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "405A",
+        "405",
+        "406A",
+        "406H",
+        "406",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "infringement",
+      "zh": "侵權",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "445",
+        "445",
+        "445",
+        "445",
+        "445",
+        "448",
+        "490",
+        "490"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "loan",
+      "zh": "貸款",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "419",
+        "423",
+        "426",
+        "426",
+        "430",
+        "430",
+        "448C",
+        "472"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "deposit",
+      "zh": "按金",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "389",
+        "392",
+        "392",
+        "392",
+        "392",
+        "392",
+        "398",
+        "411"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "undertaking",
+      "zh": "承諾",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "400",
+        "406A",
+        "406E",
+        "426J",
+        "426J",
+        "426",
+        "426",
+        "426"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "family",
+      "zh": "家事",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "397",
+        "401",
+        "405A",
+        "405",
+        "452",
+        "452",
+        "455"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "share capital",
+      "zh": "股本",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "426",
+        "426",
+        "482",
+        "483",
+        "485A",
+        "485A",
+        "485A",
+        "485A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "ownership",
+      "zh": "擁有權",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "392",
+        "403",
+        "405",
+        "408",
+        "409",
+        "415",
+        "415"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "futures",
+      "zh": "期貨",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "395",
+        "395",
+        "395",
+        "395",
+        "395",
+        "395",
+        "395",
+        "395"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "deed",
+      "zh": "契約",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "389",
+        "410",
+        "410",
+        "447",
+        "473",
+        "476",
+        "485A",
+        "485A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "estate",
+      "zh": "產業",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "386",
+        "401",
+        "405A",
+        "405",
+        "405",
+        "410",
+        "410"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "holder",
+      "zh": "持有人",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "401A",
+        "401",
+        "403",
+        "412",
+        "412",
+        "412",
+        "421A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "premises",
+      "zh": "處所",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384",
+        "388B",
+        "388",
+        "390",
+        "390",
+        "390",
+        "390",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "client",
+      "zh": "當事人",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405",
+        "426",
+        "455",
+        "455",
+        "485",
+        "485",
+        "485",
+        "511C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "derivative",
+      "zh": "衍生",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "485B",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "contractor",
+      "zh": "承包商",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "406D",
+        "406D",
+        "406D",
+        "406D",
+        "406E",
+        "406H",
+        "406"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "partnership",
+      "zh": "合夥",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "400A",
+        "401",
+        "406D",
+        "406",
+        "406",
+        "419",
+        "424"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "contractual",
+      "zh": "合約",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "406",
+        "440",
+        "478",
+        "485A",
+        "486",
+        "486",
+        "508"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "counterparty",
+      "zh": "對手方",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "571AF",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL",
+        "571AL"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "equity",
+      "zh": "衡平法",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "426",
+        "486",
+        "486",
+        "519",
+        "528",
+        "553",
+        "556",
+        "565"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "lease",
+      "zh": "租賃",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "389",
+        "398",
+        "406",
+        "419",
+        "423",
+        "444",
+        "446"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "lien",
+      "zh": "留置權",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "415",
+        "434",
+        "478",
+        "479",
+        "485",
+        "485",
+        "508",
+        "537AE"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "gift",
+      "zh": "贈與",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "priority",
+      "zh": "優先權",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405",
+        "413C",
+        "415",
+        "423",
+        "430C",
+        "446",
+        "447",
+        "448C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "damages",
+      "zh": "損害賠償",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "402",
+        "408",
+        "409",
+        "417",
+        "418",
+        "426",
+        "428",
+        "434"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "misrepresentation",
+      "zh": "失實陳述",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "408",
+        "409",
+        "417",
+        "418",
+        "428",
+        "473",
+        "505",
+        "511C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "testamentary",
+      "zh": "遺囑性質",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "445",
+        "481",
+        "528",
+        "528",
+        "528",
+        "528",
+        "528",
+        "528"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "unincorporated",
+      "zh": "非法團",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "424",
+        "426",
+        "426",
+        "448G",
+        "448G",
+        "456",
+        "470"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "marriage",
+      "zh": "婚姻",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "401A",
+        "401",
+        "429",
+        "429",
+        "465A",
+        "465A",
+        "465"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "distribution",
+      "zh": "分派",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "394",
+        "401",
+        "403",
+        "405A",
+        "405A",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "proceeds",
+      "zh": "得益",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388",
+        "398",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "conveyance",
+      "zh": "轉讓",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384",
+        "388B",
+        "416",
+        "421A",
+        "421A",
+        "421A",
+        "421",
+        "421"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "insolvency",
+      "zh": "無力償債",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401",
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "448A",
+        "455",
+        "455"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "vesting",
+      "zh": "轉歸",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "415",
+        "415",
+        "430A",
+        "443",
+        "443",
+        "446",
+        "446"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "purchaser",
+      "zh": "買家",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "421",
+        "445",
+        "445",
+        "446",
+        "483",
+        "490",
+        "506",
+        "511C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "charitable",
+      "zh": "慈善信託",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "480",
+        "486",
+        "487",
+        "527",
+        "528",
+        "528",
+        "528",
+        "528"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "proprietary",
+      "zh": "所有權",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "424",
+        "522",
+        "549F",
+        "549F",
+        "549F",
+        "549F",
+        "549F",
+        "549F"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "disposition",
+      "zh": "產權處置",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405",
+        "406G",
+        "410",
+        "426",
+        "429",
+        "445",
+        "448C",
+        "455"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "rental",
+      "zh": "租金",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "447",
+        "485",
+        "511C",
+        "515",
+        "528G",
+        "528",
+        "528",
+        "528"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "offeror",
+      "zh": "要約人",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "553",
+        "571AG",
+        "571AG",
+        "571W",
+        "571W",
+        "571W",
+        "571W",
+        "571W"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "dividend",
+      "zh": "股息",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "425",
+        "455",
+        "455",
+        "483"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "licensee",
+      "zh": "持牌人",
+      "domain": "civil",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "act",
+      "zh": "法",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "383",
+        "383",
+        "384A",
+        "384",
+        "386",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "state",
+      "zh": "國家",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "390A",
+        "391",
+        "392",
+        "392",
+        "394",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Board",
+      "zh": "教務委員會",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "384",
+        "386",
+        "386",
+        "386",
+        "386",
+        "386",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Committee",
+      "zh": "上訴委員會",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "382A",
+        "382A",
+        "382A",
+        "382A",
+        "382A",
+        "382A",
+        "382A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "system",
+      "zh": "制度",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "388B",
+        "400I",
+        "400",
+        "400",
+        "400",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "election",
+      "zh": "選舉",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "408",
+        "409",
+        "417",
+        "418",
+        "419B",
+        "419B",
+        "419",
+        "419"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "constituency",
+      "zh": "選區",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541B",
+        "541B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "panel",
+      "zh": "名單",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "386",
+        "386",
+        "386",
+        "390",
+        "390",
+        "390",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "title",
+      "zh": "簡稱",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390A",
+        "392",
+        "392",
+        "392",
+        "408",
+        "409",
+        "415",
+        "415"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "freedom",
+      "zh": "自由",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 7,
+      "caps": [
+        "382",
+        "383",
+        "468",
+        "472",
+        "599",
+        "601",
+        "637"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "vote",
+      "zh": "投票",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "388",
+        "389",
+        "391",
+        "392",
+        "398",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "representative",
+      "zh": "代理人",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "389",
+        "390",
+        "390",
+        "392",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "voting",
+      "zh": "投票",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "389",
+        "419B",
+        "419",
+        "426B",
+        "426B",
+        "426B",
+        "426B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "representation",
+      "zh": "代理",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "403",
+        "406H",
+        "406",
+        "406",
+        "408",
+        "409",
+        "417"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "equal",
+      "zh": "平等",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "401A",
+        "401",
+        "401",
+        "405A",
+        "405A",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "organization",
+      "zh": "組織",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392A",
+        "392",
+        "397",
+        "397",
+        "397",
+        "397",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "government",
+      "zh": "政府",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "383",
+        "383",
+        "383",
+        "384A",
+        "384",
+        "386"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "judicial",
+      "zh": "司法",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "397",
+        "401A",
+        "401",
+        "401",
+        "401",
+        "401"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "territorial",
+      "zh": "領土",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413O",
+        "414",
+        "414",
+        "466",
+        "471",
+        "471",
+        "471",
+        "478"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Director",
+      "zh": "署長",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384",
+        "389"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "nomination",
+      "zh": "提名",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "399",
+        "401",
+        "419B",
+        "419",
+        "426B",
+        "426B",
+        "426B",
+        "426G"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "ballot",
+      "zh": "投票",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "419B",
+        "419B",
+        "419",
+        "419",
+        "419",
+        "426B",
+        "504"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "political",
+      "zh": "政治",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "486",
+        "494",
+        "503",
+        "525AE",
+        "525AF",
+        "525AG"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "candidate",
+      "zh": "候選人",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "478R",
+        "505",
+        "505",
+        "528",
+        "529B",
+        "529B",
+        "529B",
+        "529B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "majority",
+      "zh": "大多數",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "388",
+        "388",
+        "389",
+        "389",
+        "390",
+        "398",
+        "399"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "meeting",
+      "zh": "會議",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "388B",
+        "388",
+        "388",
+        "388",
+        "388",
+        "389",
+        "389"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "poll",
+      "zh": "投票",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "absolute",
+      "zh": "全權",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "419B",
+        "426",
+        "426",
+        "426",
+        "450",
+        "462",
+        "481"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Legislative Council",
+      "zh": "立法會",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "389",
+        "394",
+        "397",
+        "397",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "liberty",
+      "zh": "自由",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "448C",
+        "455",
+        "503",
+        "524",
+        "563",
+        "1021",
+        "1021"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Commissioner",
+      "zh": "海關關長",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "398",
+        "399",
+        "402",
+        "403",
+        "405",
+        "415",
+        "424"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "education",
+      "zh": "教育機構",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "389",
+        "398",
+        "399",
+        "399",
+        "401",
+        "406E",
+        "406"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "bill",
+      "zh": "法案",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "383",
+        "383",
+        "383",
+        "383",
+        "388B",
+        "403C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "elector",
+      "zh": "選民",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B",
+        "529B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "electoral",
+      "zh": "選舉法",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541A",
+        "541A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "delegate",
+      "zh": "獲授權人",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "389",
+        "397",
+        "398",
+        "402",
+        "402",
+        "402",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "society",
+      "zh": "社團",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "392",
+        "419",
+        "419",
+        "419",
+        "421C",
+        "426",
+        "448G"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "territory",
+      "zh": "領土",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "400",
+        "401",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "waters",
+      "zh": "領海",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "District Council",
+      "zh": "區議會議員",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "472",
+        "484",
+        "519",
+        "528",
+        "528",
+        "541A",
+        "541A",
+        "541A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Election Committee",
+      "zh": "選舉委員",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "541A",
+        "541A",
+        "541B",
+        "541B",
+        "541B",
+        "541B",
+        "541B",
+        "541B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "quorum",
+      "zh": "法定人數",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388",
+        "389",
+        "392",
+        "392",
+        "392",
+        "392",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Presiding Officer",
+      "zh": "主持",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "541D",
+        "541D",
+        "541D",
+        "541D",
+        "541D",
+        "541D",
+        "541D",
+        "541D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "third party",
+      "zh": "第三方",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "402",
+        "434",
+        "448F",
+        "462",
+        "479",
+        "485A",
+        "485A",
+        "485"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "constitution",
+      "zh": "憲法",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "408",
+        "415",
+        "419B",
+        "419",
+        "426B",
+        "426B",
+        "426"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "assembly",
+      "zh": "集會",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "413B",
+        "413D",
+        "413E",
+        "413P",
+        "414",
+        "414",
+        "414"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "incorporation",
+      "zh": "法團",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "415",
+        "415",
+        "415",
+        "415",
+        "415",
+        "419B",
+        "419",
+        "421C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Heung Yee Kuk",
+      "zh": "鄉議局",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "480",
+        "541B",
+        "541B",
+        "541B",
+        "541B",
+        "541B",
+        "541B",
+        "541B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "religion",
+      "zh": "宗教",
+      "domain": "constitutional",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "428B",
+        "480",
+        "480",
+        "494",
+        "503",
+        "525AE"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "offence",
+      "zh": "罪行",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "382",
+        "383",
+        "384A",
+        "384A",
+        "384A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "charge",
+      "zh": "押記",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388",
+        "388",
+        "389"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "sentence",
+      "zh": "判刑",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "401",
+        "405",
+        "405",
+        "408",
+        "409",
+        "413D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "justice",
+      "zh": "公正",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "388",
+        "390B",
+        "390B",
+        "390B",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "debt",
+      "zh": "債務",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384",
+        "386",
+        "386",
+        "391",
+        "397",
+        "398",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "criminal",
+      "zh": "刑事",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "383",
+        "388",
+        "390",
+        "390",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "unlawful",
+      "zh": "不合法",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "394",
+        "403",
+        "421A",
+        "421A",
+        "448C",
+        "448G",
+        "448G"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "disciplinary",
+      "zh": "紀律處分程序",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401A",
+        "401A",
+        "401",
+        "401",
+        "401",
+        "406",
+        "406",
+        "406"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "false",
+      "zh": "虛假",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "384",
+        "386",
+        "392",
+        "392",
+        "394",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "conviction",
+      "zh": "定罪",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "384A",
+        "384A",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "arrest",
+      "zh": "逮捕",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "414",
+        "424",
+        "434",
+        "449",
+        "455",
+        "456"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "penalty",
+      "zh": "罰則",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "384",
+        "386",
+        "391",
+        "391",
+        "392",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "prosecution",
+      "zh": "檢控",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388",
+        "388",
+        "392",
+        "394",
+        "394",
+        "394",
+        "394"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "suspend",
+      "zh": "中止",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406H",
+        "406",
+        "406",
+        "406",
+        "406",
+        "435",
+        "448A",
+        "448A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "breach",
+      "zh": "違反",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "405",
+        "406B",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "intent",
+      "zh": "意圖",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "413A",
+        "413B",
+        "414",
+        "414",
+        "414",
+        "414",
+        "421"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "wilfully",
+      "zh": "故意地",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384",
+        "386",
+        "390",
+        "392",
+        "400",
+        "401",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "failure",
+      "zh": "不履行",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "392",
+        "394",
+        "400B",
+        "400B",
+        "405",
+        "406E",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "knowingly",
+      "zh": "故意",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "392",
+        "392",
+        "397",
+        "398",
+        "400",
+        "400",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "imprisonment",
+      "zh": "監禁",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "detention",
+      "zh": "拘留",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "384",
+        "388B",
+        "390",
+        "405",
+        "405",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "crime",
+      "zh": "犯罪",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "392",
+        "397",
+        "397",
+        "397",
+        "455",
+        "455",
+        "455"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "harm",
+      "zh": "傷害",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406E",
+        "406G",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "punishment",
+      "zh": "懲罰",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "401",
+        "401",
+        "413",
+        "472",
+        "486",
+        "492",
+        "492"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "terrorist",
+      "zh": "恐怖分子",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "575",
+        "575",
+        "575",
+        "575",
+        "575",
+        "575",
+        "575",
+        "575"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "fraudulent",
+      "zh": "欺詐",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "408",
+        "409",
+        "411",
+        "417",
+        "418",
+        "425",
+        "428"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "guilty",
+      "zh": "有罪",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "403",
+        "406B",
+        "406B",
+        "406B",
+        "406B",
+        "406B",
+        "406B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "forfeiture",
+      "zh": "沒收",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384",
+        "388",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "assault",
+      "zh": "襲擊",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "468",
+        "494",
+        "494",
+        "503",
+        "503",
+        "503",
+        "505",
+        "575"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "prisoner",
+      "zh": "囚犯",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "475A",
+        "475A",
+        "475",
+        "475",
+        "475",
+        "475",
+        "475",
+        "475"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "misconduct",
+      "zh": "失當行為",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401",
+        "401",
+        "401",
+        "406H",
+        "408",
+        "408",
+        "409",
+        "409"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "threat",
+      "zh": "威脅",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413D",
+        "413E",
+        "413K",
+        "413K"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "conceal",
+      "zh": "隱藏",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "415",
+        "455",
+        "478I",
+        "478I",
+        "528",
+        "528",
+        "537AE",
+        "541D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "contravention",
+      "zh": "違反",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384A",
+        "384",
+        "388B",
+        "388B",
+        "388",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "restraint",
+      "zh": "限制",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "indecent",
+      "zh": "不雅",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "390A",
+        "390B",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "offender",
+      "zh": "罪犯",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "478",
+        "503G",
+        "503G",
+        "504",
+        "509",
+        "526",
+        "567A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "dangerous",
+      "zh": "危險",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384",
+        "384",
+        "384"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "trafficking",
+      "zh": "販運",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "unlawfully",
+      "zh": "非法",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "475",
+        "494",
+        "494",
+        "497",
+        "503",
+        "539",
+        "548",
+        "567"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "attempt",
+      "zh": "企圖",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "435",
+        "448C",
+        "455",
+        "461",
+        "461",
+        "468",
+        "483A",
+        "487"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "murder",
+      "zh": "謀殺",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "468",
+        "494",
+        "494",
+        "503",
+        "504",
+        "504",
+        "504",
+        "505"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "obscene",
+      "zh": "淫褻",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "390A",
+        "390B",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "perjury",
+      "zh": "作假證供罪",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "426",
+        "478",
+        "483C",
+        "485",
+        "485",
+        "486",
+        "512"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "defraud",
+      "zh": "欺詐",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "426",
+        "426",
+        "461",
+        "478AG",
+        "478AH",
+        "478AI",
+        "478AJ",
+        "478AK"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "confiscation",
+      "zh": "沒收令",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "juvenile",
+      "zh": "少年",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "390",
+        "390",
+        "505",
+        "510",
+        "524",
+        "524",
+        "524"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "punish",
+      "zh": "處罰",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "426",
+        "484",
+        "485A",
+        "485",
+        "485",
+        "571",
+        "571"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "violence",
+      "zh": "暴力",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "494A",
+        "494",
+        "494",
+        "504",
+        "541D",
+        "541D",
+        "541F"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "seizure",
+      "zh": "扣押",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384",
+        "390",
+        "403",
+        "405A",
+        "405",
+        "405",
+        "406H",
+        "406"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "bail",
+      "zh": "保釋",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "394",
+        "394",
+        "405",
+        "455",
+        "484",
+        "484",
+        "484",
+        "484"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "intention",
+      "zh": "意向",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "392",
+        "397",
+        "401",
+        "401",
+        "403",
+        "403",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "plea",
+      "zh": "答辯",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "394",
+        "455",
+        "461A",
+        "514",
+        "515",
+        "522",
+        "524",
+        "548"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "revoke",
+      "zh": "撤回",
+      "domain": "criminal",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "392",
+        "392",
+        "392",
+        "392",
+        "401",
+        "401",
+        "406G"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "international",
+      "zh": "國際義務",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "389",
+        "397",
+        "397",
+        "397",
+        "397",
+        "402"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "convention",
+      "zh": "慣例",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "403",
+        "403",
+        "405A",
+        "405A",
+        "413A",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "agreement",
+      "zh": "協定",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "394",
+        "397",
+        "401A",
+        "406G",
+        "406G",
+        "406",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "protection",
+      "zh": "保護",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "389",
+        "398",
+        "400",
+        "402",
+        "403A",
+        "403",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "arrangement",
+      "zh": "安排",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "389",
+        "398",
+        "398",
+        "401",
+        "401",
+        "401"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "consular",
+      "zh": "領事",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413",
+        "426",
+        "478B",
+        "478C",
+        "478G",
+        "478O",
+        "478",
+        "478"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "trade",
+      "zh": "交易",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "400C",
+        "400D",
+        "400",
+        "400",
+        "400",
+        "400",
+        "406D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "declaration",
+      "zh": "宣告",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "392",
+        "394",
+        "398",
+        "401",
+        "401",
+        "406G",
+        "408"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "standard",
+      "zh": "標準",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "400C",
+        "400C",
+        "400C",
+        "400C",
+        "400D",
+        "400D",
+        "400D",
+        "400D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "defence",
+      "zh": "抗辯",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "386",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "United Nations",
+      "zh": "聯合國",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405A",
+        "514",
+        "514",
+        "537AC",
+        "537AE",
+        "537AE",
+        "537AE"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Mainland",
+      "zh": "內地",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "434",
+        "480",
+        "480",
+        "480",
+        "480",
+        "480",
+        "486",
+        "486"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "mutual",
+      "zh": "相互",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405",
+        "406G",
+        "426",
+        "471",
+        "485A",
+        "485A",
+        "485A",
+        "485"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "protocol",
+      "zh": "議定書",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "403C",
+        "403",
+        "403",
+        "403",
+        "413C",
+        "413",
+        "415C",
+        "434"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "multilateral",
+      "zh": "多邊",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "485A",
+        "514",
+        "514",
+        "514",
+        "522",
+        "528",
+        "528",
+        "528"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "independent",
+      "zh": "獨立",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "401",
+        "405",
+        "406E",
+        "426",
+        "446",
+        "446",
+        "446"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "association",
+      "zh": "協會",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388",
+        "389",
+        "389",
+        "392",
+        "398",
+        "398",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "maritime",
+      "zh": "海上",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "413B",
+        "413D",
+        "413E",
+        "413H",
+        "413K",
+        "413N",
+        "413"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "arbitral",
+      "zh": "仲裁",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "537AE",
+        "537BF",
+        "537CF",
+        "537CG",
+        "537CI",
+        "537CJ",
+        "537CK",
+        "537CL"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "diplomatic",
+      "zh": "外交",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "413B",
+        "413D",
+        "413E",
+        "478B",
+        "478C",
+        "478G",
+        "478O"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "marine",
+      "zh": "海上",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "war",
+      "zh": "戰爭",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "386",
+        "386",
+        "386",
+        "386",
+        "414",
+        "414",
+        "415"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "non-Hong Kong",
+      "zh": "非香港",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413B",
+        "413D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "aircraft",
+      "zh": "飛機",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "384A",
+        "384A",
+        "384A",
+        "384",
+        "388B",
+        "390",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "intermediary",
+      "zh": "中介人",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "485",
+        "485",
+        "485",
+        "485",
+        "485",
+        "485",
+        "485",
+        "485"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "boundary",
+      "zh": "土地界線",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "415C",
+        "415C",
+        "415C",
+        "446",
+        "473",
+        "473",
+        "473"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "conference",
+      "zh": "會議",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "480B",
+        "480B",
+        "480",
+        "480",
+        "482",
+        "482",
+        "482",
+        "482"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "conflict",
+      "zh": "抵觸",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "400",
+        "401",
+        "405A",
+        "405",
+        "406H",
+        "446",
+        "448B",
+        "449"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "particulars",
+      "zh": "詳情",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "391",
+        "392",
+        "392",
+        "392",
+        "392",
+        "394",
+        "394"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "military",
+      "zh": "軍隊",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "384A",
+        "448C",
+        "448C",
+        "448C",
+        "448C",
+        "448"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "safeguard",
+      "zh": "保障措施",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "459A",
+        "473",
+        "478R",
+        "558H",
+        "558I",
+        "558O",
+        "571",
+        "584"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "material particular",
+      "zh": "要項",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "392",
+        "392",
+        "398",
+        "400",
+        "411",
+        "414",
+        "421"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "tanker",
+      "zh": "化學品液貨船",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "bilateral",
+      "zh": "雙邊",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "514",
+        "514",
+        "514",
+        "522",
+        "528",
+        "528",
+        "528",
+        "559"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "international law",
+      "zh": "國際法",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "413O",
+        "413",
+        "414",
+        "468",
+        "537CK",
+        "556"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "overseas",
+      "zh": "海外",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "448C",
+        "448",
+        "466",
+        "485A",
+        "485A",
+        "485A",
+        "485A",
+        "485A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "outbound",
+      "zh": "外遊費",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "542",
+        "569",
+        "634A",
+        "634B",
+        "634C",
+        "634C",
+        "634D",
+        "634D"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "sea-going",
+      "zh": "海域航行船舶",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406E",
+        "413I",
+        "413I",
+        "478AL",
+        "478I",
+        "478I",
+        "478I",
+        "478J"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "arbitrator",
+      "zh": "仲裁員",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "448",
+        "457A",
+        "458",
+        "482",
+        "508",
+        "514",
+        "556",
+        "556"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "vicinity",
+      "zh": "鄰近範圍",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "400",
+        "406H",
+        "406H",
+        "406",
+        "448C",
+        "448C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "regional",
+      "zh": "區域",
+      "domain": "international",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "434",
+        "434",
+        "434",
+        "434",
+        "434",
+        "448C",
+        "448",
+        "483E"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "account",
+      "zh": "帳戶",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "386",
+        "388",
+        "388",
+        "388",
+        "388",
+        "389"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "financial",
+      "zh": "財務",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "386",
+        "389",
+        "389",
+        "389",
+        "389",
+        "391",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "business",
+      "zh": "事務",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388B",
+        "388",
+        "389",
+        "390",
+        "391",
+        "392",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "payment",
+      "zh": "中期付款",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "386",
+        "388B",
+        "388B",
+        "389",
+        "389",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "contract",
+      "zh": "合同",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "388",
+        "388",
+        "389",
+        "389",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "office",
+      "zh": "職位",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "382A",
+        "386",
+        "388B",
+        "388",
+        "388",
+        "388",
+        "388"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "company",
+      "zh": "公司",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "388",
+        "388",
+        "388",
+        "388",
+        "389",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "fund",
+      "zh": "基金",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "388",
+        "388",
+        "388",
+        "388",
+        "388",
+        "388",
+        "389"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "fee",
+      "zh": "費用",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "390A",
+        "390A",
+        "390",
+        "392A",
+        "392A",
+        "392A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "benefit",
+      "zh": "利益",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "390A",
+        "397",
+        "397",
+        "397",
+        "398",
+        "401"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "amount",
+      "zh": "款額",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "392",
+        "398",
+        "398",
+        "398",
+        "398",
+        "398",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "care",
+      "zh": "小心",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "professional",
+      "zh": "專業",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "389",
+        "392",
+        "397",
+        "398",
+        "398",
+        "398",
+        "399"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "contribution",
+      "zh": "供款",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "398",
+        "398",
+        "398",
+        "398",
+        "398",
+        "398",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "worker",
+      "zh": "傭工",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406D",
+        "406D",
+        "406D",
+        "406D",
+        "406D",
+        "406D",
+        "406D",
+        "406E"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "Chinese medicine",
+      "zh": "中醫藥學",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "424",
+        "456",
+        "459A",
+        "485A",
+        "485A",
+        "485B",
+        "504",
+        "541A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "position",
+      "zh": "職位",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "382",
+        "392",
+        "400C",
+        "400D",
+        "406A",
+        "406A",
+        "406A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "employment",
+      "zh": "僱傭",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "397",
+        "398",
+        "398",
+        "399",
+        "401A",
+        "401A",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "work",
+      "zh": "作品",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388",
+        "400A",
+        "400G",
+        "400",
+        "400",
+        "400",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "exercise",
+      "zh": "實行",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "383",
+        "383",
+        "384A",
+        "384",
+        "386"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "profit",
+      "zh": "利潤",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "399",
+        "425",
+        "444",
+        "445",
+        "469",
+        "480",
+        "480"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "health",
+      "zh": "健康",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "388B",
+        "389",
+        "389",
+        "389",
+        "398",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "management",
+      "zh": "管理",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "388",
+        "388",
+        "388",
+        "389",
+        "394",
+        "398",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "delivery",
+      "zh": "交付",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "392",
+        "394",
+        "400C",
+        "403C",
+        "413A",
+        "413A",
+        "413P"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "compensation",
+      "zh": "補償",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "398",
+        "398",
+        "401",
+        "401",
+        "401",
+        "401",
+        "401"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "discrimination",
+      "zh": "殘疾歧視",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "383",
+        "480B",
+        "480",
+        "480",
+        "480",
+        "480",
+        "480"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "child",
+      "zh": "兒童",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "leave",
+      "zh": "許可",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "382A",
+        "382",
+        "382",
+        "383",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "assistance",
+      "zh": "協助",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "390",
+        "400",
+        "400",
+        "405A",
+        "405",
+        "406H",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "employee",
+      "zh": "僱員",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388",
+        "388",
+        "388",
+        "389",
+        "398",
+        "398",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "current",
+      "zh": "流通",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "406A",
+        "406A",
+        "406A",
+        "406A",
+        "406B",
+        "406D",
+        "406E"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "level",
+      "zh": "等級",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "escalator",
+      "zh": "自動梯",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "483A",
+        "502",
+        "556A",
+        "556A",
+        "556B",
+        "569",
+        "577A",
+        "583"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "sum",
+      "zh": "款項",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "388B",
+        "399",
+        "399",
+        "400B",
+        "400",
+        "401",
+        "401"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "hour",
+      "zh": "合理時間",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "400I",
+        "406A",
+        "406A",
+        "413L",
+        "413L",
+        "413O",
+        "415A",
+        "415A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "unit",
+      "zh": "單位",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "400",
+        "405A",
+        "405",
+        "406G",
+        "413A",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "manager",
+      "zh": "管理人",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "405A",
+        "405",
+        "413H",
+        "414",
+        "424",
+        "426",
+        "430",
+        "430"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "labour",
+      "zh": "勞工",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "386",
+        "398",
+        "423",
+        "423",
+        "447",
+        "447",
+        "453B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "remuneration",
+      "zh": "酬金",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "388",
+        "388",
+        "398",
+        "398",
+        "398",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "industry",
+      "zh": "行業",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406D",
+        "406H",
+        "406",
+        "411",
+        "424",
+        "430D",
+        "444",
+        "456"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "healthcare",
+      "zh": "醫護服務",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406E",
+        "459A",
+        "459A",
+        "459A",
+        "459A",
+        "459",
+        "504",
+        "542"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "payable",
+      "zh": "應支付",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "388B",
+        "388",
+        "390A",
+        "391",
+        "392A",
+        "392A",
+        "392A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "pay",
+      "zh": "付款",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "386",
+        "388B",
+        "388",
+        "390",
+        "391",
+        "394"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "age",
+      "zh": "年齡",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "medical",
+      "zh": "醫療護理",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "401A",
+        "401",
+        "401",
+        "413H",
+        "413K",
+        "419B",
+        "419B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "disability",
+      "zh": "弱能",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "401",
+        "416",
+        "445",
+        "478AF",
+        "480B",
+        "481",
+        "481"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "full-time",
+      "zh": "全職",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401",
+        "444",
+        "444",
+        "444",
+        "446",
+        "480",
+        "480",
+        "517"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "emergency",
+      "zh": "緊急情況",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "383",
+        "403B",
+        "403C",
+        "406",
+        "413A",
+        "413A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "works",
+      "zh": "工程設施",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "388",
+        "406H",
+        "406H",
+        "406H",
+        "406H",
+        "406H",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "building",
+      "zh": "建築",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "382A",
+        "382A",
+        "382A",
+        "382",
+        "390",
+        "390",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "insurer",
+      "zh": "保險人",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "411",
+        "411",
+        "411",
+        "411",
+        "411",
+        "411",
+        "411",
+        "411"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "staff",
+      "zh": "員工",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "384A",
+        "397",
+        "398",
+        "425",
+        "443",
+        "443",
+        "443"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "entitlement",
+      "zh": "享有權",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "386",
+        "386",
+        "386",
+        "401",
+        "421",
+        "423",
+        "426"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "employer",
+      "zh": "僱主",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "398",
+        "398",
+        "405",
+        "413H",
+        "413H",
+        "423",
+        "423"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "harassment",
+      "zh": "侵擾",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "480",
+        "480",
+        "480",
+        "480",
+        "480",
+        "480",
+        "480",
+        "480"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "occupational",
+      "zh": "職業",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "398",
+        "398",
+        "401",
+        "411A",
+        "411",
+        "411",
+        "426A",
+        "426A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "wage",
+      "zh": "報酬",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406",
+        "453",
+        "485",
+        "485",
+        "571",
+        "608",
+        "608",
+        "608"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "gratuity",
+      "zh": "酬金",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "401A",
+        "401A",
+        "401A",
+        "401A",
+        "401A",
+        "401A",
+        "401A",
+        "401"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "winding up",
+      "zh": "清盤",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388",
+        "405A",
+        "405A",
+        "405",
+        "405",
+        "405",
+        "411",
+        "415"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "applicant",
+      "zh": "申請人",
+      "domain": "labor_social",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "390B",
+        "390",
+        "400C",
+        "400C",
+        "400C",
+        "400C",
+        "400C"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "proceeding",
+      "zh": "法律程序",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388",
+        "388",
+        "389",
+        "392",
+        "397",
+        "398",
+        "406G"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "evidence",
+      "zh": "證據",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "382",
+        "382",
+        "382",
+        "382",
+        "382"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "appeal",
+      "zh": "上訴",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "386",
+        "386",
+        "386",
+        "386",
+        "386",
+        "390B",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "statement",
+      "zh": "報表",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "386",
+        "388",
+        "388",
+        "389",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "claim",
+      "zh": "申索",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "403",
+        "403",
+        "414",
+        "414",
+        "414",
+        "414",
+        "414"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "court",
+      "zh": "法院",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "383",
+        "383",
+        "386",
+        "386",
+        "386"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "review",
+      "zh": "審核",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "390",
+        "392",
+        "392",
+        "392",
+        "392",
+        "397",
+        "400B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "issue",
+      "zh": "爭論點",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "384",
+        "390",
+        "390",
+        "390",
+        "391",
+        "391"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "hearing",
+      "zh": "編定聆訊日期",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "386",
+        "390B",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "lawful",
+      "zh": "合法",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "388B",
+        "388B",
+        "390",
+        "397",
+        "401",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "proof",
+      "zh": "證據",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "388B",
+        "388B",
+        "388B",
+        "389",
+        "390",
+        "392",
+        "394",
+        "394"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "arbitration",
+      "zh": "仲裁",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "426",
+        "434",
+        "434",
+        "448A",
+        "482",
+        "482",
+        "500",
+        "500"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "examine",
+      "zh": "訊問",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "383",
+        "384",
+        "390",
+        "391",
+        "394",
+        "403",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "witness",
+      "zh": "證人",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "386",
+        "390",
+        "394",
+        "394",
+        "394"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "investigation",
+      "zh": "調查",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "391",
+        "391",
+        "397",
+        "397",
+        "397",
+        "397",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "surrender",
+      "zh": "交出",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "406H",
+        "413A",
+        "413A",
+        "413B",
+        "413D",
+        "413E",
+        "421A",
+        "421A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "process",
+      "zh": "程序",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388B",
+        "394",
+        "400",
+        "402",
+        "402",
+        "403",
+        "403"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "objection",
+      "zh": "反對理由",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "391",
+        "394",
+        "394",
+        "397",
+        "398",
+        "423",
+        "428B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "bona fide",
+      "zh": "善意",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "390",
+        "392A",
+        "392",
+        "403",
+        "421",
+        "426",
+        "446"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "examination",
+      "zh": "覆問",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "382",
+        "383",
+        "391",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "certified",
+      "zh": "經核證",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "397",
+        "400",
+        "401",
+        "403",
+        "405A",
+        "405A",
+        "406E"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "inquiry",
+      "zh": "研訊",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "382",
+        "391",
+        "394",
+        "395",
+        "397",
+        "397"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "disclosure",
+      "zh": "公開",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388",
+        "389",
+        "397",
+        "397",
+        "397",
+        "400",
+        "405A"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "fine",
+      "zh": "罰款",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384A",
+        "384"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "written",
+      "zh": "成文",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "388B",
+        "390B",
+        "390",
+        "390",
+        "392",
+        "392",
+        "392"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "adjudication",
+      "zh": "終審",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "401",
+        "453C",
+        "453C",
+        "453",
+        "453",
+        "453",
+        "453"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "admit",
+      "zh": "承認",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "386",
+        "388B",
+        "394",
+        "400",
+        "408",
+        "409",
+        "417"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "serve",
+      "zh": "送達",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390B",
+        "390B",
+        "390",
+        "392",
+        "392",
+        "392",
+        "394",
+        "394"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "determine",
+      "zh": "終止",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "386",
+        "386",
+        "386",
+        "386",
+        "388",
+        "388",
+        "388"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "signature",
+      "zh": "簽名",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "399",
+        "406G",
+        "406",
+        "414",
+        "414",
+        "415"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "mediation",
+      "zh": "調解",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "397",
+        "528D",
+        "528D",
+        "556",
+        "577",
+        "609",
+        "609",
+        "609"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "limitation",
+      "zh": "限制",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "391",
+        "405",
+        "414",
+        "414",
+        "414",
+        "414",
+        "414"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "petition",
+      "zh": "呈請",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "401",
+        "401",
+        "401",
+        "403",
+        "405A",
+        "405",
+        "405"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "presumption",
+      "zh": "推定",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "429",
+        "429",
+        "448B",
+        "478F",
+        "483",
+        "531",
+        "531",
+        "531"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "audit",
+      "zh": "審核",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "389",
+        "397",
+        "397",
+        "398",
+        "399",
+        "399",
+        "411",
+        "411"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "initiate",
+      "zh": "提起法律程序",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "465",
+        "485",
+        "561",
+        "571H",
+        "571H",
+        "577",
+        "588",
+        "588"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "substantiate",
+      "zh": "證實",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 6,
+      "caps": [
+        "541D",
+        "541F",
+        "541I",
+        "541J",
+        "541L",
+        "633"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "summons",
+      "zh": "傳票",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382",
+        "382",
+        "390",
+        "390",
+        "400B",
+        "405",
+        "415",
+        "426"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "prove",
+      "zh": "證明",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "390",
+        "390",
+        "392",
+        "392",
+        "392",
+        "400",
+        "403",
+        "406H"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "admissible",
+      "zh": "可接納",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "386",
+        "390",
+        "390",
+        "394",
+        "394",
+        "397",
+        "397",
+        "400"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "exhibit",
+      "zh": "證物",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "392",
+        "392",
+        "392",
+        "394",
+        "394",
+        "406",
+        "453"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "beyond reasonable doubt",
+      "zh": "合理疑點",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "392",
+        "403",
+        "403",
+        "426",
+        "448G",
+        "455",
+        "485A",
+        "485"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "conciliation",
+      "zh": "調停",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "453",
+        "453",
+        "480B",
+        "480",
+        "480",
+        "482",
+        "482",
+        "482"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "interlocutory",
+      "zh": "非正審",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "445",
+        "448B",
+        "448B",
+        "480",
+        "484A",
+        "484",
+        "486",
+        "487"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "permission",
+      "zh": "准許",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "382A",
+        "382A",
+        "382A",
+        "382A",
+        "388",
+        "391",
+        "391",
+        "398"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "resolve",
+      "zh": "解決",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "430",
+        "448B",
+        "478AF",
+        "505",
+        "505",
+        "571AQ",
+        "571",
+        "619"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "in writing",
+      "zh": "以書面",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "383",
+        "384A",
+        "386",
+        "386",
+        "386",
+        "386",
+        "388B",
+        "388B"
+      ],
+      "k_below_floor": false
+    },
+    {
+      "en": "certified copy",
+      "zh": "核證文本",
+      "domain": "procedure",
+      "n_contexts_bare": 1,
+      "n_contexts_attested": 8,
+      "caps": [
+        "413A",
+        "415",
+        "415",
+        "415",
+        "426A",
+        "438",
+        "453B",
+        "453B"
+      ],
+      "k_below_floor": false
+    }
+  ]
+}

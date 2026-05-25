@@ -1,0 +1,944 @@
+{
+  "_meta": {
+    "description": "ZH override map for post-BLP curation. Each entry replaces the noisy DOJ glossary zh_clean with a canonical HK Cap. legal lemma so that corpus matching (build_postBLP_contexts.py) can find post-1989 attestations. Entries are keyed by (domain, en) and applied as overlay on legal_terms.json without mutating the upstream Firthian dataset.",
+    "rationale": "104/408 KEEP terms in postBLP_curation_longlist.csv have k_zh < 4 in post-1989 sections because the DOJ-glossary zh_clean is a phrasal/wrong-sense form that does not occur verbatim in HK Cap. e-Legislation. This file lists my proposed canonical lemma per term, with back-translation, so the user (non-ZH-reader) can audit each decision on legal-sense grounds.",
+    "policy_levels": {
+      "HIGH": "DOJ phrase contains the canonical short lemma; override extracts it. Low-risk.",
+      "MEDIUM": "Multiple canonical candidates; I picked the most frequent in HK Cap. usage with back-translation disclosed.",
+      "ASK": "Genuinely ambiguous between two senses with different legal scope; user decision needed.",
+      "DROP": "EN side fails post-BLP K>=4 OR no canonical ZH form viable; remove from core."
+    },
+    "schema": {
+      "key": "(domain, en)",
+      "value": {
+        "zh_original": "DOJ-glossary form currently in legal_terms.json zh_clean",
+        "zh_orig_backtranslation": "literal English back-translation of zh_original",
+        "zh_override": "the canonical HK Cap. lemma proposed",
+        "zh_override_backtranslation": "literal English back-translation of zh_override",
+        "level": "HIGH | MEDIUM | ASK | DROP",
+        "rationale": "why this lemma is canonical for the EN sense"
+      }
+    }
+  },
+  "overrides": {
+    "civil|patent": {
+      "zh_original": "明顯",
+      "zh_orig_backtranslation": "obvious / apparent (adjective sense)",
+      "zh_override": "專利",
+      "zh_override_backtranslation": "patent (IP right)",
+      "level": "RESCUE_HIGH",
+      "rationale": "Reviewer 2 (US common-law native, 2026-05-10) flagged that demoting 'patent' was a substantive loss of major IP/civil canon. The DOJ entry was wrong-sense (= adjective 'obvious'). The IP-canonical lemma in HK Cap. (esp. Cap.514 Patents Ordinance) is 專利. Manual override rescues the term for the post-BLP core."
+    },
+    "constitutional|bill": {
+      "zh_original": "單據",
+      "zh_orig_backtranslation": "receipt / payment slip",
+      "zh_override": "法案",
+      "zh_override_backtranslation": "bill (legislative draft)",
+      "level": "RESCUE_HIGH",
+      "rationale": "Reviewer 2 (US common-law native) flagged 'bill' as constitutional canon (bill of rights, money bill, public bill, private member's bill). DOJ entry was wrong-sense (= payment receipt). HK Cap. canonical for legislative bill is 法案 (e.g., 草案 also for draft bill, but 法案 dominant)."
+    },
+    "international|international law": {
+      "zh_original": "國際私法",
+      "zh_orig_backtranslation": "PRIVATE international law (conflict of laws)",
+      "zh_override": "國際法",
+      "zh_override_backtranslation": "international law (public, generic)",
+      "level": "RESCUE_HIGH",
+      "rationale": "Reviewer 2 (US common-law native) flagged demotion as eponymous-bin loss. DOJ glossed with 國際私法 (private international law / conflicts), narrowing scope. Generic 'international law' = 國際法 (public international law, the standard English-language sense)."
+    },
+    "criminal|assault": {
+      "zh_original": "猥褻侵犯",
+      "zh_orig_backtranslation": "indecent assault",
+      "zh_override": "襲擊",
+      "zh_override_backtranslation": "assault (physical attack)",
+      "level": "RESCUE_HIGH",
+      "rationale": "Reviewer 2 (US common-law native) flagged that 'assault' is a common-law substantive criminal canon. DOJ over-narrowed to 猥褻侵犯 (indecent assault, sex-offence-specific). The general assault lemma in HK Cap. (Cap.212 Offences against Person, also amendments) is 襲擊."
+    },
+    "labor_social|occupational": {
+      "zh_original": "職業履歷",
+      "zh_orig_backtranslation": "occupational history / CV",
+      "zh_override": "職業",
+      "zh_override_backtranslation": "occupational / vocational",
+      "level": "RESCUE_HIGH",
+      "rationale": "Reviewer 2 (US common-law native) flagged demotion of labor-canon term. DOJ entry was wrong-sense (= CV/employment history). The labour-law canonical adjective 'occupational' (occupational safety/health/disease) is 職業 (Cap.59 Occupational Safety etc.). Note: this collides with vocational→職業; reviewer-2 also flagged this. Mitigation: 'vocational' previously already used 職業; consider future split if encoder collision arises."
+    },
+    "administrative|approval": {
+      "zh_original": "批函",
+      "zh_orig_backtranslation": "approval letter",
+      "zh_override": "批准",
+      "zh_override_backtranslation": "to approve / approval (act)",
+      "level": "HIGH",
+      "rationale": "批函 is the document of approval; 批准 is the act/decision lemma used throughout HK Cap. permits/licensing."
+    },
+    "administrative|governing": {
+      "zh_original": "規管文書",
+      "zh_orig_backtranslation": "regulatory instrument",
+      "zh_override": "規管",
+      "zh_override_backtranslation": "to regulate / regulatory",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 規管 is the canonical adjective/verb in HK Cap."
+    },
+    "administrative|registry": {
+      "zh_original": "申索登記處",
+      "zh_orig_backtranslation": "claims registry (specific)",
+      "zh_override": "登記處",
+      "zh_override_backtranslation": "registry / register office",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 登記處 is the generic registry lemma."
+    },
+    "administrative|Registrar": {
+      "zh_original": "職工會登記局局長",
+      "zh_orig_backtranslation": "Registrar of Trade Unions (specific officer)",
+      "zh_override": "登記官",
+      "zh_override_backtranslation": "registrar (officer of a registry)",
+      "level": "MEDIUM",
+      "rationale": "DOJ entry is a specific officer title; 登記官 is generic Registrar across HK Cap. Alternative 註冊官 is also valid for company registrar; 登記官 covers more domains."
+    },
+
+    "civil|deposit": {
+      "zh_original": "貨物按金",
+      "zh_orig_backtranslation": "goods deposit (mercantile)",
+      "zh_override": "按金",
+      "zh_override_backtranslation": "deposit (security/earnest money)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 按金 is HK Cap. canonical."
+    },
+    "civil|estate": {
+      "zh_original": "房地產權利",
+      "zh_orig_backtranslation": "real-property rights",
+      "zh_override": "產業",
+      "zh_override_backtranslation": "estate / property holding",
+      "level": "MEDIUM",
+      "rationale": "估算 between 產業 (general estate / holding), 遺產 (deceased's estate), 不動產 (real property). 產業 is dominant in HK Cap. property law for civil-domain estate."
+    },
+    "civil|infringement": {
+      "zh_original": "直接侵犯版權",
+      "zh_orig_backtranslation": "direct copyright infringement",
+      "zh_override": "侵權",
+      "zh_override_backtranslation": "infringement (of rights, esp. IP)",
+      "level": "REVISED_HIGH",
+      "rationale": "Reviewer 1 (HK legal-Chinese native) flagged that 侵犯 in HK Cap. predominantly carries physical/personal sense (侵犯人身, 侵犯私隱). The IP-infringement canonical standalone is 侵權 (Cap.528 Copyright, Cap.559 Trade Marks). Revised override: 侵權."
+    },
+    "civil|insolvency": {
+      "zh_original": "針對無力償債的法律程序",
+      "zh_orig_backtranslation": "legal proceedings against insolvency",
+      "zh_override": "無力償債",
+      "zh_override_backtranslation": "insolvent / unable to pay debts",
+      "level": "HIGH",
+      "rationale": "Lemma is 無力償債 (the state of insolvency); 破產 is bankruptcy specifically. HK Cap. distinguishes."
+    },
+    "civil|ownership": {
+      "zh_original": "衡平法上的擁有權",
+      "zh_orig_backtranslation": "equitable ownership (under equity law)",
+      "zh_override": "擁有權",
+      "zh_override_backtranslation": "ownership / right of ownership",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 擁有權 generic in HK Cap."
+    },
+    "civil|provision": {
+      "zh_original": "提早終止條款",
+      "zh_orig_backtranslation": "early termination clause",
+      "zh_override": "條款",
+      "zh_override_backtranslation": "clause / provision (of an instrument)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 條款 = legal-instrument provision."
+    },
+    "civil|unincorporated": {
+      "zh_original": "不具法團地位",
+      "zh_orig_backtranslation": "without incorporated-body status",
+      "zh_override": "非法團",
+      "zh_override_backtranslation": "non-corporate / unincorporated",
+      "level": "HIGH",
+      "rationale": "HK Cap. canonical compound 非法團 dominant for unincorporated bodies."
+    },
+    "civil|trade mark": {
+      "zh_original": "放棄商標",
+      "zh_orig_backtranslation": "abandoned trademark",
+      "zh_override": "商標",
+      "zh_override_backtranslation": "trade mark",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 商標 is the IP canonical."
+    },
+    "civil|gift": {
+      "zh_original": "贈與",
+      "zh_orig_backtranslation": "gift / donation (legal)",
+      "zh_override": "贈與",
+      "zh_override_backtranslation": "gift / donation (legal)",
+      "level": "ACCEPT",
+      "rationale": "Form is correct (no override). Low coverage (k_zh=1) reflects that 贈與 is rare in post-1989 HK Cap. text. Accept and document."
+    },
+    "civil|lien": {
+      "zh_original": "海上留置權",
+      "zh_orig_backtranslation": "maritime lien",
+      "zh_override": "留置權",
+      "zh_override_backtranslation": "lien / right of retention",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 留置權 generic."
+    },
+    "civil|obligation": {
+      "zh_original": "一般義務",
+      "zh_orig_backtranslation": "general obligation",
+      "zh_override": "義務",
+      "zh_override_backtranslation": "obligation / duty",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "civil|contractor": {
+      "zh_original": "承包商",
+      "zh_orig_backtranslation": "contractor (commercial)",
+      "zh_override": "承包商",
+      "zh_override_backtranslation": "contractor (commercial)",
+      "level": "ACCEPT",
+      "rationale": "Form correct, k_zh=2 marginal but acceptable; 承建商 is alternative for construction-context contractor. Accept current."
+    },
+    "civil|partnership": {
+      "zh_original": "合夥關係",
+      "zh_orig_backtranslation": "partnership relationship",
+      "zh_override": "合夥",
+      "zh_override_backtranslation": "partnership (legal entity)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 合夥 = partnership in HK Cap."
+    },
+
+    "constitutional|constituency": {
+      "zh_original": "選區居民",
+      "zh_orig_backtranslation": "constituency residents",
+      "zh_override": "選區",
+      "zh_override_backtranslation": "constituency / electoral district",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "constitutional|delegate": {
+      "zh_original": "獲轉授權力的人",
+      "zh_orig_backtranslation": "person to whom power has been sub-delegated",
+      "zh_override": "獲授權人",
+      "zh_override_backtranslation": "authorised person / delegatee",
+      "level": "MEDIUM",
+      "rationale": "DOJ phrase carries 'sub-delegation' nuance. 獲授權人 is the canonical 'delegate' in HK Cap. delegation contexts. Alternative 受權人."
+    },
+    "constitutional|quorum": {
+      "zh_original": "太平紳士委任狀",
+      "zh_orig_backtranslation": "Justice of the Peace warrant of appointment",
+      "zh_override": "法定人數",
+      "zh_override_backtranslation": "legally required number (quorum)",
+      "level": "HIGH",
+      "rationale": "DOJ entry is wrong-sense entirely. 法定人數 is the unambiguous Cap. lemma for quorum across legislative-procedural contexts."
+    },
+    "constitutional|third party": {
+      "zh_original": "第三方得利者",
+      "zh_orig_backtranslation": "third-party beneficiary",
+      "zh_override": "第三方",
+      "zh_override_backtranslation": "third party",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "constitutional|organization": {
+      "zh_original": "非屬法團的組織",
+      "zh_orig_backtranslation": "organization that is not a corporate body",
+      "zh_override": "組織",
+      "zh_override_backtranslation": "organization / body",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "constitutional|political": {
+      "zh_original": "外國政治性組織",
+      "zh_orig_backtranslation": "foreign political organisation",
+      "zh_override": "政治",
+      "zh_override_backtranslation": "political / politics",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "constitutional|system": {
+      "zh_original": "對訟式刑事司法體系",
+      "zh_orig_backtranslation": "adversarial criminal-justice system",
+      "zh_override": "制度",
+      "zh_override_backtranslation": "system / institution",
+      "level": "MEDIUM",
+      "rationale": "制度 (institution/system) vs 體系 (system/framework). 制度 is more frequent in HK Cap. for institutional/political 'system'."
+    },
+    "constitutional|assembly": {
+      "zh_original": "集會……的自由",
+      "zh_orig_backtranslation": "freedom of … assembly (with elision)",
+      "zh_override": "集會",
+      "zh_override_backtranslation": "assembly / gathering",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; ellipsis in DOJ phrase signals embedded canonical form 集會."
+    },
+    "constitutional|elect": {
+      "zh_original": "選擇不舉證",
+      "zh_orig_backtranslation": "elect not to give evidence (criminal procedure)",
+      "zh_override": "選舉",
+      "zh_override_backtranslation": "to elect (vote) / election",
+      "level": "MEDIUM",
+      "rationale": "DOJ entry is the wrong sense (criminal-procedure 'elect not to'). The constitutional sense is 選舉 (electoral). Alternative 選任 (to appoint by election). 選舉 is dominant."
+    },
+    "constitutional|incorporation": {
+      "zh_original": "法團註冊證書",
+      "zh_orig_backtranslation": "certificate of incorporation",
+      "zh_override": "法團",
+      "zh_override_backtranslation": "corporate body / corporation",
+      "level": "MEDIUM",
+      "rationale": "Lemma extraction. 法團 = body corporate. The act of incorporation is 註冊成立; 法團 is the resulting entity. For embedding-space, 法團 better captures the legal-canon meaning."
+    },
+    "constitutional|president": {
+      "zh_original": "法庭主審人",
+      "zh_orig_backtranslation": "court presiding judge",
+      "zh_override": "行政長官",
+      "zh_override_backtranslation": "Chief Executive (HK head-of-state-equivalent)",
+      "level": "USER_DECIDED",
+      "rationale": "User decision 2026-05-10: 'president' = head of state. First override 總統 (foreign-president sense) yielded k_zh=0. Switching to 行政長官 (HK Chief Executive), the constitutional head of HK SAR. Pervasive in post-1989 Cap. (Basic Law-derived offices, executive functions). Conceptually distinct from foreign presidents but the closest HK-specific head-of-state lemma."
+    },
+    "constitutional|society": {
+      "zh_original": "獲豁免社團",
+      "zh_orig_backtranslation": "exempted society",
+      "zh_override": "社團",
+      "zh_override_backtranslation": "society / association",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 社團 = registered society in HK Cap."
+    },
+    "constitutional|Presiding Officer": {
+      "zh_original": "副票站主任",
+      "zh_orig_backtranslation": "deputy polling station officer",
+      "zh_override": "主持",
+      "zh_override_backtranslation": "presiding (one who chairs / officiates)",
+      "level": "MEDIUM",
+      "rationale": "DOJ entry too narrow. In legislative/electoral context, 主持 captures 'presiding officer' role. Alternative 主席 conflicts with 'chairman'."
+    },
+    "constitutional|Council": {
+      "zh_original": "法律援助服務局",
+      "zh_orig_backtranslation": "Legal Aid Services Council (specific)",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "User decision 2026-05-10: drop 'Council' from constitutional core to avoid quasi-duplicate with 'Legislative Council' (already AUTO_KEEP). Council is too poly-sense to encode cleanly."
+    },
+    "constitutional|constitution": {
+      "zh_original": "憲法",
+      "zh_orig_backtranslation": "constitution (foundational law)",
+      "zh_override": "憲法",
+      "zh_override_backtranslation": "constitution",
+      "level": "ACCEPT",
+      "rationale": "Form correct. k_zh=2 reflects that 憲法 is rare in HK Cap. text post-1989 because HK has the Basic Law (《基本法》), not a constitution. This is a corpus property, document in §2.2."
+    },
+    "constitutional|Director": {
+      "zh_original": "政府物流服務署署長",
+      "zh_orig_backtranslation": "Director of Government Logistics (specific)",
+      "zh_override": "署長",
+      "zh_override_backtranslation": "director (department head)",
+      "level": "MEDIUM",
+      "rationale": "DOJ entry overspecific. 署長 is the canonical 'Director' of a department in HK Cap. governmental hierarchy."
+    },
+    "constitutional|election": {
+      "zh_original": "甄選",
+      "zh_orig_backtranslation": "selection / screening (e.g. interview process)",
+      "zh_override": "選舉",
+      "zh_override_backtranslation": "election (electoral process)",
+      "level": "HIGH",
+      "rationale": "DOJ entry wrong-sense (selection/interview, not electoral). 選舉 is unambiguous canonical."
+    },
+
+    "criminal|imprisonment": {
+      "zh_original": "串謀非法禁錮",
+      "zh_orig_backtranslation": "conspiracy to false imprisonment (kidnapping nuance)",
+      "zh_override": "監禁",
+      "zh_override_backtranslation": "imprisonment / incarceration (sentence)",
+      "level": "HIGH",
+      "rationale": "監禁 is the unambiguous Cap. lemma for 'imprisonment as sentence'. 禁錮 is alternative but narrower."
+    },
+    "criminal|murder": {
+      "zh_original": "慫使和促致謀殺",
+      "zh_orig_backtranslation": "incite and procure murder",
+      "zh_override": "謀殺",
+      "zh_override_backtranslation": "murder",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|prosecution": {
+      "zh_original": "舉證責任在於控方",
+      "zh_orig_backtranslation": "burden of proof rests on the prosecution",
+      "zh_override": "檢控",
+      "zh_override_backtranslation": "prosecution (act of)",
+      "level": "MEDIUM",
+      "rationale": "檢控 = act of prosecuting; 控方 = prosecution side; 公訴 = public prosecution. 檢控 is dominant in HK Cap. for 'prosecution' as a noun describing the legal action."
+    },
+    "criminal|culpable": {
+      "zh_original": "應受懲處",
+      "zh_orig_backtranslation": "deserving of punishment",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "Even with the override 應受懲處, k_zh=0. 'Culpable' in HK Cap. mostly appears as part of 'culpable homicide' = 誤殺 (which is 'manslaughter', collisions with 'murder' encoding). No clean canonical lemma in HK Cap. post-1989. Drop from core."
+    },
+    "criminal|debt": {
+      "zh_original": "了結債務",
+      "zh_orig_backtranslation": "to discharge a debt",
+      "zh_override": "債務",
+      "zh_override_backtranslation": "debt",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|defraud": {
+      "zh_original": "詐取",
+      "zh_orig_backtranslation": "to obtain by fraud",
+      "zh_override": "欺詐",
+      "zh_override_backtranslation": "fraud / to defraud",
+      "level": "MEDIUM",
+      "rationale": "詐取 (=obtain by fraud, transitive verb) is correct but rare. 欺詐 is the noun/general lemma covering fraud. HK Cap. uses 欺詐 more frequently."
+    },
+    "criminal|forfeiture": {
+      "zh_original": "對租契所設租賃權的沒收",
+      "zh_orig_backtranslation": "forfeiture of leasehold rights under a lease",
+      "zh_override": "沒收",
+      "zh_override_backtranslation": "forfeiture / confiscation",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|guilty": {
+      "zh_original": "有罪責",
+      "zh_orig_backtranslation": "having culpability",
+      "zh_override": "有罪",
+      "zh_override_backtranslation": "guilty",
+      "level": "HIGH",
+      "rationale": "Lemma normalisation; 有罪 is the verdict-form canonical."
+    },
+    "criminal|indecent": {
+      "zh_original": "嚴重猥褻",
+      "zh_orig_backtranslation": "serious indecent (e.g. assault)",
+      "zh_override": "不雅",
+      "zh_override_backtranslation": "indecent / improper",
+      "level": "MEDIUM",
+      "rationale": "First override 猥褻 yielded k_zh=0 because 猥褻 mostly appears in pre-1989 Crimes Ordinance. Switching to 不雅 (used in post-1989 Control of Obscene and Indecent Articles Ord., Cap. 390) which dominates post-BLP indecent-publications regime."
+    },
+    "criminal|juvenile": {
+      "zh_original": "少年罪犯",
+      "zh_orig_backtranslation": "juvenile offender",
+      "zh_override": "少年",
+      "zh_override_backtranslation": "juvenile / youth",
+      "level": "HIGH",
+      "rationale": "Lemma extraction. 少年 covers juvenile across HK Cap."
+    },
+    "criminal|misconduct": {
+      "zh_original": "公職人員行為失當",
+      "zh_orig_backtranslation": "misconduct of public officer",
+      "zh_override": "失當行為",
+      "zh_override_backtranslation": "misconduct (improper conduct)",
+      "level": "MEDIUM",
+      "rationale": "失當行為 is the canonical compound; 行為失當 is also valid but flips word order. 失當行為 dominant in HK Cap."
+    },
+    "criminal|plea": {
+      "zh_original": "對控罪的回答",
+      "zh_orig_backtranslation": "answer to the charge",
+      "zh_override": "答辯",
+      "zh_override_backtranslation": "plea (formal response in court)",
+      "level": "HIGH",
+      "rationale": "答辯 is the canonical procedural lemma in HK Cap."
+    },
+    "criminal|dangerous": {
+      "zh_original": "附表的危險藥物",
+      "zh_orig_backtranslation": "scheduled dangerous drug",
+      "zh_override": "危險",
+      "zh_override_backtranslation": "dangerous",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|offence": {
+      "zh_original": "借機犯罪",
+      "zh_orig_backtranslation": "commit offence opportunistically",
+      "zh_override": "罪行",
+      "zh_override_backtranslation": "offence",
+      "level": "HIGH",
+      "rationale": "罪行 is the dominant offence-noun in HK Cap. (vs 罪 alone, vs 犯罪 = act of committing)."
+    },
+    "criminal|crime": {
+      "zh_original": "罪加一等",
+      "zh_orig_backtranslation": "more serious offence (idiom)",
+      "zh_override": "犯罪",
+      "zh_override_backtranslation": "crime / criminal act",
+      "level": "REVISED_HIGH",
+      "rationale": "Reviewer 1 (HK legal-Chinese native, 2026-05-10) flagged that mapping both crime AND offence to 罪行 creates an encoding collision distorting RSA. Revised: crime → 犯罪 (act of committing crime / criminal act), offence → 罪行. The two will remain neighbours in embedding space but not collapse."
+    },
+    "criminal|offender": {
+      "zh_original": "慣犯",
+      "zh_orig_backtranslation": "habitual offender",
+      "zh_override": "罪犯",
+      "zh_override_backtranslation": "offender / criminal (person)",
+      "level": "HIGH",
+      "rationale": "Lemma generalisation; 罪犯 is offender lemma."
+    },
+    "criminal|violence": {
+      "zh_original": "實際使用暴力",
+      "zh_orig_backtranslation": "actual use of violence",
+      "zh_override": "暴力",
+      "zh_override_backtranslation": "violence",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|attempt": {
+      "zh_original": "企圖從合法羈押逃脫",
+      "zh_orig_backtranslation": "attempt to escape from lawful custody",
+      "zh_override": "企圖",
+      "zh_override_backtranslation": "attempt (criminal)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|bail": {
+      "zh_original": "違反保釋條件",
+      "zh_orig_backtranslation": "breach of bail conditions",
+      "zh_override": "保釋",
+      "zh_override_backtranslation": "bail",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|criminal": {
+      "zh_original": "刑事罪責",
+      "zh_orig_backtranslation": "criminal liability",
+      "zh_override": "刑事",
+      "zh_override_backtranslation": "criminal (adjective)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 刑事 is the canonical adjective in HK Cap."
+    },
+    "criminal|detention": {
+      "zh_original": "串謀強行禁錮",
+      "zh_orig_backtranslation": "conspiracy to forcibly confine",
+      "zh_override": "拘留",
+      "zh_override_backtranslation": "detention / custody",
+      "level": "HIGH",
+      "rationale": "拘留 is HK Cap. canonical for police/administrative detention. 拘押 alternative."
+    },
+    "criminal|sentence": {
+      "zh_original": "將……的判刑與……的量刑基準掛鈎",
+      "zh_orig_backtranslation": "to link the sentence of X to the sentencing benchmark of Y",
+      "zh_override": "判刑",
+      "zh_override_backtranslation": "sentence / sentencing decision",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 判刑 is the canonical (vs 量刑 = sentencing process)."
+    },
+    "criminal|trafficking": {
+      "zh_original": "商業性質的販毒",
+      "zh_orig_backtranslation": "commercial-nature drug trafficking",
+      "zh_override": "販運",
+      "zh_override_backtranslation": "trafficking (transport for trade)",
+      "level": "ACCEPT_MARGINAL",
+      "rationale": "First override 販運 yielded k_zh=2 (just below K=4 strict). 販毒 alt is too narrow (drug-only). 人口販運 (human trafficking) is its own multi-term. Accept k_zh=2 as marginal, document in §2.1; the few attestations are still post-BLP and bilingually paired."
+    },
+    "criminal|harm": {
+      "zh_original": "身體嚴重傷害",
+      "zh_orig_backtranslation": "serious bodily harm",
+      "zh_override": "傷害",
+      "zh_override_backtranslation": "harm / injury",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "criminal|unlawfully": {
+      "zh_original": "非法禁錮",
+      "zh_orig_backtranslation": "unlawful imprisonment",
+      "zh_override": "非法",
+      "zh_override_backtranslation": "unlawful / unlawfully",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 非法 is HK Cap. adjective/adverb canonical."
+    },
+
+    "international|protocol": {
+      "zh_original": "條約等的草案",
+      "zh_orig_backtranslation": "draft of a treaty etc.",
+      "zh_override": "議定書",
+      "zh_override_backtranslation": "protocol (formal treaty annex/instrument)",
+      "level": "HIGH",
+      "rationale": "議定書 is canonical for 'protocol' as an international-law instrument; the DOJ entry confused it with 'draft'."
+    },
+    "international|consular": {
+      "zh_original": "職業領事官員",
+      "zh_orig_backtranslation": "career consular officer",
+      "zh_override": "領事",
+      "zh_override_backtranslation": "consular / consul",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "international|diplomatic": {
+      "zh_original": "外交豁免權",
+      "zh_orig_backtranslation": "diplomatic immunity (right)",
+      "zh_override": "外交",
+      "zh_override_backtranslation": "diplomatic / foreign-affairs",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "international|multilateral": {
+      "zh_original": "多邊協定",
+      "zh_orig_backtranslation": "multilateral agreement",
+      "zh_override": "多邊",
+      "zh_override_backtranslation": "multilateral",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "international|association": {
+      "zh_original": "相聯組織",
+      "zh_orig_backtranslation": "associated organisation",
+      "zh_override": "協會",
+      "zh_override_backtranslation": "association (formal body)",
+      "level": "MEDIUM",
+      "rationale": "協會 dominant for international association in HK Cap.; 組織 too generic."
+    },
+    "international|overseas": {
+      "zh_original": "海外財務機構",
+      "zh_orig_backtranslation": "overseas financial institution",
+      "zh_override": "海外",
+      "zh_override_backtranslation": "overseas",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "international|related": {
+      "zh_original": "與結果有關的收費架構",
+      "zh_orig_backtranslation": "outcome-related fee structure",
+      "zh_override": "有關",
+      "zh_override_backtranslation": "related / concerning / pertinent",
+      "level": "MEDIUM",
+      "rationale": "有關 is the dominant 'related' modifier in HK Cap. (more frequent than 相關)."
+    },
+    "international|independent": {
+      "zh_original": "不受干預",
+      "zh_orig_backtranslation": "free from interference",
+      "zh_override": "獨立",
+      "zh_override_backtranslation": "independent",
+      "level": "HIGH",
+      "rationale": "Lemma; 獨立 dominant in HK Cap."
+    },
+    "international|regional": {
+      "zh_original": "區域性航行規劃程序",
+      "zh_orig_backtranslation": "regional flight planning procedure",
+      "zh_override": "區域",
+      "zh_override_backtranslation": "regional / area",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "international|particulars": {
+      "zh_original": "申索詳情",
+      "zh_orig_backtranslation": "particulars of claim",
+      "zh_override": "詳情",
+      "zh_override_backtranslation": "particulars / details",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "international|military": {
+      "zh_original": "軍隊",
+      "zh_orig_backtranslation": "military / armed forces",
+      "zh_override": "軍隊",
+      "zh_override_backtranslation": "military / armed forces",
+      "level": "ACCEPT",
+      "rationale": "Form correct. k_zh=2 reflects HK Cap. has limited military legislation post-1989 (defence is PRC matter under Basic Law). Document."
+    },
+    "international|non-Hong Kong": {
+      "zh_original": "非香港有限責任合夥",
+      "zh_orig_backtranslation": "non-Hong Kong limited liability partnership",
+      "zh_override": "非香港",
+      "zh_override_backtranslation": "non-Hong Kong",
+      "level": "HIGH",
+      "rationale": "Lemma extraction. HK Cap. uses 非香港 prefix consistently for foreign entities."
+    },
+    "international|conference": {
+      "zh_original": "締約方大會",
+      "zh_orig_backtranslation": "conference of contracting parties",
+      "zh_override": "會議",
+      "zh_override_backtranslation": "conference / meeting",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 會議 is the canonical."
+    },
+    "international|People's Republic of China": {
+      "zh_original": "中華人民共和國",
+      "zh_orig_backtranslation": "People's Republic of China (full name)",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "EN-side fail (k_en=0): the corpus rarely uses the full English name; usually 'PRC' or 'Mainland'. Drop from core; document as a corpus property of HK Cap. (the term Hong Kong refers to is 'the Mainland' or geographical descriptors, not the formal state name)."
+    },
+    "international|World Trade Organisation": {
+      "zh_original": "世界貿易組織",
+      "zh_orig_backtranslation": "World Trade Organisation",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "EN-side fail (k_en=1). The acronym 'WTO' is more common; HK Cap. rarely uses the full English form post-1989 outside one Ordinance. Drop."
+    },
+
+    "labor_social|labour": {
+      "zh_original": "勞資糾紛",
+      "zh_orig_backtranslation": "labour-management dispute",
+      "zh_override": "勞工",
+      "zh_override_backtranslation": "labour / worker",
+      "level": "HIGH",
+      "rationale": "勞工 is the lemma for 'labour' (worker / labour force) in HK Cap. (e.g. Labour Department = 勞工處). 勞資 covers labour-management relations specifically."
+    },
+    "labor_social|account": {
+      "zh_original": "帳號",
+      "zh_orig_backtranslation": "account number",
+      "zh_override": "帳戶",
+      "zh_override_backtranslation": "account (financial)",
+      "level": "HIGH",
+      "rationale": "帳戶 is the canonical 'account' (the entity); 帳號 is the identifier. HK Cap. uses 帳戶 for accounts in financial regulation."
+    },
+    "labor_social|applicant": {
+      "zh_original": "申請代表人",
+      "zh_orig_backtranslation": "applying representative (specific)",
+      "zh_override": "申請人",
+      "zh_override_backtranslation": "applicant",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 申請人 generic."
+    },
+    "labor_social|gratuity": {
+      "zh_original": "約滿酬金",
+      "zh_orig_backtranslation": "end-of-contract gratuity",
+      "zh_override": "酬金",
+      "zh_override_backtranslation": "gratuity / honorarium",
+      "level": "MEDIUM",
+      "rationale": "酬金 generic; 約滿酬金 specific to contract-end. The generic lemma 酬金 broader for embedding-space."
+    },
+    "labor_social|profit": {
+      "zh_original": "不公開利潤",
+      "zh_orig_backtranslation": "undisclosed profit (specific)",
+      "zh_override": "利潤",
+      "zh_override_backtranslation": "profit",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "labor_social|health": {
+      "zh_original": "健康損害",
+      "zh_orig_backtranslation": "health damage / harm to health",
+      "zh_override": "健康",
+      "zh_override_backtranslation": "health",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "labor_social|staff": {
+      "zh_original": "領館館員",
+      "zh_orig_backtranslation": "consulate staff (narrow)",
+      "zh_override": "員工",
+      "zh_override_backtranslation": "staff / employee",
+      "level": "HIGH",
+      "rationale": "員工 is the dominant 'staff' lemma in HK Cap. employment context."
+    },
+    "labor_social|full-time": {
+      "zh_original": "全時間佔用",
+      "zh_orig_backtranslation": "full-time occupation (idiomatic)",
+      "zh_override": "全職",
+      "zh_override_backtranslation": "full-time",
+      "level": "HIGH",
+      "rationale": "全職 is the standard HK Cap. lemma for 'full-time' employment."
+    },
+    "labor_social|industry": {
+      "zh_original": "行業內機構的規管",
+      "zh_orig_backtranslation": "regulation of industry institutions",
+      "zh_override": "行業",
+      "zh_override_backtranslation": "industry / trade sector",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "labor_social|level": {
+      "zh_original": "量刑等級",
+      "zh_orig_backtranslation": "sentencing level (criminal)",
+      "zh_override": "等級",
+      "zh_override_backtranslation": "level / rank",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; the DOJ entry was sentencing-domain, but the labor_social lemma 'level' = 等級 generic."
+    },
+    "labor_social|position": {
+      "zh_original": "受人信任的位置",
+      "zh_orig_backtranslation": "position of trust (idiomatic)",
+      "zh_override": "職位",
+      "zh_override_backtranslation": "position / job (employment)",
+      "level": "HIGH",
+      "rationale": "職位 is the canonical 'job position' in HK Cap. employment."
+    },
+    "labor_social|winding up": {
+      "zh_original": "強制清盤",
+      "zh_orig_backtranslation": "compulsory winding up",
+      "zh_override": "清盤",
+      "zh_override_backtranslation": "winding up (insolvency)",
+      "level": "HIGH",
+      "rationale": "清盤 generic; 強制清盤 specific to compulsory."
+    },
+    "labor_social|vocational": {
+      "zh_original": "職業康復",
+      "zh_orig_backtranslation": "vocational rehabilitation",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "Reviewer 2 (US common-law native) prioritised 'occupational' as labor-canon (rescued from AUTO_KEEP_DROP via override 職業). Both 'vocational' and 'occupational' would collide on 職業 in ZH (no clean lexical distinction in HK Cap. ZH). Drop 'vocational' (kzh=2 marginal, semantically subsumed by occupational) to avoid encoder duplication."
+    },
+
+    "procedure|admit": {
+      "zh_original": "明示承認",
+      "zh_orig_backtranslation": "express admission",
+      "zh_override": "承認",
+      "zh_override_backtranslation": "to admit / acknowledge",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "procedure|appeal": {
+      "zh_original": "上訴文件冊",
+      "zh_orig_backtranslation": "appeal bundle (court documents)",
+      "zh_override": "上訴",
+      "zh_override_backtranslation": "appeal",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 上訴 is the canonical procedural lemma."
+    },
+    "procedure|arbitration": {
+      "zh_original": "將爭議事項提交仲裁",
+      "zh_orig_backtranslation": "to submit disputed matters to arbitration",
+      "zh_override": "仲裁",
+      "zh_override_backtranslation": "arbitration",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "procedure|audit": {
+      "zh_original": "經審核的帳目",
+      "zh_orig_backtranslation": "audited accounts",
+      "zh_override": "審核",
+      "zh_override_backtranslation": "audit / examination",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 審核 generic in HK Cap."
+    },
+    "procedure|beyond reasonable doubt": {
+      "zh_original": "證明案件無合理疑點",
+      "zh_orig_backtranslation": "prove the case without reasonable doubt",
+      "zh_override": "合理疑點",
+      "zh_override_backtranslation": "reasonable doubt (substring)",
+      "level": "MEDIUM",
+      "rationale": "First override 毫無合理疑點 yielded k_zh=0 (set phrase too rare in exact form). Switch to substring 合理疑點 which appears across HK Cap. embedded in any of: 毫無/無/超越/排除…合理疑點. Captures the doctrinal lemma."
+    },
+    "procedure|claim": {
+      "zh_original": "針對遺產的申索",
+      "zh_orig_backtranslation": "claim against the estate",
+      "zh_override": "申索",
+      "zh_override_backtranslation": "claim / demand for relief",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 申索 = procedural claim in HK Cap."
+    },
+    "procedure|court": {
+      "zh_original": "引用法官判詞",
+      "zh_orig_backtranslation": "to cite a judge's reasons",
+      "zh_override": "法院",
+      "zh_override_backtranslation": "court (institutional / standing court)",
+      "level": "REVISED_HIGH",
+      "rationale": "Reviewer 1 (HK legal-Chinese native) flagged that the original choice 法庭 was reversed: in HK Cap. post-1989, 法院 is the canonical institutional lemma (高等法院, 區域法院, 終審法院, 原訟法庭 sits within 高等法院). 法庭 = tribunal / 'in-court' venue / Court of Appeal exception. For the procedural-domain term encoding 'court as institution', revised override: 法院."
+    },
+    "procedure|evidence": {
+      "zh_original": "以使用過程作為證據",
+      "zh_orig_backtranslation": "use of process as evidence (idiomatic)",
+      "zh_override": "證據",
+      "zh_override_backtranslation": "evidence",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "procedure|fine": {
+      "zh_original": "關於罰款及擔保的法院紀錄",
+      "zh_orig_backtranslation": "court records concerning fines and securities",
+      "zh_override": "罰款",
+      "zh_override_backtranslation": "fine (monetary penalty)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "procedure|issue": {
+      "zh_original": "共同提出爭論點供裁決",
+      "zh_orig_backtranslation": "jointly raise points of dispute for determination",
+      "zh_override": "爭論點",
+      "zh_override_backtranslation": "issue / point in dispute",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "procedure|presumption": {
+      "zh_original": "不可推翻的推定",
+      "zh_orig_backtranslation": "irrebuttable presumption",
+      "zh_override": "推定",
+      "zh_override_backtranslation": "presumption (legal)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction."
+    },
+    "procedure|serve": {
+      "zh_original": "無須向任何一方送達",
+      "zh_orig_backtranslation": "need not be served on any party",
+      "zh_override": "送達",
+      "zh_override_backtranslation": "to serve (e.g. process / document)",
+      "level": "HIGH",
+      "rationale": "Lemma extraction; 送達 is the canonical procedural service-of-process verb."
+    },
+    "procedure|substantiate": {
+      "zh_original": "提供事實",
+      "zh_orig_backtranslation": "provide facts",
+      "zh_override": "證實",
+      "zh_override_backtranslation": "to substantiate / confirm with evidence",
+      "level": "MEDIUM",
+      "rationale": "證實 is the canonical 'substantiate' (prove with evidence). 提供事實 is too literal/loose."
+    },
+    "procedure|witness": {
+      "zh_original": "謹簽署或簽立為證",
+      "zh_orig_backtranslation": "duly signed or executed as witness (attestation phrase)",
+      "zh_override": "證人",
+      "zh_override_backtranslation": "witness (a person who testifies)",
+      "level": "HIGH",
+      "rationale": "DOJ entry is the attestation-formula sense. 證人 is the procedural 'witness' (testifying person)."
+    },
+    "procedure|proceeding": {
+      "zh_original": "循簡易程序審訊藐視法庭案",
+      "zh_orig_backtranslation": "summary trial of contempt of court",
+      "zh_override": "法律程序",
+      "zh_override_backtranslation": "legal proceeding(s)",
+      "level": "HIGH",
+      "rationale": "法律程序 is the canonical compound for 'legal proceedings' in HK Cap. — distinct from 程序 alone (= 'procedure', overlap with 'process')."
+    },
+    "procedure|informed": {
+      "zh_original": "知情和有理可依的裁決",
+      "zh_orig_backtranslation": "informed and reasoned decision",
+      "zh_override": "知情",
+      "zh_override_backtranslation": "informed / aware",
+      "level": "MEDIUM",
+      "rationale": "Lemma extraction. 知情 is HK Cap. canonical for 'informed' (state of being informed)."
+    },
+    "procedure|available": {
+      "zh_original": "可予提供",
+      "zh_orig_backtranslation": "may be provided",
+      "zh_override": "可供",
+      "zh_override_backtranslation": "available (canonical: 可供查閱 / 可供使用)",
+      "level": "REVISED_MEDIUM",
+      "rationale": "Reviewer 1 (HK legal-Chinese native) flagged that 可獲得 is a verbal phrase, not a lexicalised legal lemma. HK Cap. canonical for 'available' is 可供 in compound forms 可供查閱 (available for inspection), 可供使用 (available for use). EN samples confirm 'available for inspection by the public' contexts. Revised override: 可供."
+    },
+    "procedure|bona fide": {
+      "zh_original": "善意",
+      "zh_orig_backtranslation": "good faith",
+      "zh_override": "善意",
+      "zh_override_backtranslation": "good faith / bona fide",
+      "level": "ACCEPT",
+      "rationale": "Form correct. k_zh=3 marginally below K=4. Accept (or push to MEDIUM via expanding to 真誠 alternative). Going with ACCEPT to avoid wrong-sense risk."
+    },
+    "procedure|process": {
+      "zh_original": "濫用程序",
+      "zh_orig_backtranslation": "abuse of process",
+      "zh_override": "程序",
+      "zh_override_backtranslation": "process / procedure (general)",
+      "level": "USER_DECIDED",
+      "rationale": "User decision 2026-05-10: disambiguate from 'proceeding'. process → 程序 (short lemma); proceeding → 法律程序 (compound). Distinct encodings preserve both terms in the core."
+    },
+
+    "criminal|intimidate": {
+      "zh_original": "恐嚇",
+      "zh_orig_backtranslation": "intimidate / threaten",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "EN-side fail (k_en=2): 'intimidate' as verb is rare post-1989 in EN. The noun 'intimidation' covers same concept and is already AUTO_KEEP in criminal. Drop verb form to avoid duplication."
+    },
+    "criminal|counterfeit": {
+      "zh_original": "交付偽製流通紙幣",
+      "zh_orig_backtranslation": "deliver counterfeit currency",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "BOTH-side fail (k_en=0, k_zh=0). The DOJ phrase is too narrow and the EN form 'counterfeit' is rare in HK Cap. post-1989 (only currency contexts; mostly handled via Crimes Ord. provisions whose lemma is 偽造)."
+    },
+    "criminal|convict": {
+      "zh_original": "判定犯罪",
+      "zh_orig_backtranslation": "to determine guilt / to find guilty",
+      "zh_override": null,
+      "zh_override_backtranslation": null,
+      "level": "DROP",
+      "rationale": "BOTH-side fail (k_en=1, k_zh=1). 'convict' as a verb is rare post-1989 in both langs; 'conviction' (noun) is already AUTO_KEEP. Drop to avoid duplication and weak coverage."
+    }
+  }
+}

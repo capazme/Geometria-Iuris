@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "encoding_variant": "bare",
+    "en_models": [
+      "BGE-EN-large",
+      "BGE-M3-EN"
+    ],
+    "zh_models": [
+      "BGE-ZH-large",
+      "BGE-M3-ZH"
+    ],
+    "n_replicates": 15,
+    "seed": 42,
+    "core_pool_size": 364,
+    "control_pool_size": 100,
+    "note": "Dual of extension D: control terms have no attested encoding (no HK Cap. attestation), so this curve operates on BARE embeddings. Baseline (p=0%) recovers Δρ_sym bare on 364 core."
+  },
+  "results": [
+    {
+      "p_control": 0.0,
+      "n_core": 364,
+      "n_control": 0,
+      "n_replicates": 15,
+      "mean_rho_W": 0.5037,
+      "mean_rho_S": 0.6255,
+      "mean_rho_cross": 0.3185,
+      "mean_delta_sym": 0.2462,
+      "std_delta_sym": 0.0,
+      "ci_low_delta_sym": 0.2462,
+      "ci_high_delta_sym": 0.2462
+    },
+    {
+      "p_control": 0.05,
+      "n_core": 346,
+      "n_control": 18,
+      "n_replicates": 15,
+      "mean_rho_W": 0.4981,
+      "mean_rho_S": 0.6142,
+      "mean_rho_cross": 0.3148,
+      "mean_delta_sym": 0.2414,
+      "std_delta_sym": 0.0055,
+      "ci_low_delta_sym": 0.2315,
+      "ci_high_delta_sym": 0.2499
+    },
+    {
+      "p_control": 0.1,
+      "n_core": 328,
+      "n_control": 36,
+      "n_replicates": 15,
+      "mean_rho_W": 0.4951,
+      "mean_rho_S": 0.6071,
+      "mean_rho_cross": 0.312,
+      "mean_delta_sym": 0.2391,
+      "std_delta_sym": 0.008,
+      "ci_low_delta_sym": 0.2265,
+      "ci_high_delta_sym": 0.2502
+    },
+    {
+      "p_control": 0.15,
+      "n_core": 309,
+      "n_control": 55,
+      "n_replicates": 15,
+      "mean_rho_W": 0.4899,
+      "mean_rho_S": 0.598,
+      "mean_rho_cross": 0.3086,
+      "mean_delta_sym": 0.2353,
+      "std_delta_sym": 0.0054,
+      "ci_low_delta_sym": 0.2278,
+      "ci_high_delta_sym": 0.246
+    },
+    {
+      "p_control": 0.2,
+      "n_core": 291,
+      "n_control": 73,
+      "n_replicates": 15,
+      "mean_rho_W": 0.4848,
+      "mean_rho_S": 0.5832,
+      "mean_rho_cross": 0.3083,
+      "mean_delta_sym": 0.2257,
+      "std_delta_sym": 0.0066,
+      "ci_low_delta_sym": 0.2166,
+      "ci_high_delta_sym": 0.2377
+    },
+    {
+      "p_control": 0.25,
+      "n_core": 273,
+      "n_control": 91,
+      "n_replicates": 15,
+      "mean_rho_W": 0.4852,
+      "mean_rho_S": 0.5706,
+      "mean_rho_cross": 0.3052,
+      "mean_delta_sym": 0.2227,
+      "std_delta_sym": 0.0115,
+      "ci_low_delta_sym": 0.2006,
+      "ci_high_delta_sym": 0.243
+    },
+    {
+      "p_control": 0.27,
+      "n_core": 266,
+      "n_control": 98,
+      "n_replicates": 15,
+      "mean_rho_W": 0.4871,
+      "mean_rho_S": 0.567,
+      "mean_rho_cross": 0.3049,
+      "mean_delta_sym": 0.2221,
+      "std_delta_sym": 0.0109,
+      "ci_low_delta_sym": 0.2011,
+      "ci_high_delta_sym": 0.24
+    }
+  ]
+}

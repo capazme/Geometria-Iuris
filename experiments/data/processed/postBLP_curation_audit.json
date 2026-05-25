@@ -1,0 +1,134 @@
+{
+  "total_rows": 1271,
+  "n_keep": 408,
+  "n_drop": 863,
+  "per_domain": {
+    "administrative": {
+      "n_keep": 57,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 10,
+      "k_postBLP_mean": 13.3,
+      "k_postBLP_max": 60
+    },
+    "civil": {
+      "n_keep": 60,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 9.0,
+      "k_postBLP_mean": 13.7,
+      "k_postBLP_max": 98
+    },
+    "constitutional": {
+      "n_keep": 56,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 10.0,
+      "k_postBLP_mean": 13.3,
+      "k_postBLP_max": 76
+    },
+    "criminal": {
+      "n_keep": 58,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 6.0,
+      "k_postBLP_mean": 9.8,
+      "k_postBLP_max": 53
+    },
+    "international": {
+      "n_keep": 55,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 7,
+      "k_postBLP_mean": 12.4,
+      "k_postBLP_max": 68
+    },
+    "labor_social": {
+      "n_keep": 60,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 10.0,
+      "k_postBLP_mean": 14.4,
+      "k_postBLP_max": 51
+    },
+    "procedure": {
+      "n_keep": 62,
+      "k_postBLP_min": 4,
+      "k_postBLP_median": 9.0,
+      "k_postBLP_mean": 12.7,
+      "k_postBLP_max": 58
+    }
+  },
+  "audit": {
+    "duplicate_keys": 0,
+    "empty_zh": 0,
+    "cross_domain_dups": 0,
+    "zh_fragment_potential": 2
+  },
+  "auto_keep_drop_overrides": [
+    {
+      "en": "patent",
+      "domain": "civil",
+      "zh": "明顯",
+      "decision": "DROP",
+      "tier": "core"
+    },
+    {
+      "en": "bill",
+      "domain": "constitutional",
+      "zh": "單據",
+      "decision": "DROP",
+      "tier": "core"
+    },
+    {
+      "en": "international law",
+      "domain": "international",
+      "zh": "國際私法",
+      "decision": "DROP",
+      "tier": "core"
+    },
+    {
+      "en": "assault",
+      "domain": "criminal",
+      "zh": "猥褻侵犯",
+      "decision": "DROP",
+      "tier": "core"
+    },
+    {
+      "en": "occupational",
+      "domain": "labor_social",
+      "zh": "職業履歷",
+      "decision": "DROP",
+      "tier": "core"
+    },
+    {
+      "en": "liable",
+      "domain": "criminal",
+      "zh": "可遭受……",
+      "decision": "DROP",
+      "tier": "background"
+    },
+    {
+      "en": "detain",
+      "domain": "criminal",
+      "zh": "串謀將人強行帶走或禁錮而意圖取得贖金",
+      "decision": "DROP",
+      "tier": "background"
+    },
+    {
+      "en": "hostage",
+      "domain": "criminal",
+      "zh": "《反對劫持人質國際公約》",
+      "decision": "DROP",
+      "tier": "background"
+    },
+    {
+      "en": "presence",
+      "domain": "international",
+      "zh": "在……在場下",
+      "decision": "DROP",
+      "tier": "background"
+    }
+  ],
+  "balance": {
+    "min": 55,
+    "max": 62,
+    "mean": 58.3,
+    "std": 2.5,
+    "range": 7
+  }
+}

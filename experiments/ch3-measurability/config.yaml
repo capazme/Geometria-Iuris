@@ -1,0 +1,133 @@
+# Run #4 — post-BLP final
+# Single source of truth for ALL run #4 parameters.
+# Every script reads this file and never hard-codes values.
+
+run_id: ch3-measurability
+date: 2026-05-12
+seed: 42
+
+# Statistical parameters (definitive run — B↑ from run #3's 1000)
+n_perm_mantel: 10000        # Mantel test permutations (p-floor = 1e-4)
+n_boot: 10000               # block bootstrap CI (Nili 2014)
+n_perm_categorical: 10000   # categorical probe permutations
+holm_correction: true        # FWER control on the 17 model-pair p-values
+
+# Pool parameters
+threshold_year_postBLP: 1989  # Bilingual Laws Project boundary
+expected_n_terms: 364
+expected_k_ge_4: 358
+expected_k_lt_4: 6
+
+# Domain layout (7 domains, band 41-60)
+domains:
+  - administrative
+  - civil
+  - constitutional
+  - criminal
+  - international
+  - labor_social
+  - procedure
+
+# Lens I parameters
+k_nn_domain: 7              # k-NN for §3.1.2 domain topology
+categorical_probe_tests: 5  # §3.1.4 pre-registered tests
+
+# Attested encoding
+attested_min_contexts: 4    # K≥4 hard gate (358/364); 6 terms encode on K<4
+attested_max_contexts: 8    # per term, cap at 8 post-1989 contexts
+attested_max_context_chars: 120
+attested_aggregation: mean  # D3: mean of context vectors, then L2-normalize
+attested_lang_keys:
+  en: en_contexts
+  zh: zh_contexts
+
+# Bare encoding source fields in legal_term_run4.json
+bare_text_field:
+  en: en
+  zh: zh
+
+# Models — 3 WEIRD + 3 Sinic + 2 bilingual (4 lati) = 10 encoding jobs
+models_weird:
+  - id: BAAI/bge-large-en-v1.5
+    label: BGE-EN-large
+    lang: en
+    dim: 1024
+  - id: intfloat/e5-large-v2
+    label: E5-large
+    lang: en
+    dim: 1024
+  - id: freelawproject/modernbert-embed-base_finetune_512
+    label: FreeLaw-EN
+    lang: en
+    dim: 768
+
+models_sinic:
+  - id: BAAI/bge-large-zh-v1.5
+    label: BGE-ZH-large
+    lang: zh
+    dim: 1024
+  - id: GanymedeNil/text2vec-large-chinese
+    label: Text2vec-large-ZH
+    lang: zh
+    dim: 1024
+  - id: DMetaSoul/Dmeta-embedding-zh
+    label: Dmeta-ZH
+    lang: zh
+    dim: 768
+
+models_bilingual:
+  - id: BAAI/bge-m3
+    label: BGE-M3
+    dim: 1024
+  - id: Qwen/Qwen3-Embedding-0.6B
+    label: Qwen3-0.6B
+    dim: 1024
+
+# 17 RSA model pairs (§3.1.3): cross-tradition (9) + within-WEIRD (3)
+# + within-Sinic (3) + bilingual within-model (2) = 17
+pairs_cross:
+  - [BGE-EN-large,        BGE-ZH-large]
+  - [BGE-EN-large,        Text2vec-large-ZH]
+  - [BGE-EN-large,        Dmeta-ZH]
+  - [E5-large,            BGE-ZH-large]
+  - [E5-large,            Text2vec-large-ZH]
+  - [E5-large,            Dmeta-ZH]
+  - [FreeLaw-EN,          BGE-ZH-large]
+  - [FreeLaw-EN,          Text2vec-large-ZH]
+  - [FreeLaw-EN,          Dmeta-ZH]
+
+pairs_within_weird:
+  - [BGE-EN-large,        E5-large]
+  - [BGE-EN-large,        FreeLaw-EN]
+  - [E5-large,            FreeLaw-EN]
+
+pairs_within_sinic:
+  - [BGE-ZH-large,        Text2vec-large-ZH]
+  - [BGE-ZH-large,        Dmeta-ZH]
+  - [Text2vec-large-ZH,   Dmeta-ZH]
+
+pairs_within_bilingual:
+  - [BGE-M3-EN,           BGE-M3-ZH]
+  - [Qwen3-0.6B-EN,       Qwen3-0.6B-ZH]
+
+# Compute settings
+device: cpu                 # deterministic + cross-machine reproducible
+dtype: float32
+batch_size: 64
+unload_between_models: true
+
+# Paths (relative to repo root)
+paths:
+  inputs:                experiments/ch3-measurability/inputs
+  embeddings:            experiments/ch3-measurability/embeddings
+  structure_bare:            experiments/ch3-measurability/experiment_1_structure/results_bare
+  structure_attested:        experiments/ch3-measurability/experiment_1_structure/results_attested
+  axes_bare:            experiments/ch3-measurability/experiment_2_axes/results_bare
+  axes_attested:        experiments/ch3-measurability/experiment_2_axes/results_attested
+  reports:               experiments/ch3-measurability/reports
+  manifest:              experiments/ch3-measurability/manifest.json
+
+# Cache settings (reuse the shared EmbeddingClient cache to avoid repeating
+# bare encodings if this script is re-run; attested uses use_cache=False)
+embedding_cache_dir: experiments/data/processed/embeddings_cache
+embedding_cache_enabled: true

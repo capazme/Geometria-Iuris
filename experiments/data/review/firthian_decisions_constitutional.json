@@ -1,0 +1,646 @@
+{
+  "domain": "constitutional",
+  "date": "2026-05-01",
+  "target_count": 50,
+  "decisions": {
+    "keep_strict": [
+      {
+        "term_idx": 18,
+        "en": "Bill of Rights",
+        "zh_canonical": "人權法案",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 25,
+        "en": "constitution",
+        "zh_canonical": "憲法",
+        "k_en": 8,
+        "k_zh": 5,
+        "sub_area": "supremacy_interpretation"
+      },
+      {
+        "term_idx": 26,
+        "en": "constitutional",
+        "zh_canonical": "憲制的",
+        "k_en": 8,
+        "k_zh": 5,
+        "sub_area": "supremacy_interpretation"
+      },
+      {
+        "term_idx": 68,
+        "en": "freedom",
+        "zh_canonical": "自由",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 93,
+        "en": "legislation",
+        "zh_canonical": "法例",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers"
+      },
+      {
+        "term_idx": 94,
+        "en": "legislative",
+        "zh_canonical": "立法的",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers"
+      },
+      {
+        "term_idx": 95,
+        "en": "Legislative Council",
+        "zh_canonical": "立法會（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs"
+      },
+      {
+        "term_idx": 146,
+        "en": "sovereignty",
+        "zh_canonical": "主權",
+        "k_en": 6,
+        "k_zh": 8,
+        "sub_area": "supremacy_interpretation"
+      },
+      {
+        "term_idx": 214,
+        "en": "equality",
+        "zh_canonical": "平等",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 241,
+        "en": "Basic Law",
+        "zh_canonical": "基本法",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "supremacy_interpretation"
+      },
+      {
+        "term_idx": 247,
+        "en": "citizenship",
+        "zh_canonical": "公民身分",
+        "k_en": 5,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 266,
+        "en": "electoral",
+        "zh_canonical": "選舉法",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections"
+      },
+      {
+        "term_idx": 267,
+        "en": "Electoral Registration Officer",
+        "zh_canonical": "選舉登記主任",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections"
+      },
+      {
+        "term_idx": 283,
+        "en": "habeas corpus",
+        "zh_canonical": "人身保護令",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 285,
+        "en": "habeas corpus ad subjiciendum",
+        "zh_canonical": "解交被拘押者並說明其拘押日期及原因令狀",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 301,
+        "en": "legislature",
+        "zh_canonical": "立法機關",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers"
+      },
+      {
+        "term_idx": 360,
+        "en": "Hong Kong Bill of Rights",
+        "zh_canonical": "香港人權法案",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 909,
+        "en": "Chief Executive",
+        "zh_canonical": "行政長官（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs"
+      },
+      {
+        "term_idx": 5144,
+        "en": "Court of Final Appeal",
+        "zh_canonical": "終審法院",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs"
+      },
+      {
+        "term_idx": 72,
+        "en": "human rights",
+        "zh_canonical": "《歐洲人權公約》",
+        "k_en": 7,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights"
+      },
+      {
+        "term_idx": 361,
+        "en": "Resolution of the Legislative Council",
+        "zh_canonical": "立法局決議",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers"
+      }
+    ],
+    "keep_kunder4": [
+      {
+        "term_idx": 184,
+        "en": "veto",
+        "zh_canonical": "否決",
+        "k_en": 3,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers",
+        "rationale": "Constitutionally salient mechanism in BL/Annex II procedures (CE veto over LegCo Resolutions, art. 49); k_zh=8 confirms full ZH attestation, k_en=3 reflects the ordinances' preference for 'refuse to sign' / 'return to LegCo' periphrases."
+      },
+      {
+        "term_idx": 317,
+        "en": "People's Republic of China",
+        "zh_canonical": "中華人民共和國",
+        "k_en": 0,
+        "k_zh": 8,
+        "sub_area": "supremacy_interpretation",
+        "rationale": "Sovereign polity over which the HKSAR is constituted (BL preamble, arts. 1, 12). k_zh=8 in HK Cap.; k_en=0 reflects that English HK Cap. routinely uses the abbreviation 'PRC' or refers to 'the State', not the full noun phrase. Indispensable referent."
+      },
+      {
+        "term_idx": 356,
+        "en": "rule of law",
+        "zh_canonical": "一般法律規則",
+        "k_en": 8,
+        "k_zh": 0,
+        "sub_area": "supremacy_interpretation",
+        "rationale": "Bedrock constitutional principle expressly preserved by BL art. 8 ('previous laws... and the principles of the rule of law' implicit in common-law continuity); central to HK constitutional discourse despite the dataset's idiosyncratic ZH gloss '一般法律規則' (which is not the canonical 法治 used in Cap. and case-law, hence k_zh=1). [zh_clean override 2026-05-02: '一般法律規則' → '法治' as canonical bare form; 法治 still 0 attested in HK Cap. corpus (genuine case-law/Basic Law concept, not statute text); kept_kunder4 retained.]"
+      }
+    ],
+    "drop": [
+      {
+        "term_idx": 57,
+        "en": "enfranchise",
+        "zh_canonical": "給予公民選舉權",
+        "rationale": "Morphological derivative of the 'franchise/electoral' family already covered by 'electoral', 'elector', 'voter'. k_en=k_zh=0 in HK Cap."
+      },
+      {
+        "term_idx": 67,
+        "en": "franchise",
+        "zh_canonical": "專營",
+        "rationale": "ZH canonical '專營' denotes commercial monopoly (e.g. franchised public utilities), not the constitutional voting franchise; despite strict-gate pass, the term as glossed sits in administrative/economic regulation, not the constitutional domain."
+      },
+      {
+        "term_idx": 106,
+        "en": "naturalization",
+        "zh_canonical": "入籍",
+        "rationale": "Weak attestation (k_en=3 k_zh=1); the constitutional category of acquiring nationality is captured by 'citizenship' (kept_strict) and the broader BL Ch.III status terms."
+      },
+      {
+        "term_idx": 129,
+        "en": "prerogative",
+        "zh_canonical": "君主特權令狀",
+        "rationale": "k_en=1, k_zh=0; the royal-prerogative concept is largely vestigial post-1997 in HK Cap. and not central to the BL constitutional architecture."
+      },
+      {
+        "term_idx": 139,
+        "en": "republication of a will",
+        "zh_canonical": "恢復已撤銷的遺囑 ※比較 publication of a will",
+        "rationale": "Wills doctrine (succession), miscategorised here; not a constitutional concept. k=0/0."
+      },
+      {
+        "term_idx": 155,
+        "en": "suffrage",
+        "zh_canonical": "普選",
+        "rationale": "k_en=1 k_zh=0; covered by the kept 'electoral / Electoral Registration Officer' and the promoted 'elector / voter / by-election' cluster."
+      },
+      {
+        "term_idx": 179,
+        "en": "unconstitutional",
+        "zh_canonical": "不合憲法的",
+        "rationale": "Morphological derivative of 'constitutional' (kept_strict). k=0/0."
+      },
+      {
+        "term_idx": 207,
+        "en": "martial law",
+        "zh_canonical": "戒嚴令",
+        "rationale": "k=0/0 in HK Cap.; martial law has no operational presence in HK constitutional law (BL emergency provisions use distinct terminology)."
+      },
+      {
+        "term_idx": 222,
+        "en": "Universal Declaration of Human Rights",
+        "zh_canonical": "《世界人權宣言》",
+        "rationale": "k=0/0 in HK Cap.; UDHR is referenced via the BoR Ordinance and ICCPR-incorporation pathway already covered by 'Bill of Rights' and 'Hong Kong Bill of Rights'."
+      },
+      {
+        "term_idx": 225,
+        "en": "sovereign",
+        "zh_canonical": "主權國政府",
+        "rationale": "k_zh=0; the noun 'sovereign' overlaps with 'sovereignty' (kept_strict) and 'Head of State'; no independent doctrinal weight in HK constitutional vocabulary."
+      },
+      {
+        "term_idx": 235,
+        "en": "amendment",
+        "zh_canonical": "關鍵性的修改",
+        "rationale": "k_zh=0 with miscategorising ZH gloss '關鍵性的修改'; the canonical ZH for constitutional amendment (修訂/修改) is broadly used but not as this dataset's canonical form. Drop to preserve gloss integrity."
+      },
+      {
+        "term_idx": 251,
+        "en": "congress",
+        "zh_canonical": "國家級、地區級或市級國會",
+        "rationale": "Foreign legislative concept (US/PRC); k_zh=1 with strained ZH gloss. The HK legislative-organ is captured by 'Legislative Council' and 'legislature'."
+      },
+      {
+        "term_idx": 253,
+        "en": "constitute",
+        "zh_canonical": "是單一人",
+        "rationale": "Morphological/verbal derivative of 'constitution'; k_zh=1; redundant with 'constitution' (kept_strict)."
+      },
+      {
+        "term_idx": 276,
+        "en": "franchised",
+        "zh_canonical": "專利巴士",
+        "rationale": "ZH canonical '專利巴士' (franchised bus) places the term in transport regulation despite strict-gate pass; not constitutional."
+      },
+      {
+        "term_idx": 277,
+        "en": "franchisee",
+        "zh_canonical": "獲授專營權者",
+        "rationale": "Derivative of 'franchise'; k_zh=3, commercial-economic register."
+      },
+      {
+        "term_idx": 278,
+        "en": "franchiser",
+        "zh_canonical": "專營權授予者",
+        "rationale": "Derivative of 'franchise'; k_en=1, commercial-economic register."
+      },
+      {
+        "term_idx": 284,
+        "en": "habeas corpus ad respondendum",
+        "zh_canonical": "解交被拘押者到庭答辯令狀",
+        "rationale": "Sub-writ derivative of habeas corpus; k=2/2; the genus 'habeas corpus' and the principal species 'habeas corpus ad subjiciendum' are kept."
+      },
+      {
+        "term_idx": 286,
+        "en": "habeas corpus ad testificandum",
+        "zh_canonical": "解交被拘押者到庭作證令狀",
+        "rationale": "Sub-writ derivative of habeas corpus; k=2/2; redundant for the same reason as 284."
+      },
+      {
+        "term_idx": 288,
+        "en": "Head of State",
+        "zh_canonical": "國家元首",
+        "rationale": "k=2/2; the polity-of-the-state concept is carried by 'sovereignty' and 'People's Republic of China' (exception)."
+      },
+      {
+        "term_idx": 307,
+        "en": "National People's Congress",
+        "zh_canonical": "全國人民代表大會代表",
+        "rationale": "k=0/0 in HK Cap. as the full noun phrase; the central PRC organ surfaces in HK Cap. through 'central government' (promoted) and 'People's Republic of China' (exception)."
+      },
+      {
+        "term_idx": 323,
+        "en": "reconstitute",
+        "zh_canonical": "重組",
+        "rationale": "Morphological derivative of 'constitute / constitution'; k_en=1."
+      },
+      {
+        "term_idx": 331,
+        "en": "Senate",
+        "zh_canonical": "教務委員會",
+        "rationale": "Strict-gate pass is spurious: ZH canonical '教務委員會' denotes the academic Senate of universities (Education Ordinances), not the constitutional upper chamber. Foreign concept under HK constitutional law."
+      },
+      {
+        "term_idx": 368,
+        "en": "disenfranchise",
+        "zh_canonical": "剝奪權利",
+        "rationale": "Morphological derivative of 'franchise / enfranchise' family; k=0/0."
+      },
+      {
+        "term_idx": 369,
+        "en": "enfranchisement",
+        "zh_canonical": "賦權予租客購置批租土地的永久產權",
+        "rationale": "Morphological derivative of 'franchise / enfranchise' family; k=0/0; ZH gloss is land-tenure specific."
+      },
+      {
+        "term_idx": 384,
+        "en": "European Court of Human Rights",
+        "zh_canonical": "歐洲人權法院",
+        "rationale": "k=0/0 in HK Cap.; ECtHR has no jurisdiction over HK and is not part of the constitutional architecture."
+      },
+      {
+        "term_idx": 145,
+        "en": "sovereign state",
+        "zh_canonical": "主權國",
+        "rationale": "Leaked from agent accounting (not assigned to keep/drop/promote). K_en=1, k_zh=8: fails strict gate. Concept covered by 'sovereignty' (kept_strict) and 'People's Republic of China' (kept_kunder4). Drop for completeness."
+      }
+    ],
+    "promote": [
+      {
+        "term_idx": 733,
+        "en": "ballot",
+        "zh_canonical": "投票",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 1.0,
+        "rationale": "Canonical electoral instrument in HK Cap. (Electoral Affairs Commission and Legislative Council Ordinances); kNN consensus 7/7."
+      },
+      {
+        "term_idx": 853,
+        "en": "casting vote",
+        "zh_canonical": "決定票",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 1.0,
+        "rationale": "Constitutionally salient tie-breaking mechanism in LegCo / committee voting (BL art. 75; LegCo Rules of Procedure); kNN consensus 7/7."
+      },
+      {
+        "term_idx": 3622,
+        "en": "vote",
+        "zh_canonical": "投票",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 0.857,
+        "rationale": "Core electoral act; complements 'electoral' and 'elector' / 'voter' to attest the predicate."
+      },
+      {
+        "term_idx": 1441,
+        "en": "election",
+        "zh_canonical": "甄選",
+        "k_en": 8,
+        "k_zh": 7,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 0.857,
+        "rationale": "Generic electoral category, attested across all HK electoral ordinances."
+      },
+      {
+        "term_idx": 5488,
+        "en": "elector",
+        "zh_canonical": "選民",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 0.714,
+        "rationale": "Constitutional subject of franchise; attested in the Legislative Council Ordinance and District Councils Ordinance."
+      },
+      {
+        "term_idx": 7608,
+        "en": "voter",
+        "zh_canonical": "投票人",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 0.714,
+        "rationale": "Doublet of 'elector' (HK Cap. uses both); preserves morphological/registration distinction."
+      },
+      {
+        "term_idx": 4782,
+        "en": "by-election",
+        "zh_canonical": "補選",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 0.714,
+        "rationale": "Specific HK electoral procedure (filling of vacancies in elected bodies); strong attestation."
+      },
+      {
+        "term_idx": 3819,
+        "en": "functional constituency",
+        "zh_canonical": "功能界別",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "enfranchisement_elections",
+        "knn_confidence": 0.571,
+        "rationale": "Distinctive HK constitutional category (BL Annex II; LegCo composition); the canonical 功能界別 marks the WEIRD/Sinic divergence in representation theory."
+      },
+      {
+        "term_idx": 8367,
+        "en": "Election Committee",
+        "zh_canonical": "選舉委員",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.857,
+        "rationale": "Constitutional body that elects the Chief Executive (BL Annex I); doctrinally central HK organ."
+      },
+      {
+        "term_idx": 5415,
+        "en": "District Council",
+        "zh_canonical": "區議會議員",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.571,
+        "rationale": "Local-level HK consultative organ recognised in BL art. 97."
+      },
+      {
+        "term_idx": 1790,
+        "en": "High Court",
+        "zh_canonical": "高等法院（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.429,
+        "rationale": "Component of the HK judicial structure (BL arts. 81, 82); kNN signal lower because k=8/8 also attests in procedural contexts, but the institution itself is constitutional."
+      },
+      {
+        "term_idx": 911,
+        "en": "Chief Justice",
+        "zh_canonical": "首席法官（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.429,
+        "rationale": "Head of HK judiciary (BL art. 88); appointed by CE on recommendation of the Judicial Officers Recommendation Commission."
+      },
+      {
+        "term_idx": 5887,
+        "en": "Hong Kong permanent resident",
+        "zh_canonical": "香港永久性居民",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.429,
+        "rationale": "Constitutional status under BL art. 24; gateway to right of abode and political rights. Strong HK-specific attestation."
+      },
+      {
+        "term_idx": 3111,
+        "en": "Rural Committee",
+        "zh_canonical": "鄉事委員會",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.714,
+        "rationale": "Local HK rural representative organ recognised in HK Cap. (Heung Yee Kuk Ordinance) and BL discourse."
+      },
+      {
+        "term_idx": 4834,
+        "en": "central government",
+        "zh_canonical": "中央政府",
+        "k_en": 8,
+        "k_zh": 7,
+        "sub_area": "hk_organs",
+        "knn_confidence": 0.571,
+        "rationale": "Central PRC government as constitutional counterpart of HKSAR (BL arts. 12-23); structural organ of the HKSAR-CG vertical relationship."
+      },
+      {
+        "term_idx": 2719,
+        "en": "preamble",
+        "zh_canonical": "弁言",
+        "k_en": 5,
+        "k_zh": 7,
+        "sub_area": "supremacy_interpretation",
+        "knn_confidence": 0.571,
+        "rationale": "Interpretive locus for constitutional construction (BL preamble; common-law preamble doctrine for ordinance interpretation)."
+      },
+      {
+        "term_idx": 8347,
+        "en": "autonomous",
+        "zh_canonical": "自治區",
+        "k_en": 8,
+        "k_zh": 6,
+        "sub_area": "supremacy_interpretation",
+        "knn_confidence": 0.571,
+        "rationale": "BL art. 2 'high degree of autonomy'; the HKSAR's constitutional self-description."
+      },
+      {
+        "term_idx": 7707,
+        "en": "national anthem",
+        "zh_canonical": "國歌",
+        "k_en": 4,
+        "k_zh": 8,
+        "sub_area": "supremacy_interpretation",
+        "knn_confidence": 0.714,
+        "rationale": "BL-derivative symbolic-supremacy term (National Anthem Ordinance Cap. 575A); operationalises sovereignty / loyalty norms."
+      },
+      {
+        "term_idx": 5321,
+        "en": "devolution",
+        "zh_canonical": "移交",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "supremacy_interpretation",
+        "knn_confidence": 0.714,
+        "rationale": "Vertical transfer of legislative or judicial competence; relevant to BL post-handover continuity (devolution of pre-1997 functions)."
+      },
+      {
+        "term_idx": 772,
+        "en": "bill",
+        "zh_canonical": "單據",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers",
+        "knn_confidence": 0.857,
+        "rationale": "Pre-enactment instrument before LegCo; canonical legislative-process term."
+      },
+      {
+        "term_idx": 4113,
+        "en": "committee",
+        "zh_canonical": "受託監管人",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers",
+        "knn_confidence": 0.857,
+        "rationale": "Generic legislative organ structure; LegCo committees (e.g. House Committee, Bills Committee) are statutory. [zh_clean override applied 2026-05-01: '受託監管人' → '委員會' for legislative-committee sense; k_zh refreshed to 8]"
+      },
+      {
+        "term_idx": 7328,
+        "en": "subcommittee",
+        "zh_canonical": "小組委員會",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers",
+        "knn_confidence": 0.714,
+        "rationale": "Sub-organ of LegCo committees; codified in LegCo Rules of Procedure."
+      },
+      {
+        "term_idx": 4846,
+        "en": "chairman",
+        "zh_canonical": "主席",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers",
+        "knn_confidence": 0.571,
+        "rationale": "Presiding officer of any deliberative body; HK Cap. uses for LegCo committees, ExCo, statutory boards."
+      },
+      {
+        "term_idx": 1745,
+        "en": "government",
+        "zh_canonical": "政府",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "separation_of_powers",
+        "knn_confidence": 0.571,
+        "rationale": "The HKSAR Government as constitutional executive (BL Ch.IV); structural reference."
+      },
+      {
+        "term_idx": 2230,
+        "en": "liberty",
+        "zh_canonical": "任何一方均可提出申請",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights",
+        "knn_confidence": 0.571,
+        "rationale": "BL art. 28 'No Hong Kong resident shall be subjected to arbitrary or unlawful arrest, detention or imprisonment'; canonical Anglo-American liberty interest, anchor of habeas corpus. [zh_clean override applied 2026-05-01: '任何一方均可提出申請' → '自由' for substantive sense; k_zh refreshed to 8]"
+      },
+      {
+        "term_idx": 8679,
+        "en": "rights",
+        "zh_canonical": "權利",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "fundamental_rights",
+        "knn_confidence": 0.571,
+        "rationale": "BL Ch.III fundamental rights register; kNN signal modest because the lemma surfaces broadly, but the constitutional locus is unambiguous."
+      }
+    ]
+  },
+  "final_count": 50,
+  "confidence_self_assessment": {
+    "overall": 0.78,
+    "rationale": "Strict gate cleanly applied. The 5 exception slots are doctrinally defensible: rule of law (BL art. 8), People's Republic of China (sovereign polity), human rights (BL Ch.III header), veto (BL art. 49 CE return power), Resolution of the Legislative Council (legislative instrument). Promotions are weighted toward the under-represented enfranchisement_elections and hk_organs sub-areas, reaching balanced 10-10-10-10-10 coverage. Some kNN-confident promotes have ZH canonical glosses that drift from the constitutional sense (e.g. 'committee' = 受託監管人 / trust-law 'committee of the estate', 'liberty' = 任何一方均可提出申請 / 'liberty to apply') — they pass the strict attestation gate but the embedding-space neighbourhood may pull them toward non-constitutional senses. This is a genuine measurement risk; flagged below.",
+    "weakest_decisions": [
+      {
+        "term_idx": 7852,
+        "concern": "Not selected, but the strong kNN signal for 'governor' (k_en=k_zh=8, conf=0.714) was rejected because ZH '董事會' = corporate board; flagging as noise in the candidate pool."
+      },
+      {
+        "term_idx": 8347,
+        "concern": "ZH canonical '自治區' denotes mainland Autonomous Regions (Tibet, Xinjiang) more than HKSAR's autonomy; cross-tradition divergence is real but the lemma may also act as a Sinic constitutional anchor in its own right."
+      },
+      {
+        "term_idx": 5887,
+        "concern": "kNN confidence only 0.429; included as the canonical BL art. 24 status. Strong constitutional centrality outweighs the soft kNN signal."
+      }
+    ]
+  },
+  "notes": "Curation prioritised: (1) BL-textual centrality over kNN ranking; (2) institution-name tokens over morphological derivatives; (3) gloss integrity (rejected strict-passers whose ZH canonical drifts into commerce/transport/academia: franchise/franchised/Senate). Sub-areas balanced at exactly 10 each. Drops include all current-core entries with k=0/0 in both languages, plus four whose ZH gloss conflicts with the constitutional sense even at full attestation. [POST-CURATION OVERRIDE 2026-05-01: zh_clean overridden for term_idx 72/2230/4113 to canonical bare ZH forms after the agent flagged DOJ-glossary wrong-sense mappings; vectors re-encoded ZH-side; human rights moved keep_kunder4 → keep_strict.] [PASS-2 OVERRIDE 2026-05-02: zh_clean overridden for 1 gloss-artefact terms; 1 moved keep_kunder4 → keep_strict.] [LEAK FIX 2026-05-02: term_idx 145 'sovereign state' was not accounted for by agent; added to drop. K_en/K_zh = 1/8.]"
+}

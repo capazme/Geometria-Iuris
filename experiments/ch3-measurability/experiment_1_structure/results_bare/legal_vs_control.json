@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "date": "2026-05-11T23:05:25",
+    "n_legal": 364,
+    "n_control": 100,
+    "variant": "bare",
+    "alternative": "less",
+    "metric": "cosine",
+    "control_kind": "everyday-language (pronouns, deixis, common nouns)"
+  },
+  "per_model": {
+    "BGE-EN-large": {
+      "statistic": 1128119746.0,
+      "p_value": 1.0857622768791469e-60,
+      "effect_r": 0.0618,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.4169,
+      "median_y": 0.4211
+    },
+    "E5-large": {
+      "statistic": 893206030.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.2571,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.2051,
+      "median_y": 0.2156
+    },
+    "FreeLaw-EN": {
+      "statistic": 1347850496.0,
+      "p_value": 1.0,
+      "effect_r": -0.121,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.5826,
+      "median_y": 0.5674
+    },
+    "BGE-ZH-large": {
+      "statistic": 915010355.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.239,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.5946,
+      "median_y": 0.6269
+    },
+    "Text2vec-large-ZH": {
+      "statistic": 913977507.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.2399,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.7438,
+      "median_y": 0.7699
+    },
+    "Dmeta-ZH": {
+      "statistic": 939854473.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.2184,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.4981,
+      "median_y": 0.5261
+    },
+    "BGE-M3-EN": {
+      "statistic": 1030023912.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.1434,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.4694,
+      "median_y": 0.4819
+    },
+    "Qwen3-0.6B-EN": {
+      "statistic": 1255550474.0,
+      "p_value": 1.0,
+      "effect_r": -0.0442,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.3772,
+      "median_y": 0.3741
+    },
+    "BGE-M3-ZH": {
+      "statistic": 836161270.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.3046,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.5189,
+      "median_y": 0.5513
+    },
+    "Qwen3-0.6B-ZH": {
+      "statistic": 953792170.0,
+      "p_value": 2.2250738585072014e-308,
+      "effect_r": 0.2068,
+      "n_x": 66066,
+      "n_y": 36400,
+      "median_x": 0.5044,
+      "median_y": 0.5338
+    }
+  }
+}

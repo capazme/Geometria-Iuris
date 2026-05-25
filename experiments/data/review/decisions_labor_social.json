@@ -1,0 +1,111 @@
+{
+  "domain": "labor_social",
+  "action": "promote",
+  "current_count": 30,
+  "target_count": 50,
+  "drop": [],
+  "promote": [
+    {
+      "en": "constructive",
+      "zh_canonical": "推定解僱",
+      "rationale": "Constructive dismissal doctrine (推定解僱), the principal non-explicit termination concept under Cap. 57 / Cap. 219."
+    },
+    {
+      "en": "re-engagement",
+      "zh_canonical": "重新聘用",
+      "rationale": "Statutory remedy for unreasonable/unlawful dismissal under Employment Ordinance Cap. 57 s. 32E."
+    },
+    {
+      "en": "lay-off",
+      "zh_canonical": "停工",
+      "rationale": "Statutory lay-off ground entitling employees to severance payment under Cap. 57 s. 31E."
+    },
+    {
+      "en": "month-to-month",
+      "zh_canonical": "按月僱用條款",
+      "rationale": "Periodic contract form (Cap. 363) governing the default continuous-contract rhythm."
+    },
+    {
+      "en": "long service payment",
+      "zh_canonical": "長期服務金",
+      "rationale": "Canonical HK entitlement (長期服務金) distinguishing Employment Ordinance from common-law severance schemes; Cap. 57 s. 2."
+    },
+    {
+      "en": "gratuity",
+      "zh_canonical": "約滿酬金",
+      "rationale": "End-of-contract gratuity (約滿酬金), standard public-sector and fixed-term employment benefit; Cap. 469, Cap. 80."
+    },
+    {
+      "en": "wage",
+      "zh_canonical": "報酬",
+      "rationale": "Statutory definition of wages, anchor of wage-protection regime; Cap. 57, Cap. 380."
+    },
+    {
+      "en": "time-rate",
+      "zh_canonical": "計時工資率",
+      "rationale": "Time-rate wages category central to Minimum Wage Ordinance Cap. 608 / Cap. 63."
+    },
+    {
+      "en": "holiday",
+      "zh_canonical": "假日",
+      "rationale": "Statutory holiday (法定假期) entitlement under Cap. 57 s. 2(1); core Employment Ordinance benefit."
+    },
+    {
+      "en": "sickness",
+      "zh_canonical": "疾病津貼",
+      "rationale": "Sickness allowance (疾病津貼) under Cap. 57 s. 33; statutory sick-pay regime."
+    },
+    {
+      "en": "provident",
+      "zh_canonical": "強制性公積金計劃",
+      "rationale": "Mandatory Provident Fund scheme (強制性公積金計劃), Cap. 485, backbone of HK retirement security."
+    },
+    {
+      "en": "pensionable",
+      "zh_canonical": "可享退休金的",
+      "rationale": "Pensionable employment category governing public-sector retirement law; Cap. 89."
+    },
+    {
+      "en": "disablement",
+      "zh_canonical": "殘疾",
+      "rationale": "Disablement assessment (殘疾) central to Employees Compensation Ordinance Cap. 282."
+    },
+    {
+      "en": "pneumoconiosis",
+      "zh_canonical": "肺塵埃沉着病",
+      "rationale": "Prescribed occupational disease under Pneumoconiosis and Mesothelioma (Compensation) Ordinance Cap. 360."
+    },
+    {
+      "en": "workplace",
+      "zh_canonical": "工作地方",
+      "rationale": "Place-of-work concept anchoring Occupational Safety and Health Ordinance Cap. 509."
+    },
+    {
+      "en": "discrimination",
+      "zh_canonical": "殘疾歧視",
+      "rationale": "Cross-cutting statutory concept under Caps 480, 487, 527, 602; indispensable for equality-law coverage."
+    },
+    {
+      "en": "harass",
+      "zh_canonical": "騷擾",
+      "rationale": "Statutory harassment (Cap. 487 s. 2, Cap. 480 s. 23), core anti-discrimination concept distinct from criminal annoyance."
+    },
+    {
+      "en": "lockout",
+      "zh_canonical": "閉廠",
+      "rationale": "Employer-side industrial action (閉廠), statutory counterpart to strike under Cap. 55 and Cap. 462."
+    },
+    {
+      "en": "parental",
+      "zh_canonical": "父母責任",
+      "rationale": "Parental responsibility (父母責任), bridging Cap. 57 parental-leave provisions and Cap. 527 Family Status Discrimination; replaces 'pregnancy' whose ZH canonical was a phrase, not a term."
+    },
+    {
+      "en": "incapacitate",
+      "zh_canonical": "喪失工作能力",
+      "rationale": "Loss of working capacity (喪失工作能力), the cardinal concept of Employees Compensation Ordinance Cap. 282 on which total/partial and temporary/permanent compensation turns; replaces 'Ordinary Assessment Board' whose ZH canonical carried explanatory parentheses."
+    }
+  ],
+  "keep_after_drop": [],
+  "curation_principles": "The 20 promotions bring labor_social to methodological parity with the other domains (~50 terms) while preserving balanced coverage of the sub-areas that HK labour and social-security law actually regulates. Termination and contract-form concepts (constructive dismissal, re-engagement, lay-off, month-to-month) cover the principal non-trivial termination modes of the Employment Ordinance; wages and benefits are represented by the statutory anchors (wage, time-rate, holiday, sickness, long service payment, gratuity); the retirement-security layer is captured by provident (MPF, Cap. 485) and pensionable (public-sector, Cap. 89); employees' compensation and occupational health by disablement, pneumoconiosis, the Ordinary Assessment Board, and workplace (OSH, Cap. 509); anti-discrimination by discrimination, harass, and pregnancy, which together span the four Discrimination Ordinances (Caps 480, 487, 527, 602) and their intersection with the Employment Ordinance; collective relations by lockout as the employer-side counterpart to the already-core strike and industrial action. Each promoted term has clean ZH canonical, non-trivial e-Legislation attestation in the relevant labour/social Caps, and sufficient conceptual centrality to appear in any standard treatise on HK labour law. Terms whose sole surface form is a bare English word with no labour-specific ZH anchor (e.g. 'severance', 'maternity' considered in isolation) were skipped in favour of entries whose zh_canonical already encodes the labour meaning, so that the domain label reflects the actual semantic locus of the embedding rather than a polysemous surface form. The selection deliberately favours statutory concepts over common-law doctrines imported from English labour law, because the research instrument is calibrated on HK e-Legislation and the thesis's methodological claim is that embedding geometry tracks the culturally situated statutory lexicon. After the initial selection, two entries were replaced to tighten bilingual canonical form: 'pregnancy' (whose ZH canonical 基於婚姻狀況或懷孕的歧視 was a phrase, not a term) was superseded by 'parental' (父母責任), retaining the family-status intersection between Cap. 57 and Cap. 527; 'Ordinary Assessment Board' (whose ZH canonical （僱員補償）普通評估委員會（香港） carried explanatory parentheses incompatible with embedding extraction) was superseded by 'incapacitate' (喪失工作能力), the doctrinally central concept of Employees Compensation Ordinance Cap. 282."
+}

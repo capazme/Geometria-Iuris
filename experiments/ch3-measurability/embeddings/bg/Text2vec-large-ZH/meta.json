@@ -1,0 +1,14 @@
+{
+  "model_id": "GanymedeNil/text2vec-large-chinese",
+  "model_label": "Text2vec-large-ZH",
+  "lang": "zh",
+  "dim": 1024,
+  "n_bg": 9045,
+  "dtype": "float32",
+  "l2_norm": true,
+  "date": "2026-05-16",
+  "elapsed_bare_s": 39.11,
+  "elapsed_attested_s": 0.0,
+  "snapshot_sha256_bg": "564ff68c80a5fca854972a83ce38eec9c76b5e2c2efa32dfa203fb062ea8a7b3",
+  "kind": "bg"
+}

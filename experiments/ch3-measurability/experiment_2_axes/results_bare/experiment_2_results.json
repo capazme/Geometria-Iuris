@@ -1,0 +1,4504 @@
+{
+  "meta": {
+    "variant": "bare",
+    "n_terms": 364,
+    "n_boot": 10000,
+    "seed": 42,
+    "axes": [
+      "individual_collective",
+      "rights_duties",
+      "public_private",
+      "state_market",
+      "natural_positive",
+      "status_contract"
+    ],
+    "labels_en_pairs": [
+      "BGE-EN-large",
+      "E5-large",
+      "FreeLaw-EN",
+      "BGE-M3-EN",
+      "Qwen3-0.6B-EN"
+    ],
+    "labels_zh_pairs": [
+      "BGE-ZH-large",
+      "Text2vec-large-ZH",
+      "Dmeta-ZH",
+      "BGE-M3-ZH",
+      "Qwen3-0.6B-ZH"
+    ],
+    "date": "2026-05-11T02:00:18",
+    "elapsed_seconds": 418.2
+  },
+  "section_321": {
+    "BGE-EN-large": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        }
+      }
+    },
+    "E5-large": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 8
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "FreeLaw-EN": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "BGE-M3-EN": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 9
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "Qwen3-0.6B-EN": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 8
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "BGE-ZH-large": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 8
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 9
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "Text2vec-large-ZH": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 9
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 9
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "Dmeta-ZH": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 7
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    },
+    "BGE-M3-ZH": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        }
+      }
+    },
+    "Qwen3-0.6B-ZH": {
+      "axes": {
+        "individual_collective": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 9,
+          "negative_correct": 10
+        },
+        "rights_duties": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "public_private": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "state_market": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        },
+        "natural_positive": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 9
+        },
+        "status_contract": {
+          "n_pairs_used": 10,
+          "n_pairs_total": 10,
+          "positive_correct": 10,
+          "negative_correct": 10
+        }
+      }
+    }
+  },
+  "section_322": {
+    "BGE-EN-large": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          0.9999998807907104,
+          0.31858962774276733,
+          -0.2594832181930542,
+          0.020558103919029236,
+          0.10407654196023941,
+          0.0866520032286644
+        ],
+        [
+          0.31858962774276733,
+          0.9999999403953552,
+          -0.1587541103363037,
+          -0.14097636938095093,
+          0.13377733528614044,
+          0.11338520050048828
+        ],
+        [
+          -0.2594832181930542,
+          -0.1587541103363037,
+          1.0,
+          0.31089529395103455,
+          -0.19174164533615112,
+          0.03228938579559326
+        ],
+        [
+          0.020558103919029236,
+          -0.14097636938095093,
+          0.31089529395103455,
+          1.0000001192092896,
+          -0.16526862978935242,
+          0.1870931088924408
+        ],
+        [
+          0.10407654196023941,
+          0.13377733528614044,
+          -0.19174164533615112,
+          -0.16526862978935242,
+          1.0,
+          0.07033461332321167
+        ],
+        [
+          0.0866520032286644,
+          0.11338520050048828,
+          0.03228938579559326,
+          0.1870931088924408,
+          0.07033461332321167,
+          0.9999999403953552
+        ]
+      ]
+    },
+    "E5-large": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          0.9999999403953552,
+          0.3463715612888336,
+          -0.22016149759292603,
+          0.019087813794612885,
+          0.0142515255138278,
+          0.1212761402130127
+        ],
+        [
+          0.3463715612888336,
+          1.0,
+          -0.2100548893213272,
+          -0.14864540100097656,
+          0.08732382953166962,
+          0.1819625347852707
+        ],
+        [
+          -0.22016149759292603,
+          -0.2100548893213272,
+          0.9999999403953552,
+          0.24978314340114594,
+          -0.1401427984237671,
+          0.018595367670059204
+        ],
+        [
+          0.019087813794612885,
+          -0.14864540100097656,
+          0.24978314340114594,
+          0.9999998807907104,
+          -0.19909338653087616,
+          0.26463720202445984
+        ],
+        [
+          0.0142515255138278,
+          0.08732382953166962,
+          -0.1401427984237671,
+          -0.19909338653087616,
+          0.9999998807907104,
+          0.09935805946588516
+        ],
+        [
+          0.1212761402130127,
+          0.1819625347852707,
+          0.018595367670059204,
+          0.26463720202445984,
+          0.09935805946588516,
+          1.0
+        ]
+      ]
+    },
+    "FreeLaw-EN": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          1.0,
+          0.3975483179092407,
+          -0.29514336585998535,
+          -0.15341536700725555,
+          0.039064645767211914,
+          0.11639387160539627
+        ],
+        [
+          0.3975483179092407,
+          0.9999999403953552,
+          -0.07623104751110077,
+          -0.08042608946561813,
+          0.010402137413620949,
+          0.17955347895622253
+        ],
+        [
+          -0.29514336585998535,
+          -0.07623104751110077,
+          1.0,
+          0.2515585124492645,
+          -0.16655901074409485,
+          0.028507839888334274
+        ],
+        [
+          -0.15341536700725555,
+          -0.08042608946561813,
+          0.2515585124492645,
+          1.0,
+          -0.15230491757392883,
+          0.25431981682777405
+        ],
+        [
+          0.039064645767211914,
+          0.010402137413620949,
+          -0.16655901074409485,
+          -0.15230491757392883,
+          0.9999999403953552,
+          0.10025284439325333
+        ],
+        [
+          0.11639387160539627,
+          0.17955347895622253,
+          0.028507839888334274,
+          0.25431981682777405,
+          0.10025284439325333,
+          1.0
+        ]
+      ]
+    },
+    "BGE-M3-EN": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          1.0,
+          0.45126354694366455,
+          -0.32454946637153625,
+          -0.17928773164749146,
+          -0.0067644016817212105,
+          0.06852912902832031
+        ],
+        [
+          0.45126354694366455,
+          0.9999999403953552,
+          -0.16730105876922607,
+          -0.18284972012043,
+          0.1085665374994278,
+          0.08895394206047058
+        ],
+        [
+          -0.32454946637153625,
+          -0.16730105876922607,
+          1.0,
+          0.38538363575935364,
+          -0.18457570672035217,
+          0.05113505572080612
+        ],
+        [
+          -0.17928773164749146,
+          -0.18284972012043,
+          0.38538363575935364,
+          1.0,
+          -0.17509189248085022,
+          0.203727588057518
+        ],
+        [
+          -0.0067644016817212105,
+          0.1085665374994278,
+          -0.18457570672035217,
+          -0.17509189248085022,
+          1.0000001192092896,
+          0.06966156512498856
+        ],
+        [
+          0.06852912902832031,
+          0.08895394206047058,
+          0.05113505572080612,
+          0.203727588057518,
+          0.06966156512498856,
+          0.9999998807907104
+        ]
+      ]
+    },
+    "Qwen3-0.6B-EN": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          0.9999998807907104,
+          0.4361354112625122,
+          -0.3171144723892212,
+          -0.11582176387310028,
+          -0.021886758506298065,
+          0.08763773739337921
+        ],
+        [
+          0.4361354112625122,
+          0.9999998807907104,
+          -0.1653922200202942,
+          -0.17630644142627716,
+          0.03996432572603226,
+          0.09719037264585495
+        ],
+        [
+          -0.3171144723892212,
+          -0.1653922200202942,
+          1.0,
+          0.31671831011772156,
+          -0.29488110542297363,
+          -0.05281803756952286
+        ],
+        [
+          -0.11582176387310028,
+          -0.17630644142627716,
+          0.31671831011772156,
+          1.0,
+          -0.09817609190940857,
+          0.23972812294960022
+        ],
+        [
+          -0.021886758506298065,
+          0.03996432572603226,
+          -0.29488110542297363,
+          -0.09817609190940857,
+          1.0,
+          0.16240906715393066
+        ],
+        [
+          0.08763773739337921,
+          0.09719037264585495,
+          -0.05281803756952286,
+          0.23972812294960022,
+          0.16240906715393066,
+          1.0
+        ]
+      ]
+    },
+    "BGE-ZH-large": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          1.0,
+          0.21559736132621765,
+          -0.4655717611312866,
+          -0.1862911880016327,
+          0.003051444888114929,
+          0.03981897979974747
+        ],
+        [
+          0.21559736132621765,
+          1.0,
+          -0.06369373947381973,
+          -0.03357144817709923,
+          0.005661154631525278,
+          0.05977146327495575
+        ],
+        [
+          -0.4655717611312866,
+          -0.06369373947381973,
+          0.9999998211860657,
+          0.4360266327857971,
+          -0.1867959052324295,
+          -0.013465672731399536
+        ],
+        [
+          -0.1862911880016327,
+          -0.03357144817709923,
+          0.4360266327857971,
+          0.9999999403953552,
+          -0.1838841736316681,
+          0.08000953495502472
+        ],
+        [
+          0.003051444888114929,
+          0.005661154631525278,
+          -0.1867959052324295,
+          -0.1838841736316681,
+          1.000000238418579,
+          0.07459546625614166
+        ],
+        [
+          0.03981897979974747,
+          0.05977146327495575,
+          -0.013465672731399536,
+          0.08000953495502472,
+          0.07459546625614166,
+          0.9999998807907104
+        ]
+      ]
+    },
+    "Text2vec-large-ZH": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          1.0000001192092896,
+          0.30407166481018066,
+          -0.4871697425842285,
+          -0.2827011048793793,
+          -0.06837653368711472,
+          0.05500787869095802
+        ],
+        [
+          0.30407166481018066,
+          1.0000001192092896,
+          -0.12414547801017761,
+          -0.1944962739944458,
+          -0.009847653098404408,
+          0.024381499737501144
+        ],
+        [
+          -0.4871697425842285,
+          -0.12414547801017761,
+          0.9999998807907104,
+          0.364421546459198,
+          0.061342570930719376,
+          -0.09329146891832352
+        ],
+        [
+          -0.2827011048793793,
+          -0.1944962739944458,
+          0.364421546459198,
+          1.0,
+          -0.08520209789276123,
+          0.13248604536056519
+        ],
+        [
+          -0.06837653368711472,
+          -0.009847653098404408,
+          0.061342570930719376,
+          -0.08520209789276123,
+          1.0000001192092896,
+          -0.10396997630596161
+        ],
+        [
+          0.05500787869095802,
+          0.024381499737501144,
+          -0.09329146891832352,
+          0.13248604536056519,
+          -0.10396997630596161,
+          1.0
+        ]
+      ]
+    },
+    "Dmeta-ZH": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          0.9999998807907104,
+          0.17921799421310425,
+          -0.4390026330947876,
+          -0.2118818312883377,
+          0.009899528697133064,
+          0.07402478903532028
+        ],
+        [
+          0.17921799421310425,
+          1.0,
+          -0.06346385180950165,
+          -0.10763178020715714,
+          -0.01953691989183426,
+          0.044744569808244705
+        ],
+        [
+          -0.4390026330947876,
+          -0.06346385180950165,
+          1.0000001192092896,
+          0.3382580280303955,
+          -0.09816662967205048,
+          -0.11794880777597427
+        ],
+        [
+          -0.2118818312883377,
+          -0.10763178020715714,
+          0.3382580280303955,
+          0.9999999403953552,
+          -0.11984559148550034,
+          0.0997045487165451
+        ],
+        [
+          0.009899528697133064,
+          -0.01953691989183426,
+          -0.09816662967205048,
+          -0.11984559148550034,
+          0.9999998807907104,
+          0.014605299569666386
+        ],
+        [
+          0.07402478903532028,
+          0.044744569808244705,
+          -0.11794880777597427,
+          0.0997045487165451,
+          0.014605299569666386,
+          1.0
+        ]
+      ]
+    },
+    "BGE-M3-ZH": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          1.0000001192092896,
+          0.2434331476688385,
+          -0.4358506202697754,
+          -0.25912266969680786,
+          0.0010894164443016052,
+          -0.02664848044514656
+        ],
+        [
+          0.2434331476688385,
+          1.0,
+          -0.10842908918857574,
+          -0.13881221413612366,
+          0.007030579261481762,
+          0.010411050170660019
+        ],
+        [
+          -0.4358506202697754,
+          -0.10842908918857574,
+          1.0,
+          0.39766988158226013,
+          -0.025514140725135803,
+          0.007158371619880199
+        ],
+        [
+          -0.25912266969680786,
+          -0.13881221413612366,
+          0.39766988158226013,
+          1.0,
+          -0.08258439600467682,
+          0.13448931276798248
+        ],
+        [
+          0.0010894164443016052,
+          0.007030579261481762,
+          -0.025514140725135803,
+          -0.08258439600467682,
+          1.0,
+          0.04093417525291443
+        ],
+        [
+          -0.02664848044514656,
+          0.010411050170660019,
+          0.007158371619880199,
+          0.13448931276798248,
+          0.04093417525291443,
+          1.0
+        ]
+      ]
+    },
+    "Qwen3-0.6B-ZH": {
+      "axes": [
+        "individual_collective",
+        "rights_duties",
+        "public_private",
+        "state_market",
+        "natural_positive",
+        "status_contract"
+      ],
+      "cosine_matrix": [
+        [
+          1.0,
+          0.2109777331352234,
+          -0.45934972167015076,
+          -0.150955468416214,
+          0.0296565443277359,
+          -0.007400724105536938
+        ],
+        [
+          0.2109777331352234,
+          1.0,
+          -0.027705203741788864,
+          -0.050310470163822174,
+          0.05891471356153488,
+          -0.06139107793569565
+        ],
+        [
+          -0.45934972167015076,
+          -0.027705203741788864,
+          1.0,
+          0.3950842618942261,
+          -0.19840627908706665,
+          -0.04436143487691879
+        ],
+        [
+          -0.150955468416214,
+          -0.050310470163822174,
+          0.3950842618942261,
+          0.9999998211860657,
+          -0.15073679387569427,
+          0.1087343767285347
+        ],
+        [
+          0.0296565443277359,
+          0.05891471356153488,
+          -0.19840627908706665,
+          -0.15073679387569427,
+          1.0,
+          0.08632804453372955
+        ],
+        [
+          -0.007400724105536938,
+          -0.06139107793569565,
+          -0.04436143487691879,
+          0.1087343767285347,
+          0.08632804453372955,
+          0.9999999403953552
+        ]
+      ]
+    }
+  },
+  "section_323": {
+    "per_pair": [
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1776,
+        "ci_low": 0.0745,
+        "ci_high": 0.2781
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3653,
+        "ci_low": 0.2597,
+        "ci_high": 0.4615
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4314,
+        "ci_low": 0.3392,
+        "ci_high": 0.5148
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.322,
+        "ci_low": 0.2217,
+        "ci_high": 0.4159
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.3155,
+        "ci_low": 0.2115,
+        "ci_high": 0.4126
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4941,
+        "ci_low": 0.4054,
+        "ci_high": 0.5734
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1483,
+        "ci_low": 0.0405,
+        "ci_high": 0.2505
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3565,
+        "ci_low": 0.2534,
+        "ci_high": 0.4524
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.1963,
+        "ci_low": 0.0918,
+        "ci_high": 0.2982
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.1676,
+        "ci_low": 0.0653,
+        "ci_high": 0.2672
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.1315,
+        "ci_low": 0.0271,
+        "ci_high": 0.2347
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.3856,
+        "ci_low": 0.2927,
+        "ci_high": 0.4717
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1489,
+        "ci_low": 0.0428,
+        "ci_high": 0.2502
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3762,
+        "ci_low": 0.2761,
+        "ci_high": 0.4675
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.384,
+        "ci_low": 0.2922,
+        "ci_high": 0.4685
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2157,
+        "ci_low": 0.1142,
+        "ci_high": 0.3124
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2573,
+        "ci_low": 0.1565,
+        "ci_high": 0.3562
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4633,
+        "ci_low": 0.3747,
+        "ci_high": 0.545
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2608,
+        "ci_low": 0.1604,
+        "ci_high": 0.359
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.381,
+        "ci_low": 0.2769,
+        "ci_high": 0.4735
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4224,
+        "ci_low": 0.3266,
+        "ci_high": 0.5081
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.3265,
+        "ci_low": 0.2279,
+        "ci_high": 0.4173
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2275,
+        "ci_low": 0.1255,
+        "ci_high": 0.3278
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5331,
+        "ci_low": 0.4529,
+        "ci_high": 0.6049
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3198,
+        "ci_low": 0.2267,
+        "ci_high": 0.408
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3109,
+        "ci_low": 0.2055,
+        "ci_high": 0.4077
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4755,
+        "ci_low": 0.3879,
+        "ci_high": 0.5541
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.3598,
+        "ci_low": 0.2642,
+        "ci_high": 0.4467
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2679,
+        "ci_low": 0.1627,
+        "ci_high": 0.3696
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4433,
+        "ci_low": 0.354,
+        "ci_high": 0.5268
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.126,
+        "ci_low": 0.0184,
+        "ci_high": 0.2283
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3685,
+        "ci_low": 0.2697,
+        "ci_high": 0.4643
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3965,
+        "ci_low": 0.2992,
+        "ci_high": 0.4852
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2753,
+        "ci_low": 0.1717,
+        "ci_high": 0.375
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2738,
+        "ci_low": 0.1726,
+        "ci_high": 0.3729
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5157,
+        "ci_low": 0.4314,
+        "ci_high": 0.5901
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1868,
+        "ci_low": 0.0813,
+        "ci_high": 0.2847
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3409,
+        "ci_low": 0.238,
+        "ci_high": 0.4364
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.2863,
+        "ci_low": 0.1855,
+        "ci_high": 0.3821
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.1916,
+        "ci_low": 0.0909,
+        "ci_high": 0.2919
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.0522,
+        "ci_low": -0.0504,
+        "ci_high": 0.1557
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.3818,
+        "ci_low": 0.2889,
+        "ci_high": 0.4666
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.126,
+        "ci_low": 0.0227,
+        "ci_high": 0.227
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3804,
+        "ci_low": 0.2815,
+        "ci_high": 0.4722
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3303,
+        "ci_low": 0.232,
+        "ci_high": 0.421
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.1642,
+        "ci_low": 0.0613,
+        "ci_high": 0.2634
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.188,
+        "ci_low": 0.0878,
+        "ci_high": 0.2829
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4621,
+        "ci_low": 0.3711,
+        "ci_high": 0.5438
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1589,
+        "ci_low": 0.0514,
+        "ci_high": 0.2621
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.342,
+        "ci_low": 0.2386,
+        "ci_high": 0.4412
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3664,
+        "ci_low": 0.265,
+        "ci_high": 0.4596
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2906,
+        "ci_low": 0.1886,
+        "ci_high": 0.3859
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2075,
+        "ci_low": 0.1035,
+        "ci_high": 0.3084
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.491,
+        "ci_low": 0.4034,
+        "ci_high": 0.5689
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.204,
+        "ci_low": 0.1002,
+        "ci_high": 0.3041
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3685,
+        "ci_low": 0.2697,
+        "ci_high": 0.4589
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3912,
+        "ci_low": 0.2945,
+        "ci_high": 0.4804
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2276,
+        "ci_low": 0.1281,
+        "ci_high": 0.3233
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2113,
+        "ci_low": 0.1079,
+        "ci_high": 0.3127
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4621,
+        "ci_low": 0.3717,
+        "ci_high": 0.5426
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2666,
+        "ci_low": 0.1617,
+        "ci_high": 0.3681
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4031,
+        "ci_low": 0.303,
+        "ci_high": 0.4949
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.364,
+        "ci_low": 0.2636,
+        "ci_high": 0.458
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2458,
+        "ci_low": 0.1406,
+        "ci_high": 0.3459
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.1983,
+        "ci_low": 0.093,
+        "ci_high": 0.3
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4032,
+        "ci_low": 0.3132,
+        "ci_high": 0.4868
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2459,
+        "ci_low": 0.1403,
+        "ci_high": 0.3424
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4029,
+        "ci_low": 0.3043,
+        "ci_high": 0.4932
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.2157,
+        "ci_low": 0.1105,
+        "ci_high": 0.3146
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2566,
+        "ci_low": 0.1533,
+        "ci_high": 0.354
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": -0.0027,
+        "ci_low": -0.1048,
+        "ci_high": 0.1041
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.2937,
+        "ci_low": 0.1974,
+        "ci_high": 0.3864
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2746,
+        "ci_low": 0.1705,
+        "ci_high": 0.3714
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4084,
+        "ci_low": 0.31,
+        "ci_high": 0.4979
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3143,
+        "ci_low": 0.2167,
+        "ci_high": 0.4084
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.1344,
+        "ci_low": 0.0272,
+        "ci_high": 0.2364
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.1709,
+        "ci_low": 0.0647,
+        "ci_high": 0.2714
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.3496,
+        "ci_low": 0.2529,
+        "ci_high": 0.4408
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2766,
+        "ci_low": 0.1723,
+        "ci_high": 0.3758
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3275,
+        "ci_low": 0.2224,
+        "ci_high": 0.4261
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.3836,
+        "ci_low": 0.2835,
+        "ci_high": 0.4768
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2692,
+        "ci_low": 0.1673,
+        "ci_high": 0.363
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.198,
+        "ci_low": 0.0928,
+        "ci_high": 0.3027
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.3885,
+        "ci_low": 0.295,
+        "ci_high": 0.4764
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3501,
+        "ci_low": 0.2506,
+        "ci_high": 0.4435
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.406,
+        "ci_low": 0.3064,
+        "ci_high": 0.4972
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4306,
+        "ci_low": 0.3349,
+        "ci_high": 0.5169
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2602,
+        "ci_low": 0.1584,
+        "ci_high": 0.3534
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2101,
+        "ci_low": 0.1017,
+        "ci_high": 0.3157
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.3612,
+        "ci_low": 0.2661,
+        "ci_high": 0.4499
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3614,
+        "ci_low": 0.2646,
+        "ci_high": 0.4531
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3915,
+        "ci_low": 0.2905,
+        "ci_high": 0.4853
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4467,
+        "ci_low": 0.3552,
+        "ci_high": 0.5303
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.3517,
+        "ci_low": 0.2528,
+        "ci_high": 0.4406
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.311,
+        "ci_low": 0.2151,
+        "ci_high": 0.4008
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5601,
+        "ci_low": 0.4825,
+        "ci_high": 0.6312
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2323,
+        "ci_low": 0.1274,
+        "ci_high": 0.3311
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3398,
+        "ci_low": 0.2367,
+        "ci_high": 0.4363
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.2952,
+        "ci_low": 0.1943,
+        "ci_high": 0.3904
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.1989,
+        "ci_low": 0.0975,
+        "ci_high": 0.2993
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.11,
+        "ci_low": 0.0045,
+        "ci_high": 0.2133
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.3411,
+        "ci_low": 0.2487,
+        "ci_high": 0.4277
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3072,
+        "ci_low": 0.2064,
+        "ci_high": 0.4007
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3695,
+        "ci_low": 0.2694,
+        "ci_high": 0.4633
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4035,
+        "ci_low": 0.3148,
+        "ci_high": 0.4863
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.3003,
+        "ci_low": 0.1997,
+        "ci_high": 0.3948
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.3294,
+        "ci_low": 0.2337,
+        "ci_high": 0.4209
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5073,
+        "ci_low": 0.4249,
+        "ci_high": 0.5796
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3132,
+        "ci_low": 0.2112,
+        "ci_high": 0.4107
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4045,
+        "ci_low": 0.3025,
+        "ci_high": 0.4972
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.5085,
+        "ci_low": 0.4214,
+        "ci_high": 0.586
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.4056,
+        "ci_low": 0.3137,
+        "ci_high": 0.4913
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2459,
+        "ci_low": 0.1411,
+        "ci_high": 0.3445
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5741,
+        "ci_low": 0.4983,
+        "ci_high": 0.6398
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.357,
+        "ci_low": 0.2573,
+        "ci_high": 0.4505
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.3365,
+        "ci_low": 0.2324,
+        "ci_high": 0.4323
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4446,
+        "ci_low": 0.3546,
+        "ci_high": 0.5229
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.3393,
+        "ci_low": 0.2416,
+        "ci_high": 0.4273
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.366,
+        "ci_low": 0.2653,
+        "ci_high": 0.4582
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5286,
+        "ci_low": 0.4475,
+        "ci_high": 0.602
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2617,
+        "ci_low": 0.1564,
+        "ci_high": 0.3598
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4775,
+        "ci_low": 0.3824,
+        "ci_high": 0.5636
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4938,
+        "ci_low": 0.4059,
+        "ci_high": 0.5736
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2777,
+        "ci_low": 0.1746,
+        "ci_high": 0.3756
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.3465,
+        "ci_low": 0.2505,
+        "ci_high": 0.4362
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-ZH-large",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4763,
+        "ci_low": 0.3877,
+        "ci_high": 0.5577
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2181,
+        "ci_low": 0.1116,
+        "ci_high": 0.3169
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4227,
+        "ci_low": 0.3248,
+        "ci_high": 0.5126
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.1689,
+        "ci_low": 0.0611,
+        "ci_high": 0.2717
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2084,
+        "ci_low": 0.1061,
+        "ci_high": 0.3076
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.0855,
+        "ci_low": -0.0206,
+        "ci_high": 0.1906
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Text2vec-large-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.2942,
+        "ci_low": 0.1964,
+        "ci_high": 0.3868
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.2043,
+        "ci_low": 0.095,
+        "ci_high": 0.3066
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4613,
+        "ci_low": 0.3659,
+        "ci_high": 0.5474
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4092,
+        "ci_low": 0.3197,
+        "ci_high": 0.4919
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.1529,
+        "ci_low": 0.0465,
+        "ci_high": 0.2532
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.3527,
+        "ci_low": 0.256,
+        "ci_high": 0.444
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Dmeta-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4401,
+        "ci_low": 0.3502,
+        "ci_high": 0.5239
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.1887,
+        "ci_low": 0.0762,
+        "ci_high": 0.2926
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4155,
+        "ci_low": 0.3163,
+        "ci_high": 0.5067
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.4766,
+        "ci_low": 0.3881,
+        "ci_high": 0.5576
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.2721,
+        "ci_low": 0.1706,
+        "ci_high": 0.3661
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.2067,
+        "ci_low": 0.0985,
+        "ci_high": 0.311
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "BGE-M3-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.4927,
+        "ci_low": 0.4051,
+        "ci_high": 0.5735
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "individual_collective",
+        "rho": 0.3068,
+        "ci_low": 0.2015,
+        "ci_high": 0.402
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "rights_duties",
+        "rho": 0.4536,
+        "ci_low": 0.3574,
+        "ci_high": 0.542
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "public_private",
+        "rho": 0.625,
+        "ci_low": 0.555,
+        "ci_high": 0.688
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "state_market",
+        "rho": 0.3315,
+        "ci_low": 0.234,
+        "ci_high": 0.4212
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "natural_positive",
+        "rho": 0.379,
+        "ci_low": 0.2795,
+        "ci_high": 0.4715
+      },
+      {
+        "model_a": "Qwen3-0.6B-EN",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "cross",
+        "axis": "status_contract",
+        "rho": 0.5097,
+        "ci_low": 0.4242,
+        "ci_high": 0.5891
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5972,
+        "ci_low": 0.5194,
+        "ci_high": 0.665
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.6101,
+        "ci_low": 0.5317,
+        "ci_high": 0.6797
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.6375,
+        "ci_low": 0.5631,
+        "ci_high": 0.7018
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.6812,
+        "ci_low": 0.6117,
+        "ci_high": 0.7411
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.748,
+        "ci_low": 0.6952,
+        "ci_high": 0.79
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "E5-large",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.624,
+        "ci_low": 0.5461,
+        "ci_high": 0.693
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.4501,
+        "ci_low": 0.3586,
+        "ci_high": 0.5308
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5457,
+        "ci_low": 0.4593,
+        "ci_high": 0.6245
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.5351,
+        "ci_low": 0.4532,
+        "ci_high": 0.6085
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5622,
+        "ci_low": 0.4802,
+        "ci_high": 0.6351
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5888,
+        "ci_low": 0.5092,
+        "ci_high": 0.6571
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.563,
+        "ci_low": 0.4835,
+        "ci_high": 0.6358
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5263,
+        "ci_low": 0.439,
+        "ci_high": 0.6062
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5724,
+        "ci_low": 0.4874,
+        "ci_high": 0.6475
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.6016,
+        "ci_low": 0.523,
+        "ci_high": 0.6714
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5703,
+        "ci_low": 0.4905,
+        "ci_high": 0.642
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.6188,
+        "ci_low": 0.5465,
+        "ci_high": 0.6842
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.5725,
+        "ci_low": 0.4952,
+        "ci_high": 0.6402
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.4531,
+        "ci_low": 0.3632,
+        "ci_high": 0.5355
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5752,
+        "ci_low": 0.4918,
+        "ci_high": 0.6493
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.5853,
+        "ci_low": 0.5081,
+        "ci_high": 0.654
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.6263,
+        "ci_low": 0.5546,
+        "ci_high": 0.6876
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.618,
+        "ci_low": 0.546,
+        "ci_high": 0.6795
+      },
+      {
+        "model_a": "BGE-EN-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.6345,
+        "ci_low": 0.5636,
+        "ci_high": 0.6965
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.4513,
+        "ci_low": 0.3613,
+        "ci_high": 0.5343
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5664,
+        "ci_low": 0.4857,
+        "ci_high": 0.6373
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.4521,
+        "ci_low": 0.3589,
+        "ci_high": 0.5387
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5361,
+        "ci_low": 0.4541,
+        "ci_high": 0.6078
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5468,
+        "ci_low": 0.4672,
+        "ci_high": 0.6176
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "FreeLaw-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.5159,
+        "ci_low": 0.429,
+        "ci_high": 0.5938
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.4899,
+        "ci_low": 0.4032,
+        "ci_high": 0.5705
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5764,
+        "ci_low": 0.4953,
+        "ci_high": 0.6486
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.6161,
+        "ci_low": 0.54,
+        "ci_high": 0.6819
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5376,
+        "ci_low": 0.4561,
+        "ci_high": 0.6103
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5477,
+        "ci_low": 0.4656,
+        "ci_high": 0.6218
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.5957,
+        "ci_low": 0.5155,
+        "ci_high": 0.6629
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5087,
+        "ci_low": 0.4218,
+        "ci_high": 0.5875
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.6332,
+        "ci_low": 0.5602,
+        "ci_high": 0.6988
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.5112,
+        "ci_low": 0.4261,
+        "ci_high": 0.5879
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5112,
+        "ci_low": 0.4249,
+        "ci_high": 0.5903
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5852,
+        "ci_low": 0.5092,
+        "ci_high": 0.6492
+      },
+      {
+        "model_a": "E5-large",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.5407,
+        "ci_low": 0.4555,
+        "ci_high": 0.6158
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.6037,
+        "ci_low": 0.5273,
+        "ci_high": 0.6712
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.6317,
+        "ci_low": 0.5587,
+        "ci_high": 0.6955
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.5845,
+        "ci_low": 0.5065,
+        "ci_high": 0.6543
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5411,
+        "ci_low": 0.4576,
+        "ci_high": 0.615
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5928,
+        "ci_low": 0.517,
+        "ci_high": 0.6608
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "BGE-M3-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.5666,
+        "ci_low": 0.4864,
+        "ci_high": 0.6387
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5619,
+        "ci_low": 0.4808,
+        "ci_high": 0.6342
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.5926,
+        "ci_low": 0.5123,
+        "ci_high": 0.6631
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.543,
+        "ci_low": 0.4578,
+        "ci_high": 0.6184
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.4833,
+        "ci_low": 0.3891,
+        "ci_high": 0.5682
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5987,
+        "ci_low": 0.52,
+        "ci_high": 0.6678
+      },
+      {
+        "model_a": "FreeLaw-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.5792,
+        "ci_low": 0.5021,
+        "ci_high": 0.6471
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "individual_collective",
+        "rho": 0.5735,
+        "ci_low": 0.494,
+        "ci_high": 0.6443
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "rights_duties",
+        "rho": 0.612,
+        "ci_low": 0.5349,
+        "ci_high": 0.6791
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "public_private",
+        "rho": 0.6398,
+        "ci_low": 0.5708,
+        "ci_high": 0.6993
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "state_market",
+        "rho": 0.5551,
+        "ci_low": 0.4751,
+        "ci_high": 0.6277
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "natural_positive",
+        "rho": 0.5539,
+        "ci_low": 0.4665,
+        "ci_high": 0.6315
+      },
+      {
+        "model_a": "BGE-M3-EN",
+        "model_b": "Qwen3-0.6B-EN",
+        "group": "within_weird",
+        "axis": "status_contract",
+        "rho": 0.6189,
+        "ci_low": 0.5458,
+        "ci_high": 0.6833
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.376,
+        "ci_low": 0.2762,
+        "ci_high": 0.4664
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.656,
+        "ci_low": 0.5802,
+        "ci_high": 0.7223
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.4255,
+        "ci_low": 0.3346,
+        "ci_high": 0.5081
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.3325,
+        "ci_low": 0.2366,
+        "ci_high": 0.4201
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.5779,
+        "ci_low": 0.4946,
+        "ci_high": 0.6517
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Text2vec-large-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.5228,
+        "ci_low": 0.4383,
+        "ci_high": 0.5983
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.6482,
+        "ci_low": 0.5783,
+        "ci_high": 0.7084
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.7054,
+        "ci_low": 0.6438,
+        "ci_high": 0.7586
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.6722,
+        "ci_low": 0.6079,
+        "ci_high": 0.7284
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.5563,
+        "ci_low": 0.4759,
+        "ci_high": 0.6278
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.6626,
+        "ci_low": 0.5897,
+        "ci_high": 0.7252
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.7653,
+        "ci_low": 0.7126,
+        "ci_high": 0.8089
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.563,
+        "ci_low": 0.484,
+        "ci_high": 0.6328
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.6356,
+        "ci_low": 0.5622,
+        "ci_high": 0.6992
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.6752,
+        "ci_low": 0.6054,
+        "ci_high": 0.7341
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.6186,
+        "ci_low": 0.545,
+        "ci_high": 0.6822
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.633,
+        "ci_low": 0.5538,
+        "ci_high": 0.7007
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.7554,
+        "ci_low": 0.7002,
+        "ci_high": 0.802
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.539,
+        "ci_low": 0.4507,
+        "ci_high": 0.6171
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.5436,
+        "ci_low": 0.4573,
+        "ci_high": 0.6213
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.6821,
+        "ci_low": 0.611,
+        "ci_high": 0.7426
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.5667,
+        "ci_low": 0.4916,
+        "ci_high": 0.6325
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.5994,
+        "ci_low": 0.518,
+        "ci_high": 0.6712
+      },
+      {
+        "model_a": "BGE-ZH-large",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.7183,
+        "ci_low": 0.6587,
+        "ci_high": 0.7687
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.2722,
+        "ci_low": 0.1705,
+        "ci_high": 0.369
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.5884,
+        "ci_low": 0.506,
+        "ci_high": 0.6609
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.372,
+        "ci_low": 0.2759,
+        "ci_high": 0.4621
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.3599,
+        "ci_low": 0.2592,
+        "ci_high": 0.451
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.4326,
+        "ci_low": 0.3329,
+        "ci_high": 0.5225
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Dmeta-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.4056,
+        "ci_low": 0.3092,
+        "ci_high": 0.4957
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.2485,
+        "ci_low": 0.1449,
+        "ci_high": 0.3484
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.556,
+        "ci_low": 0.4738,
+        "ci_high": 0.6285
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.368,
+        "ci_low": 0.2697,
+        "ci_high": 0.4599
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.2661,
+        "ci_low": 0.1666,
+        "ci_high": 0.3582
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.4086,
+        "ci_low": 0.3153,
+        "ci_high": 0.4951
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.4055,
+        "ci_low": 0.3128,
+        "ci_high": 0.4935
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.1818,
+        "ci_low": 0.0757,
+        "ci_high": 0.283
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.5138,
+        "ci_low": 0.4273,
+        "ci_high": 0.5958
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.2779,
+        "ci_low": 0.1751,
+        "ci_high": 0.3762
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.2927,
+        "ci_low": 0.1881,
+        "ci_high": 0.3887
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.3995,
+        "ci_low": 0.3041,
+        "ci_high": 0.4891
+      },
+      {
+        "model_a": "Text2vec-large-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.359,
+        "ci_low": 0.2633,
+        "ci_high": 0.4478
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.47,
+        "ci_low": 0.3802,
+        "ci_high": 0.5523
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.6081,
+        "ci_low": 0.5322,
+        "ci_high": 0.6722
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.6492,
+        "ci_low": 0.5822,
+        "ci_high": 0.7091
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.506,
+        "ci_low": 0.4252,
+        "ci_high": 0.58
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.4702,
+        "ci_low": 0.3763,
+        "ci_high": 0.5539
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "BGE-M3-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.7093,
+        "ci_low": 0.6484,
+        "ci_high": 0.762
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.5281,
+        "ci_low": 0.4405,
+        "ci_high": 0.6071
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.5835,
+        "ci_low": 0.5028,
+        "ci_high": 0.657
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.5993,
+        "ci_low": 0.5227,
+        "ci_high": 0.6685
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.5433,
+        "ci_low": 0.4622,
+        "ci_high": 0.616
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.6176,
+        "ci_low": 0.5394,
+        "ci_high": 0.6875
+      },
+      {
+        "model_a": "Dmeta-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.7111,
+        "ci_low": 0.6576,
+        "ci_high": 0.7582
+      },
+      {
+        "model_a": "BGE-M3-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "individual_collective",
+        "rho": 0.5196,
+        "ci_low": 0.4336,
+        "ci_high": 0.5939
+      },
+      {
+        "model_a": "BGE-M3-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "rights_duties",
+        "rho": 0.4849,
+        "ci_low": 0.394,
+        "ci_high": 0.5691
+      },
+      {
+        "model_a": "BGE-M3-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "public_private",
+        "rho": 0.6548,
+        "ci_low": 0.586,
+        "ci_high": 0.7144
+      },
+      {
+        "model_a": "BGE-M3-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "state_market",
+        "rho": 0.6427,
+        "ci_low": 0.5752,
+        "ci_high": 0.6988
+      },
+      {
+        "model_a": "BGE-M3-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "natural_positive",
+        "rho": 0.46,
+        "ci_low": 0.3667,
+        "ci_high": 0.5446
+      },
+      {
+        "model_a": "BGE-M3-ZH",
+        "model_b": "Qwen3-0.6B-ZH",
+        "group": "within_sinic",
+        "axis": "status_contract",
+        "rho": 0.6787,
+        "ci_low": 0.6162,
+        "ci_high": 0.7326
+      }
+    ]
+  },
+  "section_324": {
+    "cross_rho_mean_per_axis": {
+      "individual_collective": 0.2409,
+      "rights_duties": 0.3844,
+      "public_private": 0.3864,
+      "state_market": 0.2618,
+      "natural_positive": 0.2256,
+      "status_contract": 0.4461
+    },
+    "ranking_most_divergent_first": [
+      {
+        "axis": "natural_positive",
+        "mean_cross_rho": 0.2256
+      },
+      {
+        "axis": "individual_collective",
+        "mean_cross_rho": 0.2409
+      },
+      {
+        "axis": "state_market",
+        "mean_cross_rho": 0.2618
+      },
+      {
+        "axis": "rights_duties",
+        "mean_cross_rho": 0.3844
+      },
+      {
+        "axis": "public_private",
+        "mean_cross_rho": 0.3864
+      },
+      {
+        "axis": "status_contract",
+        "mean_cross_rho": 0.4461
+      }
+    ]
+  },
+  "section_325": {
+    "individual_collective": {
+      "delta_mean_abs": 0.0407,
+      "delta_max_abs": 0.1379,
+      "top_K_divergent": [
+        {
+          "en": "escalator",
+          "zh": "自動梯",
+          "domain": "labor_social",
+          "w_score": 0.0037,
+          "s_score": 0.1415,
+          "delta": -0.1379
+        },
+        {
+          "en": "justice",
+          "zh": "公正",
+          "domain": "criminal",
+          "w_score": 0.0281,
+          "s_score": -0.1063,
+          "delta": 0.1345
+        },
+        {
+          "en": "military",
+          "zh": "軍隊",
+          "domain": "international",
+          "w_score": 0.0407,
+          "s_score": -0.0876,
+          "delta": 0.1283
+        },
+        {
+          "en": "seizure",
+          "zh": "扣押",
+          "domain": "criminal",
+          "w_score": 0.0838,
+          "s_score": -0.0436,
+          "delta": 0.1273
+        },
+        {
+          "en": "unincorporated",
+          "zh": "非法團",
+          "domain": "civil",
+          "w_score": 0.0214,
+          "s_score": -0.101,
+          "delta": 0.1224
+        },
+        {
+          "en": "assembly",
+          "zh": "集會",
+          "domain": "constitutional",
+          "w_score": -0.058,
+          "s_score": -0.176,
+          "delta": 0.118
+        },
+        {
+          "en": "assistance",
+          "zh": "協助",
+          "domain": "labor_social",
+          "w_score": -0.0144,
+          "s_score": -0.1263,
+          "delta": 0.1118
+        },
+        {
+          "en": "safeguard",
+          "zh": "保障措施",
+          "domain": "international",
+          "w_score": 0.0361,
+          "s_score": -0.0749,
+          "delta": 0.1109
+        },
+        {
+          "en": "society",
+          "zh": "社團",
+          "domain": "constitutional",
+          "w_score": -0.0406,
+          "s_score": -0.1477,
+          "delta": 0.1071
+        },
+        {
+          "en": "violence",
+          "zh": "暴力",
+          "domain": "criminal",
+          "w_score": 0.0371,
+          "s_score": -0.069,
+          "delta": 0.106
+        },
+        {
+          "en": "business",
+          "zh": "事務",
+          "domain": "labor_social",
+          "w_score": 0.0283,
+          "s_score": -0.0768,
+          "delta": 0.1051
+        },
+        {
+          "en": "surrender",
+          "zh": "交出",
+          "domain": "procedure",
+          "w_score": 0.0661,
+          "s_score": -0.0377,
+          "delta": 0.1038
+        },
+        {
+          "en": "healthcare",
+          "zh": "醫護服務",
+          "domain": "labor_social",
+          "w_score": 0.0287,
+          "s_score": -0.075,
+          "delta": 0.1037
+        },
+        {
+          "en": "employee",
+          "zh": "僱員",
+          "domain": "labor_social",
+          "w_score": 0.0336,
+          "s_score": -0.0674,
+          "delta": 0.1011
+        },
+        {
+          "en": "levy",
+          "zh": "徵款",
+          "domain": "administrative",
+          "w_score": 0.0525,
+          "s_score": -0.0479,
+          "delta": 0.1003
+        },
+        {
+          "en": "Heung Yee Kuk",
+          "zh": "鄉議局",
+          "domain": "constitutional",
+          "w_score": 0.0308,
+          "s_score": -0.0691,
+          "delta": 0.0999
+        },
+        {
+          "en": "incorporation",
+          "zh": "法團",
+          "domain": "constitutional",
+          "w_score": -0.0395,
+          "s_score": -0.137,
+          "delta": 0.0975
+        },
+        {
+          "en": "sea-going",
+          "zh": "海域航行船舶",
+          "domain": "international",
+          "w_score": 0.0477,
+          "s_score": -0.0495,
+          "delta": 0.0972
+        },
+        {
+          "en": "public interest",
+          "zh": "公眾利益",
+          "domain": "administrative",
+          "w_score": -0.0187,
+          "s_score": -0.1137,
+          "delta": 0.0949
+        },
+        {
+          "en": "system",
+          "zh": "制度",
+          "domain": "constitutional",
+          "w_score": -0.0114,
+          "s_score": -0.1044,
+          "delta": 0.093
+        }
+      ]
+    },
+    "rights_duties": {
+      "delta_mean_abs": 0.043,
+      "delta_max_abs": 0.2433,
+      "top_K_divergent": [
+        {
+          "en": "international",
+          "zh": "國際義務",
+          "domain": "international",
+          "w_score": 0.0502,
+          "s_score": -0.1931,
+          "delta": 0.2433
+        },
+        {
+          "en": "fine",
+          "zh": "罰款",
+          "domain": "procedure",
+          "w_score": 0.0468,
+          "s_score": -0.1786,
+          "delta": 0.2253
+        },
+        {
+          "en": "trust",
+          "zh": "信託",
+          "domain": "civil",
+          "w_score": 0.0694,
+          "s_score": -0.0899,
+          "delta": 0.1594
+        },
+        {
+          "en": "priority",
+          "zh": "優先權",
+          "domain": "civil",
+          "w_score": 0.0069,
+          "s_score": 0.1656,
+          "delta": -0.1587
+        },
+        {
+          "en": "delegate",
+          "zh": "獲授權人",
+          "domain": "constitutional",
+          "w_score": 0.0439,
+          "s_score": 0.1931,
+          "delta": -0.1492
+        },
+        {
+          "en": "lien",
+          "zh": "留置權",
+          "domain": "civil",
+          "w_score": -0.0151,
+          "s_score": 0.13,
+          "delta": -0.1451
+        },
+        {
+          "en": "requirement",
+          "zh": "要求",
+          "domain": "administrative",
+          "w_score": -0.1063,
+          "s_score": 0.0372,
+          "delta": -0.1435
+        },
+        {
+          "en": "seizure",
+          "zh": "扣押",
+          "domain": "criminal",
+          "w_score": 0.0678,
+          "s_score": -0.0745,
+          "delta": 0.1423
+        },
+        {
+          "en": "ownership",
+          "zh": "擁有權",
+          "domain": "civil",
+          "w_score": 0.047,
+          "s_score": 0.1859,
+          "delta": -0.1389
+        },
+        {
+          "en": "exemption",
+          "zh": "豁免",
+          "domain": "administrative",
+          "w_score": 0.0397,
+          "s_score": 0.1739,
+          "delta": -0.1343
+        },
+        {
+          "en": "inspection",
+          "zh": "公眾查閱",
+          "domain": "administrative",
+          "w_score": -0.0398,
+          "s_score": 0.0908,
+          "delta": -0.1306
+        },
+        {
+          "en": "charitable",
+          "zh": "慈善信託",
+          "domain": "civil",
+          "w_score": 0.0618,
+          "s_score": -0.0668,
+          "delta": 0.1286
+        },
+        {
+          "en": "healthcare",
+          "zh": "醫護服務",
+          "domain": "labor_social",
+          "w_score": 0.0405,
+          "s_score": -0.087,
+          "delta": 0.1275
+        },
+        {
+          "en": "sum",
+          "zh": "款項",
+          "domain": "labor_social",
+          "w_score": -0.0123,
+          "s_score": -0.1365,
+          "delta": 0.1242
+        },
+        {
+          "en": "prejudice",
+          "zh": "妨害",
+          "domain": "civil",
+          "w_score": 0.0488,
+          "s_score": -0.0719,
+          "delta": 0.1207
+        },
+        {
+          "en": "infringement",
+          "zh": "侵權",
+          "domain": "civil",
+          "w_score": -0.024,
+          "s_score": 0.0922,
+          "delta": -0.1162
+        },
+        {
+          "en": "debt",
+          "zh": "債務",
+          "domain": "criminal",
+          "w_score": -0.1976,
+          "s_score": -0.3127,
+          "delta": 0.1151
+        },
+        {
+          "en": "care",
+          "zh": "小心",
+          "domain": "labor_social",
+          "w_score": 0.0267,
+          "s_score": -0.0874,
+          "delta": 0.1141
+        },
+        {
+          "en": "property",
+          "zh": "物業",
+          "domain": "civil",
+          "w_score": 0.07,
+          "s_score": -0.0437,
+          "delta": 0.1137
+        },
+        {
+          "en": "breach",
+          "zh": "違反",
+          "domain": "criminal",
+          "w_score": -0.0027,
+          "s_score": -0.1129,
+          "delta": 0.1102
+        }
+      ]
+    },
+    "public_private": {
+      "delta_mean_abs": 0.041,
+      "delta_max_abs": 0.1968,
+      "top_K_divergent": [
+        {
+          "en": "Heung Yee Kuk",
+          "zh": "鄉議局",
+          "domain": "constitutional",
+          "w_score": -0.0293,
+          "s_score": 0.1675,
+          "delta": -0.1968
+        },
+        {
+          "en": "statutory",
+          "zh": "法例",
+          "domain": "administrative",
+          "w_score": 0.2328,
+          "s_score": 0.0531,
+          "delta": 0.1798
+        },
+        {
+          "en": "material particular",
+          "zh": "要項",
+          "domain": "international",
+          "w_score": -0.0821,
+          "s_score": 0.084,
+          "delta": -0.1661
+        },
+        {
+          "en": "business",
+          "zh": "事務",
+          "domain": "labor_social",
+          "w_score": -0.0078,
+          "s_score": 0.1552,
+          "delta": -0.163
+        },
+        {
+          "en": "Director",
+          "zh": "署長",
+          "domain": "constitutional",
+          "w_score": 0.0558,
+          "s_score": 0.2171,
+          "delta": -0.1614
+        },
+        {
+          "en": "regulation",
+          "zh": "規例",
+          "domain": "administrative",
+          "w_score": 0.2542,
+          "s_score": 0.0935,
+          "delta": 0.1607
+        },
+        {
+          "en": "exercise",
+          "zh": "實行",
+          "domain": "labor_social",
+          "w_score": -0.056,
+          "s_score": 0.085,
+          "delta": -0.141
+        },
+        {
+          "en": "freedom",
+          "zh": "自由",
+          "domain": "constitutional",
+          "w_score": -0.0619,
+          "s_score": -0.2004,
+          "delta": 0.1385
+        },
+        {
+          "en": "inspector",
+          "zh": "視察主任",
+          "domain": "administrative",
+          "w_score": 0.041,
+          "s_score": 0.1686,
+          "delta": -0.1276
+        },
+        {
+          "en": "delivery",
+          "zh": "交付",
+          "domain": "labor_social",
+          "w_score": -0.0388,
+          "s_score": 0.083,
+          "delta": -0.1218
+        },
+        {
+          "en": "military",
+          "zh": "軍隊",
+          "domain": "international",
+          "w_score": 0.0357,
+          "s_score": 0.1568,
+          "delta": -0.1212
+        },
+        {
+          "en": "sea-going",
+          "zh": "海域航行船舶",
+          "domain": "international",
+          "w_score": -0.0589,
+          "s_score": 0.0612,
+          "delta": -0.1201
+        },
+        {
+          "en": "health",
+          "zh": "健康",
+          "domain": "labor_social",
+          "w_score": 0.0381,
+          "s_score": -0.076,
+          "delta": 0.1141
+        },
+        {
+          "en": "governing",
+          "zh": "規管",
+          "domain": "administrative",
+          "w_score": 0.2486,
+          "s_score": 0.1356,
+          "delta": 0.1129
+        },
+        {
+          "en": "safeguard",
+          "zh": "保障措施",
+          "domain": "international",
+          "w_score": 0.0131,
+          "s_score": 0.1255,
+          "delta": -0.1124
+        },
+        {
+          "en": "fine",
+          "zh": "罰款",
+          "domain": "procedure",
+          "w_score": -0.0228,
+          "s_score": 0.0851,
+          "delta": -0.108
+        },
+        {
+          "en": "unit",
+          "zh": "單位",
+          "domain": "labor_social",
+          "w_score": 0.0083,
+          "s_score": 0.1156,
+          "delta": -0.1073
+        },
+        {
+          "en": "registry",
+          "zh": "登記處",
+          "domain": "administrative",
+          "w_score": 0.0471,
+          "s_score": 0.1499,
+          "delta": -0.1028
+        },
+        {
+          "en": "absolute",
+          "zh": "全權",
+          "domain": "constitutional",
+          "w_score": -0.0014,
+          "s_score": 0.1013,
+          "delta": -0.1027
+        },
+        {
+          "en": "meeting",
+          "zh": "會議",
+          "domain": "constitutional",
+          "w_score": 0.0191,
+          "s_score": 0.119,
+          "delta": -0.0999
+        }
+      ]
+    },
+    "state_market": {
+      "delta_mean_abs": 0.04,
+      "delta_max_abs": 0.1726,
+      "top_K_divergent": [
+        {
+          "en": "business",
+          "zh": "事務",
+          "domain": "labor_social",
+          "w_score": -0.1403,
+          "s_score": 0.0323,
+          "delta": -0.1726
+        },
+        {
+          "en": "safeguard",
+          "zh": "保障措施",
+          "domain": "international",
+          "w_score": 0.032,
+          "s_score": 0.2019,
+          "delta": -0.1699
+        },
+        {
+          "en": "freedom",
+          "zh": "自由",
+          "domain": "constitutional",
+          "w_score": -0.0889,
+          "s_score": -0.2481,
+          "delta": 0.1592
+        },
+        {
+          "en": "exercise",
+          "zh": "實行",
+          "domain": "labor_social",
+          "w_score": -0.0851,
+          "s_score": 0.0706,
+          "delta": -0.1557
+        },
+        {
+          "en": "liberty",
+          "zh": "自由",
+          "domain": "constitutional",
+          "w_score": -0.093,
+          "s_score": -0.2481,
+          "delta": 0.1552
+        },
+        {
+          "en": "equity",
+          "zh": "衡平法",
+          "domain": "civil",
+          "w_score": -0.1185,
+          "s_score": 0.0316,
+          "delta": -0.1501
+        },
+        {
+          "en": "arrangement",
+          "zh": "安排",
+          "domain": "international",
+          "w_score": -0.0343,
+          "s_score": 0.1151,
+          "delta": -0.1494
+        },
+        {
+          "en": "distribution",
+          "zh": "分派",
+          "domain": "civil",
+          "w_score": -0.0154,
+          "s_score": 0.1191,
+          "delta": -0.1344
+        },
+        {
+          "en": "gift",
+          "zh": "贈與",
+          "domain": "civil",
+          "w_score": -0.0753,
+          "s_score": 0.0481,
+          "delta": -0.1235
+        },
+        {
+          "en": "certified copy",
+          "zh": "核證文本",
+          "domain": "procedure",
+          "w_score": -0.0636,
+          "s_score": 0.0531,
+          "delta": -0.1167
+        },
+        {
+          "en": "taxation",
+          "zh": "課稅",
+          "domain": "administrative",
+          "w_score": 0.1666,
+          "s_score": 0.0512,
+          "delta": 0.1154
+        },
+        {
+          "en": "benefit",
+          "zh": "利益",
+          "domain": "labor_social",
+          "w_score": -0.0187,
+          "s_score": -0.1256,
+          "delta": 0.1069
+        },
+        {
+          "en": "defence",
+          "zh": "抗辯",
+          "domain": "international",
+          "w_score": 0.0615,
+          "s_score": -0.0423,
+          "delta": 0.1038
+        },
+        {
+          "en": "system",
+          "zh": "制度",
+          "domain": "constitutional",
+          "w_score": 0.0121,
+          "s_score": 0.1156,
+          "delta": -0.1035
+        },
+        {
+          "en": "seizure",
+          "zh": "扣押",
+          "domain": "criminal",
+          "w_score": -0.0179,
+          "s_score": 0.0851,
+          "delta": -0.103
+        },
+        {
+          "en": "transaction",
+          "zh": "交易",
+          "domain": "civil",
+          "w_score": -0.0984,
+          "s_score": -0.2008,
+          "delta": 0.1024
+        },
+        {
+          "en": "war",
+          "zh": "戰爭",
+          "domain": "international",
+          "w_score": 0.0442,
+          "s_score": -0.0576,
+          "delta": 0.1019
+        },
+        {
+          "en": "Board",
+          "zh": "教務委員會",
+          "domain": "constitutional",
+          "w_score": -0.0578,
+          "s_score": 0.044,
+          "delta": -0.1018
+        },
+        {
+          "en": "transfer",
+          "zh": "移交",
+          "domain": "civil",
+          "w_score": -0.0801,
+          "s_score": 0.0217,
+          "delta": -0.1018
+        },
+        {
+          "en": "material particular",
+          "zh": "要項",
+          "domain": "international",
+          "w_score": -0.0156,
+          "s_score": 0.0809,
+          "delta": -0.0965
+        }
+      ]
+    },
+    "natural_positive": {
+      "delta_mean_abs": 0.0526,
+      "delta_max_abs": 0.3686,
+      "top_K_divergent": [
+        {
+          "en": "equity",
+          "zh": "衡平法",
+          "domain": "civil",
+          "w_score": 0.1753,
+          "s_score": -0.1933,
+          "delta": 0.3686
+        },
+        {
+          "en": "act",
+          "zh": "法",
+          "domain": "constitutional",
+          "w_score": -0.0835,
+          "s_score": -0.3512,
+          "delta": 0.2678
+        },
+        {
+          "en": "criminal",
+          "zh": "刑事",
+          "domain": "criminal",
+          "w_score": 0.0533,
+          "s_score": -0.1854,
+          "delta": 0.2387
+        },
+        {
+          "en": "prejudice",
+          "zh": "妨害",
+          "domain": "civil",
+          "w_score": 0.1635,
+          "s_score": -0.0735,
+          "delta": 0.237
+        },
+        {
+          "en": "judicial",
+          "zh": "司法",
+          "domain": "constitutional",
+          "w_score": 0.0169,
+          "s_score": -0.2089,
+          "delta": 0.2258
+        },
+        {
+          "en": "crime",
+          "zh": "犯罪",
+          "domain": "criminal",
+          "w_score": 0.0894,
+          "s_score": -0.1216,
+          "delta": 0.211
+        },
+        {
+          "en": "quorum",
+          "zh": "法定人數",
+          "domain": "constitutional",
+          "w_score": -0.0337,
+          "s_score": -0.2426,
+          "delta": 0.2089
+        },
+        {
+          "en": "international law",
+          "zh": "國際法",
+          "domain": "international",
+          "w_score": 0.0019,
+          "s_score": -0.2052,
+          "delta": 0.2071
+        },
+        {
+          "en": "bill",
+          "zh": "法案",
+          "domain": "constitutional",
+          "w_score": -0.1141,
+          "s_score": -0.3117,
+          "delta": 0.1977
+        },
+        {
+          "en": "electoral",
+          "zh": "選舉法",
+          "domain": "constitutional",
+          "w_score": -0.0455,
+          "s_score": -0.2418,
+          "delta": 0.1964
+        },
+        {
+          "en": "unlawfully",
+          "zh": "非法",
+          "domain": "criminal",
+          "w_score": -0.0017,
+          "s_score": -0.1858,
+          "delta": 0.1841
+        },
+        {
+          "en": "penalty",
+          "zh": "罰則",
+          "domain": "criminal",
+          "w_score": 0.0107,
+          "s_score": -0.1715,
+          "delta": 0.1822
+        },
+        {
+          "en": "court",
+          "zh": "法院",
+          "domain": "procedure",
+          "w_score": 0.0127,
+          "s_score": -0.1659,
+          "delta": 0.1786
+        },
+        {
+          "en": "fine",
+          "zh": "罰款",
+          "domain": "procedure",
+          "w_score": 0.0169,
+          "s_score": -0.1524,
+          "delta": 0.1693
+        },
+        {
+          "en": "offender",
+          "zh": "罪犯",
+          "domain": "criminal",
+          "w_score": 0.0458,
+          "s_score": -0.1199,
+          "delta": 0.1657
+        },
+        {
+          "en": "statutory",
+          "zh": "法例",
+          "domain": "administrative",
+          "w_score": -0.1508,
+          "s_score": -0.3152,
+          "delta": 0.1644
+        },
+        {
+          "en": "perjury",
+          "zh": "作假證供罪",
+          "domain": "criminal",
+          "w_score": 0.0435,
+          "s_score": -0.1179,
+          "delta": 0.1613
+        },
+        {
+          "en": "imprisonment",
+          "zh": "監禁",
+          "domain": "criminal",
+          "w_score": 0.0173,
+          "s_score": -0.1426,
+          "delta": 0.1599
+        },
+        {
+          "en": "conviction",
+          "zh": "定罪",
+          "domain": "criminal",
+          "w_score": 0.0317,
+          "s_score": -0.1267,
+          "delta": 0.1584
+        },
+        {
+          "en": "punishment",
+          "zh": "懲罰",
+          "domain": "criminal",
+          "w_score": 0.0556,
+          "s_score": -0.101,
+          "delta": 0.1566
+        }
+      ]
+    },
+    "status_contract": {
+      "delta_mean_abs": 0.0473,
+      "delta_max_abs": 0.2925,
+      "top_K_divergent": [
+        {
+          "en": "deed",
+          "zh": "契約",
+          "domain": "civil",
+          "w_score": -0.0472,
+          "s_score": -0.3397,
+          "delta": 0.2925
+        },
+        {
+          "en": "authorization",
+          "zh": "訂明授權",
+          "domain": "administrative",
+          "w_score": -0.0368,
+          "s_score": -0.2092,
+          "delta": 0.1724
+        },
+        {
+          "en": "delivery",
+          "zh": "交付",
+          "domain": "labor_social",
+          "w_score": -0.0648,
+          "s_score": -0.2249,
+          "delta": 0.1601
+        },
+        {
+          "en": "intention",
+          "zh": "意向",
+          "domain": "criminal",
+          "w_score": -0.0497,
+          "s_score": -0.2082,
+          "delta": 0.1585
+        },
+        {
+          "en": "estate",
+          "zh": "產業",
+          "domain": "civil",
+          "w_score": 0.1351,
+          "s_score": -0.0221,
+          "delta": 0.1572
+        },
+        {
+          "en": "seizure",
+          "zh": "扣押",
+          "domain": "criminal",
+          "w_score": 0.0194,
+          "s_score": -0.1336,
+          "delta": 0.1531
+        },
+        {
+          "en": "custody",
+          "zh": "保管",
+          "domain": "civil",
+          "w_score": 0.0685,
+          "s_score": -0.083,
+          "delta": 0.1515
+        },
+        {
+          "en": "duly",
+          "zh": "妥當地",
+          "domain": "administrative",
+          "w_score": 0.0237,
+          "s_score": -0.1255,
+          "delta": 0.1492
+        },
+        {
+          "en": "protocol",
+          "zh": "議定書",
+          "domain": "international",
+          "w_score": -0.1148,
+          "s_score": -0.2566,
+          "delta": 0.1418
+        },
+        {
+          "en": "serve",
+          "zh": "送達",
+          "domain": "procedure",
+          "w_score": -0.0044,
+          "s_score": -0.1436,
+          "delta": 0.1392
+        },
+        {
+          "en": "knowingly",
+          "zh": "故意",
+          "domain": "criminal",
+          "w_score": -0.0044,
+          "s_score": -0.1389,
+          "delta": 0.1344
+        },
+        {
+          "en": "assistance",
+          "zh": "協助",
+          "domain": "labor_social",
+          "w_score": -0.0095,
+          "s_score": -0.1427,
+          "delta": 0.1332
+        },
+        {
+          "en": "hearing",
+          "zh": "編定聆訊日期",
+          "domain": "procedure",
+          "w_score": -0.0022,
+          "s_score": -0.1313,
+          "delta": 0.1291
+        },
+        {
+          "en": "levy",
+          "zh": "徵款",
+          "domain": "administrative",
+          "w_score": 0.0084,
+          "s_score": -0.1199,
+          "delta": 0.1283
+        },
+        {
+          "en": "wilfully",
+          "zh": "故意地",
+          "domain": "criminal",
+          "w_score": 0.0076,
+          "s_score": -0.1178,
+          "delta": 0.1254
+        },
+        {
+          "en": "failure",
+          "zh": "不履行",
+          "domain": "criminal",
+          "w_score": -0.0309,
+          "s_score": -0.1548,
+          "delta": 0.1239
+        },
+        {
+          "en": "conveyance",
+          "zh": "轉讓",
+          "domain": "civil",
+          "w_score": -0.0425,
+          "s_score": -0.1629,
+          "delta": 0.1204
+        },
+        {
+          "en": "safeguard",
+          "zh": "保障措施",
+          "domain": "international",
+          "w_score": -0.0124,
+          "s_score": -0.1316,
+          "delta": 0.1193
+        },
+        {
+          "en": "detention",
+          "zh": "拘留",
+          "domain": "criminal",
+          "w_score": 0.0019,
+          "s_score": -0.1173,
+          "delta": 0.1192
+        },
+        {
+          "en": "counterparty",
+          "zh": "對手方",
+          "domain": "civil",
+          "w_score": -0.1848,
+          "s_score": -0.0699,
+          "delta": -0.1149
+        }
+      ]
+    }
+  }
+}

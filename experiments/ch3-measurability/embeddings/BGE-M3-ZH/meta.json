@@ -1,0 +1,13 @@
+{
+  "model_id": "BAAI/bge-m3",
+  "model_label": "BGE-M3-ZH",
+  "lang": "zh",
+  "dim": 1024,
+  "n_terms": 364,
+  "dtype": "float32",
+  "l2_norm": true,
+  "date": "2026-05-11",
+  "elapsed_bare_s": 1.2,
+  "elapsed_attested_s": 115.83,
+  "snapshot_sha256_terms": "52d9d5c0a3e04602eb8ee36bb59ffddfdc8f52374087b2973188249afac0080e"
+}

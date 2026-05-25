@@ -1,0 +1,33 @@
+# ============================================================
+# ch3-measurability — version-control policy
+# ============================================================
+#
+# Track in git: code (scripts/*.py), configuration (config.yaml),
+# trace (trace.md), audit (manifest.json), human-readable reports
+# (reports/*.md), and all lightweight JSON results (experiment_1_structure/, experiment_2_axes/,
+# ext/*/*.json + .csv). Anyone with git access can read the
+# numbers and re-derive the audit chain.
+#
+# Exclude from git: heavy numerical artefacts (.npy embeddings,
+# .npz distributions, encoding logs). These are reproducible from
+# the sealed inputs + scripts; their SHA-256 is recorded in
+# manifest.json so a reviewer can verify bit-for-bit identity after
+# re-running the pipeline locally.
+
+# Heavy binary artefacts (recomputable from inputs + scripts)
+*.npy
+*.npz
+
+# Encoding & run logs (kept locally for debugging, not for archive)
+logs/
+
+# macOS junk
+.DS_Store
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

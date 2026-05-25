@@ -1,0 +1,2269 @@
+{
+  "meta": {
+    "variant": "attested",
+    "n_bg": 9045,
+    "axes": [
+      "individual_collective",
+      "rights_duties",
+      "public_private",
+      "state_market",
+      "natural_positive",
+      "status_contract"
+    ],
+    "labels": [
+      "BGE-EN-large",
+      "E5-large",
+      "FreeLaw-EN",
+      "BGE-M3-EN",
+      "Qwen3-0.6B-EN",
+      "BGE-ZH-large",
+      "Text2vec-large-ZH",
+      "Dmeta-ZH",
+      "BGE-M3-ZH",
+      "Qwen3-0.6B-ZH"
+    ],
+    "domain_source": "knn_bg_assignment_BGE-EN-large_k7"
+  },
+  "per_model_per_axis_per_domain": {
+    "BGE-EN-large": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": -0.0014,
+          "std": 0.0628
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0035,
+          "std": 0.059
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0026,
+          "std": 0.0465
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0003,
+          "std": 0.0469
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0043,
+          "std": 0.0522
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0171,
+          "std": 0.047
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0002,
+          "std": 0.0487
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": 0.0012,
+          "std": 0.048
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0159,
+          "std": 0.0458
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0275,
+          "std": 0.0553
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0038,
+          "std": 0.0469
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0186,
+          "std": 0.0579
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0089,
+          "std": 0.0478
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0179,
+          "std": 0.0532
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": -0.032,
+          "std": 0.0586
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.006,
+          "std": 0.079
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0143,
+          "std": 0.0532
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0122,
+          "std": 0.0571
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0377,
+          "std": 0.0588
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0551,
+          "std": 0.0507
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0048,
+          "std": 0.0694
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0484,
+          "std": 0.0489
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0482,
+          "std": 0.0494
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0254,
+          "std": 0.0516
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0498,
+          "std": 0.0499
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0756,
+          "std": 0.0607
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0609,
+          "std": 0.052
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0382,
+          "std": 0.049
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": 0.0061,
+          "std": 0.0471
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0023,
+          "std": 0.0553
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0178,
+          "std": 0.0604
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0026,
+          "std": 0.0557
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0104,
+          "std": 0.0536
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0149,
+          "std": 0.0475
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0315,
+          "std": 0.0562
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0382,
+          "std": 0.0621
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.022,
+          "std": 0.0539
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0286,
+          "std": 0.0459
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0502,
+          "std": 0.0515
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0533,
+          "std": 0.0799
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0573,
+          "std": 0.0586
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0508,
+          "std": 0.0485
+        }
+      }
+    },
+    "E5-large": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0111,
+          "std": 0.0367
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0107,
+          "std": 0.0352
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0174,
+          "std": 0.0277
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0132,
+          "std": 0.0294
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0048,
+          "std": 0.0323
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0147,
+          "std": 0.03
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0129,
+          "std": 0.0304
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": 0.029,
+          "std": 0.0349
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0359,
+          "std": 0.0338
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0084,
+          "std": 0.0368
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0223,
+          "std": 0.0355
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0177,
+          "std": 0.0374
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0201,
+          "std": 0.0339
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0153,
+          "std": 0.0371
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": 0.0408,
+          "std": 0.0423
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0511,
+          "std": 0.0447
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0487,
+          "std": 0.035
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0533,
+          "std": 0.0359
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0439,
+          "std": 0.0393
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0343,
+          "std": 0.0386
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0639,
+          "std": 0.0404
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0328,
+          "std": 0.0351
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0266,
+          "std": 0.0304
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0246,
+          "std": 0.0332
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0379,
+          "std": 0.031
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0416,
+          "std": 0.0355
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0289,
+          "std": 0.033
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0236,
+          "std": 0.0349
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": 0.0224,
+          "std": 0.0316
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0144,
+          "std": 0.0333
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0213,
+          "std": 0.0329
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0206,
+          "std": 0.034
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0173,
+          "std": 0.0324
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0251,
+          "std": 0.0299
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0085,
+          "std": 0.0341
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0126,
+          "std": 0.0376
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0048,
+          "std": 0.0354
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0197,
+          "std": 0.0306
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0265,
+          "std": 0.0332
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0252,
+          "std": 0.0485
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0189,
+          "std": 0.0388
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0252,
+          "std": 0.0316
+        }
+      }
+    },
+    "FreeLaw-EN": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0053,
+          "std": 0.0742
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0053,
+          "std": 0.0739
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0337,
+          "std": 0.0588
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0195,
+          "std": 0.0555
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0163,
+          "std": 0.0619
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0227,
+          "std": 0.0606
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0139,
+          "std": 0.0621
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": -0.0104,
+          "std": 0.0595
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0103,
+          "std": 0.062
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0387,
+          "std": 0.0646
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.019,
+          "std": 0.0595
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0218,
+          "std": 0.0673
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0241,
+          "std": 0.0613
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0258,
+          "std": 0.0633
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": -0.0126,
+          "std": 0.0688
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0309,
+          "std": 0.082
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0054,
+          "std": 0.0576
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0025,
+          "std": 0.0577
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.022,
+          "std": 0.0655
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0305,
+          "std": 0.0595
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0176,
+          "std": 0.0725
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0461,
+          "std": 0.0586
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0427,
+          "std": 0.0576
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0479,
+          "std": 0.0524
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0591,
+          "std": 0.0532
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0752,
+          "std": 0.0676
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0558,
+          "std": 0.061
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0455,
+          "std": 0.0587
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0018,
+          "std": 0.0514
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0039,
+          "std": 0.0578
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0072,
+          "std": 0.0584
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0089,
+          "std": 0.0613
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0151,
+          "std": 0.0565
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0044,
+          "std": 0.0518
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0196,
+          "std": 0.0579
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0026,
+          "std": 0.0806
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0139,
+          "std": 0.0621
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0148,
+          "std": 0.0613
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0045,
+          "std": 0.0637
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0216,
+          "std": 0.1012
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0047,
+          "std": 0.0712
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0044,
+          "std": 0.0608
+        }
+      }
+    },
+    "BGE-M3-EN": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0252,
+          "std": 0.0621
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0055,
+          "std": 0.0554
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0387,
+          "std": 0.0428
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0268,
+          "std": 0.0437
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0171,
+          "std": 0.0542
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0292,
+          "std": 0.0469
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0237,
+          "std": 0.0488
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": 0.0329,
+          "std": 0.0483
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0366,
+          "std": 0.0521
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0008,
+          "std": 0.0562
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0295,
+          "std": 0.0493
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0187,
+          "std": 0.055
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0297,
+          "std": 0.0487
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0124,
+          "std": 0.0519
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": -0.0069,
+          "std": 0.0535
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0198,
+          "std": 0.0606
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0085,
+          "std": 0.0468
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0121,
+          "std": 0.0515
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0129,
+          "std": 0.0517
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0193,
+          "std": 0.0462
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0189,
+          "std": 0.056
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0325,
+          "std": 0.0548
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0126,
+          "std": 0.0519
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0174,
+          "std": 0.0461
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0307,
+          "std": 0.0478
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0378,
+          "std": 0.0563
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0358,
+          "std": 0.0516
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0199,
+          "std": 0.0493
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": 0.0322,
+          "std": 0.0486
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0171,
+          "std": 0.0553
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.037,
+          "std": 0.0556
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0384,
+          "std": 0.0575
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0146,
+          "std": 0.0519
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0245,
+          "std": 0.0511
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0123,
+          "std": 0.0561
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.038,
+          "std": 0.0592
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0256,
+          "std": 0.0537
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.033,
+          "std": 0.0485
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.05,
+          "std": 0.0509
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0453,
+          "std": 0.0724
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0345,
+          "std": 0.0559
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0444,
+          "std": 0.0473
+        }
+      }
+    },
+    "Qwen3-0.6B-EN": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": -0.0304,
+          "std": 0.0524
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0272,
+          "std": 0.0561
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0052,
+          "std": 0.0444
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0205,
+          "std": 0.0411
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0277,
+          "std": 0.0492
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0214,
+          "std": 0.0451
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0272,
+          "std": 0.0465
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": -0.0363,
+          "std": 0.0422
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0238,
+          "std": 0.0462
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0544,
+          "std": 0.0503
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.049,
+          "std": 0.0478
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0535,
+          "std": 0.0544
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0491,
+          "std": 0.0507
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0529,
+          "std": 0.0501
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": -0.1001,
+          "std": 0.0585
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0677,
+          "std": 0.0806
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.1238,
+          "std": 0.0532
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0855,
+          "std": 0.0532
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.1101,
+          "std": 0.056
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.1192,
+          "std": 0.0525
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0722,
+          "std": 0.0624
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0199,
+          "std": 0.0459
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0198,
+          "std": 0.0487
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0146,
+          "std": 0.0427
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0145,
+          "std": 0.0415
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0395,
+          "std": 0.0562
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0255,
+          "std": 0.0496
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.007,
+          "std": 0.0477
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0517,
+          "std": 0.0487
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0693,
+          "std": 0.0584
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0325,
+          "std": 0.0531
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0493,
+          "std": 0.0522
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0582,
+          "std": 0.0527
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0448,
+          "std": 0.0461
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0647,
+          "std": 0.0527
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": 0.0751,
+          "std": 0.0657
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0914,
+          "std": 0.0582
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0885,
+          "std": 0.0554
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0687,
+          "std": 0.0555
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0729,
+          "std": 0.085
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0814,
+          "std": 0.065
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0659,
+          "std": 0.0534
+        }
+      }
+    },
+    "BGE-ZH-large": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0144,
+          "std": 0.0775
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.002,
+          "std": 0.0758
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0558,
+          "std": 0.0654
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0377,
+          "std": 0.0669
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0303,
+          "std": 0.0691
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0293,
+          "std": 0.0644
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0326,
+          "std": 0.0646
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": 0.0194,
+          "std": 0.066
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0449,
+          "std": 0.0614
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0273,
+          "std": 0.0711
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0221,
+          "std": 0.0711
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0214,
+          "std": 0.0765
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0271,
+          "std": 0.0675
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0233,
+          "std": 0.0739
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": 0.035,
+          "std": 0.0747
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.047,
+          "std": 0.0843
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0374,
+          "std": 0.0673
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0425,
+          "std": 0.0642
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0155,
+          "std": 0.0731
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0152,
+          "std": 0.0729
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0492,
+          "std": 0.07
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.041,
+          "std": 0.0733
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0406,
+          "std": 0.0693
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0735,
+          "std": 0.0693
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.07,
+          "std": 0.0724
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.052,
+          "std": 0.0734
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0364,
+          "std": 0.07
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0349,
+          "std": 0.0704
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0333,
+          "std": 0.0737
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0425,
+          "std": 0.0816
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0517,
+          "std": 0.0833
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0363,
+          "std": 0.0834
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0325,
+          "std": 0.073
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0254,
+          "std": 0.0695
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0531,
+          "std": 0.0796
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0752,
+          "std": 0.0808
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0462,
+          "std": 0.0843
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0834,
+          "std": 0.07
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0886,
+          "std": 0.0706
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0849,
+          "std": 0.0978
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0768,
+          "std": 0.0861
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0881,
+          "std": 0.0742
+        }
+      }
+    },
+    "Text2vec-large-ZH": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0113,
+          "std": 0.0696
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0029,
+          "std": 0.0741
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0247,
+          "std": 0.0655
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0177,
+          "std": 0.0622
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0127,
+          "std": 0.068
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0128,
+          "std": 0.0604
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0179,
+          "std": 0.0636
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": 0.0199,
+          "std": 0.0683
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0359,
+          "std": 0.0651
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0192,
+          "std": 0.0767
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0248,
+          "std": 0.0731
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.02,
+          "std": 0.0748
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0231,
+          "std": 0.0673
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0122,
+          "std": 0.0724
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": 0.0825,
+          "std": 0.065
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0827,
+          "std": 0.0674
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0854,
+          "std": 0.0589
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0893,
+          "std": 0.0552
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0682,
+          "std": 0.0683
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0739,
+          "std": 0.0627
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.088,
+          "std": 0.0595
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0412,
+          "std": 0.0688
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0278,
+          "std": 0.0737
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0514,
+          "std": 0.0652
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0437,
+          "std": 0.0668
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0449,
+          "std": 0.0682
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0353,
+          "std": 0.0675
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.036,
+          "std": 0.0675
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0132,
+          "std": 0.0685
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0202,
+          "std": 0.0829
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0403,
+          "std": 0.0742
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0191,
+          "std": 0.0822
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0092,
+          "std": 0.0671
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0112,
+          "std": 0.0637
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0267,
+          "std": 0.0756
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0425,
+          "std": 0.0664
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.03,
+          "std": 0.066
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0456,
+          "std": 0.0564
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.051,
+          "std": 0.0585
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0544,
+          "std": 0.0732
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0443,
+          "std": 0.0633
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0462,
+          "std": 0.0577
+        }
+      }
+    },
+    "Dmeta-ZH": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0332,
+          "std": 0.0745
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0151,
+          "std": 0.073
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.044,
+          "std": 0.0647
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0336,
+          "std": 0.0681
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0476,
+          "std": 0.0699
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0441,
+          "std": 0.0644
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0393,
+          "std": 0.065
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": -0.0524,
+          "std": 0.0659
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0332,
+          "std": 0.0663
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0855,
+          "std": 0.0737
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0432,
+          "std": 0.0727
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0484,
+          "std": 0.0764
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.05,
+          "std": 0.0716
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0524,
+          "std": 0.071
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": 0.0567,
+          "std": 0.0789
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0804,
+          "std": 0.0849
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.038,
+          "std": 0.0714
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0643,
+          "std": 0.0721
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0296,
+          "std": 0.0771
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0351,
+          "std": 0.0756
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0661,
+          "std": 0.0754
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.1107,
+          "std": 0.0697
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.1056,
+          "std": 0.0683
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.1296,
+          "std": 0.0627
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.1297,
+          "std": 0.0668
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.1242,
+          "std": 0.0722
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.1137,
+          "std": 0.0689
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.108,
+          "std": 0.0646
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0449,
+          "std": 0.0749
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0646,
+          "std": 0.0777
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0393,
+          "std": 0.0782
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0385,
+          "std": 0.0808
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0431,
+          "std": 0.0723
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0435,
+          "std": 0.0704
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0612,
+          "std": 0.0782
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0622,
+          "std": 0.0751
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0378,
+          "std": 0.0811
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0583,
+          "std": 0.0724
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.082,
+          "std": 0.0744
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0594,
+          "std": 0.0957
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0685,
+          "std": 0.0815
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0783,
+          "std": 0.0762
+        }
+      }
+    },
+    "BGE-M3-ZH": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": 0.0891,
+          "std": 0.0625
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0726,
+          "std": 0.0661
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.1006,
+          "std": 0.0586
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.1007,
+          "std": 0.0558
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.1,
+          "std": 0.0635
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.1021,
+          "std": 0.0531
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.1069,
+          "std": 0.0564
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": 0.0271,
+          "std": 0.0525
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.047,
+          "std": 0.0533
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.01,
+          "std": 0.0619
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0253,
+          "std": 0.0584
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0353,
+          "std": 0.0617
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0292,
+          "std": 0.0581
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0226,
+          "std": 0.0587
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": 0.0067,
+          "std": 0.0602
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0187,
+          "std": 0.062
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0061,
+          "std": 0.0547
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0194,
+          "std": 0.0532
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0068,
+          "std": 0.059
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0042,
+          "std": 0.059
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0203,
+          "std": 0.0576
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": -0.0478,
+          "std": 0.0562
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0403,
+          "std": 0.057
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0431,
+          "std": 0.0529
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0554,
+          "std": 0.0513
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.044,
+          "std": 0.0585
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0398,
+          "std": 0.0528
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0398,
+          "std": 0.0545
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0523,
+          "std": 0.0559
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0515,
+          "std": 0.0552
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0581,
+          "std": 0.0566
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0529,
+          "std": 0.0572
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0496,
+          "std": 0.0546
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0479,
+          "std": 0.0533
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0649,
+          "std": 0.0588
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.1226,
+          "std": 0.0687
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.1053,
+          "std": 0.067
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.1104,
+          "std": 0.0589
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.1293,
+          "std": 0.0593
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.1272,
+          "std": 0.0816
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.1233,
+          "std": 0.0679
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.1323,
+          "std": 0.0607
+        }
+      }
+    },
+    "Qwen3-0.6B-ZH": {
+      "individual_collective": {
+        "international": {
+          "n": 741,
+          "mean": -0.0468,
+          "std": 0.0709
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0621,
+          "std": 0.0724
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0288,
+          "std": 0.0642
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.048,
+          "std": 0.0624
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0337,
+          "std": 0.0696
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0325,
+          "std": 0.0605
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0411,
+          "std": 0.0616
+        }
+      },
+      "rights_duties": {
+        "international": {
+          "n": 741,
+          "mean": -0.0272,
+          "std": 0.0616
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0035,
+          "std": 0.062
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0561,
+          "std": 0.072
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0165,
+          "std": 0.0669
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0256,
+          "std": 0.0661
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0222,
+          "std": 0.0645
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0169,
+          "std": 0.0641
+        }
+      },
+      "public_private": {
+        "international": {
+          "n": 741,
+          "mean": 0.0112,
+          "std": 0.0837
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0285,
+          "std": 0.0888
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0056,
+          "std": 0.0721
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.0206,
+          "std": 0.0706
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0169,
+          "std": 0.0822
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0172,
+          "std": 0.0791
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0236,
+          "std": 0.079
+        }
+      },
+      "state_market": {
+        "international": {
+          "n": 741,
+          "mean": 0.011,
+          "std": 0.0724
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": 0.0262,
+          "std": 0.0778
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": 0.0144,
+          "std": 0.0714
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": 0.015,
+          "std": 0.0731
+        },
+        "civil": {
+          "n": 1528,
+          "mean": 0.0074,
+          "std": 0.0764
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": 0.0204,
+          "std": 0.0703
+        },
+        "administrative": {
+          "n": 936,
+          "mean": 0.0356,
+          "std": 0.0766
+        }
+      },
+      "natural_positive": {
+        "international": {
+          "n": 741,
+          "mean": -0.0271,
+          "std": 0.074
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0342,
+          "std": 0.0822
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.0131,
+          "std": 0.0801
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0157,
+          "std": 0.0802
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0217,
+          "std": 0.0768
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0173,
+          "std": 0.0723
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0349,
+          "std": 0.0796
+        }
+      },
+      "status_contract": {
+        "international": {
+          "n": 741,
+          "mean": -0.0332,
+          "std": 0.077
+        },
+        "constitutional": {
+          "n": 656,
+          "mean": -0.0181,
+          "std": 0.0776
+        },
+        "criminal": {
+          "n": 2009,
+          "mean": -0.042,
+          "std": 0.0676
+        },
+        "procedure": {
+          "n": 1661,
+          "mean": -0.0572,
+          "std": 0.0683
+        },
+        "civil": {
+          "n": 1528,
+          "mean": -0.0355,
+          "std": 0.0978
+        },
+        "labor_social": {
+          "n": 1514,
+          "mean": -0.0357,
+          "std": 0.0757
+        },
+        "administrative": {
+          "n": 936,
+          "mean": -0.0533,
+          "std": 0.0683
+        }
+      }
+    }
+  }
+}

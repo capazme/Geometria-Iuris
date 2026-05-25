@@ -1,0 +1,84 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# NumPy arrays — large binary artifacts (regenerate with precompute.py / lens3)
+*.npy
+*.npz
+
+# OS
+.DS_Store
+
+# Word lock files (created while a .docx is open)
+~$*
+
+# Runtime / IDE / personal tool dirs
+.idea/
+.vscode/
+*.swp
+.claude/
+.cursor/
+.agent/
+_bmad-output/
+_bmad/
+CLAUDE.md
+
+# Personal / archival directories
+# NOTE: leading slash anchors this to the repo root — do not match
+# thesis archive folders under documenti/ or documenti/capitoli/.
+/archive/
+# Legacy Italian-pipeline chapter drafts (kept locally, not in repo)
+documenti/capitoli/archive/ch1_it/
+# Thesis documents: the whole documenti/ tree stays local for now.
+# The single complete manuscript is force-added in the final step.
+documenti/
+# Any stray Office docs / backups anywhere (manuscript added via `git add -f`)
+*.docx
+*.docx.bak
+*.docx.bak.*
+* copy.docx
+
+# Bibliography PDFs, saved HTMLs and notes (local-only)
+documenti/fonti/
+
+# experiments — archived artifacts (never tracked)
+experiments/_archive/cleanup_2026-04-11/
+experiments/_archive/derived_visualizations_2026-04-11/
+experiments/_archive/lenses_2026-04-16/lens_6_sae/results/*.pt
+experiments/_archive/lenses_2026-04-16/lens_6_sae/results/domain_enrichment_*.json
+experiments/_archive/lenses_2026-04-16/lens_6_sae/results/figures/
+experiments/_archive/lenses_2026-04-16/lens_3_stratigraphy/results/nta_exploration.json
+
+# experiments — raw data (never tracked)
+experiments/data/raw/
+
+# experiments — large intermediates (regenerable from raw)
+experiments/data/processed/embeddings/
+experiments/data/processed/embeddings_cache/
+experiments/data/processed/embeddings_contextualized/
+experiments/data/processed/elegislation/
+experiments/data/processed/doj_raw.json
+experiments/data/processed/corpus_stats.md
+# ctx-attested embeddings: ignore binaries but keep the index.json manifest
+experiments/data/processed/embeddings_ctx_attested/*
+!experiments/data/processed/embeddings_ctx_attested/index.json
+
+# experiments — generated figures and HTML (regenerable from results JSON)
+
+# experiments — notebook checkpoints
+experiments/notebooks/.ipynb_checkpoints/
+experiments/**/.ipynb_checkpoints/
+
+*.zip
+*.pdf
+*.bak_*
+
+# Superseded experiment code (run #4 supersedes these — kept locally only)
+experiments/lens_*/
+experiments/dashboard_v2/
+experiments/dashboard_v3/
+experiments/_archive/
+experiments/build_dashboard.py

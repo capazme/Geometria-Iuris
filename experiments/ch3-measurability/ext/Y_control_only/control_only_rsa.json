@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "encoding_variant": "bare",
+    "n_control": 100,
+    "en_labels": [
+      "BGE-EN-large",
+      "E5-large",
+      "FreeLaw-EN",
+      "BGE-M3-EN",
+      "Qwen3-0.6B-EN"
+    ],
+    "zh_labels": [
+      "BGE-ZH-large",
+      "Text2vec-large-ZH",
+      "Dmeta-ZH",
+      "BGE-M3-ZH",
+      "Qwen3-0.6B-ZH"
+    ]
+  },
+  "summary": {
+    "mean_rho_within_weird": 0.4335,
+    "mean_rho_within_sinic": 0.4087,
+    "mean_rho_cross_tradition": 0.2653,
+    "mean_rho_within_bilingual": 0.3993,
+    "delta_rho_symmetric": 0.1557
+  },
+  "comparison": {
+    "delta_sym_core_bare_run4": 0.165,
+    "delta_sym_core_attested_run4": 0.543,
+    "delta_sym_control_bare": 0.1557
+  },
+  "within_weird_pairs": [
+    {
+      "model_a": "BGE-EN-large",
+      "model_b": "E5-large",
+      "rho": 0.5592
+    },
+    {
+      "model_a": "BGE-EN-large",
+      "model_b": "FreeLaw-EN",
+      "rho": 0.3603
+    },
+    {
+      "model_a": "E5-large",
+      "model_b": "FreeLaw-EN",
+      "rho": 0.3809
+    }
+  ],
+  "within_sinic_pairs": [
+    {
+      "model_a": "BGE-ZH-large",
+      "model_b": "Text2vec-large-ZH",
+      "rho": 0.3026
+    },
+    {
+      "model_a": "BGE-ZH-large",
+      "model_b": "Dmeta-ZH",
+      "rho": 0.5682
+    },
+    {
+      "model_a": "Text2vec-large-ZH",
+      "model_b": "Dmeta-ZH",
+      "rho": 0.3552
+    }
+  ],
+  "cross_pairs": [
+    {
+      "model_a": "BGE-EN-large",
+      "model_b": "BGE-ZH-large",
+      "rho": 0.2203
+    },
+    {
+      "model_a": "BGE-EN-large",
+      "model_b": "Text2vec-large-ZH",
+      "rho": 0.2398
+    },
+    {
+      "model_a": "BGE-EN-large",
+      "model_b": "Dmeta-ZH",
+      "rho": 0.2669
+    },
+    {
+      "model_a": "E5-large",
+      "model_b": "BGE-ZH-large",
+      "rho": 0.3491
+    },
+    {
+      "model_a": "E5-large",
+      "model_b": "Text2vec-large-ZH",
+      "rho": 0.2229
+    },
+    {
+      "model_a": "E5-large",
+      "model_b": "Dmeta-ZH",
+      "rho": 0.3562
+    },
+    {
+      "model_a": "FreeLaw-EN",
+      "model_b": "BGE-ZH-large",
+      "rho": 0.2403
+    },
+    {
+      "model_a": "FreeLaw-EN",
+      "model_b": "Text2vec-large-ZH",
+      "rho": 0.1869
+    },
+    {
+      "model_a": "FreeLaw-EN",
+      "model_b": "Dmeta-ZH",
+      "rho": 0.3058
+    }
+  ],
+  "bilingual_pairs": [
+    {
+      "model_a": "BGE-M3-EN",
+      "model_b": "BGE-M3-ZH",
+      "rho": 0.4581
+    },
+    {
+      "model_a": "Qwen3-0.6B-EN",
+      "model_b": "Qwen3-0.6B-ZH",
+      "rho": 0.3405
+    }
+  ]
+}

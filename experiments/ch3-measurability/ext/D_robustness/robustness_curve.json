@@ -1,0 +1,447 @@
+{
+  "meta": {
+    "en_models": [
+      "BGE-EN-large",
+      "BGE-M3-EN"
+    ],
+    "zh_models": [
+      "BGE-ZH-large",
+      "BGE-M3-ZH"
+    ],
+    "n_replicates": 10,
+    "seed": 42,
+    "n_core_total": 364,
+    "n_bg_eligible": 3249,
+    "core_K_range": "4-8",
+    "bg_K_filter": "K_min>=4",
+    "metric": "cosine RDM, Spearman ρ on upper triangles (NO Mantel/bootstrap here)",
+    "notes": "Permutation/CI is across pool-replicates, not within a single pool."
+  },
+  "results": [
+    {
+      "p_bg": 0.0,
+      "n_core": 364,
+      "n_bg": 0,
+      "n_replicates": 10,
+      "mean_rho_W": 0.7367,
+      "mean_rho_S": 0.9232,
+      "mean_rho_cross": 0.2918,
+      "mean_delta_sym": 0.5382,
+      "std_delta_sym": 0.0,
+      "ci_low_delta_sym": 0.5382,
+      "ci_high_delta_sym": 0.5382,
+      "replicates": [
+        {
+          "rep": 0,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 1,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 2,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 3,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 4,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 5,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 6,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 7,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 8,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        },
+        {
+          "rep": 9,
+          "rho_W": 0.7367,
+          "rho_S": 0.9232,
+          "rho_cross": 0.2918,
+          "delta_sym": 0.5382
+        }
+      ]
+    },
+    {
+      "p_bg": 0.1,
+      "n_core": 328,
+      "n_bg": 36,
+      "n_replicates": 10,
+      "mean_rho_W": 0.7315,
+      "mean_rho_S": 0.9262,
+      "mean_rho_cross": 0.2939,
+      "mean_delta_sym": 0.535,
+      "std_delta_sym": 0.0194,
+      "ci_low_delta_sym": 0.5019,
+      "ci_high_delta_sym": 0.5548,
+      "replicates": [
+        {
+          "rep": 0,
+          "rho_W": 0.7265,
+          "rho_S": 0.9212,
+          "rho_cross": 0.2721,
+          "delta_sym": 0.5517
+        },
+        {
+          "rep": 1,
+          "rho_W": 0.7339,
+          "rho_S": 0.9272,
+          "rho_cross": 0.3293,
+          "delta_sym": 0.5013
+        },
+        {
+          "rep": 2,
+          "rho_W": 0.7538,
+          "rho_S": 0.9309,
+          "rho_cross": 0.2977,
+          "delta_sym": 0.5446
+        },
+        {
+          "rep": 3,
+          "rho_W": 0.7336,
+          "rho_S": 0.9262,
+          "rho_cross": 0.2941,
+          "delta_sym": 0.5358
+        },
+        {
+          "rep": 4,
+          "rho_W": 0.7253,
+          "rho_S": 0.9226,
+          "rho_cross": 0.2694,
+          "delta_sym": 0.5546
+        },
+        {
+          "rep": 5,
+          "rho_W": 0.7337,
+          "rho_S": 0.9302,
+          "rho_cross": 0.3279,
+          "delta_sym": 0.5041
+        },
+        {
+          "rep": 6,
+          "rho_W": 0.7385,
+          "rho_S": 0.9318,
+          "rho_cross": 0.2804,
+          "delta_sym": 0.5548
+        },
+        {
+          "rep": 7,
+          "rho_W": 0.7306,
+          "rho_S": 0.9205,
+          "rho_cross": 0.2849,
+          "delta_sym": 0.5406
+        },
+        {
+          "rep": 8,
+          "rho_W": 0.7115,
+          "rho_S": 0.9253,
+          "rho_cross": 0.3027,
+          "delta_sym": 0.5157
+        },
+        {
+          "rep": 9,
+          "rho_W": 0.728,
+          "rho_S": 0.9264,
+          "rho_cross": 0.2804,
+          "delta_sym": 0.5468
+        }
+      ]
+    },
+    {
+      "p_bg": 0.25,
+      "n_core": 273,
+      "n_bg": 91,
+      "n_replicates": 10,
+      "mean_rho_W": 0.7185,
+      "mean_rho_S": 0.9266,
+      "mean_rho_cross": 0.2804,
+      "mean_delta_sym": 0.5421,
+      "std_delta_sym": 0.0185,
+      "ci_low_delta_sym": 0.5076,
+      "ci_high_delta_sym": 0.5662,
+      "replicates": [
+        {
+          "rep": 0,
+          "rho_W": 0.7059,
+          "rho_S": 0.9313,
+          "rho_cross": 0.2978,
+          "delta_sym": 0.5208
+        },
+        {
+          "rep": 1,
+          "rho_W": 0.724,
+          "rho_S": 0.9269,
+          "rho_cross": 0.2839,
+          "delta_sym": 0.5416
+        },
+        {
+          "rep": 2,
+          "rho_W": 0.7265,
+          "rho_S": 0.9302,
+          "rho_cross": 0.2677,
+          "delta_sym": 0.5606
+        },
+        {
+          "rep": 3,
+          "rho_W": 0.7177,
+          "rho_S": 0.9185,
+          "rho_cross": 0.3143,
+          "delta_sym": 0.5038
+        },
+        {
+          "rep": 4,
+          "rho_W": 0.7228,
+          "rho_S": 0.9259,
+          "rho_cross": 0.2762,
+          "delta_sym": 0.5481
+        },
+        {
+          "rep": 5,
+          "rho_W": 0.7237,
+          "rho_S": 0.9286,
+          "rho_cross": 0.2583,
+          "delta_sym": 0.5678
+        },
+        {
+          "rep": 6,
+          "rho_W": 0.7059,
+          "rho_S": 0.927,
+          "rho_cross": 0.2874,
+          "delta_sym": 0.5291
+        },
+        {
+          "rep": 7,
+          "rho_W": 0.7126,
+          "rho_S": 0.9324,
+          "rho_cross": 0.28,
+          "delta_sym": 0.5425
+        },
+        {
+          "rep": 8,
+          "rho_W": 0.7079,
+          "rho_S": 0.9241,
+          "rho_cross": 0.2668,
+          "delta_sym": 0.5492
+        },
+        {
+          "rep": 9,
+          "rho_W": 0.7381,
+          "rho_S": 0.921,
+          "rho_cross": 0.2719,
+          "delta_sym": 0.5577
+        }
+      ]
+    },
+    {
+      "p_bg": 0.5,
+      "n_core": 182,
+      "n_bg": 182,
+      "n_replicates": 10,
+      "mean_rho_W": 0.7312,
+      "mean_rho_S": 0.9283,
+      "mean_rho_cross": 0.2653,
+      "mean_delta_sym": 0.5645,
+      "std_delta_sym": 0.023,
+      "ci_low_delta_sym": 0.5203,
+      "ci_high_delta_sym": 0.5913,
+      "replicates": [
+        {
+          "rep": 0,
+          "rho_W": 0.7283,
+          "rho_S": 0.9238,
+          "rho_cross": 0.2817,
+          "delta_sym": 0.5444
+        },
+        {
+          "rep": 1,
+          "rho_W": 0.7185,
+          "rho_S": 0.9322,
+          "rho_cross": 0.2721,
+          "delta_sym": 0.5533
+        },
+        {
+          "rep": 2,
+          "rho_W": 0.7402,
+          "rho_S": 0.928,
+          "rho_cross": 0.25,
+          "delta_sym": 0.5842
+        },
+        {
+          "rep": 3,
+          "rho_W": 0.727,
+          "rho_S": 0.9297,
+          "rho_cross": 0.3151,
+          "delta_sym": 0.5133
+        },
+        {
+          "rep": 4,
+          "rho_W": 0.7414,
+          "rho_S": 0.9237,
+          "rho_cross": 0.2485,
+          "delta_sym": 0.584
+        },
+        {
+          "rep": 5,
+          "rho_W": 0.7522,
+          "rho_S": 0.9351,
+          "rho_cross": 0.2843,
+          "delta_sym": 0.5594
+        },
+        {
+          "rep": 6,
+          "rho_W": 0.7282,
+          "rho_S": 0.9246,
+          "rho_cross": 0.2342,
+          "delta_sym": 0.5922
+        },
+        {
+          "rep": 7,
+          "rho_W": 0.715,
+          "rho_S": 0.925,
+          "rho_cross": 0.2317,
+          "delta_sym": 0.5882
+        },
+        {
+          "rep": 8,
+          "rho_W": 0.7229,
+          "rho_S": 0.9288,
+          "rho_cross": 0.2601,
+          "delta_sym": 0.5658
+        },
+        {
+          "rep": 9,
+          "rho_W": 0.7383,
+          "rho_S": 0.9323,
+          "rho_cross": 0.275,
+          "delta_sym": 0.5603
+        }
+      ]
+    },
+    {
+      "p_bg": 0.75,
+      "n_core": 91,
+      "n_bg": 273,
+      "n_replicates": 10,
+      "mean_rho_W": 0.7467,
+      "mean_rho_S": 0.9324,
+      "mean_rho_cross": 0.2493,
+      "mean_delta_sym": 0.5903,
+      "std_delta_sym": 0.0236,
+      "ci_low_delta_sym": 0.5531,
+      "ci_high_delta_sym": 0.6237,
+      "replicates": [
+        {
+          "rep": 0,
+          "rho_W": 0.7263,
+          "rho_S": 0.9268,
+          "rho_cross": 0.2235,
+          "delta_sym": 0.603
+        },
+        {
+          "rep": 1,
+          "rho_W": 0.7552,
+          "rho_S": 0.933,
+          "rho_cross": 0.2616,
+          "delta_sym": 0.5825
+        },
+        {
+          "rep": 2,
+          "rho_W": 0.7201,
+          "rho_S": 0.9312,
+          "rho_cross": 0.1991,
+          "delta_sym": 0.6266
+        },
+        {
+          "rep": 3,
+          "rho_W": 0.7573,
+          "rho_S": 0.9336,
+          "rho_cross": 0.2871,
+          "delta_sym": 0.5584
+        },
+        {
+          "rep": 4,
+          "rho_W": 0.7351,
+          "rho_S": 0.9327,
+          "rho_cross": 0.2647,
+          "delta_sym": 0.5692
+        },
+        {
+          "rep": 5,
+          "rho_W": 0.7794,
+          "rho_S": 0.9366,
+          "rho_cross": 0.246,
+          "delta_sym": 0.612
+        },
+        {
+          "rep": 6,
+          "rho_W": 0.7146,
+          "rho_S": 0.9323,
+          "rho_cross": 0.2315,
+          "delta_sym": 0.5919
+        },
+        {
+          "rep": 7,
+          "rho_W": 0.7688,
+          "rho_S": 0.9259,
+          "rho_cross": 0.2335,
+          "delta_sym": 0.6138
+        },
+        {
+          "rep": 8,
+          "rho_W": 0.7408,
+          "rho_S": 0.9382,
+          "rho_cross": 0.2454,
+          "delta_sym": 0.5941
+        },
+        {
+          "rep": 9,
+          "rho_W": 0.7699,
+          "rho_S": 0.9333,
+          "rho_cross": 0.3002,
+          "delta_sym": 0.5515
+        }
+      ]
+    }
+  ]
+}

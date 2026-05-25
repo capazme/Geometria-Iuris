@@ -1,0 +1,4540 @@
+{
+  "terms": [
+    {
+      "en": "register",
+      "zh": "登記",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "certificate",
+      "zh": "證明書",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "licence",
+      "zh": "牌照",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "registration",
+      "zh": "登記",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "practice",
+      "zh": "實務",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "application",
+      "zh": "申請",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "permit",
+      "zh": "准許證",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "requirement",
+      "zh": "要求",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "address",
+      "zh": "地址",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "procedure",
+      "zh": "程序",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "compliance",
+      "zh": "遵從",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "inspection",
+      "zh": "公眾查閱",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "statutory",
+      "zh": "法例",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "duly",
+      "zh": "妥當地",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "expenses",
+      "zh": "費用",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "accounting",
+      "zh": "會計",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "enforcement",
+      "zh": "強制執行",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "tax",
+      "zh": "稅",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "code",
+      "zh": "守則",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Registrar",
+      "zh": "登記官",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "controller",
+      "zh": "控制人",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "administrative",
+      "zh": "行政",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "regulatory",
+      "zh": "規管",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "notification",
+      "zh": "通知書",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "comply",
+      "zh": "遵守",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "provisional",
+      "zh": "暫定",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "public interest",
+      "zh": "公眾利益",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "suspension",
+      "zh": "暫停",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "accreditation",
+      "zh": "評審",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "maintenance",
+      "zh": "保養",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "complaint",
+      "zh": "投訴",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "in force",
+      "zh": "繼續有效",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "set aside",
+      "zh": "作廢",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "revocation",
+      "zh": "撤回",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "implementation",
+      "zh": "實施",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "exemption",
+      "zh": "豁免",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "entry",
+      "zh": "入境",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "levy",
+      "zh": "徵款",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "modification",
+      "zh": "修改",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "regulation",
+      "zh": "規例",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "governing",
+      "zh": "規管",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "inspector",
+      "zh": "視察主任",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "approval",
+      "zh": "批准",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "authorization",
+      "zh": "訂明授權",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "taxation",
+      "zh": "課稅",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "administer",
+      "zh": "主持",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "discipline",
+      "zh": "紀律",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "surcharge",
+      "zh": "附加費",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "expenditure",
+      "zh": "開支",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "non-compliance",
+      "zh": "不符合",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "recall",
+      "zh": "召回",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "registry",
+      "zh": "登記處",
+      "domain": "administrative",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "provision",
+      "zh": "條款",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "trade mark",
+      "zh": "商標",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "property",
+      "zh": "物業",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "obligation",
+      "zh": "義務",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "grant",
+      "zh": "批予",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "asset",
+      "zh": "資產",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "transfer",
+      "zh": "移交",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "custody",
+      "zh": "保管",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "trust",
+      "zh": "信託",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "transaction",
+      "zh": "交易",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "patent",
+      "zh": "專利",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "entity",
+      "zh": "實體",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "settlement",
+      "zh": "清繳",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "copyright",
+      "zh": "版權",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "insurance",
+      "zh": "保險",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "prejudice",
+      "zh": "妨害",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "stock",
+      "zh": "股票",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "trustee",
+      "zh": "受託人",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "land",
+      "zh": "土地",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "infringement",
+      "zh": "侵權",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "loan",
+      "zh": "貸款",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "deposit",
+      "zh": "按金",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "undertaking",
+      "zh": "承諾",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "family",
+      "zh": "家事",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "share capital",
+      "zh": "股本",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "ownership",
+      "zh": "擁有權",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "futures",
+      "zh": "期貨",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "deed",
+      "zh": "契約",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "estate",
+      "zh": "產業",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "holder",
+      "zh": "持有人",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "premises",
+      "zh": "處所",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "client",
+      "zh": "當事人",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "derivative",
+      "zh": "衍生",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "contractor",
+      "zh": "承包商",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "partnership",
+      "zh": "合夥",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "contractual",
+      "zh": "合約",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "counterparty",
+      "zh": "對手方",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "equity",
+      "zh": "衡平法",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "lease",
+      "zh": "租賃",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "lien",
+      "zh": "留置權",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "gift",
+      "zh": "贈與",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "priority",
+      "zh": "優先權",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "damages",
+      "zh": "損害賠償",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "misrepresentation",
+      "zh": "失實陳述",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "testamentary",
+      "zh": "遺囑性質",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "unincorporated",
+      "zh": "非法團",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "marriage",
+      "zh": "婚姻",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "distribution",
+      "zh": "分派",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "proceeds",
+      "zh": "得益",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "conveyance",
+      "zh": "轉讓",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "insolvency",
+      "zh": "無力償債",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "vesting",
+      "zh": "轉歸",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "purchaser",
+      "zh": "買家",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "charitable",
+      "zh": "慈善信託",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "proprietary",
+      "zh": "所有權",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "disposition",
+      "zh": "產權處置",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "rental",
+      "zh": "租金",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "offeror",
+      "zh": "要約人",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "dividend",
+      "zh": "股息",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "licensee",
+      "zh": "持牌人",
+      "domain": "civil",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "act",
+      "zh": "法",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "state",
+      "zh": "國家",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Board",
+      "zh": "教務委員會",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Committee",
+      "zh": "上訴委員會",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "system",
+      "zh": "制度",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "election",
+      "zh": "選舉",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "constituency",
+      "zh": "選區",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "panel",
+      "zh": "名單",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "title",
+      "zh": "簡稱",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "freedom",
+      "zh": "自由",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "vote",
+      "zh": "投票",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "representative",
+      "zh": "代理人",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "voting",
+      "zh": "投票",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "representation",
+      "zh": "代理",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "equal",
+      "zh": "平等",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "organization",
+      "zh": "組織",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "government",
+      "zh": "政府",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "judicial",
+      "zh": "司法",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "territorial",
+      "zh": "領土",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Director",
+      "zh": "署長",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "nomination",
+      "zh": "提名",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "ballot",
+      "zh": "投票",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "political",
+      "zh": "政治",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "candidate",
+      "zh": "候選人",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "majority",
+      "zh": "大多數",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "meeting",
+      "zh": "會議",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "poll",
+      "zh": "投票",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "absolute",
+      "zh": "全權",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Legislative Council",
+      "zh": "立法會",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "liberty",
+      "zh": "自由",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Commissioner",
+      "zh": "海關關長",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "education",
+      "zh": "教育機構",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "bill",
+      "zh": "法案",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "elector",
+      "zh": "選民",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "electoral",
+      "zh": "選舉法",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "delegate",
+      "zh": "獲授權人",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "society",
+      "zh": "社團",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "territory",
+      "zh": "領土",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "waters",
+      "zh": "領海",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "District Council",
+      "zh": "區議會議員",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Election Committee",
+      "zh": "選舉委員",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "quorum",
+      "zh": "法定人數",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Presiding Officer",
+      "zh": "主持",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "third party",
+      "zh": "第三方",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "constitution",
+      "zh": "憲法",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "assembly",
+      "zh": "集會",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "incorporation",
+      "zh": "法團",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Heung Yee Kuk",
+      "zh": "鄉議局",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "religion",
+      "zh": "宗教",
+      "domain": "constitutional",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "offence",
+      "zh": "罪行",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "charge",
+      "zh": "押記",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "sentence",
+      "zh": "判刑",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "justice",
+      "zh": "公正",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "debt",
+      "zh": "債務",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "criminal",
+      "zh": "刑事",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "unlawful",
+      "zh": "不合法",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "disciplinary",
+      "zh": "紀律處分程序",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "false",
+      "zh": "虛假",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "conviction",
+      "zh": "定罪",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "arrest",
+      "zh": "逮捕",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "penalty",
+      "zh": "罰則",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "prosecution",
+      "zh": "檢控",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "suspend",
+      "zh": "中止",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "breach",
+      "zh": "違反",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "intent",
+      "zh": "意圖",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "wilfully",
+      "zh": "故意地",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "failure",
+      "zh": "不履行",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "knowingly",
+      "zh": "故意",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "imprisonment",
+      "zh": "監禁",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "detention",
+      "zh": "拘留",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "crime",
+      "zh": "犯罪",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "harm",
+      "zh": "傷害",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "punishment",
+      "zh": "懲罰",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "terrorist",
+      "zh": "恐怖分子",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "fraudulent",
+      "zh": "欺詐",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "guilty",
+      "zh": "有罪",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "forfeiture",
+      "zh": "沒收",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "assault",
+      "zh": "襲擊",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "prisoner",
+      "zh": "囚犯",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "misconduct",
+      "zh": "失當行為",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "threat",
+      "zh": "威脅",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "conceal",
+      "zh": "隱藏",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "contravention",
+      "zh": "違反",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "restraint",
+      "zh": "限制",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "indecent",
+      "zh": "不雅",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "offender",
+      "zh": "罪犯",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "dangerous",
+      "zh": "危險",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "trafficking",
+      "zh": "販運",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "unlawfully",
+      "zh": "非法",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "attempt",
+      "zh": "企圖",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "murder",
+      "zh": "謀殺",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "obscene",
+      "zh": "淫褻",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "perjury",
+      "zh": "作假證供罪",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "defraud",
+      "zh": "欺詐",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "confiscation",
+      "zh": "沒收令",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "juvenile",
+      "zh": "少年",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "punish",
+      "zh": "處罰",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "violence",
+      "zh": "暴力",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "seizure",
+      "zh": "扣押",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "bail",
+      "zh": "保釋",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "intention",
+      "zh": "意向",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "plea",
+      "zh": "答辯",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "revoke",
+      "zh": "撤回",
+      "domain": "criminal",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "international",
+      "zh": "國際義務",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "convention",
+      "zh": "慣例",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "agreement",
+      "zh": "協定",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "protection",
+      "zh": "保護",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "arrangement",
+      "zh": "安排",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "consular",
+      "zh": "領事",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "trade",
+      "zh": "交易",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "declaration",
+      "zh": "宣告",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "standard",
+      "zh": "標準",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "defence",
+      "zh": "抗辯",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "United Nations",
+      "zh": "聯合國",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Mainland",
+      "zh": "內地",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "mutual",
+      "zh": "相互",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "protocol",
+      "zh": "議定書",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "multilateral",
+      "zh": "多邊",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "independent",
+      "zh": "獨立",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "association",
+      "zh": "協會",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "maritime",
+      "zh": "海上",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "arbitral",
+      "zh": "仲裁",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "diplomatic",
+      "zh": "外交",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "marine",
+      "zh": "海上",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "war",
+      "zh": "戰爭",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "non-Hong Kong",
+      "zh": "非香港",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "aircraft",
+      "zh": "飛機",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "intermediary",
+      "zh": "中介人",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "boundary",
+      "zh": "土地界線",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "conference",
+      "zh": "會議",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "conflict",
+      "zh": "抵觸",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "particulars",
+      "zh": "詳情",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "military",
+      "zh": "軍隊",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "safeguard",
+      "zh": "保障措施",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "material particular",
+      "zh": "要項",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "tanker",
+      "zh": "化學品液貨船",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "bilateral",
+      "zh": "雙邊",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "international law",
+      "zh": "國際法",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "overseas",
+      "zh": "海外",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "outbound",
+      "zh": "外遊費",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "sea-going",
+      "zh": "海域航行船舶",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "arbitrator",
+      "zh": "仲裁員",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "vicinity",
+      "zh": "鄰近範圍",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "regional",
+      "zh": "區域",
+      "domain": "international",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "account",
+      "zh": "帳戶",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "financial",
+      "zh": "財務",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "business",
+      "zh": "事務",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "payment",
+      "zh": "中期付款",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "contract",
+      "zh": "合同",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "office",
+      "zh": "職位",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "company",
+      "zh": "公司",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "fund",
+      "zh": "基金",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "fee",
+      "zh": "費用",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "benefit",
+      "zh": "利益",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "amount",
+      "zh": "款額",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "care",
+      "zh": "小心",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "professional",
+      "zh": "專業",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "contribution",
+      "zh": "供款",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "worker",
+      "zh": "傭工",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "Chinese medicine",
+      "zh": "中醫藥學",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "position",
+      "zh": "職位",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "employment",
+      "zh": "僱傭",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "work",
+      "zh": "作品",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "exercise",
+      "zh": "實行",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "profit",
+      "zh": "利潤",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "health",
+      "zh": "健康",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "management",
+      "zh": "管理",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "delivery",
+      "zh": "交付",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "compensation",
+      "zh": "補償",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "discrimination",
+      "zh": "殘疾歧視",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "child",
+      "zh": "兒童",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "leave",
+      "zh": "許可",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "assistance",
+      "zh": "協助",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "employee",
+      "zh": "僱員",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "current",
+      "zh": "流通",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "level",
+      "zh": "等級",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "escalator",
+      "zh": "自動梯",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "sum",
+      "zh": "款項",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "hour",
+      "zh": "合理時間",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "unit",
+      "zh": "單位",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "manager",
+      "zh": "管理人",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "labour",
+      "zh": "勞工",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "remuneration",
+      "zh": "酬金",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "industry",
+      "zh": "行業",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "healthcare",
+      "zh": "醫護服務",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "payable",
+      "zh": "應支付",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "pay",
+      "zh": "付款",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "age",
+      "zh": "年齡",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "medical",
+      "zh": "醫療護理",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "disability",
+      "zh": "弱能",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "full-time",
+      "zh": "全職",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "emergency",
+      "zh": "緊急情況",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "works",
+      "zh": "工程設施",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "building",
+      "zh": "建築",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "insurer",
+      "zh": "保險人",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "staff",
+      "zh": "員工",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "entitlement",
+      "zh": "享有權",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "employer",
+      "zh": "僱主",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "harassment",
+      "zh": "侵擾",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "occupational",
+      "zh": "職業",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "wage",
+      "zh": "報酬",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "gratuity",
+      "zh": "酬金",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "winding up",
+      "zh": "清盤",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "applicant",
+      "zh": "申請人",
+      "domain": "labor_social",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "proceeding",
+      "zh": "法律程序",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "evidence",
+      "zh": "證據",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "appeal",
+      "zh": "上訴",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "statement",
+      "zh": "報表",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "claim",
+      "zh": "申索",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "court",
+      "zh": "法院",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "review",
+      "zh": "審核",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "issue",
+      "zh": "爭論點",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "hearing",
+      "zh": "編定聆訊日期",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "lawful",
+      "zh": "合法",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "proof",
+      "zh": "證據",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "arbitration",
+      "zh": "仲裁",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "examine",
+      "zh": "訊問",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "witness",
+      "zh": "證人",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "investigation",
+      "zh": "調查",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LPD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "surrender",
+      "zh": "交出",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "process",
+      "zh": "程序",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "objection",
+      "zh": "反對理由",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "bona fide",
+      "zh": "善意",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "examination",
+      "zh": "覆問",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "certified",
+      "zh": "經核證",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "inquiry",
+      "zh": "研訊",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "disclosure",
+      "zh": "公開",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "fine",
+      "zh": "罰款",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "written",
+      "zh": "成文",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "adjudication",
+      "zh": "終審",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "admit",
+      "zh": "承認",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "serve",
+      "zh": "送達",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "determine",
+      "zh": "終止",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "signature",
+      "zh": "簽名",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "mediation",
+      "zh": "調解",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "limitation",
+      "zh": "限制",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "petition",
+      "zh": "呈請",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "presumption",
+      "zh": "推定",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "audit",
+      "zh": "審核",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "initiate",
+      "zh": "提起法律程序",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "substantiate",
+      "zh": "證實",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "summons",
+      "zh": "傳票",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "prove",
+      "zh": "證明",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "admissible",
+      "zh": "可接納",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "exhibit",
+      "zh": "證物",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "beyond reasonable doubt",
+      "zh": "合理疑點",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "conciliation",
+      "zh": "調停",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "ILD",
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "interlocutory",
+      "zh": "非正審",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LRC",
+        "PD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "permission",
+      "zh": "准許",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "CD",
+        "LDD",
+        "LPD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "resolve",
+      "zh": "解決",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD",
+        "LRC"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "in writing",
+      "zh": "以書面",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    },
+    {
+      "en": "certified copy",
+      "zh": "核證文本",
+      "domain": "procedure",
+      "tier": "core",
+      "doj_divisions": [
+        "LDD"
+      ],
+      "source": "HK DOJ"
+    }
+  ]
+}

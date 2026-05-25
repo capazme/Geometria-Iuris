@@ -1,0 +1,21 @@
+{
+  "domain": "constitutional",
+  "action": "promote",
+  "current_count": 48,
+  "target_count": 50,
+  "drop": [],
+  "promote": [
+    {
+      "en": "Chief Executive",
+      "zh_canonical": "行政長官（香港）",
+      "rationale": "Apex of the SAR executive branch under Basic Law Chapter IV; fills a structural gap left by the core set (which currently represents the legislature via 'Legislative Council' and 'legislature' but lacks any executive counterpart)."
+    },
+    {
+      "en": "Court of Final Appeal",
+      "zh_canonical": "終審法院",
+      "rationale": "Apex of the SAR judiciary under Basic Law Articles 81-82; the core currently has no term for the summit of judicial power, leaving the separation-of-powers triad incomplete."
+    }
+  ],
+  "keep_after_drop": [],
+  "curation_principles": "The two promotions are chosen to complete the institutional architecture of the Hong Kong constitutional order inside the core set. Inspection of the 48 existing core terms reveals rich coverage of rights vocabulary (Bill of Rights, human rights, habeas corpus, equality, suffrage, Universal Declaration) and of the legislative branch (Legislative Council, legislature, legislation, Resolution of the Legislative Council), but a striking asymmetry with respect to the executive and judicial branches. No term designates the Chief Executive, the figure in whom Basic Law Chapter IV vests the executive authority of the Region; and no term designates the Court of Final Appeal, the institution in which Basic Law Articles 81-82 vest the power of final adjudication, including the power of judicial review. Both candidates have strong attestation in the e-Legislation corpus (eight English contexts each, with caps including Cap. 102, 104, 106, 111, 112, 128A, 136, i.e., the institutional ordinances of the SAR), clean bilingual ZH canonicals, and no near-synonyms among the existing 48 core entries. Methodologically, the promotions serve the experimental design of the thesis: an embedding-space measurement of constitutional meaning can only produce interpretable geometric signal if the lexicon faithfully samples the tripartite institutional vocabulary of the tradition under study. Omitting the apex of executive and judicial power would bias the relational structure of the domain toward the rights-plus-legislature axis and weaken any inference about how the instrument responds to institutional variation across legal cultures."
+}

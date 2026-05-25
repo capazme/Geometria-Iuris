@@ -1,0 +1,3964 @@
+{
+  "domain": "civil",
+  "target_count": 50,
+  "current_core": [
+    {
+      "term_idx": 5,
+      "en": "adoption",
+      "zh_canonical": "採納",
+      "en_clean": "adoption",
+      "zh_clean": "採納",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 9,
+      "en": "alimony",
+      "zh_canonical": "贍養費",
+      "en_clean": "alimony",
+      "zh_clean": "贍養費",
+      "k_en": 3,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 15,
+      "en": "bailment",
+      "zh_canonical": "無酬委託",
+      "en_clean": "bailment",
+      "zh_clean": "無酬委託",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 16,
+      "en": "beneficiary",
+      "zh_canonical": "受益人",
+      "en_clean": "beneficiary",
+      "zh_clean": "受益人",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 27,
+      "en": "contractual",
+      "zh_canonical": "合約的",
+      "en_clean": "contractual",
+      "zh_clean": "合約",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 29,
+      "en": "contributory negligence",
+      "zh_canonical": "共分疏忽",
+      "en_clean": "contributory negligence",
+      "zh_clean": "共分疏忽",
+      "k_en": 2,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 32,
+      "en": "copyright",
+      "zh_canonical": "版權標記",
+      "en_clean": "copyright",
+      "zh_clean": "版權標記",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 43,
+      "en": "defamation",
+      "zh_canonical": "不明顯的誹謗",
+      "en_clean": "defamation",
+      "zh_clean": "不明顯的誹謗",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 50,
+      "en": "divorce",
+      "zh_canonical": "離婚判令",
+      "en_clean": "divorce",
+      "zh_clean": "離婚判令",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 53,
+      "en": "easement",
+      "zh_canonical": "採光權 ☛參看 right of (ancient) lights",
+      "en_clean": "easement",
+      "zh_clean": "採光權",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 60,
+      "en": "executor",
+      "zh_canonical": "擅自處理他人遺產的人",
+      "en_clean": "executor",
+      "zh_clean": "擅自處理他人遺產的人",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 65,
+      "en": "fiduciary",
+      "zh_canonical": "受託",
+      "en_clean": "fiduciary",
+      "zh_clean": "受託",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 69,
+      "en": "guarantor",
+      "zh_canonical": "保證人",
+      "en_clean": "guarantor",
+      "zh_clean": "保證人",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 74,
+      "en": "in consideration of",
+      "zh_canonical": "考慮到",
+      "en_clean": "in consideration of",
+      "zh_clean": "考慮到",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 78,
+      "en": "indemnity",
+      "zh_canonical": "彌償法律程序",
+      "en_clean": "indemnity",
+      "zh_clean": "彌償法律程序",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 79,
+      "en": "inheritance",
+      "zh_canonical": "繼承",
+      "en_clean": "inheritance",
+      "zh_clean": "繼承",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 81,
+      "en": "intellectual property",
+      "zh_canonical": "合資格知識產權",
+      "en_clean": "intellectual property",
+      "zh_clean": "合資格知識產權",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 86,
+      "en": "intestate",
+      "zh_canonical": "未留遺囑的死者",
+      "en_clean": "intestate",
+      "zh_clean": "未留遺囑的死者",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 89,
+      "en": "landlord",
+      "zh_canonical": "地主",
+      "en_clean": "landlord",
+      "zh_clean": "地主",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 91,
+      "en": "leasehold",
+      "zh_canonical": "租賃權 ※比較 freehold",
+      "en_clean": "leasehold",
+      "zh_clean": "租賃權",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 103,
+      "en": "misrepresentation",
+      "zh_canonical": "失實陳述",
+      "en_clean": "misrepresentation",
+      "zh_clean": "失實陳述",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 104,
+      "en": "mortgage",
+      "zh_canonical": "有關按揭的申索",
+      "en_clean": "mortgage",
+      "zh_clean": "有關按揭的申索",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 105,
+      "en": "mortgagee",
+      "zh_canonical": "承按人",
+      "en_clean": "mortgagee",
+      "zh_clean": "承按人",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 107,
+      "en": "negligence",
+      "zh_canonical": "罔顧後果的疏忽",
+      "en_clean": "negligence",
+      "zh_clean": "罔顧後果的疏忽",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 113,
+      "en": "novation",
+      "zh_canonical": "債務或合約義務的更替",
+      "en_clean": "novation",
+      "zh_clean": "債務或合約義務的更替",
+      "k_en": 2,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 114,
+      "en": "nuisance",
+      "zh_canonical": "消除滋擾",
+      "en_clean": "nuisance",
+      "zh_clean": "消除滋擾",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 116,
+      "en": "Official Trustee",
+      "zh_canonical": "法定受託人",
+      "en_clean": "Official Trustee",
+      "zh_clean": "法定受託人",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 120,
+      "en": "patent",
+      "zh_canonical": "明顯",
+      "en_clean": "patent",
+      "zh_clean": "明顯",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 127,
+      "en": "pledge",
+      "zh_canonical": "活質押〔以抵押物的收益（例如租金）償還抵押借款，借款清償後，抵押物復歸質押人的一種質押〕",
+      "en_clean": "pledge",
+      "zh_clean": "活質押",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 130,
+      "en": "probate",
+      "zh_canonical": "遺產辦理",
+      "en_clean": "probate",
+      "zh_clean": "遺產辦理",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 141,
+      "en": "rescission",
+      "zh_canonical": "廢除",
+      "en_clean": "rescission",
+      "zh_clean": "廢除",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 142,
+      "en": "restitution",
+      "zh_canonical": "復還",
+      "en_clean": "restitution",
+      "zh_clean": "復還",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 152,
+      "en": "subrogation",
+      "zh_canonical": "代位",
+      "en_clean": "subrogation",
+      "zh_clean": "代位",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 153,
+      "en": "sub-tenant",
+      "zh_canonical": "分租客",
+      "en_clean": "sub-tenant",
+      "zh_clean": "分租客",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 154,
+      "en": "succession",
+      "zh_canonical": "繼任",
+      "en_clean": "succession",
+      "zh_clean": "繼任",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 161,
+      "en": "tenant",
+      "zh_canonical": "退租租户",
+      "en_clean": "tenant",
+      "zh_clean": "退租租户",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 163,
+      "en": "testamentary",
+      "zh_canonical": "遺囑性質的",
+      "en_clean": "testamentary",
+      "zh_clean": "遺囑性質",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 166,
+      "en": "testator",
+      "zh_canonical": "立遺囑人",
+      "en_clean": "testator",
+      "zh_clean": "立遺囑人",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 168,
+      "en": "tort",
+      "zh_canonical": "經濟侵權",
+      "en_clean": "tort",
+      "zh_clean": "經濟侵權",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 169,
+      "en": "tortfeasor",
+      "zh_canonical": "侵權行為者",
+      "en_clean": "tortfeasor",
+      "zh_clean": "侵權行為者",
+      "k_en": 6,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 172,
+      "en": "trespass",
+      "zh_canonical": "侵害",
+      "en_clean": "trespass",
+      "zh_clean": "侵害",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 176,
+      "en": "trespasser",
+      "zh_canonical": "對土地全無權益的闖入者",
+      "en_clean": "trespasser",
+      "zh_clean": "對土地全無權益的闖入者",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 177,
+      "en": "trustee",
+      "zh_canonical": "擅自處理他人信託的人",
+      "en_clean": "trustee",
+      "zh_clean": "擅自處理他人信託的人",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 192,
+      "en": "repudiatory breach of contract",
+      "zh_canonical": "廢除性違約〔可導致對方拒絕履行合約的違約行為〕",
+      "en_clean": "repudiatory breach of contract",
+      "zh_clean": "廢除性違約",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 196,
+      "en": "valuable consideration",
+      "zh_canonical": "有值代價",
+      "en_clean": "valuable consideration",
+      "zh_clean": "有值代價",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 209,
+      "en": "negligent misrepresentation",
+      "zh_canonical": "疏忽的失實陳述",
+      "en_clean": "negligent misrepresentation",
+      "zh_clean": "疏忽的失實陳述",
+      "k_en": 2,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 223,
+      "en": "World Intellectual Property Organization",
+      "zh_canonical": "世界知識產權組織",
+      "en_clean": "World Intellectual Property Organization",
+      "zh_clean": "世界知識產權組織",
+      "k_en": 1,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 300,
+      "en": "legal custody",
+      "zh_canonical": "合法羈留",
+      "en_clean": "legal custody",
+      "zh_clean": "合法羈留",
+      "k_en": 8,
+      "k_zh": 3,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 316,
+      "en": "patentee",
+      "zh_canonical": "專利持有人",
+      "en_clean": "patentee",
+      "zh_clean": "專利持有人",
+      "k_en": 1,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 335,
+      "en": "sub-lease",
+      "zh_canonical": "分租",
+      "en_clean": "sub-lease",
+      "zh_clean": "分租",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    }
+  ],
+  "backfill_candidates": [
+    {
+      "term_idx": 787,
+      "en": "bonded warehouse",
+      "zh_canonical": "保稅倉",
+      "en_clean": "bonded warehouse",
+      "zh_clean": "保稅倉",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.6613
+    },
+    {
+      "term_idx": 1109,
+      "en": "conveyance",
+      "zh_canonical": "轉讓",
+      "en_clean": "conveyance",
+      "zh_clean": "轉讓",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.7197
+    },
+    {
+      "term_idx": 1143,
+      "en": "counterparty",
+      "zh_canonical": "對手方",
+      "en_clean": "counterparty",
+      "zh_clean": "對手方",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.6813
+    },
+    {
+      "term_idx": 2180,
+      "en": "legacy",
+      "zh_canonical": "遺贈",
+      "en_clean": "legacy",
+      "zh_clean": "遺贈",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.7773
+    },
+    {
+      "term_idx": 2191,
+      "en": "lender",
+      "zh_canonical": "貸款人",
+      "en_clean": "lender",
+      "zh_clean": "貸款人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.8296
+    },
+    {
+      "term_idx": 2192,
+      "en": "lessee",
+      "zh_canonical": "租用人",
+      "en_clean": "lessee",
+      "zh_clean": "租用人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.8388
+    },
+    {
+      "term_idx": 2193,
+      "en": "lessor",
+      "zh_canonical": "出租人",
+      "en_clean": "lessor",
+      "zh_clean": "出租人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.8234
+    },
+    {
+      "term_idx": 2379,
+      "en": "mortgagor",
+      "zh_canonical": "按揭人",
+      "en_clean": "mortgagor",
+      "zh_clean": "按揭人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.7881
+    },
+    {
+      "term_idx": 3388,
+      "en": "tenancy",
+      "zh_canonical": "租賃",
+      "en_clean": "tenancy",
+      "zh_clean": "租賃",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "civil": 7
+      },
+      "knn_top_neighbour_sim": 0.8671
+    },
+    {
+      "term_idx": 594,
+      "en": "annuity",
+      "zh_canonical": "年金",
+      "en_clean": "annuity",
+      "zh_clean": "年金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6621
+    },
+    {
+      "term_idx": 791,
+      "en": "borrower",
+      "zh_canonical": "借款人",
+      "en_clean": "borrower",
+      "zh_clean": "借款人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7668
+    },
+    {
+      "term_idx": 1110,
+      "en": "conveyancing",
+      "zh_canonical": "物業轉易",
+      "en_clean": "conveyancing",
+      "zh_clean": "物業轉易",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7727
+    },
+    {
+      "term_idx": 1160,
+      "en": "creditor",
+      "zh_canonical": "債權人",
+      "en_clean": "creditor",
+      "zh_clean": "債權人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7252
+    },
+    {
+      "term_idx": 1457,
+      "en": "emolument",
+      "zh_canonical": "報酬",
+      "en_clean": "emolument",
+      "zh_clean": "報酬",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6754
+    },
+    {
+      "term_idx": 1766,
+      "en": "guardianship",
+      "zh_canonical": "監護",
+      "en_clean": "guardianship",
+      "zh_clean": "監護",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7141
+    },
+    {
+      "term_idx": 2105,
+      "en": "jurat",
+      "zh_canonical": "誓章末處",
+      "en_clean": "jurat",
+      "zh_clean": "誓章末處",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "civil": 6
+      },
+      "knn_top_neighbour_sim": 0.7039
+    },
+    {
+      "term_idx": 2176,
+      "en": "lease",
+      "zh_canonical": "租賃",
+      "en_clean": "lease",
+      "zh_clean": "租賃",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.8678
+    },
+    {
+      "term_idx": 2255,
+      "en": "loan",
+      "zh_canonical": "貸款",
+      "en_clean": "loan",
+      "zh_clean": "貸款",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8179
+    },
+    {
+      "term_idx": 2505,
+      "en": "occupant",
+      "zh_canonical": "佔用人",
+      "en_clean": "occupant",
+      "zh_clean": "佔用人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7735
+    },
+    {
+      "term_idx": 2606,
+      "en": "parcel",
+      "zh_canonical": "地段",
+      "en_clean": "parcel",
+      "zh_clean": "地段",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6862
+    },
+    {
+      "term_idx": 2813,
+      "en": "property",
+      "zh_canonical": "物業",
+      "en_clean": "property",
+      "zh_clean": "物業",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7276
+    },
+    {
+      "term_idx": 3010,
+      "en": "rent",
+      "zh_canonical": "租金",
+      "en_clean": "rent",
+      "zh_clean": "租金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8245
+    },
+    {
+      "term_idx": 3294,
+      "en": "sublet",
+      "zh_canonical": "分租",
+      "en_clean": "sublet",
+      "zh_clean": "分租",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.8388
+    },
+    {
+      "term_idx": 3319,
+      "en": "successor",
+      "zh_canonical": "繼任人",
+      "en_clean": "successor",
+      "zh_clean": "繼任人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.8808
+    },
+    {
+      "term_idx": 3805,
+      "en": "holding company",
+      "zh_canonical": "控權公司",
+      "en_clean": "holding company",
+      "zh_clean": "控權公司",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6622
+    },
+    {
+      "term_idx": 4019,
+      "en": "step parent",
+      "zh_canonical": "繼父母",
+      "en_clean": "step parent",
+      "zh_clean": "繼父母",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "civil": 6
+      },
+      "knn_top_neighbour_sim": 0.7598
+    },
+    {
+      "term_idx": 4671,
+      "en": "banker",
+      "zh_canonical": "莊家",
+      "en_clean": "banker",
+      "zh_clean": "莊家",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7492
+    },
+    {
+      "term_idx": 5265,
+      "en": "depositor",
+      "zh_canonical": "存款人",
+      "en_clean": "depositor",
+      "zh_clean": "存款人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7719
+    },
+    {
+      "term_idx": 6268,
+      "en": "ledger",
+      "zh_canonical": "分類帳",
+      "en_clean": "ledger",
+      "zh_clean": "分類帳",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7114
+    },
+    {
+      "term_idx": 7787,
+      "en": "underwriting",
+      "zh_canonical": "包銷協議",
+      "en_clean": "underwriting",
+      "zh_clean": "包銷協議",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6774
+    },
+    {
+      "term_idx": 7811,
+      "en": "surrogacy",
+      "zh_canonical": "代母安排",
+      "en_clean": "surrogacy",
+      "zh_clean": "代母安排",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7569
+    },
+    {
+      "term_idx": 6767,
+      "en": "possessory",
+      "zh_canonical": "管有業權",
+      "en_clean": "possessory",
+      "zh_clean": "管有業權",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7499
+    },
+    {
+      "term_idx": 7933,
+      "en": "investee",
+      "zh_canonical": "獲投資公司",
+      "en_clean": "investee",
+      "zh_clean": "獲投資公司",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7674
+    },
+    {
+      "term_idx": 348,
+      "en": "leased",
+      "zh_canonical": "批租地區",
+      "en_clean": "leased",
+      "zh_clean": "批租地區",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.8347
+    },
+    {
+      "term_idx": 7337,
+      "en": "sub-lessee",
+      "zh_canonical": "分租承租人",
+      "en_clean": "sub-lessee",
+      "zh_clean": "分租承租人",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.9274
+    },
+    {
+      "term_idx": 6716,
+      "en": "perpetuity",
+      "zh_canonical": "財產恆繼",
+      "en_clean": "perpetuity",
+      "zh_clean": "財產恆繼",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7
+    },
+    {
+      "term_idx": 3289,
+      "en": "subcontractor",
+      "zh_canonical": "分包商",
+      "en_clean": "subcontractor",
+      "zh_clean": "分包商",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8348
+    },
+    {
+      "term_idx": 4436,
+      "en": "adjudicator",
+      "zh_canonical": "暫委審裁官",
+      "en_clean": "adjudicator",
+      "zh_clean": "暫委審裁官",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7361
+    },
+    {
+      "term_idx": 8061,
+      "en": "leasing",
+      "zh_canonical": "租賃式融通",
+      "en_clean": "leasing",
+      "zh_clean": "租賃式融通",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.8431
+    },
+    {
+      "term_idx": 158,
+      "en": "suretyship",
+      "zh_canonical": "擔保",
+      "en_clean": "suretyship",
+      "zh_clean": "擔保",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.698
+    },
+    {
+      "term_idx": 340,
+      "en": "trusteeship",
+      "zh_canonical": "託管",
+      "en_clean": "trusteeship",
+      "zh_clean": "託管",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.8981
+    },
+    {
+      "term_idx": 7329,
+      "en": "sub-custodian",
+      "zh_canonical": "次保管人",
+      "en_clean": "sub-custodian",
+      "zh_clean": "次保管人",
+      "k_en": 5,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8054
+    },
+    {
+      "term_idx": 6732,
+      "en": "philanthropic",
+      "zh_canonical": "公益",
+      "en_clean": "philanthropic",
+      "zh_clean": "公益",
+      "k_en": 4,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "civil": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6747
+    },
+    {
+      "term_idx": 504,
+      "en": "adopter",
+      "zh_canonical": "領養人",
+      "en_clean": "adopter",
+      "zh_clean": "領養人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7749
+    },
+    {
+      "term_idx": 505,
+      "en": "adoptive parent",
+      "zh_canonical": "領養父母",
+      "en_clean": "adoptive parent",
+      "zh_clean": "領養父母",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7945
+    },
+    {
+      "term_idx": 557,
+      "en": "allocation",
+      "zh_canonical": "分配",
+      "en_clean": "allocation",
+      "zh_clean": "分配",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7166
+    },
+    {
+      "term_idx": 666,
+      "en": "asset",
+      "zh_canonical": "資產",
+      "en_clean": "asset",
+      "zh_clean": "資產",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.689
+    },
+    {
+      "term_idx": 668,
+      "en": "assignee",
+      "zh_canonical": "受讓人",
+      "en_clean": "assignee",
+      "zh_clean": "受讓人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7283
+    },
+    {
+      "term_idx": 670,
+      "en": "assignor",
+      "zh_canonical": "轉讓人",
+      "en_clean": "assignor",
+      "zh_clean": "轉讓人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7197
+    },
+    {
+      "term_idx": 1189,
+      "en": "damages",
+      "zh_canonical": "損害賠償",
+      "en_clean": "damages",
+      "zh_clean": "損害賠償",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.7471
+    },
+    {
+      "term_idx": 1490,
+      "en": "entity",
+      "zh_canonical": "實體",
+      "en_clean": "entity",
+      "zh_clean": "實體",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7076
+    },
+    {
+      "term_idx": 1497,
+      "en": "equity",
+      "zh_canonical": "衡平法 ※比較 common law",
+      "en_clean": "equity",
+      "zh_clean": "衡平法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "civil": 5,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6967
+    },
+    {
+      "term_idx": 1749,
+      "en": "grantee",
+      "zh_canonical": "受款人",
+      "en_clean": "grantee",
+      "zh_clean": "受款人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7673
+    },
+    {
+      "term_idx": 1795,
+      "en": "holder",
+      "zh_canonical": "持有人",
+      "en_clean": "holder",
+      "zh_clean": "持有人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7113
+    },
+    {
+      "term_idx": 1837,
+      "en": "immovable property",
+      "zh_canonical": "不動產",
+      "en_clean": "immovable property",
+      "zh_clean": "不動產",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "civil": 5,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7488
+    },
+    {
+      "term_idx": 1914,
+      "en": "in trust",
+      "zh_canonical": "以信託形式",
+      "en_clean": "in trust",
+      "zh_clean": "以信託形式",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "procedure": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7443
+    },
+    {
+      "term_idx": 1990,
+      "en": "inland lot",
+      "zh_canonical": "內地段",
+      "en_clean": "inland lot",
+      "zh_clean": "內地段",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.642
+    },
+    {
+      "term_idx": 2244,
+      "en": "liquidator",
+      "zh_canonical": "清盤人",
+      "en_clean": "liquidator",
+      "zh_clean": "清盤人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "constitutional": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7042
+    },
+    {
+      "term_idx": 2383,
+      "en": "movable property",
+      "zh_canonical": "動產",
+      "en_clean": "movable property",
+      "zh_clean": "動產",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6747
+    },
+    {
+      "term_idx": 2817,
+      "en": "proprietary",
+      "zh_canonical": "所有權的",
+      "en_clean": "proprietary",
+      "zh_clean": "所有權",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7112
+    },
+    {
+      "term_idx": 2869,
+      "en": "quasi-loan",
+      "zh_canonical": "類似貸款",
+      "en_clean": "quasi-loan",
+      "zh_clean": "類似貸款",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "administrative": 1,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.7623
+    },
+    {
+      "term_idx": 3015,
+      "en": "repayment",
+      "zh_canonical": "付還",
+      "en_clean": "repayment",
+      "zh_clean": "付還",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.7313
+    },
+    {
+      "term_idx": 3188,
+      "en": "settlor",
+      "zh_canonical": "財產授予人",
+      "en_clean": "settlor",
+      "zh_clean": "財產授予人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "civil": 5,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6283
+    },
+    {
+      "term_idx": 3197,
+      "en": "shareholder",
+      "zh_canonical": "股份持有人",
+      "en_clean": "shareholder",
+      "zh_clean": "股份持有人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7467
+    },
+    {
+      "term_idx": 3428,
+      "en": "transferee",
+      "zh_canonical": "承讓人",
+      "en_clean": "transferee",
+      "zh_clean": "承讓人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7575
+    },
+    {
+      "term_idx": 3429,
+      "en": "transferor",
+      "zh_canonical": "出讓人",
+      "en_clean": "transferor",
+      "zh_clean": "出讓人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6915
+    },
+    {
+      "term_idx": 3831,
+      "en": "swap contract",
+      "zh_canonical": "掉期合約",
+      "en_clean": "swap contract",
+      "zh_clean": "掉期合約",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6705
+    },
+    {
+      "term_idx": 4124,
+      "en": "discriminator",
+      "zh_canonical": "歧視者",
+      "en_clean": "discriminator",
+      "zh_clean": "歧視者",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "civil": 5,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6839
+    },
+    {
+      "term_idx": 4426,
+      "en": "addressee",
+      "zh_canonical": "收件人",
+      "en_clean": "addressee",
+      "zh_clean": "收件人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7041
+    },
+    {
+      "term_idx": 4928,
+      "en": "cohabitation",
+      "zh_canonical": "同居關係",
+      "en_clean": "cohabitation",
+      "zh_clean": "同居關係",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7203
+    },
+    {
+      "term_idx": 5047,
+      "en": "consignor",
+      "zh_canonical": "付貨人",
+      "en_clean": "consignor",
+      "zh_clean": "付貨人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7296
+    },
+    {
+      "term_idx": 5266,
+      "en": "depository",
+      "zh_canonical": "寄存處",
+      "en_clean": "depository",
+      "zh_clean": "寄存處",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6665
+    },
+    {
+      "term_idx": 5428,
+      "en": "donor",
+      "zh_canonical": "授權人",
+      "en_clean": "donor",
+      "zh_clean": "授權人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7726
+    },
+    {
+      "term_idx": 5893,
+      "en": "Honorary Treasurer",
+      "zh_canonical": "義務司庫",
+      "en_clean": "Honorary Treasurer",
+      "zh_clean": "義務司庫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7196
+    },
+    {
+      "term_idx": 6238,
+      "en": "keeper",
+      "zh_canonical": "管理人",
+      "en_clean": "keeper",
+      "zh_clean": "管理人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.707
+    },
+    {
+      "term_idx": 6280,
+      "en": "lend",
+      "zh_canonical": "借出款項",
+      "en_clean": "lend",
+      "zh_clean": "借出款項",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7387
+    },
+    {
+      "term_idx": 6339,
+      "en": "lot",
+      "zh_canonical": "地段",
+      "en_clean": "lot",
+      "zh_clean": "地段",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "procedure": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6581
+    },
+    {
+      "term_idx": 6687,
+      "en": "pecuniary",
+      "zh_canonical": "金錢利益",
+      "en_clean": "pecuniary",
+      "zh_clean": "金錢利益",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6676
+    },
+    {
+      "term_idx": 6780,
+      "en": "practitioner",
+      "zh_canonical": "法律執業者",
+      "en_clean": "practitioner",
+      "zh_clean": "法律執業者",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "administrative": 1,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.6638
+    },
+    {
+      "term_idx": 7022,
+      "en": "relative",
+      "zh_canonical": "近親",
+      "en_clean": "relative",
+      "zh_clean": "近親",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6772
+    },
+    {
+      "term_idx": 7046,
+      "en": "rental",
+      "zh_canonical": "租金",
+      "en_clean": "rental",
+      "zh_clean": "租金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.8315
+    },
+    {
+      "term_idx": 7060,
+      "en": "repo-style transaction",
+      "zh_canonical": "回購形式交易",
+      "en_clean": "repo-style transaction",
+      "zh_clean": "回購形式交易",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6346
+    },
+    {
+      "term_idx": 7210,
+      "en": "servant",
+      "zh_canonical": "政府人員",
+      "en_clean": "servant",
+      "zh_clean": "政府人員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7091
+    },
+    {
+      "term_idx": 7233,
+      "en": "signer",
+      "zh_canonical": "簽署人",
+      "en_clean": "signer",
+      "zh_clean": "簽署人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7099
+    },
+    {
+      "term_idx": 7293,
+      "en": "stake",
+      "zh_canonical": "金錢利益",
+      "en_clean": "stake",
+      "zh_clean": "金錢利益",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6638
+    },
+    {
+      "term_idx": 7303,
+      "en": "step-child",
+      "zh_canonical": "繼子女",
+      "en_clean": "step-child",
+      "zh_clean": "繼子女",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.6813
+    },
+    {
+      "term_idx": 7304,
+      "en": "step-parent",
+      "zh_canonical": "繼父母",
+      "en_clean": "step-parent",
+      "zh_clean": "繼父母",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.7579
+    },
+    {
+      "term_idx": 7473,
+      "en": "transplant",
+      "zh_canonical": "移植",
+      "en_clean": "transplant",
+      "zh_clean": "移植",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7275
+    },
+    {
+      "term_idx": 7575,
+      "en": "valuer",
+      "zh_canonical": "估值師",
+      "en_clean": "valuer",
+      "zh_clean": "估值師",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "civil": 5,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7034
+    },
+    {
+      "term_idx": 7932,
+      "en": "deposit-taking company",
+      "zh_canonical": "接受存款公司",
+      "en_clean": "deposit-taking company",
+      "zh_clean": "接受存款公司",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7058
+    },
+    {
+      "term_idx": 8645,
+      "en": "remains",
+      "zh_canonical": "人類遺骸",
+      "en_clean": "remains",
+      "zh_clean": "人類遺骸",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.6771
+    },
+    {
+      "term_idx": 730,
+      "en": "bailor",
+      "zh_canonical": "委託保管人",
+      "en_clean": "bailor",
+      "zh_clean": "委託保管人",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.8255
+    },
+    {
+      "term_idx": 6196,
+      "en": "inventor",
+      "zh_canonical": "共同發明人",
+      "en_clean": "inventor",
+      "zh_clean": "共同發明人",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.8119
+    },
+    {
+      "term_idx": 5283,
+      "en": "descendant",
+      "zh_canonical": "後裔",
+      "en_clean": "descendant",
+      "zh_clean": "後裔",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7486
+    },
+    {
+      "term_idx": 305,
+      "en": "mortgaged",
+      "zh_canonical": "已作按揭的",
+      "en_clean": "mortgaged",
+      "zh_clean": "已作按揭",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "constitutional": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7794
+    },
+    {
+      "term_idx": 5971,
+      "en": "in equity",
+      "zh_canonical": "在衡平法上",
+      "en_clean": "in equity",
+      "zh_clean": "在衡平法上",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "civil": 5,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6659
+    },
+    {
+      "term_idx": 4926,
+      "en": "cohabit",
+      "zh_canonical": "同居",
+      "en_clean": "cohabit",
+      "zh_clean": "同居",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7198
+    },
+    {
+      "term_idx": 5771,
+      "en": "gamete",
+      "zh_canonical": "配子",
+      "en_clean": "gamete",
+      "zh_clean": "配子",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6571
+    },
+    {
+      "term_idx": 3239,
+      "en": "solvency",
+      "zh_canonical": "有償債能力證明書",
+      "en_clean": "solvency",
+      "zh_clean": "有償債能力證明書",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6688
+    },
+    {
+      "term_idx": 3864,
+      "en": "exemplary damages",
+      "zh_canonical": "懲罰性損害賠償",
+      "en_clean": "exemplary damages",
+      "zh_clean": "懲罰性損害賠償",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7119
+    },
+    {
+      "term_idx": 4248,
+      "en": "relation",
+      "zh_canonical": "外交關係",
+      "en_clean": "relation",
+      "zh_clean": "外交關係",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6813
+    },
+    {
+      "term_idx": 9355,
+      "en": "dwell",
+      "zh_canonical": "居住",
+      "en_clean": "dwell",
+      "zh_clean": "居住",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7292
+    },
+    {
+      "term_idx": 3288,
+      "en": "subcontract",
+      "zh_canonical": "分包合約",
+      "en_clean": "subcontract",
+      "zh_clean": "分包合約",
+      "k_en": 7,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8199
+    },
+    {
+      "term_idx": 6348,
+      "en": "maiden surname",
+      "zh_canonical": "婚前姓氏",
+      "en_clean": "maiden surname",
+      "zh_clean": "婚前姓氏",
+      "k_en": 6,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6319
+    },
+    {
+      "term_idx": 337,
+      "en": "Tenants Purchase Scheme",
+      "zh_canonical": "租者置其屋計劃",
+      "en_clean": "Tenants Purchase Scheme",
+      "zh_clean": "租者置其屋計劃",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7327
+    },
+    {
+      "term_idx": 6322,
+      "en": "Loan Fund",
+      "zh_canonical": "貸款基金",
+      "en_clean": "Loan Fund",
+      "zh_clean": "貸款基金",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 5
+      },
+      "knn_top_neighbour_sim": 0.7049
+    },
+    {
+      "term_idx": 7345,
+      "en": "sub-purchaser",
+      "zh_canonical": "轉購人",
+      "en_clean": "sub-purchaser",
+      "zh_clean": "轉購人",
+      "k_en": 5,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.8404
+    },
+    {
+      "term_idx": 558,
+      "en": "allocatur",
+      "zh_canonical": "訟費評定證明書",
+      "en_clean": "allocatur",
+      "zh_clean": "訟費評定證明書",
+      "k_en": 4,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6685
+    },
+    {
+      "term_idx": 392,
+      "en": "China National Intellectual Property Administration",
+      "zh_canonical": "國家知識產權局",
+      "en_clean": "China National Intellectual Property Administration",
+      "zh_clean": "國家知識產權局",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7512
+    },
+    {
+      "term_idx": 5267,
+      "en": "deposit-taker",
+      "zh_canonical": "接受存款人",
+      "en_clean": "deposit-taker",
+      "zh_clean": "接受存款人",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 5,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7628
+    },
+    {
+      "term_idx": 237,
+      "en": "appurtenant",
+      "zh_canonical": "從屬",
+      "en_clean": "appurtenant",
+      "zh_clean": "從屬",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "criminal": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6992
+    },
+    {
+      "term_idx": 418,
+      "en": "abode",
+      "zh_canonical": "居籍",
+      "en_clean": "abode",
+      "zh_clean": "居籍",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 1,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.754
+    },
+    {
+      "term_idx": 516,
+      "en": "adverse",
+      "zh_canonical": "不利",
+      "en_clean": "adverse",
+      "zh_clean": "不利",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.6725
+    },
+    {
+      "term_idx": 747,
+      "en": "basis",
+      "zh_canonical": "基礎",
+      "en_clean": "basis",
+      "zh_clean": "基礎",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "constitutional": 1,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6798
+    },
+    {
+      "term_idx": 790,
+      "en": "borrow",
+      "zh_canonical": "借入",
+      "en_clean": "borrow",
+      "zh_clean": "借入",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.6947
+    },
+    {
+      "term_idx": 943,
+      "en": "client",
+      "zh_canonical": "當事人",
+      "en_clean": "client",
+      "zh_clean": "當事人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7556
+    },
+    {
+      "term_idx": 1086,
+      "en": "contingent",
+      "zh_canonical": "待確定的",
+      "en_clean": "contingent",
+      "zh_clean": "待確定",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "civil": 4,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6903
+    },
+    {
+      "term_idx": 1178,
+      "en": "custody",
+      "zh_canonical": "保管",
+      "en_clean": "custody",
+      "zh_clean": "保管",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.897
+    },
+    {
+      "term_idx": 1229,
+      "en": "deed",
+      "zh_canonical": "契約",
+      "en_clean": "deed",
+      "zh_clean": "契約",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.803
+    },
+    {
+      "term_idx": 1283,
+      "en": "deponent",
+      "zh_canonical": "宣誓人",
+      "en_clean": "deponent",
+      "zh_clean": "宣誓人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "civil": 4,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6481
+    },
+    {
+      "term_idx": 1294,
+      "en": "derivative",
+      "zh_canonical": "衍生",
+      "en_clean": "derivative",
+      "zh_clean": "衍生",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 4,
+        "administrative": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7015
+    },
+    {
+      "term_idx": 1419,
+      "en": "earlier trade mark",
+      "zh_canonical": "在先商標",
+      "en_clean": "earlier trade mark",
+      "zh_clean": "在先商標",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.6546
+    },
+    {
+      "term_idx": 1656,
+      "en": "fixture",
+      "zh_canonical": "固定附着物",
+      "en_clean": "fixture",
+      "zh_clean": "固定附着物",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 4,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7073
+    },
+    {
+      "term_idx": 1689,
+      "en": "founder member",
+      "zh_canonical": "創辦成員",
+      "en_clean": "founder member",
+      "zh_clean": "創辦成員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "civil": 4,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7005
+    },
+    {
+      "term_idx": 1711,
+      "en": "futures",
+      "zh_canonical": "期貨",
+      "en_clean": "futures",
+      "zh_clean": "期貨",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 1,
+        "international": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6418
+    },
+    {
+      "term_idx": 1859,
+      "en": "importance",
+      "zh_canonical": "重要性",
+      "en_clean": "importance",
+      "zh_clean": "重要性",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 1,
+        "constitutional": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7315
+    },
+    {
+      "term_idx": 1937,
+      "en": "indebtedness",
+      "zh_canonical": "債項",
+      "en_clean": "indebtedness",
+      "zh_clean": "債項",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7162
+    },
+    {
+      "term_idx": 2019,
+      "en": "insurer",
+      "zh_canonical": "保險人",
+      "en_clean": "insurer",
+      "zh_clean": "保險人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7249
+    },
+    {
+      "term_idx": 2153,
+      "en": "land",
+      "zh_canonical": "土地",
+      "en_clean": "land",
+      "zh_clean": "土地",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "civil": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7012
+    },
+    {
+      "term_idx": 2154,
+      "en": "Land Registry",
+      "zh_canonical": "土地註冊處（香港）",
+      "en_clean": "Land Registry",
+      "zh_clean": "土地註冊處",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "constitutional": 1,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.6849
+    },
+    {
+      "term_idx": 2227,
+      "en": "liability",
+      "zh_canonical": "債務",
+      "en_clean": "liability",
+      "zh_clean": "債務",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 3
+      },
+      "knn_top_neighbour_sim": 0.8142
+    },
+    {
+      "term_idx": 2310,
+      "en": "marriage",
+      "zh_canonical": "婚姻",
+      "en_clean": "marriage",
+      "zh_clean": "婚姻",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 3
+      },
+      "knn_top_neighbour_sim": 0.8011
+    },
+    {
+      "term_idx": 2416,
+      "en": "next of kin",
+      "zh_canonical": "近親",
+      "en_clean": "next of kin",
+      "zh_clean": "近親",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "constitutional": 1,
+        "procedure": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7317
+    },
+    {
+      "term_idx": 2487,
+      "en": "object",
+      "zh_canonical": "目的",
+      "en_clean": "object",
+      "zh_clean": "目的",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 4,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6962
+    },
+    {
+      "term_idx": 2584,
+      "en": "oversee",
+      "zh_canonical": "監督",
+      "en_clean": "oversee",
+      "zh_clean": "監督",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7054
+    },
+    {
+      "term_idx": 2590,
+      "en": "owner",
+      "zh_canonical": "登記車主",
+      "en_clean": "owner",
+      "zh_clean": "登記車主",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7682
+    },
+    {
+      "term_idx": 2670,
+      "en": "person",
+      "zh_canonical": "法人",
+      "en_clean": "person",
+      "zh_clean": "法人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "civil": 4,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7914
+    },
+    {
+      "term_idx": 2677,
+      "en": "petitioner",
+      "zh_canonical": "呈請人",
+      "en_clean": "petitioner",
+      "zh_clean": "呈請人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "international": 1,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7264
+    },
+    {
+      "term_idx": 2736,
+      "en": "premises",
+      "zh_canonical": "處所",
+      "en_clean": "premises",
+      "zh_clean": "處所",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.725
+    },
+    {
+      "term_idx": 2749,
+      "en": "prevailing",
+      "zh_canonical": "主要的",
+      "en_clean": "prevailing",
+      "zh_clean": "主要",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 1,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6905
+    },
+    {
+      "term_idx": 2843,
+      "en": "purchaser",
+      "zh_canonical": "買家",
+      "en_clean": "purchaser",
+      "zh_clean": "買家",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7706
+    },
+    {
+      "term_idx": 3058,
+      "en": "resident",
+      "zh_canonical": "（在某地）居住的",
+      "en_clean": "resident",
+      "zh_clean": "居住",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 1,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7806
+    },
+    {
+      "term_idx": 3078,
+      "en": "retainer",
+      "zh_canonical": "聘用",
+      "en_clean": "retainer",
+      "zh_clean": "聘用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 4,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7158
+    },
+    {
+      "term_idx": 3171,
+      "en": "sequestrator",
+      "zh_canonical": "暫時扣押人",
+      "en_clean": "sequestrator",
+      "zh_clean": "暫時扣押人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "procedure": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6503
+    },
+    {
+      "term_idx": 3203,
+      "en": "shipowner",
+      "zh_canonical": "船東",
+      "en_clean": "shipowner",
+      "zh_clean": "船東",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6972
+    },
+    {
+      "term_idx": 3204,
+      "en": "shipper",
+      "zh_canonical": "付運人",
+      "en_clean": "shipper",
+      "zh_clean": "付運人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 1,
+        "international": 1,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.6785
+    },
+    {
+      "term_idx": 3211,
+      "en": "show flat",
+      "zh_canonical": "示範單位",
+      "en_clean": "show flat",
+      "zh_clean": "示範單位",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6544
+    },
+    {
+      "term_idx": 3250,
+      "en": "spouse",
+      "zh_canonical": "配偶",
+      "en_clean": "spouse",
+      "zh_clean": "配偶",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7279
+    },
+    {
+      "term_idx": 3295,
+      "en": "sub-licence",
+      "zh_canonical": "再授特許",
+      "en_clean": "sub-licence",
+      "zh_clean": "再授特許",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.8359
+    },
+    {
+      "term_idx": 3298,
+      "en": "subordinate",
+      "zh_canonical": "下屬",
+      "en_clean": "subordinate",
+      "zh_clean": "下屬",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 1,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7121
+    },
+    {
+      "term_idx": 3426,
+      "en": "transfer",
+      "zh_canonical": "移交",
+      "en_clean": "transfer",
+      "zh_clean": "移交",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7194
+    },
+    {
+      "term_idx": 3448,
+      "en": "trust",
+      "zh_canonical": "信託",
+      "en_clean": "trust",
+      "zh_clean": "信託",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7169
+    },
+    {
+      "term_idx": 3478,
+      "en": "underlet",
+      "zh_canonical": "分租",
+      "en_clean": "underlet",
+      "zh_clean": "分租",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 1,
+        "criminal": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6427
+    },
+    {
+      "term_idx": 3541,
+      "en": "user",
+      "zh_canonical": "使用者",
+      "en_clean": "user",
+      "zh_clean": "使用者",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7815
+    },
+    {
+      "term_idx": 3562,
+      "en": "valuation",
+      "zh_canonical": "估值",
+      "en_clean": "valuation",
+      "zh_clean": "估值",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 3
+      },
+      "knn_top_neighbour_sim": 0.7567
+    },
+    {
+      "term_idx": 3747,
+      "en": "note-issuing bank",
+      "zh_canonical": "發鈔銀行",
+      "en_clean": "note-issuing bank",
+      "zh_clean": "發鈔銀行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6078
+    },
+    {
+      "term_idx": 3839,
+      "en": "infringing copies",
+      "zh_canonical": "侵犯版權複製品",
+      "en_clean": "infringing copies",
+      "zh_clean": "侵犯版權複製品",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7125
+    },
+    {
+      "term_idx": 4018,
+      "en": "wholly owned",
+      "zh_canonical": "全資擁有",
+      "en_clean": "wholly owned",
+      "zh_clean": "全資擁有",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 1,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7015
+    },
+    {
+      "term_idx": 4060,
+      "en": "underlying shares",
+      "zh_canonical": "相關股份",
+      "en_clean": "underlying shares",
+      "zh_clean": "相關股份",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "civil": 4,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6383
+    },
+    {
+      "term_idx": 4377,
+      "en": "acceptor",
+      "zh_canonical": "承兌人",
+      "en_clean": "acceptor",
+      "zh_clean": "承兌人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 2,
+        "civil": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7079
+    },
+    {
+      "term_idx": 4488,
+      "en": "allot",
+      "zh_canonical": "分配",
+      "en_clean": "allot",
+      "zh_clean": "分配",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "civil": 4,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6429
+    },
+    {
+      "term_idx": 4489,
+      "en": "allotment",
+      "zh_canonical": "分配",
+      "en_clean": "allotment",
+      "zh_clean": "分配",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6418
+    },
+    {
+      "term_idx": 4634,
+      "en": "auctioneer",
+      "zh_canonical": "拍賣人",
+      "en_clean": "auctioneer",
+      "zh_clean": "拍賣人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6675
+    },
+    {
+      "term_idx": 4718,
+      "en": "bonded",
+      "zh_canonical": "一般保稅倉",
+      "en_clean": "bonded",
+      "zh_clean": "一般保稅倉",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7365
+    },
+    {
+      "term_idx": 4747,
+      "en": "broker",
+      "zh_canonical": "經紀",
+      "en_clean": "broker",
+      "zh_clean": "經紀",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.708
+    },
+    {
+      "term_idx": 4858,
+      "en": "charitable",
+      "zh_canonical": "慈善信託",
+      "en_clean": "charitable",
+      "zh_clean": "慈善信託",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6964
+    },
+    {
+      "term_idx": 5156,
+      "en": "crematorium",
+      "zh_canonical": "政府火葬場",
+      "en_clean": "crematorium",
+      "zh_clean": "政府火葬場",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6213
+    },
+    {
+      "term_idx": 5219,
+      "en": "defaulted",
+      "zh_canonical": "違責",
+      "en_clean": "defaulted",
+      "zh_clean": "違責",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "civil": 4,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.6933
+    },
+    {
+      "term_idx": 5457,
+      "en": "dwelling",
+      "zh_canonical": "住宅",
+      "en_clean": "dwelling",
+      "zh_clean": "住宅",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7131
+    },
+    {
+      "term_idx": 5520,
+      "en": "end-user",
+      "zh_canonical": "最終使用者",
+      "en_clean": "end-user",
+      "zh_clean": "最終使用者",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7092
+    },
+    {
+      "term_idx": 5804,
+      "en": "Government Rent Roll",
+      "zh_canonical": "地租登記冊",
+      "en_clean": "Government Rent Roll",
+      "zh_clean": "地租登記冊",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7351
+    },
+    {
+      "term_idx": 5824,
+      "en": "guesthouse",
+      "zh_canonical": "旅館",
+      "en_clean": "guesthouse",
+      "zh_clean": "旅館",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 1,
+        "international": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6418
+    },
+    {
+      "term_idx": 6135,
+      "en": "insurable",
+      "zh_canonical": "可保權益",
+      "en_clean": "insurable",
+      "zh_clean": "可保權益",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7046
+    },
+    {
+      "term_idx": 6201,
+      "en": "investing",
+      "zh_canonical": "投資大眾",
+      "en_clean": "investing",
+      "zh_clean": "投資大眾",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6701
+    },
+    {
+      "term_idx": 6333,
+      "en": "loiter",
+      "zh_canonical": "遊蕩",
+      "en_clean": "loiter",
+      "zh_clean": "遊蕩",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.7182
+    },
+    {
+      "term_idx": 6500,
+      "en": "negligent",
+      "zh_canonical": "嚴重疏忽",
+      "en_clean": "negligent",
+      "zh_clean": "嚴重疏忽",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.8059
+    },
+    {
+      "term_idx": 6575,
+      "en": "obligor",
+      "zh_canonical": "義務人",
+      "en_clean": "obligor",
+      "zh_clean": "義務人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.671
+    },
+    {
+      "term_idx": 6973,
+      "en": "redress",
+      "zh_canonical": "糾正",
+      "en_clean": "redress",
+      "zh_clean": "糾正",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 1,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7634
+    },
+    {
+      "term_idx": 7014,
+      "en": "reinsurer",
+      "zh_canonical": "再保險人",
+      "en_clean": "reinsurer",
+      "zh_clean": "再保險人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.7019
+    },
+    {
+      "term_idx": 7052,
+      "en": "repay",
+      "zh_canonical": "退回",
+      "en_clean": "repay",
+      "zh_clean": "退回",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7398
+    },
+    {
+      "term_idx": 7053,
+      "en": "repayable",
+      "zh_canonical": "發還",
+      "en_clean": "repayable",
+      "zh_clean": "發還",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7702
+    },
+    {
+      "term_idx": 7333,
+      "en": "sub-fund",
+      "zh_canonical": "子基金",
+      "en_clean": "sub-fund",
+      "zh_clean": "子基金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.7895
+    },
+    {
+      "term_idx": 7346,
+      "en": "subregulation",
+      "zh_canonical": "款",
+      "en_clean": "subregulation",
+      "zh_clean": "款",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 3
+      },
+      "knn_top_neighbour_sim": 0.7656
+    },
+    {
+      "term_idx": 7350,
+      "en": "subscriber",
+      "zh_canonical": "登記人",
+      "en_clean": "subscriber",
+      "zh_clean": "登記人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7434
+    },
+    {
+      "term_idx": 7352,
+      "en": "subsector",
+      "zh_canonical": "界別分組",
+      "en_clean": "subsector",
+      "zh_clean": "界別分組",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "procedure": 3
+      },
+      "knn_top_neighbour_sim": 0.6629
+    },
+    {
+      "term_idx": 7356,
+      "en": "subsist",
+      "zh_canonical": "存續",
+      "en_clean": "subsist",
+      "zh_clean": "存續",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 1,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6669
+    },
+    {
+      "term_idx": 7638,
+      "en": "widower",
+      "zh_canonical": "鰥夫",
+      "en_clean": "widower",
+      "zh_clean": "鰥夫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 3
+      },
+      "knn_top_neighbour_sim": 0.7144
+    },
+    {
+      "term_idx": 7821,
+      "en": "power of attorney",
+      "zh_canonical": "授權書",
+      "en_clean": "power of attorney",
+      "zh_clean": "授權書",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "constitutional": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6738
+    },
+    {
+      "term_idx": 8188,
+      "en": "serial",
+      "zh_canonical": "編號",
+      "en_clean": "serial",
+      "zh_clean": "編號",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7185
+    },
+    {
+      "term_idx": 8248,
+      "en": "Title Register",
+      "zh_canonical": "業權註冊紀錄",
+      "en_clean": "Title Register",
+      "zh_clean": "業權註冊紀錄",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "civil": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.686
+    },
+    {
+      "term_idx": 8501,
+      "en": "annulment",
+      "zh_canonical": "廢止",
+      "en_clean": "annulment",
+      "zh_clean": "廢止",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "civil": 4,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.7566
+    },
+    {
+      "term_idx": 8598,
+      "en": "sub-contractor",
+      "zh_canonical": "次承判商",
+      "en_clean": "sub-contractor",
+      "zh_clean": "次承判商",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.8577
+    },
+    {
+      "term_idx": 9096,
+      "en": "Receiver",
+      "zh_canonical": "破產管理署署長",
+      "en_clean": "Receiver",
+      "zh_clean": "破產管理署署長",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "criminal": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6586
+    },
+    {
+      "term_idx": 9233,
+      "en": "Director of Housing",
+      "zh_canonical": "房屋署署長",
+      "en_clean": "Director of Housing",
+      "zh_clean": "房屋署署長",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 4,
+        "constitutional": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6607
+    },
+    {
+      "term_idx": 1661,
+      "en": "floor plan",
+      "zh_canonical": "樓面平面圖",
+      "en_clean": "floor plan",
+      "zh_clean": "樓面平面圖",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6923
+    },
+    {
+      "term_idx": 4077,
+      "en": "adviser",
+      "zh_canonical": "稅務顧問",
+      "en_clean": "adviser",
+      "zh_clean": "稅務顧問",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7281
+    },
+    {
+      "term_idx": 5879,
+      "en": "Home Ownership Scheme",
+      "zh_canonical": "居者有其屋計劃",
+      "en_clean": "Home Ownership Scheme",
+      "zh_clean": "居者有其屋計劃",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7132
+    },
+    {
+      "term_idx": 6224,
+      "en": "joint-stock",
+      "zh_canonical": "合股公司",
+      "en_clean": "joint-stock",
+      "zh_clean": "合股公司",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.6399
+    },
+    {
+      "term_idx": 2986,
+      "en": "relationship",
+      "zh_canonical": "親屬關係",
+      "en_clean": "relationship",
+      "zh_clean": "親屬關係",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7072
+    },
+    {
+      "term_idx": 7636,
+      "en": "widow",
+      "zh_canonical": "寡婦",
+      "en_clean": "widow",
+      "zh_clean": "寡婦",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 3,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.7065
+    },
+    {
+      "term_idx": 9097,
+      "en": "Collector",
+      "zh_canonical": "印花稅署署長",
+      "en_clean": "Collector",
+      "zh_clean": "印花稅署署長",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 1,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6778
+    },
+    {
+      "term_idx": 4715,
+      "en": "boarding-house",
+      "zh_canonical": "旅館",
+      "en_clean": "boarding-house",
+      "zh_clean": "旅館",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "labor_social": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6477
+    },
+    {
+      "term_idx": 7369,
+      "en": "sufferance",
+      "zh_canonical": "容受",
+      "en_clean": "sufferance",
+      "zh_clean": "容受",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7173
+    },
+    {
+      "term_idx": 8554,
+      "en": "next-of-kin",
+      "zh_canonical": "最近親",
+      "en_clean": "next-of-kin",
+      "zh_clean": "最近親",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "constitutional": 1,
+        "procedure": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7256
+    },
+    {
+      "term_idx": 7193,
+      "en": "sender",
+      "zh_canonical": "傳送人",
+      "en_clean": "sender",
+      "zh_clean": "傳送人",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 1,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7053
+    },
+    {
+      "term_idx": 8135,
+      "en": "remoter",
+      "zh_canonical": "更遠的後嗣",
+      "en_clean": "remoter",
+      "zh_clean": "更遠的後嗣",
+      "k_en": 7,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "civil": 4,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6986
+    },
+    {
+      "term_idx": 957,
+      "en": "cohabitee",
+      "zh_canonical": "同居者",
+      "en_clean": "cohabitee",
+      "zh_clean": "同居者",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7335
+    },
+    {
+      "term_idx": 3636,
+      "en": "wardship",
+      "zh_canonical": "（對幼年人的）監護",
+      "en_clean": "wardship",
+      "zh_clean": "監護",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 3
+      },
+      "knn_top_neighbour_sim": 0.7313
+    },
+    {
+      "term_idx": 1792,
+      "en": "hire-purchase; hire purchase",
+      "zh_canonical": "租購價",
+      "en_clean": "hire-purchase",
+      "zh_clean": "租購價",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7113
+    },
+    {
+      "term_idx": 5868,
+      "en": "hire-purchase",
+      "zh_canonical": "租購價",
+      "en_clean": "hire-purchase",
+      "zh_clean": "租購價",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "labor_social": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7113
+    },
+    {
+      "term_idx": 6377,
+      "en": "manufacturer",
+      "zh_canonical": "製造商的保證",
+      "en_clean": "manufacturer",
+      "zh_clean": "製造商的保證",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7198
+    },
+    {
+      "term_idx": 7341,
+      "en": "subordinated",
+      "zh_canonical": "後償債務",
+      "en_clean": "subordinated",
+      "zh_clean": "後償債務",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7356
+    },
+    {
+      "term_idx": 6250,
+      "en": "Land Office",
+      "zh_canonical": "田土註冊處",
+      "en_clean": "Land Office",
+      "zh_clean": "田土註冊處",
+      "k_en": 7,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "civil": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6958
+    },
+    {
+      "term_idx": 4058,
+      "en": "unpaid seller",
+      "zh_canonical": "未獲付款的賣方",
+      "en_clean": "unpaid seller",
+      "zh_clean": "未獲付款的賣方",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6239
+    },
+    {
+      "term_idx": 3355,
+      "en": "survivorship",
+      "zh_canonical": "尚存",
+      "en_clean": "survivorship",
+      "zh_clean": "尚存",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6838
+    },
+    {
+      "term_idx": 4546,
+      "en": "appraise",
+      "zh_canonical": "評核",
+      "en_clean": "appraise",
+      "zh_clean": "評核",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 1,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6762
+    },
+    {
+      "term_idx": 298,
+      "en": "Land Titles Indemnity Fund",
+      "zh_canonical": "土地業權彌償基金",
+      "en_clean": "Land Titles Indemnity Fund",
+      "zh_clean": "土地業權彌償基金",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "administrative": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7408
+    },
+    {
+      "term_idx": 9359,
+      "en": "teller",
+      "zh_canonical": "自動櫃員機",
+      "en_clean": "teller",
+      "zh_clean": "自動櫃員機",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 2,
+        "labor_social": 1,
+        "civil": 4
+      },
+      "knn_top_neighbour_sim": 0.6665
+    },
+    {
+      "term_idx": 343,
+      "en": "European Patent Office",
+      "zh_canonical": "歐洲專利局",
+      "en_clean": "European Patent Office",
+      "zh_clean": "歐洲專利局",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "international": 3
+      },
+      "knn_top_neighbour_sim": 0.7951
+    },
+    {
+      "term_idx": 9167,
+      "en": "caricature",
+      "zh_canonical": "營造滑稽",
+      "en_clean": "caricature",
+      "zh_clean": "營造滑稽",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 4,
+        "criminal": 3
+      },
+      "knn_top_neighbour_sim": 0.7097
+    }
+  ],
+  "candidate_pool_stats": {
+    "total_predicted_to_domain": 550,
+    "high_mid_confidence": 220,
+    "passed_to_agent": 220
+  }
+}

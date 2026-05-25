@@ -1,0 +1,3795 @@
+{
+  "domain": "criminal",
+  "target_count": 50,
+  "current_core": [
+    {
+      "term_idx": 19,
+      "en": "bribery",
+      "zh_canonical": "賄賂",
+      "en_clean": "bribery",
+      "zh_clean": "賄賂",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 24,
+      "en": "conspiracy to defraud",
+      "zh_canonical": "串謀欺詐",
+      "en_clean": "conspiracy to defraud",
+      "zh_clean": "串謀欺詐",
+      "k_en": 8,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 30,
+      "en": "convict sb. of an offence",
+      "zh_canonical": "判某人罪名成立",
+      "en_clean": "convict sb. of an offence",
+      "zh_clean": "判某人罪名成立",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 31,
+      "en": "conviction",
+      "zh_canonical": "定罪",
+      "en_clean": "conviction",
+      "zh_clean": "定罪",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 33,
+      "en": "corruption",
+      "zh_canonical": "舞弊",
+      "en_clean": "corruption",
+      "zh_clean": "舞弊",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 46,
+      "en": "Director of Public Prosecutions; DPP",
+      "zh_canonical": "刑事檢控專員（香港）",
+      "en_clean": "Director of Public Prosecutions",
+      "zh_clean": "刑事檢控專員",
+      "k_en": 3,
+      "k_zh": 3,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 77,
+      "en": "inchoate",
+      "zh_canonical": "不完整",
+      "en_clean": "inchoate",
+      "zh_clean": "不完整",
+      "k_en": 1,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 123,
+      "en": "penal",
+      "zh_canonical": "刑罰方面的",
+      "en_clean": "penal",
+      "zh_clean": "刑罰方面",
+      "k_en": 7,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 124,
+      "en": "penalty",
+      "zh_canonical": "罰則",
+      "en_clean": "penalty",
+      "zh_clean": "罰則",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 125,
+      "en": "perjury",
+      "zh_canonical": "作假證供罪",
+      "en_clean": "perjury",
+      "zh_clean": "作假證供罪",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 134,
+      "en": "recklessness",
+      "zh_canonical": "罔顧後果 ☛參看 Caldwell recklessness; Cunningham recklessness",
+      "en_clean": "recklessness",
+      "zh_clean": "罔顧後果",
+      "k_en": 7,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 138,
+      "en": "reprobation",
+      "zh_canonical": "反對證人的資格、證供等",
+      "en_clean": "reprobation",
+      "zh_clean": "反對證人的資格、證供等",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 210,
+      "en": "subornation of perjury",
+      "zh_canonical": "唆使他人作偽證",
+      "en_clean": "subornation of perjury",
+      "zh_clean": "唆使他人作偽證",
+      "k_en": 3,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 229,
+      "en": "accessory",
+      "zh_canonical": "從犯",
+      "en_clean": "accessory",
+      "zh_clean": "從犯",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 230,
+      "en": "accomplice",
+      "zh_canonical": "從犯證據",
+      "en_clean": "accomplice",
+      "zh_clean": "從犯證據",
+      "k_en": 4,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 231,
+      "en": "accused",
+      "zh_canonical": "被控人……提出異議",
+      "en_clean": "accused",
+      "zh_clean": "被控人……提出異議",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 232,
+      "en": "acquittal",
+      "zh_canonical": "判予無罪的理由",
+      "en_clean": "acquittal",
+      "zh_clean": "判予無罪的理由",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 236,
+      "en": "approbation",
+      "zh_canonical": "認可",
+      "en_clean": "approbation",
+      "zh_clean": "認可",
+      "k_en": 1,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 238,
+      "en": "assault",
+      "zh_canonical": "猥褻侵犯",
+      "en_clean": "assault",
+      "zh_clean": "猥褻侵犯",
+      "k_en": 8,
+      "k_zh": 4,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 240,
+      "en": "bailable offence",
+      "zh_canonical": "可保釋的罪行",
+      "en_clean": "bailable offence",
+      "zh_clean": "可保釋的罪行",
+      "k_en": 1,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 242,
+      "en": "battery",
+      "zh_canonical": "毆打",
+      "en_clean": "battery",
+      "zh_clean": "毆打",
+      "k_en": 8,
+      "k_zh": 5,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 243,
+      "en": "blackmail",
+      "zh_canonical": "勒索式的申索",
+      "en_clean": "blackmail",
+      "zh_clean": "勒索式的申索",
+      "k_en": 4,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 245,
+      "en": "burglary",
+      "zh_canonical": "住宅爆竊案",
+      "en_clean": "burglary",
+      "zh_clean": "住宅爆竊案",
+      "k_en": 5,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 249,
+      "en": "co-accused",
+      "zh_canonical": "同案被告",
+      "en_clean": "co-accused",
+      "zh_clean": "同案被告",
+      "k_en": 3,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 252,
+      "en": "conspiracy",
+      "zh_canonical": "串謀敗壞公眾道德",
+      "en_clean": "conspiracy",
+      "zh_clean": "串謀敗壞公眾道德",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 263,
+      "en": "criminal law",
+      "zh_canonical": "普通刑事法",
+      "en_clean": "criminal law",
+      "zh_clean": "普通刑事法",
+      "k_en": 6,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 271,
+      "en": "extortion",
+      "zh_canonical": "脅迫",
+      "en_clean": "extortion",
+      "zh_clean": "脅迫",
+      "k_en": 5,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 273,
+      "en": "felony",
+      "zh_canonical": "重刑罪",
+      "en_clean": "felony",
+      "zh_clean": "重刑罪",
+      "k_en": 2,
+      "k_zh": 3,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 275,
+      "en": "forgery",
+      "zh_canonical": "偽造",
+      "en_clean": "forgery",
+      "zh_clean": "偽造",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 289,
+      "en": "homicide",
+      "zh_canonical": "殺人罪",
+      "en_clean": "homicide",
+      "zh_clean": "殺人罪",
+      "k_en": 8,
+      "k_zh": 6,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 291,
+      "en": "imprisonment",
+      "zh_canonical": "串謀非法禁錮",
+      "en_clean": "imprisonment",
+      "zh_clean": "串謀非法禁錮",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 293,
+      "en": "Independent Commission Against Corruption",
+      "zh_canonical": "廉政公署",
+      "en_clean": "Independent Commission Against Corruption",
+      "zh_clean": "廉政公署",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 294,
+      "en": "indictment",
+      "zh_canonical": "多條罪名的公訴書",
+      "en_clean": "indictment",
+      "zh_clean": "多條罪名的公訴書",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 299,
+      "en": "larceny",
+      "zh_canonical": "在普通法的盜竊罪",
+      "en_clean": "larceny",
+      "zh_clean": "在普通法的盜竊罪",
+      "k_en": 1,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 303,
+      "en": "manslaughter",
+      "zh_canonical": "誤殺",
+      "en_clean": "manslaughter",
+      "zh_clean": "誤殺",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 306,
+      "en": "murder",
+      "zh_canonical": "慫使和促致謀殺",
+      "en_clean": "murder",
+      "zh_clean": "慫使和促致謀殺",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 312,
+      "en": "parole",
+      "zh_canonical": "假釋許可",
+      "en_clean": "parole",
+      "zh_clean": "假釋許可",
+      "k_en": 3,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 318,
+      "en": "probation",
+      "zh_canonical": "感化令",
+      "en_clean": "probation",
+      "zh_clean": "感化令",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 322,
+      "en": "prosecution",
+      "zh_canonical": "舉證責任在於控方",
+      "en_clean": "prosecution",
+      "zh_clean": "舉證責任在於控方",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 325,
+      "en": "remand",
+      "zh_canonical": "還押看守",
+      "en_clean": "remand",
+      "zh_clean": "還押看守",
+      "k_en": 8,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 329,
+      "en": "robbery",
+      "zh_canonical": "持械搶劫",
+      "en_clean": "robbery",
+      "zh_clean": "持械搶劫",
+      "k_en": 6,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 338,
+      "en": "theft",
+      "zh_canonical": "失竊",
+      "en_clean": "theft",
+      "zh_clean": "失竊",
+      "k_en": 8,
+      "k_zh": 6,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 364,
+      "en": "actus reus",
+      "zh_canonical": "犯罪行為",
+      "en_clean": "actus reus",
+      "zh_clean": "犯罪行為",
+      "k_en": 0,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 365,
+      "en": "arraignment",
+      "zh_canonical": "公訴提控",
+      "en_clean": "arraignment",
+      "zh_clean": "公訴提控",
+      "k_en": 4,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 370,
+      "en": "mens rea",
+      "zh_canonical": "犯罪意圖",
+      "en_clean": "mens rea",
+      "zh_clean": "犯罪意圖",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 373,
+      "en": "sentencing",
+      "zh_canonical": "量刑指引",
+      "en_clean": "sentencing",
+      "zh_clean": "量刑指引",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 374,
+      "en": "going equipped for burglary",
+      "zh_canonical": "外出時備有入屋犯法用的物品",
+      "en_clean": "going equipped for burglary",
+      "zh_clean": "外出時備有入屋犯法用的物品",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 376,
+      "en": "Sexual Conviction Record Check Scheme",
+      "zh_canonical": "性罪行定罪紀錄查核機制",
+      "en_clean": "Sexual Conviction Record Check Scheme",
+      "zh_clean": "性罪行定罪紀錄查核機制",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 380,
+      "en": "incarceration",
+      "zh_canonical": "監禁",
+      "en_clean": "incarceration",
+      "zh_clean": "監禁",
+      "k_en": 0,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 386,
+      "en": "recidivism",
+      "zh_canonical": "再犯風險",
+      "en_clean": "recidivism",
+      "zh_clean": "再犯風險",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    }
+  ],
+  "backfill_candidates": [
+    {
+      "term_idx": 651,
+      "en": "arrest",
+      "zh_canonical": "逮捕",
+      "en_clean": "arrest",
+      "zh_clean": "逮捕",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7626
+    },
+    {
+      "term_idx": 1348,
+      "en": "dishonour",
+      "zh_canonical": "不兌現",
+      "en_clean": "dishonour",
+      "zh_clean": "不兌現",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.766
+    },
+    {
+      "term_idx": 4335,
+      "en": "punishment",
+      "zh_canonical": "懲罰",
+      "en_clean": "punishment",
+      "zh_clean": "懲罰",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.8264
+    },
+    {
+      "term_idx": 5013,
+      "en": "condemned",
+      "zh_canonical": "宣告不合格",
+      "en_clean": "condemned",
+      "zh_clean": "宣告不合格",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7635
+    },
+    {
+      "term_idx": 5370,
+      "en": "dishonesty",
+      "zh_canonical": "不誠實",
+      "en_clean": "dishonesty",
+      "zh_clean": "不誠實",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.8138
+    },
+    {
+      "term_idx": 5690,
+      "en": "firearm",
+      "zh_canonical": "火器",
+      "en_clean": "firearm",
+      "zh_clean": "火器",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7291
+    },
+    {
+      "term_idx": 6873,
+      "en": "prosecutor",
+      "zh_canonical": "檢控人",
+      "en_clean": "prosecutor",
+      "zh_clean": "檢控人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.8603
+    },
+    {
+      "term_idx": 7209,
+      "en": "serious crime",
+      "zh_canonical": "嚴重罪行",
+      "en_clean": "serious crime",
+      "zh_clean": "嚴重罪行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7115
+    },
+    {
+      "term_idx": 7409,
+      "en": "tamper with",
+      "zh_canonical": "干預",
+      "en_clean": "tamper with",
+      "zh_clean": "干預",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7574
+    },
+    {
+      "term_idx": 7974,
+      "en": "organized crime",
+      "zh_canonical": "有組織罪行",
+      "en_clean": "organized crime",
+      "zh_clean": "有組織罪行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7564
+    },
+    {
+      "term_idx": 8096,
+      "en": "not guilty",
+      "zh_canonical": "罪名不成立",
+      "en_clean": "not guilty",
+      "zh_clean": "罪名不成立",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7559
+    },
+    {
+      "term_idx": 5372,
+      "en": "dishonoured",
+      "zh_canonical": "不兌現的匯票",
+      "en_clean": "dishonoured",
+      "zh_clean": "不兌現的匯票",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7164
+    },
+    {
+      "term_idx": 8088,
+      "en": "stolen",
+      "zh_canonical": "贓物",
+      "en_clean": "stolen",
+      "zh_clean": "贓物",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.9005
+    },
+    {
+      "term_idx": 962,
+      "en": "collusion",
+      "zh_canonical": "串通",
+      "en_clean": "collusion",
+      "zh_clean": "串通",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7657
+    },
+    {
+      "term_idx": 362,
+      "en": "criminally",
+      "zh_canonical": "構成刑事罪行",
+      "en_clean": "criminally",
+      "zh_clean": "構成刑事罪行",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7058
+    },
+    {
+      "term_idx": 4569,
+      "en": "arson",
+      "zh_canonical": "縱火",
+      "en_clean": "arson",
+      "zh_clean": "縱火",
+      "k_en": 4,
+      "k_zh": 5,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "criminal": 7
+      },
+      "knn_top_neighbour_sim": 0.7312
+    },
+    {
+      "term_idx": 432,
+      "en": "abuse",
+      "zh_canonical": "濫用",
+      "en_clean": "abuse",
+      "zh_clean": "濫用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7607
+    },
+    {
+      "term_idx": 1218,
+      "en": "deception",
+      "zh_canonical": "欺騙",
+      "en_clean": "deception",
+      "zh_clean": "欺騙",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7908
+    },
+    {
+      "term_idx": 1556,
+      "en": "execution",
+      "zh_canonical": "簽立",
+      "en_clean": "execution",
+      "zh_clean": "簽立",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7374
+    },
+    {
+      "term_idx": 1757,
+      "en": "gross",
+      "zh_canonical": "嚴重",
+      "en_clean": "gross",
+      "zh_clean": "嚴重",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.699
+    },
+    {
+      "term_idx": 1827,
+      "en": "illicit",
+      "zh_canonical": "非法的",
+      "en_clean": "illicit",
+      "zh_clean": "非法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7363
+    },
+    {
+      "term_idx": 3375,
+      "en": "tamper",
+      "zh_canonical": "干擾",
+      "en_clean": "tamper",
+      "zh_clean": "干擾",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7109
+    },
+    {
+      "term_idx": 3634,
+      "en": "want of",
+      "zh_canonical": "欠缺",
+      "en_clean": "want of",
+      "zh_clean": "欠缺",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6854
+    },
+    {
+      "term_idx": 4237,
+      "en": "prisoner",
+      "zh_canonical": "囚犯",
+      "en_clean": "prisoner",
+      "zh_clean": "囚犯",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.8545
+    },
+    {
+      "term_idx": 4922,
+      "en": "coercion",
+      "zh_canonical": "脅迫",
+      "en_clean": "coercion",
+      "zh_clean": "脅迫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8272
+    },
+    {
+      "term_idx": 6108,
+      "en": "inmate",
+      "zh_canonical": "所員",
+      "en_clean": "inmate",
+      "zh_clean": "所員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8066
+    },
+    {
+      "term_idx": 6187,
+      "en": "intoxicating liquor",
+      "zh_canonical": "令人醺醉的酒類",
+      "en_clean": "intoxicating liquor",
+      "zh_clean": "令人醺醉的酒類",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "criminal": 6
+      },
+      "knn_top_neighbour_sim": 0.7111
+    },
+    {
+      "term_idx": 6903,
+      "en": "punish",
+      "zh_canonical": "處罰",
+      "en_clean": "punish",
+      "zh_clean": "處罰",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7983
+    },
+    {
+      "term_idx": 6926,
+      "en": "rape",
+      "zh_canonical": "強姦",
+      "en_clean": "rape",
+      "zh_clean": "強姦",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7881
+    },
+    {
+      "term_idx": 6988,
+      "en": "reformatory school",
+      "zh_canonical": "感化院",
+      "en_clean": "reformatory school",
+      "zh_clean": "感化院",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.635
+    },
+    {
+      "term_idx": 7396,
+      "en": "suspect",
+      "zh_canonical": "懷疑",
+      "en_clean": "suspect",
+      "zh_clean": "懷疑",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.8046
+    },
+    {
+      "term_idx": 8993,
+      "en": "flammable",
+      "zh_canonical": "易燃液體",
+      "en_clean": "flammable",
+      "zh_clean": "易燃液體",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.719
+    },
+    {
+      "term_idx": 5168,
+      "en": "cruelty",
+      "zh_canonical": "殘酷對待動物",
+      "en_clean": "cruelty",
+      "zh_clean": "殘酷對待動物",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7341
+    },
+    {
+      "term_idx": 6750,
+      "en": "poison",
+      "zh_canonical": "施用毒藥",
+      "en_clean": "poison",
+      "zh_clean": "施用毒藥",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7649
+    },
+    {
+      "term_idx": 2087,
+      "en": "jeopardy",
+      "zh_canonical": "危害",
+      "en_clean": "jeopardy",
+      "zh_clean": "危害",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6813
+    },
+    {
+      "term_idx": 7255,
+      "en": "smuggling",
+      "zh_canonical": "走私",
+      "en_clean": "smuggling",
+      "zh_clean": "走私",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7773
+    },
+    {
+      "term_idx": 7658,
+      "en": "wrecked",
+      "zh_canonical": "遇事毀壞",
+      "en_clean": "wrecked",
+      "zh_clean": "遇事毀壞",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.715
+    },
+    {
+      "term_idx": 5950,
+      "en": "imprison",
+      "zh_canonical": "監禁",
+      "en_clean": "imprison",
+      "zh_clean": "監禁",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.8228
+    },
+    {
+      "term_idx": 7300,
+      "en": "steal",
+      "zh_canonical": "偷竊",
+      "en_clean": "steal",
+      "zh_clean": "偷竊",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.8379
+    },
+    {
+      "term_idx": 6080,
+      "en": "infanticide",
+      "zh_canonical": "殺嬰",
+      "en_clean": "infanticide",
+      "zh_clean": "殺嬰",
+      "k_en": 5,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7506
+    },
+    {
+      "term_idx": 6878,
+      "en": "prostitute",
+      "zh_canonical": "娼妓",
+      "en_clean": "prostitute",
+      "zh_clean": "娼妓",
+      "k_en": 4,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6761
+    },
+    {
+      "term_idx": 5774,
+      "en": "gaoler",
+      "zh_canonical": "監獄看守員",
+      "en_clean": "gaoler",
+      "zh_clean": "監獄看守員",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "criminal": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7365
+    },
+    {
+      "term_idx": 509,
+      "en": "adultery",
+      "zh_canonical": "通姦",
+      "en_clean": "adultery",
+      "zh_clean": "通姦",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.728
+    },
+    {
+      "term_idx": 619,
+      "en": "appellant",
+      "zh_canonical": "上訴人",
+      "en_clean": "appellant",
+      "zh_clean": "上訴人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7376
+    },
+    {
+      "term_idx": 899,
+      "en": "charge",
+      "zh_canonical": "押記",
+      "en_clean": "charge",
+      "zh_clean": "押記",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7383
+    },
+    {
+      "term_idx": 1188,
+      "en": "damage",
+      "zh_canonical": "損壞",
+      "en_clean": "damage",
+      "zh_clean": "損壞",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7298
+    },
+    {
+      "term_idx": 1620,
+      "en": "falsification",
+      "zh_canonical": "偽造",
+      "en_clean": "falsification",
+      "zh_clean": "偽造",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7784
+    },
+    {
+      "term_idx": 1938,
+      "en": "indecent",
+      "zh_canonical": "嚴重猥褻",
+      "en_clean": "indecent",
+      "zh_clean": "嚴重猥褻",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7245
+    },
+    {
+      "term_idx": 2022,
+      "en": "intent",
+      "zh_canonical": "意圖",
+      "en_clean": "intent",
+      "zh_clean": "意圖",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "civil": 1,
+        "criminal": 5
+      },
+      "knn_top_neighbour_sim": 0.7193
+    },
+    {
+      "term_idx": 2129,
+      "en": "justice",
+      "zh_canonical": "公正",
+      "en_clean": "justice",
+      "zh_clean": "公正",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.7763
+    },
+    {
+      "term_idx": 2136,
+      "en": "juvenile",
+      "zh_canonical": "少年罪犯",
+      "en_clean": "juvenile",
+      "zh_clean": "少年罪犯",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6892
+    },
+    {
+      "term_idx": 2291,
+      "en": "malice",
+      "zh_canonical": "惡意",
+      "en_clean": "malice",
+      "zh_clean": "惡意",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "criminal": 5,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7341
+    },
+    {
+      "term_idx": 2331,
+      "en": "mentally",
+      "zh_canonical": "精神上",
+      "en_clean": "mentally",
+      "zh_clean": "精神上",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 5
+      },
+      "knn_top_neighbour_sim": 0.6489
+    },
+    {
+      "term_idx": 2347,
+      "en": "misbehaviour",
+      "zh_canonical": "行為不檢",
+      "en_clean": "misbehaviour",
+      "zh_clean": "行為不檢",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "criminal": 5
+      },
+      "knn_top_neighbour_sim": 0.7606
+    },
+    {
+      "term_idx": 2661,
+      "en": "peril",
+      "zh_canonical": "危險",
+      "en_clean": "peril",
+      "zh_clean": "危險",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7
+    },
+    {
+      "term_idx": 2931,
+      "en": "reckless",
+      "zh_canonical": "罔顧",
+      "en_clean": "reckless",
+      "zh_clean": "罔顧",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.9424
+    },
+    {
+      "term_idx": 3131,
+      "en": "scandalous",
+      "zh_canonical": "令人反感",
+      "en_clean": "scandalous",
+      "zh_clean": "令人反感",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7222
+    },
+    {
+      "term_idx": 3585,
+      "en": "verdict",
+      "zh_canonical": "裁決",
+      "en_clean": "verdict",
+      "zh_clean": "裁決",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7968
+    },
+    {
+      "term_idx": 3648,
+      "en": "wear and tear",
+      "zh_canonical": "損耗",
+      "en_clean": "wear and tear",
+      "zh_clean": "損耗",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6762
+    },
+    {
+      "term_idx": 3928,
+      "en": "terrorist financing",
+      "zh_canonical": "恐怖分子資金籌集",
+      "en_clean": "terrorist financing",
+      "zh_clean": "恐怖分子資金籌集",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6468
+    },
+    {
+      "term_idx": 4281,
+      "en": "destruction",
+      "zh_canonical": "銷毀",
+      "en_clean": "destruction",
+      "zh_clean": "銷毀",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6941
+    },
+    {
+      "term_idx": 4425,
+      "en": "additive",
+      "zh_canonical": "添加劑",
+      "en_clean": "additive",
+      "zh_clean": "添加劑",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.715
+    },
+    {
+      "term_idx": 4750,
+      "en": "buggery",
+      "zh_canonical": "肛交",
+      "en_clean": "buggery",
+      "zh_clean": "肛交",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "criminal": 5,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6982
+    },
+    {
+      "term_idx": 5001,
+      "en": "concentration",
+      "zh_canonical": "集中程度",
+      "en_clean": "concentration",
+      "zh_clean": "集中程度",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6626
+    },
+    {
+      "term_idx": 5198,
+      "en": "deceive",
+      "zh_canonical": "意圖欺騙",
+      "en_clean": "deceive",
+      "zh_clean": "意圖欺騙",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7268
+    },
+    {
+      "term_idx": 5371,
+      "en": "dishonourable",
+      "zh_canonical": "不名譽",
+      "en_clean": "dishonourable",
+      "zh_clean": "不名譽",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7324
+    },
+    {
+      "term_idx": 5376,
+      "en": "disorder",
+      "zh_canonical": "精神紊亂",
+      "en_clean": "disorder",
+      "zh_clean": "精神紊亂",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 5
+      },
+      "knn_top_neighbour_sim": 0.7341
+    },
+    {
+      "term_idx": 5513,
+      "en": "encumbrance",
+      "zh_canonical": "產權負擔",
+      "en_clean": "encumbrance",
+      "zh_clean": "產權負擔",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "criminal": 5,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6907
+    },
+    {
+      "term_idx": 5559,
+      "en": "escort",
+      "zh_canonical": "押送",
+      "en_clean": "escort",
+      "zh_clean": "押送",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6946
+    },
+    {
+      "term_idx": 6052,
+      "en": "indecency",
+      "zh_canonical": "嚴重猥褻作為",
+      "en_clean": "indecency",
+      "zh_clean": "嚴重猥褻作為",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7467
+    },
+    {
+      "term_idx": 6153,
+      "en": "interdiction",
+      "zh_canonical": "停職",
+      "en_clean": "interdiction",
+      "zh_clean": "停職",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7595
+    },
+    {
+      "term_idx": 6577,
+      "en": "obscene",
+      "zh_canonical": "淫褻",
+      "en_clean": "obscene",
+      "zh_clean": "淫褻",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "criminal": 5,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7244
+    },
+    {
+      "term_idx": 6879,
+      "en": "prostitution",
+      "zh_canonical": "賣淫",
+      "en_clean": "prostitution",
+      "zh_clean": "賣淫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "criminal": 5,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7077
+    },
+    {
+      "term_idx": 7397,
+      "en": "suspected",
+      "zh_canonical": "涉嫌",
+      "en_clean": "suspected",
+      "zh_clean": "涉嫌",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.806
+    },
+    {
+      "term_idx": 7828,
+      "en": "plastic",
+      "zh_canonical": "塑膠購物袋",
+      "en_clean": "plastic",
+      "zh_clean": "塑膠購物袋",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6888
+    },
+    {
+      "term_idx": 7960,
+      "en": "wasted",
+      "zh_canonical": "虛耗訟費命令",
+      "en_clean": "wasted",
+      "zh_clean": "虛耗訟費命令",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "criminal": 5,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6827
+    },
+    {
+      "term_idx": 7990,
+      "en": "destroyed",
+      "zh_canonical": "遺失、遭污損或遭損毀",
+      "en_clean": "destroyed",
+      "zh_clean": "遺失、遭污損或遭損毀",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6675
+    },
+    {
+      "term_idx": 8131,
+      "en": "liquor",
+      "zh_canonical": "令人醺醉的酒類",
+      "en_clean": "liquor",
+      "zh_clean": "令人醺醉的酒類",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "criminal": 5,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7734
+    },
+    {
+      "term_idx": 2113,
+      "en": "jury",
+      "zh_canonical": "陪審團席",
+      "en_clean": "jury",
+      "zh_clean": "陪審團席",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6893
+    },
+    {
+      "term_idx": 4485,
+      "en": "alleged",
+      "zh_canonical": "指稱中的",
+      "en_clean": "alleged",
+      "zh_clean": "指稱中",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.8534
+    },
+    {
+      "term_idx": 629,
+      "en": "apprehend",
+      "zh_canonical": "意恐",
+      "en_clean": "apprehend",
+      "zh_clean": "意恐",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7479
+    },
+    {
+      "term_idx": 3776,
+      "en": "further charge",
+      "zh_canonical": "再進行押記",
+      "en_clean": "further charge",
+      "zh_clean": "再進行押記",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7091
+    },
+    {
+      "term_idx": 7812,
+      "en": "concealed",
+      "zh_canonical": "隱藏物品",
+      "en_clean": "concealed",
+      "zh_clean": "隱藏物品",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "criminal": 5,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6968
+    },
+    {
+      "term_idx": 4711,
+      "en": "blasting",
+      "zh_canonical": "礦場燃爆證書",
+      "en_clean": "blasting",
+      "zh_clean": "礦場燃爆證書",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6733
+    },
+    {
+      "term_idx": 5186,
+      "en": "damaging",
+      "zh_canonical": "具損害性的披露",
+      "en_clean": "damaging",
+      "zh_clean": "具損害性的披露",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.7105
+    },
+    {
+      "term_idx": 6736,
+      "en": "piracy",
+      "zh_canonical": "海盜行為",
+      "en_clean": "piracy",
+      "zh_clean": "海盜行為",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.778
+    },
+    {
+      "term_idx": 3229,
+      "en": "skeleton",
+      "zh_canonical": "綱要",
+      "en_clean": "skeleton",
+      "zh_clean": "綱要",
+      "k_en": 6,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.6717
+    },
+    {
+      "term_idx": 1034,
+      "en": "confession",
+      "zh_canonical": "供認",
+      "en_clean": "confession",
+      "zh_clean": "供認",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "procedure": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7532
+    },
+    {
+      "term_idx": 6484,
+      "en": "mutilation",
+      "zh_canonical": "毀壞",
+      "en_clean": "mutilation",
+      "zh_clean": "毀壞",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "international": 2,
+        "criminal": 5
+      },
+      "knn_top_neighbour_sim": 0.7148
+    },
+    {
+      "term_idx": 6737,
+      "en": "pirate",
+      "zh_canonical": "海盜",
+      "en_clean": "pirate",
+      "zh_clean": "海盜",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7464
+    },
+    {
+      "term_idx": 7181,
+      "en": "seduction",
+      "zh_canonical": "誘姦",
+      "en_clean": "seduction",
+      "zh_clean": "誘姦",
+      "k_en": 6,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6957
+    },
+    {
+      "term_idx": 4941,
+      "en": "collude",
+      "zh_canonical": "串通",
+      "en_clean": "collude",
+      "zh_clean": "串通",
+      "k_en": 5,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "criminal": 5,
+        "labor_social": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.742
+    },
+    {
+      "term_idx": 170,
+      "en": "torture",
+      "zh_canonical": "酷刑",
+      "en_clean": "torture",
+      "zh_clean": "酷刑",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "international": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.748
+    },
+    {
+      "term_idx": 741,
+      "en": "bankrupt",
+      "zh_canonical": "被判定破產",
+      "en_clean": "bankrupt",
+      "zh_clean": "被判定破產",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "constitutional": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7117
+    },
+    {
+      "term_idx": 795,
+      "en": "breach",
+      "zh_canonical": "違反",
+      "en_clean": "breach",
+      "zh_clean": "違反",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7483
+    },
+    {
+      "term_idx": 992,
+      "en": "compel",
+      "zh_canonical": "迫使",
+      "en_clean": "compel",
+      "zh_clean": "迫使",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7377
+    },
+    {
+      "term_idx": 1030,
+      "en": "conduct",
+      "zh_canonical": "處理",
+      "en_clean": "conduct",
+      "zh_clean": "處理",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 1,
+        "criminal": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7295
+    },
+    {
+      "term_idx": 1162,
+      "en": "criminal jurisdiction",
+      "zh_canonical": "刑事司法管轄權",
+      "en_clean": "criminal jurisdiction",
+      "zh_clean": "刑事司法管轄權",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "criminal": 4,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7639
+    },
+    {
+      "term_idx": 1253,
+      "en": "deliberate",
+      "zh_canonical": "故意",
+      "en_clean": "deliberate",
+      "zh_clean": "故意",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "civil": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6885
+    },
+    {
+      "term_idx": 1273,
+      "en": "denial",
+      "zh_canonical": "否認",
+      "en_clean": "denial",
+      "zh_clean": "否認",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "criminal": 4,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7118
+    },
+    {
+      "term_idx": 1315,
+      "en": "deviation",
+      "zh_canonical": "差異",
+      "en_clean": "deviation",
+      "zh_clean": "差異",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "administrative": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6836
+    },
+    {
+      "term_idx": 1324,
+      "en": "diligence",
+      "zh_canonical": "盡職審查",
+      "en_clean": "diligence",
+      "zh_clean": "盡職審查",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "administrative": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7086
+    },
+    {
+      "term_idx": 1676,
+      "en": "forensic",
+      "zh_canonical": "司法的",
+      "en_clean": "forensic",
+      "zh_clean": "司法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7317
+    },
+    {
+      "term_idx": 1694,
+      "en": "fraudulent",
+      "zh_canonical": "欺詐的",
+      "en_clean": "fraudulent",
+      "zh_clean": "欺詐",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7791
+    },
+    {
+      "term_idx": 1822,
+      "en": "illegal",
+      "zh_canonical": "不合法",
+      "en_clean": "illegal",
+      "zh_clean": "不合法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "criminal": 4,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7723
+    },
+    {
+      "term_idx": 1901,
+      "en": "in posse",
+      "zh_canonical": "可能存在的 ※比較 in esse",
+      "en_clean": "in posse",
+      "zh_clean": "可能存在",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "criminal": 4,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6728
+    },
+    {
+      "term_idx": 1969,
+      "en": "informant; informer",
+      "zh_canonical": "告發人",
+      "en_clean": "informant",
+      "zh_clean": "告發人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "international": 1,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7698
+    },
+    {
+      "term_idx": 2112,
+      "en": "juror",
+      "zh_canonical": "陪審員",
+      "en_clean": "juror",
+      "zh_clean": "陪審員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6862
+    },
+    {
+      "term_idx": 2148,
+      "en": "knowingly",
+      "zh_canonical": "故意",
+      "en_clean": "knowingly",
+      "zh_clean": "故意",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "criminal": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.666
+    },
+    {
+      "term_idx": 2299,
+      "en": "manning",
+      "zh_canonical": "人手配置",
+      "en_clean": "manning",
+      "zh_clean": "人手配置",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.6955
+    },
+    {
+      "term_idx": 2747,
+      "en": "pre-trial",
+      "zh_canonical": "審訊前的",
+      "en_clean": "pre-trial",
+      "zh_clean": "審訊前",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "criminal": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7401
+    },
+    {
+      "term_idx": 2979,
+      "en": "rehabilitation",
+      "zh_canonical": "恢復",
+      "en_clean": "rehabilitation",
+      "zh_clean": "恢復",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "constitutional": 1,
+        "criminal": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7342
+    },
+    {
+      "term_idx": 3029,
+      "en": "reprimand",
+      "zh_canonical": "譴責",
+      "en_clean": "reprimand",
+      "zh_clean": "譴責",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 1,
+        "labor_social": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7746
+    },
+    {
+      "term_idx": 3035,
+      "en": "reputed",
+      "zh_canonical": "公認的",
+      "en_clean": "reputed",
+      "zh_clean": "公認",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "constitutional": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6736
+    },
+    {
+      "term_idx": 3231,
+      "en": "slip",
+      "zh_canonical": "失誤",
+      "en_clean": "slip",
+      "zh_clean": "失誤",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7136
+    },
+    {
+      "term_idx": 3513,
+      "en": "unlawful",
+      "zh_canonical": "不合法",
+      "en_clean": "unlawful",
+      "zh_clean": "不合法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "criminal": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.812
+    },
+    {
+      "term_idx": 3533,
+      "en": "unwilling",
+      "zh_canonical": "不願意",
+      "en_clean": "unwilling",
+      "zh_clean": "不願意",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "constitutional": 1,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7453
+    },
+    {
+      "term_idx": 3748,
+      "en": "undischarged bankrupt",
+      "zh_canonical": "未獲解除破產的破產人",
+      "en_clean": "undischarged bankrupt",
+      "zh_clean": "未獲解除破產的破產人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6598
+    },
+    {
+      "term_idx": 4107,
+      "en": "chemical",
+      "zh_canonical": "化學品液貨船",
+      "en_clean": "chemical",
+      "zh_clean": "化學品液貨船",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 1,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6995
+    },
+    {
+      "term_idx": 4191,
+      "en": "terrorist",
+      "zh_canonical": "恐怖分子",
+      "en_clean": "terrorist",
+      "zh_clean": "恐怖分子",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "criminal": 4,
+        "civil": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7362
+    },
+    {
+      "term_idx": 4218,
+      "en": "fugitive",
+      "zh_canonical": "逃犯",
+      "en_clean": "fugitive",
+      "zh_clean": "逃犯",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 2,
+        "criminal": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7264
+    },
+    {
+      "term_idx": 4380,
+      "en": "accidental",
+      "zh_canonical": "意外遺漏",
+      "en_clean": "accidental",
+      "zh_clean": "意外遺漏",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 3
+      },
+      "knn_top_neighbour_sim": 0.7188
+    },
+    {
+      "term_idx": 4381,
+      "en": "accidentally",
+      "zh_canonical": "意外污損",
+      "en_clean": "accidentally",
+      "zh_clean": "意外污損",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 3,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7033
+    },
+    {
+      "term_idx": 4423,
+      "en": "addiction",
+      "zh_canonical": "戒毒所",
+      "en_clean": "addiction",
+      "zh_clean": "戒毒所",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 1,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7408
+    },
+    {
+      "term_idx": 4484,
+      "en": "allegation",
+      "zh_canonical": "指稱",
+      "en_clean": "allegation",
+      "zh_clean": "指稱",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7497
+    },
+    {
+      "term_idx": 4532,
+      "en": "apparently",
+      "zh_canonical": "表面上",
+      "en_clean": "apparently",
+      "zh_clean": "表面上",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6281
+    },
+    {
+      "term_idx": 4566,
+      "en": "arrestable",
+      "zh_canonical": "可逮捕的罪行",
+      "en_clean": "arrestable",
+      "zh_clean": "可逮捕的罪行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7917
+    },
+    {
+      "term_idx": 4573,
+      "en": "articulated",
+      "zh_canonical": "掛接式車輛",
+      "en_clean": "articulated",
+      "zh_clean": "掛接式車輛",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6797
+    },
+    {
+      "term_idx": 4664,
+      "en": "bad faith",
+      "zh_canonical": "不真誠",
+      "en_clean": "bad faith",
+      "zh_clean": "不真誠",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "procedure": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7064
+    },
+    {
+      "term_idx": 4667,
+      "en": "bail-in",
+      "zh_canonical": "內部財務重整條文",
+      "en_clean": "bail-in",
+      "zh_clean": "內部財務重整條文",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "labor_social": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7352
+    },
+    {
+      "term_idx": 4754,
+      "en": "bullion",
+      "zh_canonical": "金錠",
+      "en_clean": "bullion",
+      "zh_clean": "金錠",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "criminal": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6717
+    },
+    {
+      "term_idx": 4816,
+      "en": "carrying",
+      "zh_canonical": "帳面價值",
+      "en_clean": "carrying",
+      "zh_clean": "帳面價值",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6711
+    },
+    {
+      "term_idx": 4826,
+      "en": "category",
+      "zh_canonical": "類別",
+      "en_clean": "category",
+      "zh_clean": "類別",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "criminal": 4,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6616
+    },
+    {
+      "term_idx": 4856,
+      "en": "charging",
+      "zh_canonical": "押記令",
+      "en_clean": "charging",
+      "zh_clean": "押記令",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7079
+    },
+    {
+      "term_idx": 4944,
+      "en": "combination",
+      "zh_canonical": "組合",
+      "en_clean": "combination",
+      "zh_clean": "組合",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "constitutional": 1,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6955
+    },
+    {
+      "term_idx": 4999,
+      "en": "conceal",
+      "zh_canonical": "隱藏",
+      "en_clean": "conceal",
+      "zh_clean": "隱藏",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7105
+    },
+    {
+      "term_idx": 5091,
+      "en": "contrivance",
+      "zh_canonical": "手段",
+      "en_clean": "contrivance",
+      "zh_clean": "手段",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6994
+    },
+    {
+      "term_idx": 5185,
+      "en": "damaged",
+      "zh_canonical": "破損",
+      "en_clean": "damaged",
+      "zh_clean": "破損",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6995
+    },
+    {
+      "term_idx": 5218,
+      "en": "defaced",
+      "zh_canonical": "遺失、遭污損或遭損毀",
+      "en_clean": "defaced",
+      "zh_clean": "遺失、遭污損或遭損毀",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7095
+    },
+    {
+      "term_idx": 5237,
+      "en": "deliberately",
+      "zh_canonical": "蓄意",
+      "en_clean": "deliberately",
+      "zh_clean": "蓄意",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6591
+    },
+    {
+      "term_idx": 5302,
+      "en": "detained",
+      "zh_canonical": "被扣留者",
+      "en_clean": "detained",
+      "zh_clean": "被扣留者",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "constitutional": 1,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7739
+    },
+    {
+      "term_idx": 5323,
+      "en": "die",
+      "zh_canonical": "印模",
+      "en_clean": "die",
+      "zh_clean": "印模",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6947
+    },
+    {
+      "term_idx": 5369,
+      "en": "dishonestly",
+      "zh_canonical": "不誠實地",
+      "en_clean": "dishonestly",
+      "zh_clean": "不誠實地",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7607
+    },
+    {
+      "term_idx": 5427,
+      "en": "donee",
+      "zh_canonical": "獲授權人",
+      "en_clean": "donee",
+      "zh_clean": "獲授權人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6217
+    },
+    {
+      "term_idx": 5438,
+      "en": "drawn",
+      "zh_canonical": "支取",
+      "en_clean": "drawn",
+      "zh_clean": "支取",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 1,
+        "administrative": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6758
+    },
+    {
+      "term_idx": 5556,
+      "en": "erection",
+      "zh_canonical": "架設",
+      "en_clean": "erection",
+      "zh_clean": "架設",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.6861
+    },
+    {
+      "term_idx": 5741,
+      "en": "fraudulently",
+      "zh_canonical": "以欺詐手段",
+      "en_clean": "fraudulently",
+      "zh_clean": "以欺詐手段",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7491
+    },
+    {
+      "term_idx": 5845,
+      "en": "harmful",
+      "zh_canonical": "損及",
+      "en_clean": "harmful",
+      "zh_clean": "損及",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "criminal": 4,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.697
+    },
+    {
+      "term_idx": 5919,
+      "en": "illegality",
+      "zh_canonical": "不合法",
+      "en_clean": "illegality",
+      "zh_clean": "不合法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7494
+    },
+    {
+      "term_idx": 6029,
+      "en": "incidents",
+      "zh_canonical": "條件和附帶條件",
+      "en_clean": "incidents",
+      "zh_clean": "條件和附帶條件",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6855
+    },
+    {
+      "term_idx": 6179,
+      "en": "intervention",
+      "zh_canonical": "干預",
+      "en_clean": "intervention",
+      "zh_clean": "干預",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 3
+      },
+      "knn_top_neighbour_sim": 0.7207
+    },
+    {
+      "term_idx": 6199,
+      "en": "investigation",
+      "zh_canonical": "調查",
+      "en_clean": "investigation",
+      "zh_clean": "調查",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "criminal": 4,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7583
+    },
+    {
+      "term_idx": 6235,
+      "en": "justified",
+      "zh_canonical": "有充分理由支持",
+      "en_clean": "justified",
+      "zh_clean": "有充分理由支持",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.7125
+    },
+    {
+      "term_idx": 6275,
+      "en": "legend",
+      "zh_canonical": "圖例",
+      "en_clean": "legend",
+      "zh_clean": "圖例",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "constitutional": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6391
+    },
+    {
+      "term_idx": 6284,
+      "en": "less",
+      "zh_canonical": "扣除",
+      "en_clean": "less",
+      "zh_clean": "扣除",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "criminal": 4,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6787
+    },
+    {
+      "term_idx": 6307,
+      "en": "likely",
+      "zh_canonical": "相當可能",
+      "en_clean": "likely",
+      "zh_clean": "相當可能",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6412
+    },
+    {
+      "term_idx": 6363,
+      "en": "maliciously",
+      "zh_canonical": "惡意",
+      "en_clean": "maliciously",
+      "zh_clean": "惡意",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 1,
+        "labor_social": 2
+      },
+      "knn_top_neighbour_sim": 0.6997
+    },
+    {
+      "term_idx": 6428,
+      "en": "mind",
+      "zh_canonical": "精神病",
+      "en_clean": "mind",
+      "zh_clean": "精神病",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 1,
+        "criminal": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6705
+    },
+    {
+      "term_idx": 6430,
+      "en": "minimize",
+      "zh_canonical": "盡量減少",
+      "en_clean": "minimize",
+      "zh_clean": "盡量減少",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "criminal": 4,
+        "civil": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6535
+    },
+    {
+      "term_idx": 6612,
+      "en": "opponent",
+      "zh_canonical": "反對人",
+      "en_clean": "opponent",
+      "zh_clean": "反對人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.694
+    },
+    {
+      "term_idx": 6952,
+      "en": "recklessly",
+      "zh_canonical": "罔顧後果地",
+      "en_clean": "recklessly",
+      "zh_clean": "罔顧後果地",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.9057
+    },
+    {
+      "term_idx": 6975,
+      "en": "reduction",
+      "zh_canonical": "扣減",
+      "en_clean": "reduction",
+      "zh_clean": "扣減",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7013
+    },
+    {
+      "term_idx": 7067,
+      "en": "reputation",
+      "zh_canonical": "信用",
+      "en_clean": "reputation",
+      "zh_clean": "信用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 1,
+        "civil": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6817
+    },
+    {
+      "term_idx": 7207,
+      "en": "sergeant",
+      "zh_canonical": "警長",
+      "en_clean": "sergeant",
+      "zh_clean": "警長",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 1,
+        "labor_social": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6693
+    },
+    {
+      "term_idx": 7357,
+      "en": "subsistence",
+      "zh_canonical": "有版權存在",
+      "en_clean": "subsistence",
+      "zh_clean": "有版權存在",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "labor_social": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6672
+    },
+    {
+      "term_idx": 7431,
+      "en": "threat",
+      "zh_canonical": "威脅",
+      "en_clean": "threat",
+      "zh_clean": "威脅",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7376
+    },
+    {
+      "term_idx": 7533,
+      "en": "unlikely",
+      "zh_canonical": "相當可能不會",
+      "en_clean": "unlikely",
+      "zh_clean": "相當可能不會",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "criminal": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6288
+    },
+    {
+      "term_idx": 7563,
+      "en": "untrue",
+      "zh_canonical": "失實",
+      "en_clean": "untrue",
+      "zh_clean": "失實",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "constitutional": 1,
+        "criminal": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6851
+    },
+    {
+      "term_idx": 7909,
+      "en": "pornography",
+      "zh_canonical": "兒童色情物品",
+      "en_clean": "pornography",
+      "zh_clean": "兒童色情物品",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 1,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7021
+    },
+    {
+      "term_idx": 8062,
+      "en": "pressure",
+      "zh_canonical": "財務壓力",
+      "en_clean": "pressure",
+      "zh_clean": "財務壓力",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 1,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6808
+    },
+    {
+      "term_idx": 8238,
+      "en": "seized",
+      "zh_canonical": "經扣押的財產",
+      "en_clean": "seized",
+      "zh_clean": "經扣押的財產",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 3,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6737
+    },
+    {
+      "term_idx": 9140,
+      "en": "poisonous",
+      "zh_canonical": "有毒物質",
+      "en_clean": "poisonous",
+      "zh_clean": "有毒物質",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 3,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7032
+    },
+    {
+      "term_idx": 9289,
+      "en": "taxi",
+      "zh_canonical": "車隊的士",
+      "en_clean": "taxi",
+      "zh_clean": "車隊的士",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6665
+    },
+    {
+      "term_idx": 5022,
+      "en": "confine",
+      "zh_canonical": "隔離拘禁",
+      "en_clean": "confine",
+      "zh_clean": "隔離拘禁",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 4,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7095
+    },
+    {
+      "term_idx": 9158,
+      "en": "spraying",
+      "zh_canonical": "噴塗室",
+      "en_clean": "spraying",
+      "zh_clean": "噴塗室",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6916
+    },
+    {
+      "term_idx": 5119,
+      "en": "Correctional Services Department Psychiatric Centre",
+      "zh_canonical": "懲教署精神病治療中心",
+      "en_clean": "Correctional Services Department Psychiatric Centre",
+      "zh_clean": "懲教署精神病治療中心",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.6032
+    },
+    {
+      "term_idx": 5580,
+      "en": "e-waste",
+      "zh_canonical": "電器廢物",
+      "en_clean": "e-waste",
+      "zh_clean": "電器廢物",
+      "k_en": 7,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "labor_social": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6283
+    },
+    {
+      "term_idx": 1752,
+      "en": "gratuitous",
+      "zh_canonical": "免費",
+      "en_clean": "gratuitous",
+      "zh_clean": "免費",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "civil": 1,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7235
+    },
+    {
+      "term_idx": 4811,
+      "en": "carelessness",
+      "zh_canonical": "不小心",
+      "en_clean": "carelessness",
+      "zh_clean": "不小心",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.8608
+    },
+    {
+      "term_idx": 5146,
+      "en": "courtroom",
+      "zh_canonical": "法庭",
+      "en_clean": "courtroom",
+      "zh_clean": "法庭",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 3
+      },
+      "knn_top_neighbour_sim": 0.7203
+    },
+    {
+      "term_idx": 5661,
+      "en": "falsify",
+      "zh_canonical": "揑改",
+      "en_clean": "falsify",
+      "zh_clean": "揑改",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7218
+    },
+    {
+      "term_idx": 5814,
+      "en": "gratuitously",
+      "zh_canonical": "免費",
+      "en_clean": "gratuitously",
+      "zh_clean": "免費",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "procedure": 2,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.7006
+    },
+    {
+      "term_idx": 1989,
+      "en": "injustice",
+      "zh_canonical": "不公正的情況",
+      "en_clean": "injustice",
+      "zh_clean": "不公正的情況",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "criminal": 4,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7538
+    },
+    {
+      "term_idx": 2578,
+      "en": "outstanding",
+      "zh_canonical": "未償付的",
+      "en_clean": "outstanding",
+      "zh_clean": "未償付",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "criminal": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6677
+    },
+    {
+      "term_idx": 4379,
+      "en": "accident",
+      "zh_canonical": "意外事故",
+      "en_clean": "accident",
+      "zh_clean": "意外事故",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7402
+    },
+    {
+      "term_idx": 5656,
+      "en": "fail",
+      "zh_canonical": "不能成立",
+      "en_clean": "fail",
+      "zh_clean": "不能成立",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6923
+    },
+    {
+      "term_idx": 5905,
+      "en": "hunting",
+      "zh_canonical": "獵捕",
+      "en_clean": "hunting",
+      "zh_clean": "獵捕",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7198
+    },
+    {
+      "term_idx": 7900,
+      "en": "impounding",
+      "zh_canonical": "鎖押費",
+      "en_clean": "impounding",
+      "zh_clean": "鎖押費",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "administrative": 2,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6947
+    },
+    {
+      "term_idx": 8184,
+      "en": "urgent",
+      "zh_canonical": "迫切需要",
+      "en_clean": "urgent",
+      "zh_clean": "迫切需要",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6945
+    },
+    {
+      "term_idx": 1583,
+      "en": "expunge",
+      "zh_canonical": "取消",
+      "en_clean": "expunge",
+      "zh_clean": "取消",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7074
+    },
+    {
+      "term_idx": 5632,
+      "en": "exploit",
+      "zh_canonical": "利用",
+      "en_clean": "exploit",
+      "zh_clean": "利用",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6829
+    },
+    {
+      "term_idx": 4370,
+      "en": "abusive",
+      "zh_canonical": "粗言穢語",
+      "en_clean": "abusive",
+      "zh_clean": "粗言穢語",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 3
+      },
+      "knn_top_neighbour_sim": 0.757
+    },
+    {
+      "term_idx": 5443,
+      "en": "driving",
+      "zh_canonical": "危險駕駛引致他人死亡",
+      "en_clean": "driving",
+      "zh_clean": "危險駕駛引致他人死亡",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 3,
+        "criminal": 4
+      },
+      "knn_top_neighbour_sim": 0.6957
+    },
+    {
+      "term_idx": 5844,
+      "en": "harm",
+      "zh_canonical": "身體嚴重傷害",
+      "en_clean": "harm",
+      "zh_clean": "身體嚴重傷害",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 1,
+        "criminal": 4,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7198
+    },
+    {
+      "term_idx": 6091,
+      "en": "informant",
+      "zh_canonical": "申報人",
+      "en_clean": "informant",
+      "zh_clean": "申報人",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "international": 1,
+        "procedure": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.7698
+    },
+    {
+      "term_idx": 6487,
+      "en": "named",
+      "zh_canonical": "被指名者",
+      "en_clean": "named",
+      "zh_clean": "被指名者",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 1,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6718
+    },
+    {
+      "term_idx": 6772,
+      "en": "post-mortem",
+      "zh_canonical": "驗屍",
+      "en_clean": "post-mortem",
+      "zh_clean": "驗屍",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6763
+    },
+    {
+      "term_idx": 8602,
+      "en": "unsafe",
+      "zh_canonical": "不穩妥",
+      "en_clean": "unsafe",
+      "zh_clean": "不穩妥",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "labor_social": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7047
+    },
+    {
+      "term_idx": 3962,
+      "en": "miscarriage of justice",
+      "zh_canonical": "不公正的情況",
+      "en_clean": "miscarriage of justice",
+      "zh_clean": "不公正的情況",
+      "k_en": 7,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.746
+    },
+    {
+      "term_idx": 2000,
+      "en": "inquisition",
+      "zh_canonical": "查訊",
+      "en_clean": "inquisition",
+      "zh_clean": "查訊",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 2,
+        "criminal": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6896
+    },
+    {
+      "term_idx": 5367,
+      "en": "disguise",
+      "zh_canonical": "掩飾",
+      "en_clean": "disguise",
+      "zh_clean": "掩飾",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "criminal": 4,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.7195
+    },
+    {
+      "term_idx": 5820,
+      "en": "grossly",
+      "zh_canonical": "嚴重疏忽",
+      "en_clean": "grossly",
+      "zh_clean": "嚴重疏忽",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 1,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6511
+    },
+    {
+      "term_idx": 6342,
+      "en": "lunacy",
+      "zh_canonical": "精神錯亂",
+      "en_clean": "lunacy",
+      "zh_clean": "精神錯亂",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "constitutional": 1,
+        "international": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7418
+    },
+    {
+      "term_idx": 6706,
+      "en": "perish",
+      "zh_canonical": "毀消",
+      "en_clean": "perish",
+      "zh_clean": "毀消",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "civil": 1,
+        "international": 1,
+        "labor_social": 1
+      },
+      "knn_top_neighbour_sim": 0.6997
+    },
+    {
+      "term_idx": 9168,
+      "en": "pastiche",
+      "zh_canonical": "模仿",
+      "en_clean": "pastiche",
+      "zh_clean": "模仿",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 1,
+        "labor_social": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6522
+    },
+    {
+      "term_idx": 2013,
+      "en": "insubordination",
+      "zh_canonical": "不服從上級",
+      "en_clean": "insubordination",
+      "zh_clean": "不服從上級",
+      "k_en": 6,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 4,
+        "procedure": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7438
+    },
+    {
+      "term_idx": 5299,
+      "en": "destructive",
+      "zh_canonical": "殘害性物品",
+      "en_clean": "destructive",
+      "zh_clean": "殘害性物品",
+      "k_en": 6,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 2,
+        "criminal": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6998
+    },
+    {
+      "term_idx": 6283,
+      "en": "leniency",
+      "zh_canonical": "寬待協議",
+      "en_clean": "leniency",
+      "zh_clean": "寬待協議",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "criminal": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7201
+    }
+  ],
+  "candidate_pool_stats": {
+    "total_predicted_to_domain": 490,
+    "high_mid_confidence": 208,
+    "passed_to_agent": 208
+  }
+}

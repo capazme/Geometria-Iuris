@@ -1,0 +1,3109 @@
+{
+  "_meta": {
+    "threshold_year": 1989,
+    "max_contexts": 8,
+    "min_context_len": 60,
+    "n_keep_terms": 364,
+    "n_sections_total": 65599,
+    "n_sections_post_BLP": 29745,
+    "elapsed_seconds": 1.4
+  },
+  "per_domain": {
+    "administrative": {
+      "n_terms": 52,
+      "k_en": {
+        "min": 8,
+        "median": 8.0,
+        "mean": 8,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 4,
+        "median": 8.0,
+        "mean": 7.9,
+        "max": 8
+      },
+      "k_min": {
+        "min": 4,
+        "median": 8.0,
+        "mean": 7.9,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 0,
+      "n_below_K4_either": 0,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    },
+    "civil": {
+      "n_terms": 60,
+      "k_en": {
+        "min": 8,
+        "median": 8.0,
+        "mean": 8,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 1,
+        "median": 8.0,
+        "mean": 7.7,
+        "max": 8
+      },
+      "k_min": {
+        "min": 1,
+        "median": 8.0,
+        "mean": 7.7,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 2,
+      "n_below_K4_either": 2,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    },
+    "constitutional": {
+      "n_terms": 49,
+      "k_en": {
+        "min": 7,
+        "median": 8,
+        "mean": 8.0,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 2,
+        "median": 8,
+        "mean": 7.9,
+        "max": 8
+      },
+      "k_min": {
+        "min": 2,
+        "median": 8,
+        "mean": 7.8,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 1,
+      "n_below_K4_either": 1,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    },
+    "criminal": {
+      "n_terms": 54,
+      "k_en": {
+        "min": 8,
+        "median": 8.0,
+        "mean": 8,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 2,
+        "median": 8.0,
+        "mean": 7.8,
+        "max": 8
+      },
+      "k_min": {
+        "min": 2,
+        "median": 8.0,
+        "mean": 7.8,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 1,
+      "n_below_K4_either": 1,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    },
+    "international": {
+      "n_terms": 41,
+      "k_en": {
+        "min": 8,
+        "median": 8,
+        "mean": 8,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 2,
+        "median": 8,
+        "mean": 7.7,
+        "max": 8
+      },
+      "k_min": {
+        "min": 2,
+        "median": 8,
+        "mean": 7.7,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 1,
+      "n_below_K4_either": 1,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    },
+    "labor_social": {
+      "n_terms": 60,
+      "k_en": {
+        "min": 8,
+        "median": 8.0,
+        "mean": 8,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 4,
+        "median": 8.0,
+        "mean": 7.7,
+        "max": 8
+      },
+      "k_min": {
+        "min": 4,
+        "median": 8.0,
+        "mean": 7.7,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 0,
+      "n_below_K4_either": 0,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    },
+    "procedure": {
+      "n_terms": 48,
+      "k_en": {
+        "min": 6,
+        "median": 8.0,
+        "mean": 8.0,
+        "max": 8
+      },
+      "k_zh": {
+        "min": 3,
+        "median": 8.0,
+        "mean": 7.8,
+        "max": 8
+      },
+      "k_min": {
+        "min": 3,
+        "median": 8.0,
+        "mean": 7.8,
+        "max": 8
+      },
+      "n_below_K4_en": 0,
+      "n_below_K4_zh": 1,
+      "n_below_K4_either": 1,
+      "n_zero_en": 0,
+      "n_zero_zh": 0
+    }
+  },
+  "per_term": {
+    "1": {
+      "en": "administrative",
+      "zh": "行政",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "17": {
+      "en": "bilateral",
+      "zh": "雙邊",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "23": {
+      "en": "conciliation",
+      "zh": "調停",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "25": {
+      "en": "constitution",
+      "zh": "憲法",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 2,
+      "k_min": 2
+    },
+    "27": {
+      "en": "contractual",
+      "zh": "合約",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "31": {
+      "en": "conviction",
+      "zh": "定罪",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "32": {
+      "en": "copyright",
+      "zh": "版權",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "47": {
+      "en": "disclosure",
+      "zh": "公開",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "54": {
+      "en": "employee",
+      "zh": "僱員",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "55": {
+      "en": "employer",
+      "zh": "僱主",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "56": {
+      "en": "employment",
+      "zh": "僱傭",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "68": {
+      "en": "freedom",
+      "zh": "自由",
+      "domain": "constitutional",
+      "k_en": 7,
+      "k_zh": 8,
+      "k_min": 7
+    },
+    "70": {
+      "en": "harassment",
+      "zh": "侵擾",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "84": {
+      "en": "interlocutory",
+      "zh": "非正審",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "85": {
+      "en": "international law",
+      "zh": "國際私法",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "95": {
+      "en": "Legislative Council",
+      "zh": "立法會",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "99": {
+      "en": "mediation",
+      "zh": "調解",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "103": {
+      "en": "misrepresentation",
+      "zh": "失實陳述",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "120": {
+      "en": "patent",
+      "zh": "明顯",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "124": {
+      "en": "penalty",
+      "zh": "罰則",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "125": {
+      "en": "perjury",
+      "zh": "作假證供罪",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "131": {
+      "en": "protocol",
+      "zh": "條約等的草案",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "156": {
+      "en": "summons",
+      "zh": "傳票",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "163": {
+      "en": "testamentary",
+      "zh": "遺囑性質",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "177": {
+      "en": "trustee",
+      "zh": "受託人",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "212": {
+      "en": "consular",
+      "zh": "職業領事官員",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "213": {
+      "en": "diplomatic",
+      "zh": "外交豁免權",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "224": {
+      "en": "multilateral",
+      "zh": "多邊協定",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "234": {
+      "en": "admissible",
+      "zh": "可接納",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "238": {
+      "en": "assault",
+      "zh": "猥褻侵犯",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "266": {
+      "en": "electoral",
+      "zh": "選舉法",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "291": {
+      "en": "imprisonment",
+      "zh": "串謀非法禁錮",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "296": {
+      "en": "labour",
+      "zh": "勞資糾紛",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "306": {
+      "en": "murder",
+      "zh": "慫使和促致謀殺",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "322": {
+      "en": "prosecution",
+      "zh": "舉證責任在於控方",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "426": {
+      "en": "absolute",
+      "zh": "全權",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "438": {
+      "en": "account",
+      "zh": "帳號",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "439": {
+      "en": "accounting",
+      "zh": "會計",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "440": {
+      "en": "accreditation",
+      "zh": "評審",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "453": {
+      "en": "act",
+      "zh": "法",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "478": {
+      "en": "address",
+      "zh": "地址",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "490": {
+      "en": "adjudication",
+      "zh": "終審",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "492": {
+      "en": "administer",
+      "zh": "主持",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "498": {
+      "en": "admit",
+      "zh": "明示承認",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "532": {
+      "en": "age",
+      "zh": "年齡",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "540": {
+      "en": "agreement",
+      "zh": "協定",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "580": {
+      "en": "amount",
+      "zh": "款額",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "615": {
+      "en": "appeal",
+      "zh": "上訴文件冊",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "621": {
+      "en": "applicant",
+      "zh": "申請代表人",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "622": {
+      "en": "application",
+      "zh": "申請",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "636": {
+      "en": "arbitral",
+      "zh": "仲裁",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "639": {
+      "en": "arbitration",
+      "zh": "將爭議事項提交仲裁",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "640": {
+      "en": "arbitrator",
+      "zh": "仲裁員",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "648": {
+      "en": "arrangement",
+      "zh": "安排",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "651": {
+      "en": "arrest",
+      "zh": "逮捕",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "666": {
+      "en": "asset",
+      "zh": "資產",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "671": {
+      "en": "assistance",
+      "zh": "協助",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "675": {
+      "en": "association",
+      "zh": "相聯組織",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "701": {
+      "en": "audit",
+      "zh": "經審核的帳目",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "733": {
+      "en": "ballot",
+      "zh": "投票",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "756": {
+      "en": "benefit",
+      "zh": "利益",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "765": {
+      "en": "beyond reasonable doubt",
+      "zh": "證明案件無合理疑點",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "772": {
+      "en": "bill",
+      "zh": "單據",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "782": {
+      "en": "bona fide",
+      "zh": "善意",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 3,
+      "k_min": 3
+    },
+    "795": {
+      "en": "breach",
+      "zh": "違反",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "807": {
+      "en": "building",
+      "zh": "建築",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "813": {
+      "en": "business",
+      "zh": "事務",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "845": {
+      "en": "care",
+      "zh": "小心",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 6,
+      "k_min": 6
+    },
+    "882": {
+      "en": "certificate",
+      "zh": "證明書",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "883": {
+      "en": "certified",
+      "zh": "經核證",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "899": {
+      "en": "charge",
+      "zh": "押記",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "913": {
+      "en": "child",
+      "zh": "兒童",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "930": {
+      "en": "claim",
+      "zh": "針對遺產的申索",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "943": {
+      "en": "client",
+      "zh": "當事人",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "949": {
+      "en": "code",
+      "zh": "守則",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "990": {
+      "en": "company",
+      "zh": "公司",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "995": {
+      "en": "compensation",
+      "zh": "補償",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1002": {
+      "en": "complaint",
+      "zh": "投訴",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1004": {
+      "en": "compliance",
+      "zh": "遵從",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1005": {
+      "en": "comply",
+      "zh": "遵守",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1041": {
+      "en": "confiscation",
+      "zh": "沒收令",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1043": {
+      "en": "conflict",
+      "zh": "抵觸",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1067": {
+      "en": "constituency",
+      "zh": "選區居民",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1094": {
+      "en": "contract",
+      "zh": "合同",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1096": {
+      "en": "contractor",
+      "zh": "承包商",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 2,
+      "k_min": 2
+    },
+    "1100": {
+      "en": "contribution",
+      "zh": "供款",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1102": {
+      "en": "controller",
+      "zh": "控制人",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1106": {
+      "en": "convention",
+      "zh": "慣例",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1109": {
+      "en": "conveyance",
+      "zh": "轉讓",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1143": {
+      "en": "counterparty",
+      "zh": "對手方",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1147": {
+      "en": "court",
+      "zh": "引用法官判詞",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1177": {
+      "en": "current",
+      "zh": "流通",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1178": {
+      "en": "custody",
+      "zh": "保管",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1189": {
+      "en": "damages",
+      "zh": "損害賠償",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1212": {
+      "en": "debt",
+      "zh": "了結債務",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1222": {
+      "en": "declaration",
+      "zh": "宣告",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1229": {
+      "en": "deed",
+      "zh": "契約",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1240": {
+      "en": "defence",
+      "zh": "抗辯",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1245": {
+      "en": "defraud",
+      "zh": "詐取",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1250": {
+      "en": "delegate",
+      "zh": "獲轉授權力的人",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1261": {
+      "en": "delivery",
+      "zh": "交付",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1285": {
+      "en": "deposit",
+      "zh": "貨物按金",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1294": {
+      "en": "derivative",
+      "zh": "衍生",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1330": {
+      "en": "disability",
+      "zh": "弱能",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "1344": {
+      "en": "discrimination",
+      "zh": "殘疾歧視",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 4,
+      "k_min": 4
+    },
+    "1358": {
+      "en": "disposition",
+      "zh": "產權處置",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1407": {
+      "en": "duly",
+      "zh": "妥當地",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1441": {
+      "en": "election",
+      "zh": "甄選",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1455": {
+      "en": "emergency",
+      "zh": "緊急情況",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1478": {
+      "en": "enforcement",
+      "zh": "強制執行",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1489": {
+      "en": "entitlement",
+      "zh": "享有權",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1490": {
+      "en": "entity",
+      "zh": "實體",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1491": {
+      "en": "entry",
+      "zh": "入境",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1495": {
+      "en": "equal",
+      "zh": "平等",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1497": {
+      "en": "equity",
+      "zh": "衡平法",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1508": {
+      "en": "estate",
+      "zh": "房地產權利",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1520": {
+      "en": "evidence",
+      "zh": "以使用過程作為證據",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1542": {
+      "en": "examination",
+      "zh": "覆問",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 6,
+      "k_min": 6
+    },
+    "1543": {
+      "en": "examine",
+      "zh": "訊問",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1559": {
+      "en": "exemption",
+      "zh": "豁免",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1561": {
+      "en": "exercise",
+      "zh": "實行",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1562": {
+      "en": "exhibit",
+      "zh": "證物",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1570": {
+      "en": "expenditure",
+      "zh": "開支",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1571": {
+      "en": "expenses",
+      "zh": "費用",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1606": {
+      "en": "failure",
+      "zh": "不履行",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1616": {
+      "en": "false",
+      "zh": "虛假",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1621": {
+      "en": "family",
+      "zh": "家事",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1627": {
+      "en": "fee",
+      "zh": "費用",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1646": {
+      "en": "financial",
+      "zh": "財務",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1649": {
+      "en": "fine",
+      "zh": "關於罰款及擔保的法院紀錄",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1678": {
+      "en": "forfeiture",
+      "zh": "對租契所設租賃權的沒收",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1694": {
+      "en": "fraudulent",
+      "zh": "欺詐",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1706": {
+      "en": "fund",
+      "zh": "基金",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1711": {
+      "en": "futures",
+      "zh": "期貨",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1729": {
+      "en": "gift",
+      "zh": "贈與",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 1,
+      "k_min": 1
+    },
+    "1745": {
+      "en": "government",
+      "zh": "政府",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1748": {
+      "en": "grant",
+      "zh": "批予",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1753": {
+      "en": "gratuity",
+      "zh": "約滿酬金",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1769": {
+      "en": "guilty",
+      "zh": "有罪責",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1784": {
+      "en": "hearing",
+      "zh": "編定聆訊日期",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "1795": {
+      "en": "holder",
+      "zh": "持有人",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1853": {
+      "en": "implementation",
+      "zh": "實施",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1938": {
+      "en": "indecent",
+      "zh": "嚴重猥褻",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1944": {
+      "en": "independent",
+      "zh": "不受干預",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1976": {
+      "en": "infringement",
+      "zh": "直接侵犯版權",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "1999": {
+      "en": "inquiry",
+      "zh": "研訊",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2006": {
+      "en": "insolvency",
+      "zh": "針對無力償債的法律程序",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2016": {
+      "en": "insurance",
+      "zh": "保險",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2019": {
+      "en": "insurer",
+      "zh": "保險人",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2022": {
+      "en": "intent",
+      "zh": "意圖",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2023": {
+      "en": "intention",
+      "zh": "意向",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2035": {
+      "en": "intermediary",
+      "zh": "中介人",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2078": {
+      "en": "issue",
+      "zh": "共同提出爭論點供裁決",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2100": {
+      "en": "judicial",
+      "zh": "司法",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2129": {
+      "en": "justice",
+      "zh": "公正",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2136": {
+      "en": "juvenile",
+      "zh": "少年罪犯",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2148": {
+      "en": "knowingly",
+      "zh": "故意",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2153": {
+      "en": "land",
+      "zh": "土地",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2166": {
+      "en": "lawful",
+      "zh": "合法",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2176": {
+      "en": "lease",
+      "zh": "租賃",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2177": {
+      "en": "leave",
+      "zh": "許可",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2202": {
+      "en": "levy",
+      "zh": "徵款",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2230": {
+      "en": "liberty",
+      "zh": "自由",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2231": {
+      "en": "licence",
+      "zh": "牌照",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2233": {
+      "en": "licensee",
+      "zh": "持牌人",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2234": {
+      "en": "lien",
+      "zh": "海上留置權",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2238": {
+      "en": "limitation",
+      "zh": "限制",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2255": {
+      "en": "loan",
+      "zh": "貸款",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2281": {
+      "en": "maintenance",
+      "zh": "保養",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2283": {
+      "en": "majority",
+      "zh": "大多數",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2295": {
+      "en": "management",
+      "zh": "管理",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2303": {
+      "en": "marine",
+      "zh": "海上",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2305": {
+      "en": "maritime",
+      "zh": "海上",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2310": {
+      "en": "marriage",
+      "zh": "婚姻",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2327": {
+      "en": "meeting",
+      "zh": "會議",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2351": {
+      "en": "misconduct",
+      "zh": "公職人員行為失當",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2365": {
+      "en": "modification",
+      "zh": "修改",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2391": {
+      "en": "mutual",
+      "zh": "相互",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2443": {
+      "en": "non-compliance",
+      "zh": "不符合",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2467": {
+      "en": "notification",
+      "zh": "通知書",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2488": {
+      "en": "objection",
+      "zh": "反對理由",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2491": {
+      "en": "obligation",
+      "zh": "一般義務",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2517": {
+      "en": "offeror",
+      "zh": "要約人",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2518": {
+      "en": "office",
+      "zh": "職位",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2591": {
+      "en": "ownership",
+      "zh": "衡平法上的擁有權",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2600": {
+      "en": "panel",
+      "zh": "名單",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2621": {
+      "en": "partnership",
+      "zh": "合夥關係",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2631": {
+      "en": "pay",
+      "zh": "付款",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2632": {
+      "en": "payable",
+      "zh": "應支付",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2635": {
+      "en": "payment",
+      "zh": "中期付款",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "2665": {
+      "en": "permission",
+      "zh": "准許",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2667": {
+      "en": "permit",
+      "zh": "准許證",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2676": {
+      "en": "petition",
+      "zh": "呈請",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2686": {
+      "en": "plea",
+      "zh": "對控罪的回答",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2695": {
+      "en": "poll",
+      "zh": "投票",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2714": {
+      "en": "practice",
+      "zh": "實務",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2733": {
+      "en": "prejudice",
+      "zh": "妨害",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2736": {
+      "en": "premises",
+      "zh": "處所",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2745": {
+      "en": "presumption",
+      "zh": "不可推翻的推定",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2759": {
+      "en": "priority",
+      "zh": "優先權",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2782": {
+      "en": "procedure",
+      "zh": "程序",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2785": {
+      "en": "proceeds",
+      "zh": "得益",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2786": {
+      "en": "process",
+      "zh": "濫用程序",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2798": {
+      "en": "professional",
+      "zh": "專業",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2799": {
+      "en": "profit",
+      "zh": "不公開利潤",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2810": {
+      "en": "proof",
+      "zh": "證據",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2813": {
+      "en": "property",
+      "zh": "物業",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2817": {
+      "en": "proprietary",
+      "zh": "所有權",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2824": {
+      "en": "protection",
+      "zh": "保護",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2826": {
+      "en": "prove",
+      "zh": "證明",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2829": {
+      "en": "provision",
+      "zh": "提早終止條款",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2830": {
+      "en": "provisional",
+      "zh": "暫定",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2843": {
+      "en": "purchaser",
+      "zh": "買家",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 7,
+      "k_min": 7
+    },
+    "2889": {
+      "en": "quorum",
+      "zh": "太平紳士委任狀",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2918": {
+      "en": "recall",
+      "zh": "召回",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2969": {
+      "en": "register",
+      "zh": "登記",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2973": {
+      "en": "registration",
+      "zh": "登記",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2976": {
+      "en": "regulation",
+      "zh": "規例",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "2978": {
+      "en": "regulatory",
+      "zh": "規管",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3026": {
+      "en": "representation",
+      "zh": "代理",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3027": {
+      "en": "representative",
+      "zh": "代理人",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3039": {
+      "en": "requirement",
+      "zh": "要求",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3074": {
+      "en": "restraint",
+      "zh": "限制",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3094": {
+      "en": "review",
+      "zh": "審核",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3098": {
+      "en": "revocation",
+      "zh": "撤回",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3099": {
+      "en": "revoke",
+      "zh": "撤回",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3162": {
+      "en": "seizure",
+      "zh": "扣押",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3176": {
+      "en": "serve",
+      "zh": "無須向任何一方送達",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3182": {
+      "en": "set aside",
+      "zh": "作廢",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3187": {
+      "en": "settlement",
+      "zh": "清繳",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3217": {
+      "en": "signature",
+      "zh": "簽名",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3255": {
+      "en": "standard",
+      "zh": "標準",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3260": {
+      "en": "state",
+      "zh": "國家",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3261": {
+      "en": "statement",
+      "zh": "報表",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3267": {
+      "en": "statutory",
+      "zh": "法例",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3272": {
+      "en": "stock",
+      "zh": "股票",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3308": {
+      "en": "substantiate",
+      "zh": "提供事實",
+      "domain": "procedure",
+      "k_en": 6,
+      "k_zh": 8,
+      "k_min": 6
+    },
+    "3329": {
+      "en": "sum",
+      "zh": "款項",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3347": {
+      "en": "surcharge",
+      "zh": "附加費",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3350": {
+      "en": "surrender",
+      "zh": "交出",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3357": {
+      "en": "suspend",
+      "zh": "中止",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3359": {
+      "en": "suspension",
+      "zh": "暫停",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3380": {
+      "en": "tax",
+      "zh": "稅",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3382": {
+      "en": "taxation",
+      "zh": "課稅",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3402": {
+      "en": "territorial",
+      "zh": "領土",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3409": {
+      "en": "third party",
+      "zh": "第三方得利者",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3414": {
+      "en": "title",
+      "zh": "簡稱",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3421": {
+      "en": "trade",
+      "zh": "交易",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3424": {
+      "en": "transaction",
+      "zh": "交易",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3426": {
+      "en": "transfer",
+      "zh": "移交",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3448": {
+      "en": "trust",
+      "zh": "信託",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3484": {
+      "en": "undertaking",
+      "zh": "承諾",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3504": {
+      "en": "unincorporated",
+      "zh": "不具法團地位",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3506": {
+      "en": "unit",
+      "zh": "單位",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3513": {
+      "en": "unlawful",
+      "zh": "不合法",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3593": {
+      "en": "vicinity",
+      "zh": "鄰近範圍",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3622": {
+      "en": "vote",
+      "zh": "投票",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3623": {
+      "en": "voting",
+      "zh": "投票",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3630": {
+      "en": "wage",
+      "zh": "報酬",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3660": {
+      "en": "wilfully",
+      "zh": "故意地",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 4,
+      "k_min": 4
+    },
+    "3664": {
+      "en": "winding up",
+      "zh": "強制清盤",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3674": {
+      "en": "witness",
+      "zh": "\"謹簽署或簽立為證\"",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3678": {
+      "en": "work",
+      "zh": "作品",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3679": {
+      "en": "worker",
+      "zh": "傭工",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "3687": {
+      "en": "written",
+      "zh": "成文",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "3703": {
+      "en": "trade mark",
+      "zh": "放棄商標",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4082": {
+      "en": "aircraft",
+      "zh": "飛機",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4114": {
+      "en": "conference",
+      "zh": "締約方大會",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4119": {
+      "en": "dangerous",
+      "zh": "附表的危險藥物",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4144": {
+      "en": "health",
+      "zh": "健康損害",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4151": {
+      "en": "international",
+      "zh": "國際義務",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4177": {
+      "en": "offence",
+      "zh": "借機犯罪",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4190": {
+      "en": "territory",
+      "zh": "領土",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4191": {
+      "en": "terrorist",
+      "zh": "恐怖分子",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4197": {
+      "en": "United Nations",
+      "zh": "聯合國",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4206": {
+      "en": "war",
+      "zh": "戰爭",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4223": {
+      "en": "tanker",
+      "zh": "化學品液貨船",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 6,
+      "k_min": 6
+    },
+    "4236": {
+      "en": "crime",
+      "zh": "罪加一等",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4237": {
+      "en": "prisoner",
+      "zh": "囚犯",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4257": {
+      "en": "proceeding",
+      "zh": "循簡易程序審訊藐視法庭案",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4262": {
+      "en": "organization",
+      "zh": "非屬法團的組織",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4268": {
+      "en": "waters",
+      "zh": "領海",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4276": {
+      "en": "offender",
+      "zh": "慣犯",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 7,
+      "k_min": 7
+    },
+    "4287": {
+      "en": "staff",
+      "zh": "領館館員",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4302": {
+      "en": "overseas",
+      "zh": "海外財務機構",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4303": {
+      "en": "political",
+      "zh": "外國政治性組織",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4311": {
+      "en": "regional",
+      "zh": "區域性航行規劃程序",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4325": {
+      "en": "system",
+      "zh": "對訟式刑事司法體系",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4335": {
+      "en": "punishment",
+      "zh": "懲罰",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4353": {
+      "en": "violence",
+      "zh": "實際使用暴力",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4552": {
+      "en": "approval",
+      "zh": "批函",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4595": {
+      "en": "assembly",
+      "zh": "集會……的自由",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4626": {
+      "en": "attempt",
+      "zh": "企圖從合法羈押逃脫",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4648": {
+      "en": "authorization",
+      "zh": "訂明授權",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4666": {
+      "en": "bail",
+      "zh": "違反保釋條件",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4729": {
+      "en": "boundary",
+      "zh": "土地界線",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4794": {
+      "en": "candidate",
+      "zh": "候選人",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4839": {
+      "en": "certified copy",
+      "zh": "核證文本",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4858": {
+      "en": "charitable",
+      "zh": "慈善信託",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "4871": {
+      "en": "Chinese medicine",
+      "zh": "中醫藥學",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "4999": {
+      "en": "conceal",
+      "zh": "隱藏",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5089": {
+      "en": "contravention",
+      "zh": "違反",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5158": {
+      "en": "criminal",
+      "zh": "刑事罪責",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5308": {
+      "en": "detention",
+      "zh": "串謀強行禁錮",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5311": {
+      "en": "determine",
+      "zh": "終止",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5350": {
+      "en": "disciplinary",
+      "zh": "紀律處分程序",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5351": {
+      "en": "discipline",
+      "zh": "紀律",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5412": {
+      "en": "distribution",
+      "zh": "分派",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5415": {
+      "en": "District Council",
+      "zh": "區議會議員",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5420": {
+      "en": "dividend",
+      "zh": "股息",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5471": {
+      "en": "education",
+      "zh": "教育機構",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5488": {
+      "en": "elector",
+      "zh": "選民",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5558": {
+      "en": "escalator",
+      "zh": "自動梯",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5753": {
+      "en": "full-time",
+      "zh": "全時間佔用",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5798": {
+      "en": "governing",
+      "zh": "規管文書",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5844": {
+      "en": "harm",
+      "zh": "身體嚴重傷害",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5855": {
+      "en": "healthcare",
+      "zh": "醫護服務",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5860": {
+      "en": "Heung Yee Kuk",
+      "zh": "鄉議局",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5897": {
+      "en": "hour",
+      "zh": "合理時間",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "5975": {
+      "en": "in force",
+      "zh": "繼續有效",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6014": {
+      "en": "in writing",
+      "zh": "以書面",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6044": {
+      "en": "incorporation",
+      "zh": "法團註冊證書",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6071": {
+      "en": "industry",
+      "zh": "行業內機構的規管",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6102": {
+      "en": "initiate",
+      "zh": "提起法律程序",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6122": {
+      "en": "inspection",
+      "zh": "公眾查閱",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6123": {
+      "en": "inspector",
+      "zh": "視察主任",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 4,
+      "k_min": 4
+    },
+    "6199": {
+      "en": "investigation",
+      "zh": "調查",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6288": {
+      "en": "level",
+      "zh": "量刑等級",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6351": {
+      "en": "Mainland",
+      "zh": "內地",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6369": {
+      "en": "manager",
+      "zh": "管理人",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6396": {
+      "en": "material particular",
+      "zh": "要項",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6408": {
+      "en": "medical",
+      "zh": "醫療護理",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 4,
+      "k_min": 4
+    },
+    "6427": {
+      "en": "military",
+      "zh": "軍隊",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 2,
+      "k_min": 2
+    },
+    "6512": {
+      "en": "nomination",
+      "zh": "提名",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6577": {
+      "en": "obscene",
+      "zh": "淫褻",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6583": {
+      "en": "occupational",
+      "zh": "職業履歷",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6673": {
+      "en": "particulars",
+      "zh": "申索詳情",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6764": {
+      "en": "position",
+      "zh": "受人信任的位置",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6895": {
+      "en": "public interest",
+      "zh": "公眾利益",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "6903": {
+      "en": "punish",
+      "zh": "處罰",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7002": {
+      "en": "registry",
+      "zh": "申索登記處",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7040": {
+      "en": "remuneration",
+      "zh": "酬金",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7046": {
+      "en": "rental",
+      "zh": "租金",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7082": {
+      "en": "resolve",
+      "zh": "解決",
+      "domain": "procedure",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7148": {
+      "en": "safeguard",
+      "zh": "保障措施",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "7167": {
+      "en": "sea-going",
+      "zh": "海域航行船舶",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 5,
+      "k_min": 5
+    },
+    "7198": {
+      "en": "sentence",
+      "zh": "將……的判刑與……的量刑基準掛鈎",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7261": {
+      "en": "society",
+      "zh": "獲豁免社團",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7431": {
+      "en": "threat",
+      "zh": "威脅",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7458": {
+      "en": "trafficking",
+      "zh": "商業性質的販毒",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 2,
+      "k_min": 2
+    },
+    "7531": {
+      "en": "unlawfully",
+      "zh": "非法禁錮",
+      "domain": "criminal",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7584": {
+      "en": "vesting",
+      "zh": "轉歸",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7653": {
+      "en": "works",
+      "zh": "工程設施",
+      "domain": "labor_social",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7694": {
+      "en": "outbound",
+      "zh": "外遊費",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7721": {
+      "en": "non-Hong Kong",
+      "zh": "非香港有限責任合夥",
+      "domain": "international",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "7880": {
+      "en": "share capital",
+      "zh": "股本",
+      "domain": "civil",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "8193": {
+      "en": "religion",
+      "zh": "宗教",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "8367": {
+      "en": "Election Committee",
+      "zh": "選舉委員",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "9055": {
+      "en": "Commissioner",
+      "zh": "海關關長",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 7,
+      "k_min": 7
+    },
+    "9058": {
+      "en": "Director",
+      "zh": "政府物流服務署署長",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "9059": {
+      "en": "Presiding Officer",
+      "zh": "副票站主任",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "9075": {
+      "en": "Registrar",
+      "zh": "職工會登記局局長",
+      "domain": "administrative",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "9103": {
+      "en": "Board",
+      "zh": "教務委員會",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    },
+    "9107": {
+      "en": "Committee",
+      "zh": "上訴委員會",
+      "domain": "constitutional",
+      "k_en": 8,
+      "k_zh": 8,
+      "k_min": 8
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "en_models": [
+      "BGE-EN-large"
+    ],
+    "zh_models": [
+      "BGE-ZH-large"
+    ],
+    "pairs_n": 1,
+    "core_reference_attested_cross_rho": 0.246,
+    "core_K_range": "4-8"
+  },
+  "buckets": [
+    {
+      "K_bucket": "1",
+      "n_bg": 970,
+      "n_common_nonzero": 970,
+      "rhos_cross_pairs": [
+        -0.1315
+      ],
+      "mean_rho_cross": -0.1315,
+      "std_rho_cross": 0.0
+    },
+    {
+      "K_bucket": "2",
+      "n_bg": 572,
+      "n_common_nonzero": 572,
+      "rhos_cross_pairs": [
+        0.0539
+      ],
+      "mean_rho_cross": 0.0539,
+      "std_rho_cross": 0.0
+    },
+    {
+      "K_bucket": "3",
+      "n_bg": 335,
+      "n_common_nonzero": 335,
+      "rhos_cross_pairs": [
+        0.1349
+      ],
+      "mean_rho_cross": 0.1349,
+      "std_rho_cross": 0.0
+    },
+    {
+      "K_bucket": "4-7",
+      "n_bg": 690,
+      "n_common_nonzero": 690,
+      "rhos_cross_pairs": [
+        0.1495
+      ],
+      "mean_rho_cross": 0.1495,
+      "std_rho_cross": 0.0
+    },
+    {
+      "K_bucket": "8",
+      "n_bg": 2559,
+      "n_common_nonzero": 2559,
+      "rhos_cross_pairs": [
+        0.2176
+      ],
+      "mean_rho_cross": 0.2176,
+      "std_rho_cross": 0.0
+    }
+  ]
+}

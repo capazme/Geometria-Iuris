@@ -1,0 +1,342 @@
+{
+  "run_id": "ch3-measurability",
+  "step": "00_seal_inputs",
+  "sealed_at_utc": "2026-05-17T13:44:58Z",
+  "snapshots": [
+    {
+      "source": "experiments/data/processed/legal_term_run4.json",
+      "snapshot": "experiments/ch3-measurability/inputs/core_terms_snapshot.json",
+      "size_bytes": 80871,
+      "sha256": "52d9d5c0a3e04602eb8ee36bb59ffddfdc8f52374087b2973188249afac0080e"
+    },
+    {
+      "source": "experiments/data/processed/zh_overrides_postBLP.json",
+      "snapshot": "experiments/ch3-measurability/inputs/zh_overrides_snapshot.json",
+      "size_bytes": 46531,
+      "sha256": "9856bd2c299409b7f8fc0312d5306f10592e3f1e0ef315e5a3867a60226a206f"
+    },
+    {
+      "source": "experiments/data/processed/cap_enactment_years.json",
+      "snapshot": "experiments/ch3-measurability/inputs/cap_enactment_years_snapshot.json",
+      "size_bytes": 2370,
+      "sha256": "66357c26ebb685d58ecfa7b53f7365473cc5c66f9b8eada5019acffc2644c550"
+    },
+    {
+      "source": "experiments/data/processed/elegislation/term_contexts_postBLP.jsonl",
+      "snapshot": "experiments/ch3-measurability/inputs/term_contexts_bilingual_snapshot.jsonl",
+      "size_bytes": 1741052,
+      "sha256": "18b9aa63d1caf5ddb6186b6e4bbfab810ef452f791ccada57c9e01669bf991c7"
+    },
+    {
+      "source": "experiments/data/processed/elegislation/coverage_postBLP.json",
+      "snapshot": "experiments/ch3-measurability/inputs/context_coverage_snapshot.json",
+      "size_bytes": 59292,
+      "sha256": "78577132c7d56e7538b8e409a913bfff7681adb7a7c26bca5e1651f00aaa9720"
+    },
+    {
+      "source": "experiments/data/trace_postBLP_curation.md",
+      "snapshot": "experiments/ch3-measurability/inputs/trace_curation_snapshot.md",
+      "size_bytes": 20138,
+      "sha256": "84da955523316ce54656cd4f01bd24d2cfac117a9442df2ec8a5118e9be6bba6"
+    },
+    {
+      "source": "experiments/lens_4_values/value_axes.yaml",
+      "snapshot": "experiments/ch3-measurability/inputs/value_axes_snapshot.yaml",
+      "size_bytes": 3839,
+      "sha256": "87843ed7c0be71f12d599659f076e26cda28b6d03f9d8dc8a5aebe5a7b61cfa2"
+    }
+  ],
+  "verification": {
+    "core_terms": {
+      "n_total": 364,
+      "tiers": {
+        "core": 364
+      },
+      "domains": {
+        "administrative": 52,
+        "civil": 60,
+        "constitutional": 49,
+        "criminal": 54,
+        "international": 41,
+        "labor_social": 60,
+        "procedure": 48
+      }
+    },
+    "context_coverage": {
+      "n_total": 364,
+      "n_k_ge_4": 358,
+      "n_k_lt_4": 6,
+      "meta": {
+        "threshold_year": 1989,
+        "max_contexts": 8,
+        "min_context_len": 60,
+        "n_keep_terms": 364,
+        "n_sections_total": 65599,
+        "n_sections_post_BLP": 29745,
+        "elapsed_seconds": 1.4
+      }
+    }
+  },
+  "finalized_at_utc": "2026-05-17T13:44:58Z",
+  "outputs": [
+    {
+      "path": "experiments/ch3-measurability/experiment_1_structure/results_bare/experiment_1_results.json",
+      "size_bytes": 29586,
+      "sha256": "6dfe907924dcd303e25aba1b5a442b746b26fc6dbbd67962ba738d3f1e3f9cc0"
+    },
+    {
+      "path": "experiments/ch3-measurability/experiment_1_structure/results_attested/experiment_1_results.json",
+      "size_bytes": 27072,
+      "sha256": "39994304e8766c139ba3204c6361e12dcdf28adf224d4b5f57f8bd5621058e17"
+    },
+    {
+      "path": "experiments/ch3-measurability/experiment_1_structure/results_bare/categorical_probe.json",
+      "size_bytes": 387976,
+      "sha256": "ea5f762dbfec6828a692ad511c9c0719af2fc9bf62e3994eda1d327180130bbf"
+    },
+    {
+      "path": "experiments/ch3-measurability/experiment_1_structure/results_attested/categorical_probe.json",
+      "size_bytes": 387976,
+      "sha256": "ea5f762dbfec6828a692ad511c9c0719af2fc9bf62e3994eda1d327180130bbf"
+    },
+    {
+      "path": "experiments/ch3-measurability/experiment_2_axes/results_bare/experiment_2_results.json",
+      "size_bytes": 111419,
+      "sha256": "2a1f50c37ccf2e3a3ccd47cadc4307a4ee40553f1f97d679732c6b0c6706e231"
+    },
+    {
+      "path": "experiments/ch3-measurability/experiment_2_axes/results_attested/experiment_2_results.json",
+      "size_bytes": 111384,
+      "sha256": "f8f676c72c14a53e2f908cbe3f752d1b05f34af9a461ede36f323bf71ca0a705"
+    },
+    {
+      "path": "experiments/ch3-measurability/reports/numbers_headline.md",
+      "size_bytes": 7450,
+      "sha256": "f71f80b82ffe9a5f6ff8ce7194b5afc99d0acb7c88f71af646963e51a1f8a64b"
+    },
+    {
+      "path": "experiments/ch3-measurability/reports/changes_vs_run3.md",
+      "size_bytes": 1622,
+      "sha256": "28bdf5a8f361cdea2d18bd039413e62c21a8651dceef173dcb9f0dddec0db200"
+    },
+    {
+      "path": "experiments/ch3-measurability/reports/verification_gate.md",
+      "size_bytes": 819,
+      "sha256": "3288e834cdfdac95222eb39d9459ae0217847b42f6c8fa2b5437aefe5685816e"
+    },
+    {
+      "path": "experiments/ch3-measurability/reports/extensions_summary.md",
+      "size_bytes": 13833,
+      "sha256": "a2837455ede65376000e01dc9a678d2013d739d66462ddacd89cedfb403db682"
+    },
+    {
+      "path": "experiments/ch3-measurability/embeddings/index.json",
+      "size_bytes": 36502,
+      "sha256": "4ca202ff7ff652dcc9213bf63f700db34c73ec6f610959d81d253ca478347a69"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/A_bg_knn/background_assignments.json",
+      "size_bytes": 2824568,
+      "sha256": "43ecc7dcacc0fdf1d63ef9686ea53c03456843c099cff62874902b7faeb2f43f"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/D_robustness/robustness_curve.json",
+      "size_bytes": 9999,
+      "sha256": "ec2659f35171651669e9c07dfe332492cc3d207d228d9a1a7207c814be80f25c"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/E_axes_oos/coherence.json",
+      "size_bytes": 47751,
+      "sha256": "cecefe53dacc4d20c15cffe65b19962da5cd39dc1efa981b2f8505c2d7601050"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/F_confidence/confidence_strata.json",
+      "size_bytes": 1285,
+      "sha256": "fe5521201f2f4c1746ed6c47abcf6b944316451b299588c53d8c9bc59010207f"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/G_false_friends/false_friends.json",
+      "size_bytes": 876119,
+      "sha256": "b4344b74dd28a4b8fff8521291ecb8b381240086f4912ad058395e20fae4fd74"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/H_K_saturation/k_saturation.json",
+      "size_bytes": 1215,
+      "sha256": "bd0e4a8b63ef0e6ed90b6877cf1d4e3b1224935b40bd00ee0c01e618837e9e07"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/X_control_robustness/control_robustness_curve.json",
+      "size_bytes": 2769,
+      "sha256": "5e1094c8dd8f4069f6080745967e31803c2a762abfc11275097312ab88285ae1"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/Y_control_only/control_only_rsa.json",
+      "size_bytes": 2448,
+      "sha256": "431a734085b18eae27d3e32746c936ff23c90e71eae5f8d9b64ebb05906ffda0"
+    },
+    {
+      "path": "experiments/ch3-measurability/ext/Z_tier_hierarchy/tier_hierarchy.json",
+      "size_bytes": 7316,
+      "sha256": "f95e5cfd649b72112e73e792c6aa41e28c7d497ff56796df711215702c92bf66"
+    }
+  ],
+  "embeddings": {
+    "BGE-EN-large": {
+      "dim": 1024,
+      "elapsed_bare_s": 7.01,
+      "elapsed_attested_s": 33.0,
+      "vecs_bare_sha256": "189d069b87df5260dfe08bc385f0b18e5efbccbdd16a2c2b704d22fb2850414b",
+      "vecs_attested_sha256": "42a3bedb8ed9d6582d426524ce75e237f1e2c8452e52ed0b997558420f7ffc81"
+    },
+    "BGE-M3-EN": {
+      "dim": 1024,
+      "elapsed_bare_s": 7.8,
+      "elapsed_attested_s": 28.9,
+      "vecs_bare_sha256": "383c70737399e1a57ae6b4b09c3f3d6042fd0d655309c712098bb988337c52b8",
+      "vecs_attested_sha256": "43e3ea5529a1ec463aa045bed1b673f235fca7f16989daf4a0078de1592b3bb1"
+    },
+    "BGE-M3-ZH": {
+      "dim": 1024,
+      "elapsed_bare_s": 1.2,
+      "elapsed_attested_s": 115.83,
+      "vecs_bare_sha256": "9a8aa16812409f0f1df6c2fcea588a85bb766c079fa440e61dacb3d093adf563",
+      "vecs_attested_sha256": "c2b716107ecb186ab360fe10bc68aeb5ff966b89b41cbb1edfe9b4a0dc5e2751"
+    },
+    "BGE-ZH-large": {
+      "dim": 1024,
+      "elapsed_bare_s": 6.78,
+      "elapsed_attested_s": 137.35,
+      "vecs_bare_sha256": "a03005dce7ebdafe5a3d22671761cbd5da6a87fecc1f160836279108d5e8e0d6",
+      "vecs_attested_sha256": "e4279cb5e66069df531036dc1ee1b2b9c5b58f7d14e8d833f369bd70dd5467a2"
+    },
+    "Dmeta-ZH": {
+      "dim": 768,
+      "elapsed_bare_s": 4.04,
+      "elapsed_attested_s": 41.33,
+      "vecs_bare_sha256": "9467b2b528369753861e9f974a56a0457c40724c0d5e0d5bf249b4175dd05891",
+      "vecs_attested_sha256": "0227801b75a9b913255559a0f2435511e548a9aaf721c8545d4287336d436bda"
+    },
+    "E5-large": {
+      "dim": 1024,
+      "elapsed_bare_s": 7.52,
+      "elapsed_attested_s": 32.25,
+      "vecs_bare_sha256": "2ba4b184ff92690f6e19047855b1b8eb7c25134e10d19d6def0cb7850c67eb82",
+      "vecs_attested_sha256": "0bdab910d25d43ef6a4a21be2e54bb567a5c5961fd50575013ff93ad604aac51"
+    },
+    "FreeLaw-EN": {
+      "dim": 768,
+      "elapsed_bare_s": 3.77,
+      "elapsed_attested_s": 11.04,
+      "vecs_bare_sha256": "b04d80b880b6fe270aca38b9cd73c24781ea43641654c6873b2dc65fef8d9b2c",
+      "vecs_attested_sha256": "4997a33f291955f2626244d477866dd09a102ed1c6a8947228e691fc3359b7d2"
+    },
+    "Qwen3-0.6B-EN": {
+      "dim": 1024,
+      "elapsed_bare_s": 0.0,
+      "elapsed_attested_s": 434.08,
+      "vecs_bare_sha256": "2902a3942b1d9c42c511a7e39c55fc78b33503e424911a726b77cefbabec88a0",
+      "vecs_attested_sha256": "0dbc600e39e57b9a17a704b0cd3644b4f4414d3001e619d15818de9493d91d34"
+    },
+    "Qwen3-0.6B-ZH": {
+      "dim": 1024,
+      "elapsed_bare_s": 11.41,
+      "elapsed_attested_s": 2042.69,
+      "vecs_bare_sha256": "59ba5d64b1732bf5d4fc039fb516781dc0fb4b8acafe9df75f8464adccfa5651",
+      "vecs_attested_sha256": "4daa1ba5a157086f914273cf13b09e6fc5052cfb1c67401da3143732c5b5daed"
+    },
+    "Text2vec-large-ZH": {
+      "dim": 1024,
+      "elapsed_bare_s": 5.08,
+      "elapsed_attested_s": 136.36,
+      "vecs_bare_sha256": "e77ae38d4267a9ac747d219055cf515c80f0251d7f8f924d5f6ac59c2eab4898",
+      "vecs_attested_sha256": "d078500b434004790439cb44a72f14f4fa043abe87d47339518a2c5b7f563a19"
+    }
+  },
+  "control_embeddings": {
+    "BGE-EN-large": {
+      "vecs_sha256": "d8ef84ab23d4830628927e261996fbe5f4c4b0805230f9f74f9908c247ddeb30"
+    },
+    "BGE-M3-EN": {
+      "vecs_sha256": "6351ab529335da5fbf3cab59f0b09b4e00cad439cf49c863d160181ca5d869a8"
+    },
+    "BGE-M3-ZH": {
+      "vecs_sha256": "518a50f6f972843603bc4ca5613ae2149418a726aaa018b355be0cfb162a8968"
+    },
+    "BGE-ZH-large": {
+      "vecs_sha256": "58eabc610c0e4e40791f533f0e48576e5181ea1ffeb4b47b4f5d6260daa934bb"
+    },
+    "Dmeta-ZH": {
+      "vecs_sha256": "746692bfd6dbf647e18d3ab72fc58332ee55f4dee5a602e36cfabf1879a531a0"
+    },
+    "E5-large": {
+      "vecs_sha256": "98d8136cf45eda2d5e8c7a2f9fd4184779514853cf1a0d6464349201817a5587"
+    },
+    "FreeLaw-EN": {
+      "vecs_sha256": "66131a777273ebbe8cbb363cf3fd117a0a75fd67de7e328ebc53dd4a94290327"
+    },
+    "Qwen3-0.6B-EN": {
+      "vecs_sha256": "1849b553cf76cb5173dd78b9e046134ccb0046003dac49ec3ad3cad1b6e103b9"
+    },
+    "Qwen3-0.6B-ZH": {
+      "vecs_sha256": "cd7df27fbc8c4b4e5c1828b03cf9d923e1ca7b0946cf6ac57af8d7ed38c356a3"
+    },
+    "Text2vec-large-ZH": {
+      "vecs_sha256": "00bb3926a05937446895f30c3061568c16192d35d6cfcc4b44fcfbcc86f2b2da"
+    }
+  },
+  "bg_embeddings": {
+    "BGE-EN-large": {
+      "vecs_bare_sha256": "d8231acd5a991dfbba7f14eca42d8589edaac38c993c9310c4ce70bcc91bff3c",
+      "vecs_attested_sha256": "aef706e2aa0ab8b590da6fdf5e4a10e9a1180f2a1f062f2dbdb03df98285a76e"
+    },
+    "BGE-M3-EN": {
+      "vecs_bare_sha256": "52f6574ff784508bea6a9b66993e9e1e1b1d5785d95ed2360302ead922200ba9",
+      "vecs_attested_sha256": "faa482999ffd2719aff65912df98bc6a6111e0a54c5e987c1a5e6d1193b58845"
+    },
+    "BGE-M3-ZH": {
+      "vecs_bare_sha256": "54b901509a4286d21cd48a9009087d8dfa67fcfcc6f4f9c8691fbd6a33d3960f",
+      "vecs_attested_sha256": "edb43f02bfa633fe827e1018070d94c9fbb86e182835b65bde034bfe0dbf0387"
+    },
+    "BGE-ZH-large": {
+      "vecs_bare_sha256": "11ba665a1ddd61893985f8dcc0e9bc774a3d4a1c45e34d5e9087a713102c18b3",
+      "vecs_attested_sha256": "95c6c43099c36c40c2092ff0f3d15d82b2b0b057ca853d7e6678658bdee214eb"
+    },
+    "Dmeta-ZH": {
+      "vecs_bare_sha256": "6f8bd10ea096759f174d31bd2140d763f7d17e16321ab9b9ebee63073c413acf"
+    },
+    "E5-large": {
+      "vecs_bare_sha256": "7e5b3545846fa2469492f7d822ff9bfb4c3eb9d2aaba75cf2dbbc2fd63950952"
+    },
+    "FreeLaw-EN": {
+      "vecs_bare_sha256": "14ecbcf5f837fc5da1db6460c52350ceccbccae343d96bbababa2397a1fa3044",
+      "vecs_attested_sha256": "0f8fa79cbea29c55b06356d303e999d55d8f7f25e8d1fb7bf238ffb893333145"
+    },
+    "Qwen3-0.6B-EN": {
+      "vecs_bare_sha256": "abd8ee94e82f355f0dbfa1e6da104be8eeb98fbc0542eaa34d047b400213a955"
+    },
+    "Qwen3-0.6B-ZH": {
+      "vecs_bare_sha256": "c04ae22ea11afb6ae41421bb88c3692f7631d608e7552e285dc82de1edf02fe1"
+    },
+    "Text2vec-large-ZH": {
+      "vecs_bare_sha256": "f19c497a4908f41ca288272f975aea373d026b7682c5862741f42cf20ea7449b"
+    }
+  },
+  "control_snapshot": {
+    "snapshot": "experiments/ch3-measurability/inputs/control_terms_snapshot.json",
+    "size_bytes": 27051,
+    "sha256": "2678a223c70b1172e258bcb52695a72ef0a6f26f46dd0b0424f53f6f657b4649",
+    "n_terms": 100,
+    "source_origin": "experiments/data/processed/legal_terms.json (tier=control)",
+    "attested_available": false,
+    "added_at_utc": "2026-05-17T13:46:51Z"
+  },
+  "bg_snapshot": {
+    "snapshot_terms": "experiments/ch3-measurability/inputs/bg_terms_snapshot.json",
+    "snapshot_contexts": "experiments/ch3-measurability/inputs/bg_contexts_snapshot.jsonl",
+    "sha256_terms": "564ff68c80a5fca854972a83ce38eec9c76b5e2c2efa32dfa203fb062ea8a7b3",
+    "sha256_contexts": "17a3502ac43647860462955a3f59a5137f675b8d741deaf8ce7d47a472a7ac13",
+    "n_terms": 9045,
+    "source_origin": "experiments/data/processed/legal_terms.json (tier=background) + term_contexts.jsonl",
+    "added_at_utc": "2026-05-17T13:46:51Z"
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geometria Iuris — Chapter 3 companion dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+
+<header class="masthead">
+  <div class="crumb">Methodology of Legal Science · LUISS · 2026</div>
+  <h1>Geometria Iuris — Chapter 3 companion dashboard</h1>
+  <p>Two experiments on 364 legal terms, ten encoders, and one Y caveat. Frozen at run #4 (2026-05-17).</p>
+</header>
+<nav class="toc"><ul><li><a class="current" href="home.html">Home</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="how_it_works.html">How it works</a></li><li><a href="experiment_31.html">Experiment §3.1</a></li><li><a href="experiment_32.html">Experiment §3.2</a></li><li><a href="robustness_caveats.html">Robustness &amp; caveats</a></li></ul></nav>
+<main>
+<!-- ====================================================================== -->
+<section id="welcome">
+<h2>A companion dashboard for the dissertation</h2>
+
+<p class="lead">
+This dashboard accompanies Chapter 3 of <em>Geometria Iuris: Measuring
+Legal Meaning Across Cultural Normative Structures in Embedding Spaces</em>
+(LUISS, Master of Laws — Methodology of Legal Science). It is a reading
+aid for the thesis defence committee: the body of each result is written
+to be read without clicking, while the technical apparatus (formulae,
+p-values, code references) is kept on the page, at the foot of every
+sub-section, in plain view rather than in a hidden appendix.
+</p>
+
+<p>
+The Chapter asks a methodological question — <em>can legal meaning be
+measured?</em> — and answers it through two pre-registered experiments
+on 364 Hong Kong legal terms, sampled from ordinances enacted under the
+Bilingual Laws Project (post-1989, English/Chinese co-drafted). Ten
+encoder models — three WEIRD, three Sinic, four bilingual — are
+compared on two structural questions: how the lexicon organises itself
+into domains (§3.1), and how it projects onto pre-defined value axes
+(§3.2). The full run is finalised, frozen, and SHA-256-hashed in
+<code>experiments/ch3-measurability/manifest.json</code>.
+</p>
+</section>
+<!-- ====================================================================== -->
+<section id="verification">
+<h2>Methodological integrity</h2>
+
+<p>
+Before any number on this dashboard was admitted to the chapter, eight
+sanity checks had to pass. They guard against silent regressions when
+the build is regenerated and against the obvious mistake of citing a
+headline number whose statistical support is weak.
+</p>
+<span class="gate-badge"><span class="dot"></span>Verification gate 8 / 8 PASS · 2026-05-17</span>
+<table class="data">
+<thead><tr><th>Gate</th><th>Target</th><th>Observed</th></tr></thead>
+<tbody>
+<tr><td>≥ 10 embedding directories with bare + attested</td><td class="num">≥ 10</td><td class="strong">10 ✓</td></tr>
+<tr><td>ρ̄_cross attested within stability band</td><td class="num">stable</td><td class="strong">0.246 ✓</td></tr>
+<tr><td>ρ̄_within-WEIRD attested within stability band</td><td class="num">stable</td><td class="strong">0.712 ✓</td></tr>
+<tr><td>ρ̄_within-Sinic attested within stability band</td><td class="num">stable</td><td class="strong">0.868 ✓</td></tr>
+<tr><td>Δρ_sym attested</td><td class="num">≥ 0.40</td><td class="strong">0.543 ✓</td></tr>
+<tr><td>Mantel p_max across 17 pairs</td><td class="num">≤ 1e-3</td><td class="strong">1e-4 ✓</td></tr>
+<tr><td>Holm-corrected p_max (K = 17)</td><td class="num">≤ 5e-3</td><td class="strong">1.7e-3 ✓</td></tr>
+<tr><td>legal-vs-control models with r &gt; 0 and p &lt; 0.05</td><td class="num">≥ 8 / 10</td><td class="strong">8 / 10 ✓</td></tr>
+</tbody></table>
+</section>
+<!-- ====================================================================== -->
+<section id="anchors">
+<h2>Three anchor results</h2>
+
+<p>
+Three findings carry the chapter. Each is robust under multiple
+perturbations and admits an honest legal-methodological reading. The
+fuller treatment lives on the Robustness &amp; caveats page; here is the
+elevator version.
+</p>
+<div class="anchor-grid"><div class="anchor-card"><span class="tag">D · stability</span><h3>The cross-tradition gap survives pool perturbation</h3><p>Δρ_sym attested = <strong>0.543</strong> on the 364-term core; under background-term injection it traces <strong>0.538 → 0.590</strong> from 0% to 75% bg. The signal does not depend on a particular curation.</p></div><div class="anchor-card"><span class="tag">G · term-level proof</span><h3>Same-lemma terms diverge under tradition-specialised encoders, align under a single bilingual encoder</h3><p>On ~ 50 truly identical lemmas (<em>specimen signature</em>, <em>central bank</em>, <em>pharmacist</em>…), the tradition-specialised encoder pair returns cosine <strong>−0.05 to −0.11</strong>; the single bilingual model returns cosine <strong>+0.5 to +0.85</strong> on the same pairs. The divergence is tradition-shaped, not encoder-shaped.</p></div><div class="anchor-card"><span class="tag">Y · the legal signal is the gap, not the absolute</span><h3>Δρ_sym attested 0.543 against a bare baseline of 0.165</h3><p>The headline Δρ_sym attested = <strong>0.543</strong> needs a methodological frame. On the same 364 core terms, the bare encoding (lemma in isolation, no ordinance context) returns Δρ_sym = <strong>0.165</strong>, an encoder-tradition baseline with no legal content. The legal signal is the gap that attestation opens: <strong>0.378 = 0.543 − 0.165</strong>. The bare is the methodological control that isolates this contribution.</p></div></div>
+</section>
+<!-- ====================================================================== -->
+<section id="how-to-read">
+<h2>How to read the dashboard</h2>
+
+<p>
+The remaining pages are arranged in the order the thesis presents them.
+Methodology and How it works set up the toolkit; §3.1 and §3.2 report
+the two experiments; Robustness &amp; caveats expands the three anchor
+results and discloses the limits — including the Y reframing of the
+headline number.
+</p>
+
+<p>
+Each result section follows a five-step concentric pattern: a short
+legal scenario, the result stated in plain words, an annotated chart, a
+one-sentence take-home pointing to Chapter 4 of the thesis, and a
+technical apparatus collapsing the formula, the p-value, the
+confidence interval, and a code reference into a single block. Lawyers
+on the committee may stop after step four; the engineer co-supervisor
+will find the formal claim verifiable at step five.
+</p>
+
+<p>
+All figures are regenerated from the JSON manifests in
+<code>experiments/ch3-measurability/</code> at build time; nothing on
+this page is hand-typed.
+</p>
+</section>
+<nav class="linear first-page">
+<a class="next" href="methodology.html"><span class="dir">Next →</span><span class="lab">Methodology</span></a>
+</nav>
+</main>
+
+<footer>Geometria Iuris — companion dashboard. Source data: <code>experiments/ch3-measurability/</code> (run #4, 2026-05-17). All figures regenerated from frozen JSON manifests (50 SHA-256 hashes, verification gate 8/8 PASS).</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  window.toggleStage = (el) => {
+    const stages = [...document.querySelectorAll(".stage")];
+    const idx = stages.indexOf(el);
+    const details = document.querySelectorAll("#stage-details .stage-detail");
+    const wasActive = el.classList.contains("active");
+    details.forEach(d => d.classList.remove("open"));
+    stages.forEach(s => s.classList.remove("active"));
+    if (!wasActive && details[idx]) {
+      details[idx].classList.add("open");
+      el.classList.add("active");
+    }
+  };
+});
+
+</script>
+</body>
+</html>

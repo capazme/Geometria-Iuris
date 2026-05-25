@@ -1,0 +1,5390 @@
+{
+  "domain": "labor_social",
+  "target_count": 50,
+  "current_core": [
+    {
+      "term_idx": 49,
+      "en": "dismissal",
+      "zh_canonical": "免職",
+      "en_clean": "dismissal",
+      "zh_clean": "免職",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 54,
+      "en": "employee",
+      "zh_canonical": "真正的僱員",
+      "en_clean": "employee",
+      "zh_clean": "真正的僱員",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 55,
+      "en": "employer",
+      "zh_canonical": "僱主",
+      "en_clean": "employer",
+      "zh_clean": "僱主",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 56,
+      "en": "employment",
+      "zh_canonical": "僱傭",
+      "en_clean": "employment",
+      "zh_clean": "僱傭",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 70,
+      "en": "harassment",
+      "zh_canonical": "侵擾",
+      "en_clean": "harassment",
+      "zh_clean": "侵擾",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 100,
+      "en": "Minor Employment Claims Adjudication Board",
+      "zh_canonical": "小額薪酬索償仲裁處（香港）",
+      "en_clean": "Minor Employment Claims Adjudication Board",
+      "zh_clean": "小額薪酬索償仲裁處",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 115,
+      "en": "occupational safety",
+      "zh_canonical": "職業安全",
+      "en_clean": "occupational safety",
+      "zh_clean": "職業安全",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 143,
+      "en": "sick leave",
+      "zh_canonical": "病假",
+      "en_clean": "sick leave",
+      "zh_clean": "病假",
+      "k_en": 6,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 147,
+      "en": "strike",
+      "zh_canonical": "罷工 ※比較 go-slow",
+      "en_clean": "strike",
+      "zh_clean": "罷工",
+      "k_en": 8,
+      "k_zh": 7,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 183,
+      "en": "unskilled labour",
+      "zh_canonical": "非技術勞工",
+      "en_clean": "unskilled labour",
+      "zh_clean": "非技術勞工",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 188,
+      "en": "industrial action",
+      "zh_canonical": "工業行動",
+      "en_clean": "industrial action",
+      "zh_clean": "工業行動",
+      "k_en": 2,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 200,
+      "en": "rest day",
+      "zh_canonical": "休息日",
+      "en_clean": "rest day",
+      "zh_clean": "休息日",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 205,
+      "en": "provident fund",
+      "zh_canonical": "強制性公積金計劃管理局",
+      "en_clean": "provident fund",
+      "zh_clean": "強制性公積金計劃管理局",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 218,
+      "en": "International Labour Office",
+      "zh_canonical": "國際勞工局",
+      "en_clean": "International Labour Office",
+      "zh_clean": "國際勞工局",
+      "k_en": 6,
+      "k_zh": 6,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 219,
+      "en": "International Labour Organization",
+      "zh_canonical": "國際勞工組織",
+      "en_clean": "International Labour Organization",
+      "zh_clean": "國際勞工組織",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 250,
+      "en": "Comprehensive Social Security Assistance Scheme",
+      "zh_canonical": "綜合社會保障援助計劃",
+      "en_clean": "Comprehensive Social Security Assistance Scheme",
+      "zh_clean": "綜合社會保障援助計劃",
+      "k_en": 2,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 268,
+      "en": "Employees Compensation Assistance Fund",
+      "zh_canonical": "僱員補償援助基金",
+      "en_clean": "Employees Compensation Assistance Fund",
+      "zh_clean": "僱員補償援助基金",
+      "k_en": 4,
+      "k_zh": 4,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 282,
+      "en": "Government Laboratory",
+      "zh_canonical": "政府化驗所",
+      "en_clean": "Government Laboratory",
+      "zh_clean": "政府化驗所",
+      "k_en": 5,
+      "k_zh": 5,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 295,
+      "en": "laboratory",
+      "zh_canonical": "檢驗所",
+      "en_clean": "laboratory",
+      "zh_clean": "檢驗所",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 296,
+      "en": "labour",
+      "zh_canonical": "勞資糾紛",
+      "en_clean": "labour",
+      "zh_clean": "勞資糾紛",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 297,
+      "en": "labouring",
+      "zh_canonical": "損害防止條款",
+      "en_clean": "labouring",
+      "zh_clean": "損害防止條款",
+      "k_en": 3,
+      "k_zh": 3,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 309,
+      "en": "non-employer",
+      "zh_canonical": "非僱主受託人",
+      "en_clean": "non-employer",
+      "zh_clean": "非僱主受託人",
+      "k_en": 5,
+      "k_zh": 5,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 310,
+      "en": "overtime",
+      "zh_canonical": "超時工作",
+      "en_clean": "overtime",
+      "zh_clean": "超時工作",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 324,
+      "en": "re-employment",
+      "zh_canonical": "再度受聘",
+      "en_clean": "re-employment",
+      "zh_clean": "再度受聘",
+      "k_en": 4,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 327,
+      "en": "Residual Provident Fund Scheme",
+      "zh_canonical": "補遺公積金計劃",
+      "en_clean": "Residual Provident Fund Scheme",
+      "zh_clean": "補遺公積金計劃",
+      "k_en": 1,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 333,
+      "en": "Social Security Allowance Scheme",
+      "zh_canonical": "公共福利金計劃",
+      "en_clean": "Social Security Allowance Scheme",
+      "zh_clean": "公共福利金計劃",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 344,
+      "en": "Hong Kong Laboratory Accreditation Scheme",
+      "zh_canonical": "香港實驗所認可計劃",
+      "en_clean": "Hong Kong Laboratory Accreditation Scheme",
+      "zh_clean": "香港實驗所認可計劃",
+      "k_en": 4,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 353,
+      "en": "trade union",
+      "zh_canonical": "組織及加入工會之權利",
+      "en_clean": "trade union",
+      "zh_clean": "組織及加入工會之權利",
+      "k_en": 8,
+      "k_zh": 1,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 391,
+      "en": "Labour Department",
+      "zh_canonical": "勞工處",
+      "en_clean": "Labour Department",
+      "zh_clean": "勞工處",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 393,
+      "en": "International Labour Conference",
+      "zh_canonical": "國際勞工大會",
+      "en_clean": "International Labour Conference",
+      "zh_clean": "國際勞工大會",
+      "k_en": 0,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 1069,
+      "en": "constructive",
+      "zh_canonical": "推定解僱",
+      "en_clean": "constructive",
+      "zh_clean": "推定解僱",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 1344,
+      "en": "discrimination",
+      "zh_canonical": "殘疾歧視",
+      "en_clean": "discrimination",
+      "zh_clean": "殘疾歧視",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 1753,
+      "en": "gratuity",
+      "zh_canonical": "約滿酬金",
+      "en_clean": "gratuity",
+      "zh_clean": "約滿酬金",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 2265,
+      "en": "long service payment",
+      "zh_canonical": "長期服務金",
+      "en_clean": "long service payment",
+      "zh_clean": "長期服務金",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 3630,
+      "en": "wage",
+      "zh_canonical": "報酬",
+      "en_clean": "wage",
+      "zh_clean": "報酬",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 5341,
+      "en": "disablement",
+      "zh_canonical": "殘疾",
+      "en_clean": "disablement",
+      "zh_clean": "殘疾",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 5842,
+      "en": "harass",
+      "zh_canonical": "騷擾",
+      "en_clean": "harass",
+      "zh_clean": "騷擾",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 5878,
+      "en": "holiday",
+      "zh_canonical": "假日",
+      "en_clean": "holiday",
+      "zh_clean": "假日",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 6025,
+      "en": "incapacitate",
+      "zh_canonical": "喪失工作能力",
+      "en_clean": "incapacitate",
+      "zh_clean": "喪失工作能力",
+      "k_en": 1,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 6265,
+      "en": "lay-off",
+      "zh_canonical": "停工",
+      "en_clean": "lay-off",
+      "zh_clean": "停工",
+      "k_en": 3,
+      "k_zh": 8,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 6326,
+      "en": "lockout",
+      "zh_canonical": "閉廠",
+      "en_clean": "lockout",
+      "zh_clean": "閉廠",
+      "k_en": 0,
+      "k_zh": 3,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 6466,
+      "en": "month-to-month",
+      "zh_canonical": "按月僱用條款",
+      "en_clean": "month-to-month",
+      "zh_clean": "按月僱用條款",
+      "k_en": 1,
+      "k_zh": 3,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 6667,
+      "en": "parental",
+      "zh_canonical": "父母責任",
+      "en_clean": "parental",
+      "zh_clean": "父母責任",
+      "k_en": 8,
+      "k_zh": 0,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 6691,
+      "en": "pensionable",
+      "zh_canonical": "可享退休金的",
+      "en_clean": "pensionable",
+      "zh_clean": "可享退休金",
+      "k_en": 8,
+      "k_zh": 6,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 6749,
+      "en": "pneumoconiosis",
+      "zh_canonical": "肺塵埃沉着病",
+      "en_clean": "pneumoconiosis",
+      "zh_clean": "肺塵埃沉着病",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 6981,
+      "en": "re-engagement",
+      "zh_canonical": "重新聘用",
+      "en_clean": "re-engagement",
+      "zh_clean": "重新聘用",
+      "k_en": 8,
+      "k_zh": 4,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 7439,
+      "en": "time-rate",
+      "zh_canonical": "計時工資率",
+      "en_clean": "time-rate",
+      "zh_clean": "計時工資率",
+      "k_en": 2,
+      "k_zh": 2,
+      "passes_strict_gate": false
+    },
+    {
+      "term_idx": 7652,
+      "en": "workplace",
+      "zh_canonical": "工作地方",
+      "en_clean": "workplace",
+      "zh_clean": "工作地方",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 7791,
+      "en": "sickness",
+      "zh_canonical": "疾病津貼",
+      "en_clean": "sickness",
+      "zh_clean": "疾病津貼",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    },
+    {
+      "term_idx": 8319,
+      "en": "provident",
+      "zh_canonical": "強制性公積金計劃",
+      "en_clean": "provident",
+      "zh_clean": "強制性公積金計劃",
+      "k_en": 8,
+      "k_zh": 8,
+      "passes_strict_gate": true
+    }
+  ],
+  "backfill_candidates": [
+    {
+      "term_idx": 3679,
+      "en": "worker",
+      "zh_canonical": "傭工",
+      "en_clean": "worker",
+      "zh_clean": "傭工",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.8378
+    },
+    {
+      "term_idx": 3680,
+      "en": "working",
+      "zh_canonical": "工作的",
+      "en_clean": "working",
+      "zh_clean": "工作",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.7978
+    },
+    {
+      "term_idx": 5899,
+      "en": "hours of rest",
+      "zh_canonical": "休息時間",
+      "en_clean": "hours of rest",
+      "zh_clean": "休息時間",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.8188
+    },
+    {
+      "term_idx": 6399,
+      "en": "maternity",
+      "zh_canonical": "留產院",
+      "en_clean": "maternity",
+      "zh_clean": "留產院",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.7093
+    },
+    {
+      "term_idx": 6568,
+      "en": "nurse",
+      "zh_canonical": "註冊護士",
+      "en_clean": "nurse",
+      "zh_clean": "註冊護士",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.7191
+    },
+    {
+      "term_idx": 9252,
+      "en": "ventilation",
+      "zh_canonical": "空氣流通",
+      "en_clean": "ventilation",
+      "zh_clean": "空氣流通",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.6695
+    },
+    {
+      "term_idx": 5898,
+      "en": "hourly",
+      "zh_canonical": "每小時收費率",
+      "en_clean": "hourly",
+      "zh_clean": "每小時收費率",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.7652
+    },
+    {
+      "term_idx": 7622,
+      "en": "weekday",
+      "zh_canonical": "周日",
+      "en_clean": "weekday",
+      "zh_clean": "周日",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.7178
+    },
+    {
+      "term_idx": 7838,
+      "en": "employed",
+      "zh_canonical": "受僱大律師",
+      "en_clean": "employed",
+      "zh_clean": "受僱大律師",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 1.0,
+      "knn_vote_distribution": {
+        "labor_social": 7
+      },
+      "knn_top_neighbour_sim": 0.848
+    },
+    {
+      "term_idx": 807,
+      "en": "building",
+      "zh_canonical": "建築",
+      "en_clean": "building",
+      "zh_clean": "建築",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7299
+    },
+    {
+      "term_idx": 1068,
+      "en": "construction",
+      "zh_canonical": "解釋",
+      "en_clean": "construction",
+      "zh_clean": "解釋",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7513
+    },
+    {
+      "term_idx": 1177,
+      "en": "current",
+      "zh_canonical": "流通的",
+      "en_clean": "current",
+      "zh_clean": "流通",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6689
+    },
+    {
+      "term_idx": 1458,
+      "en": "employ",
+      "zh_canonical": "僱用",
+      "en_clean": "employ",
+      "zh_clean": "僱用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.8161
+    },
+    {
+      "term_idx": 2644,
+      "en": "pension fund scheme",
+      "zh_canonical": "退休金計劃",
+      "en_clean": "pension fund scheme",
+      "zh_clean": "退休金計劃",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.791
+    },
+    {
+      "term_idx": 2662,
+      "en": "period",
+      "zh_canonical": "通知期",
+      "en_clean": "period",
+      "zh_clean": "通知期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6992
+    },
+    {
+      "term_idx": 2672,
+      "en": "personal",
+      "zh_canonical": "人身的",
+      "en_clean": "personal",
+      "zh_clean": "人身",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6977
+    },
+    {
+      "term_idx": 3080,
+      "en": "retirement age",
+      "zh_canonical": "退休年齡",
+      "en_clean": "retirement age",
+      "zh_clean": "退休年齡",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7059
+    },
+    {
+      "term_idx": 3335,
+      "en": "superannuation",
+      "zh_canonical": "離職金",
+      "en_clean": "superannuation",
+      "zh_clean": "離職金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6964
+    },
+    {
+      "term_idx": 3506,
+      "en": "unit",
+      "zh_canonical": "單位",
+      "en_clean": "unit",
+      "zh_clean": "單位",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7425
+    },
+    {
+      "term_idx": 3678,
+      "en": "work",
+      "zh_canonical": "作品",
+      "en_clean": "work",
+      "zh_clean": "作品",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7716
+    },
+    {
+      "term_idx": 5870,
+      "en": "hiring",
+      "zh_canonical": "出租",
+      "en_clean": "hiring",
+      "zh_clean": "出租",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.8207
+    },
+    {
+      "term_idx": 6408,
+      "en": "medical",
+      "zh_canonical": "醫療護理",
+      "en_clean": "medical",
+      "zh_clean": "醫療護理",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.729
+    },
+    {
+      "term_idx": 6686,
+      "en": "pay out",
+      "zh_canonical": "支出",
+      "en_clean": "pay out",
+      "zh_clean": "支出",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.705
+    },
+    {
+      "term_idx": 6729,
+      "en": "pharmacist",
+      "zh_canonical": "註冊藥劑師",
+      "en_clean": "pharmacist",
+      "zh_clean": "註冊藥劑師",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7005
+    },
+    {
+      "term_idx": 7150,
+      "en": "salary",
+      "zh_canonical": "薪金",
+      "en_clean": "salary",
+      "zh_clean": "薪金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.8624
+    },
+    {
+      "term_idx": 7291,
+      "en": "staffing",
+      "zh_canonical": "人手",
+      "en_clean": "staffing",
+      "zh_clean": "人手",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7387
+    },
+    {
+      "term_idx": 7583,
+      "en": "vested",
+      "zh_canonical": "既得的",
+      "en_clean": "vested",
+      "zh_clean": "既得",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6873
+    },
+    {
+      "term_idx": 7927,
+      "en": "manufacturing",
+      "zh_canonical": "製造業",
+      "en_clean": "manufacturing",
+      "zh_clean": "製造業",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7154
+    },
+    {
+      "term_idx": 8391,
+      "en": "textile",
+      "zh_canonical": "紡織品",
+      "en_clean": "textile",
+      "zh_clean": "紡織品",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6846
+    },
+    {
+      "term_idx": 9155,
+      "en": "machine",
+      "zh_canonical": "木工機器",
+      "en_clean": "machine",
+      "zh_clean": "木工機器",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.707
+    },
+    {
+      "term_idx": 9222,
+      "en": "workman",
+      "zh_canonical": "工人",
+      "en_clean": "workman",
+      "zh_clean": "工人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.664
+    },
+    {
+      "term_idx": 9242,
+      "en": "elderly",
+      "zh_canonical": "安老院",
+      "en_clean": "elderly",
+      "zh_clean": "安老院",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6487
+    },
+    {
+      "term_idx": 5464,
+      "en": "earning",
+      "zh_canonical": "賺取收入能力",
+      "en_clean": "earning",
+      "zh_clean": "賺取收入能力",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7484
+    },
+    {
+      "term_idx": 8106,
+      "en": "nursing",
+      "zh_canonical": "護理院",
+      "en_clean": "nursing",
+      "zh_clean": "護理院",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6835
+    },
+    {
+      "term_idx": 3876,
+      "en": "non-working day",
+      "zh_canonical": "非工作日",
+      "en_clean": "non-working day",
+      "zh_clean": "非工作日",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7798
+    },
+    {
+      "term_idx": 8941,
+      "en": "breastfeeding",
+      "zh_canonical": "餵哺母乳",
+      "en_clean": "breastfeeding",
+      "zh_clean": "餵哺母乳",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6502
+    },
+    {
+      "term_idx": 2579,
+      "en": "outworker",
+      "zh_canonical": "外發工",
+      "en_clean": "outworker",
+      "zh_clean": "外發工",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.857,
+      "knn_vote_distribution": {
+        "labor_social": 6,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7217
+    },
+    {
+      "term_idx": 487,
+      "en": "adjourn",
+      "zh_canonical": "延期",
+      "en_clean": "adjourn",
+      "zh_clean": "延期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6976
+    },
+    {
+      "term_idx": 1355,
+      "en": "disposable income",
+      "zh_canonical": "可動用收入",
+      "en_clean": "disposable income",
+      "zh_clean": "可動用收入",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6796
+    },
+    {
+      "term_idx": 1424,
+      "en": "earning capacity",
+      "zh_canonical": "謀生能力",
+      "en_clean": "earning capacity",
+      "zh_clean": "謀生能力",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.695
+    },
+    {
+      "term_idx": 1495,
+      "en": "equal",
+      "zh_canonical": "平等的",
+      "en_clean": "equal",
+      "zh_clean": "平等",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 5
+      },
+      "knn_top_neighbour_sim": 0.8985
+    },
+    {
+      "term_idx": 1561,
+      "en": "exercise",
+      "zh_canonical": "實行",
+      "en_clean": "exercise",
+      "zh_clean": "實行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7149
+    },
+    {
+      "term_idx": 1600,
+      "en": "facility",
+      "zh_canonical": "融通",
+      "en_clean": "facility",
+      "zh_clean": "融通",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7852
+    },
+    {
+      "term_idx": 1639,
+      "en": "fide; fides",
+      "zh_canonical": "信用",
+      "en_clean": "fide",
+      "zh_clean": "信用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.6497
+    },
+    {
+      "term_idx": 1706,
+      "en": "fund",
+      "zh_canonical": "基金",
+      "en_clean": "fund",
+      "zh_clean": "基金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7594
+    },
+    {
+      "term_idx": 1723,
+      "en": "general",
+      "zh_canonical": "一般",
+      "en_clean": "general",
+      "zh_clean": "一般",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6432
+    },
+    {
+      "term_idx": 2042,
+      "en": "interruption",
+      "zh_canonical": "中斷",
+      "en_clean": "interruption",
+      "zh_clean": "中斷",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7183
+    },
+    {
+      "term_idx": 2177,
+      "en": "leave",
+      "zh_canonical": "（法庭等的）許可",
+      "en_clean": "leave",
+      "zh_clean": "許可",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.7293
+    },
+    {
+      "term_idx": 2295,
+      "en": "management",
+      "zh_canonical": "管理",
+      "en_clean": "management",
+      "zh_clean": "管理",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7521
+    },
+    {
+      "term_idx": 2477,
+      "en": "null",
+      "zh_canonical": "無效",
+      "en_clean": "null",
+      "zh_clean": "無效",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6531
+    },
+    {
+      "term_idx": 2506,
+      "en": "occupation",
+      "zh_canonical": "佔用",
+      "en_clean": "occupation",
+      "zh_clean": "佔用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7529
+    },
+    {
+      "term_idx": 2518,
+      "en": "office",
+      "zh_canonical": "職位",
+      "en_clean": "office",
+      "zh_clean": "職位",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7833
+    },
+    {
+      "term_idx": 2631,
+      "en": "pay",
+      "zh_canonical": "付款",
+      "en_clean": "pay",
+      "zh_clean": "付款",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.8223
+    },
+    {
+      "term_idx": 2682,
+      "en": "place of business",
+      "zh_canonical": "主要業務地點",
+      "en_clean": "place of business",
+      "zh_clean": "主要業務地點",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7656
+    },
+    {
+      "term_idx": 2797,
+      "en": "profession",
+      "zh_canonical": "專業",
+      "en_clean": "profession",
+      "zh_clean": "專業",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7554
+    },
+    {
+      "term_idx": 2798,
+      "en": "professional",
+      "zh_canonical": "專業",
+      "en_clean": "professional",
+      "zh_clean": "專業",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7307
+    },
+    {
+      "term_idx": 3134,
+      "en": "schedule",
+      "zh_canonical": "一覽表",
+      "en_clean": "schedule",
+      "zh_clean": "一覽表",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7215
+    },
+    {
+      "term_idx": 3182,
+      "en": "set aside",
+      "zh_canonical": "作廢",
+      "en_clean": "set aside",
+      "zh_clean": "作廢",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 5
+      },
+      "knn_top_neighbour_sim": 0.7018
+    },
+    {
+      "term_idx": 3193,
+      "en": "severance",
+      "zh_canonical": "分別",
+      "en_clean": "severance",
+      "zh_clean": "分別",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7483
+    },
+    {
+      "term_idx": 3228,
+      "en": "sitting",
+      "zh_canonical": "聆訊",
+      "en_clean": "sitting",
+      "zh_clean": "聆訊",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7008
+    },
+    {
+      "term_idx": 3412,
+      "en": "time",
+      "zh_canonical": "不時",
+      "en_clean": "time",
+      "zh_clean": "不時",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7758
+    },
+    {
+      "term_idx": 3554,
+      "en": "vacation",
+      "zh_canonical": "休假",
+      "en_clean": "vacation",
+      "zh_clean": "休假",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.8023
+    },
+    {
+      "term_idx": 4150,
+      "en": "internal",
+      "zh_canonical": "本土法律",
+      "en_clean": "internal",
+      "zh_clean": "本土法律",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6779
+    },
+    {
+      "term_idx": 4184,
+      "en": "personnel",
+      "zh_canonical": "聯合國人員",
+      "en_clean": "personnel",
+      "zh_clean": "聯合國人員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7815
+    },
+    {
+      "term_idx": 4333,
+      "en": "production",
+      "zh_canonical": "提交令",
+      "en_clean": "production",
+      "zh_clean": "提交令",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6816
+    },
+    {
+      "term_idx": 4365,
+      "en": "absent",
+      "zh_canonical": "缺席",
+      "en_clean": "absent",
+      "zh_clean": "缺席",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "labor_social": 5
+      },
+      "knn_top_neighbour_sim": 0.7161
+    },
+    {
+      "term_idx": 4391,
+      "en": "accountancy",
+      "zh_canonical": "會計團體",
+      "en_clean": "accountancy",
+      "zh_clean": "會計團體",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6638
+    },
+    {
+      "term_idx": 4396,
+      "en": "accruing",
+      "zh_canonical": "累算欠",
+      "en_clean": "accruing",
+      "zh_clean": "累算欠",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7015
+    },
+    {
+      "term_idx": 4551,
+      "en": "apprenticeship",
+      "zh_canonical": "學徒訓練合約",
+      "en_clean": "apprenticeship",
+      "zh_clean": "學徒訓練合約",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "international": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7029
+    },
+    {
+      "term_idx": 4613,
+      "en": "at all times",
+      "zh_canonical": "一直",
+      "en_clean": "at all times",
+      "zh_clean": "一直",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 5,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6329
+    },
+    {
+      "term_idx": 4731,
+      "en": "break",
+      "zh_canonical": "使用武力進入",
+      "en_clean": "break",
+      "zh_clean": "使用武力進入",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7498
+    },
+    {
+      "term_idx": 4937,
+      "en": "collective investment scheme",
+      "zh_canonical": "集體投資計劃",
+      "en_clean": "collective investment scheme",
+      "zh_clean": "集體投資計劃",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7273
+    },
+    {
+      "term_idx": 5255,
+      "en": "dentist",
+      "zh_canonical": "註冊牙醫",
+      "en_clean": "dentist",
+      "zh_clean": "註冊牙醫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.648
+    },
+    {
+      "term_idx": 5478,
+      "en": "efficiency",
+      "zh_canonical": "效率",
+      "en_clean": "efficiency",
+      "zh_clean": "效率",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6813
+    },
+    {
+      "term_idx": 5480,
+      "en": "effluent",
+      "zh_canonical": "流出物",
+      "en_clean": "effluent",
+      "zh_clean": "流出物",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.6713
+    },
+    {
+      "term_idx": 5595,
+      "en": "exchange traded fund",
+      "zh_canonical": "交易所買賣基金",
+      "en_clean": "exchange traded fund",
+      "zh_clean": "交易所買賣基金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7461
+    },
+    {
+      "term_idx": 5830,
+      "en": "haircut",
+      "zh_canonical": "扣減",
+      "en_clean": "haircut",
+      "zh_clean": "扣減",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6334
+    },
+    {
+      "term_idx": 5855,
+      "en": "healthcare",
+      "zh_canonical": "醫護服務",
+      "en_clean": "healthcare",
+      "zh_clean": "醫護服務",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7168
+    },
+    {
+      "term_idx": 5897,
+      "en": "hour",
+      "zh_canonical": "合理時間",
+      "en_clean": "hour",
+      "zh_clean": "合理時間",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7194
+    },
+    {
+      "term_idx": 5922,
+      "en": "illness",
+      "zh_canonical": "精神病",
+      "en_clean": "illness",
+      "zh_clean": "精神病",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.9339
+    },
+    {
+      "term_idx": 6104,
+      "en": "injure",
+      "zh_canonical": "破壞",
+      "en_clean": "injure",
+      "zh_clean": "破壞",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.7408
+    },
+    {
+      "term_idx": 6176,
+      "en": "interrupt",
+      "zh_canonical": "干擾",
+      "en_clean": "interrupt",
+      "zh_clean": "干擾",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7019
+    },
+    {
+      "term_idx": 6340,
+      "en": "Lotteries Fund",
+      "zh_canonical": "獎券基金",
+      "en_clean": "Lotteries Fund",
+      "zh_clean": "獎券基金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6855
+    },
+    {
+      "term_idx": 6464,
+      "en": "month",
+      "zh_canonical": "整月",
+      "en_clean": "month",
+      "zh_clean": "整月",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7814
+    },
+    {
+      "term_idx": 6685,
+      "en": "pay into",
+      "zh_canonical": "存入",
+      "en_clean": "pay into",
+      "zh_clean": "存入",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6848
+    },
+    {
+      "term_idx": 6690,
+      "en": "pension",
+      "zh_canonical": "退休金",
+      "en_clean": "pension",
+      "zh_clean": "退休金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.8162
+    },
+    {
+      "term_idx": 6779,
+      "en": "practising",
+      "zh_canonical": "執業證書",
+      "en_clean": "practising",
+      "zh_clean": "執業證書",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7007
+    },
+    {
+      "term_idx": 7175,
+      "en": "secondment",
+      "zh_canonical": "借調",
+      "en_clean": "secondment",
+      "zh_clean": "借調",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 2,
+        "labor_social": 5
+      },
+      "knn_top_neighbour_sim": 0.7115
+    },
+    {
+      "term_idx": 7211,
+      "en": "server",
+      "zh_canonical": "送達人",
+      "en_clean": "server",
+      "zh_clean": "送達人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "international": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6757
+    },
+    {
+      "term_idx": 7251,
+      "en": "skilled",
+      "zh_canonical": "註冊半熟練技工",
+      "en_clean": "skilled",
+      "zh_clean": "註冊半熟練技工",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.657
+    },
+    {
+      "term_idx": 7262,
+      "en": "soil",
+      "zh_canonical": "弄污",
+      "en_clean": "soil",
+      "zh_clean": "弄污",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6835
+    },
+    {
+      "term_idx": 7313,
+      "en": "storey",
+      "zh_canonical": "樓層",
+      "en_clean": "storey",
+      "zh_clean": "樓層",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "civil": 2,
+        "labor_social": 5
+      },
+      "knn_top_neighbour_sim": 0.6971
+    },
+    {
+      "term_idx": 7487,
+      "en": "turnover",
+      "zh_canonical": "營業額",
+      "en_clean": "turnover",
+      "zh_clean": "營業額",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7261
+    },
+    {
+      "term_idx": 7571,
+      "en": "vacancy",
+      "zh_canonical": "空缺",
+      "en_clean": "vacancy",
+      "zh_clean": "空缺",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7296
+    },
+    {
+      "term_idx": 7641,
+      "en": "wind up",
+      "zh_canonical": "清盤",
+      "en_clean": "wind up",
+      "zh_clean": "清盤",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6688
+    },
+    {
+      "term_idx": 7651,
+      "en": "working order",
+      "zh_canonical": "操作狀態",
+      "en_clean": "working order",
+      "zh_clean": "操作狀態",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7105
+    },
+    {
+      "term_idx": 7653,
+      "en": "works",
+      "zh_canonical": "工程設施",
+      "en_clean": "works",
+      "zh_clean": "工程設施",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7095
+    },
+    {
+      "term_idx": 7714,
+      "en": "internship",
+      "zh_canonical": "實習",
+      "en_clean": "internship",
+      "zh_clean": "實習",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "international": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6933
+    },
+    {
+      "term_idx": 7804,
+      "en": "rural",
+      "zh_canonical": "鄉郊地區",
+      "en_clean": "rural",
+      "zh_clean": "鄉郊地區",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6765
+    },
+    {
+      "term_idx": 7840,
+      "en": "part-time",
+      "zh_canonical": "全職或非全職",
+      "en_clean": "part-time",
+      "zh_clean": "全職或非全職",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7092
+    },
+    {
+      "term_idx": 7857,
+      "en": "covered",
+      "zh_canonical": "資產覆蓋債券",
+      "en_clean": "covered",
+      "zh_clean": "資產覆蓋債券",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "labor_social": 5,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7115
+    },
+    {
+      "term_idx": 7875,
+      "en": "company service",
+      "zh_canonical": "信託或公司服務業務",
+      "en_clean": "company service",
+      "zh_clean": "信託或公司服務業務",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7438
+    },
+    {
+      "term_idx": 7961,
+      "en": "overhead",
+      "zh_canonical": "經營成本",
+      "en_clean": "overhead",
+      "zh_clean": "經營成本",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6939
+    },
+    {
+      "term_idx": 8195,
+      "en": "youthful",
+      "zh_canonical": "少年罪犯",
+      "en_clean": "youthful",
+      "zh_clean": "少年罪犯",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6524
+    },
+    {
+      "term_idx": 8197,
+      "en": "veterinary",
+      "zh_canonical": "獸醫官",
+      "en_clean": "veterinary",
+      "zh_clean": "獸醫官",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6821
+    },
+    {
+      "term_idx": 8221,
+      "en": "young",
+      "zh_canonical": "少年人",
+      "en_clean": "young",
+      "zh_clean": "少年人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6474
+    },
+    {
+      "term_idx": 8235,
+      "en": "Private Sector Participation Scheme",
+      "zh_canonical": "私人機構參建居屋計劃",
+      "en_clean": "Private Sector Participation Scheme",
+      "zh_clean": "私人機構參建居屋計劃",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.728
+    },
+    {
+      "term_idx": 8318,
+      "en": "punctual",
+      "zh_canonical": "準時足額付款",
+      "en_clean": "punctual",
+      "zh_clean": "準時足額付款",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6839
+    },
+    {
+      "term_idx": 8345,
+      "en": "airline",
+      "zh_canonical": "航空公司",
+      "en_clean": "airline",
+      "zh_clean": "航空公司",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6811
+    },
+    {
+      "term_idx": 8525,
+      "en": "funds",
+      "zh_canonical": "資助金",
+      "en_clean": "funds",
+      "zh_clean": "資助金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7265
+    },
+    {
+      "term_idx": 8994,
+      "en": "university",
+      "zh_canonical": "香港都會大學",
+      "en_clean": "university",
+      "zh_clean": "香港都會大學",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6915
+    },
+    {
+      "term_idx": 9099,
+      "en": "General",
+      "zh_canonical": "郵政署署長",
+      "en_clean": "General",
+      "zh_clean": "郵政署署長",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 5,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6432
+    },
+    {
+      "term_idx": 9231,
+      "en": "hygiene",
+      "zh_canonical": "食物環境衞生署署長",
+      "en_clean": "hygiene",
+      "zh_clean": "食物環境衞生署署長",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7284
+    },
+    {
+      "term_idx": 9315,
+      "en": "midwife",
+      "zh_canonical": "註冊助產士",
+      "en_clean": "midwife",
+      "zh_clean": "註冊助產士",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.6767
+    },
+    {
+      "term_idx": 4876,
+      "en": "chit-fund",
+      "zh_canonical": "銀會",
+      "en_clean": "chit-fund",
+      "zh_clean": "銀會",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6396
+    },
+    {
+      "term_idx": 5921,
+      "en": "ill-health",
+      "zh_canonical": "健康欠佳",
+      "en_clean": "ill-health",
+      "zh_clean": "健康欠佳",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.8554
+    },
+    {
+      "term_idx": 6841,
+      "en": "productivity",
+      "zh_canonical": "生產能力水平",
+      "en_clean": "productivity",
+      "zh_clean": "生產能力水平",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6988
+    },
+    {
+      "term_idx": 6079,
+      "en": "infant formula",
+      "zh_canonical": "嬰兒配方產品",
+      "en_clean": "infant formula",
+      "zh_clean": "嬰兒配方產品",
+      "k_en": 7,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.5912
+    },
+    {
+      "term_idx": 8297,
+      "en": "mine",
+      "zh_canonical": "礦場燃爆證書",
+      "en_clean": "mine",
+      "zh_clean": "礦場燃爆證書",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.669
+    },
+    {
+      "term_idx": 9064,
+      "en": "annually",
+      "zh_canonical": "可按年續期",
+      "en_clean": "annually",
+      "zh_clean": "可按年續期",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6999
+    },
+    {
+      "term_idx": 3189,
+      "en": "sever",
+      "zh_canonical": "分開",
+      "en_clean": "sever",
+      "zh_clean": "分開",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "international": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6543
+    },
+    {
+      "term_idx": 6978,
+      "en": "re-employ",
+      "zh_canonical": "重新僱用",
+      "en_clean": "re-employ",
+      "zh_clean": "重新僱用",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.9418
+    },
+    {
+      "term_idx": 4081,
+      "en": "air",
+      "zh_canonical": "航空托運單",
+      "en_clean": "air",
+      "zh_clean": "航空托運單",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 5,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7268
+    },
+    {
+      "term_idx": 6583,
+      "en": "occupational",
+      "zh_canonical": "職業履歷",
+      "en_clean": "occupational",
+      "zh_clean": "職業履歷",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.735
+    },
+    {
+      "term_idx": 7178,
+      "en": "sector",
+      "zh_canonical": "金融界",
+      "en_clean": "sector",
+      "zh_clean": "金融界",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6828
+    },
+    {
+      "term_idx": 9179,
+      "en": "overpaid",
+      "zh_canonical": "超額款項",
+      "en_clean": "overpaid",
+      "zh_clean": "超額款項",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.7058
+    },
+    {
+      "term_idx": 4042,
+      "en": "unrealized profit",
+      "zh_canonical": "未實現利潤",
+      "en_clean": "unrealized profit",
+      "zh_clean": "未實現利潤",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6548
+    },
+    {
+      "term_idx": 1980,
+      "en": "in-house",
+      "zh_canonical": "機構內部的",
+      "en_clean": "in-house",
+      "zh_clean": "機構內部",
+      "k_en": 5,
+      "k_zh": 7,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7255
+    },
+    {
+      "term_idx": 2624,
+      "en": "passing off",
+      "zh_canonical": "假冒",
+      "en_clean": "passing off",
+      "zh_clean": "假冒",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6872
+    },
+    {
+      "term_idx": 9156,
+      "en": "woodwork",
+      "zh_canonical": "木工機器",
+      "en_clean": "woodwork",
+      "zh_clean": "木工機器",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6498
+    },
+    {
+      "term_idx": 4753,
+      "en": "build-up",
+      "zh_canonical": "建立期徵費",
+      "en_clean": "build-up",
+      "zh_clean": "建立期徵費",
+      "k_en": 6,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6341
+    },
+    {
+      "term_idx": 8015,
+      "en": "off duty",
+      "zh_canonical": "休班",
+      "en_clean": "off duty",
+      "zh_clean": "休班",
+      "k_en": 6,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7287
+    },
+    {
+      "term_idx": 5891,
+      "en": "Hong Kong War Memorial Pensions",
+      "zh_canonical": "香港太平洋戰爭紀念撫恤金",
+      "en_clean": "Hong Kong War Memorial Pensions",
+      "zh_clean": "香港太平洋戰爭紀念撫恤金",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6189
+    },
+    {
+      "term_idx": 5503,
+      "en": "employable",
+      "zh_canonical": "可合法受僱",
+      "en_clean": "employable",
+      "zh_clean": "可合法受僱",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.714,
+      "knn_vote_distribution": {
+        "labor_social": 5,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.787
+    },
+    {
+      "term_idx": 444,
+      "en": "accrual",
+      "zh_canonical": "（利息的）孳生",
+      "en_clean": "accrual",
+      "zh_clean": "孳生",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6829
+    },
+    {
+      "term_idx": 445,
+      "en": "accrue",
+      "zh_canonical": "形成",
+      "en_clean": "accrue",
+      "zh_clean": "形成",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7083
+    },
+    {
+      "term_idx": 532,
+      "en": "age",
+      "zh_canonical": "年齡",
+      "en_clean": "age",
+      "zh_clean": "年齡",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6676
+    },
+    {
+      "term_idx": 658,
+      "en": "ashes",
+      "zh_canonical": "骨灰",
+      "en_clean": "ashes",
+      "zh_clean": "骨灰",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 2,
+        "labor_social": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6536
+    },
+    {
+      "term_idx": 671,
+      "en": "assistance",
+      "zh_canonical": "協助",
+      "en_clean": "assistance",
+      "zh_clean": "協助",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "criminal": 1,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6962
+    },
+    {
+      "term_idx": 673,
+      "en": "associate",
+      "zh_canonical": "相聯者",
+      "en_clean": "associate",
+      "zh_clean": "相聯者",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "labor_social": 4,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.721
+    },
+    {
+      "term_idx": 681,
+      "en": "at any time",
+      "zh_canonical": "隨時",
+      "en_clean": "at any time",
+      "zh_clean": "隨時",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.634
+    },
+    {
+      "term_idx": 739,
+      "en": "bank",
+      "zh_canonical": "銀行",
+      "en_clean": "bank",
+      "zh_clean": "銀行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "labor_social": 4,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7555
+    },
+    {
+      "term_idx": 809,
+      "en": "burden",
+      "zh_canonical": "負擔",
+      "en_clean": "burden",
+      "zh_clean": "負擔",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "labor_social": 4,
+        "civil": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7489
+    },
+    {
+      "term_idx": 937,
+      "en": "clear day",
+      "zh_canonical": "整天",
+      "en_clean": "clear day",
+      "zh_clean": "整天",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6697
+    },
+    {
+      "term_idx": 947,
+      "en": "closing",
+      "zh_canonical": "截止的",
+      "en_clean": "closing",
+      "zh_clean": "截止",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6828
+    },
+    {
+      "term_idx": 990,
+      "en": "company",
+      "zh_canonical": "公司",
+      "en_clean": "company",
+      "zh_clean": "公司",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7085
+    },
+    {
+      "term_idx": 995,
+      "en": "compensation",
+      "zh_canonical": "補償",
+      "en_clean": "compensation",
+      "zh_clean": "補償",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 1,
+        "criminal": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7323
+    },
+    {
+      "term_idx": 996,
+      "en": "competency",
+      "zh_canonical": "能力",
+      "en_clean": "competency",
+      "zh_clean": "能力",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "international": 1,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6612
+    },
+    {
+      "term_idx": 1000,
+      "en": "competitive",
+      "zh_canonical": "競爭的",
+      "en_clean": "competitive",
+      "zh_clean": "競爭",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "labor_social": 4,
+        "international": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6606
+    },
+    {
+      "term_idx": 1027,
+      "en": "condition",
+      "zh_canonical": "情況",
+      "en_clean": "condition",
+      "zh_clean": "情況",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7412
+    },
+    {
+      "term_idx": 1183,
+      "en": "cut-off date",
+      "zh_canonical": "截止日期",
+      "en_clean": "cut-off date",
+      "zh_clean": "截止日期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "civil": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.699
+    },
+    {
+      "term_idx": 1192,
+      "en": "date",
+      "zh_canonical": "日期",
+      "en_clean": "date",
+      "zh_clean": "日期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 3
+      },
+      "knn_top_neighbour_sim": 0.7129
+    },
+    {
+      "term_idx": 1193,
+      "en": "day",
+      "zh_canonical": "天",
+      "en_clean": "day",
+      "zh_clean": "天",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7257
+    },
+    {
+      "term_idx": 1249,
+      "en": "delay",
+      "zh_canonical": "拖延",
+      "en_clean": "delay",
+      "zh_clean": "拖延",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7178
+    },
+    {
+      "term_idx": 1261,
+      "en": "delivery",
+      "zh_canonical": "交付",
+      "en_clean": "delivery",
+      "zh_clean": "交付",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6779
+    },
+    {
+      "term_idx": 1326,
+      "en": "direct",
+      "zh_canonical": "直接",
+      "en_clean": "direct",
+      "zh_clean": "直接",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6568
+    },
+    {
+      "term_idx": 1330,
+      "en": "disability",
+      "zh_canonical": "弱能",
+      "en_clean": "disability",
+      "zh_clean": "弱能",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.8598
+    },
+    {
+      "term_idx": 1455,
+      "en": "emergency",
+      "zh_canonical": "緊急情況",
+      "en_clean": "emergency",
+      "zh_clean": "緊急情況",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7362
+    },
+    {
+      "term_idx": 1506,
+      "en": "established",
+      "zh_canonical": "已制定的",
+      "en_clean": "established",
+      "zh_clean": "已制定",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7145
+    },
+    {
+      "term_idx": 1599,
+      "en": "facilities",
+      "zh_canonical": "設施",
+      "en_clean": "facilities",
+      "zh_clean": "設施",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7117
+    },
+    {
+      "term_idx": 1607,
+      "en": "fair",
+      "zh_canonical": "中肯",
+      "en_clean": "fair",
+      "zh_clean": "中肯",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7407
+    },
+    {
+      "term_idx": 1608,
+      "en": "fairness",
+      "zh_canonical": "公正",
+      "en_clean": "fairness",
+      "zh_clean": "公正",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.8359
+    },
+    {
+      "term_idx": 1653,
+      "en": "fit",
+      "zh_canonical": "合宜",
+      "en_clean": "fit",
+      "zh_clean": "合宜",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6794
+    },
+    {
+      "term_idx": 1697,
+      "en": "freezing",
+      "zh_canonical": "凍結",
+      "en_clean": "freezing",
+      "zh_clean": "凍結",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.6916
+    },
+    {
+      "term_idx": 1698,
+      "en": "freight",
+      "zh_canonical": "運費",
+      "en_clean": "freight",
+      "zh_clean": "運費",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6675
+    },
+    {
+      "term_idx": 1759,
+      "en": "ground",
+      "zh_canonical": "土地",
+      "en_clean": "ground",
+      "zh_clean": "土地",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6739
+    },
+    {
+      "term_idx": 1949,
+      "en": "individual",
+      "zh_canonical": "個人的",
+      "en_clean": "individual",
+      "zh_clean": "個人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 1,
+        "criminal": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7701
+    },
+    {
+      "term_idx": 2044,
+      "en": "interval",
+      "zh_canonical": "相隔時間",
+      "en_clean": "interval",
+      "zh_clean": "相隔時間",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7049
+    },
+    {
+      "term_idx": 2543,
+      "en": "operational",
+      "zh_canonical": "可使用的",
+      "en_clean": "operational",
+      "zh_clean": "可使用",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 3,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.7062
+    },
+    {
+      "term_idx": 2572,
+      "en": "outgoings",
+      "zh_canonical": "支出",
+      "en_clean": "outgoings",
+      "zh_clean": "支出",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6553
+    },
+    {
+      "term_idx": 2610,
+      "en": "pari",
+      "zh_canonical": "同樣",
+      "en_clean": "pari",
+      "zh_clean": "同樣",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "criminal": 1,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6102
+    },
+    {
+      "term_idx": 2632,
+      "en": "payable",
+      "zh_canonical": "應支付的",
+      "en_clean": "payable",
+      "zh_clean": "應支付",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7267
+    },
+    {
+      "term_idx": 2709,
+      "en": "postpone",
+      "zh_canonical": "延期",
+      "en_clean": "postpone",
+      "zh_clean": "延期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6861
+    },
+    {
+      "term_idx": 2764,
+      "en": "privileged",
+      "zh_canonical": "享有特權的",
+      "en_clean": "privileged",
+      "zh_clean": "享有特權",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7564
+    },
+    {
+      "term_idx": 2882,
+      "en": "quit",
+      "zh_canonical": "遷出",
+      "en_clean": "quit",
+      "zh_clean": "遷出",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7127
+    },
+    {
+      "term_idx": 2926,
+      "en": "recess",
+      "zh_canonical": "休庭",
+      "en_clean": "recess",
+      "zh_clean": "休庭",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 2,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6962
+    },
+    {
+      "term_idx": 3006,
+      "en": "remunerated",
+      "zh_canonical": "受薪的",
+      "en_clean": "remunerated",
+      "zh_clean": "受薪",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7959
+    },
+    {
+      "term_idx": 3185,
+      "en": "set-off",
+      "zh_canonical": "互相抵銷",
+      "en_clean": "set-off",
+      "zh_clean": "互相抵銷",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "procedure": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6631
+    },
+    {
+      "term_idx": 3227,
+      "en": "sit",
+      "zh_canonical": "聆訊",
+      "en_clean": "sit",
+      "zh_clean": "聆訊",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6833
+    },
+    {
+      "term_idx": 3273,
+      "en": "Stock Exchange Company",
+      "zh_canonical": "聯交所",
+      "en_clean": "Stock Exchange Company",
+      "zh_clean": "聯交所",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 3
+      },
+      "knn_top_neighbour_sim": 0.6707
+    },
+    {
+      "term_idx": 3305,
+      "en": "subsisting",
+      "zh_canonical": "存續",
+      "en_clean": "subsisting",
+      "zh_clean": "存續",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 3
+      },
+      "knn_top_neighbour_sim": 0.6982
+    },
+    {
+      "term_idx": 3340,
+      "en": "supervisory",
+      "zh_canonical": "監督",
+      "en_clean": "supervisory",
+      "zh_clean": "監督",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "civil": 2,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.7165
+    },
+    {
+      "term_idx": 3357,
+      "en": "suspend",
+      "zh_canonical": "中止",
+      "en_clean": "suspend",
+      "zh_clean": "中止",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "criminal": 2
+      },
+      "knn_top_neighbour_sim": 0.8748
+    },
+    {
+      "term_idx": 3413,
+      "en": "timely; timeously",
+      "zh_canonical": "及時的",
+      "en_clean": "timely",
+      "zh_clean": "及時",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "labor_social": 4,
+        "administrative": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6715
+    },
+    {
+      "term_idx": 3419,
+      "en": "total",
+      "zh_canonical": "完全",
+      "en_clean": "total",
+      "zh_clean": "完全",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 2,
+        "labor_social": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.662
+    },
+    {
+      "term_idx": 3422,
+      "en": "trader",
+      "zh_canonical": "交易商",
+      "en_clean": "trader",
+      "zh_clean": "交易商",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "international": 1,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6955
+    },
+    {
+      "term_idx": 3566,
+      "en": "variance",
+      "zh_canonical": "矛盾",
+      "en_clean": "variance",
+      "zh_clean": "矛盾",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "administrative": 1,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6581
+    },
+    {
+      "term_idx": 3652,
+      "en": "where practicable",
+      "zh_canonical": "在切實可行範圍內",
+      "en_clean": "where practicable",
+      "zh_clean": "在切實可行範圍內",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6368
+    },
+    {
+      "term_idx": 3653,
+      "en": "whereabouts",
+      "zh_canonical": "下落",
+      "en_clean": "whereabouts",
+      "zh_clean": "下落",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6798
+    },
+    {
+      "term_idx": 3844,
+      "en": "replacement cost",
+      "zh_canonical": "重置成本",
+      "en_clean": "replacement cost",
+      "zh_clean": "重置成本",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "civil": 1,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6265
+    },
+    {
+      "term_idx": 3873,
+      "en": "fix a date",
+      "zh_canonical": "編定（聆訊）日期",
+      "en_clean": "fix a date",
+      "zh_clean": "編定日期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6254
+    },
+    {
+      "term_idx": 3903,
+      "en": "fall due",
+      "zh_canonical": "到期應繳",
+      "en_clean": "fall due",
+      "zh_clean": "到期應繳",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 2,
+        "international": 1,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6507
+    },
+    {
+      "term_idx": 4027,
+      "en": "unqualified person",
+      "zh_canonical": "不合資格人士",
+      "en_clean": "unqualified person",
+      "zh_clean": "不合資格人士",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 3
+      },
+      "knn_top_neighbour_sim": 0.7644
+    },
+    {
+      "term_idx": 4228,
+      "en": "post",
+      "zh_canonical": "領館",
+      "en_clean": "post",
+      "zh_clean": "領館",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6719
+    },
+    {
+      "term_idx": 4253,
+      "en": "station",
+      "zh_canonical": "地球站",
+      "en_clean": "station",
+      "zh_clean": "地球站",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "international": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6926
+    },
+    {
+      "term_idx": 4417,
+      "en": "actuarial",
+      "zh_canonical": "精算",
+      "en_clean": "actuarial",
+      "zh_clean": "精算",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 3
+      },
+      "knn_top_neighbour_sim": 0.6475
+    },
+    {
+      "term_idx": 4525,
+      "en": "antioxidant",
+      "zh_canonical": "抗氧化劑",
+      "en_clean": "antioxidant",
+      "zh_clean": "抗氧化劑",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "civil": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6599
+    },
+    {
+      "term_idx": 4612,
+      "en": "at all reasonable times",
+      "zh_canonical": "在任何合理時間",
+      "en_clean": "at all reasonable times",
+      "zh_clean": "在任何合理時間",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.6324
+    },
+    {
+      "term_idx": 4695,
+      "en": "beneficially",
+      "zh_canonical": "有實益權",
+      "en_clean": "beneficially",
+      "zh_clean": "有實益權",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 3,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6732
+    },
+    {
+      "term_idx": 4758,
+      "en": "bureau",
+      "zh_canonical": "局",
+      "en_clean": "bureau",
+      "zh_clean": "局",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6826
+    },
+    {
+      "term_idx": 4864,
+      "en": "chemist",
+      "zh_canonical": "政府化驗師",
+      "en_clean": "chemist",
+      "zh_clean": "政府化驗師",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7247
+    },
+    {
+      "term_idx": 4872,
+      "en": "Chinese medicine practitioner",
+      "zh_canonical": "註冊中醫",
+      "en_clean": "Chinese medicine practitioner",
+      "zh_clean": "註冊中醫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6028
+    },
+    {
+      "term_idx": 4875,
+      "en": "chiropractor",
+      "zh_canonical": "脊醫",
+      "en_clean": "chiropractor",
+      "zh_clean": "脊醫",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "constitutional": 1,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6069
+    },
+    {
+      "term_idx": 4886,
+      "en": "circulation",
+      "zh_canonical": "流通",
+      "en_clean": "circulation",
+      "zh_clean": "流通",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6793
+    },
+    {
+      "term_idx": 4906,
+      "en": "clinic",
+      "zh_canonical": "診療所",
+      "en_clean": "clinic",
+      "zh_clean": "診療所",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 3
+      },
+      "knn_top_neighbour_sim": 0.7271
+    },
+    {
+      "term_idx": 4909,
+      "en": "closed",
+      "zh_canonical": "非公開法庭",
+      "en_clean": "closed",
+      "zh_clean": "非公開法庭",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "constitutional": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6828
+    },
+    {
+      "term_idx": 4969,
+      "en": "company secretary",
+      "zh_canonical": "公司秘書",
+      "en_clean": "company secretary",
+      "zh_clean": "公司秘書",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.7159
+    },
+    {
+      "term_idx": 4998,
+      "en": "computing",
+      "zh_canonical": "計算方法",
+      "en_clean": "computing",
+      "zh_clean": "計算方法",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6657
+    },
+    {
+      "term_idx": 5161,
+      "en": "critical",
+      "zh_canonical": "關鍵金融功能",
+      "en_clean": "critical",
+      "zh_clean": "關鍵金融功能",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "international": 1,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6744
+    },
+    {
+      "term_idx": 5184,
+      "en": "daily",
+      "zh_canonical": "按日計算的失責罰款",
+      "en_clean": "daily",
+      "zh_clean": "按日計算的失責罰款",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6981
+    },
+    {
+      "term_idx": 5192,
+      "en": "deafness",
+      "zh_canonical": "失聰",
+      "en_clean": "deafness",
+      "zh_clean": "失聰",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7449
+    },
+    {
+      "term_idx": 5245,
+      "en": "demolish",
+      "zh_canonical": "拆卸",
+      "en_clean": "demolish",
+      "zh_clean": "拆卸",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "constitutional": 2,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6994
+    },
+    {
+      "term_idx": 5353,
+      "en": "discomfort",
+      "zh_canonical": "不安",
+      "en_clean": "discomfort",
+      "zh_clean": "不安",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7846
+    },
+    {
+      "term_idx": 5453,
+      "en": "duration",
+      "zh_canonical": "持續的時間",
+      "en_clean": "duration",
+      "zh_clean": "持續的時間",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "constitutional": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7383
+    },
+    {
+      "term_idx": 5456,
+      "en": "duty-paid",
+      "zh_canonical": "已完稅貨品",
+      "en_clean": "duty-paid",
+      "zh_clean": "已完稅貨品",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "criminal": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6903
+    },
+    {
+      "term_idx": 5489,
+      "en": "electrical",
+      "zh_canonical": "註冊電業工程人員",
+      "en_clean": "electrical",
+      "zh_clean": "註冊電業工程人員",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6738
+    },
+    {
+      "term_idx": 5495,
+      "en": "eligibility",
+      "zh_canonical": "資格規定",
+      "en_clean": "eligibility",
+      "zh_clean": "資格規定",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 2,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7242
+    },
+    {
+      "term_idx": 5547,
+      "en": "environmental",
+      "zh_canonical": "環境許可證",
+      "en_clean": "environmental",
+      "zh_clean": "環境許可證",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 3
+      },
+      "knn_top_neighbour_sim": 0.7188
+    },
+    {
+      "term_idx": 5592,
+      "en": "Exchange Fund",
+      "zh_canonical": "外匯基金",
+      "en_clean": "Exchange Fund",
+      "zh_clean": "外匯基金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 1,
+        "international": 2
+      },
+      "knn_top_neighbour_sim": 0.7203
+    },
+    {
+      "term_idx": 5607,
+      "en": "exercisable",
+      "zh_canonical": "可予行使",
+      "en_clean": "exercisable",
+      "zh_clean": "可予行使",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.6971
+    },
+    {
+      "term_idx": 5643,
+      "en": "extended",
+      "zh_canonical": "延長限期",
+      "en_clean": "extended",
+      "zh_clean": "延長限期",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.6851
+    },
+    {
+      "term_idx": 5664,
+      "en": "far",
+      "zh_canonical": "在切實可行範圍內",
+      "en_clean": "far",
+      "zh_clean": "在切實可行範圍內",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "civil": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6497
+    },
+    {
+      "term_idx": 5692,
+      "en": "firm",
+      "zh_canonical": "律師行",
+      "en_clean": "firm",
+      "zh_clean": "律師行",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7714
+    },
+    {
+      "term_idx": 5698,
+      "en": "fitness",
+      "zh_canonical": "性能",
+      "en_clean": "fitness",
+      "zh_clean": "性能",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7115
+    },
+    {
+      "term_idx": 5876,
+      "en": "hoist",
+      "zh_canonical": "懸掛",
+      "en_clean": "hoist",
+      "zh_clean": "懸掛",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.635
+    },
+    {
+      "term_idx": 5901,
+      "en": "household",
+      "zh_canonical": "住戶",
+      "en_clean": "household",
+      "zh_clean": "住戶",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 3,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6976
+    },
+    {
+      "term_idx": 5932,
+      "en": "impair",
+      "zh_canonical": "損害",
+      "en_clean": "impair",
+      "zh_clean": "損害",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.7411
+    },
+    {
+      "term_idx": 5980,
+      "en": "in good working order",
+      "zh_canonical": "良好操作狀態",
+      "en_clean": "in good working order",
+      "zh_clean": "良好操作狀態",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 2,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6343
+    },
+    {
+      "term_idx": 6046,
+      "en": "increase",
+      "zh_canonical": "增加額",
+      "en_clean": "increase",
+      "zh_clean": "增加額",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "criminal": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6633
+    },
+    {
+      "term_idx": 6047,
+      "en": "increment",
+      "zh_canonical": "增薪",
+      "en_clean": "increment",
+      "zh_clean": "增薪",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "procedure": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6351
+    },
+    {
+      "term_idx": 6068,
+      "en": "individually",
+      "zh_canonical": "單獨",
+      "en_clean": "individually",
+      "zh_clean": "單獨",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.654
+    },
+    {
+      "term_idx": 6098,
+      "en": "inhibit",
+      "zh_canonical": "限制",
+      "en_clean": "inhibit",
+      "zh_clean": "限制",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6771
+    },
+    {
+      "term_idx": 6319,
+      "en": "livestock waste",
+      "zh_canonical": "禽畜廢物",
+      "en_clean": "livestock waste",
+      "zh_clean": "禽畜廢物",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "labor_social": 4,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.5906
+    },
+    {
+      "term_idx": 6325,
+      "en": "location",
+      "zh_canonical": "所在",
+      "en_clean": "location",
+      "zh_clean": "所在",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.648
+    },
+    {
+      "term_idx": 6392,
+      "en": "massage establishment",
+      "zh_canonical": "按摩院",
+      "en_clean": "massage establishment",
+      "zh_clean": "按摩院",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 3
+      },
+      "knn_top_neighbour_sim": 0.6671
+    },
+    {
+      "term_idx": 6409,
+      "en": "medicine",
+      "zh_canonical": "醫療",
+      "en_clean": "medicine",
+      "zh_clean": "醫療",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "criminal": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7206
+    },
+    {
+      "term_idx": 6462,
+      "en": "monitor",
+      "zh_canonical": "監察",
+      "en_clean": "monitor",
+      "zh_clean": "監察",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "criminal": 2,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6681
+    },
+    {
+      "term_idx": 6566,
+      "en": "null and void",
+      "zh_canonical": "無效",
+      "en_clean": "null and void",
+      "zh_clean": "無效",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "labor_social": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.5893
+    },
+    {
+      "term_idx": 6728,
+      "en": "pharmaceutical",
+      "zh_canonical": "藥劑製品",
+      "en_clean": "pharmaceutical",
+      "zh_clean": "藥劑製品",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 2,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6815
+    },
+    {
+      "term_idx": 6761,
+      "en": "portfolio",
+      "zh_canonical": "投資組合",
+      "en_clean": "portfolio",
+      "zh_clean": "投資組合",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "procedure": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6648
+    },
+    {
+      "term_idx": 6810,
+      "en": "present",
+      "zh_canonical": "在場",
+      "en_clean": "present",
+      "zh_clean": "在場",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.692
+    },
+    {
+      "term_idx": 7040,
+      "en": "remuneration",
+      "zh_canonical": "酬金",
+      "en_clean": "remuneration",
+      "zh_clean": "酬金",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 1,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.77
+    },
+    {
+      "term_idx": 7089,
+      "en": "restaurant",
+      "zh_canonical": "水上食肆",
+      "en_clean": "restaurant",
+      "zh_clean": "水上食肆",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 3
+      },
+      "knn_top_neighbour_sim": 0.6994
+    },
+    {
+      "term_idx": 7218,
+      "en": "set off",
+      "zh_canonical": "抵銷",
+      "en_clean": "set off",
+      "zh_clean": "抵銷",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6571
+    },
+    {
+      "term_idx": 7254,
+      "en": "slot",
+      "zh_canonical": "時段",
+      "en_clean": "slot",
+      "zh_clean": "時段",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6561
+    },
+    {
+      "term_idx": 7308,
+      "en": "stock exchange",
+      "zh_canonical": "證券交易所",
+      "en_clean": "stock exchange",
+      "zh_clean": "證券交易所",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6465
+    },
+    {
+      "term_idx": 7312,
+      "en": "store",
+      "zh_canonical": "儲存",
+      "en_clean": "store",
+      "zh_clean": "儲存",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7223
+    },
+    {
+      "term_idx": 7485,
+      "en": "tso",
+      "zh_canonical": "祖",
+      "en_clean": "tso",
+      "zh_clean": "祖",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "international": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.616
+    },
+    {
+      "term_idx": 7513,
+      "en": "underway",
+      "zh_canonical": "在航",
+      "en_clean": "underway",
+      "zh_clean": "在航",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.6921
+    },
+    {
+      "term_idx": 7546,
+      "en": "unqualified",
+      "zh_canonical": "不合資格人士",
+      "en_clean": "unqualified",
+      "zh_clean": "不合資格人士",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7419
+    },
+    {
+      "term_idx": 7609,
+      "en": "vouchers",
+      "zh_canonical": "付款憑單",
+      "en_clean": "vouchers",
+      "zh_clean": "付款憑單",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "labor_social": 4,
+        "civil": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6408
+    },
+    {
+      "term_idx": 7627,
+      "en": "well-being",
+      "zh_canonical": "福祉",
+      "en_clean": "well-being",
+      "zh_clean": "福祉",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 2,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7151
+    },
+    {
+      "term_idx": 7732,
+      "en": "accounting professional",
+      "zh_canonical": "會計專業人士",
+      "en_clean": "accounting professional",
+      "zh_clean": "會計專業人士",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 2,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6751
+    },
+    {
+      "term_idx": 7880,
+      "en": "share capital",
+      "zh_canonical": "股本",
+      "en_clean": "share capital",
+      "zh_clean": "股本",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6269
+    },
+    {
+      "term_idx": 7904,
+      "en": "flight",
+      "zh_canonical": "潛逃",
+      "en_clean": "flight",
+      "zh_clean": "潛逃",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "administrative": 2,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.7309
+    },
+    {
+      "term_idx": 8068,
+      "en": "hawker",
+      "zh_canonical": "固定攤位小販牌照",
+      "en_clean": "hawker",
+      "zh_clean": "固定攤位小販牌照",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "criminal": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.5922
+    },
+    {
+      "term_idx": 8242,
+      "en": "saving provision",
+      "zh_canonical": "保留條文",
+      "en_clean": "saving provision",
+      "zh_clean": "保留條文",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 2,
+        "labor_social": 4,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6935
+    },
+    {
+      "term_idx": 8469,
+      "en": "in a lump sum",
+      "zh_canonical": "整筆支付",
+      "en_clean": "in a lump sum",
+      "zh_clean": "整筆支付",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 3
+      },
+      "knn_top_neighbour_sim": 0.6694
+    },
+    {
+      "term_idx": 9198,
+      "en": "boothless",
+      "zh_canonical": "無亭收費隧道",
+      "en_clean": "boothless",
+      "zh_clean": "無亭收費隧道",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "procedure": 1,
+        "labor_social": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.7553
+    },
+    {
+      "term_idx": 9234,
+      "en": "leisure",
+      "zh_canonical": "康樂及文化事務署署長",
+      "en_clean": "leisure",
+      "zh_clean": "康樂及文化事務署署長",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.7014
+    },
+    {
+      "term_idx": 9293,
+      "en": "passenger service",
+      "zh_canonical": "客運持證人",
+      "en_clean": "passenger service",
+      "zh_clean": "客運持證人",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 3,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6436
+    },
+    {
+      "term_idx": 9322,
+      "en": "no later",
+      "zh_canonical": "不遲於",
+      "en_clean": "no later",
+      "zh_clean": "不遲於",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "international": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6463
+    },
+    {
+      "term_idx": 9325,
+      "en": "desk",
+      "zh_canonical": "交易桌",
+      "en_clean": "desk",
+      "zh_clean": "交易桌",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7588
+    },
+    {
+      "term_idx": 9333,
+      "en": "out",
+      "zh_canonical": "套現",
+      "en_clean": "out",
+      "zh_clean": "套現",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "procedure": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7109
+    },
+    {
+      "term_idx": 9344,
+      "en": "gaseous",
+      "zh_canonical": "氣體燃料",
+      "en_clean": "gaseous",
+      "zh_clean": "氣體燃料",
+      "k_en": 8,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "international": 1,
+        "procedure": 2
+      },
+      "knn_top_neighbour_sim": 0.6462
+    },
+    {
+      "term_idx": 4186,
+      "en": "sea",
+      "zh_canonical": "海上貨物運輸",
+      "en_clean": "sea",
+      "zh_clean": "海上貨物運輸",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "international": 1,
+        "labor_social": 4,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6487
+    },
+    {
+      "term_idx": 5148,
+      "en": "coverage",
+      "zh_canonical": "保險保障",
+      "en_clean": "coverage",
+      "zh_clean": "保險保障",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "administrative": 2,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6938
+    },
+    {
+      "term_idx": 5917,
+      "en": "if",
+      "zh_canonical": "如果是並僅如果是",
+      "en_clean": "if",
+      "zh_clean": "如果是並僅如果是",
+      "k_en": 8,
+      "k_zh": 7,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "criminal": 1,
+        "constitutional": 2,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6425
+    },
+    {
+      "term_idx": 4997,
+      "en": "compute",
+      "zh_canonical": "計算",
+      "en_clean": "compute",
+      "zh_clean": "計算",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "constitutional": 1,
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6718
+    },
+    {
+      "term_idx": 5553,
+      "en": "erase",
+      "zh_canonical": "刪除",
+      "en_clean": "erase",
+      "zh_clean": "刪除",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.6878
+    },
+    {
+      "term_idx": 6603,
+      "en": "one-off",
+      "zh_canonical": "單次",
+      "en_clean": "one-off",
+      "zh_clean": "單次",
+      "k_en": 7,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6786
+    },
+    {
+      "term_idx": 4041,
+      "en": "realized profit",
+      "zh_canonical": "已實現利潤",
+      "en_clean": "realized profit",
+      "zh_clean": "已實現利潤",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6282
+    },
+    {
+      "term_idx": 5466,
+      "en": "economical",
+      "zh_canonical": "合乎經濟原則地",
+      "en_clean": "economical",
+      "zh_clean": "合乎經濟原則地",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.68
+    },
+    {
+      "term_idx": 5528,
+      "en": "engineering",
+      "zh_canonical": "認可工程標準",
+      "en_clean": "engineering",
+      "zh_clean": "認可工程標準",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6888
+    },
+    {
+      "term_idx": 6016,
+      "en": "inaccessible",
+      "zh_canonical": "不可觸及",
+      "en_clean": "inaccessible",
+      "zh_clean": "不可觸及",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "labor_social": 4,
+        "constitutional": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7644
+    },
+    {
+      "term_idx": 7271,
+      "en": "source",
+      "zh_canonical": "合法來源",
+      "en_clean": "source",
+      "zh_clean": "合法來源",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6847
+    },
+    {
+      "term_idx": 7809,
+      "en": "netting",
+      "zh_canonical": "淨額結算安排",
+      "en_clean": "netting",
+      "zh_clean": "淨額結算安排",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "international": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6447
+    },
+    {
+      "term_idx": 9272,
+      "en": "onshore",
+      "zh_canonical": "在岸風險",
+      "en_clean": "onshore",
+      "zh_clean": "在岸風險",
+      "k_en": 8,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "administrative": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.6209
+    },
+    {
+      "term_idx": 2338,
+      "en": "mesne",
+      "zh_canonical": "中間的",
+      "en_clean": "mesne",
+      "zh_clean": "中間",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "civil": 1,
+        "labor_social": 4,
+        "procedure": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.5633
+    },
+    {
+      "term_idx": 5314,
+      "en": "detract",
+      "zh_canonical": "減損",
+      "en_clean": "detract",
+      "zh_clean": "減損",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "civil": 1,
+        "procedure": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7459
+    },
+    {
+      "term_idx": 5835,
+      "en": "handicap",
+      "zh_canonical": "弱智",
+      "en_clean": "handicap",
+      "zh_clean": "弱智",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7745
+    },
+    {
+      "term_idx": 7982,
+      "en": "non-working",
+      "zh_canonical": "非工作日",
+      "en_clean": "non-working",
+      "zh_clean": "非工作日",
+      "k_en": 6,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "criminal": 1,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.6414
+    },
+    {
+      "term_idx": 6506,
+      "en": "network",
+      "zh_canonical": "網絡營業額",
+      "en_clean": "network",
+      "zh_clean": "網絡營業額",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 2,
+        "constitutional": 1,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6819
+    },
+    {
+      "term_idx": 6586,
+      "en": "off-balance",
+      "zh_canonical": "資產負債表外項目",
+      "en_clean": "off-balance",
+      "zh_clean": "資產負債表外項目",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 1,
+        "procedure": 1,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7355
+    },
+    {
+      "term_idx": 7776,
+      "en": "photograph",
+      "zh_canonical": "鳥瞰照片",
+      "en_clean": "photograph",
+      "zh_clean": "鳥瞰照片",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "administrative": 1,
+        "labor_social": 4,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.766
+    },
+    {
+      "term_idx": 9316,
+      "en": "optometrist",
+      "zh_canonical": "註冊視光師",
+      "en_clean": "optometrist",
+      "zh_clean": "註冊視光師",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6614
+    },
+    {
+      "term_idx": 9317,
+      "en": "therapist",
+      "zh_canonical": "註冊職業治療師",
+      "en_clean": "therapist",
+      "zh_clean": "註冊職業治療師",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6835
+    },
+    {
+      "term_idx": 9320,
+      "en": "physiotherapist",
+      "zh_canonical": "註冊物理治療師",
+      "en_clean": "physiotherapist",
+      "zh_clean": "註冊物理治療師",
+      "k_en": 8,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 2
+      },
+      "knn_top_neighbour_sim": 0.6548
+    },
+    {
+      "term_idx": 2647,
+      "en": "per diem",
+      "zh_canonical": "按日",
+      "en_clean": "per diem",
+      "zh_clean": "按日",
+      "k_en": 5,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "civil": 1,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.6695
+    },
+    {
+      "term_idx": 1809,
+      "en": "hotel",
+      "zh_canonical": "酒店牌照",
+      "en_clean": "hotel",
+      "zh_clean": "酒店牌照",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6778
+    },
+    {
+      "term_idx": 3496,
+      "en": "unfit",
+      "zh_canonical": "不合宜",
+      "en_clean": "unfit",
+      "zh_clean": "不合宜",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "labor_social": 4,
+        "constitutional": 1,
+        "criminal": 1
+      },
+      "knn_top_neighbour_sim": 0.7522
+    },
+    {
+      "term_idx": 4315,
+      "en": "equipment",
+      "zh_canonical": "《國際散裝運輸液化氣體船舶構造和設備規則》",
+      "en_clean": "equipment",
+      "zh_clean": "《國際散裝運輸液化氣體船舶構造和設備規則》",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 2,
+        "administrative": 1
+      },
+      "knn_top_neighbour_sim": 0.7402
+    },
+    {
+      "term_idx": 4756,
+      "en": "bunkering",
+      "zh_canonical": "燃料裝艙",
+      "en_clean": "bunkering",
+      "zh_clean": "燃料裝艙",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "procedure": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6548
+    },
+    {
+      "term_idx": 5181,
+      "en": "cut-off",
+      "zh_canonical": "截數日期",
+      "en_clean": "cut-off",
+      "zh_clean": "截數日期",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7147
+    },
+    {
+      "term_idx": 5756,
+      "en": "functioning",
+      "zh_canonical": "智能",
+      "en_clean": "functioning",
+      "zh_clean": "智能",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "constitutional": 2
+      },
+      "knn_top_neighbour_sim": 0.7224
+    },
+    {
+      "term_idx": 6595,
+      "en": "offshore",
+      "zh_canonical": "離岸計劃",
+      "en_clean": "offshore",
+      "zh_clean": "離岸計劃",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.6379
+    },
+    {
+      "term_idx": 7158,
+      "en": "school",
+      "zh_canonical": "職前訓練學校",
+      "en_clean": "school",
+      "zh_clean": "職前訓練學校",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "constitutional": 1
+      },
+      "knn_top_neighbour_sim": 0.6711
+    },
+    {
+      "term_idx": 7542,
+      "en": "unpaid",
+      "zh_canonical": "股份的未繳款額",
+      "en_clean": "unpaid",
+      "zh_clean": "股份的未繳款額",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 2,
+        "labor_social": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.7089
+    },
+    {
+      "term_idx": 9115,
+      "en": "Red Cross",
+      "zh_canonical": "紅十字國際委員會",
+      "en_clean": "Red Cross",
+      "zh_clean": "紅十字國際委員會",
+      "k_en": 8,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 3,
+        "labor_social": 4
+      },
+      "knn_top_neighbour_sim": 0.6816
+    },
+    {
+      "term_idx": 7720,
+      "en": "out-patient",
+      "zh_canonical": "門診",
+      "en_clean": "out-patient",
+      "zh_clean": "門診",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "procedure": 2,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6857
+    },
+    {
+      "term_idx": 7739,
+      "en": "discontinuation date",
+      "zh_canonical": "中止日期",
+      "en_clean": "discontinuation date",
+      "zh_clean": "中止日期",
+      "k_en": 6,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "procedure": 1,
+        "labor_social": 4,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6527
+    },
+    {
+      "term_idx": 2602,
+      "en": "par value",
+      "zh_canonical": "面值",
+      "en_clean": "par value",
+      "zh_clean": "面值",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 2
+      },
+      "knn_top_neighbour_sim": 0.6755
+    },
+    {
+      "term_idx": 8399,
+      "en": "ill-treatment",
+      "zh_canonical": "虐待",
+      "en_clean": "ill-treatment",
+      "zh_clean": "虐待",
+      "k_en": 4,
+      "k_zh": 8,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "criminal": 1,
+        "civil": 1,
+        "international": 1
+      },
+      "knn_top_neighbour_sim": 0.7405
+    },
+    {
+      "term_idx": 6606,
+      "en": "on-line",
+      "zh_canonical": "聯機的",
+      "en_clean": "on-line",
+      "zh_clean": "聯機",
+      "k_en": 5,
+      "k_zh": 6,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "international": 1,
+        "administrative": 1,
+        "labor_social": 4,
+        "procedure": 1
+      },
+      "knn_top_neighbour_sim": 0.655
+    },
+    {
+      "term_idx": 6099,
+      "en": "inhibition",
+      "zh_canonical": "制止令",
+      "en_clean": "inhibition",
+      "zh_clean": "制止令",
+      "k_en": 5,
+      "k_zh": 5,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "labor_social": 4,
+        "constitutional": 1,
+        "administrative": 1,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6627
+    },
+    {
+      "term_idx": 8063,
+      "en": "sustainability",
+      "zh_canonical": "可持續性",
+      "en_clean": "sustainability",
+      "zh_clean": "可持續性",
+      "k_en": 4,
+      "k_zh": 4,
+      "knn_confidence": 0.571,
+      "knn_vote_distribution": {
+        "administrative": 2,
+        "labor_social": 4,
+        "civil": 1
+      },
+      "knn_top_neighbour_sim": 0.6845
+    }
+  ],
+  "candidate_pool_stats": {
+    "total_predicted_to_domain": 838,
+    "high_mid_confidence": 306,
+    "passed_to_agent": 306
+  }
+}

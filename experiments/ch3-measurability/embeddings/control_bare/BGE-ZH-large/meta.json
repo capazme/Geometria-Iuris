@@ -1,0 +1,13 @@
+{
+  "model_id": "BAAI/bge-large-zh-v1.5",
+  "model_label": "BGE-ZH-large",
+  "lang": "zh",
+  "dim": 1024,
+  "n_terms": 100,
+  "dtype": "float32",
+  "l2_norm": true,
+  "date": "2026-05-11",
+  "elapsed_s": 6.31,
+  "snapshot_sha256_controls": "2678a223c70b1172e258bcb52695a72ef0a6f26f46dd0b0424f53f6f657b4649",
+  "kind": "control_bare"
+}

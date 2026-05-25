@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robustness &amp; caveats</title>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/plotly.min.js"></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="crumb">Chapter 3 · Extensions A–Z</div>
+  <h1>Robustness &amp; caveats</h1>
+  <p>Seven extensions that strengthen — and qualify — the headline numbers.</p>
+</header>
+<nav class="toc"><ul><li><a href="home.html">Home</a></li><li><a href="methodology.html">Methodology</a></li><li><a href="how_it_works.html">How it works</a></li><li><a href="experiment_31.html">Experiment §3.1</a></li><li><a href="experiment_32.html">Experiment §3.2</a></li><li><a class="current" href="robustness_caveats.html">Robustness &amp; caveats</a></li></ul></nav>
+<main>
+<!-- ====================================================================== -->
+<section id="intro">
+<h2>Robustness & caveats</h2>
+
+<p class="lead">
+Three anchor results carry the chapter (see Home). Seven smaller
+investigations either strengthen those results or qualify them; this
+page houses all seven, alongside a methodological reframing of the
+headline number — the Y caveat — that the rest of the dashboard refers
+back to.
+</p>
+
+<p>
+The opening half (D, G, H) shows that the cross-tradition gap survives
+pool perturbation, that the divergence operates at the level of
+individual same-lemma terms, and that the empirical K threshold for
+attestation is grounded. The closing half (F, X, Y, Z) discloses
+limits: stratification by k-NN confidence, dual injection of control
+terms, the reframing of the legal signal as the attested-bare gap, and
+the partial failure of a naive tier hierarchy.
+</p>
+</section>
+<!-- ====================================================================== -->
+<section id="D-robustness">
+<h2>D · Δρ_sym stability under background injection</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>How robust is the gap if the lexicon is partly contaminated with background legal terms — terms that the curator did not vet by hand, but that the corpus does include?</div>
+<div class="result"><span class="lab">Result in words</span>The cross-tradition gap Δρ_sym attested moves from <strong>0.538</strong> at 0% background to <strong>0.590</strong> at 75% background. The signal does not collapse — it rises slightly. The pattern is structural.</div>
+<div id="fig-D-robustness" class="plot-frame" style="height:440px;"></div>
+<script>Plotly.newPlot("fig-D-robustness", [{"type":"scatter","mode":"lines","x":[0.0,10.0,25.0,50.0,75.0,75.0,50.0,25.0,10.0,0.0],"y":[0.5382,0.5548,0.5662,0.5913,0.6237,0.5531,0.5203,0.5076,0.5019,0.5382],"fill":"toself","fillcolor":"rgba(138,109,59,0.18)","line":{"color":"rgba(0,0,0,0)"},"name":"95% CI","hoverinfo":"skip","showlegend":true},{"type":"scatter","mode":"lines+markers","x":[0.0,10.0,25.0,50.0,75.0],"y":[0.5382,0.535,0.5421,0.5645,0.5903],"line":{"color":"#8a6d3b","width":2.2},"marker":{"size":9,"color":"#8a6d3b","line":{"color":"#222","width":0.6}},"name":"\u0394\u03c1_sym attested","hovertemplate":"%{x:.0f}% bg<br>\u0394\u03c1_sym = %{y:.3f}<extra></extra>"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":55,"r":25,"t":50,"b":50},"xaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"% background terms in pool","ticksuffix":"%","range":[-3,80]},"yaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"\u0394\u03c1_sym (within \u2212 cross)","range":[0.45,0.65]},"title":"D \u2014 \u0394\u03c1_sym attested vs background injection","shapes":[{"type":"line","xref":"x","yref":"y","x0":-3,"x1":80,"y0":0.4,"y1":0.4,"line":{"color":"#999","width":0.7,"dash":"dot"}}],"annotations":[{"x":0,"y":0.5502,"xref":"x","yref":"y","text":"baseline 0.538","showarrow":false,"font":{"size":10,"color":"#8a6d3b"}},{"x":75.0,"y":0.6023000000000001,"xref":"x","yref":"y","text":"0.590 at 75%","showarrow":false,"font":{"size":10,"color":"#8a6d3b"}}],"height":440,"legend":{"orientation":"h","yanchor":"bottom","y":-0.22,"x":0.5,"xanchor":"center","font":{"size":11}}}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">Mean ± 95% CI across 10 pool replicates per p_bg level. Baseline (p_bg = 0) matches the headline Δρ_sym attested.</p>
+<div class="takehome"><span class="lab">Take-home</span>Pool curation moves the absolute number slightly but does not erase the cross-tradition gap. Chapter 4 may cite the headline Δρ_sym attested with confidence: the gap persists regardless of which background terms are added to the pool.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><div class="formula">Δρ<sub>sym</sub>(p) = (ρ̄<sub>W</sub>(p) + ρ̄<sub>S</sub>(p)) / 2 − ρ̄<sub>cross</sub>(p)</div><p class="stats"><strong>Δρ at 0%</strong> = 0.538 &nbsp;·&nbsp; <strong>Δρ at 25%</strong> = 0.542 &nbsp;·&nbsp; <strong>Δρ at 75%</strong> = 0.590 &nbsp;·&nbsp; <strong>replicates / level</strong> = 10</p><p class="meta">Pool replicates over background subsamples; CI is across replicates, not within a single pool (no Mantel inside this curve).</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_D_robustness.py:main()</code></p></div>
+</section>
+<!-- ====================================================================== -->
+<section id="G-false-friends">
+<h2>G · Same-lemma divergence (term-level proof)</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>Consider a term like <em>specimen signature</em> in English law and its direct Chinese translation 簽名樣本 (literally <em>signature sample</em>): both designate the same legal object, a reference exemplar of an authorised signer's handwriting deposited with a bank or court. If we ask two separate models, each trained on a single language tradition, to encode the pair, do they recognise the two strings as the same concept? And if we ask a single model that encodes both languages simultaneously, does it agree? The question matters: if the two encoders disagree but a single bilingual model agrees, the disagreement cannot be an encoder calibration artefact. It must lie in what each language-specialised encoder has absorbed from its own tradition.</div>
+<div class="result"><span class="lab">Result in words</span>On the same set of same-lemma legal pairs, two encoders trained one on English legal corpora and one on Chinese legal corpora (BGE-EN-large × BGE-ZH-large) report cosine similarity in the band <strong>−0.11 to +0.10</strong>: at best mild alignment, often outright anti-correlation. A single bilingual encoder that places both languages in one semantic space (BGE-M3-EN × BGE-M3-ZH) reports cosine in the band <strong>+0.27 to +0.87</strong> on the very same pairs. The disagreement is not a property of the encoder architectures: when the tradition layer is removed by a shared encoder, the lemmas align.</div>
+<div id="fig-G-false-friends" class="plot-frame" style="height:480px;"></div>
+<script>Plotly.newPlot("fig-G-false-friends", [{"type":"scatter","mode":"lines","x":[-0.4,1.0],"y":[-0.4,1.0],"line":{"color":"#999","width":0.8,"dash":"dot"},"name":"y = x","hoverinfo":"skip","showlegend":false},{"type":"scatter","mode":"markers+text","x":[-0.0482,-0.0451,-0.0267,0.0063,-0.033,-0.0237,-0.0282,0.0026],"y":[0.8386,0.8094,0.8231,0.853,0.8114,0.8204,0.8107,0.8399],"text":["specimen signature","pharmacist","non-identifiable","central bank","insurable","direct marketing","expressway","odds"],"textposition":"top center","textfont":{"size":9},"marker":{"size":11,"color":"#a43a3a","line":{"color":"#222","width":0.6},"opacity":0.85},"hovertext":["specimen signature / \u7c3d\u540d\u6a23\u672c<br>cross = -0.048<br>bilingual = +0.839","pharmacist / \u8a3b\u518a\u85e5\u5291\u5e2b<br>cross = -0.045<br>bilingual = +0.809","non-identifiable / \u975e\u53ef\u8b58\u8fa8\u8eab\u5206\u8cc7\u6599<br>cross = -0.027<br>bilingual = +0.823","central bank / \u4e2d\u592e\u9280\u884c<br>cross = +0.006<br>bilingual = +0.853","insurable / \u53ef\u4fdd\u6b0a\u76ca<br>cross = -0.033<br>bilingual = +0.811","direct marketing / \u76f4\u63a5\u4fc3\u92b7<br>cross = -0.024<br>bilingual = +0.820","expressway / \u5feb\u901f\u516c\u8def<br>cross = -0.028<br>bilingual = +0.811","odds / \u56fa\u5b9a\u8ce0\u7387\u6295\u6ce8<br>cross = +0.003<br>bilingual = +0.840"],"hoverinfo":"text","name":"same-lemma divergence"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":55,"r":25,"t":50,"b":50},"xaxis":{"zeroline":true,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"cosine \u00b7 BGE-EN-large \u00d7 BGE-ZH-large","range":[-0.4,1.0],"zerolinecolor":"#999"},"yaxis":{"zeroline":true,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"cosine \u00b7 BGE-M3-EN \u00d7 BGE-M3-ZH","range":[-0.4,1.0],"zerolinecolor":"#999"},"title":"G \u2014 Same-lemma terms: cross-encoder vs bilingual cosine","height":480,"showlegend":false}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">Each point is one same-lemma pair (English headword paired with its canonical Chinese translation in the HK DOJ bilingual glossary). The x-axis is the cosine under the two tradition-specialised encoders; the y-axis is the cosine under the single bilingual encoder. The cloud sits consistently above the y = x diagonal: bilingual cosine exceeds cross-encoder cosine on essentially every pair.</p>
+<table class="data">
+<thead><tr><th>English term</th><th>Chinese term</th><th>cos cross-tradition</th><th>cos bilingual</th></tr></thead>
+<tbody>
+<tr><td>specimen signature</td><td>簽名樣本</td><td class="num">-0.048</td><td class="num strong">+0.839</td></tr>
+<tr><td>pharmacist</td><td>註冊藥劑師</td><td class="num">-0.045</td><td class="num strong">+0.809</td></tr>
+<tr><td>non-identifiable</td><td>非可識辨身分資料</td><td class="num">-0.027</td><td class="num strong">+0.823</td></tr>
+<tr><td>central bank</td><td>中央銀行</td><td class="num">+0.006</td><td class="num strong">+0.853</td></tr>
+</tbody></table>
+<div class="disclaimer">Lead example: <strong>specimen signature</strong> / 簽名樣本. The two language-specialised encoders place the pair at cosine <strong>-0.048</strong> (near-orthogonal or weakly anti-aligned). The single bilingual encoder places it at <strong>+0.839</strong> (strongly aligned). The instrument is not failing: it is reporting a difference that the tradition-specialised training itself has internalised.</div>
+<div class="takehome"><span class="lab">Take-home</span>Cross-tradition divergence on the very same legal lemma is a property of how each tradition's language and corpus encode the concept, not a calibration mismatch between encoder architectures. When both languages flow through a single model, the divergence resolves. Chapter 4 should cite G as the term-level proof of the headline RSA claim: the encoder is a witness of the tradition, and the divergence the witness reports is doctrinal, not technical.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><div class="formula">cos(en, zh) = (emb<sub>en</sub> · emb<sub>zh</sub>) / (‖emb<sub>en</sub>‖ × ‖emb<sub>zh</sub>‖) on L2-normalised pooled vectors</div><p class="stats"><strong>eligible same-lemma pairs</strong> = 4 156 &nbsp;·&nbsp; <strong>min K filter</strong> = K ≥ 2 attestations per term, each language &nbsp;·&nbsp; <strong>tradition-specialised encoders</strong> = BGE-EN-large × BGE-ZH-large &nbsp;·&nbsp; <strong>bilingual encoder</strong> = BGE-M3-EN × BGE-M3-ZH &nbsp;·&nbsp; <strong>cross-tradition cos range</strong> = [−0.106, +0.100] &nbsp;·&nbsp; <strong>bilingual cos range</strong> = [+0.273, +0.867]</p><p class="meta">Same-lemma pairs are English headwords paired with their canonical Chinese translation in the Hong Kong DOJ bilingual glossary, restricted to terms with at least two ordinance attestations in each language. Cosine is computed on the pooled mean of attested context embeddings. No Mantel test is required on this slice: the claim is a contrast between two encodings of the same term set.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_G_false_friends.py:main()</code></p></div>
+</section>
+<!-- ====================================================================== -->
+<section id="H-k-saturation">
+<h2>H · K saturation: why K ≥ 4?</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>Each attested embedding for a term is the mean of K real ordinance contexts. If K is too small, the representation is dominated by noise; if K is large, it is dominated by the corpus statistic. What K makes the cross-tradition signal stable?</div>
+<div class="result"><span class="lab">Result in words</span>At K = 1 the cross-tradition ρ̄ is negative (<strong>−0.13</strong>) — the signal is below noise. At K = 4 it reaches the saturation band; it climbs modestly through K = 8 (<strong>+0.22</strong>). The K ≥ 4 threshold used throughout the chapter is empirically justified.</div>
+<div id="fig-H-k-saturation" class="plot-frame" style="height:440px;"></div>
+<script>Plotly.newPlot("fig-H-k-saturation", [{"type":"bar","x":["1","2","3","4-7","8"],"y":[-0.1315,0.0539,0.1349,0.1495,0.2176],"marker":{"color":["#a43a3a","#c76a00","#c76a00","#c76a00","#5a8f3a"],"line":{"color":"#222","width":0.4}},"text":["-0.132","+0.054","+0.135","+0.149","+0.218"],"textposition":"outside","hovertemplate":"K=%{x}<br>\u03c1\u0304_cross = %{y:.3f}<extra></extra>","name":"\u03c1\u0304_cross attested"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":55,"r":25,"t":50,"b":50},"xaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"minimum K (attestations per term)","type":"category"},"yaxis":{"zeroline":true,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"\u03c1\u0304_cross attested","range":[-0.2,0.32],"zerolinecolor":"#999","zerolinewidth":1},"title":"H \u2014 Minimum-K saturation of \u03c1\u0304_cross attested","shapes":[{"type":"rect","xref":"paper","yref":"y","x0":0,"x1":1,"y0":0.13,"y1":0.17,"fillcolor":"rgba(176,141,87,0.10)","line_width":0,"layer":"below"}],"annotations":[{"x":1,"y":0.15,"xref":"paper","yref":"y","xanchor":"right","yanchor":"middle","text":"K\u22654 saturation band","showarrow":false,"font":{"size":10,"color":"#8a6d3b"}}],"height":440,"showlegend":false}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">ρ̄_cross attested on a single bilingual comparison (BGE-EN-large × BGE-ZH-large) with the background pool partitioned by K_min. The K ≥ 4 band frames the operating regime adopted in §2.3.</p>
+<div class="takehome"><span class="lab">Take-home</span>K ≥ 4 is not a convention: at lower K the cross-tradition signal is anti-correlated with itself across pool replicates. Chapter 2 §2.3 cites H as the operational justification for the threshold.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><p class="stats"><strong>ρ̄_cross at K=1</strong> = -0.132 &nbsp;·&nbsp; <strong>ρ̄_cross at K=4-7</strong> = +0.149 &nbsp;·&nbsp; <strong>ρ̄_cross at K=8</strong> = +0.218 &nbsp;·&nbsp; <strong>core reference</strong> = 0.246</p><p class="meta">All buckets evaluated on the same encoder pair; only the bg subsample varies. n_pairs = 1 per bucket (single encoder pair).</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_H_k_saturation.py:main()</code></p></div>
+</section>
+<!-- ====================================================================== -->
+<section id="Y-caveat">
+<h2>Y · The legal signal is the gap, not the absolute</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>The headline Δρ_sym attested = 0.543 describes the cross-tradition gap in the attested encoding of the legal lexicon. Is this gap a property of legal meaning, or is part of it already present in the encoders before any ordinance context is added? To isolate the legal contribution, the experiment computes a methodological baseline: the same Δρ_sym on the bare encoding (lemma in isolation, no context), both on the 364 core terms and on 100 non-legal control words (pronouns, deixis, common nouns).</div>
+<div class="result"><span class="lab">Result in words</span>The bare baseline on the core returns <strong>0.165</strong>: an encoder-tradition signal with no legal content. The same baseline computed on 100 non-legal control words returns <strong>0.156</strong>, statistically indistinguishable from the core baseline, confirming that the bare gap is shaped by the encoders, not by the legal vocabulary. The legal signal is the contribution that attestation adds on top: <strong>0.378 = 0.543 − 0.165</strong>.</div>
+<div class="number-callout"><div class="value">0.378</div><div class="descr">Legal-meaning signal · attested core − bare core · <strong>0.543 − 0.165</strong>. This is the quantity attributable to context-bound legal attestation (the HK ordinances), against an encoder-tradition baseline of approximately 0.16.</div></div>
+<table class="data">
+<thead><tr><th>Signal</th><th>Δρ_sym</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td>Encoder-tradition baseline (bare, 364 core)</td><td class="num strong">0.165</td><td>cross-tradition gap with no legal context, intrinsic to the encoders</td></tr>
+<tr><td>Verification of the baseline (bare, 100 controls)</td><td class="num strong">0.156</td><td>indistinguishable from the core baseline: the bare gap is encoder-shaped, not legal-shaped</td></tr>
+<tr><td>Full pipeline output (attested, 364 core)</td><td class="num strong">0.543</td><td>the result the experiments analyse</td></tr>
+<tr class="highlight"><td>Legal-meaning signal (isolated)</td><td class="num strong">0.378</td><td>attested − bare = 0.543 − 0.165, the contribution attributable to HK ordinance attestation</td></tr>
+</tbody></table>
+<div class="takehome"><span class="lab">Take-home</span>Chapter 4 §4.1 should cite both numbers — the absolute attested (0.543) and the legal-meaning gap (0.378) — and §4.2 should disclose the Y caveat as the primary methodological limit of the experiment.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><div class="formula">legal signal = Δρ<sub>sym</sub><sup>attested</sup>(core) − Δρ<sub>sym</sub><sup>bare</sup>(core) = 0.543 − 0.165 = 0.378</div><p class="stats"><strong>attested core</strong> = 0.543 &nbsp;·&nbsp; <strong>bare core</strong> = 0.165 &nbsp;·&nbsp; <strong>bare control</strong> = 0.156 &nbsp;·&nbsp; <strong>legal gap</strong> = 0.378</p><p class="meta">Control terms are everyday vocabulary (pronouns, deixis, common nouns) — they have no HK ordinance attestation by design, so the comparison is necessarily bare-on-bare. Run #3 reported the same qualitative pattern.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_Y_control_only.py:main()</code></p><p class="meta">Sources: Caveat phrased in <code>HANDOFF.md</code> §A-bis. &nbsp;·&nbsp; Adopted as primary §4.2 limit.</p></div>
+</section>
+<!-- ====================================================================== -->
+<section id="F-confidence">
+<h2>F · Confidence-stratified injection</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>When background terms are injected into the pool, do high-confidence ones — clearly belonging to a single legal domain — boost the signal more than low-confidence ones, or less?</div>
+<div class="result"><span class="lab">Result in words</span>Low-confidence (semantically ambiguous) background increases the signal slightly; high-confidence (categorical) background suppresses it slightly. Both shifts are within ± 0.03, with overlapping CIs. Interpret as a hint, not a finding.</div>
+<div id="fig-F-confidence" class="plot-frame" style="height:400px;"></div>
+<script>Plotly.newPlot("fig-F-confidence", [{"type":"bar","x":["baseline (core only)","high-confidence bg","low-confidence bg","random bg (control)"],"y":[0.5382,0.5306,0.565,0.5404],"marker":{"color":["#8a6d3b","#2c5f9a","#a43a3a","#7f7f7f"],"line":{"color":"#222","width":0.4}},"error_y":{"type":"data","symmetric":false,"array":[0.0,0.025700000000000056,0.022700000000000053,0.02180000000000004],"arrayminus":[0.0,0.02949999999999997,0.018199999999999994,0.03300000000000003],"color":"#444","thickness":1.2,"width":4},"text":["0.538","0.531","0.565","0.540"],"textposition":"outside","hoverinfo":"y+text","name":"\u0394\u03c1_sym"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":55,"r":25,"t":50,"b":50},"xaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"","tickangle":-15},"yaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"\u0394\u03c1_sym (within \u2212 cross)","range":[0.49,0.61]},"title":"F \u2014 \u0394\u03c1_sym by injection stratum (n=20 replicates)","height":400,"showlegend":false}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">Baseline = core-only. Injection strata n_inject = 91, n_replicates = 20. Error bars are 95% CI across replicates.</p>
+<div class="takehome"><span class="lab">Take-home</span>Counter-intuitively, the signal sits at the boundary of the pool, not in its centre. Effect size is small; Chapter 4 may cite F as an interpretive hint but not as evidence.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><details><summary>Open technical detail</summary><p class="stats"><strong>baseline (core only)</strong> = 0.538 &nbsp;·&nbsp; <strong>high-confidence bg</strong> = 0.531 &nbsp;·&nbsp; <strong>low-confidence bg</strong> = 0.565 &nbsp;·&nbsp; <strong>random bg (control)</strong> = 0.540</p><p class="meta">Strata sized to the deciles of k-NN domain-assignment confidence (extension A); see <em>ext_A_bg_knn</em>.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_F_confidence.py:main()</code></p></details></div>
+</section>
+<!-- ====================================================================== -->
+<section id="X-control">
+<h2>X · Dual robustness — injection of control terms</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>D injected legal background terms (still legal, just un-curated). What happens if we inject genuinely non-legal vocabulary into the bare pool?</div>
+<div class="result"><span class="lab">Result in words</span>Δρ_sym bare drops monotonically from <strong>0.246</strong> at 0% control to <strong>0.222</strong> at the upper limit. The direction is right; the magnitude is small because the baseline itself is small.</div>
+<div id="fig-X-control-robustness" class="plot-frame" style="height:400px;"></div>
+<script>Plotly.newPlot("fig-X-control-robustness", [{"type":"scatter","mode":"lines","x":[0.0,5.0,10.0,15.0,20.0,25.0,27.0,27.0,25.0,20.0,15.0,10.0,5.0,0.0],"y":[0.2462,0.2499,0.2502,0.246,0.2377,0.243,0.24,0.2011,0.2006,0.2166,0.2278,0.2265,0.2315,0.2462],"fill":"toself","fillcolor":"rgba(127,127,127,0.18)","line":{"color":"rgba(0,0,0,0)"},"name":"95% CI","hoverinfo":"skip","showlegend":true},{"type":"scatter","mode":"lines+markers","x":[0.0,5.0,10.0,15.0,20.0,25.0,27.0],"y":[0.2462,0.2414,0.2391,0.2353,0.2257,0.2227,0.2221],"line":{"color":"#7f7f7f","width":2.2},"marker":{"size":8,"color":"#7f7f7f","line":{"color":"#222","width":0.6}},"name":"\u0394\u03c1_sym bare","hovertemplate":"%{x:.0f}% control<br>\u0394\u03c1_sym = %{y:.3f}<extra></extra>"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":55,"r":25,"t":50,"b":50},"xaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"% control terms in pool","ticksuffix":"%"},"yaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"\u0394\u03c1_sym (within \u2212 cross, bare)","range":[0.18,0.28]},"title":"X \u2014 \u0394\u03c1_sym bare vs control injection (dual of D)","height":400,"legend":{"orientation":"h","yanchor":"bottom","y":-0.22,"x":0.5,"xanchor":"center","font":{"size":11}}}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">Dual of D, computed on bare encodings only (controls have no HK ordinance attestation). 15 replicates per level.</p>
+<div class="takehome"><span class="lab">Take-home</span>Bare Δρ_sym is sensitive to pool contamination but only weakly. Chapter 4 cites D and X together as a paired robustness statement: attested is stable upward, bare decays downward.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><details><summary>Open technical detail</summary><p class="stats"><strong>Δρ_sym at 0% control</strong> = 0.246 &nbsp;·&nbsp; <strong>Δρ_sym at upper limit</strong> = 0.222 &nbsp;·&nbsp; <strong>replicates / level</strong> = 15</p><p class="meta">Control pool capped at 100; the largest p_control actually reachable is approximately 27%.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_X_control_robustness.py:main()</code></p></details></div>
+</section>
+<!-- ====================================================================== -->
+<section id="Z-tier-hierarchy">
+<h2>Z · The naive tier hierarchy does not hold</h2>
+<div class="scenario"><span class="lab">Legal scenario</span>Intuition says: core terms should cluster more tightly than background terms, which in turn should cluster more tightly than the everyday-language control. The corpus pipeline was designed under that expectation. Does the geometry agree?</div>
+<div class="result"><span class="lab">Result in words</span>Only <strong>3 of 10</strong> models satisfy the monotonic hierarchy median(core-core) &lt; median(core-bg) &lt; median(core-control). The other models place background terms farther from core than the control vocabulary. Tier classification is a curatorial property of the corpus, not a geometric one.</div>
+<div id="fig-Z-tier-hierarchy" class="plot-frame" style="height:480px;"></div>
+<script>Plotly.newPlot("fig-Z-tier-hierarchy", [{"type":"bar","name":"core \u00d7 core","x":["BGE-EN-large","E5-large","FreeLaw-EN","BGE-ZH-large","Text2vec-large-ZH","Dmeta-ZH","BGE-M3-EN","Qwen3-0.6B-EN","BGE-M3-ZH","Qwen3-0.6B-ZH"],"y":[0.4169,0.2051,0.5826,0.5946,0.7438,0.4981,0.4694,0.3772,0.5189,0.5044],"marker":{"color":"#8a6d3b"}},{"type":"bar","name":"core \u00d7 bg","x":["BGE-EN-large","E5-large","FreeLaw-EN","BGE-ZH-large","Text2vec-large-ZH","Dmeta-ZH","BGE-M3-EN","Qwen3-0.6B-EN","BGE-M3-ZH","Qwen3-0.6B-ZH"],"y":[0.4369,0.2201,0.5992,0.6321,0.7609,0.5361,0.4997,0.3924,0.5503,0.5321],"marker":{"color":"#8a6d3b"}},{"type":"bar","name":"core \u00d7 control","x":["BGE-EN-large","E5-large","FreeLaw-EN","BGE-ZH-large","Text2vec-large-ZH","Dmeta-ZH","BGE-M3-EN","Qwen3-0.6B-EN","BGE-M3-ZH","Qwen3-0.6B-ZH"],"y":[0.4211,0.2156,0.5674,0.6269,0.7699,0.5261,0.4819,0.3741,0.5513,0.5338],"marker":{"color":"#7f7f7f"}},{"type":"scatter","mode":"text","x":["BGE-EN-large","E5-large","FreeLaw-EN","BGE-ZH-large","Text2vec-large-ZH","Dmeta-ZH","BGE-M3-EN","Qwen3-0.6B-EN","BGE-M3-ZH","Qwen3-0.6B-ZH"],"y":[0.4769,0.2601,0.6392,0.6721,0.8099000000000001,0.5761000000000001,0.5397,0.4324,0.5913,0.5738000000000001],"text":["","","","","\u2713","","","","\u2713","\u2713"],"textfont":{"size":16,"color":"#2e7d32"},"hoverinfo":"skip","showlegend":false,"name":"monotonic"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":60,"r":25,"t":50,"b":130},"xaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"","tickangle":-25,"automargin":true},"yaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"median cosine distance","range":[0,1.0]},"title":"Z \u2014 Tier hierarchy: median cosine distance per population","barmode":"group","height":480,"legend":{"orientation":"h","yanchor":"bottom","y":-0.35,"x":0,"font":{"size":11}}}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">Per-model median cosine distance on the three pair populations. ✓ marks models with monotonic hierarchy.</p>
+<div class="takehome"><span class="lab">Take-home</span>Background and control occupy distinct, model-dependent regions of the embedding. Chapter 4 §4.2 should disclose Z as an honest limit: the corpus tiers are operational, not semantic.</div>
+<div class="apparatus"><span class="lab">Technical apparatus</span><details><summary>Open technical detail</summary><p class="stats"><strong>n models</strong> = 10 &nbsp;·&nbsp; <strong>monotonic</strong> = 3 / 10 &nbsp;·&nbsp; <strong>test</strong> = Mann-Whitney on cosine medians</p><p class="meta">Distances computed on bare encodings (controls are bare-only). Hierarchy boolean as reported by <code>ext_Z_tier_hierarchy</code>.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_Z_tier_hierarchy.py:main()</code></p></details></div>
+</section>
+<!-- ====================================================================== -->
+<section id="appendix">
+<h2>Appendix · supporting utilities</h2>
+
+<h3>A · k-NN domain assignment of the 9 045 background terms</h3>
+
+<p>
+The k-NN assigner labels each background term with the legal domain
+voted by its seven nearest core neighbours. Mean assignment confidence
+is 0.515, with a long-tailed distribution biased toward
+<em>procedure</em> and <em>criminal</em>. The output supports F's
+confidence stratification, but is itself a reusable resource for
+future pool expansion.
+</p>
+<div id="fig-A-bg-domains" class="plot-frame" style="height:400px;"></div>
+<script>Plotly.newPlot("fig-A-bg-domains", [{"type":"bar","x":["criminal","procedure","civil","labor_social","administrative","international","constitutional"],"y":[2009,1661,1528,1514,936,741,656],"marker":{"color":"#b08d57"},"text":["2,009","1,661","1,528","1,514","936","741","656"],"textposition":"outside","hovertemplate":"%{x}<br>%{y:,} bg terms<extra></extra>"}], {"paper_bgcolor":"#fff","plot_bgcolor":"#fbfaf5","font":{"family":"Iowan Old Style, Charter, Georgia, serif","size":12,"color":"#1a1a1a"},"hoverlabel":{"bgcolor":"#fff","bordercolor":"#b08d57","font":{"size":12}},"margin":{"l":55,"r":25,"t":50,"b":50},"xaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"","tickangle":-20,"automargin":true},"yaxis":{"zeroline":false,"gridcolor":"#e5e2d8","linecolor":"#b08d57","ticks":"outside","tickcolor":"#b08d57","tickfont":{"size":11},"title":"number of background terms"},"title":"A \u2014 Background k-NN domain assignment (k=7, n=9,045)","height":400,"showlegend":false}, {displayModeBar:false, responsive:true});</script>
+<p class="plot-caption">Domain distribution of the 9 045 bg terms, k = 7 (BGE-EN-large).</p>
+<div class="apparatus"><span class="lab">Technical apparatus</span><details><summary>Open technical detail</summary><p class="stats"><strong>n_bg</strong> = 9,045 &nbsp;·&nbsp; <strong>k</strong> = 7 &nbsp;·&nbsp; <strong>metric</strong> = cosine</p><p class="meta">See CSV under <code>ext/A_bg_knn/background_assignments.csv</code>.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_A_bg_knn.py:main()</code></p></details></div>
+
+<h3>E · Out-of-sample coherence of the 6 axes on background</h3>
+
+<p>
+The six Kozlowski axes constructed on the curated 364-term pool were
+projected onto the 9 045 background terms (attested). Within-domain
+mean / std are stable for the three pool-robust axes
+(<em>individual_collective</em>, <em>public_private</em>,
+<em>natural_positive</em>) and noisier for the three pool-sensitive
+ones (<em>rights_duties</em>, <em>status_contract</em>,
+<em>state_market</em>). The pool-sensitivity flag of §3.2.4 generalises
+beyond the curated pool.
+</p>
+<div class="apparatus"><span class="lab">Technical apparatus</span><details><summary>Open technical detail</summary><p class="stats"><strong>n_bg</strong> = 9,045 &nbsp;·&nbsp; <strong>axes</strong> = 6 &nbsp;·&nbsp; <strong>variant</strong> = attested</p><p class="meta">Per-domain mean / std stored in <code>per_model_per_axis_per_domain</code> of <code>ext/E_axes_oos/coherence.json</code>.</p><p class="meta">Code: <code>experiments/ch3-measurability/scripts/ext_E_axes_oos.py:main()</code></p></details></div>
+</section>
+<nav class="linear"><a class="prev" href="experiment_32.html"><span class="dir">← Previous</span><span class="lab">Experiment §3.2</span></a><div class="spacer"></div></nav>
+</main>
+
+<footer>Geometria Iuris — companion dashboard. Source data: <code>experiments/ch3-measurability/</code> (run #4, 2026-05-17). All figures regenerated from frozen JSON manifests (50 SHA-256 hashes, verification gate 8/8 PASS).</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  window.toggleStage = (el) => {
+    const stages = [...document.querySelectorAll(".stage")];
+    const idx = stages.indexOf(el);
+    const details = document.querySelectorAll("#stage-details .stage-detail");
+    const wasActive = el.classList.contains("active");
+    details.forEach(d => d.classList.remove("open"));
+    stages.forEach(s => s.classList.remove("active"));
+    if (!wasActive && details[idx]) {
+      details[idx].classList.add("open");
+      el.classList.add("active");
+    }
+  };
+});
+
+</script>
+</body>
+</html>

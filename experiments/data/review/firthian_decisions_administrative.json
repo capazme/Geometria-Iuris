@@ -1,0 +1,552 @@
+{
+  "domain": "administrative",
+  "date": "2026-05-01",
+  "target_count": 50,
+  "decisions": {
+    "keep_strict": [
+      {
+        "term_idx": 1,
+        "en": "administrative",
+        "zh_canonical": "行政的",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "public_power_doctrines"
+      },
+      {
+        "term_idx": 2,
+        "en": "Administrative Appeals Board",
+        "zh_canonical": "行政上訴委員會（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_specific_institutions"
+      },
+      {
+        "term_idx": 117,
+        "en": "Ombudsman",
+        "zh_canonical": "申訴專員",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_specific_institutions"
+      },
+      {
+        "term_idx": 290,
+        "en": "Hong Kong Special Administrative Region",
+        "zh_canonical": "香港特別行政區",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions"
+      },
+      {
+        "term_idx": 390,
+        "en": "civil service",
+        "zh_canonical": "公務員事務局局長",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions"
+      },
+      {
+        "term_idx": 1002,
+        "en": "complaint",
+        "zh_canonical": "投訴",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 1004,
+        "en": "compliance",
+        "zh_canonical": "遵從",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 1278,
+        "en": "Department of Justice",
+        "zh_canonical": "律政司",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions"
+      },
+      {
+        "term_idx": 1478,
+        "en": "enforcement",
+        "zh_canonical": "強制執行",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 1716,
+        "en": "Gazette",
+        "zh_canonical": "憲報（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 2231,
+        "en": "licence",
+        "zh_canonical": "牌照",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 2558,
+        "en": "Ordinance",
+        "zh_canonical": "條例",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 2667,
+        "en": "permit",
+        "zh_canonical": "准許證",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 2802,
+        "en": "prohibition",
+        "zh_canonical": "禁令",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 2973,
+        "en": "registration",
+        "zh_canonical": "登記",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 2976,
+        "en": "regulation",
+        "zh_canonical": "規例",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 3090,
+        "en": "revenue",
+        "zh_canonical": "稅收",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other"
+      },
+      {
+        "term_idx": 3098,
+        "en": "revocation",
+        "zh_canonical": "撤回",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 3115,
+        "en": "salaries tax",
+        "zh_canonical": "薪俸稅",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other"
+      },
+      {
+        "term_idx": 3267,
+        "en": "statutory",
+        "zh_canonical": "法例的",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 3359,
+        "en": "suspension",
+        "zh_canonical": "暫停",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 3380,
+        "en": "tax",
+        "zh_canonical": "稅",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other"
+      },
+      {
+        "term_idx": 4783,
+        "en": "bylaw",
+        "zh_canonical": "附例",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 5604,
+        "en": "Executive Council",
+        "zh_canonical": "行政會議",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions"
+      },
+      {
+        "term_idx": 5803,
+        "en": "government regulations",
+        "zh_canonical": "政府規例",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 6122,
+        "en": "inspection",
+        "zh_canonical": "公眾查閱",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "administrative_procedure"
+      },
+      {
+        "term_idx": 6228,
+        "en": "judicial review",
+        "zh_canonical": "司法覆核",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "public_power_doctrines"
+      },
+      {
+        "term_idx": 6838,
+        "en": "proclamation",
+        "zh_canonical": "文告",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts"
+      },
+      {
+        "term_idx": 6896,
+        "en": "public officer",
+        "zh_canonical": "指明的公職人員",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions"
+      },
+      {
+        "term_idx": 7411,
+        "en": "Tax Reserve Certificate",
+        "zh_canonical": "儲稅券",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other"
+      },
+      {
+        "term_idx": 8937,
+        "en": "Public Service Commission",
+        "zh_canonical": "公務員敍用委員會",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_specific_institutions"
+      },
+      {
+        "term_idx": 9054,
+        "en": "Customs and Excise",
+        "zh_canonical": "香港海關",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_specific_institutions"
+      }
+    ],
+    "keep_kunder4": [
+      {
+        "term_idx": 14,
+        "en": "audi alteram partem",
+        "zh_canonical": "聽另一方之詞 ※比較 parte inaudita",
+        "k_en": 0,
+        "k_zh": 0,
+        "sub_area": "public_power_doctrines",
+        "rationale": "Canonical natural-justice maxim (the right to be heard); foundational doctrine in HK administrative law and judicial review jurisprudence. Absence of HK Cap. attestation reflects the Latin maxim's case-law primacy rather than doctrinal marginality."
+      },
+      {
+        "term_idx": 178,
+        "en": "ultra vires",
+        "zh_canonical": "越權的 ※比較 intra vires",
+        "k_en": 0,
+        "k_zh": 5,
+        "sub_area": "public_power_doctrines",
+        "rationale": "Canonical doctrine of judicial review: an act exceeding the conferring statute's authority is void. Central to HK common-law administrative law (k_zh=5 attests Chinese rendering; English k_en=0 reflects case-law primacy of the Latin form)."
+      },
+      {
+        "term_idx": 185,
+        "en": "Wednesbury principles",
+        "zh_canonical": "韋恩斯伯里原則〔關於酌情權行使的合理性測試原則〕",
+        "k_en": 0,
+        "k_zh": 0,
+        "sub_area": "public_power_doctrines",
+        "rationale": "Wednesbury unreasonableness — foundational ground of judicial review in HK common-law tradition (Associated Provincial Picture Houses v Wednesbury Corp.). Doctrinal centrality is independent of statute-text frequency: it is a case-law standard."
+      },
+      {
+        "term_idx": 4841,
+        "en": "certiorari",
+        "zh_canonical": "移審撤銷令",
+        "k_en": 8,
+        "k_zh": 0,
+        "sub_area": "public_power_doctrines",
+        "rationale": "Prerogative writ of certiorari — quashing remedy in HK judicial review. k_en=8 attestation but k_zh=0: the Latin form predominates in English texts while Chinese statutory texts use functional rendering (移審撤銷令); doctrinal centrality justifies retention."
+      },
+      {
+        "term_idx": 6371,
+        "en": "mandamus",
+        "zh_canonical": "履行責任令",
+        "k_en": 8,
+        "k_zh": 2,
+        "sub_area": "public_power_doctrines",
+        "rationale": "Prerogative writ of mandamus — compulsion remedy in HK judicial review. k_en=8 strong English attestation; k_zh=2 reflects Latin-form dominance over Chinese functional rendering. Pair with certiorari completes the core JR remedy set."
+      }
+    ],
+    "drop": [
+      {
+        "term_idx": 21,
+        "en": "Civil Service Regulations",
+        "zh_canonical": "公務員事務規例（香港）",
+        "rationale": "Civil Service Regulations: k=0/0 in HK Cap. e-Legislation (regulations themselves are subsidiary instruments not lemmatised in the corpus index). Doctrinal substance covered by 'civil service' and 'public officer' (kept)."
+      },
+      {
+        "term_idx": 108,
+        "en": "Nemo judex in causa sua",
+        "zh_canonical": "任何人不得成為自己案件的法官",
+        "rationale": "Nemo judex in causa sua: k=0/0; the rule against bias is doctrinally entailed by 'audi alteram partem' (kept) under the umbrella of natural justice. Drop the duplicative Latin maxim to economise."
+      },
+      {
+        "term_idx": 204,
+        "en": "eminent domain",
+        "zh_canonical": "國家徵用權",
+        "rationale": "Eminent domain: k=0/0; this is a US/civil-law term of art for compulsory acquisition. The HK common-law equivalent is 'resumption' under the Lands Resumption Ordinance (Cap. 124), not 'eminent domain'. Drop as non-HK."
+      },
+      {
+        "term_idx": 358,
+        "en": "Administrative Secretary",
+        "zh_canonical": "政務司長",
+        "rationale": "Administrative Secretary: k=0/0; the HK office is the 'Chief Secretary for Administration' (政務司司長). Surface form 'Administrative Secretary' is unattested. Drop; institutional substance covered by 'civil service' and 'Public Service Commission'."
+      },
+      {
+        "term_idx": 1182,
+        "en": "customs duty",
+        "zh_canonical": "關稅",
+        "rationale": "Customs duty: k_en=2; specific tax type subsumed by the 'Customs and Excise' institution (kept) and the broader 'tax' lemma. Drop for sub-area economy."
+      },
+      {
+        "term_idx": 2557,
+        "en": "Orders in Council",
+        "zh_canonical": "樞密院頒令（英）",
+        "rationale": "Orders in Council: k_en=0; colonial-era Imperial regulatory instrument largely supplanted post-1997 by HK Ordinances and subsidiary legislation. Drop as historically residual; HK regulatory acts represented by Ordinance, regulation, bylaw, Gazette."
+      },
+      {
+        "term_idx": 2868,
+        "en": "quasi-judicial",
+        "zh_canonical": "準司法",
+        "rationale": "Quasi-judicial: k_en=3, k_zh=0; descriptive adjective whose substance is captured by 'Administrative Appeals Board' (kept) and 'judicial review' (kept). Drop."
+      },
+      {
+        "term_idx": 3382,
+        "en": "taxation",
+        "zh_canonical": "課稅",
+        "rationale": "Taxation: morphological derivative of lemma 'tax' (3380, kept). Drop per consolidation rule. The administrative-law concept of fiscal power is preserved by 'tax', 'revenue', 'salaries tax', 'Tax Reserve Certificate'."
+      },
+      {
+        "term_idx": 3564,
+        "en": "value-added tax [VAT]",
+        "zh_canonical": "增值稅",
+        "rationale": "Value-added tax (VAT): k_en=0; HK does not levy VAT. The Chinese rendering 增值稅 attests in cross-border/PRC contexts only. Drop as non-HK."
+      },
+      {
+        "term_idx": 3668,
+        "en": "withholding tax",
+        "zh_canonical": "預扣稅項",
+        "rationale": "Withholding tax: k_en=3, k_zh=0; specific tax mechanism, sub-area economy favours dropping for higher-frequency fiscal terms."
+      },
+      {
+        "term_idx": 5279,
+        "en": "deregistration",
+        "zh_canonical": "撤銷註冊",
+        "rationale": "Deregistration: morphological derivative of 'registration' (2973, kept) — the negative inflection of the same administrative procedure. Drop per consolidation rule."
+      },
+      {
+        "term_idx": 6679,
+        "en": "passport",
+        "zh_canonical": "護照",
+        "rationale": "Passport: k=8/8 attestation but the term is a concrete travel document rather than a doctrinal administrative-law concept. Drop to respect the administrative_procedure cap (≤10) in favour of higher-doctrine candidates."
+      },
+      {
+        "term_idx": 6929,
+        "en": "ratepayer",
+        "zh_canonical": "差餉繳納人",
+        "rationale": "Ratepayer: k=1/1; municipal-rates concept rare in HK Cap. text. Drop."
+      }
+    ],
+    "promote": [
+      {
+        "term_idx": 6897,
+        "en": "public servant",
+        "zh_canonical": "公務人員",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions",
+        "knn_confidence": 0.714,
+        "rationale": "'Public servant' (公務人員) is the HK Cap. canonical category for personnel exercising public power and a key referent in the Prevention of Bribery Ordinance (Cap. 201). High knn similarity (0.840) with 'public officer' (kept) confirms semantic adjacency without redundancy: PoBO uses 'public servant' as the broader umbrella."
+      },
+      {
+        "term_idx": 6382,
+        "en": "Marine Department",
+        "zh_canonical": "海事處",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "governance_institutions",
+        "knn_confidence": 0.571,
+        "rationale": "Marine Department (海事處) is a HK statutory department under Cap. 369 family of shipping ordinances. Strong attestation (8/8) and knn alignment with administrative-departmental cluster. Adds departmental-bureaucracy coverage to balance the institutions sub-area."
+      },
+      {
+        "term_idx": 2130,
+        "en": "Justice of the Peace; J.P.",
+        "zh_canonical": "太平紳士（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_specific_institutions",
+        "knn_confidence": 0.571,
+        "rationale": "Justice of the Peace (太平紳士) is a HK-specific honorary statutory office under the Justices of the Peace Ordinance (Cap. 510), exercising visiting powers over places of detention. Strong attestation (8/8). Note: prefer this fuller form over duplicate 6232 ('justice of the peace' lower-case)."
+      },
+      {
+        "term_idx": 9232,
+        "en": "District Officer",
+        "zh_canonical": "民政事務專員",
+        "k_en": 7,
+        "k_zh": 6,
+        "sub_area": "hk_specific_institutions",
+        "knn_confidence": 0.714,
+        "rationale": "District Officer (民政事務專員) is a HK-specific institution heading District Offices under the Home and Youth Affairs Bureau, exercising statutory functions in the District Administration Scheme. Adequate attestation (7/6) and high cluster alignment."
+      },
+      {
+        "term_idx": 7907,
+        "en": "Government Chemist",
+        "zh_canonical": "政府化驗師",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "hk_specific_institutions",
+        "knn_confidence": 0.571,
+        "rationale": "Government Chemist (政府化驗師) is a HK statutory office whose certificates have evidentiary status under multiple ordinances (Dangerous Drugs Ordinance Cap. 134, etc.). Strong attestation (8/8). HK-specific institutional fixture."
+      },
+      {
+        "term_idx": 4769,
+        "en": "by notice",
+        "zh_canonical": "藉憲報公告",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts",
+        "knn_confidence": 1.0,
+        "rationale": "'By notice' (藉憲報公告) is the canonical HK Cap. formula for triggering subsidiary legislative effect via Gazette publication; knn confidence 1.00 marks it as the modal regulatory-act phrase. Pairs with 'Gazette' (kept) to operationalise notice-based law-making."
+      },
+      {
+        "term_idx": 4915,
+        "en": "code of conduct",
+        "zh_canonical": "行為守則",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts",
+        "knn_confidence": 0.714,
+        "rationale": "Code of conduct (行為守則) — quasi-regulatory instrument widely used in HK Cap. (Cap. 622 Companies Ordinance, Cap. 571 Securities and Futures Ordinance). Strong attestation; complements formal regulation/bylaw with soft-law instruments."
+      },
+      {
+        "term_idx": 4916,
+        "en": "code of practice",
+        "zh_canonical": "工作守則",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "regulatory_acts",
+        "knn_confidence": 0.714,
+        "rationale": "Code of practice (工作守則) — distinct quasi-regulatory instrument frequent in HK Cap. (Personal Data (Privacy) Ordinance Cap. 486, Occupational Safety regimes). Strong attestation; complements 'code of conduct' as the operational soft-law sibling."
+      },
+      {
+        "term_idx": 2978,
+        "en": "regulatory",
+        "zh_canonical": "規管的",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "public_power_doctrines",
+        "knn_confidence": 0.714,
+        "rationale": "'Regulatory' (規管的) — the modifier defining regulatory power as a public-law category (regulatory authority, regulatory regime). knn similarity 0.921 (very high). Doctrinally indispensable adjective for the regulatory-state dimension of HK public administration."
+      },
+      {
+        "term_idx": 706,
+        "en": "authorize",
+        "zh_canonical": "授權",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "public_power_doctrines",
+        "knn_confidence": 0.571,
+        "rationale": "'Authorize' (授權) — operative verb of delegated authority. Foundational to delegated-legislation analysis, ultra vires review, and conferral of statutory power. Strong attestation (8/8)."
+      },
+      {
+        "term_idx": 6895,
+        "en": "public interest",
+        "zh_canonical": "公眾利益",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "public_power_doctrines",
+        "knn_confidence": 0.571,
+        "rationale": "'Public interest' (公眾利益) — touchstone criterion for the lawful exercise of administrative discretion in HK common-law judicial review (Wednesbury, proportionality). Strong attestation (8/8); doctrinally central."
+      },
+      {
+        "term_idx": 3383,
+        "en": "taxpayer",
+        "zh_canonical": "納稅人",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other",
+        "knn_confidence": 0.714,
+        "rationale": "'Taxpayer' (納稅人) — subject of the fiscal-administrative relation; canonical noun in Inland Revenue Ordinance (Cap. 112). High knn similarity (0.770) with the kept fiscal cluster (tax, salaries tax, revenue). Distinct lemma from 'tax', not a derivative."
+      },
+      {
+        "term_idx": 3381,
+        "en": "taxable",
+        "zh_canonical": "應課稅",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "other",
+        "knn_confidence": 0.714,
+        "rationale": "'Taxable' (應課稅) — qualifying adjective central to the structure of HK fiscal law (Cap. 112), distinguishing the assessable base. Strong attestation (8/8); knn similarity 0.794 to fiscal cluster."
+      }
+    ]
+  },
+  "final_count": 50,
+  "confidence_self_assessment": {
+    "overall": 0.82,
+    "rationale": "High confidence on the core institutional retentions (HKSAR organs, HK statutory commissions, regulatory-act lexicon) and on the five Latin/common-law doctrinal exceptions (audi alteram partem, ultra vires, Wednesbury, certiorari, mandamus), which are jointly canonical for HK administrative law. Lower confidence on a small number of sub-area assignments at the boundary of governance_institutions vs hk_specific_institutions (e.g., Marine Department, Justice of the Peace), and on the consolidation choice between 'tax' and 'taxation' (kept 'tax' as lemma; either is defensible). The administrative_procedure cap forced the drop of 'passport' (8/8 attested but doctrinally peripheral) and 'deregistration' (morphological inverse of registration), both judgement calls.",
+    "weakest_decisions": [
+      {
+        "term_idx": 6679,
+        "concern": "Dropping 'passport' (8/8) was forced by sub-area cap rather than doctrinal weakness; arguably an HK-specific identity instrument worth keeping if cap relaxed."
+      },
+      {
+        "term_idx": 3382,
+        "concern": "Dropping 'taxation' as morphological derivative of 'tax': the abstract administrative concept of taxation as a public-power function is arguably distinct from the bare noun 'tax'; rule-driven choice."
+      },
+      {
+        "term_idx": 5279,
+        "concern": "Dropping 'deregistration' as morphological derivative of 'registration': the inverse procedure is administratively distinct (different statutory triggers, different consequences) but ruled out per consolidation."
+      },
+      {
+        "term_idx": 2557,
+        "concern": "'Orders in Council' (k_en=0, k_zh=8): asymmetric attestation; dropped as historically residual but the Chinese rendering's strength might support a kunder4 retention if the slot were available."
+      },
+      {
+        "term_idx": 6895,
+        "concern": "Promoting 'public interest' to public_power_doctrines is correct doctrinally but the term is also generic across legal domains; classification is defensible but borderline."
+      }
+    ]
+  },
+  "notes": "Curation prioritises HK Cap.-attested administrative-law lexicon while reserving the five exception slots for the Latin / case-law doctrinal apparatus of natural justice and prerogative writs (audi alteram partem, ultra vires, Wednesbury, certiorari, mandamus), whose absence from statute-text frequency reflects their case-law primacy in HK common-law tradition rather than doctrinal marginality. Sub-area redistribution: administrative_procedure trimmed to 10 (cap) by dropping 'passport' and 'deregistration'; public_power_doctrines built up from 2 (administrative, judicial review) to 10 via the kunder4 doctrines and three promotions (regulatory, authorize, public interest); regulatory_acts brought to 10 via 'by notice', 'code of conduct', 'code of practice'. Fiscal terms classified as 'other' (no sub-area listed for fiscal/revenue lexicon, but doctrinally central to HK public administration via Inland Revenue Ordinance Cap. 112). One latent duplicate noted in input: term 6232 'justice of the peace' (lower-case) duplicates 2130 'Justice of the Peace; J.P.' — promoted only the canonical capitalised form."
+}

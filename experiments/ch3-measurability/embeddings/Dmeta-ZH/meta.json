@@ -1,0 +1,13 @@
+{
+  "model_id": "DMetaSoul/Dmeta-embedding-zh",
+  "model_label": "Dmeta-ZH",
+  "lang": "zh",
+  "dim": 768,
+  "n_terms": 364,
+  "dtype": "float32",
+  "l2_norm": true,
+  "date": "2026-05-11",
+  "elapsed_bare_s": 4.04,
+  "elapsed_attested_s": 41.33,
+  "snapshot_sha256_terms": "52d9d5c0a3e04602eb8ee36bb59ffddfdc8f52374087b2973188249afac0080e"
+}

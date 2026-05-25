@@ -1,0 +1,590 @@
+{
+  "domain": "labor_social",
+  "date": "2026-05-01",
+  "target_count": 50,
+  "decisions": {
+    "keep_strict": [
+      {
+        "term_idx": 49,
+        "en": "dismissal",
+        "zh_canonical": "免職",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 55,
+        "en": "employer",
+        "zh_canonical": "僱主",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 56,
+        "en": "employment",
+        "zh_canonical": "僱傭",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 70,
+        "en": "harassment",
+        "zh_canonical": "侵擾",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "discrimination"
+      },
+      {
+        "term_idx": 100,
+        "en": "Minor Employment Claims Adjudication Board",
+        "zh_canonical": "小額薪酬索償仲裁處（香港）",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 115,
+        "en": "occupational safety",
+        "zh_canonical": "職業安全",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety"
+      },
+      {
+        "term_idx": 143,
+        "en": "sick leave",
+        "zh_canonical": "病假",
+        "k_en": 6,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave"
+      },
+      {
+        "term_idx": 147,
+        "en": "strike",
+        "zh_canonical": "罷工 ※比較 go-slow",
+        "k_en": 8,
+        "k_zh": 7,
+        "sub_area": "collective_labour"
+      },
+      {
+        "term_idx": 200,
+        "en": "rest day",
+        "zh_canonical": "休息日",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave"
+      },
+      {
+        "term_idx": 205,
+        "en": "provident fund",
+        "zh_canonical": "強制性公積金計劃管理局",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare"
+      },
+      {
+        "term_idx": 218,
+        "en": "International Labour Office",
+        "zh_canonical": "國際勞工局",
+        "k_en": 6,
+        "k_zh": 6,
+        "sub_area": "collective_labour"
+      },
+      {
+        "term_idx": 219,
+        "en": "International Labour Organization",
+        "zh_canonical": "國際勞工組織",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "collective_labour"
+      },
+      {
+        "term_idx": 268,
+        "en": "Employees Compensation Assistance Fund",
+        "zh_canonical": "僱員補償援助基金",
+        "k_en": 4,
+        "k_zh": 4,
+        "sub_area": "occupational_safety"
+      },
+      {
+        "term_idx": 296,
+        "en": "labour",
+        "zh_canonical": "勞資糾紛",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "collective_labour"
+      },
+      {
+        "term_idx": 310,
+        "en": "overtime",
+        "zh_canonical": "超時工作",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave"
+      },
+      {
+        "term_idx": 324,
+        "en": "re-employment",
+        "zh_canonical": "再度受聘",
+        "k_en": 4,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 391,
+        "en": "Labour Department",
+        "zh_canonical": "勞工處",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "collective_labour"
+      },
+      {
+        "term_idx": 1344,
+        "en": "discrimination",
+        "zh_canonical": "殘疾歧視",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "discrimination"
+      },
+      {
+        "term_idx": 2265,
+        "en": "long service payment",
+        "zh_canonical": "長期服務金",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 3630,
+        "en": "wage",
+        "zh_canonical": "報酬",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave"
+      },
+      {
+        "term_idx": 5341,
+        "en": "disablement",
+        "zh_canonical": "殘疾",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety"
+      },
+      {
+        "term_idx": 5878,
+        "en": "holiday",
+        "zh_canonical": "假日",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave"
+      },
+      {
+        "term_idx": 6691,
+        "en": "pensionable",
+        "zh_canonical": "可享退休金的",
+        "k_en": 8,
+        "k_zh": 6,
+        "sub_area": "social_welfare"
+      },
+      {
+        "term_idx": 6749,
+        "en": "pneumoconiosis",
+        "zh_canonical": "肺塵埃沉着病",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety"
+      },
+      {
+        "term_idx": 6981,
+        "en": "re-engagement",
+        "zh_canonical": "重新聘用",
+        "k_en": 8,
+        "k_zh": 4,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 7652,
+        "en": "workplace",
+        "zh_canonical": "工作地方",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety"
+      },
+      {
+        "term_idx": 7791,
+        "en": "sickness",
+        "zh_canonical": "疾病津貼",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave"
+      },
+      {
+        "term_idx": 54,
+        "en": "employee",
+        "zh_canonical": "真正的僱員",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract"
+      },
+      {
+        "term_idx": 353,
+        "en": "trade union",
+        "zh_canonical": "組織及加入工會之權利",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "collective_labour"
+      }
+    ],
+    "keep_kunder4": [
+      {
+        "term_idx": 250,
+        "en": "Comprehensive Social Security Assistance Scheme",
+        "zh_canonical": "綜合社會保障援助計劃",
+        "k_en": 2,
+        "k_zh": 2,
+        "sub_area": "social_welfare",
+        "rationale": "CSSA is the principal HK means-tested welfare instrument; doctrinally central to social_welfare. Sub-strict count reflects administration via Social Welfare Department policy rather than codification in a single Cap."
+      },
+      {
+        "term_idx": 6265,
+        "en": "lay-off",
+        "zh_canonical": "停工",
+        "k_en": 3,
+        "k_zh": 8,
+        "sub_area": "employment_contract",
+        "rationale": "Statutorily defined concept in Cap. 57 §31E; integral to severance-payment entitlement. EN attestation (k=3) marginally below gate but doctrinally central."
+      },
+      {
+        "term_idx": 6326,
+        "en": "lockout",
+        "zh_canonical": "閉廠",
+        "k_en": 0,
+        "k_zh": 3,
+        "sub_area": "collective_labour",
+        "rationale": "Canonical antonym of 'strike' in collective-labour doctrine; without it the strike/lockout dyad is asymmetric. EN attestation (k=0) reflects the term being subsumed under generic provisions in Cap. 332, but it remains a doctrinally central category."
+      }
+    ],
+    "drop": [
+      {
+        "term_idx": 282,
+        "en": "Government Laboratory",
+        "zh_canonical": "政府化驗所",
+        "rationale": "Scientific laboratory ('政府化驗所'), false-friend match on 'lab' string. Unrelated to labor_social domain."
+      },
+      {
+        "term_idx": 295,
+        "en": "laboratory",
+        "zh_canonical": "檢驗所",
+        "rationale": "Scientific laboratory ('檢驗所'), false-friend match on 'lab' string. Unrelated to labor_social domain."
+      },
+      {
+        "term_idx": 344,
+        "en": "Hong Kong Laboratory Accreditation Scheme",
+        "zh_canonical": "香港實驗所認可計劃",
+        "rationale": "Hong Kong Laboratory Accreditation Scheme is a scientific-lab accreditation programme, false-friend match on 'lab'. Unrelated to labor_social domain."
+      },
+      {
+        "term_idx": 309,
+        "en": "non-employer",
+        "zh_canonical": "非僱主受託人",
+        "rationale": "'Non-employer' as 'non-employer trustee' is a marginal MPF compound; redundant given 'employer' (#55) is retained."
+      },
+      {
+        "term_idx": 5842,
+        "en": "harass",
+        "zh_canonical": "騷擾",
+        "rationale": "Morphological derivative of 'harassment' (#70 retained)."
+      },
+      {
+        "term_idx": 8319,
+        "en": "provident",
+        "zh_canonical": "強制性公積金計劃",
+        "rationale": "Morphological derivative of 'provident fund' (#205 retained)."
+      },
+      {
+        "term_idx": 183,
+        "en": "unskilled labour",
+        "zh_canonical": "非技術勞工",
+        "rationale": "k_en=0 k_zh=0; not attested in HK Cap. e-Legislation. Drop per HARD GATE."
+      },
+      {
+        "term_idx": 327,
+        "en": "Residual Provident Fund Scheme",
+        "zh_canonical": "補遺公積金計劃",
+        "rationale": "Residual Provident Fund Scheme: very low attestation (k=1/1); niche MPF residual category. MPF coverage already provided by 'provident fund' (#205)."
+      },
+      {
+        "term_idx": 333,
+        "en": "Social Security Allowance Scheme",
+        "zh_canonical": "公共福利金計劃",
+        "rationale": "Social Security Allowance Scheme: k=0/0, not attested in HK Caps under this exact form. Drop per HARD GATE."
+      },
+      {
+        "term_idx": 393,
+        "en": "International Labour Conference",
+        "zh_canonical": "國際勞工大會",
+        "rationale": "International Labour Conference: k=0/0, exogenous to HK statutes (it is an ILO event, not a HK Cap. instrument)."
+      },
+      {
+        "term_idx": 1069,
+        "en": "constructive",
+        "zh_canonical": "推定解僱",
+        "rationale": "'Constructive': k_zh=0; morphological adjective. 'Constructive dismissal' is captured under 'dismissal' (#49)."
+      },
+      {
+        "term_idx": 1753,
+        "en": "gratuity",
+        "zh_canonical": "約滿酬金",
+        "rationale": "'Gratuity': k_zh=0 below gate; covered substantively by 'long service payment' (#2265). Limited exception budget reserved for higher-priority entries."
+      },
+      {
+        "term_idx": 6025,
+        "en": "incapacitate",
+        "zh_canonical": "喪失工作能力",
+        "rationale": "'Incapacitate': k_en=1; morphological verb form covered by 'disablement' (#5341)."
+      },
+      {
+        "term_idx": 6466,
+        "en": "month-to-month",
+        "zh_canonical": "按月僱用條款",
+        "rationale": "'Month-to-month': k=1/3 below gate; obscure tenancy-style compound; not central to employment doctrine."
+      },
+      {
+        "term_idx": 6667,
+        "en": "parental",
+        "zh_canonical": "父母責任",
+        "rationale": "'Parental': k_zh=0; adjective in 'parental leave', niche provision; not in core HK statutory taxonomy."
+      },
+      {
+        "term_idx": 188,
+        "en": "industrial action",
+        "zh_canonical": "工業行動",
+        "rationale": "'Industrial action': k=2/2 below gate; substantively covered by 'strike' (#147) and the lockout/strike dyad."
+      },
+      {
+        "term_idx": 297,
+        "en": "labouring",
+        "zh_canonical": "損害防止條款",
+        "rationale": "'Labouring': k=3/3 below gate; morphological derivative of 'labour' (#296)."
+      },
+      {
+        "term_idx": 7439,
+        "en": "time-rate",
+        "zh_canonical": "計時工資率",
+        "rationale": "'Time-rate': k=2/2 below gate; technical wage-rate compound covered by 'wage' (#3630)."
+      }
+    ],
+    "promote": [
+      {
+        "term_idx": 6690,
+        "en": "pension",
+        "zh_canonical": "退休金",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare",
+        "knn_confidence": 0.714,
+        "rationale": "'pension' is the canonical retirement-benefit category (Cap. 89 Pensions Ordinance, Cap. 426 ORSO). Strict attestation (k=8/8)."
+      },
+      {
+        "term_idx": 3080,
+        "en": "retirement age",
+        "zh_canonical": "退休年齡",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare",
+        "knn_confidence": 0.857,
+        "rationale": "'retirement age' is the statutory threshold concept across MPF (Cap. 485 §3) and pension schemes; k=8/8."
+      },
+      {
+        "term_idx": 2644,
+        "en": "pension fund scheme",
+        "zh_canonical": "退休金計劃",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare",
+        "knn_confidence": 0.857,
+        "rationale": "'pension fund scheme' is the umbrella category for occupational retirement schemes (Cap. 426 ORSO); k=8/8."
+      },
+      {
+        "term_idx": 9242,
+        "en": "elderly",
+        "zh_canonical": "安老院",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare",
+        "knn_confidence": 0.857,
+        "rationale": "'elderly' is the protected/beneficiary category in social-welfare provisions (Cap. 459 Residential Care Homes (Elderly Persons) Ordinance); k=8/8."
+      },
+      {
+        "term_idx": 671,
+        "en": "assistance",
+        "zh_canonical": "協助",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare",
+        "knn_confidence": 0.571,
+        "rationale": "'assistance' is the statutory umbrella term for CSSA and Social Security Allowance regimes administered by the Social Welfare Department; k=8/8."
+      },
+      {
+        "term_idx": 6568,
+        "en": "nurse",
+        "zh_canonical": "註冊護士",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "social_welfare",
+        "knn_confidence": 1.0,
+        "rationale": "'nurse' (registered nurse) is a regulated healthcare profession (Cap. 164 Nurses Registration Ordinance); core social-welfare workforce category; k=8/8."
+      },
+      {
+        "term_idx": 1330,
+        "en": "disability",
+        "zh_canonical": "弱能",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "discrimination",
+        "knn_confidence": 0.571,
+        "rationale": "'disability' is the protected characteristic under Cap. 487 Disability Discrimination Ordinance; doctrinally central to the discrimination sub-area."
+      },
+      {
+        "term_idx": 8941,
+        "en": "breastfeeding",
+        "zh_canonical": "餵哺母乳",
+        "k_en": 6,
+        "k_zh": 6,
+        "sub_area": "discrimination",
+        "knn_confidence": 0.857,
+        "rationale": "'breastfeeding' is the protected status under Cap. 480 Sex Discrimination Ordinance (post-2020 amendment) and Cap. 57 nursing-break provisions."
+      },
+      {
+        "term_idx": 995,
+        "en": "compensation",
+        "zh_canonical": "補償",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety",
+        "knn_confidence": 0.571,
+        "rationale": "'compensation' is the statutory entitlement under Cap. 282 Employees' Compensation Ordinance; foundational to occupational-injury doctrine."
+      },
+      {
+        "term_idx": 6104,
+        "en": "injure",
+        "zh_canonical": "破壞",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety",
+        "knn_confidence": 0.714,
+        "rationale": "'injure' is the operative verb in Cap. 282 §5 employees-compensation provisions (k=8/8)."
+      },
+      {
+        "term_idx": 6583,
+        "en": "occupational",
+        "zh_canonical": "職業履歷",
+        "k_en": 8,
+        "k_zh": 4,
+        "sub_area": "occupational_safety",
+        "knn_confidence": 0.714,
+        "rationale": "'occupational' is the qualifier in OSH (Cap. 509) and occupational-disease provisions; central modifier across the sub-area."
+      },
+      {
+        "term_idx": 9222,
+        "en": "workman",
+        "zh_canonical": "工人",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "occupational_safety",
+        "knn_confidence": 0.857,
+        "rationale": "'workman' is the statutory category in Cap. 282 Employees' Compensation Ordinance §3 (manual workers covered by EC); doctrinally distinct from 'employee'."
+      },
+      {
+        "term_idx": 5899,
+        "en": "hours of rest",
+        "zh_canonical": "休息時間",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave",
+        "knn_confidence": 1.0,
+        "rationale": "'hours of rest' is a statutory entitlement (Cap. 57 §17); foundational working-time concept (k=8/8)."
+      },
+      {
+        "term_idx": 6399,
+        "en": "maternity",
+        "zh_canonical": "留產院",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave",
+        "knn_confidence": 1.0,
+        "rationale": "'maternity' is the statutory maternity-leave/protection concept (Cap. 57 Pt III); doctrinally central (k=8/8)."
+      },
+      {
+        "term_idx": 7150,
+        "en": "salary",
+        "zh_canonical": "薪金",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave",
+        "knn_confidence": 0.857,
+        "rationale": "'salary' is a basic remuneration concept distinct from 'wage'; central to MPF contributions (Cap. 485 §2); k=8/8."
+      },
+      {
+        "term_idx": 7040,
+        "en": "remuneration",
+        "zh_canonical": "酬金",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "wages_hours_leave",
+        "knn_confidence": 0.571,
+        "rationale": "'remuneration' is the umbrella term covering wages, salary and benefits, used in Cap. 57 and Cap. 485; k=8/8."
+      },
+      {
+        "term_idx": 3193,
+        "en": "severance",
+        "zh_canonical": "分別",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "employment_contract",
+        "knn_confidence": 0.714,
+        "rationale": "'severance' is the statutory severance-payment concept (Cap. 57 Pt VA), core to termination doctrine (k=8/8)."
+      },
+      {
+        "term_idx": 3679,
+        "en": "worker",
+        "zh_canonical": "傭工",
+        "k_en": 8,
+        "k_zh": 8,
+        "sub_area": "collective_labour",
+        "knn_confidence": 1.0,
+        "rationale": "'worker' is the broader collective-labour subject (Cap. 332 Trade Unions Ordinance), distinct from 'employee'; canonical reference of trade-union membership."
+      }
+    ]
+  },
+  "final_count": 50,
+  "confidence_self_assessment": {
+    "overall": 0.82,
+    "rationale": "Strong attestation gate pass for 27/50 keep_strict and 18/18 promote (all k>=4 in both EN and ZH). The five exception entries are doctrinally central HK labor-law categories (employee, CSSA, trade union, lay-off, lockout) whose sub-strict counts reflect ZH lemma noise or generic-provision subsumption rather than absence of doctrinal centrality. Sub-area distribution is balanced (max=10 per area) with the six brief sub-areas all represented. Main residual concern: the discrimination sub-area is the thinnest (4 entries) because the Cap. 480/487/527/602 protected characteristics rarely surface as bare lemmas in the candidate pool; the discrimination signal is primarily carried by the head term 'discrimination' (#1344) plus the Cap. 487 'disability' anchor and the Cap. 480 'breastfeeding' anchor.",
+    "weakest_decisions": [
+      {
+        "term_idx": 6326,
+        "concern": "lockout: k_en=0 is a strong miss; kept by exception only because the strike/lockout dyad is doctrinally non-decomposable. Worth verifying with a Cap. 332 full-text search whether the canonical EN lemma is rather 'closing' or 'industrial dispute'."
+      },
+      {
+        "term_idx": 250,
+        "concern": "CSSA: k=2/2 is meaningfully below gate; reflects the scheme being SWD-policy rather than Cap-codified. Consider whether 'social security' or 'comprehensive social security' should be promoted instead at next iteration."
+      },
+      {
+        "term_idx": 1330,
+        "concern": "disability: knn_confidence=0.57 is the lowest among promotes; the embedding may be ambiguating Cap. 487 (disability discrimination) with Cap. 282 (disablement-as-injury). The sub-area assignment as 'discrimination' relies on Cap. 487 doctrinal centrality."
+      },
+      {
+        "term_idx": 6568,
+        "concern": "nurse: confidence=1.00 but the sub_area assignment to 'social_welfare' is conventional; Cap. 164 is regulatory rather than welfare-distributive. Could equally sit in occupational_safety as a workforce category."
+      },
+      {
+        "term_idx": 295,
+        "concern": "Drop of 'laboratory': confident drop (false-friend with 'labour') but flagged for sanity—if any HK Cap. uses '檢驗所' in an OSH/inspection sense (e.g. testing-laboratory inspection of workplaces), the drop may be over-aggressive."
+      }
+    ]
+  },
+  "notes": "Curation strategy: (i) prune three 'laboratory' false-friend matches that exploit string overlap with 'labour'; (ii) consolidate morphological derivatives ('harass'/'harassment', 'provident'/'provident fund', 'labouring'/'labour'); (iii) drop under-4 entries that are exogenous to HK Caps (ILO Conference, Social Security Allowance Scheme, parental, month-to-month) or substantively redundant ('industrial action' under 'strike', 'time-rate' under 'wage', 'incapacitate' under 'disablement'); (iv) reserve the 5-exception budget for non-substitutable doctrinal anchors (employee, trade union, CSSA, lay-off, lockout); (v) backfill via promotes the six sub-areas to a balanced 4–10 range, prioritising social_welfare (pension/retirement/CSSA), occupational_safety (Cap. 282 vocabulary) and wages_hours_leave (Cap. 57 working-time and remuneration). All keep_strict and promote entries pass the strict gate (k_en≥4 AND k_zh≥4). [PASS-2 OVERRIDE 2026-05-02: zh_clean overridden for 2 gloss-artefact terms; 2 moved keep_kunder4 → keep_strict.]"
+}

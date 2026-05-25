@@ -1,0 +1,602 @@
+[
+  {
+    "en": "I",
+    "zh": "我",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "you",
+    "zh": "你",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "he",
+    "zh": "他",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "we",
+    "zh": "我們",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "you (plural)",
+    "zh": "你們",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "they",
+    "zh": "他們",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "this",
+    "zh": "這",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "that",
+    "zh": "那",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "here",
+    "zh": "這裏",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "there",
+    "zh": "那裏",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "who",
+    "zh": "誰",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "what",
+    "zh": "什麼",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "where",
+    "zh": "哪裏",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "when",
+    "zh": "什麼時候",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "how",
+    "zh": "怎麼",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "not",
+    "zh": "不",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "all",
+    "zh": "所有",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "many",
+    "zh": "許多",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "some",
+    "zh": "一些",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "few",
+    "zh": "幾個",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "other",
+    "zh": "其他",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "one",
+    "zh": "一",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "two",
+    "zh": "二",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "three",
+    "zh": "三",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "four",
+    "zh": "四",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "five",
+    "zh": "五",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "big",
+    "zh": "大",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "long",
+    "zh": "長",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "wide",
+    "zh": "寬",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "thick",
+    "zh": "厚",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "heavy",
+    "zh": "重",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "small",
+    "zh": "小",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "short",
+    "zh": "短",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "narrow",
+    "zh": "窄",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "thin",
+    "zh": "薄",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "woman",
+    "zh": "女人",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "man",
+    "zh": "男人",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "person",
+    "zh": "人",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "fish",
+    "zh": "魚",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "bird",
+    "zh": "鳥",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "dog",
+    "zh": "狗",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "louse",
+    "zh": "蝨子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "snake",
+    "zh": "蛇",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "worm",
+    "zh": "蟲",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "tree",
+    "zh": "樹",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "forest",
+    "zh": "森林",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "stick",
+    "zh": "棍子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "fruit",
+    "zh": "果實",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "seed",
+    "zh": "種子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "leaf",
+    "zh": "葉子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "root",
+    "zh": "根",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "bark",
+    "zh": "樹皮",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "flower",
+    "zh": "花",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "grass",
+    "zh": "草",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "rope",
+    "zh": "繩子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "skin",
+    "zh": "皮膚",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "meat",
+    "zh": "肉",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "blood",
+    "zh": "血",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "bone",
+    "zh": "骨頭",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "fat",
+    "zh": "脂肪",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "egg",
+    "zh": "蛋",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "horn",
+    "zh": "角",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "tail",
+    "zh": "尾巴",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "feather",
+    "zh": "羽毛",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "hair",
+    "zh": "頭髮",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "head",
+    "zh": "頭",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "ear",
+    "zh": "耳朵",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "eye",
+    "zh": "眼睛",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "nose",
+    "zh": "鼻子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "mouth",
+    "zh": "嘴",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "tooth",
+    "zh": "牙齒",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "tongue",
+    "zh": "舌頭",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "fingernail",
+    "zh": "指甲",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "foot",
+    "zh": "腳",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "leg",
+    "zh": "腿",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "knee",
+    "zh": "膝蓋",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "hand",
+    "zh": "手",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "wing",
+    "zh": "翅膀",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "belly",
+    "zh": "肚子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "guts",
+    "zh": "內臟",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "neck",
+    "zh": "脖子",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "back",
+    "zh": "背",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "breast",
+    "zh": "胸",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "heart",
+    "zh": "心臟",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "liver",
+    "zh": "肝臟",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "drink",
+    "zh": "喝",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "eat",
+    "zh": "喫",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "bite",
+    "zh": "咬",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "see",
+    "zh": "看",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "hear",
+    "zh": "聽",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "know",
+    "zh": "知道",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "sleep",
+    "zh": "睡覺",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "die",
+    "zh": "死",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "kill",
+    "zh": "殺",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "swim",
+    "zh": "游泳",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "fly",
+    "zh": "飛",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "walk",
+    "zh": "走",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "come",
+    "zh": "來",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "lie",
+    "zh": "躺",
+    "domain": null,
+    "tier": "control"
+  },
+  {
+    "en": "sit",
+    "zh": "坐",
+    "domain": null,
+    "tier": "control"
+  }
+]
