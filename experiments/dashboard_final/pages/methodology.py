@@ -272,7 +272,7 @@ def build() -> str:
         _toolkit_section(),
         _reproducibility_section(),
         ui.linear_nav(
-            prev=("home.html", "Home"),
+            prev=("index.html", "Home"),
             next_=("how_it_works.html", "How it works"),
         ),
         ui.page_footer(ui._default_footer()),

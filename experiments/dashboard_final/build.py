@@ -40,7 +40,7 @@ from pages import (  # noqa: E402
 
 PAGES: list[tuple[str, str, "callable"]] = [
     # (filename, label, build_fn) — order matches the linear nav chain.
-    ("home.html",                "Home",                 home.build),
+    ("index.html",                "Home",                 home.build),
     ("methodology.html",         "Methodology",          methodology.build),
     ("how_it_works.html",        "How it works",         how_it_works.build),
     ("experiment_31.html",       "Experiment §3.1",      experiment_31.build),
@@ -112,7 +112,7 @@ def main() -> None:
     print(f"Total bundle: {total / (1024*1024):.2f} MB")
     print()
     print("To distribute: zip the entire `output/` folder.")
-    print("To view locally: open `output/home.html` in any browser.")
+    print("To view locally: open `output/index.html` in any browser.")
 
 
 if __name__ == "__main__":

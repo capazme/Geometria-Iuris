@@ -364,7 +364,7 @@ PLOTLY_AXIS_DEFAULTS = {
 # Navigation chain (the six pages).
 
 NAV_ITEMS: list[tuple[str, str]] = [
-    ("home.html",              "Home"),
+    ("index.html",              "Home"),
     ("methodology.html",       "Methodology"),
     ("how_it_works.html",      "How it works"),
     ("experiment_31.html",     "Experiment §3.1"),

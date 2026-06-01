@@ -1,6 +1,6 @@
 """Home page — gateway, audience statement, verification gate, anchor cards.
 
-Generates `output/home.html`. Pure HTML (no Plotly figure on this page).
+Generates `output/index.html`. Pure HTML (no Plotly figure on this page).
 """
 
 from __future__ import annotations
@@ -149,7 +149,7 @@ def build() -> str:
             crumb="Methodology of Legal Science · LUISS · 2026",
             include_plotly=False,
         ),
-        ui.sticky_nav(current_href="home.html"),
+        ui.sticky_nav(current_href="index.html"),
         ui.open_main(),
         _welcome(),
         _verification_gate(),
