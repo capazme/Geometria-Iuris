@@ -1,10 +1,8 @@
-"""Experiment 3.1 — distance structure of the legal lexicon.
+"""Experiment §3.1 — distance structure of the legal lexicon.
 
-Four sub-sections: §3.1.1 distances within and between domains;
-§3.1.2 maps of inter-domain distance; §3.1.3 agreement between model
-pairs (RSA); §3.1.4 ordered legal categories.
-
-Each sub-section follows the five-step concentric pattern.
+Four sub-sections of the thesis: §3.1.1 distances within and between
+domains; §3.1.2 maps of inter-domain distance; §3.1.3 agreement
+between model pairs; §3.1.4 ordered legal categories.
 """
 
 from __future__ import annotations
@@ -28,28 +26,26 @@ from figures import exp31 as figs  # noqa: E402
 def _intro(meta: dict) -> str:
     return ui.section_open("intro", "Experiment §3.1 — Distance structure") + f"""
 <p class="lead">
-Frozen 2026-05-17 — {meta.get('n_terms', 364)} core legal terms
-sampled from Hong Kong ordinances co-drafted under the Bilingual Laws
-Project (post-1989, structurally bilingual, not equal-authenticity
-fictions), distributed across 7 legal domains (administrative, civil,
-constitutional, criminal, international, labor, procedure). Ten encoder
-models — three WEIRD, three Sinic, four bilingual — encode each term in
-two ways: <em>attested</em>, the primary signal, as the mean of K ≥ 4
-real ordinance contexts; and <em>bare</em>, a methodological baseline,
-as the lemma in isolation. Attested is what the experiments analyse;
-bare grounds the Y caveat that isolates legal content from
-encoder-tradition bias.
+{meta.get('n_terms', 364)} legal terms drawn from the Hong Kong
+ordinances co-drafted under the Bilingual Laws Project (§2.2), spread
+across seven domains (administrative, civil, constitutional, criminal,
+international, labour, procedure). Ten language models process each
+term in two ways: <em>attested</em> — the average of the four or more
+real ordinance passages in which the term appears — and <em>bare</em>,
+the term in isolation. The attested encoding is the result the
+experiment analyses; the bare encoding stays alongside as a baseline
+for the control-pool subtraction discussed on the Robustness page.
 </p>
 
 <p>
-The Experiment asks three nested questions. Are legal terms more
-similar to each other than they are to everyday vocabulary, and do
-they cluster by domain (§3.1.1)? What does the inter-domain map look
-like, and do models agree on it (§3.1.2)? When two models produce
-distance maps over the same 364 terms, do they agree more when they
-share a language tradition than when they do not (§3.1.3)? And do
-embeddings recover the relative ordering of pre-registered legal
-categories (§3.1.4)?
+The section answers four nested questions. Within a single model, are
+terms in the same legal domain closer to each other than to terms in
+other domains (§3.1.1)? What is the shape of the seven-by-seven map of
+inter-domain distance, and does it recur across models (§3.1.2)? When
+two models produce distance maps of the same 364 terms, do they agree
+more when they share a language tradition than when they do not
+(§3.1.3)? And do the models recover the relative ordering of legal
+categories that the doctrine defines as graded (§3.1.4)?
 </p>
 """ + ui.section_close()
 
@@ -67,52 +63,57 @@ def _section_311(s311: dict) -> str:
     return ui.section_open("s311",
                             "§3.1.1 · Distances within and between legal domains") + \
         ui.scenario_block(
-            "A judge classifies disputes by domain — civil, criminal, "
-            "constitutional. Embedding models, when asked the same of "
-            "the vocabulary, should produce tighter clusters within a "
-            "domain than between domains."
+            "A lawyer groups terms by legal domain — civil, criminal, "
+            "constitutional — without thinking about it. Asked the same "
+            "of the lexicon, do language models reproduce the grouping? "
+            "And do they keep the legal lexicon, taken as a whole, "
+            "distinct from the everyday vocabulary against which it is "
+            "supposed to specialise?"
         ) + \
         ui.result_block(
-            f"<strong>{n_pass} of {n_total} models</strong> place legal "
-            "vocabulary closer together than everyday-language control "
-            "vocabulary (rank-biserial r &gt; 0, p &lt; 0.05). The two "
-            "exceptions are diagnostic: FreeLaw-EN (fine-tuned on a "
-            "legal corpus, loses the term-class contrast) and "
-            "Qwen3-0.6B-EN (small multilingual, under-specialised on "
-            "English). On the 3 WEIRD models the same pattern holds "
-            "for intra-vs-inter domain comparisons."
+            f"<strong>{n_pass} of {n_total} models</strong> place the "
+            "legal lexicon closer together than the everyday-language "
+            "control vocabulary, with rank-biserial r above zero and "
+            "p below 0.05. The two non-conforming readings are "
+            "diagnostic rather than failures: FreeLaw-EN is fine-tuned "
+            "on a legal corpus and therefore applies its legal prior "
+            "to ordinary words as well; Qwen3-0.6B-EN is small and "
+            "multilingual, with English representations not resolved "
+            "enough to support the term-class contrast. Within the "
+            "three Western-trained models, the same pattern holds for "
+            "intra-domain versus inter-domain distance."
         ) + \
         ui.plot_block(fig_lc, "fig-311-legal-control", height_px=420,
-                       caption="Mann-Whitney rank-biserial r per model. "
-                                "Positive r = legal-legal distances "
-                                "below legal-control. Two negative bars "
-                                "(FreeLaw-EN, Qwen3-0.6B-EN) are "
-                                "informative, not failures.") + \
+                       caption="Rank-biserial r for the legal-versus-control "
+                                "Mann-Whitney test, one bar per model. "
+                                "Positive r means legal-legal distances "
+                                "sit below legal-control distances. The "
+                                "two negative bars belong to FreeLaw-EN "
+                                "and Qwen3-0.6B-EN, the two diagnostic "
+                                "cases of §4.2 of the thesis.") + \
         ui.plot_block(fig_ii, "fig-311-intra-inter", height_px=360,
-                       caption="Intra-domain vs inter-domain distances "
-                                "on the three WEIRD models. Positive r "
-                                "= intra-domain compactness.") + \
+                       caption="Intra-domain versus inter-domain distance "
+                                "on the three Western-trained models. "
+                                "Positive r marks intra-domain "
+                                "compactness.") + \
         ui.takehome_block(
-            "Legal vocabulary clusters by domain in eight of ten "
-            "encoders. The two negative exceptions reveal limits of "
-            "the instrument, not of the lexicon. Chapter 4 §4.1 cites "
-            "this as the baseline result that the rest of the chapter "
-            "depends on."
+            "The legal lexicon is internally domain-organised in every "
+            "model of the panel and externally distinguishable from "
+            "everyday vocabulary in eight of ten. The two exceptions "
+            "delimit the encoder regimes on which the diagnostic cannot "
+            "be relied upon (§4.2)."
         ) + \
         apparatus_block(
             formula=(
                 "r = 1 − 2U / (n<sub>x</sub> n<sub>y</sub>)"
             ),
-            stats=[("test", "Mann-Whitney U one-sided"),
-                   ("n_legal", "66 066 pairs"),
-                   ("n_control", "36 400 pairs"),
-                   ("pass", f"{n_pass} / {n_total}")],
-            meta=("Effect r is the rank-biserial transform of U; r &gt; 0 "
-                  "indicates median(legal-legal) &lt; median(legal-control). "
-                  "All ten p-values reported in "
-                  "<code>section_311_legal_vs_control.per_model</code>."),
-            code_ref=[("experiments/ch3-measurability/experiment_1_structure/"
-                       "results_bare/", "legal_vs_control.json")],
+            stats=[("test",      "Mann-Whitney U, one-sided"),
+                   ("legal pairs",   "66 066"),
+                   ("control pairs", "36 400"),
+                   ("models passing", f"{n_pass} / {n_total}")],
+            meta=("Rank-biserial r is the transform of U from "
+                  "[0, n<sub>x</sub> n<sub>y</sub>] to [−1, +1]: positive "
+                  "r means the first distribution sits below the second."),
             collapsible=True,
         ) + \
         ui.section_close()
@@ -128,33 +129,37 @@ def _section_312(s312: dict) -> str:
     return ui.section_open("s312",
                             "§3.1.2 · Maps of distance between legal domains") + \
         ui.scenario_block(
-            "What does inter-domain distance look like, when seven "
-            "domains of HK law are projected by an encoder? Do "
-            "criminal and procedural law sit close, as a doctrinal "
-            "intuition would predict? Do encoders agree on the map?"
+            "What does the geometry of the seven domains of Hong Kong "
+            "law look like, when a model projects them as a 7 × 7 map "
+            "of average inter-domain distance? Do procedure and "
+            "administrative sit at the centre, criminal and "
+            "international at the periphery, as doctrinal intuition "
+            "would predict? Do models agree on the shape of the map?"
         ) + \
         ui.result_block(
-            "The 7 × 7 inter-domain map shows recurrent structure: "
-            "constitutional, civil, and criminal domains form a tight "
-            "core; international and procedural law sit on the periphery; "
-            "labor and administrative law occupy intermediate positions. "
-            "Ten encoders produce visually similar maps — quantified "
-            "by the §3.1.3 RSA test below."
+            "Every domain is, on average, closer to itself than to any "
+            "of the other six. Procedure and administrative anchor the "
+            "centre of the map (lowest mean off-diagonal distance to "
+            "the rest); criminal and international sit at the "
+            "periphery; labour and constitutional take intermediate "
+            "positions. The qualitative pattern recurs across the ten "
+            "models; the §3.1.3 measurement that follows turns the "
+            "visual recurrence into a number."
         ) + \
         ui.plot_block(fig_single, "fig-312-single", height_px=460,
-                       caption="BGE-EN-large attested · mean cosine "
-                                "distance between every pair of "
-                                "core terms whose domains are (row, col).") + \
+                       caption="BGE-EN-large, attested encoding. Each "
+                                "cell is the mean cosine distance "
+                                "between terms in the row domain and "
+                                "terms in the column domain.") + \
         ui.plot_block(fig_small, "fig-312-small", height_px=520,
-                       caption="Same 7 × 7 map, one panel per model "
-                                "(attested). The qualitative pattern "
-                                "recurs across all ten encoders.") + \
+                       caption="The same 7 × 7 map, one panel per model, "
+                                "attested encoding. The diagonal-darkest "
+                                "pattern recurs everywhere.") + \
         ui.takehome_block(
-            "The inter-domain map is the unit of analysis for §3.1.3: "
-            "RSA correlates these K × K matrices across model pairs. "
-            "Chapter 4 §4.1 reads the recurrence of the same coarse "
-            "layout across encoders as a stability claim about the "
-            "geometry."
+            "The inter-domain map has a stable qualitative shape "
+            "across the ten models. The recurrence is the geometric "
+            "premise on which the §3.1.3 measurement of agreement "
+            "between pairs of models rests."
         ) + \
         apparatus_block(
             formula=(
@@ -163,21 +168,18 @@ def _section_312(s312: dict) -> str:
             ),
             stats=[("domains",   "7"),
                    ("matrix",    "7 × 7"),
-                   ("metric",    "cosine on L2-normalised pooled embeddings"),
-                   ("populated", "all 10 models")],
-            meta=("Diagonal entries are upper-triangle means (no "
-                  "self-distance). Off-diagonal entries are full-block "
-                  "means. Matrices are symmetric within sub-section "
-                  "rounding."),
-            code_ref=[("experiments/ch3-measurability/scripts/",
-                       "experiment_1_structure.py")],
+                   ("metric",    "cosine on L2-normalised vectors"),
+                   ("models", "10")],
+            meta=("Diagonal entries are upper-triangle means, "
+                  "excluding self-distances; off-diagonal entries are "
+                  "full-block means."),
             collapsible=True,
         ) + \
         ui.section_close()
 
 
 # --------------------------------------------------------------------------
-# §3.1.3 — the headline section, with link to Robustness Y
+# §3.1.3 — agreement between pairs of models
 
 def _section_313(s313: dict) -> str:
     fig_forest_att = figs.fig_rsa_forest(s313, variant="attested")
@@ -185,74 +187,92 @@ def _section_313(s313: dict) -> str:
     sum_att = s313["attested"]["summary"]
     sum_bare = s313["bare"]["summary"]
     return ui.section_open("s313",
-                            "§3.1.3 · Agreement between pairs of models (RSA)") + \
+                            "§3.1.3 · Agreement between pairs of models") + \
         ui.scenario_block(
-            "When two encoders trained on the same language tradition "
-            "produce maps of the same 364 terms, do they agree on the "
-            "shape of the map? And when they belong to different "
-            "traditions, does their agreement drop?"
+            "When two models trained on the same language tradition "
+            "produce distance maps of the same 364 terms, do they "
+            "agree on the shape of the map? When they belong to "
+            "different traditions, does their agreement drop? The "
+            "answer is the principal quantitative reading of the "
+            "chapter."
         ) + \
         ui.result_block(
-            f"On attested encodings: within-WEIRD ρ̄ = "
+            "On attested encodings, the average rank correlation "
+            "between pairs of Western-trained models is "
             f"<strong>{sum_att['mean_rho_within_weird']:.3f}</strong>, "
-            f"within-Sinic ρ̄ = "
+            "the average between pairs of Chinese-trained models is "
             f"<strong>{sum_att['mean_rho_within_sinic']:.3f}</strong>, "
-            f"cross-tradition ρ̄ = "
-            f"<strong>{sum_att['mean_rho_cross_tradition']:.3f}</strong>. "
-            f"The symmetric gap Δρ_sym = "
-            f"<strong>{sum_att['delta_rho_symmetric']:.3f}</strong>. "
-            "The within-bilingual control ρ̄ = "
-            f"{sum_att['mean_rho_within_bilingual']:.3f} is close to "
-            "the cross-tradition mean — confirming the gap is not an "
-            "encoder-pair artefact."
+            "and the average across nine pairs that span the two "
+            f"traditions is <strong>{sum_att['mean_rho_cross_tradition']:.3f}</strong>. "
+            "The symmetric within-versus-cross gap, computed as the "
+            "average of the two within-tradition means minus the "
+            f"cross-tradition mean, is <strong>{sum_att['delta_rho_symmetric']:.3f}</strong>. "
+            "The two bilingual readings (a single model embedding both "
+            "languages of input) sit at "
+            f"{sum_att['mean_rho_within_bilingual']:.3f}, in the same "
+            "band as the cross-tradition pairs and well below either "
+            "within-tradition floor: holding the model identity fixed "
+            "and varying only the language of input does not close the "
+            "cross-tradition gap."
         ) + \
         ui.plot_block(fig_forest_att, "fig-313-forest", height_px=560,
-                       caption="17 model pairs, attested encoding, "
-                                "ordered by group. Error bars are 95% CI "
-                                "(block bootstrap, B = 10 000). All 17 "
-                                "p-values are at the permutation floor "
-                                "(B = 10 000).") + \
+                       caption="Seventeen pre-registered model pairs, "
+                                "attested encoding. Error bars are 95% "
+                                "confidence intervals from term-level "
+                                "block bootstrap (B = 10 000). All "
+                                "seventeen Mantel p-values lie at the "
+                                "permutation floor; the Holm-adjusted "
+                                "maximum is 0.0017.") + \
         ui.plot_block(fig_slope, "fig-313-slope", height_px=440,
-                       caption="Bare → attested ρ shift for each of the "
-                                "17 pairs. Within-WEIRD and within-Sinic "
-                                "pairs gain substantially; cross-tradition "
-                                "pairs gain little.") + \
+                       caption="Bare-to-attested ρ trajectory for each "
+                                "of the seventeen pairs. Within-"
+                                "tradition pairs rise steeply under "
+                                "contextualisation on Hong Kong "
+                                "ordinance passages; cross-tradition "
+                                "pairs trace nearly flat lines.") + \
         ui.disclaimer(
-            "<strong>The absolute number 0.543 is not the finding by itself.</strong> "
-            f"The bare Δρ_sym on the same 364 core terms is "
-            f"{sum_bare['delta_rho_symmetric']:.3f}: a methodological "
-            "baseline with no legal content, reported only so that the "
-            "Y caveat can subtract it. On 100 everyday-language control "
-            "terms the bare baseline returns 0.156, statistically "
-            "indistinguishable, confirming the baseline is encoder-shaped. "
-            "The legal signal is the gap that attestation opens on the "
-            "core: 0.378 = 0.543 − 0.165. See "
-            '<a href="robustness_caveats.html#Y-caveat">'
-            "Robustness § Y caveat</a> for the full reframing."
+            f"<strong>The 0.543 figure is not the legal-meaning gap on "
+            "its own.</strong> The same construction on bare encodings "
+            f"of the 364 terms returns "
+            f"{sum_bare['delta_rho_symmetric']:.3f}, and the same "
+            "construction on 100 everyday-language control terms "
+            "returns 0.156 — statistically indistinguishable from the "
+            "bare gap on the legal core. The bare gap is therefore "
+            "shaped by the models themselves, not by legal vocabulary. "
+            "The legal-meaning contribution is the difference that "
+            f"attestation adds on the legal core: 0.378 = "
+            f"{sum_att['delta_rho_symmetric']:.3f} − "
+            f"{sum_bare['delta_rho_symmetric']:.3f}. See the "
+            '<a href="robustness_caveats.html#control-pool-subtraction">'
+            "Robustness page</a> for the full decomposition."
         ) + \
         ui.takehome_block(
-            "Two-tradition divergence is a structural property of the "
-            "attested geometry: Chapter 4 §4.1 cites this section as "
-            "the headline; §4.2 cites the Y caveat as its primary limit."
+            "Within-tradition agreement on the attested 364-term core "
+            "is high and tight; cross-tradition agreement is markedly "
+            "lower. The gap is real but its interpretable size is the "
+            "0.378 attested-bare difference, not the 0.543 attested "
+            "absolute. §4.1 of the thesis reads §3.1.3 as the "
+            "principal cross-tradition finding; §4.2 reads the "
+            "control-pool subtraction as its primary limit."
         ) + \
         apparatus_block(
             formula=(
                 "Δρ<sub>sym</sub> = "
                 "(ρ̄<sub>W</sub> + ρ̄<sub>S</sub>) / 2 − ρ̄<sub>cross</sub>"
             ),
-            stats=[("Δρ_sym attested",
+            stats=[("Δρ<sub>sym</sub> attested",
                     f"{sum_att['delta_rho_symmetric']:.3f}"),
-                   ("Δρ_sym bare",
+                   ("Δρ<sub>sym</sub> bare",
                     f"{sum_bare['delta_rho_symmetric']:.3f}"),
                    ("Mantel B",      "10 000"),
                    ("Bootstrap B",   "10 000"),
                    ("Holm K",        "17"),
-                   ("p_max attested", "≤ 1.7e-3")],
-            meta=("RSA on upper-triangle Spearman ρ over per-pair 364×364 "
-                  "cosine RDMs. 95% CIs from term-level block bootstrap "
-                  "(Nili et al. 2014). Mantel p ≤ 1e-4 for all 17 pairs."),
-            code_ref=[("experiments/ch3-measurability/experiment_1_structure/"
-                       "results_attested/", "experiment_1_results.json")],
+                   ("p<sub>max</sub> (Holm)", "0.0017")],
+            meta=("Spearman ρ on the upper triangle of each model's "
+                  "364 × 364 cosine distance matrix; 95% confidence "
+                  "intervals from term-level block bootstrap "
+                  "(Nili et al. 2014). See §2.4 of the thesis for the "
+                  "full statistical apparatus."),
             collapsible=True,
         ) + \
         ui.section_close()
@@ -290,8 +310,8 @@ def _section_314(s314: dict) -> str:
     return ui.section_open("s314",
                             "§3.1.4 · Ordered legal categories and meaningful breakpoints") + \
         ui.scenario_block(
-            "Legal doctrine positions concepts along ordered continua "
-            "marked by doctrinally significant transitions. Criminal "
+            "Legal doctrine grades concepts along ordered continua "
+            "marked by doctrinally significant transitions: criminal "
             "law marks the <em>doli incapax</em> threshold between "
             "infancy and imputability; contract law marks the onset of "
             "capacity at the age of majority; procedure marks the "
@@ -300,44 +320,42 @@ def _section_314(s314: dict) -> str:
             "tracks legal meaning, the largest cosine gap along the "
             "principal component of an ordered sequence should fall at "
             "the doctrinally expected break, not at a linguistic "
-            "midpoint or a random position."
+            "midpoint."
         ) + \
         ui.result_block(
             f"Five pre-registered ordinal probes, each templated across "
             f"eleven legal categories and five paraphrase variants per "
-            f"language, are evaluated against {n_total} encoders. The "
-            f"ensemble mean ρ̄ on the age-contractual-capacity probe is "
-            f"<strong>{_rho(test_3):.3f}</strong>; on disposal severity "
-            f"<strong>{_rho(test_5):.3f}</strong>; on offence severity "
-            f"<strong>{_rho(test_4):.3f}</strong>; on the <em>doli "
-            f"incapax</em> threshold (borderline: expected break sits "
-            f"close to the eleven-position midpoint) "
-            f"<strong>{_rho(test_1):.3f}</strong>. A negative-control "
-            f"probe on contract value returns "
-            f"<strong>{_rho(test_2):.3f}</strong>, confirming that the "
-            f"positive signal is doctrinal, not generic to ordered "
-            f"sequences. The breakpoint placement is curation-independent: "
-            f"the probe operates on templated category sequences rather "
-            f"than on the curated lexicon, so its result transfers across "
-            f"pool variations."
+            f"language, are evaluated against {n_total} models. The "
+            f"ensemble mean Spearman ρ on the age-and-contractual-"
+            f"capacity probe is "
+            f"<strong>{_rho(test_3):.3f}</strong>; on disposal "
+            f"severity <strong>{_rho(test_5):.3f}</strong>; on offence "
+            f"severity <strong>{_rho(test_4):.3f}</strong>; on the "
+            f"<em>doli incapax</em> threshold "
+            f"<strong>{_rho(test_1):.3f}</strong>, a borderline test "
+            f"whose expected break sits close to the eleven-position "
+            f"midpoint. A negative-control probe on contract value "
+            f"returns <strong>{_rho(test_2):.3f}</strong>, confirming "
+            f"that the positive signal is doctrinal, not generic to "
+            f"ordered sequences. The probe operates on templated "
+            f"sentences rather than on the curated lexicon, so its "
+            f"reading is independent of pool curation."
         ) + \
         ui.plot_block(fig, "fig-314-probe", height_px=360,
-                       caption="Ensemble mean ρ̄ per test, averaged across "
-                                "ten encoders. The orange bar marks the "
-                                "borderline doli incapax probe, where the "
-                                "expected break sits within one position "
-                                "of the linguistic midpoint and modal-gap "
-                                "placement is partially confounded with "
-                                "sequence symmetry.") + \
+                       caption="Ensemble mean Spearman ρ per test, "
+                                "averaged across ten models. The orange "
+                                "bar marks the borderline doli incapax "
+                                "probe, where the expected break sits "
+                                "within one position of the linguistic "
+                                "midpoint.") + \
         ui.takehome_block(
-            "Encoders recover the relative ordering of pre-registered "
-            "legal categories and place the largest gap at the "
-            "doctrinally expected position on three of the four positive "
-            "tests, while the negative control returns no signal. "
-            "Chapter 4 §4.1 reads §3.1.4 as the evidence that the "
-            "geometry is not noise: the doctrinal break is where the "
-            "doctrine says it is, and the modal placement is robust to "
-            "pool curation."
+            "Where a legal threshold marks a discontinuity that is "
+            "also linguistically marked — by a calque, by a "
+            "morphological boundary, by a lexicalised opposition — the "
+            "embedding registers the threshold as the geometric "
+            "breakpoint. Models do not discover orderings autonomously, "
+            "and they do not validate a breakpoint that the lexicon "
+            "does not carry."
         ) + \
         apparatus_block(
             formula=(
@@ -346,24 +364,18 @@ def _section_314(s314: dict) -> str:
                 "max_gap_index = argmax<sub>i</sub> "
                 "|emb(category<sub>i+1</sub>) − emb(category<sub>i</sub>)|"
             ),
-            stats=[("n_tests",            str(n_tests)),
+            stats=[("tests",            str(n_tests)),
                    ("positive tests",     str(n_positive_tests)),
                    ("categories / test",  "11"),
                    ("templates / test",   "5 EN + 5 ZH"),
                    ("models",             str(n_total)),
-                   ("exact-hit count (positive tests)",
+                   ("exact hits (positive tests)",
                     f"{total_exact} / {n_positive_tests * n_total}")],
             meta=("Each probe encodes eleven templated category "
                   "sentences in both languages, projects the resulting "
-                  "RDM onto its first principal component, and asks "
-                  "whether the cosine gaps along the ordered sequence "
-                  "peak at the doctrinally expected position. The "
-                  "borderline flag triggers when the expected gap index "
-                  "sits within one position of the sequence midpoint, "
-                  "where modal-hit counting is confounded with sequence "
-                  "symmetry."),
-            code_ref=[("experiments/ch3-measurability/experiment_1_structure/"
-                       "results_bare/", "categorical_probe.json")],
+                  "vectors onto their first principal component, and "
+                  "asks whether the cosine gaps peak at the doctrinally "
+                  "expected position."),
             collapsible=True,
         ) + \
         ui.section_close()
@@ -378,8 +390,8 @@ def build() -> str:
         ui.page_head(
             title="Experiment §3.1 — Distance structure",
             subtitle="How the legal lexicon clusters by domain, and "
-                     "whether encoders agree on the map.",
-            crumb="Chapter 3 · Experiment 1",
+                     "whether models agree on the shape of the map.",
+            crumb="Chapter 3 · §3.1",
         ),
         ui.sticky_nav(current_href="experiment_31.html"),
         ui.open_main(),
