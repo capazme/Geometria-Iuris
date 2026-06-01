@@ -83,10 +83,14 @@ def _section_321(s321: dict) -> str:
             "about axis formation."
         ) + \
         ui.plot_block(fig, "fig-321-sanity", height_px=420,
-                       caption="Sanity heatmap: ratio of antonym pairs "
-                                "aligned with their nominal pole, one "
-                                "cell per axis × model (attested "
-                                "encoding).") + \
+                       caption='Sanity heatmap: ratio of antonym pairs '
+                                'aligned with their nominal pole, one '
+                                'cell per axis × model (attested '
+                                'encoding). The ten English and ten '
+                                'Chinese antonym pairs that build each '
+                                'axis are listed verbatim under '
+                                '<a href="lexicon.html#axes">Inside the '
+                                'inputs</a>.') + \
         ui.takehome_block(
             "Axis construction is sound on the majority of cells. "
             "The few low-pass cells are the early warning of the "

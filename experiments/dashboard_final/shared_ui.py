@@ -316,6 +316,113 @@ CSS_MAIN = r"""
     .anchor-grid { grid-template-columns: 1fr; }
     .number-callout { flex-direction: column; gap: 0.3rem; }
   }
+
+  /* Lexicon page — input snapshots */
+  details.domain-block {
+    margin: 0.6rem 0 1.1rem; border: 1px solid var(--border);
+    border-radius: 4px; background: var(--panel); overflow: hidden; }
+  details.domain-block > summary {
+    cursor: pointer; padding: 0.8rem 1.1rem; font-weight: 600;
+    font-size: 1.02rem; color: var(--accent-dark);
+    background: var(--cream); border-bottom: 1px solid var(--border);
+    list-style: none; }
+  details.domain-block > summary::-webkit-details-marker { display: none; }
+  details.domain-block > summary::before {
+    content: "▸ "; display: inline-block; transition: transform 0.15s;
+    color: var(--accent); margin-right: 0.3rem; }
+  details.domain-block[open] > summary::before { transform: rotate(90deg); }
+  details.domain-block > .inner { padding: 0.6rem 1.1rem 1.1rem; }
+  details.domain-block .domain-count { color: var(--muted);
+    font-weight: 400; font-size: 0.9em; margin-left: 0.4rem; }
+
+  details.term-row {
+    border-bottom: 1px solid var(--border); padding: 0.4rem 0; }
+  details.term-row:last-child { border-bottom: none; }
+  details.term-row > summary {
+    cursor: pointer; padding: 0.35rem 0.4rem; font-size: 0.95rem;
+    list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem;
+    align-items: baseline; }
+  details.term-row > summary::-webkit-details-marker { display: none; }
+  details.term-row > summary::before {
+    content: "+"; display: inline-block; width: 1em; color: var(--accent);
+    font-weight: 700; }
+  details.term-row[open] > summary::before { content: "−"; }
+  details.term-row .term-en { font-weight: 600; color: var(--ink); }
+  details.term-row .term-zh { color: var(--accent-dark);
+    font-family: "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", serif; }
+  details.term-row .term-meta { color: var(--muted); font-size: 0.85em;
+    margin-left: auto; font-style: italic; }
+  details.term-row .contexts {
+    margin: 0.6rem 0 0.4rem 1.4rem; padding: 0.6rem 0.9rem;
+    background: var(--cream); border-left: 3px solid var(--accent);
+    border-radius: 2px; }
+  details.term-row .ctx {
+    margin: 0.3rem 0; line-height: 1.55; font-size: 0.9rem; }
+  details.term-row .ctx .ref { font-weight: 600;
+    color: var(--accent-dark); font-size: 0.85em;
+    margin-right: 0.4rem; white-space: nowrap; }
+  details.term-row .ctx .lang-tag {
+    display: inline-block; font-size: 0.7em; font-weight: 700;
+    color: var(--muted); margin-right: 0.4rem;
+    border: 1px solid var(--border); padding: 0 0.3em; border-radius: 2px; }
+  details.term-row .ctx.zh { font-family: "Noto Sans CJK SC",
+    "Microsoft YaHei", "PingFang SC", serif; }
+
+  /* Axis pairs view */
+  .axis-pairs { display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; margin: 0.8rem 0; }
+  .axis-pairs .pairs-column {
+    background: var(--cream); border-left: 3px solid var(--accent);
+    padding: 0.6rem 0.9rem; border-radius: 2px; }
+  .axis-pairs .pairs-column h4 {
+    margin: 0 0 0.5rem; font-size: 0.95rem; color: var(--accent-dark); }
+  .axis-pairs ol { margin: 0; padding-left: 1.4rem;
+    font-size: 0.92rem; line-height: 1.7; }
+  .axis-pairs ol li .pos { font-weight: 600; color: var(--ink); }
+  .axis-pairs ol li .sep { color: var(--muted); margin: 0 0.3em; }
+  .axis-pairs ol li .neg { color: var(--accent-dark); font-style: italic; }
+
+  /* Probe template view */
+  .probe-block {
+    margin: 0.8rem 0; padding: 0.8rem 1rem;
+    background: var(--cream); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent); border-radius: 2px; }
+  .probe-block h4 { margin: 0 0 0.4rem; font-size: 0.98rem;
+    color: var(--accent-dark); }
+  .probe-block .threshold {
+    font-size: 0.86rem; color: var(--muted); font-style: italic;
+    margin-bottom: 0.5rem; }
+  .probe-block .cats {
+    font-size: 0.9rem; line-height: 1.7;
+    padding: 0.4rem 0.6rem; background: #fff;
+    border-radius: 2px; margin-bottom: 0.5rem; }
+  .probe-block .cats .cat-idx {
+    font-weight: 600; color: var(--accent); font-size: 0.82em;
+    margin-right: 0.3em; }
+  .probe-block .cats .expected {
+    background: rgba(176, 141, 87, 0.18); padding: 0 0.2em;
+    border-radius: 2px; font-weight: 600; }
+  .probe-block .templates ol {
+    margin: 0; padding-left: 1.5rem; font-size: 0.9rem;
+    line-height: 1.7; color: var(--ink); }
+  .probe-block .templates ol li { margin-bottom: 0.25rem; }
+  .probe-block .templates ol li .slot {
+    background: rgba(176, 141, 87, 0.25);
+    padding: 0 0.25em; border-radius: 2px;
+    font-style: italic; color: var(--accent-dark); }
+
+  /* Compact control list */
+  .control-grid { display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.4rem; font-size: 0.9rem; margin: 0.6rem 0; }
+  .control-grid .item {
+    padding: 0.3rem 0.5rem; background: var(--cream);
+    border-left: 2px solid var(--accent);
+    border-radius: 2px; }
+  .control-grid .item .en { font-weight: 500; color: var(--ink); }
+  .control-grid .item .zh { color: var(--accent-dark); margin-left: 0.3em;
+    font-family: "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC", serif; }
 """
 
 
@@ -367,6 +474,7 @@ NAV_ITEMS: list[tuple[str, str]] = [
     ("index.html",              "Home"),
     ("methodology.html",       "Methodology"),
     ("how_it_works.html",      "How it works"),
+    ("lexicon.html",            "Inside the inputs"),
     ("experiment_31.html",     "Experiment §3.1"),
     ("experiment_32.html",     "Experiment §3.2"),
     ("robustness_caveats.html", "Robustness & caveats"),

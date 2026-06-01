@@ -106,7 +106,10 @@ pair drawn from the Hong Kong DOJ bilingual legal glossary, and each
 has been re-attested against the post-1989 ordinances co-drafted under
 the Bilingual Laws Project. The filter retains a term only if it
 appears at least four times in real ordinance contexts; the
-threshold is justified empirically in §3 of the thesis.
+threshold is justified empirically in §3 of the thesis. The complete
+364-term lexicon and the 100 control words are browsable verbatim
+under <a href="lexicon.html#lexicon">Inside the inputs</a>, each
+term expandable to two real Hong Kong ordinance passages.
 </p>
 
 <h3>Core · 364 terms</h3>

@@ -224,7 +224,7 @@ def build() -> str:
         _reading_path(),
         ui.linear_nav(
             prev=("methodology.html", "Methodology"),
-            next_=("experiment_31.html", "Experiment §3.1"),
+            next_=("lexicon.html", "Inside the inputs"),
         ),
         ui.page_footer(ui._default_footer()),
     ]
