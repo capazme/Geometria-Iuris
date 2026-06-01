@@ -17,6 +17,7 @@ if str(_ROOT) not in sys.path:
 import shared_ui as ui  # noqa: E402
 from apparatus import apparatus_block  # noqa: E402
 from data import loader_extensions as ext_loader  # noqa: E402
+from data import loader_31  # noqa: E402
 from figures import extensions as ext_fig  # noqa: E402
 
 
@@ -300,7 +301,18 @@ def _section_same_lemma() -> str:
 # ==========================================================================
 # (d) Expected failure modes — what §3.1.1 cannot do
 
-def _section_failure_modes() -> str:
+def _section_failure_modes(s311: dict) -> str:
+    lvc = s311["bare"].get("legal_vs_control", {})
+    fig = ext_fig.fig_freelaw_failure_bars(lvc) if lvc else None
+    plot_html = (ui.plot_block(
+        fig, "fig-failures-bars", height_px=400,
+        caption="Per-model rank-biserial r on the §3.1.1 legal-vs-"
+                "control test, bare encoding. The two muted-grey bars "
+                "(FreeLaw-EN at r = -0.121, Qwen3-0.6B-EN at r = -0.044) "
+                "are the two diagnostic regimes that §4.2 of the thesis "
+                "declares as outside the instrument's reliable scope. "
+                "Hover for the p-value of each model.",
+    ) if fig else "")
     return ui.section_open("expected-failures",
                             "Expected failure modes") + \
         ui.scenario_block(
@@ -326,7 +338,7 @@ def _section_failure_modes() -> str:
             "representational regime as <em>trustee</em>, <em>lien</em>, "
             "<em>registration</em>. The diagnostic operates on general-"
             "purpose models, not on already-fine-tuned ones."
-        ) + \
+        ) + plot_html + \
         ui.result_block(
             "<strong>The §3.1.4 negative-control probe on contract "
             "value finds no doctrinal break</strong>, as the law "
@@ -372,7 +384,8 @@ def _section_failure_modes() -> str:
 # ==========================================================================
 # (e) Bilingual control — encoder-identity counterfactual
 
-def _section_bilingual_control() -> str:
+def _section_bilingual_control(s313: dict) -> str:
+    fig = ext_fig.fig_bilingual_control_forest(s313)
     return ui.section_open("bilingual-control",
                             "The bilingual control") + \
         ui.scenario_block(
@@ -416,6 +429,11 @@ def _section_bilingual_control() -> str:
             col_classes=("", "num strong", ""),
             row_classes=("", "", "", "highlight"),
         ) + \
+        ui.plot_block(fig, "fig-bilingual-forest", height_px=320,
+                       caption="The four group means side by side. "
+                                "The bilingual control bar sits firmly "
+                                "in the cross-tradition band, not in "
+                                "the within-tradition one.") + \
         ui.takehome_block(
             "The bilingual control is the causal counterfactual of "
             "§2.3 of the thesis: by holding model identity fixed, it "
@@ -443,6 +461,8 @@ def _section_bilingual_control() -> str:
 # build()
 
 def build() -> str:
+    s311 = loader_31.load_section_311()
+    s313 = loader_31.load_section_313()
     parts = [
         ui.page_head(
             title="Robustness &amp; caveats",
@@ -456,8 +476,8 @@ def build() -> str:
         _section_control_pool(),
         _section_pool_perturbation(),
         _section_same_lemma(),
-        _section_failure_modes(),
-        _section_bilingual_control(),
+        _section_failure_modes(s311),
+        _section_bilingual_control(s313),
         ui.linear_nav(
             prev=("experiment_32.html", "Experiment §3.2"),
             next_=None,

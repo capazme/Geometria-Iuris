@@ -352,3 +352,117 @@ def fig_A_bg_domain_distribution(A_raw: dict) -> dict:
             showlegend=False,
         ),
     }
+
+
+# --------------------------------------------------------------------------
+# Robustness page — bilingual control forest (C1)
+
+def fig_bilingual_control_forest(s313: dict) -> dict:
+    """Four group means (within-W, within-S, cross-tradition, bilingual)
+    as a horizontal forest plot. Shows where the bilingual control sits
+    relative to the two within-tradition floors and the cross-tradition
+    mean.
+    """
+    summary = s313["attested"]["summary"]
+    groups = [
+        ("Within Western-trained (3 pairs)",
+          float(summary.get("mean_rho_within_weird", 0)),
+          PLOT_COLORS["weird"]),
+        ("Within Chinese-trained (3 pairs)",
+          float(summary.get("mean_rho_within_sinic", 0)),
+          PLOT_COLORS["sinic"]),
+        ("Cross-tradition (9 pairs)",
+          float(summary.get("mean_rho_cross_tradition", 0)),
+          PLOT_COLORS["cross"]),
+        ("Bilingual control (2 pairs)",
+          float(summary.get("mean_rho_within_bilingual", 0)),
+          PLOT_COLORS["bilingual"]),
+    ]
+    labels = [g[0] for g in groups]
+    rhos = [g[1] for g in groups]
+    colors = [g[2] for g in groups]
+    return {
+        "data": [{
+            "type": "bar", "orientation": "h",
+            "x": rhos, "y": labels,
+            "marker": {"color": colors,
+                        "line": {"color": "#333", "width": 0.5}},
+            "text": [f"{r:.3f}" for r in rhos],
+            "textposition": "outside",
+            "textfont": {"size": 12, "color": "#222"},
+            "hovertemplate": "%{y}<br>mean ρ = %{x:.3f}<extra></extra>",
+        }],
+        "layout": _layout(
+            title="The bilingual control next to the within-tradition "
+                  "floors and the cross-tradition band (attested)",
+            xaxis={"title": "mean Spearman ρ", "range": [0, 1.0],
+                   "gridcolor": "#f0f0f0", "showgrid": True,
+                   "zeroline": True, "zerolinecolor": "#b08d57"},
+            yaxis={"title": "", "automargin": True,
+                   "tickfont": {"size": 11}},
+            margin={"l": 280, "r": 50, "t": 70, "b": 50},
+            height=320,
+        ),
+    }
+
+
+# --------------------------------------------------------------------------
+# Robustness page — FreeLaw-EN failure visual (C2)
+
+def fig_freelaw_failure_bars(s311_legal_vs_control: dict) -> dict:
+    """Bar chart of legal-vs-control rank-biserial r per model, with
+    FreeLaw-EN and Qwen3-0.6B-EN highlighted in muted grey.
+    """
+    from data.loader_31 import ALL_MODELS_ORDERED, model_group
+    rows = [(m, float(s311_legal_vs_control[m]["effect_r"]),
+              float(s311_legal_vs_control[m]["p_value"]))
+            for m in ALL_MODELS_ORDERED
+            if m in s311_legal_vs_control]
+    failures = {"FreeLaw-EN", "Qwen3-0.6B-EN"}
+    models = [r[0] for r in rows]
+    rs = [r[1] for r in rows]
+    pvals = [r[2] for r in rows]
+    group_color = {
+        "weird":     PLOT_COLORS["weird"],
+        "sinic":     PLOT_COLORS["sinic"],
+        "bilingual": PLOT_COLORS["bilingual"],
+    }
+    colors = [
+        PLOT_COLORS["control"] if (m in failures or r < 0)
+        else group_color.get(model_group(m), "#999")
+        for m, r in zip(models, rs)
+    ]
+    hover_text = [
+        (f"<b>{m}</b><br>r = {r:+.3f} · p = {p:.1e}"
+         + ("<br><i>diagnostic failure (see §4.2)</i>" if m in failures or r < 0
+            else ""))
+        for m, r, p in zip(models, rs, pvals)
+    ]
+    return {
+        "data": [{
+            "type": "bar",
+            "x": models, "y": rs,
+            "marker": {"color": colors,
+                        "line": {"color": "#333", "width": 0.5}},
+            "hovertext": hover_text, "hoverinfo": "text",
+            "text": [f"{r:+.3f}" for r in rs],
+            "textposition": "outside",
+            "textfont": {"size": 10},
+        }],
+        "layout": _layout(
+            title="§3.1.1 legal-vs-control · FreeLaw-EN and Qwen3-0.6B-EN "
+                  "as the two non-conforming readings",
+            xaxis={"title": "", "tickangle": -30, "automargin": True},
+            yaxis={"title": "rank-biserial r",
+                   "zeroline": True, "zerolinecolor": "#b08d57",
+                   "zerolinewidth": 1.5,
+                   "range": [-0.18, 0.34]},
+            margin={"l": 60, "r": 30, "t": 70, "b": 110},
+            height=400,
+            shapes=[{
+                "type": "line", "xref": "paper", "yref": "y",
+                "x0": 0, "x1": 1, "y0": 0, "y1": 0,
+                "line": {"color": "#b08d57", "width": 1.5},
+            }],
+        ),
+    }
