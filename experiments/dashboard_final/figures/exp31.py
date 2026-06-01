@@ -349,6 +349,173 @@ def fig_rsa_forest(s313: dict, variant: str = "attested") -> dict:
     }
 
 
+def fig_rsa_forest_toggle(s313: dict) -> dict:
+    """RSA forest with a bare/attested toggle.
+
+    The 17 pairs are sorted into four groups (within Western-trained,
+    within Chinese-trained, within bilingual control, cross-tradition).
+    For each variant the same group ordering is preserved, so toggling
+    swaps both the point estimates and the group-mean reference lines.
+    """
+    variants = ["attested", "bare"]
+    default = "attested"
+
+    # Pre-compute per-variant data.
+    per_variant: dict[str, dict] = {}
+    for variant in variants:
+        pairs = sorted(s313[variant]["pairs"], key=_group_sort_key)
+        summary = s313[variant]["summary"]
+        labels = [_pair_label(p) for p in pairs]
+        rhos = [float(p["rho"]) for p in pairs]
+        ci_low = [float(p["ci_low"]) for p in pairs]
+        ci_high = [float(p["ci_high"]) for p in pairs]
+        y_positions = list(range(len(pairs), 0, -1))
+        group_traces: dict[str, dict] = {}
+        for g in GROUP_ORDER:
+            xs, ys, lo, hi, txt = [], [], [], [], []
+            for i, p in enumerate(pairs):
+                if p["group"] != g:
+                    continue
+                xs.append(rhos[i])
+                ys.append(y_positions[i])
+                lo.append(rhos[i] - ci_low[i])
+                hi.append(ci_high[i] - rhos[i])
+                txt.append(
+                    f"{labels[i]}<br>"
+                    f"ρ={rhos[i]:.3f} · 95% CI [{ci_low[i]:.3f}, {ci_high[i]:.3f}]"
+                )
+            group_traces[g] = {
+                "x": xs, "y": ys, "lo": lo, "hi": hi, "txt": txt,
+            }
+        per_variant[variant] = {
+            "labels":   labels,
+            "y_pos":    y_positions,
+            "groups":   group_traces,
+            "summary":  summary,
+        }
+
+    # Build the trace list: per (variant, group) -> one trace.
+    data = []
+    trace_index_by_variant: dict[str, list] = {v: [] for v in variants}
+    for variant in variants:
+        pv = per_variant[variant]
+        for g in GROUP_ORDER:
+            gt = pv["groups"][g]
+            if not gt["x"]:
+                trace_index_by_variant[variant].append(None)
+                continue
+            data.append({
+                "type": "scatter",
+                "mode": "markers",
+                "x": gt["x"], "y": gt["y"],
+                "error_x": {"type": "data", "symmetric": False,
+                             "array": gt["hi"], "arrayminus": gt["lo"],
+                             "color": _GROUP_COLOR[g],
+                             "thickness": 1.4, "width": 4},
+                "marker": {"size": 9, "color": _GROUP_COLOR[g],
+                            "line": {"color": "#222", "width": 0.7}},
+                "name": GROUP_LABEL[g],
+                "legendgroup": g,
+                "showlegend": (variant == default),
+                "hovertext": gt["txt"], "hoverinfo": "text",
+                "visible": (variant == default),
+            })
+            trace_index_by_variant[variant].append(len(data) - 1)
+
+    n_traces = len(data)
+
+    def _layout_update(variant: str) -> dict:
+        pv = per_variant[variant]
+        summary = pv["summary"]
+        labels = pv["labels"]
+        y_pos = pv["y_pos"]
+        w_mean = float(summary.get("mean_rho_within_weird", 0))
+        s_mean = float(summary.get("mean_rho_within_sinic", 0))
+        cross_mean = float(summary.get("mean_rho_cross_tradition", 0))
+        d_sym = float(summary.get("delta_rho_symmetric", 0))
+        shapes = []
+        for x, color, dash in [(w_mean, PLOT_COLORS["weird"], "dash"),
+                                (s_mean, PLOT_COLORS["sinic"], "dash"),
+                                (cross_mean, PLOT_COLORS["cross"], "dot")]:
+            shapes.append({
+                "type": "line", "xref": "x", "yref": "paper",
+                "x0": x, "x1": x, "y0": 0, "y1": 1,
+                "line": {"color": color, "width": 1.2, "dash": dash},
+            })
+        annotations = [
+            {"x": w_mean, "y": 1.03, "xref": "x", "yref": "paper",
+             "text": f"ρ̄_W = {w_mean:.3f}", "showarrow": False,
+             "font": {"size": 10, "color": PLOT_COLORS["weird"]}},
+            {"x": s_mean, "y": 1.07, "xref": "x", "yref": "paper",
+             "text": f"ρ̄_S = {s_mean:.3f}", "showarrow": False,
+             "font": {"size": 10, "color": PLOT_COLORS["sinic"]}},
+            {"x": cross_mean, "y": 1.03, "xref": "x", "yref": "paper",
+             "text": f"ρ̄_cross = {cross_mean:.3f}", "showarrow": False,
+             "font": {"size": 10, "color": PLOT_COLORS["cross"]}},
+            {"x": 1.0, "y": 1.22, "xref": "paper", "yref": "paper",
+             "text": "<i>encoding:</i>", "showarrow": False,
+             "xanchor": "right", "yanchor": "bottom",
+             "font": {"size": 11, "color": "#7c5c2e"}},
+        ]
+        return {
+            "title": {"text":
+                f"§3.1.3 — RSA · 17 model pairs · {variant} · "
+                f"Δρ_sym = {d_sym:.3f}"},
+            "shapes": shapes,
+            "annotations": annotations,
+            "yaxis": {"title": "", "tickmode": "array",
+                      "tickvals": y_pos, "ticktext": labels,
+                      "tickfont": {"size": 9},
+                      "showgrid": False, "zeroline": False},
+        }
+
+    def _visibility_for(variant: str) -> list:
+        ok = {i for i in trace_index_by_variant[variant] if i is not None}
+        return [i in ok for i in range(n_traces)]
+
+    def _showlegend_for(variant: str) -> list:
+        ok = {i for i in trace_index_by_variant[variant] if i is not None}
+        return [i in ok for i in range(n_traces)]
+
+    buttons = []
+    for variant in variants:
+        buttons.append({
+            "label": variant,
+            "method": "update",
+            "args": [
+                {"visible": _visibility_for(variant),
+                 "showlegend": _showlegend_for(variant)},
+                _layout_update(variant),
+            ],
+        })
+
+    layout = _layout(
+        xaxis={"title": "Spearman ρ", "range": [0.0, 0.95],
+               "gridcolor": "#f0f0f0", "showgrid": True},
+        margin={"l": 280, "r": 130, "t": 90, "b": 50},
+        height=580,
+        legend={"orientation": "v", "yanchor": "top", "y": 0.99,
+                "x": 1.02, "font": {"size": 10},
+                "bgcolor": "rgba(255,255,255,0.8)"},
+    )
+    layout.update(_layout_update(default))
+    layout["updatemenus"] = [{
+        "type": "buttons",
+        "buttons": buttons,
+        "direction": "right",
+        "x": 1.0, "y": 1.18,
+        "xanchor": "right", "yanchor": "top",
+        "pad": {"l": 6, "r": 6, "t": 4, "b": 4},
+        "bgcolor": "#faf7ee",
+        "bordercolor": "#b08d57",
+        "borderwidth": 1,
+        "font": {"size": 11},
+        "active": 0,
+        "showactive": True,
+    }]
+    return {"data": data, "layout": layout}
+
+
 def fig_rsa_bare_attested_slope(s313: dict) -> dict:
     """Slope chart: bare ρ → attested ρ for each of the 17 pairs.
 

@@ -180,7 +180,7 @@ def _section_312(s312: dict) -> str:
 # §3.1.3 — agreement between pairs of models
 
 def _section_313(s313: dict) -> str:
-    fig_forest_att = figs.fig_rsa_forest(s313, variant="attested")
+    fig_forest = figs.fig_rsa_forest_toggle(s313)
     fig_slope = figs.fig_rsa_bare_attested_slope(s313)
     sum_att = s313["attested"]["summary"]
     sum_bare = s313["bare"]["summary"]
@@ -213,14 +213,19 @@ def _section_313(s313: dict) -> str:
             "and varying only the language of input does not close the "
             "cross-tradition gap."
         ) + \
-        ui.plot_block(fig_forest_att, "fig-313-forest", height_px=560,
-                       caption="Seventeen pre-registered model pairs, "
-                                "attested encoding. Error bars are 95% "
-                                "confidence intervals from term-level "
-                                "block bootstrap (B = 10 000). All "
+        ui.plot_block(fig_forest, "fig-313-forest", height_px=580,
+                       caption="Seventeen pre-registered model pairs. "
+                                "Error bars are 95% confidence "
+                                "intervals from term-level block "
+                                "bootstrap (B = 10 000). All "
                                 "seventeen Mantel p-values lie at the "
                                 "permutation floor; the Holm-adjusted "
-                                "maximum is 0.0017.") + \
+                                "maximum is 0.0017. Use the toggle "
+                                "above the chart to switch between "
+                                "the attested and the bare encoding — "
+                                "the within-tradition bands climb "
+                                "steeply under attestation; the "
+                                "cross-tradition band barely moves.") + \
         ui.plot_block(fig_slope, "fig-313-slope", height_px=440,
                        caption="Bare-to-attested ρ trajectory for each "
                                 "of the seventeen pairs. Within-"

@@ -138,11 +138,14 @@ def _section_322(s322: dict) -> str:
             "is the closest of the six to a direction independent of "
             "the others."
         ) + \
-        ui.plot_block(fig, "fig-322-ortho", height_px=460,
-                       caption="Inter-axis cosine matrix for "
-                                "BGE-EN-large, attested. The diagonal "
-                                "is unity by construction; off-diagonal "
-                                "values are signed cosines.") + \
+        ui.plot_block(fig, "fig-322-ortho", height_px=480,
+                       caption="Inter-axis cosine matrix, attested "
+                                "encoding. The diagonal is unity by "
+                                "construction; off-diagonal values are "
+                                "signed cosines. Use the dropdown to "
+                                "switch model — the qualitative shape "
+                                "of the matrix recurs across "
+                                "traditions, the magnitudes vary.") + \
         ui.takehome_block(
             "Six axes occupy six distinct directions: the per-axis "
             "readings of §3.2.4 are not six restatements of the same "
@@ -216,9 +219,8 @@ def _section_323(s323: dict) -> str:
 # §3.2.4 — the substantive ranking
 
 def _section_324(s324: dict) -> str:
+    fig_ranking = figs.fig_axes_ranking_toggle(s324)
     fig_cmp = figs.fig_axes_ranking_compare(s324)
-    fig_att = figs.fig_axes_ranking(s324, variant="attested",
-                                     sort_ascending=True)
     means_att = s324["attested"]["cross_rho_mean_per_axis"]
     ranking = sorted(means_att.items(), key=lambda r: r[1])
     most = ranking[0]
@@ -251,16 +253,20 @@ def _section_324(s324: dict) -> str:
             "curated pool shifts. The pool sensitivity is itself the "
             "methodological reading of §4.2 of the thesis."
         ) + \
-        ui.plot_block(fig_att, "fig-324-att", height_px=400,
-                       caption="Cross-tradition mean ρ per axis "
-                                "(attested), most divergent on top.") + \
+        ui.plot_block(fig_ranking, "fig-324-ranking", height_px=440,
+                       caption="Cross-tradition mean ρ per axis, most "
+                                "divergent on top. Use the toggle "
+                                "above the chart to switch between "
+                                "attested (default) and bare encoding "
+                                "— five of the six axes diverge more "
+                                "under attestation; rights / duties "
+                                "is the only axis on which the two "
+                                "encodings coincide.") + \
         ui.plot_block(fig_cmp, "fig-324-cmp", height_px=480,
-                       caption="Bare versus attested side by side. "
-                                "Contextualisation on Hong Kong "
-                                "ordinances amplifies the cross-"
-                                "tradition disagreement on five of the "
-                                "six axes; the exception is "
-                                "rights / duties.") + \
+                       caption="The same data, bare and attested side "
+                                "by side. The exception "
+                                "(rights / duties) is visible as the "
+                                "axis where the two bars overlap.") + \
         ui.data_table(
             columns=("Axis", "Cross-tradition ρ̄ (attested)"),
             rows=_axis_table_rows(means_att, [r[0] for r in ranking]),

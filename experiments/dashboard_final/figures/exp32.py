@@ -90,6 +90,84 @@ def fig_axes_ranking(s324: dict, variant: str = "attested",
     }
 
 
+def fig_axes_ranking_toggle(s324: dict) -> dict:
+    """Cross-tradition ρ̄ per axis, with a bare/attested toggle.
+
+    Both variants are pre-computed; toggling re-orders the axis ranking
+    (most divergent on top) for the selected variant.
+    """
+    variants = ["attested", "bare"]
+    default = "attested"
+    per_variant: dict[str, dict] = {}
+    for variant in variants:
+        means = s324[variant]["cross_rho_mean_per_axis"]
+        pairs = [(a, float(means[a])) for a in AXES_ORDER if a in means]
+        pairs.sort(key=lambda r: r[1])  # ascending: most divergent on top
+        axes = [r[0] for r in pairs]
+        rhos = [r[1] for r in pairs]
+        labels = [_axis_label(a) for a in axes]
+        per_variant[variant] = {"labels": labels, "rhos": rhos}
+
+    d0 = per_variant[default]
+    data = [{
+        "type": "bar", "orientation": "h",
+        "x": d0["rhos"], "y": d0["labels"],
+        "marker": {"color": PLOT_COLORS["accent_dark"]},
+        "text": [f"{r:.3f}" for r in d0["rhos"]],
+        "textposition": "outside",
+        "hovertemplate": "%{y}<br>ρ̄_cross = %{x:.3f}<extra></extra>",
+    }]
+
+    buttons = []
+    max_x = max(
+        max(per_variant[v]["rhos"]) for v in variants
+    ) * 1.15 + 0.05
+    for variant in variants:
+        d = per_variant[variant]
+        buttons.append({
+            "label": variant,
+            "method": "update",
+            "args": [
+                {"x": [d["rhos"]], "y": [d["labels"]],
+                 "text": [[f"{r:.3f}" for r in d["rhos"]]]},
+                {"title": {"text":
+                    f"§3.2.4 — Cross-tradition ρ̄ per axis ({variant})"}},
+            ],
+        })
+
+    layout = _layout(
+        title=f"§3.2.4 — Cross-tradition ρ̄ per axis ({default})",
+        xaxis={"title": "mean Spearman ρ (cross-tradition pairs)",
+               "range": [0, max_x]},
+        yaxis={"title": "", "automargin": True},
+        margin={"l": 170, "r": 60, "t": 90, "b": 50},
+        height=440,
+    )
+    layout["updatemenus"] = [{
+        "type": "buttons",
+        "buttons": buttons,
+        "direction": "right",
+        "x": 1.0, "y": 1.16,
+        "xanchor": "right", "yanchor": "top",
+        "pad": {"l": 6, "r": 6, "t": 4, "b": 4},
+        "bgcolor": "#faf7ee",
+        "bordercolor": "#b08d57",
+        "borderwidth": 1,
+        "font": {"size": 11},
+        "active": 0,
+        "showactive": True,
+    }]
+    layout["annotations"] = [{
+        "x": 1.0, "y": 1.22,
+        "xref": "paper", "yref": "paper",
+        "text": "<i>encoding:</i>",
+        "showarrow": False,
+        "xanchor": "right", "yanchor": "bottom",
+        "font": {"size": 11, "color": "#7c5c2e"},
+    }]
+    return {"data": data, "layout": layout}
+
+
 def fig_axes_ranking_compare(s324: dict) -> dict:
     """Side-by-side bare vs attested ρ̄ per axis."""
     means_b = s324["bare"]["cross_rho_mean_per_axis"]
@@ -203,20 +281,8 @@ _ORTHO_COLORSCALE = [
 ]
 
 
-def fig_orthogonality(s322: dict, model: str = "BGE-EN-large",
-                       variant: str = "attested") -> dict:
-    """6×6 cosine of axis vectors for one model. Diagonal = 1.
-
-    Reads `s322[variant][model]["cosine_matrix"]` (the canonical schema)
-    and re-orders rows/cols to `AXES_ORDER` based on the embedded `axes`
-    list.
-    """
-    block = s322[variant]
-    if model not in block:
-        model = next(iter(block.keys()))
-    entry = block[model]
-    raw_axes = list(entry["axes"])
-    raw_matrix = entry["cosine_matrix"]
+def _reorder_axis_matrix(raw_axes: list, raw_matrix: list) -> list:
+    """Reorder a square cosine matrix to AXES_ORDER, padding the diagonal."""
     idx_by_axis = {a: i for i, a in enumerate(raw_axes)}
     matrix = [[0.0] * len(AXES_ORDER) for _ in AXES_ORDER]
     for r, a1 in enumerate(AXES_ORDER):
@@ -225,25 +291,81 @@ def fig_orthogonality(s322: dict, model: str = "BGE-EN-large",
                 matrix[r][c] = float(raw_matrix[idx_by_axis[a1]][idx_by_axis[a2]])
             elif r == c:
                 matrix[r][c] = 1.0
+    return matrix
+
+
+def fig_orthogonality(s322: dict, model: str = "BGE-EN-large",
+                       variant: str = "attested") -> dict:
+    """6×6 inter-axis cosine matrix with a dropdown to switch model.
+
+    All available models for the variant are pre-computed and stored as
+    parallel heatmap traces; the dropdown toggles which one is visible.
+    """
+    block = s322[variant]
+    models = list(block.keys())
+    if not models:
+        return {"data": [], "layout": _layout(title="(no §3.2.2 data)")}
+    default = model if model in block else models[0]
     labels = [_axis_label(a) for a in AXES_ORDER]
-    return {
-        "data": [{
+
+    data = []
+    for m in models:
+        entry = block[m]
+        matrix = _reorder_axis_matrix(list(entry["axes"]), entry["cosine_matrix"])
+        data.append({
             "type": "heatmap",
             "z": matrix,
             "x": labels, "y": labels,
             "zmin": -1, "zmax": 1, "zmid": 0,
             "colorscale": _ORTHO_COLORSCALE,
+            "showscale": True,
             "colorbar": {"title": "cosine", "thickness": 12, "len": 0.7},
-            "hovertemplate": "%{y} × %{x}: %{z:.3f}<extra></extra>",
-        }],
-        "layout": _layout(
-            title=f"§3.2.2 — Inter-axis cosine · {model} ({variant})",
-            xaxis={"title": "", "tickangle": -20, "automargin": True},
-            yaxis={"title": "", "autorange": "reversed", "automargin": True},
-            margin={"l": 130, "r": 25, "t": 50, "b": 90},
-            height=460,
-        ),
-    }
+            "hovertemplate": f"<b>{m}</b><br>%{{y}} × %{{x}}: %{{z:.3f}}<extra></extra>",
+            "name": m,
+            "visible": (m == default),
+        })
+
+    n = len(models)
+    buttons = []
+    for idx, m in enumerate(models):
+        buttons.append({
+            "label": m,
+            "method": "update",
+            "args": [
+                {"visible": [i == idx for i in range(n)]},
+                {"title": {"text": f"§3.2.2 — Inter-axis cosine · {m} ({variant})"}},
+            ],
+        })
+
+    layout = _layout(
+        title=f"§3.2.2 — Inter-axis cosine · {default} ({variant})",
+        xaxis={"title": "", "tickangle": -20, "automargin": True},
+        yaxis={"title": "", "autorange": "reversed", "automargin": True},
+        margin={"l": 130, "r": 25, "t": 80, "b": 90},
+        height=480,
+    )
+    layout["updatemenus"] = [{
+        "type": "dropdown",
+        "buttons": buttons,
+        "direction": "down",
+        "x": 1.0, "y": 1.14,
+        "xanchor": "right", "yanchor": "top",
+        "pad": {"l": 6, "r": 6, "t": 4, "b": 4},
+        "bgcolor": "#faf7ee",
+        "bordercolor": "#b08d57",
+        "borderwidth": 1,
+        "font": {"size": 11},
+        "showactive": True,
+    }]
+    layout["annotations"] = [{
+        "x": 1.0, "y": 1.18,
+        "xref": "paper", "yref": "paper",
+        "text": "<i>language model:</i>",
+        "showarrow": False,
+        "xanchor": "right", "yanchor": "bottom",
+        "font": {"size": 11, "color": "#7c5c2e"},
+    }]
+    return {"data": data, "layout": layout}
 
 
 # --------------------------------------------------------------------------
