@@ -19,12 +19,10 @@ __pycache__/
 .idea/
 .vscode/
 *.swp
-.claude/
 .cursor/
 .agent/
 _bmad-output/
 _bmad/
-CLAUDE.md
 
 # Personal / archival directories
 # NOTE: leading slash anchors this to the repo root — do not match
@@ -82,3 +80,25 @@ experiments/dashboard_v2/
 experiments/dashboard_v3/
 experiments/_archive/
 experiments/build_dashboard.py
+# Python/venv artifacts (added during publish prep)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.python-version
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AI tooling
+
+# Backups / scratch
+*.bak
+*.bak.*
+*.bak_pre_clean_*
+*.tmp

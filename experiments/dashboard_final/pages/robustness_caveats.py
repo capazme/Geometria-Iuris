@@ -343,7 +343,7 @@ def _section_Y() -> str:
             code_ref=[("experiments/ch3-measurability/scripts/"
                        "ext_Y_control_only.py", "main()")],
             sources=[
-                "Caveat phrased in <code>HANDOFF.md</code> §A-bis.",
+                "Caveat phrased in the thesis inferential discipline.",
                 "Adopted as primary §4.2 limit.",
             ],
         ) + \

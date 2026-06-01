@@ -10,9 +10,9 @@ whether the underlying pool is run #3's 327 Firthian-strict terms or run #4's
 run #3 output and annotate the provenance.
 
 This script:
-  1. Copies experiments/lens_1_relational/results_bare/categorical_probe.json
+  1. Copies <frozen pre-registration>/categorical_probe.json
      to ch3-measurability/experiment_1_structure/results_bare/categorical_probe.json
-  2. Copies experiments/lens_1_relational/results_attested/categorical_probe.json
+  2. Copies <frozen pre-registration>/categorical_probe.json
      to ch3-measurability/experiment_1_structure/results_attested/categorical_probe.json
   3. Stamps a `linked_from` field with the source path and a `note` explaining
      pool-independence.
@@ -60,10 +60,9 @@ def main() -> int:
         cfg = yaml.safe_load(fh)
 
     # The categorical probe is BOTH pool-independent AND encoding-independent
-    # (it uses templated sentences, not pool terms; the encoding-variant flag
-    # only changes the headline RSA/lens experiments). Hence a single source
+    # (it uses templated sentences, not pool terms. Hence a single source
     # file is sufficient — we link the same file to both variant folders.
-    source = REPO_ROOT / "experiments/lens_1_relational/results_bare/categorical_probe.json"
+    source = REPO_ROOT / "<frozen pre-registration>/categorical_probe.json"
     sources = {"bare": source, "attested": source}
     destinations = {
         "bare":     REPO_ROOT / cfg["paths"]["structure_bare"]     / "categorical_probe.json",

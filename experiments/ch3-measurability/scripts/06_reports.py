@@ -5,7 +5,7 @@ Step 6 — Reports for run #4 post-BLP.
 Reads experiment_1_structure/results_{bare,attested}/experiment_1_results.json and
 experiment_2_axes/results_{bare,attested}/experiment_2_results.json, then produces:
 
-  reports/numbers_headline.md      — table-ready numbers for CLAUDE.md §10
+  reports/numbers_headline.md      — table-ready numbers for project documentation
   reports/changes_vs_run3.md       — delta between run #3 (Firthian) and #4
   reports/verification_gate.md     — pass/fail per criterion of PLAN §8
 
@@ -25,7 +25,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 RUN_DIR = REPO_ROOT / "experiments" / "ch3-measurability"
 
 
-# Run #3 reference numbers (from CLAUDE.md §10, attested column)
+# Run #3 reference numbers (from project documentation, attested column)
 RUN3_REF = {
     "rho_W_attested": 0.760,
     "rho_S_attested": 0.845,

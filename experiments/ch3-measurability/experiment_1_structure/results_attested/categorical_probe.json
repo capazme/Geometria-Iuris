@@ -1,6 +1,6 @@
 {
   "meta": {
-    "module": "lens_1_relational/categorical_probe.py",
+    "module": "categorical_probe.py",
     "thesis_section": "§3.1.4 — Parametric validation (pre-registered rebuild)",
     "date": "2026-05-02T16:04:23",
     "weird_models": [
@@ -17,7 +17,7 @@
       "BGE-M3-ZH",
       "Qwen3-0.6B-ZH"
     ],
-    "pre_registration_file": "lens_1_relational/categorical_probe_expected.yaml",
+    "pre_registration_file": "experiments/ch3-measurability/categorical_probe_expected.yaml",
     "pre_registration_meta": {
       "date": "2026-04-11",
       "n_categories_per_test": 11,
@@ -28,7 +28,7 @@
       "note": "5 tests x 2 languages x 5 paraphrase templates x 11 categories x 6 models ~= 3300 encodings total (many cached from prior runs).\n"
     },
     "n_tests": 5,
-    "linked_from": "experiments/lens_1_relational/results_bare/categorical_probe.json",
+    "linked_from": "frozen pre-registration (run #4)",
     "linked_at_utc": "2026-05-11T00:06:55Z",
     "pool_independence_note": "Categorical probe uses templated 11-category sentence sequences (see categorical_probe_expected.yaml). The probe does not consume the run pool. Run #4 reuses the run #3 output without re-execution; any model-level encoding cache differences between run #3 and run #4 are absorbed by the EmbeddingClient SHA-keyed cache."
   },

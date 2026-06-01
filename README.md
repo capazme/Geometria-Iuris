@@ -18,18 +18,26 @@ results. It is deliberately code-centric.
 ```
 experiments/
 ├── ch3-measurability/    Frozen run #4 (post-BLP). The canonical results.
-│   ├── experiment_1_structure/   geometric structure & model agreement
-│   ├── experiment_2_axes/        projection onto value axes
-│   ├── ext/                      robustness extensions (A..Z)
-│   ├── scripts/                  the pipeline that produced the results
-│   ├── reports/                  ready-made number tables
-│   ├── manifest.json             50 SHA-256 hashes (reproducibility gate)
-│   └── HANDOFF.md / OVERVIEW.md  how to read the numbers
-├── dashboard_final/      Six self-contained static HTML pages (committee
-│                         presentation), regenerable from the results.
-└── data/                 Legal-lexicon construction pipeline:
-                          364 post-BLP terms across 7 domains + 100-item
-                          Swadesh control, with the processed JSON inputs.
+│   ├── experiment_1_structure/         geometric structure & model agreement (JSON)
+│   ├── experiment_2_axes/              projection onto value axes (JSON)
+│   ├── ext/                            robustness extensions (A..Z)
+│   ├── scripts/                        the pipeline that produced the results
+│   ├── reports/                        diagnostic plots
+│   ├── figures/                        thesis figures (PNG) + matplotlib scripts that generate them
+│   ├── categorical_probe_expected.yaml §3.1.4 pre-registration (frozen 2026-04-11)
+│   ├── manifest.json                   50 SHA-256 hashes (reproducibility gate)
+│   └── config.yaml                     single source of truth for run #4 parameters
+├── dashboard_final/      Build pipeline for the static dashboard,
+│                         regenerable via build.py from the results.
+├── shared/               Runtime modules (embeddings client, statistics, HTML helpers)
+├── pre_checks/           Adversarial pre-checks (numeracy, polysemy, register)
+└── data/                 Legal-lexicon construction pipeline: 364 post-BLP
+                          terms across 7 domains + 100-item Swadesh control,
+                          plus the processed JSON inputs.
+
+docs/                     GitHub Pages source: six self-contained static HTML
+                          pages mirroring dashboard_final/output/.
+                          Hosted at https://capazme.github.io/Geometria-Iuris/
 ```
 
 ## Headline result
@@ -43,9 +51,13 @@ The cross-tradition symmetrised divergence is **Δρ_sym (attested) = 0.543**.
 A critical caveat is built into the reading: the same metric on the bare encoder
 is ≈ 0.165 on the legal pool and ≈ 0.156 on the non-legal control, so the bare
 gap is *encoder-tradition-shaped*, not legal-tradition-shaped. The legal signal
-is therefore the **attested−bare gap ≈ 0.378**, not the attested absolute. See
-`experiments/ch3-measurability/HANDOFF.md` for the full set of numbers and the
-inferential discipline that governs their reading.
+is therefore the **attested−bare gap ≈ 0.378**, not the attested absolute. The
+full set of numbers lives in the JSON result files under
+`experiments/ch3-measurability/experiment_{1,2}_*/results_{bare,attested}/`, and
+in the extensions under `ext/`; the dashboard at
+[capazme.github.io/Geometria-Iuris](https://capazme.github.io/Geometria-Iuris/)
+visualises them with the inferential discipline (measure / interpretation /
+limit) that governs their reading.
 
 ## What is NOT here, and why
 
@@ -59,13 +71,15 @@ inferential discipline that governs their reading.
 
 ## Reproducing / inspecting
 
-The results are JSON and are meant to be read directly; the headline tables are
-in `experiments/ch3-measurability/reports/`. To regenerate the presentation
-dashboard:
+The results are JSON and are meant to be read directly. The headline numbers are
+the `section_*` blocks of the per-experiment `*_results.json` files under
+`experiments/ch3-measurability/experiment_{1,2}_*/results_{bare,attested}/`. To
+regenerate the static dashboard from those JSONs:
 
 ```bash
 python3 experiments/dashboard_final/build.py
 # writes the six HTML files into experiments/dashboard_final/output/
+# the same content is mirrored in docs/ as the GitHub Pages source
 ```
 
 The pipeline is Python 3 (NumPy, SciPy, Plotly; the categorical probe relies on
@@ -75,8 +89,9 @@ deterministic with fixed seeds.
 ### A note on pre-registration provenance
 
 The §3.1.4 categorical probe was pre-registered before the run that produced its
-figures: the expected breakpoints and the midpoint constraint live in
-`experiments/lens_1_relational/categorical_probe_expected.yaml` (kept locally),
-with the commit date recorded in that file and in `HANDOFF.md`. This repository
-starts from a clean history, so the date is documented in-file rather than
-proven by git log.
+figures: the expected breakpoints, the eleven-category sequences, and the
+distance-from-midpoint constraint live in
+`experiments/ch3-measurability/categorical_probe_expected.yaml`. The commit date
+of the pre-registration (2026-04-11) is recorded in the YAML's `meta` block.
+This repository starts from a clean history, so the date is documented in-file
+rather than proven by git log.
