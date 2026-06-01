@@ -305,6 +305,9 @@ def _section_324(s324: dict) -> str:
 # §3.2.5 — between-group differences (term-level exhibit)
 
 def _section_325(s325: dict) -> str:
+    fig_terms = figs.fig_top_divergent_terms_explorer(s325,
+                                                       variant="attested",
+                                                       top_k=10)
     return ui.section_open("s325",
                             "§3.2.5 · Between-group differences") + \
         ui.scenario_block(
@@ -314,7 +317,7 @@ def _section_325(s325: dict) -> str:
             "the aggregate ρ cannot."
         ) + \
         ui.result_block(
-            "On natural / positive, the five most divergent terms are "
+            "On natural / positive, the most divergent terms are "
             "<em>prejudice</em>, <em>discrimination</em>, "
             "<em>punishment</em>, <em>religion</em>, <em>perjury</em>: "
             "the Western-trained reading sends them toward the "
@@ -330,9 +333,20 @@ def _section_325(s325: dict) -> str:
             "for the Chinese-trained ones. On rights / duties, both "
             "readings of the term <em>freedom</em> / 自由 collapse to "
             "the same Chinese lemma but project a quarter-axis apart "
-            "(|Δ| ≈ 0.30). See §3.2.5 of the thesis for the full "
-            "term-by-term reading."
+            "(|Δ| ≈ 0.30). Use the axis dropdown to browse the top "
+            "ten divergent terms on each axis."
         ) + \
+        ui.plot_block(fig_terms, "fig-325-terms", height_px=560,
+                       caption="Per-axis top-ten cross-tradition "
+                                "divergent terms, sorted by |Δ| from "
+                                "largest at the top. Blue bar: mean "
+                                "projection of the term across the "
+                                "three Western-trained models. Red "
+                                "bar: mean projection across the "
+                                "three Chinese-trained models. |Δ| is "
+                                "in the hover. Use the axis dropdown "
+                                "to switch between the six axes "
+                                "(attested encoding).") + \
         ui.takehome_block(
             "Term-level and axis-level divergence converge: where the "
             "axis ρ̄ is lowest, the top divergent terms project on "

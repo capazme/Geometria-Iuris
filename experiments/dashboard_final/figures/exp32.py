@@ -282,3 +282,178 @@ def fig_sanity_heatmap(s321: dict, variant: str = "attested") -> dict:
             height=420,
         ),
     }
+
+
+# --------------------------------------------------------------------------
+# §3.2.5 — Between-group differences (top divergent terms per axis)
+
+def fig_top_divergent_terms_explorer(s325: dict, variant: str = "attested",
+                                       top_k: int = 10) -> dict:
+    """Per-axis horizontal bar chart of the top-K cross-tradition divergent
+    terms, with paired W (Western-trained) and S (Chinese-trained)
+    projections. Drop-down switches axis.
+    """
+    pack = s325.get(variant, {})
+    if not pack:
+        return {"data": [], "layout": _layout(title="(no §3.2.5 data)")}
+
+    axes_with_data = [a for a in AXES_ORDER
+                      if isinstance(pack.get(a), dict)
+                      and pack[a].get("top_K_divergent")]
+    if not axes_with_data:
+        return {"data": [], "layout": _layout(title="(no top-divergent data)")}
+
+    per_axis = {}
+    for axis in axes_with_data:
+        blob = pack[axis]
+        items = blob.get("top_K_divergent", [])[:top_k]
+        items_sorted = sorted(items, key=lambda r: abs(float(r.get("delta", 0))))
+        labels = [
+            f"{it.get('en','?')} · {it.get('zh','')}"
+            for it in items_sorted
+        ]
+        w_scores = [float(it.get("w_score", 0)) for it in items_sorted]
+        s_scores = [float(it.get("s_score", 0)) for it in items_sorted]
+        deltas = [float(it.get("delta", 0)) for it in items_sorted]
+        domains = [it.get("domain", "") for it in items_sorted]
+        per_axis[axis] = {
+            "labels":  labels,
+            "w":       w_scores,
+            "s":       s_scores,
+            "deltas":  deltas,
+            "domains": domains,
+            "mean_abs": blob.get("delta_mean_abs"),
+            "max_abs":  blob.get("delta_max_abs"),
+        }
+
+    default_axis = "natural_positive" if "natural_positive" in per_axis else axes_with_data[0]
+    d0 = per_axis[default_axis]
+
+    w_color = PLOT_COLORS["weird"]
+    s_color = PLOT_COLORS["sinic"]
+
+    data = [
+        {
+            "type": "bar",
+            "orientation": "h",
+            "y": d0["labels"],
+            "x": d0["w"],
+            "name": "Western-trained mean projection",
+            "marker": {"color": w_color,
+                        "line": {"color": "#333", "width": 0.4}},
+            "customdata": [[d, f"|Δ| = {abs(dlt):.3f}"]
+                            for d, dlt in zip(d0["domains"], d0["deltas"])],
+            "hovertemplate": (
+                "<b>%{y}</b><br>"
+                "domain: %{customdata[0]}<br>"
+                "W projection = %{x:.3f}<br>"
+                "%{customdata[1]}<extra></extra>"
+            ),
+        },
+        {
+            "type": "bar",
+            "orientation": "h",
+            "y": d0["labels"],
+            "x": d0["s"],
+            "name": "Chinese-trained mean projection",
+            "marker": {"color": s_color,
+                        "line": {"color": "#333", "width": 0.4}},
+            "customdata": [[d, f"|Δ| = {abs(dlt):.3f}"]
+                            for d, dlt in zip(d0["domains"], d0["deltas"])],
+            "hovertemplate": (
+                "<b>%{y}</b><br>"
+                "domain: %{customdata[0]}<br>"
+                "S projection = %{x:.3f}<br>"
+                "%{customdata[1]}<extra></extra>"
+            ),
+        },
+    ]
+
+    def _annotations_for(axis: str) -> list:
+        d = per_axis[axis]
+        mean_abs = d.get("mean_abs")
+        max_abs = d.get("max_abs")
+        bits = []
+        if mean_abs is not None:
+            bits.append(f"mean |Δ| = {float(mean_abs):.3f}")
+        if max_abs is not None:
+            bits.append(f"max |Δ| = {float(max_abs):.3f}")
+        return [{
+            "x": 0.5, "y": 1.02,
+            "xref": "paper", "yref": "paper",
+            "text": f"<i>{' · '.join(bits)}</i>" if bits else "",
+            "showarrow": False,
+            "xanchor": "center", "yanchor": "bottom",
+            "font": {"size": 11, "color": "#7c5c2e"},
+        }]
+
+    buttons = []
+    for axis in axes_with_data:
+        d = per_axis[axis]
+        buttons.append({
+            "label": _axis_label(axis),
+            "method": "update",
+            "args": [
+                {
+                    "x": [d["w"], d["s"]],
+                    "y": [d["labels"], d["labels"]],
+                    "customdata": [
+                        [[dm, f"|Δ| = {abs(dlt):.3f}"]
+                          for dm, dlt in zip(d["domains"], d["deltas"])],
+                        [[dm, f"|Δ| = {abs(dlt):.3f}"]
+                          for dm, dlt in zip(d["domains"], d["deltas"])],
+                    ],
+                },
+                {
+                    "title": {"text":
+                        f"§3.2.5 — Top {top_k} cross-tradition divergent terms · "
+                        f"{_axis_label(axis)} ({variant})"},
+                    "annotations": _annotations_for(axis) + [{
+                        "x": 1.0, "y": 1.22,
+                        "xref": "paper", "yref": "paper",
+                        "text": "<i>axis:</i>",
+                        "showarrow": False,
+                        "xanchor": "right", "yanchor": "bottom",
+                        "font": {"size": 11, "color": "#7c5c2e"},
+                    }],
+                },
+            ],
+        })
+
+    layout = _layout(
+        title=(f"§3.2.5 — Top {top_k} cross-tradition divergent terms · "
+               f"{_axis_label(default_axis)} ({variant})"),
+        xaxis={"title": "mean axis projection (signed)",
+               "zeroline": True, "zerolinecolor": "#b08d57",
+               "zerolinewidth": 1.5},
+        yaxis={"title": "", "automargin": True, "tickfont": {"size": 11}},
+        barmode="group",
+        bargap=0.18,
+        bargroupgap=0.08,
+        height=max(520, 40 * top_k + 160),
+        margin={"l": 220, "r": 25, "t": 90, "b": 70},
+        showlegend=True,
+        legend={"orientation": "h", "y": -0.12, "x": 0.5, "xanchor": "center"},
+    )
+    layout["annotations"] = _annotations_for(default_axis) + [{
+        "x": 1.0, "y": 1.22,
+        "xref": "paper", "yref": "paper",
+        "text": "<i>axis:</i>",
+        "showarrow": False,
+        "xanchor": "right", "yanchor": "bottom",
+        "font": {"size": 11, "color": "#7c5c2e"},
+    }]
+    layout["updatemenus"] = [{
+        "type": "dropdown",
+        "buttons": buttons,
+        "direction": "down",
+        "x": 1.0, "y": 1.18,
+        "xanchor": "right", "yanchor": "top",
+        "pad": {"l": 6, "r": 6, "t": 4, "b": 4},
+        "bgcolor": "#faf7ee",
+        "bordercolor": "#b08d57",
+        "borderwidth": 1,
+        "font": {"size": 11},
+        "showactive": True,
+    }]
+    return {"data": data, "layout": layout}

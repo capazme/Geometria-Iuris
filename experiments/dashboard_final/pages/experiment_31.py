@@ -280,7 +280,8 @@ def _section_313(s313: dict) -> str:
 # §3.1.4 — categorical probe
 
 def _section_314(s314: dict) -> str:
-    fig = figs.fig_categorical_probe_forest(s314)
+    fig_explorer = figs.fig_categorical_probe_explorer(s314)
+    fig_summary = figs.fig_categorical_probe_forest(s314)
     tests_data = s314.get("tests", {})
     n_tests = len(tests_data)
 
@@ -339,7 +340,18 @@ def _section_314(s314: dict) -> str:
             f"sentences rather than on the curated lexicon, so its "
             f"reading is independent of pool curation."
         ) + \
-        ui.plot_block(fig, "fig-314-probe", height_px=360,
+        ui.plot_block(fig_explorer, "fig-314-explorer", height_px=540,
+                       caption="Mean PC1 projection of the eleven "
+                                "ordered categories across the five "
+                                "paraphrase templates, one line per "
+                                "model. The dashed vertical line marks "
+                                "the doctrinally expected break for the "
+                                "selected test; use the test dropdown "
+                                "to switch between the five probes. "
+                                "Western-trained models in blue, "
+                                "Chinese-trained in red, bilingual "
+                                "in grey.") + \
+        ui.plot_block(fig_summary, "fig-314-summary", height_px=360,
                        caption="Ensemble mean Spearman ρ per test, "
                                 "averaged across ten models. The orange "
                                 "bar marks the borderline doli incapax "

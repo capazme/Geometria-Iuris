@@ -259,6 +259,15 @@ def load_section_314() -> dict:
                 "label":    mblob.get("label", m),
                 "lang":     mblob.get("lang"),
                 "ensemble": dict(mblob.get("ensemble", {})),
+                "per_template": [
+                    {
+                        "pc1_projection":   list(pt.get("pc1_projection", [])),
+                        "max_gap_position": pt.get("max_gap_position"),
+                        "max_gap_between":  list(pt.get("max_gap_between", []))
+                                              if pt.get("max_gap_between") else None,
+                    }
+                    for pt in mblob.get("per_template", [])
+                ],
             }
         tests[tid] = {
             "label":                  t.get("label"),

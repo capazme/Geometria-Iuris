@@ -408,6 +408,191 @@ def fig_rsa_bare_attested_slope(s313: dict) -> dict:
 # --------------------------------------------------------------------------
 # §3.1.4 — Categorical probe summary forest (simple)
 
+def _mean_projection(per_template: list) -> list:
+    """Mean PC1 projection across the 5 paraphrase templates."""
+    if not per_template:
+        return []
+    n = len(per_template[0].get("pc1_projection", []))
+    if n == 0:
+        return []
+    sums = [0.0] * n
+    counts = [0] * n
+    for pt in per_template:
+        proj = pt.get("pc1_projection", [])
+        for i, v in enumerate(proj):
+            if i < n and v is not None:
+                sums[i] += float(v)
+                counts[i] += 1
+    return [s / c if c else 0.0 for s, c in zip(sums, counts)]
+
+
+def fig_categorical_probe_explorer(s314: dict) -> dict:
+    """Interactive explorer: drop-down to switch test, 10 model curves shown.
+
+    Each curve is the mean PC1 projection across the 5 paraphrase templates
+    for that (test, model). A dashed vertical line marks the doctrinally
+    expected break. Hover shows the model and the projection value.
+    """
+    tests = s314.get("tests", {})
+    test_keys = list(tests.keys())
+    if not test_keys:
+        return {"data": [], "layout": _layout(title="(no probe data)")}
+
+    test_titles = {tid: tests[tid].get("label", tid) for tid in test_keys}
+
+    # Pre-compute mean projections per (test, model).
+    model_order = []
+    seen = set()
+    for tid in test_keys:
+        for m in tests[tid].get("per_model", {}):
+            if m not in seen:
+                model_order.append(m)
+                seen.add(m)
+
+    data = []
+    # Build flat list: for each test, for each model -> one trace.
+    trace_index_by_test = {}
+    cursor = 0
+    for tid in test_keys:
+        t = tests[tid]
+        cats_en = t.get("categories_en") or [f"cat {i+1}" for i in range(11)]
+        n_cat = len(cats_en)
+        x = list(range(1, n_cat + 1))
+        indices = []
+        for m in model_order:
+            mblob = t.get("per_model", {}).get(m)
+            if not mblob:
+                indices.append(None)
+                continue
+            proj = _mean_projection(mblob.get("per_template", []))
+            if not proj or len(proj) != n_cat:
+                indices.append(None)
+                continue
+            grp = model_group(m)
+            color = _GROUP_COLOR.get(grp, "#999")
+            trace = {
+                "type": "scatter",
+                "mode": "lines+markers",
+                "x": x,
+                "y": proj,
+                "name": m,
+                "legendgroup": grp,
+                "line": {"color": color, "width": 1.6},
+                "marker": {"color": color, "size": 6,
+                            "line": {"width": 0.5, "color": "#333"}},
+                "hovertemplate": (
+                    f"<b>{m}</b><br>"
+                    "%{x}. %{customdata}<br>"
+                    "PC1 = %{y:.3f}<extra></extra>"
+                ),
+                "customdata": cats_en,
+                "visible": (tid == "test_3_age_contractual_capacity"
+                            or (tid == test_keys[0]
+                                and "test_3_age_contractual_capacity" not in test_keys)),
+            }
+            data.append(trace)
+            indices.append(cursor)
+            cursor += 1
+        trace_index_by_test[tid] = indices
+
+    n_traces = len(data)
+
+    def _visible_mask(active_tid: str) -> list:
+        idx_set = {i for i in trace_index_by_test.get(active_tid, []) if i is not None}
+        return [i in idx_set for i in range(n_traces)]
+
+    def _layout_update(tid: str) -> dict:
+        t = tests[tid]
+        cats_en = t.get("categories_en") or [f"cat {i+1}" for i in range(11)]
+        cats_zh = t.get("categories_zh") or [""] * len(cats_en)
+        ticktext = [f"{en}<br><span style='color:#888;font-size:9px'>{zh}</span>"
+                    if zh else en for en, zh in zip(cats_en, cats_zh)]
+        eg = t.get("expected_gap_index")
+        polarity = t.get("polarity", "positive")
+        shapes = []
+        annotations = []
+        if eg is not None and eg >= 0 and polarity == "positive":
+            shapes.append({
+                "type": "line",
+                "x0": eg + 1.5, "x1": eg + 1.5,
+                "y0": 0, "y1": 1,
+                "xref": "x", "yref": "paper",
+                "line": {"color": "#b08d57", "width": 2, "dash": "dash"},
+            })
+            annotations.append({
+                "x": eg + 1.5, "y": 1.02,
+                "xref": "x", "yref": "paper",
+                "text": f"<i>expected break:</i> {cats_en[eg]} → {cats_en[eg+1]}",
+                "showarrow": False,
+                "xanchor": "center", "yanchor": "bottom",
+                "font": {"size": 10, "color": "#7c5c2e"},
+            })
+        elif polarity == "negative":
+            annotations.append({
+                "x": 0.5, "y": 1.02,
+                "xref": "paper", "yref": "paper",
+                "text": "<i>negative control:</i> no doctrinal break expected",
+                "showarrow": False,
+                "xanchor": "center", "yanchor": "bottom",
+                "font": {"size": 10, "color": "#7c5c2e"},
+            })
+        return {
+            "title": {"text": f"§3.1.4 — Categorical probe · {test_titles[tid]}"},
+            "xaxis": {"tickvals": list(range(1, len(cats_en) + 1)),
+                      "ticktext": ticktext,
+                      "tickangle": -35,
+                      "tickfont": {"size": 10}},
+            "shapes": shapes,
+            "annotations": annotations,
+        }
+
+    buttons = []
+    default_tid = ("test_3_age_contractual_capacity"
+                   if "test_3_age_contractual_capacity" in test_keys
+                   else test_keys[0])
+    for tid in test_keys:
+        buttons.append({
+            "label": test_titles[tid][:48],
+            "method": "update",
+            "args": [{"visible": _visible_mask(tid)}, _layout_update(tid)],
+        })
+
+    initial_layout = _layout(
+        title=f"§3.1.4 — Categorical probe · {test_titles[default_tid]}",
+        xaxis={"title": "ordered legal category"},
+        yaxis={"title": "mean PC1 projection (across 5 paraphrase templates)"},
+        height=520,
+        margin={"l": 60, "r": 25, "t": 90, "b": 130},
+        showlegend=True,
+        legend={"orientation": "h", "y": -0.35, "x": 0.5, "xanchor": "center",
+                "font": {"size": 10}},
+    )
+    initial_layout.update(_layout_update(default_tid))
+    initial_layout["updatemenus"] = [{
+        "type": "dropdown",
+        "buttons": buttons,
+        "direction": "down",
+        "x": 1.0, "y": 1.18,
+        "xanchor": "right", "yanchor": "top",
+        "pad": {"l": 6, "r": 6, "t": 4, "b": 4},
+        "bgcolor": "#faf7ee",
+        "bordercolor": "#b08d57",
+        "borderwidth": 1,
+        "font": {"size": 11},
+        "showactive": True,
+    }]
+    # Add a separate label annotation for the dropdown.
+    initial_layout.setdefault("annotations", []).append({
+        "x": 1.0, "y": 1.22,
+        "xref": "paper", "yref": "paper",
+        "text": "<i>test:</i>",
+        "showarrow": False,
+        "xanchor": "right", "yanchor": "bottom",
+        "font": {"size": 11, "color": "#7c5c2e"},
+    })
+    return {"data": data, "layout": initial_layout}
+
+
 def fig_categorical_probe_forest(s314: dict) -> dict:
     """Per-test mean ensemble ρ across models, with the modal max-gap
     position label as hover."""
