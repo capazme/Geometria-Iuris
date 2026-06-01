@@ -1,7 +1,7 @@
 """Methodology page — models, dataset, statistical toolkit.
 
-Generates `output/methodology.html`. No Plotly figures; pure HTML cards
-and tables. Companion to §2 of the thesis.
+Generates `output/methodology.html`. Companion to Chapters 1-2 of the
+thesis.
 """
 
 from __future__ import annotations
@@ -14,7 +14,6 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 import shared_ui as ui  # noqa: E402
-from apparatus import apparatus_block  # noqa: E402
 
 
 # --------------------------------------------------------------------------
@@ -23,17 +22,17 @@ from apparatus import apparatus_block  # noqa: E402
 MODELS = [
     # (label, hf_id, family, dim, languages, tradition)
     ("BGE-EN-large",       "BAAI/bge-large-en-v1.5",
-     "BGE",        1024, "en",       "WEIRD"),
+     "BGE",        1024, "en",       "Western-trained"),
     ("E5-large",           "intfloat/e5-large-v2",
-     "E5",         1024, "en",       "WEIRD"),
+     "E5",         1024, "en",       "Western-trained"),
     ("FreeLaw-EN",         "OpenLegalAI/legalbench-bge-large-en-v1.5",
-     "BGE (legal-FT)", 1024, "en",   "WEIRD"),
+     "BGE (legal-FT)", 1024, "en",   "Western-trained"),
     ("BGE-ZH-large",       "BAAI/bge-large-zh-v1.5",
-     "BGE",        1024, "zh",       "Sinic"),
+     "BGE",        1024, "zh",       "Chinese-trained"),
     ("Text2vec-large-ZH",  "shibing624/text2vec-large-chinese",
-     "Text2vec",   1024, "zh",       "Sinic"),
+     "Text2vec",   1024, "zh",       "Chinese-trained"),
     ("Dmeta-ZH",           "DMetaSoul/Dmeta-embedding",
-     "Dmeta",       768, "zh",       "Sinic"),
+     "Dmeta",       768, "zh",       "Chinese-trained"),
     ("BGE-M3-EN",          "BAAI/bge-m3 (EN side)",
      "BGE-M3",     1024, "en (bilingual)", "Bilingual"),
     ("BGE-M3-ZH",          "BAAI/bge-m3 (ZH side)",
@@ -45,31 +44,52 @@ MODELS = [
 ]
 
 
+# --------------------------------------------------------------------------
+# Intro (bridges §1 to §2)
+
+def _intro() -> str:
+    return ui.section_open("intro", "From the conceptual conditions to the apparatus") + """
+<p class="lead">
+Chapter 1 of the thesis derives the conceptual conditions under which
+legal meaning can be observed at scale: meaning as use, language as
+space, geometry as legal instrument (§1.2–§1.4). Chapter 2 turns those
+conditions into an apparatus. This page summarises the apparatus — the
+language models, the lexicon, and the statistical tools — that the two
+experiments in §3.1 and §3.2 rely on.
+</p>
+""" + ui.section_close()
+
+
+# --------------------------------------------------------------------------
+# Models section
+
 def _models_section() -> str:
     rows = []
     for lab, hf, fam, dim, langs, trad in MODELS:
         rows.append((lab, fam, str(dim), langs,
                       f'<code>{hf}</code>', trad))
-    return ui.section_open("models", "Ten encoder models") + """
+    return ui.section_open("models", "Ten language models") + """
 <p>
-Ten embedding encoders span three model families and two language
-traditions. The selection is deliberately heterogeneous: it includes a
-legal fine-tune (<em>FreeLaw-EN</em>) to test whether legal specialisation
+Ten language models span three families and two language traditions.
+The selection is deliberately heterogeneous: it includes a legal
+fine-tune (<em>FreeLaw-EN</em>) to test whether legal specialisation
 helps; a small multilingual model (<em>Qwen3-0.6B</em>) to test the
 limits of generalisation; and a single bilingual model
 (<em>BGE-M3</em>) deployed twice — once on the English side, once on
-the Chinese — to provide a same-encoder control (β control in §3.1.3).
+the Chinese — to provide a same-model bilingual control used in
+§3.1.3 and §3.2.4.
 </p>
 
 <p>
-WEIRD versus Sinic is shorthand for the language-tradition contrast.
-The thesis is not about WEIRD versus Sinic <em>per se</em>; the choice
-of HK ordinances co-drafted in English and Chinese makes the contrast
-naturally available, and so the design uses it as the test for whether
-embedded geometry is sensitive to tradition.
+The Western-trained vs Chinese-trained contrast is the language-tradition
+contrast that organises the empirical chapters. The thesis is not about
+that contrast <em>per se</em>: it is methodological. The choice of Hong
+Kong ordinances co-drafted in English and Chinese (§2.2) makes the
+contrast naturally available, and the design uses it as the test for
+whether embedded geometry is sensitive to tradition.
 </p>
 """ + ui.data_table(
-        columns=("Label", "Family", "Dim", "Lang", "HuggingFace ID", "Tradition"),
+        columns=("Label", "Family", "Dim", "Lang", "Reference", "Tradition"),
         rows=rows,
         col_classes=("strong", "", "num", "", "", ""),
     ) + ui.section_close()
@@ -81,13 +101,12 @@ embedded geometry is sensitive to tradition.
 def _dataset_section() -> str:
     return ui.section_open("dataset", "Dataset · 364 + 9 045 + 100 terms") + """
 <p>
-The dataset has three tiers, frozen at run #4 (2026-05-17). Each term
-is a parallel English/Chinese pair, drawn from the Hong Kong DOJ
-bilingual legal glossary, and each has been re-attested against the
-post-1989 ordinances co-drafted under the Bilingual Laws Project. The
-filter retains a term only if it appears at least K = 4 times in real
-ordinance contexts (the operational threshold whose empirical
-justification lives in Robustness extension H).
+The dataset has three tiers. Each term is a parallel English/Chinese
+pair drawn from the Hong Kong DOJ bilingual legal glossary, and each
+has been re-attested against the post-1989 ordinances co-drafted under
+the Bilingual Laws Project. The filter retains a term only if it
+appears at least four times in real ordinance contexts; the
+threshold is justified empirically in §3 of the thesis.
 </p>
 
 <h3>Core · 364 terms</h3>
@@ -96,159 +115,98 @@ The curated, vetted core of the legal lexicon. Distributed across 7
 domains (administrative, civil, constitutional, criminal,
 international, labor &amp; social, procedure) with band-balanced
 support (41 – 60 attestations per domain). Each term is encoded twice
-by each model: bare (the lemma in isolation) and attested (the mean
-embedding of its K real ordinance contexts).
+by each model: <em>bare</em> (the lemma in isolation) and
+<em>attested</em> (the mean embedding of its real ordinance contexts).
 </p>
 
 <h3>Background · 9 045 terms</h3>
 <p>
-The remainder of the bilingual glossary that satisfies the K ≥ 4
-threshold but was not hand-vetted. Used in robustness extensions (D, E,
-F) to test the chapter's headline claims under pool perturbation. A
-k-NN assigner (extension A) labels each background term with the
-domain voted by its seven nearest core neighbours.
+The remainder of the bilingual glossary that satisfies the four-context
+threshold but was not hand-vetted. Used in the robustness analyses of
+§3 to test the principal results under pool perturbation, and as the
+input for a k-nearest-neighbour assignment that labels each background
+term with the domain voted by its seven nearest core neighbours.
 </p>
 
 <h3>Control · 100 terms</h3>
 <p>
 Everyday-language vocabulary with no legal content: pronouns, deixis,
 common nouns (<em>I, you, he, this, here, water, day, year, etc.</em>).
-Encoded bare only — controls have no HK ordinance attestation by
-design. The control pool grounds the §3.1.1 legal-vs-control test and,
-critically, the Y caveat: the bare Δρ_sym on controls is statistically
-indistinguishable from the bare Δρ_sym on the core, isolating the
-attestation contribution.
-</p>
-""" + apparatus_block(
-        stats=[("core",        "364"),
-               ("background",  "9 045"),
-               ("control",     "100"),
-               ("domains",     "7"),
-               ("K threshold", "≥ 4"),
-               ("source",      "HK DOJ bilingual glossary · post-BLP ordinances")],
-        meta="Frozen inputs in <code>experiments/ch3-measurability/inputs/</code>, "
-             "SHA-256 hashed in <code>manifest.json</code>.",
-        code_ref=[("experiments/ch3-measurability/scripts/",
-                   "data_build.py")],
-        collapsible=True,
-    ) + ui.section_close()
-
-
-# --------------------------------------------------------------------------
-# Statistical toolkit
-
-def _toolkit_section() -> str:
-    return ui.section_open("toolkit", "Statistical toolkit") + """
-<p>
-Six tools, each with a specific role and a specific limit. The
-chapter's headline numbers are reproducible up to the seed
-(<code>seed = 42</code>); the manifest hashes guarantee the inputs.
-</p>
-
-<h3>Representational Similarity Analysis (RSA)</h3>
-<p>
-For each encoder, build a Representational Dissimilarity Matrix
-(RDM): a 364 × 364 symmetric matrix where cell (i, j) is the cosine
-distance between term i and term j as encoded by that model. Comparing
-two encoders means: compute the Spearman ρ between the upper triangles
-of their two RDMs. ρ = 1 if they rank pairs identically; ρ = 0 if
-they are uncorrelated.
-</p>
-""" + apparatus_block(
-        formula=(
-            "ρ<sub>RSA</sub>(M<sub>1</sub>, M<sub>2</sub>) = "
-            "Spearman(uppertri(RDM<sub>1</sub>), uppertri(RDM<sub>2</sub>))"
-        ),
-        stats=[("RDM size",           "364 × 364"),
-               ("triangle entries",   "66 066"),
-               ("metric",             "cosine on L2-normalised pooled vectors")],
-        meta="Standard reference: Kriegeskorte, Mur & Bandettini (2008) <em>Front. "
-             "Syst. Neurosci.</em>",
-        collapsible=True,
-    ) + """
-<h3>Mantel test (B = 10 000)</h3>
-<p>
-The null hypothesis for an RSA ρ is that the two RDMs are
-unrelated. The Mantel test draws a permutation distribution by
-shuffling one RDM's rows (and matching columns) and recomputing ρ.
-With B = 10 000 permutations all 17 model-pair p-values floor at
-p ≤ 1 × 10⁻⁴ — the test is well-powered.
-</p>
-
-<h3>Holm correction (K = 17)</h3>
-<p>
-Comparing 17 model pairs means 17 simultaneous tests. The Holm-Bonferroni
-correction guards against the multiple-testing inflation. The
-corrected p_max across all 17 pairs is ≤ 1.7 × 10⁻³ — still safely
-below the conventional 5 × 10⁻³ threshold.
-</p>
-
-<h3>Block bootstrap on terms (B = 10 000)</h3>
-<p>
-The 66 066 upper-triangle entries of an RDM are not independent: each
-term contributes to 363 of them. Standard bootstrap inflates the
-confidence intervals. The block bootstrap resamples <em>terms</em> and
-re-subsets the RDM, then recomputes ρ — yielding term-level CIs that
-honour the dependence structure.
-</p>
-""" + apparatus_block(
-        meta="Reference: Nili et al. (2014) <em>PLoS Comput. Biol.</em> "
-             "10(4) e1003553.",
-        stats=[("bootstrap B", "10 000"), ("resampled", "terms (not pairs)")],
-        collapsible=True,
-    ) + """
-<h3>Kozlowski axis construction</h3>
-<p>
-For each value axis (e.g. <em>individual ↔ collective</em>), curate ~20
-antonymic seed pairs and compute the centroid difference vector:
-positive minus negative, averaged over pairs. The axis is the unit
-vector of that centroid. A term's score on the axis is its cosine with
-the axis vector.
-</p>
-""" + apparatus_block(
-        formula=(
-            "axis = mean<sub>k</sub> "
-            "(emb(pos<sub>k</sub>) − emb(neg<sub>k</sub>)) / "
-            "‖mean<sub>k</sub> (…)‖"
-        ),
-        meta="Reference: Kozlowski, Taddy & Evans (2019) <em>American "
-             "Sociological Review</em> 84(5): 905-949.",
-        stats=[("axes",       "6"),
-               ("seed pairs", "≤ 20 / axis"),
-               ("languages",  "EN + ZH (parallel)")],
-        collapsible=True,
-    ) + """
-<h3>Mann-Whitney U with rank-biserial r</h3>
-<p>
-For two distance distributions (e.g. legal-legal vs legal-control),
-compute the non-parametric Mann-Whitney U. The associated effect size
-is the rank-biserial r = 1 − 2U / (n_x × n_y); r &gt; 0 means the
-first distribution sits below the second. Used in §3.1.1.
+Encoded bare only — controls have no Hong Kong ordinance attestation by
+design. The control pool grounds the §3.1.1 legal-vs-control test and
+underpins the control-pool subtraction in §3.1.3: the bare Δρ on the
+control pool is statistically indistinguishable from the bare Δρ on the
+core, isolating the contribution that attestation in legal context
+adds.
 </p>
 """ + ui.section_close()
 
 
 # --------------------------------------------------------------------------
-# Reproducibility section
+# Statistical toolkit · six methods as compact glossary
 
-def _reproducibility_section() -> str:
-    return ui.section_open("reproducibility", "Reproducibility") + """
+def _toolkit_section() -> str:
+    return ui.section_open("toolkit", "Statistical toolkit") + """
 <p>
-The run is finalised on 2026-05-17. Every input — the term snapshots,
-the value-axis YAML, the per-model embedding matrices — is SHA-256
-hashed and registered in <code>manifest.json</code>; the 50 hashes are
-preserved alongside the JSON results. The execution is deterministic
-(seed = 42, CPU float32) and the verification gate (8 / 8 PASS,
-documented on Home) re-checks internal consistency every time the
-build is regenerated, guarding against silent regression.
+Six tools, each with a specific role and a specific limit. They are
+introduced here in compact form; their full application — including
+the inferential discipline that separates measure, interpretation and
+limit — is the subject of §2.4 of the thesis.
 </p>
 
+<h3>Representational Similarity Analysis (RSA)</h3>
 <p>
-The dashboard itself is regenerated by running
-<code>python3 experiments/dashboard_final/build.py</code> from the
-repository root. All HTML files in <code>output/</code> are derived
-artefacts; the source of truth is the JSON in
-<code>experiments/ch3-measurability/</code>.
+For each language model, build a Representational Dissimilarity Matrix
+(RDM): a 364 × 364 symmetric matrix where cell (i, j) is the cosine
+distance between term i and term j as encoded by that model. Comparing
+two language models then means computing the Spearman ρ between the
+upper triangles of their two RDMs. ρ = 1 if they rank pairs
+identically; ρ = 0 if they are uncorrelated.
+<em>Reference: Kriegeskorte, Mur &amp; Bandettini (2008).</em>
+</p>
+
+<h3>Mantel test (B = 10 000)</h3>
+<p>
+The null hypothesis for an RSA ρ is that the two RDMs are unrelated.
+The Mantel test draws a permutation distribution by shuffling one
+RDM's rows (and matching columns) and recomputing ρ. In §3.1.3 the
+test applied to all 17 pre-registered model pairs returns
+p ≤ 1 × 10⁻⁴ on every pair.
+</p>
+
+<h3>Holm correction (K = 17)</h3>
+<p>
+The 17 pre-registered model pairs in §3.1.3 mean 17 simultaneous tests.
+The Holm–Bonferroni correction guards against multiple-testing
+inflation; the corrected p<sub>max</sub> across all 17 pairs is
+≤ 1.7 × 10⁻³.
+</p>
+
+<h3>Block bootstrap on terms (B = 10 000)</h3>
+<p>
+The 66 066 upper-triangle entries of an RDM are not independent: each
+term contributes to 363 of them. The block bootstrap resamples
+<em>terms</em> (not pairs) and re-subsets the RDM, then recomputes ρ —
+yielding term-level confidence intervals that honour the dependence
+structure. <em>Reference: Nili et al. (2014).</em>
+</p>
+
+<h3>Kozlowski axis construction</h3>
+<p>
+For each value axis (e.g. <em>individual ↔ collective</em>) curate up
+to twenty antonymic seed pairs and compute the centroid difference
+vector: positive minus negative, averaged over pairs and normalised to
+unit length. A term's score on the axis is its cosine with the axis
+vector. The six axes of §3.2 are built this way.
+<em>Reference: Kozlowski, Taddy &amp; Evans (2019).</em>
+</p>
+
+<h3>Mann-Whitney U with rank-biserial r</h3>
+<p>
+For two distance distributions (e.g. legal-legal vs legal-control)
+compute the non-parametric Mann-Whitney U. The associated effect size
+is the rank-biserial r = 1 − 2U / (n<sub>x</sub> n<sub>y</sub>); r &gt; 0 means the
+first distribution sits below the second. Used in §3.1.1.
 </p>
 """ + ui.section_close()
 
@@ -260,17 +218,16 @@ def build() -> str:
     parts = [
         ui.page_head(
             title="Methodology · models, dataset, toolkit",
-            subtitle="Companion to Chapter 2 — the instrument that "
-                     "the experiments use.",
-            crumb="Chapter 2 · Methodology",
+            subtitle="Chapters 1–2 of the dissertation",
+            crumb="Chapters 1–2",
             include_plotly=False,
         ),
         ui.sticky_nav(current_href="methodology.html"),
         ui.open_main(),
+        _intro(),
         _models_section(),
         _dataset_section(),
         _toolkit_section(),
-        _reproducibility_section(),
         ui.linear_nav(
             prev=("index.html", "Home"),
             next_=("how_it_works.html", "How it works"),
