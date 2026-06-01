@@ -123,9 +123,7 @@ def _section_311(s311: dict) -> str:
 # §3.1.2
 
 def _section_312(s312: dict) -> str:
-    fig_single = figs.fig_topology_heatmap(s312, model="BGE-EN-large",
-                                            variant="attested")
-    fig_small = figs.fig_topology_smallmultiples(s312, variant="attested")
+    fig_topology = figs.fig_topology_smallmultiples(s312, variant="attested")
     return ui.section_open("s312",
                             "§3.1.2 · Maps of distance between legal domains") + \
         ui.scenario_block(
@@ -146,15 +144,15 @@ def _section_312(s312: dict) -> str:
             "models; the §3.1.3 measurement that follows turns the "
             "visual recurrence into a number."
         ) + \
-        ui.plot_block(fig_single, "fig-312-single", height_px=460,
-                       caption="BGE-EN-large, attested encoding. Each "
-                                "cell is the mean cosine distance "
-                                "between terms in the row domain and "
-                                "terms in the column domain.") + \
-        ui.plot_block(fig_small, "fig-312-small", height_px=520,
-                       caption="The same 7 × 7 map, one panel per model, "
-                                "attested encoding. The diagonal-darkest "
-                                "pattern recurs everywhere.") + \
+        ui.plot_block(fig_topology, "fig-312-topology", height_px=540,
+                       caption="The 7 × 7 inter-domain map. Each cell "
+                                "is the mean cosine distance between "
+                                "terms in the row domain and terms in "
+                                "the column domain (attested encoding). "
+                                "Use the dropdown above the chart to "
+                                "switch between the ten models — the "
+                                "same diagonal-darkest pattern recurs "
+                                "in every reading.") + \
         ui.takehome_block(
             "The inter-domain map has a stable qualitative shape "
             "across the ten models. The recurrence is the geometric "

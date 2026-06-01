@@ -172,84 +172,73 @@ def fig_topology_heatmap(s312: dict, model: str = "BGE-EN-large",
 
 
 def fig_topology_smallmultiples(s312: dict, variant: str = "bare") -> dict:
-    """7×7 RDM small-multiples for all available models (typically 8-10)."""
+    """7×7 RDM with a dropdown to switch between models.
+
+    One heatmap rendered at full size; the dropdown toggles which model's
+    matrix is visible. Replaces the older grid of small multiples — same
+    information, far more legible at one model at a time.
+    """
     pack = s312[variant]
     models = [m for m in ALL_MODELS_ORDERED if m in pack["all_models"]]
     n = len(models)
-    cols = 5
-    rows = (n + cols - 1) // cols
-    annotations = []
-    data = []
-    domain_x_step = 1.0 / cols
-    domain_y_step = 1.0 / rows
-    pad = 0.02
+    default = pack.get("primary") if pack.get("primary") in models else models[0]
 
-    for idx, m in enumerate(models):
+    data = []
+    for m in models:
         blob = pack["all_models"][m]
         matrix = blob["matrix"]
         domains = blob["domains"]
-        row = idx // cols
-        col = idx % cols
-        x0 = col * domain_x_step + pad
-        x1 = (col + 1) * domain_x_step - pad
-        y0 = 1.0 - (row + 1) * domain_y_step + pad
-        y1 = 1.0 - row * domain_y_step - pad
-        axis_n = idx + 1
-        suffix = "" if axis_n == 1 else str(axis_n)
         data.append({
             "type": "heatmap",
             "z": matrix,
             "x": domains, "y": domains,
-            "xaxis": f"x{suffix}", "yaxis": f"y{suffix}",
             "colorscale": _RDM_COLORSCALE,
-            "showscale": (idx == 0),
-            "colorbar": {"title": "cosine d", "thickness": 10, "len": 0.55,
-                          "x": 1.02, "y": 0.5},
+            "showscale": True,
+            "colorbar": {"title": "cosine d", "thickness": 12, "len": 0.7},
             "hovertemplate": f"<b>{m}</b><br>%{{y}} × %{{x}}: %{{z:.3f}}<extra></extra>",
-        })
-        annotations.append({
-            "x": (x0 + x1) / 2, "y": y1 + 0.012,
-            "xref": "paper", "yref": "paper",
-            "text": f"<b>{m}</b>",
-            "showarrow": False,
-            "font": {"size": 11, "color": _GROUP_COLOR[model_group(m)]},
+            "visible": (m == default),
+            "name": m,
         })
 
-    layout: dict = _layout(
-        title=f"§3.1.2 — Inter-domain topology · all models ({variant})",
-        height=max(550, 200 * rows + 120),
-        annotations=annotations,
-        showlegend=False,
+    buttons = []
+    for idx, m in enumerate(models):
+        visible = [i == idx for i in range(n)]
+        buttons.append({
+            "label": m,
+            "method": "update",
+            "args": [
+                {"visible": visible},
+                {"title": {"text": f"§3.1.2 — Inter-domain topology · {m} ({variant})"}},
+            ],
+        })
+
+    layout = _layout(
+        title=f"§3.1.2 — Inter-domain topology · {default} ({variant})",
+        xaxis={"title": "", "side": "bottom", "tickangle": -20},
+        yaxis={"title": "", "autorange": "reversed"},
+        height=520,
     )
-    # Remove default xaxis/yaxis from base layout — small-multiples manage
-    # their own axes.
-    layout.pop("xaxis", None)
-    layout.pop("yaxis", None)
-    for idx in range(n):
-        row = idx // cols
-        col = idx % cols
-        x0 = col * domain_x_step + pad
-        x1 = (col + 1) * domain_x_step - pad
-        y0 = 1.0 - (row + 1) * domain_y_step + pad
-        y1 = 1.0 - row * domain_y_step - pad
-        axis_n = idx + 1
-        suffix = "" if axis_n == 1 else str(axis_n)
-        layout[f"xaxis{suffix}"] = {
-            "domain": [x0, x1], "anchor": f"y{suffix}",
-            "showticklabels": True, "tickangle": -45,
-            "tickfont": {"size": 8},
-            "ticks": "outside", "showline": True,
-            "linewidth": 0.5, "linecolor": "#ccc",
-            "showgrid": False, "zeroline": False, "side": "bottom",
-        }
-        layout[f"yaxis{suffix}"] = {
-            "domain": [y0, y1], "anchor": f"x{suffix}",
-            "autorange": "reversed",
-            "showticklabels": True, "tickfont": {"size": 8},
-            "ticks": "outside", "showline": True,
-            "linewidth": 0.5, "linecolor": "#ccc",
-            "showgrid": False, "zeroline": False, "side": "left",
-        }
+    layout["updatemenus"] = [{
+        "type": "dropdown",
+        "buttons": buttons,
+        "direction": "down",
+        "x": 1.0, "y": 1.14,
+        "xanchor": "right", "yanchor": "top",
+        "pad": {"l": 6, "r": 6, "t": 4, "b": 4},
+        "bgcolor": "#faf7ee",
+        "bordercolor": "#b08d57",
+        "borderwidth": 1,
+        "font": {"size": 11},
+        "showactive": True,
+    }]
+    layout["annotations"] = [{
+        "x": 1.0, "y": 1.18,
+        "xref": "paper", "yref": "paper",
+        "text": "<i>language model:</i>",
+        "showarrow": False,
+        "xanchor": "right", "yanchor": "bottom",
+        "font": {"size": 11, "color": "#7c5c2e"},
+    }]
     return {"data": data, "layout": layout}
 
 
