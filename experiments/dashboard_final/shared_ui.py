@@ -637,11 +637,8 @@ def page_footer(body_html: str) -> str:
 
 def _default_footer() -> str:
     return (
-        'Geometria Iuris — companion dashboard. '
-        'Source data: <code>experiments/ch3-measurability/</code> '
-        '(run #4, 2026-05-17). '
-        'All figures regenerated from frozen JSON manifests '
-        '(50 SHA-256 hashes, verification gate 8/8 PASS).'
+        'Geometria Iuris — companion to the dissertation. '
+        'LUISS · Methodology of Legal Science.'
     )
 
 
