@@ -35,7 +35,7 @@ experiments/
                           terms across 7 domains + 100-item Swadesh control,
                           plus the processed JSON inputs.
 
-docs/                     GitHub Pages source: six self-contained static HTML
+docs/                     GitHub Pages source: seven self-contained static HTML
                           pages mirroring dashboard_final/output/.
                           Hosted at https://capazme.github.io/Geometria-Iuris/
 ```
